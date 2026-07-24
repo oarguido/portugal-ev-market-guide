@@ -1,0 +1,36 @@
+name: Validação
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Obter repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validar e compilar dados
+        run: make validate
+
+      - name: Executar testes
+        run: make test
+
+      - name: Confirmar bundle compilado
+        run: git diff --exit-code -- web/assets/js/car_data.js

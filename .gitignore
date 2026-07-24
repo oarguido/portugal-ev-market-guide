@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.uv-cache/
+
+# Artefactos locais e reproduzíveis
+graphify-out/
+dogfood-output/
+archive/
+
+# Evidência de pesquisa que pode conter propostas, emails e dados pessoais.
+# As fontes publicáveis permanecem registadas por URL nos JSON canónicos.
+data/documents/

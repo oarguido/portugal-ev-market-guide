@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Decisor - Carro da Liliana</title>
+  <meta name="description" content="Comparador de automóveis 100% elétricos novos disponíveis em Portugal até 40.000 euros.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Interface works offline: icons and fonts are local/system assets. -->
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Background Glow Effects -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <div class="app-container">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-logo">
+        <i class="fa-solid fa-car-side logo-icon"></i>
+        <div>
+          <h1>Carro da Liliana</h1>
+          <p class="subtitle">O painel decisor do André e da Liliana</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-refresh-data" class="btn btn-secondary">
+          <i class="fa-solid fa-arrows-rotate"></i> Atualizar Dados
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-navigation" role="tablist" aria-label="Secções da aplicação">
+      <button class="tab-btn active" data-tab="tab-overview" id="nav-overview" role="tab" aria-controls="tab-overview" aria-selected="true">
+        <i class="fa-solid fa-shapes"></i> Visão Geral
+      </button>
+      <button class="tab-btn" data-tab="tab-compare" id="nav-compare" role="tab" aria-controls="tab-compare" aria-selected="false" tabindex="-1">
+        <i class="fa-solid fa-code-compare"></i> Comparador Técnico
+      </button>
+      <button class="tab-btn" data-tab="tab-finance" id="nav-finance" role="tab" aria-controls="tab-finance" aria-selected="false" tabindex="-1">
+        <i class="fa-solid fa-calculator"></i> Simulador Financeiro
+      </button>
+      <button class="tab-btn" data-tab="tab-tco" id="nav-tco" role="tab" aria-controls="tab-tco" aria-selected="false" tabindex="-1">
+        <i class="fa-solid fa-chart-line"></i> Custos de Utilização
+      </button>
+      <button class="tab-btn" data-tab="tab-testdrive" id="nav-testdrive" role="tab" aria-controls="tab-testdrive" aria-selected="false" tabindex="-1">
+        <i class="fa-solid fa-clipboard-check"></i> Test Drives & Stands
+      </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- TAB: Overview -->
+      <section id="tab-overview" class="tab-content active" role="tabpanel" aria-labelledby="nav-overview">
+        <div class="section-header">
+          <h2>Modelos em Comparação</h2>
+          <p>Mercado português de automóveis novos 100% elétricos até 40.000 €, com preços e condições rastreáveis.</p>
+        </div>
+
+        <!-- FILTROS -->
+        <div class="glass-panel filter-panel" style="margin-bottom: 2rem; padding: 1.5rem; border-radius: 16px;">
+          <h3 style="font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 1rem; color: var(--accent-green); display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-filter"></i> Filtros de Pesquisa
+          </h3>
+          <!-- Configurações Rápidas -->
+          <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.2rem; align-items: center;">
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Configurações Rápidas:</span>
+            <button id="btn-liliana-rules" class="btn" style="background: rgba(16, 185, 129, 0.15); border: 1px solid var(--accent-green); color: #fff; border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem; cursor: pointer; transition: all 0.2s; outline: none;">
+              <i class="fa-solid fa-heart" style="color: var(--accent-green);"></i> Preferências da Liliana (≤ 35.000 € | ≥ 300 km)
+            </button>
+            <button id="btn-clear-filters" class="btn" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--panel-border); color: var(--text-secondary); border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem; cursor: pointer; transition: all 0.2s; outline: none;">
+              <i class="fa-solid fa-eraser"></i> Mostrar Todos
+            </button>
+          </div>
+          <div class="filter-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+            <!-- Pesquisa Texto -->
+            <div class="filter-group">
+              <label for="filter-search" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Pesquisar marca, modelo ou versão</label>
+              <div class="input-with-icon" style="position: relative;">
+                <input type="text" id="filter-search" placeholder="Ex: BYD, Renault..." class="form-input" style="width: 100%; padding-left: 2.2rem; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--panel-border); color: #fff; border-radius: 8px; padding: 0.6rem 0.6rem 0.6rem 2.2rem; font-size: 0.9rem;">
+                <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 0.8rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem;"></i>
+              </div>
+            </div>
+            <!-- Preço Máximo -->
+            <div class="filter-group">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                <label for="filter-price">Preço Máximo Particular</label>
+                <span id="filter-price-val" style="font-weight: 700; color: var(--accent-green);">Qualquer</span>
+              </div>
+              <input type="range" id="filter-price" min="15000" max="40000" step="1000" value="40000" style="width: 100%; accent-color: var(--accent-green);">
+            </div>
+            <!-- Autonomia Mínima -->
+            <div class="filter-group">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                <label for="filter-range">Autonomia Mínima (WLTP)</label>
+                <span id="filter-range-val" style="font-weight: 700; color: var(--accent-green);">Qualquer</span>
+              </div>
+              <input type="range" id="filter-range" min="80" max="600" step="20" value="80" style="width: 100%; accent-color: var(--accent-green);">
+            </div>
+            <!-- Ano de Lançamento -->
+            <div class="filter-group">
+              <label for="filter-year" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Ano de Lançamento</label>
+              <select id="filter-year" class="form-select" style="width: 100%; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--panel-border); color: #fff; border-radius: 8px; padding: 0.6rem; font-size: 0.9rem;">
+                <option value="all">Qualquer ano</option>
+                <option value="2023">>= 2023</option>
+                <option value="2024">>= 2024</option>
+                <option value="2025">>= 2025 (Mais Recentes)</option>
+              </select>
+            </div>
+            <!-- Ordenação -->
+            <div class="filter-group">
+              <label for="filter-sort" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Ordenar por</label>
+              <select id="filter-sort" class="form-select" style="width: 100%; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--panel-border); color: #fff; border-radius: 8px; padding: 0.6rem; font-size: 0.9rem;">
+                <option value="default">Melhor preço/autonomia</option>
+                <option value="price-asc">Preço: Baixo para Alto</option>
+                <option value="price-desc">Preço: Alto para Baixo</option>
+                <option value="range-desc">Autonomia: Maior para Menor</option>
+                <option value="rating-desc">Avaliação Utilizadores: Melhor para Pior</option>
+                <option value="year-desc">Ano: Mais Recente para Antigo</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <p id="catalog-count" class="catalog-count" aria-live="polite"></p>
+
+        <div class="cars-grid" id="cars-overview-grid">
+          <!-- Dynamic cards will be rendered here -->
+        </div>
+      </section>
+
+      <!-- TAB: Tech Compare -->
+      <section id="tab-compare" class="tab-content" role="tabpanel" aria-labelledby="nav-compare" hidden>
+        <div class="section-header">
+          <h2>Comparador Técnico Detalhado</h2>
+          <p>Compara as especificações lado a lado e analisa as dimensões, performance e autonomia.</p>
+        </div>
+
+        <div class="comparator-controls">
+          <div class="select-wrapper">
+            <label for="comp-select-1">Carro A</label>
+            <select id="comp-select-1" class="form-select"></select>
+          </div>
+          <div class="vs-badge">VS</div>
+          <div class="select-wrapper">
+            <label for="comp-select-2">Carro B</label>
+            <select id="comp-select-2" class="form-select"></select>
+          </div>
+        </div>
+
+        <div class="comparison-visualization">
+          <!-- Comparison visual bars -->
+          <div class="visual-row" id="row-range">
+            <div class="visual-label">Autonomia Combinada (WLTP)</div>
+            <div class="visual-bars-container">
+              <div class="bar-wrapper left-align">
+                <span class="value-text" id="val-range-a">0 km</span>
+                <div class="bar-bg"><div class="bar-fill color-range" id="bar-range-a" style="width: 0%"></div></div>
+              </div>
+              <div class="bar-wrapper right-align">
+                <div class="bar-bg"><div class="bar-fill color-range" id="bar-range-b" style="width: 0%"></div></div>
+                <span class="value-text" id="val-range-b">0 km</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="visual-row" id="row-accel">
+            <div class="visual-label">Aceleração (0-100 km/h) - *Menos é melhor*</div>
+            <div class="visual-bars-container">
+              <div class="bar-wrapper left-align">
+                <span class="value-text" id="val-accel-a">0s</span>
+                <div class="bar-bg"><div class="bar-fill color-accel" id="bar-accel-a" style="width: 0%"></div></div>
+              </div>
+              <div class="bar-wrapper right-align">
+                <div class="bar-bg"><div class="bar-fill color-accel" id="bar-accel-b" style="width: 0%"></div></div>
+                <span class="value-text" id="val-accel-b">0s</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="visual-row" id="row-battery">
+            <div class="visual-label">Capacidade da Bateria (kWh)</div>
+            <div class="visual-bars-container">
+              <div class="bar-wrapper left-align">
+                <span class="value-text" id="val-battery-a">0 kWh</span>
+                <div class="bar-bg"><div class="bar-fill color-battery" id="bar-battery-a" style="width: 0%"></div></div>
+              </div>
+              <div class="bar-wrapper right-align">
+                <div class="bar-bg"><div class="bar-fill color-battery" id="bar-battery-b" style="width: 0%"></div></div>
+                <span class="value-text" id="val-battery-b">0 kWh</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="visual-row" id="row-trunk">
+            <div class="visual-label">Capacidade da Bagageira (Litros)</div>
+            <div class="visual-bars-container">
+              <div class="bar-wrapper left-align">
+                <span class="value-text" id="val-trunk-a">0 L</span>
+                <div class="bar-bg"><div class="bar-fill color-trunk" id="bar-trunk-a" style="width: 0%"></div></div>
+              </div>
+              <div class="bar-wrapper right-align">
+                <div class="bar-bg"><div class="bar-fill color-trunk" id="bar-trunk-b" style="width: 0%"></div></div>
+                <span class="value-text" id="val-trunk-b">0 L</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="tech-table" id="tech-comparison-table">
+            <thead>
+              <tr>
+                <th style="width: 30%">Característica</th>
+                <th style="width: 35%" id="th-car-a">Carro A</th>
+                <th style="width: 35%" id="th-car-b">Carro B</th>
+              </tr>
+            </thead>
+            <tbody id="tech-comparison-tbody">
+              <!-- Comparison table content dynamic -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB: Finance Simulator -->
+      <section id="tab-finance" class="tab-content" role="tabpanel" aria-labelledby="nav-finance" hidden>
+        <div class="section-header">
+          <h2>Simulador de Financiamento</h2>
+          <p>Ajusta as condições e simula o impacto financeiro de cada veículo de forma personalizada.</p>
+        </div>
+
+        <div class="finance-grid">
+          <!-- Control Panel -->
+          <div class="glass-panel finance-controls">
+            <h3>Configuração de Crédito</h3>
+
+            <div class="form-group">
+              <label for="fin-select-model">Modelo de Carro</label>
+              <select id="fin-select-model" class="form-select"></select>
+            </div>
+
+            <div class="form-group custom-price-group">
+              <label for="fin-input-price">Preço do Carro (PVP) (€)</label>
+              <input type="number" id="fin-input-price" class="form-control" value="0">
+              <span class="field-info">* Pode alterar o valor para testar campanhas personalizadas.</span>
+            </div>
+
+            <div class="form-group">
+              <div class="slider-header">
+                <label for="fin-range-downpayment">Entrada Inicial</label>
+                <span class="slider-val" id="fin-downpayment-val">10 000 €</span>
+              </div>
+              <input type="range" id="fin-range-downpayment" min="0" max="25000" step="500" value="10000" class="form-range">
+            </div>
+
+            <div class="form-group">
+              <div class="slider-header">
+                <label for="fin-range-term">Prazo do Financiamento</label>
+                <span class="slider-val" id="fin-term-val">43 meses</span>
+              </div>
+              <input type="range" id="fin-range-term" min="12" max="120" step="1" value="43" class="form-range">
+            </div>
+
+            <div class="form-group">
+              <div class="slider-header">
+                <label for="fin-range-rate">Taxa Nominal (TAN)</label>
+                <span class="slider-val" id="fin-rate-val">6,25 %</span>
+              </div>
+              <input type="range" id="fin-range-rate" min="1.0" max="12.0" step="0.05" value="6.25" class="form-range">
+            </div>
+
+            <div class="form-group">
+              <label for="fin-input-fees">Despesas Financiadas (Contrato + Impostos) (€)</label>
+              <input type="number" id="fin-input-fees" class="form-control" value="1100">
+            </div>
+          </div>
+
+          <!-- Result Panel -->
+          <div class="glass-panel finance-results highlight-panel">
+            <div class="results-header">
+              <h3>Resultado da Simulação</h3>
+              <span class="badge" id="fin-result-badge">BYD Dolphin</span>
+            </div>
+
+            <div class="results-main">
+              <div class="monthly-payment-card">
+                <p class="card-label">Mensalidade Estimada</p>
+                <h2 class="card-value" id="fin-result-monthly">0,00 €</h2>
+                <p class="card-note">Com base em taxa fixa francesa (amortização clássica)</p>
+              </div>
+            </div>
+
+            <div class="results-breakdown">
+              <div class="breakdown-row">
+                <span>Preço do Carro (PVP)</span>
+                <span id="fin-breakdown-pvp">0,00 €</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Entrada Inicial</span>
+                <span id="fin-breakdown-downpayment">0,00 €</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Montante Financiado</span>
+                <span id="fin-breakdown-financed">0,00 €</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Despesas Adicionadas</span>
+                <span id="fin-breakdown-fees">0,00 €</span>
+              </div>
+              <div class="breakdown-row total-row">
+                <span>Total Pago em Prestações (MTIC)</span>
+                <span id="fin-breakdown-mtic">0,00 €</span>
+              </div>
+              <div class="breakdown-row grand-total-row">
+                <span>Custo Total de Aquisição (PVP + Juros)</span>
+                <span id="fin-breakdown-total-cost" class="accent-color">0,00 €</span>
+              </div>
+            </div>
+
+            <div class="proposals-comparison-box">
+              <h4>Comparação com Proposta Real da Concessionária</h4>
+              <div id="fin-proposal-comparison-content">
+                <!-- Inserted by js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: TCO (Utilisation Cost) -->
+      <section id="tab-tco" class="tab-content" role="tabpanel" aria-labelledby="nav-tco" hidden>
+        <div class="section-header">
+          <h2>Custos de Utilização (TCO)</h2>
+          <p>Calcula quanto vais gastar anualmente em energia elétrica para carregar o carro, comparando com combustíveis fósseis.</p>
+        </div>
+
+        <div class="tco-grid">
+          <div class="glass-panel tco-inputs">
+            <h3>Parâmetros de Utilização</h3>
+
+            <div class="form-group">
+              <label for="tco-select-model">Automóvel elétrico</label>
+              <select id="tco-select-model" class="form-select"></select>
+            </div>
+
+            <div class="form-group">
+              <div class="slider-header">
+                <label for="tco-range-km">Quilómetros Anuais Estimados</label>
+                <span class="slider-val" id="tco-km-val">15 000 km</span>
+              </div>
+              <input type="range" id="tco-range-km" min="2000" max="50000" step="1000" value="15000" class="form-range">
+            </div>
+
+            <div class="form-group">
+              <div class="slider-header">
+                <label for="tco-range-elec-price">Preço Médio da Eletricidade (€/kWh)</label>
+                <span class="slider-val" id="tco-elec-val">0,22 €</span>
+              </div>
+              <input type="range" id="tco-range-elec-price" min="0.05" max="0.50" step="0.01" value="0.22" class="form-range">
+              <span class="field-info">* Eletricidade doméstica normal ronda os 0,16 € a 0,26 € por kWh.</span>
+            </div>
+
+            <div class="form-group">
+              <div class="slider-header">
+                <label for="tco-range-fuel-price">Preço da Gasolina de Referência (€/Litro)</label>
+                <span class="slider-val" id="tco-fuel-val">1,78 €</span>
+              </div>
+              <input type="range" id="tco-range-fuel-price" min="1.30" max="2.30" step="0.01" value="1.78" class="form-range">
+            </div>
+
+            <div class="form-group">
+              <label for="tco-ref-consumption">Consumo Médio de um Carro a Gasolina (L/100km)</label>
+              <input type="number" id="tco-ref-consumption" class="form-control" value="6.5" step="0.1">
+            </div>
+          </div>
+
+          <div class="glass-panel tco-results highlight-panel">
+            <h3>Custo de Energia Estimado Anual</h3>
+
+            <div class="chart-container" id="tco-chart-container">
+              <!-- Visual bars comparing annual electricity costs -->
+            </div>
+
+            <div class="savings-card">
+              <i class="fa-solid fa-piggy-bank savings-icon"></i>
+              <div>
+                <h4 id="tco-savings-title">Poupança Estimada</h4>
+                <p id="tco-savings-text">A carregar em casa face a um carro a gasolina equivalente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: Test Drives & Stands -->
+      <section id="tab-testdrive" class="tab-content" role="tabpanel" aria-labelledby="nav-testdrive" hidden>
+        <div class="section-header">
+          <h2>Stands e Registo de Test Drives</h2>
+          <p>Localização dos Stands oficiais e a tua checklist/notas para quando forem experimentar os carros.</p>
+        </div>
+
+        <div class="testdrive-grid">
+          <!-- Showrooms -->
+          <div class="glass-panel">
+            <h3>📍 Concessionários Identificados</h3>
+            <div class="stands-list" id="dynamic-stands-list">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Test Drive Checklist / Scoring -->
+          <div class="glass-panel">
+            <h3>📝 Avaliação Pessoal (Checklist de Condução)</h3>
+            <p class="intro-text">Atribui pontuações (1 a 5 estrelas) a cada categoria após testares o modelo.</p>
+
+            <div class="form-group">
+              <label for="td-select-model">Escolhe o Carro Avaliado</label>
+              <select id="td-select-model" class="form-select"></select>
+            </div>
+
+            <div class="scoring-list">
+              <div class="score-row">
+                <span>Conforto de Condução (Suspensão, Insonorização)</span>
+                <div class="stars-rating" data-category="comfort">
+                  <button type="button" class="star-btn" data-value="1" aria-label="1 estrela" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="2" aria-label="2 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="3" aria-label="3 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="4" aria-label="4 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="5" aria-label="5 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="score-row">
+                <span>Espaço & Habitabilidade (Espaço traseiro, Bagageira)</span>
+                <div class="stars-rating" data-category="space">
+                  <button type="button" class="star-btn" data-value="1" aria-label="1 estrela" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="2" aria-label="2 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="3" aria-label="3 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="4" aria-label="4 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="5" aria-label="5 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="score-row">
+                <span>Qualidade Interior & Infotainment (Ecrã, Fluidez)</span>
+                <div class="stars-rating" data-category="tech">
+                  <button type="button" class="star-btn" data-value="1" aria-label="1 estrela" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="2" aria-label="2 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="3" aria-label="3 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="4" aria-label="4 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="5" aria-label="5 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="score-row">
+                <span>Estética Exterior & Detalhes</span>
+                <div class="stars-rating" data-category="design">
+                  <button type="button" class="star-btn" data-value="1" aria-label="1 estrela" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="2" aria-label="2 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="3" aria-label="3 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="4" aria-label="4 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="5" aria-label="5 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="score-row">
+                <span>Relação Preço / Equipamento</span>
+                <div class="stars-rating" data-category="value">
+                  <button type="button" class="star-btn" data-value="1" aria-label="1 estrela" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="2" aria-label="2 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="3" aria-label="3 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="4" aria-label="4 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                  <button type="button" class="star-btn" data-value="5" aria-label="5 estrelas" aria-pressed="false"><i class="fa-star fa-regular" aria-hidden="true"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 20px;">
+              <label for="td-input-notes">Notas do Test Drive (O que a Liliana e o André mais gostaram/detestaram)</label>
+              <textarea id="td-input-notes" class="form-control" rows="4" placeholder="Ex: A suspensão pareceu muito estável, e a mala é excelente no B10. Mas a Liliana prefere o ecrã rotativo do Dolphin..."></textarea>
+            </div>
+
+            <button id="btn-save-testdrive" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-solid fa-floppy-disk"></i> Guardar Avaliação & Notas
+            </button>
+
+            <div class="saved-reviews-container">
+              <h4>Histórico de Avaliações</h4>
+              <div id="saved-reviews-list">
+                <!-- Rendered dynamically -->
+                <p class="no-data-text">Sem avaliações registadas para já.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Dados para Portugal, verificados em 23/07/2026. Confirma sempre o PVP e a campanha no link oficial antes de decidir.</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="assets/js/car_data.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/ranking.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
