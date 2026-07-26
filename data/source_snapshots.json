@@ -669,5 +669,23 @@
     "bytes": 106349,
     "normalized_chars": 3805,
     "source_type": "official_specification"
+  },
+  "https://www.renault.pt/veiculos-eletricos/twingo.html": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "f08fe2085e38da8acb6558be6c02668400971080b40b68708f781e3b9d500d36",
+    "raw_sha256": "ed0565b77428d53683795dbe8835961ca9f5834ac5dcd830baccfdf13c3047f9",
+    "final_url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
+    "bytes": 868538,
+    "normalized_chars": 18760,
+    "source_type": "official_model_and_price"
+  },
+  "https://www.renault.pt/veiculos-eletricos/twingo/caracteristicas.html": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "ebd364b70ffe1f8abfad53122d24aac4f79cc5e47a40893756f0ec4917c3fb68",
+    "raw_sha256": "b613eeed9db94bd4ec663a682f39b5100a51bf55e29ecce5598adb621dd8bbf9",
+    "final_url": "https://www.renault.pt/veiculos-eletricos/twingo/caracteristicas.html",
+    "bytes": 530556,
+    "normalized_chars": 13972,
+    "source_type": "official_specification"
   }
 }

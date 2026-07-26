@@ -2629,6 +2629,72 @@
         "Preço elegível depende de financiamento",
         "Campanha de curta duração"
       ]
+    },
+    {
+      "brand": "Renault",
+      "model": "Twingo E-Tech elétrico",
+      "powertrain": "BEV",
+      "segment": "Citadino",
+      "release_year": 2026,
+      "availability_status": "available",
+      "eligible": true,
+      "official_link": "https://www.renault.pt/veiculos-eletricos/twingo.html",
+      "image_path": "assets/images/vehicles/renault-twingo-e-tech-el-trico/official.png",
+      "last_verified": "2026-07-26",
+      "data_sources": [
+        {
+          "type": "official_model_and_price",
+          "url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
+          "verified_on": "2026-07-26"
+        },
+        {
+          "type": "official_specification",
+          "url": "https://www.renault.pt/veiculos-eletricos/twingo/caracteristicas.html",
+          "verified_on": "2026-07-26"
+        }
+      ],
+      "variants": [
+        {
+          "name": "Evolution 27.5 kWh",
+          "battery_capacity_kwh": 27.5,
+          "wltp_range_combined_km": 263,
+          "wltp_consumption_combined_kwh_100km": 12.2,
+          "power_kw": 60,
+          "power_hp": 82,
+          "torque_nm": 175,
+          "dc_max_kw": 50,
+          "pricing": {
+            "particular_list_price_vat_incl": 19490,
+            "particular_campaign_price_vat_incl": null,
+            "campaign_conditions": null,
+            "campaign_valid_until": null
+          }
+        },
+        {
+          "name": "Techno 27.5 kWh",
+          "battery_capacity_kwh": 27.5,
+          "wltp_range_combined_km": 263,
+          "wltp_consumption_combined_kwh_100km": 12.2,
+          "power_kw": 60,
+          "power_hp": 82,
+          "torque_nm": 175,
+          "dc_max_kw": 50,
+          "pricing": {
+            "particular_list_price_vat_incl": 21090,
+            "particular_campaign_price_vat_incl": null,
+            "campaign_conditions": null,
+            "campaign_valid_until": null
+          }
+        }
+      ],
+      "pros": [
+        "Segundo carro mais barato do catálogo",
+        "Cinco portas com apenas 3,79 m"
+      ],
+      "cons": [
+        "263 km de autonomia WLTP",
+        "Carregamento DC limitado a 50 kW"
+      ]
     }
   ]
 }
