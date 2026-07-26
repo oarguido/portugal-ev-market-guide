@@ -170,19 +170,21 @@
   },
   "https://kia.pt/modelos/kia-ev3/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "df9bf4f34b5b07cb7901479aff22f9406ac7fdd0e104561a11168f62fab0be01",
-    "raw_sha256": "fd4e74f3fb938d7d5361552f548567bcc83269075c100d9861579c0a89f8eb04",
+    "sha256": "65969e11761caf9a1d494f1365dcd8dc401294ae37ebc9230bf420c278cf07b6",
+    "raw_sha256": "5d1ec6ac8fca8533472d9708a040ee46f25a036244b14f020ac4a8e777d05e51",
     "final_url": "https://kia.pt/modelos/kia-ev3/",
-    "bytes": 369427,
-    "normalized_chars": 27341
+    "bytes": 379470,
+    "normalized_chars": 27417,
+    "source_type": "official_model_and_price"
   },
   "https://www.filintomota.pt/marca/kia/ev3/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "8c2b0138529f3c05dd58b776066264ca163f866a4a49bc8927adf18d8aabed38",
-    "raw_sha256": "ab03ad9c717404acaeb91e0448c89e8c1482da429859d1fbc64700164373ba1f",
+    "raw_sha256": "6d80393190f9b244c452da500cc5356bfdaa2c4342cfed180555e0860bd75722",
     "final_url": "https://www.filintomota.pt/marca/kia/ev3/",
-    "bytes": 460566,
-    "normalized_chars": 10161
+    "bytes": 461982,
+    "normalized_chars": 10161,
+    "source_type": "official_dealer_price"
   },
   "https://byd-auto.pt/modelos/byd-dolphin/": {
     "fingerprint_version": "html-visible-text-v1",
@@ -622,5 +624,50 @@
     "final_url": "https://skoda.carvap.pt/",
     "bytes": 140697,
     "normalized_chars": 22715
+  },
+  "https://kia.pt/modelos/kia-ev2/": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "83c9b543bd0a2ba850c1fe735c191c1d7c6f6a7a7723f7af1d08f32b1fd2f4e5",
+    "raw_sha256": "2e6c2ba917c6aabf827350c59607c000ae52c18e6f19a2f68cccf14b420a0ae6",
+    "final_url": "https://kia.pt/modelos/kia-ev2/",
+    "bytes": 381064,
+    "normalized_chars": 16750,
+    "source_type": "official_model_and_price"
+  },
+  "https://kia.pt/modelos/kia-ev2/especificacoes/": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "fc5ceaadf7783dc0ff63b8d751351f3378d2914b82455ff12b81c2f288be293d",
+    "raw_sha256": "e027449ddf463af1f23d120fbc3b105c0ccff62af183d69db532721e6f31e094",
+    "final_url": "https://kia.pt/modelos/kia-ev2/especificacoes/",
+    "bytes": 104315,
+    "normalized_chars": 3972,
+    "source_type": "official_specification"
+  },
+  "https://kia.pt/modelos/kia-ev3/especificacoes/": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "dab87bdc12bc4c067f1b68e83e07854df93142815eb79e9ea927a9540249e744",
+    "raw_sha256": "2f19257f5b425975a8b983471ae443c1f711adb0eb4a2e933552b384a7c69506",
+    "final_url": "https://kia.pt/modelos/kia-ev3/especificacoes/",
+    "bytes": 103809,
+    "normalized_chars": 3824,
+    "source_type": "official_specification"
+  },
+  "https://kia.pt/modelos/kia-ev4/": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "79e92dce9048f4d53a1acee81e953f4262351b7fc39eab3e7a9af685ea845519",
+    "raw_sha256": "c45efd2c6de992207c493073c764e0da0cdca777d4aeefc80a9d082e4fc88377",
+    "final_url": "https://kia.pt/modelos/kia-ev4/",
+    "bytes": 433873,
+    "normalized_chars": 30342,
+    "source_type": "official_model_and_price"
+  },
+  "https://kia.pt/modelos/kia-ev4/especificacoes/": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "c4c899e0da65f9bd488b90c6319a6cebccd1b87f7ca1054c2007de36d924cbc4",
+    "raw_sha256": "b7f4a031909bd33e244e21aadb8068509fe7d501c67a6ac9a5904694815b148a",
+    "final_url": "https://kia.pt/modelos/kia-ev4/especificacoes/",
+    "bytes": 106349,
+    "normalized_chars": 3805,
+    "source_type": "official_specification"
   }
 }

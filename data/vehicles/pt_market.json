@@ -1010,6 +1010,53 @@
     },
     {
       "brand": "Kia",
+      "model": "EV2",
+      "powertrain": "BEV",
+      "segment": "Crossover compacto",
+      "release_year": 2026,
+      "availability_status": "available",
+      "eligible": true,
+      "official_link": "https://kia.pt/modelos/kia-ev2/",
+      "image_path": "assets/images/vehicles/kia-ev2/official.jpg",
+      "last_verified": "2026-07-26",
+      "data_sources": [
+        {
+          "type": "official_model_and_price",
+          "url": "https://kia.pt/modelos/kia-ev2/",
+          "verified_on": "2026-07-26"
+        },
+        {
+          "type": "official_specification",
+          "url": "https://kia.pt/modelos/kia-ev2/especificacoes/",
+          "verified_on": "2026-07-26"
+        }
+      ],
+      "variants": [
+        {
+          "name": "Urban 42.2 kWh",
+          "battery_capacity_kwh": 42.2,
+          "wltp_range_combined_km": 312,
+          "power_kw": 108,
+          "power_hp": 147,
+          "pricing": {
+            "particular_list_price_vat_incl": 29490,
+            "particular_campaign_price_vat_incl": 27990,
+            "campaign_conditions": "Campanha Kia para particulares com financiamento a 120 meses, sujeito a aprovação; PVP sem campanha 29.490 €. Confirmar entrada, prazo e MTIC no stand.",
+            "campaign_valid_until": "2026-09-30"
+          }
+        }
+      ],
+      "pros": [
+        "Entrada mais barata da gama elétrica Kia",
+        "Garantia de 7 anos"
+      ],
+      "cons": [
+        "Autonomia de 312 km na versão de entrada",
+        "Versão Drive de 61,4 kWh ainda sem preço particular publicado"
+      ]
+    },
+    {
+      "brand": "Kia",
       "model": "EV3",
       "powertrain": "BEV",
       "segment": "SUV compacto",
@@ -1018,17 +1065,22 @@
       "eligible": true,
       "official_link": "https://kia.pt/modelos/kia-ev3/",
       "image_path": "assets/images/vehicles/kia-ev3/official.jpg",
-      "last_verified": "2026-07-23",
+      "last_verified": "2026-07-26",
       "data_sources": [
         {
-          "type": "official_model",
+          "type": "official_model_and_price",
           "url": "https://kia.pt/modelos/kia-ev3/",
-          "verified_on": "2026-07-23"
+          "verified_on": "2026-07-26"
+        },
+        {
+          "type": "official_specification",
+          "url": "https://kia.pt/modelos/kia-ev3/especificacoes/",
+          "verified_on": "2026-07-26"
         },
         {
           "type": "official_dealer_price",
           "url": "https://www.filintomota.pt/marca/kia/ev3/",
-          "verified_on": "2026-07-23"
+          "verified_on": "2026-07-26"
         }
       ],
       "variants": [
@@ -1042,10 +1094,10 @@
           "torque_nm": 283,
           "dc_max_kw": 102,
           "pricing": {
-            "particular_list_price_vat_incl": 39500,
-            "particular_campaign_price_vat_incl": null,
-            "campaign_conditions": "Preço particular publicado pelo concessionário oficial Kia; a oferta inferior visível no site Kia é exclusiva para empresas e não foi usada.",
-            "campaign_valid_until": null
+            "particular_list_price_vat_incl": 37990,
+            "particular_campaign_price_vat_incl": 36740,
+            "campaign_conditions": "Campanha Kia para particulares com financiamento exclusivo Santander Consumer Bank, sujeito a aprovação; PVP sem campanha 37.990 €. Confirmar entrada, prazo e MTIC no stand.",
+            "campaign_valid_until": "2026-09-30"
           }
         }
       ],
@@ -1056,6 +1108,53 @@
       "cons": [
         "Carga rápida não é líder",
         "Versão Long Range ultrapassa o teto"
+      ]
+    },
+    {
+      "brand": "Kia",
+      "model": "EV4",
+      "powertrain": "BEV",
+      "segment": "Hatchback compacto",
+      "release_year": 2026,
+      "availability_status": "available",
+      "eligible": true,
+      "official_link": "https://kia.pt/modelos/kia-ev4/",
+      "image_path": "assets/images/vehicles/kia-ev4/official.png",
+      "last_verified": "2026-07-26",
+      "data_sources": [
+        {
+          "type": "official_model_and_price",
+          "url": "https://kia.pt/modelos/kia-ev4/",
+          "verified_on": "2026-07-26"
+        },
+        {
+          "type": "official_specification",
+          "url": "https://kia.pt/modelos/kia-ev4/especificacoes/",
+          "verified_on": "2026-07-26"
+        }
+      ],
+      "variants": [
+        {
+          "name": "Drive 58.3 kWh",
+          "battery_capacity_kwh": 58.3,
+          "wltp_range_combined_km": 440,
+          "power_kw": 150,
+          "power_hp": 204,
+          "pricing": {
+            "particular_list_price_vat_incl": 37990,
+            "particular_campaign_price_vat_incl": 36740,
+            "campaign_conditions": "Campanha Kia para particulares com financiamento exclusivo Santander Consumer Bank, sujeito a aprovação; PVP sem campanha 37.990 €. Confirmar entrada, prazo e MTIC no stand.",
+            "campaign_valid_until": "2026-09-30"
+          }
+        }
+      ],
+      "pros": [
+        "Autonomia elevada para o preço",
+        "Garantia de 7 anos"
+      ],
+      "cons": [
+        "Versão Fastback custa 47.200 € e fica fora do teto",
+        "Carregamento DC não é líder do segmento"
       ]
     },
     {
