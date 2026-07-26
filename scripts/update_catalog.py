@@ -143,6 +143,8 @@ def snapshot_changed(previous: dict | None, current: dict) -> bool:
     current_status = current.get("http_status")
     if previous_status is not None or current_status is not None:
         if previous_status in {403, 429} and current_status in {403, 429}:
+            # Bloqueio nos dois lados nao prova ausencia de alteracao (AGENTS.md).
+            # Nao marcamos como alterado, mas o chamador tem de rever no browser.
             return False
         return previous_status != current_status
 
@@ -188,6 +190,7 @@ def main() -> int:
     current: dict[str, dict] = {}
     changed: list[str] = []
     failed: list[str] = []
+    blocked: list[str] = []
     pages: dict[str, tuple[bytes, str]] = {}
     processed: set[str] = set()
 
@@ -227,6 +230,7 @@ def main() -> int:
                 current[url] = snapshot
                 if snapshot_changed(previous_snapshot, blocked):
                     changed.append(url)
+                blocked.append(f"{url} (HTTP {error.code})")
                 print(f"OK {error.code:>8}    {url} (proteção anti-bot; acessível no navegador)")
                 return
             failed.append(url)
@@ -262,6 +266,13 @@ def main() -> int:
     if failed:
         print(f"\nFalha persistente em {len(failed)} fonte(s); nenhuma baseline foi gravada.")
         return 1
+    if blocked:
+        print(
+            f"\nREVER MANUALMENTE NO BROWSER: {len(blocked)} fonte(s) responderam com "
+            "proteção anti-bot. Um bloqueio não prova que a página não mudou, por isso "
+            "preço, autonomia e campanha destas fontes NÃO foram verificados:"
+        )
+        print("\n".join(f"  {item}" for item in blocked))
     if changed and not args.accept_source_changes:
         print("\nFontes alteradas; rever os campos associados e voltar a executar com --accept-source-changes:")
         print("\n".join(changed))

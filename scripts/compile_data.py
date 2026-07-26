@@ -29,7 +29,9 @@ def compile_data() -> None:
     output = "// Gerado automaticamente por scripts/compile_data.py; não editar.\n"
     output += "const CAR_DATA = " + json.dumps(models, indent=2, ensure_ascii=False) + ";\n"
     output += "const DEALER_DATA = " + json.dumps(dealers, indent=2, ensure_ascii=False) + ";\n"
-    BUNDLE_PATH.write_text(output, encoding="utf-8")
+    # Reescrever com conteudo identico so churna o mtime e sujа o watch/graph.
+    if not BUNDLE_PATH.exists() or BUNDLE_PATH.read_text(encoding="utf-8") != output:
+        BUNDLE_PATH.write_text(output, encoding="utf-8")
     variants = sum(len(model["variants"]) for model in models)
     print(f"Compilados {len(models)} modelos / {variants} variantes em {BUNDLE_PATH.relative_to(ROOT)}")
 
