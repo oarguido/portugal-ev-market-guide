@@ -29,9 +29,10 @@ make update-photos   # atualiza também as imagens oficiais em falta
 make update-photos-all # recaptura todas as imagens para auditoria visual
 make prune-images    # arquiva imagens que nenhum modelo referencia
 make validate        # valida e recompila sem acesso à rede
+make freshness       # falha se houver verificações antigas ou campanhas expiradas
 make links           # verifica fontes e páginas dos concessionários
 make test            # executa a suíte de regressão
-make audit           # valida dados/testes e verifica todos os links
+make audit           # valida dados, frescura, testes e todos os links
 make sequential      # update → fotografias em falta → auditoria final
 ```
 
@@ -55,9 +56,16 @@ registadas. Para imediatamente se uma etapa falhar ou se `make update` detetar
 fontes alteradas. Nunca aceita fingerprints automaticamente e não substitui a
 pesquisa manual de novos modelos descrita em `AGENTS.md`.
 
-O validador rejeita fontes com mais de 45 dias, links inválidos, fotografias em
-falta, powertrains que não sejam BEV, campanhas expiradas, variantes cujo preço
-elegível exceda 40.000 € e marcas sem concessionário oficial próximo registado.
+O validador rejeita links inválidos, fotografias em falta, powertrains que não
+sejam BEV, datas mal formadas, variantes cujo preço elegível exceda 40.000 € e
+marcas sem concessionário oficial próximo registado.
+
+As verificações que dependem do calendário — fontes com mais de 45 dias e
+campanhas já expiradas — são reportadas como `AVISO` pelo `make validate` e só
+fazem falhar o `make freshness`, incluído no `make audit`. A separação é
+deliberada: caso contrário o catálogo deixaria de compilar sozinho ao fim de 45
+dias e a suíte de testes passaria a falhar por efeito do tempo, e não por
+regressão.
 
 ## Estrutura
 

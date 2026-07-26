@@ -55,9 +55,7 @@ def validate_catalog(catalog: dict) -> list[str]:
             if parsed.scheme != "https" or not parsed.netloc:
                 errors.append(f"{label}: URL não é HTTPS")
             try:
-                verified = dt.date.fromisoformat(source.get("verified_on", ""))
-                if (TODAY - verified).days > MAX_AGE_DAYS:
-                    errors.append(f"{label}: verificação tem mais de {MAX_AGE_DAYS} dias")
+                dt.date.fromisoformat(source.get("verified_on", ""))
             except ValueError:
                 errors.append(f"{label}: verified_on inválido")
             if not isinstance(source.get("known_limitations"), list) or not source["known_limitations"]:
@@ -81,9 +79,7 @@ def validate_catalog(catalog: dict) -> list[str]:
         if model.get("availability_status") != "available" or model.get("eligible") is not True:
             errors.append(f"{label}: modelo não está disponível/elegível")
         try:
-            verified = dt.date.fromisoformat(model.get("last_verified", ""))
-            if (TODAY - verified).days > MAX_AGE_DAYS:
-                errors.append(f"{label}: verificação tem mais de {MAX_AGE_DAYS} dias")
+            dt.date.fromisoformat(model.get("last_verified", ""))
         except ValueError:
             errors.append(f"{label}: last_verified inválido")
         for field in ("official_link",):
@@ -132,8 +128,7 @@ def validate_catalog(catalog: dict) -> list[str]:
             expiry = pricing.get("campaign_valid_until")
             if pricing.get("particular_campaign_price_vat_incl") and expiry:
                 try:
-                    if dt.date.fromisoformat(expiry) < TODAY:
-                        errors.append(f"{vlabel}: campanha expirada em {expiry}")
+                    dt.date.fromisoformat(expiry)
                 except ValueError:
                     errors.append(f"{vlabel}: campaign_valid_until inválido")
     return errors
@@ -169,9 +164,7 @@ def validate_dealers(catalog: dict, dealer_catalog: dict) -> list[str]:
             if parsed.scheme != "https" or not parsed.netloc:
                 errors.append(f"{label}: {field} não é URL HTTPS")
         try:
-            verified = dt.date.fromisoformat(dealer.get("verified_on", ""))
-            if (TODAY - verified).days > MAX_AGE_DAYS:
-                errors.append(f"{label}: verificação tem mais de {MAX_AGE_DAYS} dias")
+            dt.date.fromisoformat(dealer.get("verified_on", ""))
         except ValueError:
             errors.append(f"{label}: verified_on inválido")
         if "sales" not in dealer.get("services", []):
@@ -190,14 +183,62 @@ def check_link(url: str) -> tuple[int | None, str]:
         return None, str(error)
 
 
+def _older_than_max_age(value: str | None) -> bool:
+    try:
+        return (TODAY - dt.date.fromisoformat(value or "")).days > MAX_AGE_DAYS
+    except ValueError:
+        return False
+
+
+def staleness_warnings(catalog: dict, dealer_catalog: dict) -> list[str]:
+    """Achados que aparecem apenas porque o tempo passou.
+
+    Ficam fora de validate_catalog/validate_dealers de proposito: caso contrario
+    o catalogo deixaria de compilar sozinho ao fim de MAX_AGE_DAYS e a suite de
+    testes passaria a falhar por efeito do calendario, nao por regressao.
+    """
+    notes: list[str] = []
+    for source in catalog.get("discovery_sources", []):
+        if _older_than_max_age(source.get("verified_on")):
+            notes.append(f"Fonte de descoberta {source.get('name', '?')}: verificação tem mais de {MAX_AGE_DAYS} dias")
+    for model in catalog.get("models", []):
+        label = f"{model.get('brand', '?')} {model.get('model', '?')}"
+        if _older_than_max_age(model.get("last_verified")):
+            notes.append(f"{label}: verificação tem mais de {MAX_AGE_DAYS} dias")
+        for variant in model.get("variants", []):
+            pricing = variant.get("pricing", {})
+            expiry = pricing.get("campaign_valid_until")
+            if not pricing.get("particular_campaign_price_vat_incl") or not expiry:
+                continue
+            try:
+                if dt.date.fromisoformat(expiry) < TODAY:
+                    notes.append(f"{label} / {variant.get('name', '?')}: campanha expirada em {expiry}")
+            except ValueError:
+                continue
+    for dealer in dealer_catalog.get("dealers", []):
+        if _older_than_max_age(dealer.get("verified_on")):
+            notes.append(f"Concessionário {dealer.get('brand', '?')}: verificação tem mais de {MAX_AGE_DAYS} dias")
+    return notes
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check-links", action="store_true", help="Verify every unique official HTTP source")
+    parser.add_argument(
+        "--check-freshness",
+        action="store_true",
+        help="Tratar verificações com mais de 45 dias e campanhas expiradas como erro",
+    )
     args = parser.parse_args()
     catalog = load_catalog()
     errors = validate_catalog(catalog)
     dealer_catalog = load_dealers()
     errors.extend(validate_dealers(catalog, dealer_catalog))
+    stale = staleness_warnings(catalog, dealer_catalog)
+    if stale and args.check_freshness:
+        errors.extend(stale)
+    elif stale:
+        print("\n".join(f"AVISO: {note}" for note in stale))
     if args.check_links:
         links = {source["url"] for model in vehicle_records() for source in model["data_sources"]}
         links.update(source["url"] for source in catalog["discovery_sources"])

@@ -1,4 +1,4 @@
-.PHONY: update update-accept update-photos update-photos-all prune-images validate links test audit sequential serve
+.PHONY: update update-accept update-photos update-photos-all prune-images validate freshness links test audit sequential serve
 
 update:
 	python3 scripts/update_catalog.py
@@ -25,6 +25,9 @@ validate:
 	python3 scripts/validate_data.py
 	python3 scripts/compile_data.py
 
+freshness:
+	python3 scripts/validate_data.py --check-freshness
+
 links:
 	python3 scripts/validate_data.py --check-links
 
@@ -34,6 +37,7 @@ test:
 
 audit:
 	$(MAKE) validate
+	$(MAKE) freshness
 	$(MAKE) test
 	$(MAKE) links
 
