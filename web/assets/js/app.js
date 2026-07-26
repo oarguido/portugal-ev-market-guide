@@ -55,7 +55,7 @@ function flattenCarData() {
             turning_radius_m: car.specifications_common?.turning_radius_m || null
           },
           specifications: {
-            battery_type: car.specifications_common?.battery_type || "LFP",
+            battery_type: car.specifications_common?.battery_type || null,
             battery_capacity_kwh: v.battery_capacity_kwh,
             wltp_range_combined_km: v.wltp_range_combined_km,
             wltp_range_urban_km: v.wltp_range_urban_km || null,
@@ -66,13 +66,14 @@ function flattenCarData() {
             torque_nm: v.torque_nm,
             acceleration_0_100_s: v.acceleration_0_100_s,
             max_speed_kmh: v.max_speed_kmh,
+            drivetrain: v.drivetrain || car.specifications_common?.drivetrain || null,
             trunk_capacity_l: car.specifications_common?.trunk_capacity_l || null,
             frunk_capacity_l: car.specifications_common?.frunk_capacity_l || null
           },
           charging: {
-            ac_max_kw: v.ac_max_kw || 11.0,
+            ac_max_kw: v.ac_max_kw || null,
             ac_charge_time_0_100: v.ac_charge_time_0_100 || "N/A",
-            dc_max_kw: v.dc_max_kw || 140.0,
+            dc_max_kw: v.dc_max_kw || null,
             dc_charge_time_30_80_min: v.dc_charge_time_30_80_min || null
           },
           pricing: {
@@ -589,6 +590,8 @@ function updateComparison() {
   const priceA = carA.pricing.particular_campaign_price_vat_incl || carA.pricing.particular_list_price_vat_incl;
   const priceB = carB.pricing.particular_campaign_price_vat_incl || carB.pricing.particular_list_price_vat_incl;
 
+  const { boolLabel, v2lLabel, cellValue } = VehicleSpecs;
+
   const rows = [
     { label: "Marca", valA: carA.brand, valB: carB.brand },
     { label: "Modelo", valA: carA.model, valB: carB.model },
@@ -599,9 +602,9 @@ function updateComparison() {
     { label: "Química da Bateria", valA: carA.technology_advantages?.battery_tech?.chemistry || "N/A", valB: carB.technology_advantages?.battery_tech?.chemistry || "N/A" },
     { label: "Tecnologia Bateria", valA: carA.technology_advantages?.battery_tech?.generation || "N/A", valB: carB.technology_advantages?.battery_tech?.generation || "N/A" },
     { label: "Arquitetura Bateria", valA: carA.technology_advantages?.battery_tech?.architecture || "N/A", valB: carB.technology_advantages?.battery_tech?.architecture || "N/A" },
-    { label: "Bomba de Calor Standard", valA: carA.technology_advantages?.battery_tech?.heat_pump_included ? "Sim" : "Não", valB: carB.technology_advantages?.battery_tech?.heat_pump_included ? "Sim" : "Não" },
-    { label: "Pré-aquecimento Bateria", valA: carA.technology_advantages?.battery_tech?.battery_preheating ? "Sim" : "Não", valB: carB.technology_advantages?.battery_tech?.battery_preheating ? "Sim" : "Não" },
-    { label: "Carregamento Bidirecional V2L", valA: carA.technology_advantages?.bidirectional_charging?.v2l_supported ? `Sim (${carA.technology_advantages.bidirectional_charging.v2l_max_power_kw} kW)` : "Não", valB: carB.technology_advantages?.bidirectional_charging?.v2l_supported ? `Sim (${carB.technology_advantages.bidirectional_charging.v2l_max_power_kw} kW)` : "Não", highlight: true },
+    { label: "Bomba de Calor Standard", valA: boolLabel(carA.technology_advantages?.battery_tech?.heat_pump_included), valB: boolLabel(carB.technology_advantages?.battery_tech?.heat_pump_included) },
+    { label: "Pré-aquecimento Bateria", valA: boolLabel(carA.technology_advantages?.battery_tech?.battery_preheating), valB: boolLabel(carB.technology_advantages?.battery_tech?.battery_preheating) },
+    { label: "Carregamento Bidirecional V2L", valA: v2lLabel(carA), valB: v2lLabel(carB), highlight: true },
     { label: "Capacidade Bateria (kWh)", valA: carA.specifications.battery_capacity_kwh, valB: carB.specifications.battery_capacity_kwh },
     { label: "Autonomia WLTP Mista (km)", valA: carA.specifications.wltp_range_combined_km ? `${carA.specifications.wltp_range_combined_km} km` : "N/A", valB: carB.specifications.wltp_range_combined_km ? `${carB.specifications.wltp_range_combined_km} km` : "N/A", highlight: true },
     { label: "Autonomia WLTP Urbana (km)", valA: carA.specifications.wltp_range_urban_km ? `${carA.specifications.wltp_range_urban_km} km` : "N/A", valB: carB.specifications.wltp_range_urban_km ? `${carB.specifications.wltp_range_urban_km} km` : "N/A" },
@@ -609,7 +612,7 @@ function updateComparison() {
     { label: "Potência Máxima", valA: carA.specifications.power_hp ? `${carA.specifications.power_hp} cv (${carA.specifications.power_kw} kW)` : "N/A", valB: carB.specifications.power_hp ? `${carB.specifications.power_hp} cv (${carB.specifications.power_kw} kW)` : "N/A" },
     { label: "Binário Motor", valA: carA.specifications.torque_nm ? `${carA.specifications.torque_nm} Nm` : "N/A", valB: carB.specifications.torque_nm ? `${carB.specifications.torque_nm} Nm` : "N/A" },
     { label: "Aceleração 0-100 km/h", valA: carA.specifications.acceleration_0_100_s ? `${carA.specifications.acceleration_0_100_s} seg` : "N/A", valB: carB.specifications.acceleration_0_100_s ? `${carB.specifications.acceleration_0_100_s} seg` : "N/A", highlight: true },
-    { label: "Tração", valA: carA.brand === "Leapmotor" || carA.brand === "Volvo" || carA.brand === "MG" ? "Traseira (RWD)" : "Dianteira (FWD)", valB: carB.brand === "Leapmotor" || carB.brand === "Volvo" || carB.brand === "MG" ? "Traseira (RWD)" : "Dianteira (FWD)" },
+    { label: "Tração", valA: carA.specifications.drivetrain || "N/A", valB: carB.specifications.drivetrain || "N/A" },
     { label: "Suspensão Traseira", valA: carA.specifications.suspension_rear || "N/A", valB: carB.specifications.suspension_rear || "N/A" },
     { label: "Capacidade Bagageira", valA: carA.specifications.trunk_capacity_l ? `${carA.specifications.trunk_capacity_l} L` : "N/A", valB: carB.specifications.trunk_capacity_l ? `${carB.specifications.trunk_capacity_l} L` : "N/A" },
     { label: "Comprimento Exterior", valA: carA.dimensions.length_mm ? `${carA.dimensions.length_mm / 1000} m` : "N/A", valB: carB.dimensions.length_mm ? `${carB.dimensions.length_mm / 1000} m` : "N/A" },
@@ -620,8 +623,8 @@ function updateComparison() {
     { label: "Potência Máxima DC", valA: carA.charging.dc_max_kw ? `${carA.charging.dc_max_kw} kW` : "N/A", valB: carB.charging.dc_max_kw ? `${carB.charging.dc_max_kw} kW` : "N/A" },
     { label: "Carregamento DC 30-80%", valA: carA.charging.dc_charge_time_30_80_min ? `${carA.charging.dc_charge_time_30_80_min} min` : "N/A", valB: carB.charging.dc_charge_time_30_80_min ? `${carB.charging.dc_charge_time_30_80_min} min` : "N/A", highlight: true },
     { label: "Processador Infotainment", valA: carA.technology_advantages?.infotainment_tech?.processor || "N/A", valB: carB.technology_advantages?.infotainment_tech?.processor || "N/A" },
-    { label: "Google Built-in", valA: carA.technology_advantages?.infotainment_tech?.google_built_in ? "Sim" : "Não", valB: carB.technology_advantages?.infotainment_tech?.google_built_in ? "Sim" : "Não" },
-    { label: "Atualizações OTA", valA: carA.technology_advantages?.infotainment_tech?.ota_updates ? "Sim" : "Não", valB: carB.technology_advantages?.infotainment_tech?.ota_updates ? "Sim" : "Não" }
+    { label: "Google Built-in", valA: boolLabel(carA.technology_advantages?.infotainment_tech?.google_built_in), valB: boolLabel(carB.technology_advantages?.infotainment_tech?.google_built_in) },
+    { label: "Atualizações OTA", valA: boolLabel(carA.technology_advantages?.infotainment_tech?.ota_updates), valB: boolLabel(carB.technology_advantages?.infotainment_tech?.ota_updates) }
   ];
 
   rows.forEach(r => {
@@ -634,13 +637,13 @@ function updateComparison() {
 
     const tdValA = document.createElement("td");
     tdValA.className = r.highlight ? "val-highlight accent-color" : "";
-    tdValA.textContent = r.valA !== null ? r.valA : "N/A";
+    tdValA.textContent = cellValue(r.valA);
     tr.appendChild(tdValA);
 
     const tdValB = document.createElement("td");
     tdValB.className = r.highlight ? "val-highlight" : "";
     tdValB.style.color = r.highlight ? "var(--accent-purple)" : "";
-    tdValB.textContent = r.valB !== null ? r.valB : "N/A";
+    tdValB.textContent = cellValue(r.valB);
     tr.appendChild(tdValB);
 
     tbody.appendChild(tr);
@@ -839,6 +842,11 @@ function updateTCO() {
   const selectedId = document.getElementById("tco-select-model")?.value;
   const car = flatCars.find(item => item.id === selectedId) || flatCars[0];
   const cons = car?.specifications.wltp_consumption_combined_kwh_100km;
+  if (car && !cons) {
+    document.getElementById("tco-savings-title").textContent = "Poupança não calculável";
+    document.getElementById("tco-savings-text").textContent = `${car.brand} ${car.model} (${car.variant}): consumo WLTP não publicado pela marca, por isso não é possível estimar o custo de carregamento.`;
+    return;
+  }
   const annualElecCost = cons ? (annualKm / 100) * cons * elecPrice : 0;
   const ratio = gasAnnualCost ? annualElecCost / gasAnnualCost : 0;
   if (car && cons) renderTCOBar(chartContainer, `${car.brand} ${car.model} (${car.variant})`, annualElecCost, "eletrico", ratio);
