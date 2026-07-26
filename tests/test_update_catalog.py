@@ -1,7 +1,12 @@
+import contextlib
+import io
+import pathlib
+import tempfile
 import unittest
 import urllib.error
 from unittest.mock import MagicMock, patch
 
+import update_catalog
 from update_catalog import (
     BINARY_FINGERPRINT_VERSION,
     HTML_FINGERPRINT_VERSION,
@@ -105,6 +110,42 @@ class SourceFingerprintTests(unittest.TestCase):
         with self.assertRaises(urllib.error.HTTPError):
             fetch("https://example.pt/modelo")
         self.assertEqual(urlopen.call_count, 3)
+
+
+    @patch("update_catalog.subprocess.run")
+    @patch("update_catalog.time.sleep")
+    @patch("update_catalog.urllib.request.urlopen")
+    def test_blocked_sources_are_listed_for_manual_review(self, urlopen, _sleep, _run):
+        """Um 403 nao prova que a pagina nao mudou: tem de aparecer no relatorio."""
+        urlopen.side_effect = urllib.error.HTTPError(
+            "https://bloqueado.pt/modelo", 403, "Forbidden", {}, None
+        )
+        catalog = {
+            "discovery_sources": [],
+            "models": [
+                {
+                    "brand": "Marca",
+                    "model": "Modelo",
+                    "official_link": "https://bloqueado.pt/modelo",
+                    "data_sources": [{"url": "https://bloqueado.pt/modelo"}],
+                }
+            ],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            cache = pathlib.Path(tmp) / "source_snapshots.json"
+            output = io.StringIO()
+            with (
+                patch("update_catalog.load_catalog", return_value=catalog),
+                patch("update_catalog.load_dealers", return_value={"dealers": []}),
+                patch("update_catalog.CACHE", cache),
+                patch("sys.argv", ["update_catalog.py"]),
+                contextlib.redirect_stdout(output),
+            ):
+                code = update_catalog.main()
+        printed = output.getvalue()
+        self.assertEqual(code, 0)
+        self.assertIn("REVER MANUALMENTE NO BROWSER", printed)
+        self.assertIn("https://bloqueado.pt/modelo (HTTP 403)", printed)
 
 
 if __name__ == "__main__":

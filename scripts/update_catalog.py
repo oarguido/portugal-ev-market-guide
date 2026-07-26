@@ -190,7 +190,7 @@ def main() -> int:
     current: dict[str, dict] = {}
     changed: list[str] = []
     failed: list[str] = []
-    blocked: list[str] = []
+    blocked_sources: list[str] = []
     pages: dict[str, tuple[bytes, str]] = {}
     processed: set[str] = set()
 
@@ -230,7 +230,7 @@ def main() -> int:
                 current[url] = snapshot
                 if snapshot_changed(previous_snapshot, blocked):
                     changed.append(url)
-                blocked.append(f"{url} (HTTP {error.code})")
+                blocked_sources.append(f"{url} (HTTP {error.code})")
                 print(f"OK {error.code:>8}    {url} (proteção anti-bot; acessível no navegador)")
                 return
             failed.append(url)
@@ -266,13 +266,13 @@ def main() -> int:
     if failed:
         print(f"\nFalha persistente em {len(failed)} fonte(s); nenhuma baseline foi gravada.")
         return 1
-    if blocked:
+    if blocked_sources:
         print(
-            f"\nREVER MANUALMENTE NO BROWSER: {len(blocked)} fonte(s) responderam com "
+            f"\nREVER MANUALMENTE NO BROWSER: {len(blocked_sources)} fonte(s) responderam com "
             "proteção anti-bot. Um bloqueio não prova que a página não mudou, por isso "
             "preço, autonomia e campanha destas fontes NÃO foram verificados:"
         )
-        print("\n".join(f"  {item}" for item in blocked))
+        print("\n".join(f"  {item}" for item in blocked_sources))
     if changed and not args.accept_source_changes:
         print("\nFontes alteradas; rever os campos associados e voltar a executar com --accept-source-changes:")
         print("\n".join(changed))
