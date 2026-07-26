@@ -6,19 +6,6 @@
   "last_verified": "2026-07-23",
   "dealers": [
     {
-      "brand": "Abarth",
-      "name": "C.A.M. – Porto Delfim Ferreira",
-      "address": "Rua Delfim Ferreira, 421",
-      "postal_code": "4100-201",
-      "locality": "Porto",
-      "phone": "+351 220 001 430",
-      "email": null,
-      "official_url": "https://rede.abarth.pt/cam-porto/contacte-nos/",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Abarth%20CAM%20Porto%20Rua%20Delfim%20Ferreira%20421",
-      "services": ["sales", "service"],
-      "verified_on": "2026-07-23"
-    },
-    {
       "brand": "AION",
       "name": "GAC AION Porto – Carby",
       "address": "Estrada da Circunvalação, 10408",
@@ -28,20 +15,26 @@
       "email": null,
       "official_url": "https://gac-portugal.pt/rede-de-concessionarios/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=GAC%20AION%20Carby%20Porto%20Circunvalacao%2010408",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
-      "brand": "Alpine",
-      "name": "Alpine Store Porto",
-      "address": "Rua de Grijó, 123/127",
-      "postal_code": "4150-384",
+      "brand": "Abarth",
+      "name": "C.A.M. – Porto Delfim Ferreira",
+      "address": "Rua Delfim Ferreira, 421",
+      "postal_code": "4100-201",
       "locality": "Porto",
-      "phone": "+351 226 190 700",
+      "phone": "+351 220 001 430",
       "email": null,
-      "official_url": "https://www.alpinecars.pt/centros-alpine.html",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Alpine%20Store%20Porto%20Rua%20de%20Grijo%20123",
-      "services": ["sales", "service"],
+      "official_url": "https://rede.abarth.pt/cam-porto/contacte-nos/",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Abarth%20CAM%20Porto%20Rua%20Delfim%20Ferreira%20421",
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -54,7 +47,26 @@
       "email": null,
       "official_url": "https://www.cam.pt/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
+      "verified_on": "2026-07-23"
+    },
+    {
+      "brand": "Alpine",
+      "name": "Alpine Store Porto",
+      "address": "Rua de Grijó, 123/127",
+      "postal_code": "4150-384",
+      "locality": "Porto",
+      "phone": "+351 226 190 700",
+      "email": null,
+      "official_url": "https://www.alpinecars.pt/centros-alpine.html",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Alpine%20Store%20Porto%20Rua%20de%20Grijo%20123",
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -67,7 +79,10 @@
       "email": "porto@caetanotec.pt",
       "official_url": "https://www.byd-auto.pt/concessionarios",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20BYD%20Porto%20Campo%20Alegre%20724",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -80,7 +95,10 @@
       "email": null,
       "official_url": "https://changan-auto.pt/onde-estamos/cam-porto/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Changan%20CAM%20Porto%20Rua%20Delfim%20Ferreira%20188",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -93,7 +111,10 @@
       "email": "stand.circunvalacao@filintomota.pt",
       "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -106,7 +127,10 @@
       "email": null,
       "official_url": "https://caetano.pt/dacia/contactos-concessionarios/porto-circunvalacao/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Dacia%20Caetano%20Circunvalacao%2012679",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -119,7 +143,10 @@
       "email": "stand.circunvalacao@filintomota.pt",
       "official_url": "https://www.filintomota.pt/marcas/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -132,7 +159,10 @@
       "email": "stand.circunvalacao@filintomota.pt",
       "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -145,7 +175,9 @@
       "email": null,
       "official_url": "https://caetano.pt/geely/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Geely%20Porto",
-      "services": ["sales"],
+      "services": [
+        "sales"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -158,20 +190,10 @@
       "email": "vap@vap.pt",
       "official_url": "https://www.hyundai.pt/concessionarios/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Hyundai%20VAP%20Via%20Norte%20Sao%20Mamede%20de%20Infesta",
-      "services": ["sales", "service"],
-      "verified_on": "2026-07-23"
-    },
-    {
-      "brand": "Jeep",
-      "name": "C.A.M. Porto",
-      "address": "Rua Delfim Ferreira, 459",
-      "postal_code": "4100-199",
-      "locality": "Porto",
-      "phone": "+351 220 001 430",
-      "email": null,
-      "official_url": "https://www.cam.pt/",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -184,7 +206,26 @@
       "email": null,
       "official_url": "https://omodajaecoo.pt/concessionarios/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Carby%20Jaecoo%20Porto%20Circunvalacao%2010448",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
+      "verified_on": "2026-07-23"
+    },
+    {
+      "brand": "Jeep",
+      "name": "C.A.M. Porto",
+      "address": "Rua Delfim Ferreira, 459",
+      "postal_code": "4100-199",
+      "locality": "Porto",
+      "phone": "+351 220 001 430",
+      "email": null,
+      "official_url": "https://www.cam.pt/",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -197,7 +238,10 @@
       "email": "stand.maia@filintomota.pt",
       "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-maia/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Kia%20Maia",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -210,7 +254,10 @@
       "email": "stand.circunvalacao@filintomota.pt",
       "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -223,8 +270,27 @@
       "email": null,
       "official_url": "https://mg.jop.pt/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=JOP%20MG%20Porto%20Rua%20Delfim%20Ferreira%2084",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
+    },
+    {
+      "brand": "MINI",
+      "name": "Caetano MINI Porto",
+      "address": "Rua Manuel Pinto de Azevedo, 462/500",
+      "postal_code": "4100-320",
+      "locality": "Porto",
+      "phone": "+351 226 192 300",
+      "email": "geral@caetanoretail.pt",
+      "official_url": "https://caetano.pt/mini/contactos/",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20MINI%20Porto%20Rua%20Manuel%20Pinto%20de%20Azevedo",
+      "services": [
+        "sales",
+        "service"
+      ],
+      "verified_on": "2026-07-26"
     },
     {
       "brand": "Nissan",
@@ -236,7 +302,10 @@
       "email": null,
       "official_url": "https://caetano.pt/nissan/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Power%20Nissan%20Porto",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -249,7 +318,10 @@
       "email": null,
       "official_url": "https://omodajaecoo.pt/concessionarios/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Carby%20Omoda%20Porto%20Circunvalacao%2010448",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -262,7 +334,10 @@
       "email": "stand.circunvalacao@filintomota.pt",
       "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -275,7 +350,10 @@
       "email": "stand.circunvalacao@filintomota.pt",
       "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -288,7 +366,10 @@
       "email": null,
       "official_url": "https://caetano.pt/renault/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Renault%20Caetano%20Circunvalacao%2012679",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -301,7 +382,10 @@
       "email": null,
       "official_url": "https://www.suzukiauto.pt/index.php/concesionarios",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Motorlife%20Citiauto%20Suzuki%20Vila%20Nova%20de%20Gaia",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -314,7 +398,11 @@
       "email": null,
       "official_url": "https://www.tesla.com/pt_PT/findus/list/stores/Portugal",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Tesla%20Center%20Porto%20Fontes%20Pereira%20de%20Melo%20318",
-      "services": ["sales", "service", "delivery"],
+      "services": [
+        "sales",
+        "service",
+        "delivery"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -327,7 +415,10 @@
       "email": "vap@vap.pt",
       "official_url": "https://vw.vap.pt/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Volkswagen%20VAP%20Via%20Norte%20Sao%20Mamede%20de%20Infesta",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -340,7 +431,10 @@
       "email": null,
       "official_url": "https://volvo.jop.pt/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=JOP%20Volvo%20Porto%20Manuel%20Pinto%20de%20Azevedo%20671",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -353,7 +447,10 @@
       "email": null,
       "official_url": "https://pt.smart.com/pt/retailer-list/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=smart%20Sociedade%20Comercial%20C%20Santos%20Boavista",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     },
     {
@@ -366,7 +463,10 @@
       "email": null,
       "official_url": "https://skoda.carvap.pt/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Skoda%20Carvap%20Via%20Norte%20Sao%20Mamede%20de%20Infesta",
-      "services": ["sales", "service"],
+      "services": [
+        "sales",
+        "service"
+      ],
       "verified_on": "2026-07-23"
     }
   ]

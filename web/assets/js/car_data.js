@@ -198,6 +198,130 @@ const CAR_DATA = [
     ]
   },
   {
+    "brand": "MINI",
+    "model": "Cooper Elétrico",
+    "powertrain": "BEV",
+    "segment": "Citadino",
+    "release_year": 2024,
+    "availability_status": "available",
+    "eligible": true,
+    "official_link": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
+    "image_path": "assets/images/vehicles/mini-cooper-el-trico/official.png",
+    "last_verified": "2026-07-26",
+    "data_sources": [
+      {
+        "type": "official_model",
+        "url": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
+        "verified_on": "2026-07-26"
+      },
+      {
+        "type": "official_versions_and_price",
+        "url": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico/modelos.html",
+        "verified_on": "2026-07-26"
+      }
+    ],
+    "variants": [
+      {
+        "name": "E Essential 36.6 kWh",
+        "battery_capacity_kwh": 36.6,
+        "wltp_range_combined_km": 300,
+        "wltp_consumption_combined_kwh_100km": 13.8,
+        "power_kw": 135,
+        "power_hp": 184,
+        "pricing": {
+          "particular_list_price_vat_incl": 33850,
+          "particular_campaign_price_vat_incl": null,
+          "campaign_conditions": null,
+          "campaign_valid_until": null
+        }
+      },
+      {
+        "name": "SE Essential 49.2 kWh",
+        "battery_capacity_kwh": 49.2,
+        "wltp_range_combined_km": 400,
+        "wltp_consumption_combined_kwh_100km": 14.1,
+        "power_kw": 160,
+        "power_hp": 218,
+        "pricing": {
+          "particular_list_price_vat_incl": 36800,
+          "particular_campaign_price_vat_incl": null,
+          "campaign_conditions": null,
+          "campaign_valid_until": null
+        }
+      }
+    ],
+    "pros": [
+      "Comportamento dinâmico de referência",
+      "Versão SE passa dos 390 km"
+    ],
+    "cons": [
+      "Espaço traseiro reduzido",
+      "Acabamentos Classic e Favoured sobem depressa de preço"
+    ]
+  },
+  {
+    "brand": "MINI",
+    "model": "Aceman",
+    "powertrain": "BEV",
+    "segment": "Crossover compacto",
+    "release_year": 2024,
+    "availability_status": "available",
+    "eligible": true,
+    "official_link": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
+    "image_path": "assets/images/vehicles/mini-aceman/official.png",
+    "last_verified": "2026-07-26",
+    "data_sources": [
+      {
+        "type": "official_model",
+        "url": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
+        "verified_on": "2026-07-26"
+      },
+      {
+        "type": "official_versions_and_price",
+        "url": "https://www.mini.pt/pt_PT/home/gama/mini-aceman/modelos.html",
+        "verified_on": "2026-07-26"
+      }
+    ],
+    "variants": [
+      {
+        "name": "E Essential 38.5 kWh",
+        "battery_capacity_kwh": 38.5,
+        "wltp_range_combined_km": 309,
+        "wltp_consumption_combined_kwh_100km": 14.1,
+        "power_kw": 135,
+        "power_hp": 184,
+        "pricing": {
+          "particular_list_price_vat_incl": 35900,
+          "particular_campaign_price_vat_incl": null,
+          "campaign_conditions": null,
+          "campaign_valid_until": null
+        }
+      },
+      {
+        "name": "SE Essential 49.2 kWh",
+        "battery_capacity_kwh": 49.2,
+        "wltp_range_combined_km": 405,
+        "wltp_consumption_combined_kwh_100km": 14.0,
+        "power_kw": 160,
+        "power_hp": 218,
+        "pricing": {
+          "particular_list_price_vat_incl": 38550,
+          "particular_campaign_price_vat_incl": null,
+          "campaign_conditions": null,
+          "campaign_valid_until": null
+        }
+      }
+    ],
+    "pros": [
+      "Mais espaço que o Cooper com a mesma mecânica",
+      "Versão SE chega aos 405 km"
+    ],
+    "cons": [
+      "Autonomia da versão E fica nos 309 km",
+      "Só a partir do Essential fica abaixo dos 40.000 €"
+    ]
+  },
+  {
     "brand": "MG",
     "model": "MG4",
     "powertrain": "BEV",
@@ -2673,22 +2797,6 @@ const CAR_DATA = [
   }
 ];
 const DEALER_DATA = {
-  "Abarth": {
-    "brand": "Abarth",
-    "name": "C.A.M. – Porto Delfim Ferreira",
-    "address": "Rua Delfim Ferreira, 421",
-    "postal_code": "4100-201",
-    "locality": "Porto",
-    "phone": "+351 220 001 430",
-    "email": null,
-    "official_url": "https://rede.abarth.pt/cam-porto/contacte-nos/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Abarth%20CAM%20Porto%20Rua%20Delfim%20Ferreira%20421",
-    "services": [
-      "sales",
-      "service"
-    ],
-    "verified_on": "2026-07-23"
-  },
   "AION": {
     "brand": "AION",
     "name": "GAC AION Porto – Carby",
@@ -2705,16 +2813,16 @@ const DEALER_DATA = {
     ],
     "verified_on": "2026-07-23"
   },
-  "Alpine": {
-    "brand": "Alpine",
-    "name": "Alpine Store Porto",
-    "address": "Rua de Grijó, 123/127",
-    "postal_code": "4150-384",
+  "Abarth": {
+    "brand": "Abarth",
+    "name": "C.A.M. – Porto Delfim Ferreira",
+    "address": "Rua Delfim Ferreira, 421",
+    "postal_code": "4100-201",
     "locality": "Porto",
-    "phone": "+351 226 190 700",
+    "phone": "+351 220 001 430",
     "email": null,
-    "official_url": "https://www.alpinecars.pt/centros-alpine.html",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Alpine%20Store%20Porto%20Rua%20de%20Grijo%20123",
+    "official_url": "https://rede.abarth.pt/cam-porto/contacte-nos/",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Abarth%20CAM%20Porto%20Rua%20Delfim%20Ferreira%20421",
     "services": [
       "sales",
       "service"
@@ -2731,6 +2839,22 @@ const DEALER_DATA = {
     "email": null,
     "official_url": "https://www.cam.pt/",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
+    "services": [
+      "sales",
+      "service"
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "Alpine": {
+    "brand": "Alpine",
+    "name": "Alpine Store Porto",
+    "address": "Rua de Grijó, 123/127",
+    "postal_code": "4150-384",
+    "locality": "Porto",
+    "phone": "+351 226 190 700",
+    "email": null,
+    "official_url": "https://www.alpinecars.pt/centros-alpine.html",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Alpine%20Store%20Porto%20Rua%20de%20Grijo%20123",
     "services": [
       "sales",
       "service"
@@ -2864,22 +2988,6 @@ const DEALER_DATA = {
     ],
     "verified_on": "2026-07-23"
   },
-  "Jeep": {
-    "brand": "Jeep",
-    "name": "C.A.M. Porto",
-    "address": "Rua Delfim Ferreira, 459",
-    "postal_code": "4100-199",
-    "locality": "Porto",
-    "phone": "+351 220 001 430",
-    "email": null,
-    "official_url": "https://www.cam.pt/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
-    "services": [
-      "sales",
-      "service"
-    ],
-    "verified_on": "2026-07-23"
-  },
   "Jaecoo": {
     "brand": "Jaecoo",
     "name": "Carby Omoda & Jaecoo Porto",
@@ -2890,6 +2998,22 @@ const DEALER_DATA = {
     "email": null,
     "official_url": "https://omodajaecoo.pt/concessionarios/",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Carby%20Jaecoo%20Porto%20Circunvalacao%2010448",
+    "services": [
+      "sales",
+      "service"
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "Jeep": {
+    "brand": "Jeep",
+    "name": "C.A.M. Porto",
+    "address": "Rua Delfim Ferreira, 459",
+    "postal_code": "4100-199",
+    "locality": "Porto",
+    "phone": "+351 220 001 430",
+    "email": null,
+    "official_url": "https://www.cam.pt/",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
     "services": [
       "sales",
       "service"
@@ -2943,6 +3067,22 @@ const DEALER_DATA = {
       "service"
     ],
     "verified_on": "2026-07-23"
+  },
+  "MINI": {
+    "brand": "MINI",
+    "name": "Caetano MINI Porto",
+    "address": "Rua Manuel Pinto de Azevedo, 462/500",
+    "postal_code": "4100-320",
+    "locality": "Porto",
+    "phone": "+351 226 192 300",
+    "email": "geral@caetanoretail.pt",
+    "official_url": "https://caetano.pt/mini/contactos/",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20MINI%20Porto%20Rua%20Manuel%20Pinto%20de%20Azevedo",
+    "services": [
+      "sales",
+      "service"
+    ],
+    "verified_on": "2026-07-26"
   },
   "Nissan": {
     "brand": "Nissan",

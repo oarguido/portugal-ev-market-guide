@@ -687,5 +687,38 @@
     "bytes": 530556,
     "normalized_chars": 13972,
     "source_type": "official_specification"
+  },
+  "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html": {
+    "http_status": 408,
+    "final_url": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
+    "bytes": 0,
+    "source_type": "official_model"
+  },
+  "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico/modelos.html": {
+    "http_status": 408,
+    "final_url": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico/modelos.html",
+    "bytes": 0,
+    "source_type": "official_versions_and_price"
+  },
+  "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html": {
+    "http_status": 408,
+    "final_url": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
+    "bytes": 0,
+    "source_type": "official_model"
+  },
+  "https://www.mini.pt/pt_PT/home/gama/mini-aceman/modelos.html": {
+    "http_status": 408,
+    "final_url": "https://www.mini.pt/pt_PT/home/gama/mini-aceman/modelos.html",
+    "bytes": 0,
+    "source_type": "official_versions_and_price"
+  },
+  "https://caetano.pt/mini/contactos/": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "ea58fd981649fa31ec518432f14b15c7fd12b50dac2a108715b6a6ddb9e69334",
+    "raw_sha256": "bfd4d403760bb5295fb60af070bbe453b542db6522ca998a49943f18d3f5c1a4",
+    "final_url": "https://caetano.pt/mini/contactos/",
+    "bytes": 136889,
+    "normalized_chars": 1169,
+    "source_type": "official_dealer"
   }
 }

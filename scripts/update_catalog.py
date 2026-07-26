@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import re
+import socket
 import subprocess
 import sys
 import time
@@ -142,7 +143,7 @@ def snapshot_changed(previous: dict | None, current: dict) -> bool:
     previous_status = previous.get("http_status")
     current_status = current.get("http_status")
     if previous_status is not None or current_status is not None:
-        if previous_status in {403, 429} and current_status in {403, 429}:
+        if previous_status in {403, 429, 408} and current_status in {403, 429, 408}:
             # Bloqueio nos dois lados nao prova ausencia de alteracao (AGENTS.md).
             # Nao marcamos como alterado, mas o chamador tem de rever no browser.
             return False
@@ -235,6 +236,24 @@ def main() -> int:
                 return
             failed.append(url)
             print(f"ERRO {url}: HTTP {error.code}")
+        except (TimeoutError, socket.timeout, urllib.error.URLError) as error:
+            # mini.pt e ford.pt nao respondem a urllib mas abrem no browser. Tratar
+            # como bloqueio (igual a 403/429) e nao como falha: caso contrario uma
+            # fonte destas trava o `make update` inteiro e nenhuma baseline e gravada.
+            # Nao prova ausencia de alteracao, por isso vai para revisao manual.
+            blocked = blocked_snapshot(408, url, source_type=source_type)
+            previous_snapshot = previous.get(url)
+            snapshot = (
+                dict(previous_snapshot)
+                if previous_snapshot and previous_snapshot.get("sha256")
+                else blocked
+            )
+            current[url] = snapshot
+            if snapshot_changed(previous_snapshot, blocked):
+                changed.append(url)
+            blocked_sources.append(f"{url} (sem resposta: {type(error).__name__})")
+            print(f"OK {'408':>8}    {url} (sem resposta a urllib; acessível no navegador)")
+            return
         except Exception as error:
             failed.append(url)
             print(f"ERRO {url}: {error}")
