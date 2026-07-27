@@ -1,6 +1,7 @@
 import os
 import struct
 
+
 def get_png_info(filepath):
     with open(filepath, 'rb') as f:
         data = f.read(24)

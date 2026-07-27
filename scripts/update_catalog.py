@@ -11,15 +11,14 @@ import argparse
 import hashlib
 import json
 import re
-import socket
 import subprocess
 import sys
 import time
 import unicodedata
-import urllib.request
 import urllib.error
+import urllib.request
 from html.parser import HTMLParser
-from pathlib import Path
+from typing import ClassVar
 from urllib.parse import urljoin
 
 from compile_data import ROOT, load_catalog, load_dealers
@@ -29,16 +28,16 @@ HTML_FINGERPRINT_VERSION = "html-visible-text-v1"
 BINARY_FINGERPRINT_VERSION = "binary-raw-v1"
 FETCH_ATTEMPTS = 3
 RETRYABLE_HTTP_CODES = {500, 502, 503, 504}
-DYNAMIC_VISIBLE_TEXT = re.compile(r"\bAtualmente\s+(?:aberto|fechado)\b", re.I)
-OG_IMAGE = re.compile(r'<meta[^>]+(?:property|name)=["\']og:image["\'][^>]+content=["\']([^"\']+)', re.I)
-OG_IMAGE_REVERSED = re.compile(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\']og:image["\']', re.I)
+DYNAMIC_VISIBLE_TEXT = re.compile(r"\bAtualmente\s+(?:aberto|fechado)\b", re.IGNORECASE)
+OG_IMAGE = re.compile(r'<meta[^>]+(?:property|name)=["\']og:image["\'][^>]+content=["\']([^"\']+)', re.IGNORECASE)
+OG_IMAGE_REVERSED = re.compile(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\']og:image["\']', re.IGNORECASE)
 
 
 class VisibleTextParser(HTMLParser):
     """Extract stable user-visible text while ignoring volatile page machinery."""
 
-    SKIPPED_TAGS = {"script", "style", "noscript", "svg", "template"}
-    META_FIELDS = {"description", "og:title", "og:description"}
+    SKIPPED_TAGS: ClassVar[set[str]] = {"script", "style", "noscript", "svg", "template"}
+    META_FIELDS: ClassVar[set[str]] = {"description", "og:title", "og:description"}
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -236,7 +235,7 @@ def main() -> int:
                 return
             failed.append(url)
             print(f"ERRO {url}: HTTP {error.code}")
-        except (TimeoutError, socket.timeout, urllib.error.URLError) as error:
+        except (TimeoutError, urllib.error.URLError) as error:
             # mini.pt e ford.pt nao respondem a urllib mas abrem no browser. Tratar
             # como bloqueio (igual a 403/429) e nao como falha: caso contrario uma
             # fonte destas trava o `make update` inteiro e nenhuma baseline e gravada.
@@ -254,7 +253,8 @@ def main() -> int:
             blocked_sources.append(f"{url} (sem resposta: {type(error).__name__})")
             print(f"OK {'408':>8}    {url} (sem resposta a urllib; acessível no navegador)")
             return
-        except Exception as error:
+        except Exception as error:  # noqa: BLE001 - uma fonte com erro inesperado
+            # nao pode derrubar a recolha das restantes; fica registada em `failed`.
             failed.append(url)
             print(f"ERRO {url}: {error}")
 

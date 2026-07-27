@@ -1,5 +1,6 @@
-import os
 import json
+import os
+
 
 def translate_data():
     root_dir = os.path.dirname(os.path.abspath(__file__))
@@ -178,7 +179,7 @@ def translate_data():
                 with open(filepath, "r", encoding="utf-8") as file:
                     try:
                         content = json.load(file)
-                    except Exception as e:
+                    except (OSError, json.JSONDecodeError) as e:
                         print(f"Error reading {f}: {e}")
                         continue
 
@@ -199,7 +200,7 @@ def translate_data():
 
                     # Also translate features list values if any are in English (basic translation)
                     if "features" in content and isinstance(content["features"], dict):
-                        for trim, feat_list in content["features"].items():
+                        for feat_list in content["features"].values():
                             if isinstance(feat_list, list):
                                 for idx, feat in enumerate(feat_list):
                                     # Simple feature replacements

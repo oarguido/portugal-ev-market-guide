@@ -4,18 +4,19 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
-import json
 import urllib.error
 import urllib.request
-from pathlib import Path
 from urllib.parse import urlparse
+from zoneinfo import ZoneInfo
 
 from compile_data import ROOT, load_catalog, load_dealers, vehicle_records
 
-TODAY = dt.date.today()
+# Data local portuguesa: campanhas e verificacoes sao datadas no fuso do mercado.
+TODAY = dt.datetime.now(tz=ZoneInfo("Europe/Lisbon")).date()
 MAX_PRICE = 40_000
 MAX_AGE_DAYS = 45
-VALID_LINK_CODES = {200, 301, 302, 403, 429}
+# 408 = sem resposta a urllib mas acessivel no browser (ver check_link).
+VALID_LINK_CODES = {200, 301, 302, 403, 408, 429}
 MODEL_REQUIRED = {"brand", "model", "powertrain", "segment", "availability_status", "eligible", "official_link", "image_path", "last_verified", "data_sources", "variants"}
 VARIANT_REQUIRED = {"name", "battery_capacity_kwh", "wltp_range_combined_km", "power_kw", "power_hp", "pricing"}
 DEALER_REQUIRED = {"brand", "name", "address", "postal_code", "locality", "phone", "email", "official_url", "maps_url", "services", "verified_on"}
@@ -179,7 +180,14 @@ def check_link(url: str) -> tuple[int | None, str]:
             return response.status, response.geturl()
     except urllib.error.HTTPError as error:
         return error.code, error.geturl()
-    except (urllib.error.URLError, TimeoutError) as error:
+    except TimeoutError as error:
+        # mini.pt e ford.pt nao respondem a urllib mas abrem no browser. Igual ao
+        # update_catalog: bloqueio (408), nao link partido. DNS/ligacao recusada
+        # continuam a falhar, porque ai o link esta mesmo morto.
+        return 408, str(error)
+    except urllib.error.URLError as error:
+        if isinstance(error.reason, TimeoutError):
+            return 408, str(error)
         return None, str(error)
 
 

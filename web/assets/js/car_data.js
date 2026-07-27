@@ -206,7 +206,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
-    "image_path": "assets/images/vehicles/mini-cooper-el-trico/official.png",
+    "image_path": "assets/images/vehicles/mini-cooper-el-trico/official.webp",
     "last_verified": "2026-07-26",
     "data_sources": [
       {
@@ -268,7 +268,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
-    "image_path": "assets/images/vehicles/mini-aceman/official.png",
+    "image_path": "assets/images/vehicles/mini-aceman/official.webp",
     "last_verified": "2026-07-26",
     "data_sources": [
       {
@@ -1218,7 +1218,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://kia.pt/modelos/kia-ev4/",
-    "image_path": "assets/images/vehicles/kia-ev4/official.png",
+    "image_path": "assets/images/vehicles/kia-ev4/official.jpg",
     "last_verified": "2026-07-26",
     "data_sources": [
       {
@@ -2738,7 +2738,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.renault.pt/veiculos-eletricos/twingo.html",
-    "image_path": "assets/images/vehicles/renault-twingo-e-tech-el-trico/official.png",
+    "image_path": "assets/images/vehicles/renault-twingo-e-tech-el-trico/official.webp",
     "last_verified": "2026-07-26",
     "data_sources": [
       {
