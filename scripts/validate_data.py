@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import datetime as dt
 import urllib.error
 import urllib.request
@@ -15,8 +16,20 @@ from compile_data import ROOT, load_catalog, load_dealers, vehicle_records
 TODAY = dt.datetime.now(tz=ZoneInfo("Europe/Lisbon")).date()
 MAX_PRICE = 40_000
 MAX_AGE_DAYS = 45
-# 408 = sem resposta a urllib mas acessivel no browser (ver check_link).
-VALID_LINK_CODES = {200, 301, 302, 403, 408, 429}
+# 200/301/302 provam que a ligacao esta viva E que o conteudo foi lido.
+VERIFIED_LINK_CODES = {200, 301, 302}
+# 403/429 = anti-bot; 408 = sem resposta a urllib mas acessivel no browser (ver
+# check_link). A ligacao nao esta quebrada, mas tambem NAO prova que a pagina
+# continua igual: exige revisao no browser (AGENTS.md secao 4).
+BLOCKED_LINK_CODES = {403, 408, 429}
+VALID_LINK_CODES = VERIFIED_LINK_CODES | BLOCKED_LINK_CODES
+# 100 fontes em serie com timeout de 30 s levam minutos; mini.pt sozinho custa 4
+# timeouts completos. Verificar em paralelo mantem o resultado igual e ordenado.
+LINK_WORKERS = 8
+# 13 das 54 fotografias pesam 71 % dos 23 MB da pasta. O orcamento e um aviso,
+# nao um erro: uma fotografia oficial correta e mais importante que o peso.
+MAX_IMAGE_BYTES = 500_000
+MAX_IMAGE_TOTAL_BYTES = 12_000_000
 MODEL_REQUIRED = {"brand", "model", "powertrain", "segment", "availability_status", "eligible", "official_link", "image_path", "last_verified", "data_sources", "variants"}
 VARIANT_REQUIRED = {"name", "battery_capacity_kwh", "wltp_range_combined_km", "power_kw", "power_hp", "pricing"}
 DEALER_REQUIRED = {"brand", "name", "address", "postal_code", "locality", "phone", "email", "official_url", "maps_url", "services", "verified_on"}
@@ -63,7 +76,7 @@ def validate_catalog(catalog: dict) -> list[str]:
                 errors.append(f"{label}: limitações não documentadas")
     models = catalog.get("models")
     if not isinstance(models, list) or not models:
-        return errors + ["models tem de ser uma lista não vazia"]
+        return [*errors, "models tem de ser uma lista não vazia"]
 
     seen: set[tuple[str, str]] = set()
     for model in models:
@@ -191,6 +204,69 @@ def check_link(url: str) -> tuple[int | None, str]:
         return None, str(error)
 
 
+def interleave_by_host(urls: list[str]) -> list[str]:
+    """Alternar entre dominios para nao lancar pedidos simultaneos ao mesmo host.
+
+    Por ordem alfabetica as 5 URLs da citroen.pt ficam adjacentes e seriam
+    pedidas ao mesmo tempo, o que provoca HTTP 429. Alternar por dominio mantem
+    o paralelismo mas distribui a carga.
+    """
+    by_host: dict[str, list[str]] = {}
+    for url in urls:
+        by_host.setdefault(urlparse(url).netloc, []).append(url)
+    queues = [sorted(group) for _, group in sorted(by_host.items())]
+    schedule: list[str] = []
+    for index in range(max((len(group) for group in queues), default=0)):
+        schedule.extend(group[index] for group in queues if index < len(group))
+    return schedule
+
+
+def check_links(urls: list[str], workers: int = LINK_WORKERS) -> list[tuple[str, int | None, str]]:
+    """Verificar as ligacoes em paralelo, devolvendo os resultados por ordem de URL.
+
+    A ordem de execucao alterna entre dominios, mas a ordem de saida e sempre
+    alfabetica para o relatorio ser diffavel entre execucoes, independentemente
+    de qual thread terminou primeiro.
+    """
+    schedule = interleave_by_host(urls)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
+        outcomes = dict(zip(schedule, pool.map(check_link, schedule), strict=True))
+    return [(url, *outcomes[url]) for url in sorted(urls)]
+
+
+def image_budget_warnings(catalog: dict, *, detailed: bool = False) -> list[str]:
+    """Achados de peso das fotografias, separados dos erros de validacao.
+
+    Uma fotografia pesada e um problema de desempenho, nao de correcao: o
+    catalogo continua valido. Sai como AVISO e so faz falhar com --check-budgets.
+
+    Por omissao devolve um resumo de uma linha, para nao afogar os avisos de
+    frescura em cada `make validate`. Com detailed=True lista cada fotografia.
+    """
+    oversized: list[tuple[int, str]] = []
+    total = 0
+    for model in catalog.get("models", []):
+        image = ROOT / "web" / model.get("image_path", "")
+        if not image.is_file():
+            continue
+        size = image.stat().st_size
+        total += size
+        if size > MAX_IMAGE_BYTES:
+            oversized.append((size, f"{model.get('brand', '?')} {model.get('model', '?')}"))
+    oversized.sort(reverse=True)
+
+    notes: list[str] = []
+    limit_kb = MAX_IMAGE_BYTES / 1000
+    if detailed:
+        notes.extend(f"{label}: fotografia com {size / 1000:.0f} KB excede o orçamento de {limit_kb:.0f} KB" for size, label in oversized)
+    elif oversized:
+        worst = ", ".join(f"{label} {size / 1000:.0f} KB" for size, label in oversized[:3])
+        notes.append(f"{len(oversized)} fotografia(s) excedem {limit_kb:.0f} KB (piores: {worst})")
+    if total > MAX_IMAGE_TOTAL_BYTES:
+        notes.append(f"fotografias somam {total / 1e6:.1f} MB e excedem o orçamento total de {MAX_IMAGE_TOTAL_BYTES / 1e6:.0f} MB")
+    return notes
+
+
 def _older_than_max_age(value: str | None) -> bool:
     try:
         return (TODAY - dt.date.fromisoformat(value or "")).days > MAX_AGE_DAYS
@@ -233,6 +309,17 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check-links", action="store_true", help="Verify every unique official HTTP source")
     parser.add_argument(
+        "--link-workers",
+        type=int,
+        default=LINK_WORKERS,
+        help=f"quantas ligações verificar em paralelo (predefinição: {LINK_WORKERS})",
+    )
+    parser.add_argument(
+        "--check-budgets",
+        action="store_true",
+        help="Tratar fotografias acima do orçamento de peso como erro",
+    )
+    parser.add_argument(
         "--check-freshness",
         action="store_true",
         help="Tratar verificações com mais de 45 dias e campanhas expiradas como erro",
@@ -247,15 +334,38 @@ def main() -> int:
         errors.extend(stale)
     elif stale:
         print("\n".join(f"AVISO: {note}" for note in stale))
+    budgets = image_budget_warnings(catalog, detailed=args.check_budgets)
+    if budgets and args.check_budgets:
+        errors.extend(budgets)
+    elif budgets:
+        print("\n".join(f"AVISO: {note}" for note in budgets))
     if args.check_links:
         links = {source["url"] for model in vehicle_records() for source in model["data_sources"]}
         links.update(source["url"] for source in catalog["discovery_sources"])
         links.update(dealer["official_url"] for dealer in dealer_catalog["dealers"])
-        for url in sorted(links):
-            status, destination = check_link(url)
+        blocked: list[str] = []
+        verified = 0
+        for url, status, destination in check_links(sorted(links), args.link_workers):
             print(f"{status or 'ERRO'}  {url} -> {destination}")
-            if status not in VALID_LINK_CODES:
+            if status in VERIFIED_LINK_CODES:
+                verified += 1
+            elif status in BLOCKED_LINK_CODES:
+                blocked.append(f"{url} (HTTP {status})")
+            else:
                 errors.append(f"fonte devolveu {status}: {url} -> {destination}")
+        # Um resumo verde sem esta contagem esconde que uma parte das fontes
+        # respondeu com anti-bot e por isso nao foi realmente verificada.
+        print(
+            f"\nLIGAÇÕES: {len(links)} no total, {verified} verificadas, "
+            f"{len(blocked)} não verificadas, {len(links) - verified - len(blocked)} quebradas"
+        )
+        if blocked:
+            print(
+                f"REVER MANUALMENTE NO BROWSER: {len(blocked)} fonte(s) responderam com proteção "
+                "anti-bot ou sem resposta a urllib. A ligação não está quebrada, mas o conteúdo "
+                "NÃO foi verificado:"
+            )
+            print("\n".join(f"  {item}" for item in blocked))
     if errors:
         print("\n".join(f"ERRO: {error}" for error in errors))
         return 1
