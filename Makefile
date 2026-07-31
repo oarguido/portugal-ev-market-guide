@@ -1,4 +1,8 @@
-.PHONY: update update-accept update-photos update-photos-all prune-images validate freshness links test audit sequential serve
+.PHONY: update update-accept update-photos update-photos-all prune-images lint validate freshness budgets links test audit sequential serve
+
+# O ruff e a unica ferramenta de desenvolvimento e a versao esta fixada no
+# pyproject.toml, para que local e CI apliquem exatamente as mesmas regras.
+RUFF ?= uv run --group dev ruff
 
 update:
 	python3 scripts/update_catalog.py
@@ -21,12 +25,18 @@ prune-images:
 	$(MAKE) validate
 	$(MAKE) test
 
+lint:
+	$(RUFF) check .
+
 validate:
 	python3 scripts/validate_data.py
 	python3 scripts/compile_data.py
 
 freshness:
 	python3 scripts/validate_data.py --check-freshness
+
+budgets:
+	python3 scripts/validate_data.py --check-budgets
 
 links:
 	python3 scripts/validate_data.py --check-links
@@ -35,7 +45,11 @@ test:
 	python3 -m unittest discover -s tests
 	node --test tests/*.test.js
 
+# budgets fica fora de proposito: o peso das fotografias e um aviso de
+# desempenho, nao uma regressao. Corre-se com `make budgets` quando se esta a
+# tratar das imagens, sem tornar a auditoria vermelha por 23 MB conhecidos.
 audit:
+	$(MAKE) lint
 	$(MAKE) validate
 	$(MAKE) freshness
 	$(MAKE) test

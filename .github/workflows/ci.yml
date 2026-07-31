@@ -2,10 +2,18 @@ name: Validação
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 permissions:
   contents: read
+
+# Sem isto, `on: push` sem filtro mais `on: pull_request` davam duas execuções
+# iguais por cada push num ramo com PR aberto, e um push novo não cancelava a
+# execução que já era irrelevante.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
@@ -25,6 +33,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+
+      - name: Instalar uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Lint
+        run: make lint
 
       - name: Validar e compilar dados
         run: make validate

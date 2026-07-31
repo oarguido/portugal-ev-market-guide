@@ -3,3 +3,26 @@ name = "carro-liliana"
 version = "0.1.0"
 requires-python = ">=3.13"
 dependencies = []
+
+# O projeto nao tem dependencias de runtime de proposito: a aplicacao e offline e
+# os scripts usam apenas a biblioteca padrao. O ruff e a unica ferramenta de
+# desenvolvimento e a versao esta fixada para que local e CI apliquem as mesmas
+# regras.
+[dependency-groups]
+dev = ["ruff==0.16.1"]
+
+[tool.ruff]
+target-version = "py313"
+# 200 documenta o codigo real em vez de forcar uma reformatacao global.
+line-length = 200
+exclude = ["archive", "graphify-out", "scripts/legacy"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "C4", "SIM", "RUF", "PTH", "ARG", "BLE"]
+
+[tool.ruff.lint.per-file-ignores]
+# capture_photos.py incorpora um snippet JavaScript numa string multilinha; nao e
+# possivel anotar noqa dentro de uma string e reformatar o JS torna-o ilegivel.
+"scripts/capture_photos.py" = ["E501"]
+# Os testes importam de scripts/ e por isso precisam de alterar sys.path primeiro.
+"tests/*.py" = ["E402"]
