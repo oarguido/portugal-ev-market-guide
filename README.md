@@ -28,13 +28,19 @@ make update          # verifica alterações nas fontes, valida, compila e testa
 make update-photos   # atualiza também as imagens oficiais em falta
 make update-photos-all # recaptura todas as imagens para auditoria visual
 make prune-images    # arquiva imagens que nenhum modelo referencia
+make lint            # ruff sobre scripts e testes
 make validate        # valida e recompila sem acesso à rede
 make freshness       # falha se houver verificações antigas ou campanhas expiradas
+make budgets         # falha se as fotografias excederem o orçamento de peso
 make links           # verifica fontes e páginas dos concessionários
 make test            # executa a suíte de regressão
-make audit           # valida dados, frescura, testes e todos os links
+make audit           # lint, dados, frescura, testes e todos os links
 make sequential      # update → fotografias em falta → auditoria final
 ```
+
+`make lint` corre o `ruff` através do `uv`, com a versão fixada em
+`pyproject.toml` para que local e CI apliquem exatamente as mesmas regras. Sem
+`uv` instalado, `make lint RUFF=ruff` usa o `ruff` do sistema.
 
 O atualizador guarda fingerprints do texto visível das páginas oficiais em
 `data/source_snapshots.json`, ignorando scripts, estilos e atributos dinâmicos.
@@ -66,6 +72,36 @@ fazem falhar o `make freshness`, incluído no `make audit`. A separação é
 deliberada: caso contrário o catálogo deixaria de compilar sozinho ao fim de 45
 dias e a suíte de testes passaria a falhar por efeito do tempo, e não por
 regressão.
+
+`make links` distingue as fontes que foram realmente lidas das que apenas
+responderam com proteção anti-bot, e imprime a contagem no fim:
+
+```text
+LIGAÇÕES: 100 no total, 69 verificadas, 31 não verificadas, 0 quebradas
+```
+
+Só as ligações quebradas fazem falhar o comando. Um HTTP 403, 429 ou uma ausência
+de resposta a `urllib` não prova que a página mudou, mas também não prova que
+continua igual: essas fontes são listadas para revisão num browser real, como
+exige a secção 4 do `AGENTS.md`. Um resumo verde sem esta contagem esconderia que
+quase um terço das fontes não foi verificado.
+
+O peso das fotografias é reportado como `AVISO` pelo `make validate` e só faz
+falhar o `make budgets`, que fica fora do `make audit`. Uma fotografia pesada é um
+problema de desempenho, não uma regressão de correção — e uma fotografia oficial
+correta vale mais que o orçamento.
+
+## Automação no GitHub
+
+| Workflow | Quando corre | O que faz |
+|----------|-------------|-----------|
+| `ci.yml` | push em `main`, pull requests | `make lint`, `make validate`, `make test` e confirma que o bundle compilado está commitado |
+| `data-health.yml` | segunda-feira 06:00 UTC, ou manualmente | `make freshness` e `make links`; abre ou comenta uma issue com a etiqueta `dados-frescura` quando algo apodrece |
+
+A separação é a mesma dos comandos locais: o `ci.yml` verifica o que uma
+alteração pode quebrar, o `data-health.yml` verifica o que o calendário quebra
+sozinho. O GitHub desativa workflows agendados depois de 60 dias sem atividade no
+repositório — se as issues semanais pararem, é a primeira coisa a confirmar.
 
 ## Estrutura
 

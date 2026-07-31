@@ -64,6 +64,15 @@ Não editar manualmente:
 A interface offline carrega exclusivamente o bundle compilado e os assets locais.
 Uma alteração no JSON que não seja compilada não chegou à aplicação.
 
+Os módulos em `web/assets/js/` são carregados por `web/index.html` e um teste
+exige que o conjunto seja exatamente igual: acrescentar um módulo sem o registar
+no HTML falha. Todo o valor vindo do catálogo que seja interpolado em `innerHTML`
+tem de passar por `escapeHtml` (`web/assets/js/html.js`). Não é teatro de
+segurança: o catálogo é editado à mão e um nome legítimo como "Silva & Filhos" ou
+uma condição de campanha com aspas produz HTML inválido ou atributos truncados.
+Escapar na fronteira do render torna a aplicação independente do conteúdo dos
+dados. Nenhuma fotografia é carregada sem `loading="lazy"`.
+
 ## 4. Hierarquia das fontes
 
 Usar, por ordem de preferência:
@@ -262,6 +271,13 @@ A imagem deve:
 - ter resolução útil e ficheiro superior a 5 KB;
 - funcionar offline.
 
+Existe também um orçamento de peso: 500 KB por fotografia e 12 MB no total. Os
+cartões mostram a imagem com 180 px de altura, por isso um ficheiro de 2 MB envia
+ordens de grandeza mais bytes do que o ecrã usa. O orçamento é um `AVISO` no
+`make validate` e só faz falhar o `make budgets` — a correção é reamostrar e
+recomprimir a mesma fotografia oficial, nunca trocá-la por outra mais leve de
+outro modelo ou de outra fonte. Depois de recomprimir, repetir a auditoria visual.
+
 Comandos:
 
 ```sh
@@ -301,17 +317,35 @@ Nunca aceitar alterações de fontes às cegas só para fazer o comando passar.
 
 ```sh
 make serve              # serve a aplicação; procura outra porta se 8000 estiver ocupada
+make lint               # ruff sobre scripts/ e tests/
 make validate           # valida JSON/fotos e recompila; não usa rede
 make test               # testes Python e JavaScript
 make links              # verifica fontes e concessionários; usa rede
+make budgets            # falha se as fotografias excederem o orçamento de peso
 make update             # monitoriza fontes conhecidas e executa validação/testes
 make update-accept      # aceita fingerprints após revisão explícita
 make update-photos      # captura fotografias em falta e testa
 make update-photos-all  # recaptura todas as fotografias e testa
 make prune-images       # arquiva imagens não referenciadas e testa
-make audit              # valida, testa e verifica todos os links
+make audit              # lint, valida, frescura, testa e verifica todos os links
 make sequential         # update → fotos em falta → auditoria, por esta ordem
 ```
+
+`make links` verifica as fontes em paralelo, alternando entre domínios para não
+disparar HTTP 429, e termina com uma contagem explícita:
+
+```text
+LIGAÇÕES: 100 no total, 69 verificadas, 31 não verificadas, 0 quebradas
+```
+
+Só as quebradas fazem falhar. As não verificadas responderam 403/429 ou não
+responderam a `urllib` e ficam listadas: **essas fontes têm de ser abertas num
+browser real** antes de qualquer afirmação sobre o seu preço ou condições. Um
+`make links` verde não significa que todas as fontes foram lidas.
+
+`make budgets` fica deliberadamente fora do `make audit`. O peso das fotografias
+é um aviso de desempenho, não uma regressão: nunca substituir uma fotografia
+oficial correta por uma errada só para respeitar o orçamento.
 
 `make sequential` para no primeiro erro. Não executa `make update-accept`, não
 aceita fontes alteradas e não substitui a redescoberta manual do mercado.
