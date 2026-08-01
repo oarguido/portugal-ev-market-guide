@@ -42,14 +42,12 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Lint
-        run: make lint
-
-      - name: Validar e compilar dados
-        run: make validate
-
-      - name: Executar testes
-        run: make test
+      # `make verificar` é o alvo único: lint, frescura, compilação, testes e
+      # ligações. Os alvos lint/validate/test deixaram de existir quando o
+      # Makefile foi reduzido a três, e este workflow continuou a chamá-los —
+      # falhou no primeiro arranque com "No rule to make target 'lint'".
+      - name: Verificar
+        run: make verificar
 
       - name: Confirmar bundle compilado
         run: git diff --exit-code -- web/assets/js/car_data.js
