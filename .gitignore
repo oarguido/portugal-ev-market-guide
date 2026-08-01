@@ -6,6 +6,7 @@ __pycache__/
 
 # Artefactos locais e reproduzíveis
 graphify-out/
+.playwright-mcp/
 dogfood-output/
 archive/
 
