@@ -36,7 +36,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 28190.0,
           "particular_campaign_price_vat_incl": 26560.0,
-          "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade válido para clientes particulares até 31/08/2026 para o Aion UT Premium Green, limitado ao stock existente nos concessionários aderentes. Inclui pintura metalizada (mono-tom) e não inclui despesas de documentação e transporte. Entrada inicial: 7.968,00€ + 59 mensalidades: 270,00€. Última mensalidade: 6 640,00€. Montante financiado: 18.592,00€. TAN 5,93%. TAEG 8,2%. MTIC: 23.529,72€. Crédito sujeito a aprovação pelo Cetelem.",
+          "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade para clientes particulares, versão Aion UT Premium Green, limitado ao stock existente nos concessionários aderentes; inclui pintura metalizada (mono-tom) e não inclui despesas de documentação e transporte; entrada inicial 7.968,00€ + 59 mensalidades de 270,00€, última mensalidade 6 640,00€, TAN 5,93%, TAEG 8,2%, MTIC 23.529,72€; crédito sujeito a aprovação pelo Cetelem.",
           "campaign_valid_until": "2026-08-31"
         }
       }
@@ -127,7 +127,7 @@ const CAR_DATA = [
         "power_hp": 156,
         "dc_max_kw": 100,
         "pricing": {
-          "particular_list_price_vat_incl": 44553.0,
+          "particular_list_price_vat_incl": 38500.0,
           "particular_campaign_price_vat_incl": 39553.0,
           "campaign_conditions": "Exemplo para Junior Elettrica Ti, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go; exclusivo Financiamento Stellantis Financial Services, clientes particulares",
           "campaign_valid_until": null
@@ -645,7 +645,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 18007.0,
           "particular_campaign_price_vat_incl": 15951.25,
-          "campaign_conditions": "Crédito Automóvel Novo com reserva de propriedade para SPRING essential ELECTRIC 70 com oferta da pintura Caqui Linchen através da Mobilize Financial Services. Para clientes Particulares. PVP com desconto inclui despesas administrativas e transporte. Válido para Portugal Continental. Limitado ao stock existente.",
+          "campaign_conditions": "Crédito Automóvel Novo com reserva de propriedade para SPRING essential ELECTRIC 70 com oferta da pintura Caqui Linchen através da Mobilize Financial Services. Para clientes Particulares. Limitado ao stock existente. Válido para Portugal Continental.",
           "campaign_valid_until": "2026-09-30"
         }
       }
@@ -712,7 +712,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.fiat.pt/modelos/fiat-500-eletrico",
-    "image_path": "assets/images/vehicles/fiat-500e/official.png",
+    "image_path": "assets/images/vehicles/fiat-500e/official.jpg",
     "last_verified": "2026-08-01",
     "data_sources": [
       {
@@ -737,9 +737,9 @@ const CAR_DATA = [
         "dc_max_kw": 85,
         "pricing": {
           "particular_list_price_vat_incl": 29853.0,
-          "particular_campaign_price_vat_incl": 25500.0,
-          "campaign_conditions": "500e Elétrico Berlina 118cv | Bateria 42 kWh ICON. PVP campanha com retoma, exclusivo com financiamento Stellantis Financial Services (36 meses / 30.000 km), exclui DLTP e pintura, para clientes particulares, limitado ao stock existente. Nota: o texto legal indica 'Condições válidas até 30/06/2026', enquanto o destaque da campanha indica 'Válido até: 30/09/2026'.",
-          "campaign_valid_until": "2026-09-30"
+          "particular_campaign_price_vat_incl": null,
+          "campaign_conditions": null,
+          "campaign_valid_until": null
         }
       }
     ],
@@ -761,7 +761,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.fiat.pt/modelos/fiat-600-eletrico",
-    "image_path": "assets/images/vehicles/fiat-600e/official.png",
+    "image_path": "assets/images/vehicles/fiat-600e/official.jpg",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -846,7 +846,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 27953.0,
           "particular_campaign_price_vat_incl": 23100.0,
-          "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services (Easy Plan, 36 meses / 40.000 km); PVP campanha com retoma, exclui DLTP; clientes particulares; limitado ao stock existente.",
+          "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services; contrato crédito 36 meses / 40.000 km, exclui DLTP, PVP campanha com retoma, para clientes particulares, limitado ao stock existente.",
           "campaign_valid_until": "2026-09-30"
         }
       }
@@ -1344,12 +1344,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.filintomota.pt/marca/leapmotor/b10/",
     "image_path": "assets/images/vehicles/leapmotor-b10/official.jpg",
-    "last_verified": "2026-07-23",
+    "last_verified": "2026-08-01",
     "data_sources": [
       {
         "type": "official_dealer_model_and_price",
         "url": "https://www.filintomota.pt/marca/leapmotor/b10/",
-        "verified_on": "2026-07-23"
+        "verified_on": "2026-08-01"
       }
     ],
     "variants": [
@@ -1362,7 +1362,7 @@ const CAR_DATA = [
         "power_hp": 218,
         "dc_max_kw": 140,
         "pricing": {
-          "particular_list_price_vat_incl": 27600,
+          "particular_list_price_vat_incl": 27600.0,
           "particular_campaign_price_vat_incl": null,
           "campaign_conditions": "Preço para particulares publicado pelo concessionário oficial; confirmar despesas.",
           "campaign_valid_until": null
@@ -1612,18 +1612,18 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
-    "image_path": "assets/images/vehicles/mini-aceman/official.png",
-    "last_verified": "2026-07-26",
+    "image_path": "assets/images/vehicles/mini-aceman/official.jpg",
+    "last_verified": "2026-08-01",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
-        "verified_on": "2026-07-26"
+        "verified_on": "2026-08-01"
       },
       {
         "type": "official_versions_and_price",
         "url": "https://www.mini.pt/pt_PT/home/gama/mini-aceman/modelos.html",
-        "verified_on": "2026-07-26"
+        "verified_on": "2026-08-01"
       }
     ],
     "variants": [
@@ -1635,7 +1635,7 @@ const CAR_DATA = [
         "power_kw": 135,
         "power_hp": 184,
         "pricing": {
-          "particular_list_price_vat_incl": 35900,
+          "particular_list_price_vat_incl": 35900.0,
           "particular_campaign_price_vat_incl": null,
           "campaign_conditions": null,
           "campaign_valid_until": null
@@ -1674,7 +1674,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
-    "image_path": "assets/images/vehicles/mini-cooper-el-trico/official.png",
+    "image_path": "assets/images/vehicles/mini-cooper-el-trico/official.webp",
     "last_verified": "2026-07-26",
     "data_sources": [
       {
@@ -1929,7 +1929,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 41466.0,
           "particular_campaign_price_vat_incl": 37966.0,
-          "campaign_conditions": "Crédito automóvel 60 meses / 50.000 km, entrada inicial 8.950€, montante financiado 29.016,00€, 59 prestações de 345€, prestação final 17.081,58€, TAN 6,950%, TAEG 8,9%, MTIC 38.771,29€. Para clientes particulares. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento Stellantis Financial Services, nos concessionários Opel aderentes.",
+          "campaign_conditions": "Exclusivo financiamento Stellantis Financial Services (60 meses / 50.000 km), para clientes particulares, em concessionários Opel aderentes. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento. Entrada inicial 8.950€, 59 prestações de 345€, prestação final (VFG) 17.081,58€, TAN 6,950%, TAEG 8,9%, MTIC 38.771,29€.",
           "campaign_valid_until": "2026-08-31"
         }
       }
@@ -2017,7 +2017,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 31843.0,
           "particular_campaign_price_vat_incl": 26843.0,
-          "campaign_conditions": "Condições válidas até 31/08/2026, para clientes particulares. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento Stellantis Financial Services. Valores para Frontera Electric Edition 113cv | Bat. 44kWh, incluem DLTP, sem opções.",
+          "campaign_conditions": "Condições válidas até 31/08/2026, para clientes particulares. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento Stellantis Financial Services, nos concessionários Opel aderentes. Preços da versão Frontera Electric Edition 113cv | Bat. 44kWh, incluem DLTP, sem opções.",
           "campaign_valid_until": "2026-08-31"
         }
       }
@@ -2061,7 +2061,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 39588.0,
           "particular_campaign_price_vat_incl": 34588.0,
-          "campaign_conditions": "Para clientes particulares, exclusivo financiamento Stellantis Financial Services; inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento, nos concessionários Opel aderentes.",
+          "campaign_conditions": "Para clientes particulares, com financiamento exclusivo Stellantis Financial Services; inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento, nos concessionários Opel aderentes. Inclui DLTP, sem opções.",
           "campaign_valid_until": "2026-08-31"
         }
       }
@@ -2084,7 +2084,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.peugeot.pt/showroom/novo-peugeot-208/eletrico.html",
-    "image_path": "assets/images/vehicles/peugeot-e-208/official.png",
+    "image_path": "assets/images/vehicles/peugeot-e-208/official.jpg",
     "last_verified": "2026-07-23",
     "data_sources": [
       {

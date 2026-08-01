@@ -3,7 +3,7 @@
     "campaign_price_vat_incl": 26560.0,
     "list_price_vat_incl": 28190.0,
     "campaign_valid_until": "2026-08-31",
-    "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade válido para clientes particulares até 31/08/2026 para o Aion UT Premium Green, limitado ao stock existente nos concessionários aderentes. Inclui pintura metalizada (mono-tom) e não inclui despesas de documentação e transporte. Entrada inicial: 7.968,00€ + 59 mensalidades: 270,00€. Última mensalidade: 6 640,00€. Montante financiado: 18.592,00€. TAN 5,93%. TAEG 8,2%. MTIC: 23.529,72€. Crédito sujeito a aprovação pelo Cetelem.",
+    "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade para clientes particulares, versão Aion UT Premium Green, limitado ao stock existente nos concessionários aderentes; inclui pintura metalizada (mono-tom) e não inclui despesas de documentação e transporte; entrada inicial 7.968,00€ + 59 mensalidades de 270,00€, última mensalidade 6 640,00€, TAN 5,93%, TAEG 8,2%, MTIC 23.529,72€; crédito sujeito a aprovação pelo Cetelem.",
     "evidence": "PVP com campanha: 26.560,00€. PVP sem financiamento: 28.190,00€.",
     "brand": "AION",
     "model": "UT",
@@ -11,43 +11,13 @@
   },
   {
     "campaign_price_vat_incl": null,
-    "list_price_vat_incl": 38030.0,
-    "campaign_valid_until": null,
-    "campaign_conditions": null,
-    "evidence": "BERLINA a partir de 38.030€ €",
-    "brand": "Abarth",
-    "model": "500e",
-    "url": "https://www.abarth.pt/novo-abarth-electric-500e"
-  },
-  {
-    "campaign_price_vat_incl": null,
     "list_price_vat_incl": 38500.0,
     "campaign_valid_until": null,
-    "campaign_conditions": "JUNIOR ELETTRICA 156Cv Sport Speciale por 270€/mês + IVA, Entrada Inicial: 3.700€ (s/IVA), Prazo: 36 meses / 30.000 km, para empresas e ENI, com Manutenção, Assistência em Viagem, Linha de Apoio ao Condutor e Impostos incluídos",
+    "campaign_conditions": "Entrada Inicial: 3.700€ (s/IVA) / Prazo: 36 meses / 30.000 km / Para empresas e ENI",
     "evidence": "A partir de38 500€¹",
     "brand": "Alfa Romeo",
     "model": "Junior Elettrica",
     "url": "https://www.alfaromeo.pt/modelos/junior-elettrica"
-  },
-  {
-    "campaign_price_vat_incl": 39553.0,
-    "list_price_vat_incl": 44553.0,
-    "campaign_valid_until": null,
-    "campaign_conditions": "Exemplo para Junior Elettrica Ti, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go; exclusivo Financiamento Stellantis Financial Services, clientes particulares",
-    "evidence": "Exemplo para Junior Elettrica Ti: PVPR de 44.553,00€, PVP campanha de 39.553,00€, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go.",
-    "brand": "Alfa Romeo",
-    "model": "Junior Elettrica",
-    "url": "https://www.alfaromeo.pt/promocoes-automoveis/promocoes/alfa-romeo-junior-elletrica"
-  },
-  {
-    "campaign_price_vat_incl": 19950.0,
-    "list_price_vat_incl": null,
-    "campaign_valid_until": null,
-    "campaign_conditions": "Preço a partir de, versão BEV de Autonomia Conforto, com a campanha em vigor. Autonomia Urbana a partir de 17.990€.",
-    "evidence": "A gama Citroën C3 pode ser adquirido em Portugal, com a campanha em vigor, a partir de 17.990€ na versão BEV de Autonomia Urbana, de 19.950€ na versão BEV de Autonomia Conforto, de 15.990€ na motorização a gasolina, e de 21.850€ na versão mild-hybrid.",
-    "brand": "Citroën",
-    "model": "ë-C3",
-    "url": "https://www.citroen.pt/universo-citroen/noticias/acp.html"
   },
   {
     "campaign_price_vat_incl": null,
@@ -60,60 +30,40 @@
     "url": "https://www.citroen.pt/modelos/e-c3-aircross.html"
   },
   {
-    "campaign_price_vat_incl": 33715.0,
-    "list_price_vat_incl": null,
-    "campaign_valid_until": "2026-07-31",
-    "campaign_conditions": "Exemplo para ë-C4 Elétrico 136cv Autonomia Conforto - YOU. Campanha promocional da marca de 6.000 euros, válida para cliente particular com encomenda colocada até 31.07.2026. Acresce DLTP. Inclui oferta EasyWallbox eSolutions e Cartão Charging Pass F2M.",
-    "evidence": "Desde 33.715€ com 6.000 vantagem cliente",
-    "brand": "Citroën",
-    "model": "ë-C4",
-    "url": "https://www.citroen.pt/comprar/campanhas-particulares/citroen-ec4-vantagem-cliente.html"
-  },
-  {
     "campaign_price_vat_incl": 15951.25,
     "list_price_vat_incl": 18007.0,
     "campaign_valid_until": "2026-09-30",
-    "campaign_conditions": "Crédito Automóvel Novo com reserva de propriedade para SPRING essential ELECTRIC 70 com oferta da pintura Caqui Linchen através da Mobilize Financial Services. Para clientes Particulares. PVP com desconto inclui despesas administrativas e transporte. Válido para Portugal Continental. Limitado ao stock existente.",
+    "campaign_conditions": "Crédito Automóvel Novo com reserva de propriedade para SPRING essential ELECTRIC 70 com oferta da pintura Caqui Linchen através da Mobilize Financial Services. Para clientes Particulares. Limitado ao stock existente. Válido para Portugal Continental.",
     "evidence": "PVPR 18 007,00€. PVP com desconto 15 951,25€ inclui despesas administrativas e transporte.",
     "brand": "Dacia",
     "model": "Spring",
     "url": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html"
   },
   {
-    "campaign_price_vat_incl": null,
-    "list_price_vat_incl": 26750.0,
-    "campaign_valid_until": null,
-    "campaign_conditions": null,
-    "evidence": "O preço do Dongfeng Box começa nos 26.750 €, na versão Box Pro.",
-    "brand": "Dongfeng",
-    "model": "Box",
-    "url": "https://caetano.pt/dongfeng/carros-novos/box/"
-  },
-  {
-    "campaign_price_vat_incl": 25500.0,
-    "list_price_vat_incl": null,
-    "campaign_valid_until": "2026-09-30",
-    "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services; EI 5650€ e Valor Final Garantido: 13172,7€; TAEG: 10,6%; prazo 36 meses / 30000 kms",
-    "evidence": "Por: 25.500€",
-    "brand": "Fiat",
-    "model": "500e",
-    "url": "https://www.fiat.pt/modelos/fiat-500-eletrico"
-  },
-  {
     "campaign_price_vat_incl": 25500.0,
     "list_price_vat_incl": 29853.0,
-    "campaign_valid_until": "2026-09-30",
-    "campaign_conditions": "500e Elétrico Berlina 118cv | Bateria 42 kWh ICON. PVP campanha com retoma, exclusivo com financiamento Stellantis Financial Services (36 meses / 30.000 km), exclui DLTP e pintura, para clientes particulares, limitado ao stock existente. Nota: o texto legal indica 'Condições válidas até 30/06/2026', enquanto o destaque da campanha indica 'Válido até: 30/09/2026'.",
+    "campaign_valid_until": "2026-06-30",
+    "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services, com retoma, 36 meses / 30.000 km, para clientes particulares, exclui DLTP e pintura. Limitado ao stock existente.",
     "evidence": "Contrato de crédito automóvel novos para 36 meses / 30.000 km, exemplo para 500e Elétrico Berlina 118cv | Bateria 42 kWh ICON, PVPR de 29.853,00€, PVP campanha com retoma de 25.500€, exclui DLTP, pintura, entrada inicial de 5.790€, montante financiado de 21.063,00€, 35 prestações de 309€, prestação final de 14.127,97€, taxa fixa, TAN de 7,050% e TAEG de 10,3% para um MTIC de 26.128,88€.",
     "brand": "Fiat",
     "model": "500e",
     "url": "https://www.fiat.pt/promocoes-carros-particulares/novo-500-eletrico-cabrio"
   },
   {
+    "campaign_price_vat_incl": 24600.0,
+    "list_price_vat_incl": null,
+    "campaign_valid_until": "2026-09-30",
+    "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services",
+    "evidence": "Por:24.600€",
+    "brand": "Fiat",
+    "model": "Grande Panda elétrico",
+    "url": "https://www.fiat.pt/modelos/grande-panda-electrico"
+  },
+  {
     "campaign_price_vat_incl": 23100.0,
     "list_price_vat_incl": 27953.0,
     "campaign_valid_until": "2026-09-30",
-    "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services (Easy Plan, 36 meses / 40.000 km); PVP campanha com retoma, exclui DLTP; clientes particulares; limitado ao stock existente.",
+    "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services; contrato crédito 36 meses / 40.000 km, exclui DLTP, PVP campanha com retoma, para clientes particulares, limitado ao stock existente.",
     "evidence": "Contrato crédito automóvel novos a 36 meses / 40.000 km, exemplo para Grande Panda Elétrico 113cv | Bateria 45 kWh ICON, PVPR 27.953,00€, PVP campanha com retoma 23.100€, exclui DLTP, montante financiado 21.703,00€, 35 prestações de 309€, taxa fixa, TAN 6,600%, TAEG 9,7% MTIC 26.617,95€",
     "brand": "Fiat",
     "model": "Grande Panda elétrico",
@@ -143,7 +93,7 @@
     "campaign_price_vat_incl": null,
     "list_price_vat_incl": 34490.0,
     "campaign_valid_until": "2026-09-30",
-    "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade para clientes particulares, JAECOO 5 EV versão Pure, limitado ao stock existente nos concessionários aderentes. Não inclui pintura metalizada (mono-tom) nem despesas de documentação e transporte. Entrada inicial 15.530,00€ + 48 mensalidades de 395,00€, TAN 0,00%, TAEG 2,6%.",
+    "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade, clientes particulares, JAECOO 5 EV versão Pure, limitado ao stock existente nos concessionários aderentes. Não inclui pintura metalizada (mono-tom) nem despesas de documentação e transporte. Entrada inicial 15.530,00€ + 48 mensalidades de 395,00€, TAN 0,00%, TAEG 2,6%.",
     "evidence": "Crédito Automóvel c/ reserva de propriedade válido para clientes particulares até 30/09/2026 para o JAECOO 5 EV versão Pure, limitado ao stock existente nos concessionários aderentes. Não inclui pintura metalizada (mono-tom) e não inclui despesas de documentação e transporte. PVP 34.490,00€.",
     "brand": "Jaecoo",
     "model": "5 EV",
@@ -153,11 +103,21 @@
     "campaign_price_vat_incl": null,
     "list_price_vat_incl": 39500.0,
     "campaign_valid_until": null,
-    "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services. Prazo: 36 meses / 30000 kms, TAEG 6,5%, EI 9900€, VFG 24219,6€, Montante Financiado 27653€",
+    "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services",
     "evidence": "DESDE: 39.500€",
     "brand": "Jeep",
     "model": "Avenger elétrico",
     "url": "https://www.jeep.pt/novo-jeep-avenger/eletrico"
+  },
+  {
+    "campaign_price_vat_incl": null,
+    "list_price_vat_incl": 27600.0,
+    "campaign_valid_until": null,
+    "campaign_conditions": null,
+    "evidence": "Desde 27.600€",
+    "brand": "Leapmotor",
+    "model": "B10",
+    "url": "https://www.filintomota.pt/marca/leapmotor/b10/"
   },
   {
     "campaign_price_vat_incl": null,
@@ -167,7 +127,7 @@
     "evidence": "Desde 32.367€*",
     "brand": "MG",
     "model": "MG4",
-    "url": "https://www.mgmotor.pt/model/mg4/"
+    "url": "https://www.mgmotor.pt/technology"
   },
   {
     "campaign_price_vat_incl": null,
@@ -181,19 +141,19 @@
   },
   {
     "campaign_price_vat_incl": null,
-    "list_price_vat_incl": 28365.0,
-    "campaign_valid_until": "2026-07-31",
-    "campaign_conditions": "Os preços podem incluir campanhas em vigor e poderá variar em função do tipo de pagamento selecionado. O PVP não inclui despesas de documentação e transporte.",
-    "evidence": "* Os preços podem incluir campanhas em vigor e poderá variar em função do tipo de pagamento selecionado. Campanha válida até 31 de Julho de 2026.",
-    "brand": "Nissan",
-    "model": "Micra",
-    "url": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html"
+    "list_price_vat_incl": 35900.0,
+    "campaign_valid_until": "2026-09-30",
+    "campaign_conditions": "Renting Select para clientes Empresa (MINI Aceman E Essential): 210€/mês + IVA, entrada 5.607,81€, 48 meses/60.000km; encomendas de 01-07-2026 a 30-09-2026. Oferta de 1 ano de carregamento IONITY para encomendas entre 01-04-2026 e 30-09-2026.",
+    "evidence": "Desde 35.900 €",
+    "brand": "MINI",
+    "model": "Aceman",
+    "url": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html"
   },
   {
     "campaign_price_vat_incl": null,
     "list_price_vat_incl": 34900.0,
     "campaign_valid_until": "2026-09-30",
-    "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade para clientes particulares, OMODA 5 BEV versão Comfort, limitado ao stock existente nos concessionários aderentes; não inclui pintura metalizada nem despesas de documentação e transporte. TAN 0,00%, TAEG 2,6%, 48 mensalidades de 395,00€.",
+    "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade para clientes particulares, OMODA 5 BEV versão Comfort, limitado ao stock existente nos concessionários aderentes; não inclui pintura metalizada (mono-tom) nem despesas de documentação e transporte. Entrada inicial 15.940,00€ + 48 mensalidades de 395,00€, TAN 0,00%, TAEG 2,6%.",
     "evidence": "PVP 34.900,00€. Entrada inicial: 15.940,00 € + 48 mensalidades: 395,00€ .",
     "brand": "Omoda",
     "model": "5 EV",
@@ -203,27 +163,17 @@
     "campaign_price_vat_incl": 37966.0,
     "list_price_vat_incl": 41466.0,
     "campaign_valid_until": "2026-08-31",
-    "campaign_conditions": "Crédito automóvel 60 meses / 50.000 km, entrada inicial 8.950€, montante financiado 29.016,00€, 59 prestações de 345€, prestação final 17.081,58€, TAN 6,950%, TAEG 8,9%, MTIC 38.771,29€. Para clientes particulares. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento Stellantis Financial Services, nos concessionários Opel aderentes.",
+    "campaign_conditions": "Exclusivo financiamento Stellantis Financial Services (60 meses / 50.000 km), para clientes particulares, em concessionários Opel aderentes. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento. Entrada inicial 8.950€, 59 prestações de 345€, prestação final (VFG) 17.081,58€, TAN 6,950%, TAEG 8,9%, MTIC 38.771,29€.",
     "evidence": "Contrato de crédito automóvel, veículos novos para 60 meses / 50.000 km, exemplo para Astra Electric Edition 156cv | Bat. 58kWh, PVPR de 41.466,00€, PVP campanha de 37.966,00€, inclui DLTP, sem opções, entrada inicial de 8.950€, montante financiado de 29.016,00€, 59 prestações de 345€, prestação final de 17.081,58€, taxa fixa, TAN de 6,950% e TAEG de 8,9% para um MTIC de 38.771,29€",
     "brand": "Opel",
     "model": "Astra Electric",
     "url": "https://www.opel.pt/ofertas/campanhas-particulares-credito/opel-astra-5p-electric-flexiopel.html"
   },
   {
-    "campaign_price_vat_incl": 30863.0,
-    "list_price_vat_incl": 35613.0,
-    "campaign_valid_until": "2026-08-31",
-    "campaign_conditions": "Válido para clientes particulares, com financiamento Stellantis Financial Services; inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento, nos concessionários Opel aderentes. Exemplo para Corsa Electric Edition 136cv | Bat. 50kWh, inclui DLTP, sem opções.",
-    "evidence": "(3) Contrato de crédito automóvel, veículos novos para 60 meses / 50.000 km, exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções, entrada inicial de 8.750€, montante financiado de 22.113,00€, 59 prestações de 239€, prestação final de 14.208,17€, taxa fixa, TAN de 6,497% e TAEG de 8,6% para um MTIC de 29.504,68€",
-    "brand": "Opel",
-    "model": "Corsa Electric",
-    "url": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html"
-  },
-  {
     "campaign_price_vat_incl": 26843.0,
     "list_price_vat_incl": 31843.0,
     "campaign_valid_until": "2026-08-31",
-    "campaign_conditions": "Condições válidas até 31/08/2026, para clientes particulares. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento Stellantis Financial Services. Valores para Frontera Electric Edition 113cv | Bat. 44kWh, incluem DLTP, sem opções.",
+    "campaign_conditions": "Condições válidas até 31/08/2026, para clientes particulares. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento Stellantis Financial Services, nos concessionários Opel aderentes. Preços da versão Frontera Electric Edition 113cv | Bat. 44kWh, incluem DLTP, sem opções.",
     "evidence": "exemplo para Frontera Electric Edition 113cv | Bat. 44kWh, PVPR de 31.843,00€, PVP campanha de 26.843,00€, inclui DLTP, sem opções",
     "brand": "Opel",
     "model": "Frontera Electric",
@@ -233,7 +183,7 @@
     "campaign_price_vat_incl": 34588.0,
     "list_price_vat_incl": 39588.0,
     "campaign_valid_until": "2026-08-31",
-    "campaign_conditions": "Para clientes particulares, exclusivo financiamento Stellantis Financial Services; inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento, nos concessionários Opel aderentes.",
+    "campaign_conditions": "Para clientes particulares, com financiamento exclusivo Stellantis Financial Services; inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento, nos concessionários Opel aderentes. Inclui DLTP, sem opções.",
     "evidence": "Contrato de crédito automóvel, veículos novos para 60 meses / 50.000 km, exemplo para Mokka Electric Edition 156cv | Bat. 54kWh, PVPR de 39.588,00€, PVP campanha de 34.588,00€, inclui DLTP, sem opções, entrada inicial de 9.750€, montante financiado de 24.838,00€, 59 prestações de 269€, prestação final de 15.770,67€, taxa fixa, TAN de 6,402% e TAEG de 8,4% para um MTIC de 32.908,74€",
     "brand": "Opel",
     "model": "Mokka Electric",
@@ -248,16 +198,6 @@
     "brand": "Renault",
     "model": "4 E-Tech elétrico",
     "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html"
-  },
-  {
-    "campaign_price_vat_incl": null,
-    "list_price_vat_incl": 19490.0,
-    "campaign_valid_until": null,
-    "campaign_conditions": null,
-    "evidence": "preço a partir de 19 490 €",
-    "brand": "Renault",
-    "model": "Twingo E-Tech elétrico",
-    "url": "https://www.renault.pt/veiculos-eletricos/twingo/caracteristicas.html"
   },
   {
     "campaign_price_vat_incl": null,
