@@ -86,22 +86,30 @@ class StalenessTests(unittest.TestCase):
     def test_o_catalogo_real_fica_obsoleto_quando_o_tempo_avanca(self):
         """A deteção tem de disparar sobre os dados reais, não só sobre fixtures.
 
-        Prova o comportamento que o workflow agendado deve apanhar: hoje o
-        catálogo está fresco, mas MAX_AGE_DAYS + 1 dias depois da verificação mais
-        recente deixa de estar.
+        Prova o comportamento que o workflow agendado deve apanhar: à data da
+        verificação mais recente nada está obsoleto, e MAX_AGE_DAYS + 1 dias
+        depois está tudo.
+
+        As duas datas são fixadas com mock e derivadas do próprio catálogo. Sem
+        isso o teste passaria a falhar por efeito do calendário e não por
+        regressão — exatamente o que a separação entre `make validate` e
+        `make freshness` existe para evitar.
         """
         catalog = validate_data.load_catalog()
         dealers = validate_data.load_dealers()
-        self.assertEqual(staleness_warnings(catalog, dealers), [], "o catálogo devia estar fresco hoje")
+        newest = dt.date.fromisoformat(max(model["last_verified"] for model in catalog["models"]))
 
-        newest = max(model["last_verified"] for model in catalog["models"])
-        future = dt.date.fromisoformat(newest) + dt.timedelta(days=validate_data.MAX_AGE_DAYS + 1)
-        with mock.patch.object(validate_data, "TODAY", future):
-            notes = staleness_warnings(catalog, dealers)
+        def outdated_on(day: dt.date) -> list[str]:
+            with mock.patch.object(validate_data, "TODAY", day):
+                # Só os avisos de verificação obsoleta: uma campanha expirada é um
+                # sinal diferente, e depende de datas que o catálogo traz de fora.
+                return [note for note in staleness_warnings(catalog, dealers) if "verificação tem mais de" in note]
 
-        # Contar só os avisos de verificação obsoleta: avançar a data também
-        # expira campanhas, e esses avisos são um sinal diferente.
-        outdated = [note for note in notes if "verificação tem mais de" in note]
+        self.assertEqual(outdated_on(newest), [], "nada devia estar obsoleto na data da verificação mais recente")
+
+        future = newest + dt.timedelta(days=validate_data.MAX_AGE_DAYS + 1)
+        outdated = outdated_on(future)
+
         self.assertEqual(
             len(outdated),
             len(catalog["models"]) + len(dealers["dealers"]) + len(catalog["discovery_sources"]),
