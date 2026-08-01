@@ -103,7 +103,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.alfaromeo.pt/modelos/junior-elettrica",
-    "image_path": "assets/images/vehicles/alfa-romeo-junior-elettrica/official-exterior.png",
+    "image_path": "assets/images/vehicles/alfa-romeo-junior-elettrica/official-exterior.jpg",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -393,7 +393,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.citroen.pt/modelos/e-c3.html",
-    "image_path": "assets/images/vehicles/citro-n-c3/official.webp",
+    "image_path": "assets/images/vehicles/citro-n-c3/official.jpg",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -457,7 +457,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.citroen.pt/modelos/e-c3-aircross.html",
-    "image_path": "assets/images/vehicles/citro-n-c3-aircross/official.webp",
+    "image_path": "assets/images/vehicles/citro-n-c3-aircross/official.jpg",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -1780,7 +1780,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
-    "image_path": "assets/images/vehicles/nissan-micra/official.png",
+    "image_path": "assets/images/vehicles/nissan-micra/official.jpg",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -2810,7 +2810,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.skoda.pt/skoda-elroq/elroq",
-    "image_path": "assets/images/vehicles/koda-elroq/official-clean.png",
+    "image_path": "assets/images/vehicles/koda-elroq/official-clean.jpg",
     "last_verified": "2026-07-23",
     "data_sources": [
       {

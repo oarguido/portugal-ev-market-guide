@@ -129,9 +129,14 @@ class ImageBudgetTests(unittest.TestCase):
             self.assertEqual(image_budget_warnings(validate_data.load_catalog()), [])
 
     def test_resumo_de_uma_linha_por_omissao_e_lista_completa_com_detalhe(self):
+        # Limite artificialmente baixo para que o catálogo real tenha sempre
+        # fotografias acima dele. Antes isto dependia de existirem fotografias
+        # pesadas de verdade, e passou a falhar no dia em que foram todas
+        # recomprimidas — uma regressão inventada, como a do calendário.
         catalog = validate_data.load_catalog()
-        summary = image_budget_warnings(catalog)
-        detailed = image_budget_warnings(catalog, detailed=True)
+        with mock.patch.object(validate_data, "MAX_IMAGE_BYTES", 50_000):
+            summary = image_budget_warnings(catalog)
+            detailed = image_budget_warnings(catalog, detailed=True)
         # O resumo não pode crescer com o número de fotografias pesadas: é o que
         # impede o `make validate` de afogar os avisos de frescura.
         self.assertLessEqual(len(summary), 2)
@@ -139,7 +144,8 @@ class ImageBudgetTests(unittest.TestCase):
         self.assertTrue(any("excedem" in note for note in summary))
 
     def test_a_lista_detalhada_vem_da_mais_pesada_para_a_mais_leve(self):
-        detailed = image_budget_warnings(validate_data.load_catalog(), detailed=True)
+        with mock.patch.object(validate_data, "MAX_IMAGE_BYTES", 50_000):
+            detailed = image_budget_warnings(validate_data.load_catalog(), detailed=True)
         sizes = [int(note.split("fotografia com ")[1].split(" KB")[0]) for note in detailed if "fotografia com" in note]
         self.assertEqual(sizes, sorted(sizes, reverse=True))
 

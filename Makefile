@@ -39,7 +39,8 @@ atualizar:
 	-@python3 -u scripts/capture_photos.py
 	@echo "\n══ 6/9  Campanhas ainda expiradas e elegibilidade"
 	@python3 -u scripts/expire_campaigns.py --apply
-	@echo "\n══ 7/9  Imagens que nenhum modelo referencia"
+	@echo "\n══ 7/9  Imagens: recomprimir as pesadas e arrumar as órfãs"
+	-@python3 -u scripts/optimize_images.py --apply
 	@python3 -u scripts/archive_unused_images.py --apply
 	@echo "\n══ 8/9  Validar, compilar e testar"
 	@python3 -u scripts/validate_data.py
