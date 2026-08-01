@@ -360,7 +360,11 @@ def main() -> int:
     commands = [
         [sys.executable, str(ROOT / "scripts" / "validate_data.py")],
         [sys.executable, str(ROOT / "scripts" / "compile_data.py")],
-        ["make", "test"],
+        # Os testes correm diretamente e não por `make test`: o Makefile foi
+        # reduzido a três alvos e esse deixou de existir. Como o `make atualizar`
+        # chama este script com `-@`, a falha vinha a ser engolida em silêncio.
+        [sys.executable, "-m", "unittest", "discover", "-s", "tests"],
+        ["node", "--test", *sorted(str(path) for path in (ROOT / "tests").glob("*.test.js"))],
     ]
     for command in commands:
         subprocess.run(command, cwd=ROOT, check=True)

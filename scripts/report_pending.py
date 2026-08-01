@@ -27,6 +27,11 @@ TODAY = dt.datetime.now(tz=ZoneInfo("Europe/Lisbon")).date()
 MAX_AGE_DAYS = 45
 EXPIRING_SOON_DAYS = 30
 BLOCKED_STATUS = {403, 408, 429}
+STALE_SNAPSHOT_HINT = (
+    "Estes snapshots trazem só um código HTTP, sem conteúdo. Se forem muitos, o "
+    "ficheiro é anterior ao browser fallback: correr `python3 scripts/update_catalog.py` "
+    "volta a lê-los e a lista encolhe."
+)
 
 
 def load(path: Path) -> dict:
@@ -86,7 +91,7 @@ def build_sections(catalog: dict, dealers: dict, snapshots: dict) -> list[tuple[
             sorted(undated),
         ),
         (
-            "FONTES QUE SÓ ABREM NUM BROWSER — proteção anti-bot; preço e condições NÃO foram lidos",
+            "FONTES AINDA POR LER — nem o urllib nem o browser trouxeram conteúdo",
             blocked,
         ),
         (
@@ -114,11 +119,15 @@ def main() -> int:
         print(f"\n{title}")
         for item in items:
             print(f"  - {item}")
+        if title.startswith("FONTES AINDA POR LER"):
+            print(f"    {STALE_SNAPSHOT_HINT}")
 
     print(
-        "\nA redescoberta do mercado (modelos novos, versões novas, campanhas novas)\n"
-        "não é automatizável: exige abrir as gamas oficiais e decidir. Ver AGENTS.md\n"
-        "secções 5B e 7. Nenhum preço entra no catálogo sem fonte oficial portuguesa."
+        "\nOs radares de mercado e a leitura de preços já correm sozinhos num browser\n"
+        "(`discover_models.py` e `refresh_prices.py`). O que continua a exigir uma\n"
+        "pessoa é a decisão: se um candidato é M1, se está mesmo encomendável em\n"
+        "Portugal, e se a fotografia mostra o carro certo. Ver AGENTS.md secções 5B,\n"
+        "7 e 15. Nenhum preço entra no catálogo sem fonte oficial portuguesa."
     )
     if total:
         print(f"\n{total} ponto(s) à espera de uma pessoa.")
