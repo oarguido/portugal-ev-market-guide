@@ -38,22 +38,6 @@
       "verified_on": "2026-07-23"
     },
     {
-      "brand": "Alfa Romeo",
-      "name": "C.A.M. Porto",
-      "address": "Rua Delfim Ferreira, 459",
-      "postal_code": "4100-199",
-      "locality": "Porto",
-      "phone": "+351 220 001 430",
-      "email": null,
-      "official_url": "https://www.cam.pt/",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
-      "services": [
-        "sales",
-        "service"
-      ],
-      "verified_on": "2026-07-23"
-    },
-    {
       "brand": "Alpine",
       "name": "Alpine Store Porto",
       "address": "Rua de Grijó, 123/127",
@@ -206,22 +190,6 @@
       "email": null,
       "official_url": "https://omodajaecoo.pt/concessionarios/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Carby%20Jaecoo%20Porto%20Circunvalacao%2010448",
-      "services": [
-        "sales",
-        "service"
-      ],
-      "verified_on": "2026-07-23"
-    },
-    {
-      "brand": "Jeep",
-      "name": "C.A.M. Porto",
-      "address": "Rua Delfim Ferreira, 459",
-      "postal_code": "4100-199",
-      "locality": "Porto",
-      "phone": "+351 220 001 430",
-      "email": null,
-      "official_url": "https://www.cam.pt/",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
       "services": [
         "sales",
         "service"

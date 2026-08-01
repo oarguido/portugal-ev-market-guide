@@ -9,7 +9,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
-    "image_path": "assets/images/vehicles/dacia-spring/official.jpg",
+    "image_path": "assets/images/vehicles/dacia-spring/official.webp",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -161,7 +161,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://byd-auto.pt/modelos/byd-dolphin-surf/",
-    "image_path": "assets/images/vehicles/byd-dolphin-surf/official.jpg",
+    "image_path": "assets/images/vehicles/byd-dolphin-surf/official.webp",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -206,7 +206,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
-    "image_path": "assets/images/vehicles/mini-cooper-el-trico/official.webp",
+    "image_path": "assets/images/vehicles/mini-cooper-el-trico/official.png",
     "last_verified": "2026-07-26",
     "data_sources": [
       {
@@ -268,7 +268,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
-    "image_path": "assets/images/vehicles/mini-aceman/official.webp",
+    "image_path": "assets/images/vehicles/mini-aceman/official.png",
     "last_verified": "2026-07-26",
     "data_sources": [
       {
@@ -394,7 +394,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.hyundai.pt/carros/novo-inster/",
-    "image_path": "assets/images/vehicles/hyundai-inster/photo.jpg",
+    "image_path": "assets/images/vehicles/hyundai-inster/official.webp",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -453,7 +453,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico.html",
-    "image_path": "assets/images/vehicles/renault-5-e-tech-el-trico/official.jpg",
+    "image_path": "assets/images/vehicles/renault-5-e-tech-el-trico/official.webp",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -512,7 +512,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.fiat.pt/modelos/fiat-500-eletrico",
-    "image_path": "assets/images/vehicles/fiat-500e/official.jpg",
+    "image_path": "assets/images/vehicles/fiat-500e/official.png",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -610,7 +610,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://caetano.pt/dongfeng/carros-novos/box/",
-    "image_path": "assets/images/vehicles/dongfeng-box/official.jpg",
+    "image_path": "assets/images/vehicles/dongfeng-box/official.webp",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -846,7 +846,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.peugeot.pt/showroom/novo-peugeot-208/eletrico.html",
-    "image_path": "assets/images/vehicles/peugeot-e-208/photo.jpg",
+    "image_path": "assets/images/vehicles/peugeot-e-208/official.png",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -939,7 +939,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
-    "image_path": "assets/images/vehicles/renault-4-e-tech-el-trico/official-direct.png",
+    "image_path": "assets/images/vehicles/renault-4-e-tech-el-trico/official.png",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -1116,7 +1116,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://kia.pt/modelos/kia-ev2/",
-    "image_path": "assets/images/vehicles/kia-ev2/official.jpg",
+    "image_path": "assets/images/vehicles/kia-ev2/official.webp",
     "last_verified": "2026-07-26",
     "data_sources": [
       {
@@ -1163,7 +1163,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://kia.pt/modelos/kia-ev3/",
-    "image_path": "assets/images/vehicles/kia-ev3/official.jpg",
+    "image_path": "assets/images/vehicles/kia-ev3/official.webp",
     "last_verified": "2026-07-26",
     "data_sources": [
       {
@@ -1218,7 +1218,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://kia.pt/modelos/kia-ev4/",
-    "image_path": "assets/images/vehicles/kia-ev4/official.jpg",
+    "image_path": "assets/images/vehicles/kia-ev4/official.webp",
     "last_verified": "2026-07-26",
     "data_sources": [
       {
@@ -1265,7 +1265,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://byd-auto.pt/modelos/byd-dolphin/",
-    "image_path": "assets/images/vehicles/byd-dolphin/official.jpg",
+    "image_path": "assets/images/vehicles/byd-dolphin/official.webp",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -1309,7 +1309,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.fiat.pt/modelos/fiat-600-eletrico",
-    "image_path": "assets/images/vehicles/fiat-600e/official.jpg",
+    "image_path": "assets/images/vehicles/fiat-600e/official.png",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -1456,7 +1456,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.renault.pt/veiculos-eletricos/megane-e-tech-eletrico.html",
-    "image_path": "assets/images/vehicles/renault-m-gane-e-tech-el-trico/official.jpg",
+    "image_path": "assets/images/vehicles/renault-m-gane-e-tech-el-trico/official.webp",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -1500,7 +1500,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.volkswagen.pt/id3/id3",
-    "image_path": "assets/images/vehicles/volkswagen-id-3/official.jpg",
+    "image_path": "assets/images/vehicles/volkswagen-id-3/official.webp",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -1593,7 +1593,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://pt.smart.com/pt/models/hashtag-one/",
-    "image_path": "assets/images/vehicles/smart-1/official-hero.jpg",
+    "image_path": "assets/images/vehicles/smart-1/official.jpg",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -1642,7 +1642,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://pt.smart.com/pt/models/hashtag-three/",
-    "image_path": "assets/images/vehicles/smart-3/official-hero.jpg",
+    "image_path": "assets/images/vehicles/smart-3/official.jpg",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -1695,104 +1695,6 @@ const CAR_DATA = [
     "cons": [
       "Campanha essencial para ficar abaixo do teto",
       "Visibilidade traseira limitada"
-    ]
-  },
-  {
-    "brand": "Jeep",
-    "model": "Avenger elétrico",
-    "powertrain": "BEV",
-    "segment": "SUV compacto",
-    "release_year": 2024,
-    "availability_status": "available",
-    "eligible": true,
-    "official_link": "https://www.jeep.pt/novo-jeep-avenger/eletrico",
-    "image_path": "assets/images/vehicles/jeep-avenger-el-trico/official-hero.jpg",
-    "last_verified": "2026-07-23",
-    "data_sources": [
-      {
-        "type": "official_model",
-        "url": "https://www.jeep.pt/novo-jeep-avenger/eletrico",
-        "verified_on": "2026-07-23"
-      },
-      {
-        "type": "official_campaign",
-        "url": "https://www.jeep.pt/promocoes-suv-4x4/oferta/avenger-100-eletrico-particular",
-        "verified_on": "2026-07-23"
-      }
-    ],
-    "variants": [
-      {
-        "name": "54 kWh",
-        "battery_capacity_kwh": 54,
-        "wltp_range_combined_km": 400,
-        "wltp_consumption_combined_kwh_100km": 15.4,
-        "power_kw": 115,
-        "power_hp": 156,
-        "dc_max_kw": 100,
-        "pricing": {
-          "particular_list_price_vat_incl": 47003.01,
-          "particular_campaign_price_vat_incl": 35003.01,
-          "campaign_conditions": "Campanha particular com condições; confirmar retoma/financiamento.",
-          "campaign_valid_until": "2026-07-31"
-        }
-      }
-    ],
-    "pros": [
-      "Compacto e confortável",
-      "Boa autonomia"
-    ],
-    "cons": [
-      "Preço de tabela acima do teto",
-      "Só entra na seleção durante a campanha"
-    ]
-  },
-  {
-    "brand": "Alfa Romeo",
-    "model": "Junior Elettrica",
-    "powertrain": "BEV",
-    "segment": "SUV compacto",
-    "release_year": 2024,
-    "availability_status": "available",
-    "eligible": true,
-    "official_link": "https://www.alfaromeo.pt/modelos/junior-elettrica",
-    "image_path": "assets/images/vehicles/alfa-romeo-junior-elettrica/official-exterior.png",
-    "last_verified": "2026-07-23",
-    "data_sources": [
-      {
-        "type": "official_model",
-        "url": "https://www.alfaromeo.pt/modelos/junior-elettrica",
-        "verified_on": "2026-07-23"
-      },
-      {
-        "type": "official_campaign",
-        "url": "https://www.alfaromeo.pt/promocoes-automoveis/promocoes/alfa-romeo-junior-elletrica",
-        "verified_on": "2026-07-23"
-      }
-    ],
-    "variants": [
-      {
-        "name": "Ti 54 kWh",
-        "battery_capacity_kwh": 54,
-        "wltp_range_combined_km": 410,
-        "wltp_consumption_combined_kwh_100km": 15.2,
-        "power_kw": 115,
-        "power_hp": 156,
-        "dc_max_kw": 100,
-        "pricing": {
-          "particular_list_price_vat_incl": 44553,
-          "particular_campaign_price_vat_incl": 39553,
-          "campaign_conditions": "Campanha particular com condições; confirmar financiamento/retoma.",
-          "campaign_valid_until": "2026-07-31"
-        }
-      }
-    ],
-    "pros": [
-      "Design distinto",
-      "Boa autonomia"
-    ],
-    "cons": [
-      "Preço de tabela acima do teto",
-      "Campanha próxima dos 40 mil euros"
     ]
   },
   {
@@ -2017,7 +1919,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://caetano.pt/geely/carros-novos/e5/",
-    "image_path": "assets/images/vehicles/geely-e5/official.jpg",
+    "image_path": "assets/images/vehicles/geely-e5/official.webp",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -2105,7 +2007,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.byd-auto.pt/campanhas/byd-atto-2",
-    "image_path": "assets/images/vehicles/byd-atto-2/official.jpg",
+    "image_path": "assets/images/vehicles/byd-atto-2/official.webp",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -2293,55 +2195,6 @@ const CAR_DATA = [
     ]
   },
   {
-    "brand": "Peugeot",
-    "model": "E-2008",
-    "powertrain": "BEV",
-    "segment": "SUV compacto",
-    "release_year": 2024,
-    "availability_status": "available",
-    "eligible": true,
-    "official_link": "https://www.peugeot.pt/our-range/new-peugeot-2008.html",
-    "image_path": "assets/images/vehicles/peugeot-e-2008/official.jpg",
-    "last_verified": "2026-07-23",
-    "data_sources": [
-      {
-        "type": "official_model",
-        "url": "https://www.peugeot.pt/our-range/new-peugeot-2008.html",
-        "verified_on": "2026-07-23"
-      },
-      {
-        "type": "official_campaign",
-        "url": "https://www.peugeot.pt/comprar/ofertas-do-momento/passageiros/particulares/peugeot-e-2008-easy-credit.html",
-        "verified_on": "2026-07-23"
-      }
-    ],
-    "variants": [
-      {
-        "name": "156 cv 54 kWh",
-        "battery_capacity_kwh": 54,
-        "wltp_range_combined_km": 406,
-        "wltp_consumption_combined_kwh_100km": 15.5,
-        "power_kw": 115,
-        "power_hp": 156,
-        "dc_max_kw": 100,
-        "pricing": {
-          "particular_list_price_vat_incl": 41803,
-          "particular_campaign_price_vat_incl": 31678,
-          "campaign_conditions": "Easy Credit com condições; confirmar entrada, prazo, retoma e MTIC.",
-          "campaign_valid_until": "2026-07-31"
-        }
-      }
-    ],
-    "pros": [
-      "Boa autonomia e bagageira",
-      "Rede de assistência ampla"
-    ],
-    "cons": [
-      "Preço de tabela acima do teto",
-      "Preço anunciado depende de crédito"
-    ]
-  },
-  {
     "brand": "Abarth",
     "model": "500e",
     "powertrain": "BEV",
@@ -2350,7 +2203,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.abarth.pt/novo-abarth-electric-500e",
-    "image_path": "assets/images/vehicles/abarth-500e/official.jpg",
+    "image_path": "assets/images/vehicles/abarth-500e/official.png",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -2395,17 +2248,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://gac-portugal.pt/aion-ut/",
     "image_path": "assets/images/vehicles/aion-ut/official.webp",
-    "last_verified": "2026-07-23",
+    "last_verified": "2026-08-01",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://gac-portugal.pt/aion-ut/",
-        "verified_on": "2026-07-23"
+        "verified_on": "2026-08-01"
       },
       {
         "type": "official_campaign",
         "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-        "verified_on": "2026-07-23"
+        "verified_on": "2026-08-01"
       }
     ],
     "variants": [
@@ -2421,8 +2274,8 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 28190,
           "particular_campaign_price_vat_incl": 26560,
-          "campaign_conditions": "Crédito com reserva de propriedade para particulares, sujeito a aprovação; inclui pintura Verde Emerald, exclui documentação e transporte e está limitado ao stock dos concessionários aderentes.",
-          "campaign_valid_until": "2026-07-31"
+          "campaign_conditions": "Crédito com reserva de propriedade para particulares, sujeito a aprovação Cetelem (BNPP PF); entrada de 7.968 €, 59 prestações de 270 €, última de 6.640 €, TAN 5,93%, TAEG 8,2%, comissão de abertura 600 €; limitado ao stock de concessionários aderentes; inclui pintura metalizada mono-tom e exclui despesas de documentação e transporte.",
+          "campaign_valid_until": "2026-08-31"
         }
       }
     ],
@@ -2444,13 +2297,13 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.alpinecars.pt/modelos-eletricos/a290.html",
-    "image_path": "assets/images/vehicles/alpine-a290/official.jpg",
-    "last_verified": "2026-07-23",
+    "image_path": "assets/images/vehicles/alpine-a290/official.webp",
+    "last_verified": "2026-08-01",
     "data_sources": [
       {
         "type": "official_model_configurator_and_campaign",
         "url": "https://www.alpinecars.pt/modelos-eletricos/a290.html",
-        "verified_on": "2026-07-23"
+        "verified_on": "2026-08-01"
       }
     ],
     "variants": [
@@ -2464,9 +2317,9 @@ const CAR_DATA = [
         "dc_max_kw": 100,
         "pricing": {
           "particular_list_price_vat_incl": 39000,
-          "particular_campaign_price_vat_incl": 37830.6,
-          "campaign_conditions": "Crédito com reserva de propriedade Mobilize Financial Services para particulares, sujeito a aprovação; preço com desconto inclui despesas administrativas e de transporte.",
-          "campaign_valid_until": "2026-07-31"
+          "particular_campaign_price_vat_incl": null,
+          "campaign_conditions": null,
+          "campaign_valid_until": null
         }
       }
     ],
@@ -2602,7 +2455,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.filintomota.pt/marca/leapmotor/c10/",
-    "image_path": "assets/images/vehicles/leapmotor-c10/official.png",
+    "image_path": "assets/images/vehicles/leapmotor-c10/official.jpg",
     "last_verified": "2026-07-23",
     "data_sources": [
       {
@@ -2694,13 +2547,13 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
-    "image_path": "assets/images/vehicles/renault-scenic/official.jpg",
-    "last_verified": "2026-07-23",
+    "image_path": "assets/images/vehicles/renault-scenic-e-tech-el-trico/official.webp",
+    "last_verified": "2026-08-01",
     "data_sources": [
       {
         "type": "official_model_and_campaign",
         "url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
-        "verified_on": "2026-07-23"
+        "verified_on": "2026-08-01"
       }
     ],
     "variants": [
@@ -2713,10 +2566,10 @@ const CAR_DATA = [
         "power_hp": 170,
         "dc_max_kw": 130,
         "pricing": {
-          "particular_list_price_vat_incl": 45068.61,
+          "particular_list_price_vat_incl": 49640,
           "particular_campaign_price_vat_incl": 38753.71,
           "campaign_conditions": "Crédito com reserva de propriedade Mobilize Financial Services para particulares, financiamento mínimo de 24 meses e sujeito a aprovação; preço com desconto inclui despesas administrativas e transporte.",
-          "campaign_valid_until": "2026-07-31"
+          "campaign_valid_until": "2026-08-31"
         }
       }
     ],
@@ -2823,22 +2676,6 @@ const DEALER_DATA = {
     "email": null,
     "official_url": "https://rede.abarth.pt/cam-porto/contacte-nos/",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Abarth%20CAM%20Porto%20Rua%20Delfim%20Ferreira%20421",
-    "services": [
-      "sales",
-      "service"
-    ],
-    "verified_on": "2026-07-23"
-  },
-  "Alfa Romeo": {
-    "brand": "Alfa Romeo",
-    "name": "C.A.M. Porto",
-    "address": "Rua Delfim Ferreira, 459",
-    "postal_code": "4100-199",
-    "locality": "Porto",
-    "phone": "+351 220 001 430",
-    "email": null,
-    "official_url": "https://www.cam.pt/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
     "services": [
       "sales",
       "service"
@@ -2998,22 +2835,6 @@ const DEALER_DATA = {
     "email": null,
     "official_url": "https://omodajaecoo.pt/concessionarios/",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Carby%20Jaecoo%20Porto%20Circunvalacao%2010448",
-    "services": [
-      "sales",
-      "service"
-    ],
-    "verified_on": "2026-07-23"
-  },
-  "Jeep": {
-    "brand": "Jeep",
-    "name": "C.A.M. Porto",
-    "address": "Rua Delfim Ferreira, 459",
-    "postal_code": "4100-199",
-    "locality": "Porto",
-    "phone": "+351 220 001 430",
-    "email": null,
-    "official_url": "https://www.cam.pt/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
     "services": [
       "sales",
       "service"
