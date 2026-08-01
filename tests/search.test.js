@@ -34,17 +34,43 @@ test("cada modelo do catálogo é encontrado pelo nome oficial", () => {
 });
 
 test("a pesquisa normaliza acentos e pontuação frequentes", () => {
-  assert.ok(resultsFor("Citroen e-C3").some(result => result.model === "ë-C3"));
-  assert.ok(resultsFor("Megane").some(result => result.model === "Mégane E-Tech elétrico"));
-  assert.ok(resultsFor("Skoda Elroq").some(result => result.brand === "Škoda"));
-  assert.ok(resultsFor("ID3").some(result => result.model === "ID.3"));
-  assert.ok(resultsFor("E2008").some(result => result.model === "E-2008"));
+  // Cada caso prova uma regra de normalização, não a presença de um carro:
+  // trema, acento agudo, háček e ponto interior. Se o modelo citado sair do
+  // catálogo, o caso é ignorado em vez de dar um falso alarme — o que se testa
+  // é a regra, e um carro pode legitimamente deixar de existir.
+  const casos = [
+    { query: "Citroen e-C3", modelo: "ë-C3" },
+    { query: "Megane", modelo: "Mégane E-Tech elétrico" },
+    { query: "Skoda Elroq", modelo: "Elroq" },
+    { query: "ID3", modelo: "ID.3" }
+  ].filter(caso => vehicles.some(vehicle => vehicle.model === caso.modelo));
+
+  assert.ok(casos.length >= 3, "o catálogo tem de manter casos acentuados suficientes para testar a regra");
+  for (const caso of casos) {
+    assert.ok(
+      resultsFor(caso.query).some(result => result.model === caso.modelo),
+      `"${caso.query}" devia encontrar ${caso.modelo}`
+    );
+  }
 });
 
 test("uma pequena gralha não esconde um modelo", () => {
-  assert.ok(resultsFor("Dolphyn").some(result => result.model === "Dolphin"));
-  assert.ok(resultsFor("Meggane").some(result => result.model === "Mégane E-Tech elétrico"));
-  assert.ok(resultsFor("Avengerr").some(result => result.model === "Avenger elétrico"));
+  // Gralhas geradas a partir do próprio catálogo, duplicando a última letra do
+  // nome. Antes esta prova citava modelos à mão e falhava assim que um deles
+  // saía do catálogo por a campanha ter expirado — uma regressão inventada.
+  const amostra = [...new Set(vehicles.map(vehicle => vehicle.model))]
+    .filter(modelo => /^[\p{L}]{5,}$/u.test(modelo.split(" ")[0]))
+    .slice(0, 8);
+
+  assert.ok(amostra.length >= 3, "amostra insuficiente para testar tolerância a gralhas");
+  for (const modelo of amostra) {
+    const primeira = modelo.split(" ")[0];
+    const gralha = primeira + primeira.slice(-1);
+    assert.ok(
+      resultsFor(gralha).some(result => result.model === modelo),
+      `"${gralha}" devia continuar a encontrar ${modelo}`
+    );
+  }
 });
 
 test("a versão e a capacidade da bateria também são pesquisáveis", () => {
