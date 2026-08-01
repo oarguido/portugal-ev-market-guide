@@ -26,6 +26,7 @@ import argparse
 import html as html_module
 import json
 import re
+import subprocess
 import unicodedata
 import urllib.error
 import urllib.request
@@ -42,10 +43,58 @@ def normalize(value: str) -> str:
     return " ".join(re.sub(r"[^a-z0-9]+", " ", ascii_only.lower()).split())
 
 
+BROWSER_TIMEOUT = 120
+
+
 def fetch(url: str) -> str:
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 CarroLilianaDiscovery/1.0"})
     with urllib.request.urlopen(request, timeout=40) as response:
         return response.read().decode("utf-8", errors="ignore")
+
+
+def browser_links(url: str) -> list[str] | None:
+    """Abrir o radar num browser e devolver os href da página já renderizada.
+
+    Os dois radares são inúteis sem browser: o guia da EVMag preenche a tabela por
+    JavaScript e um pedido HTTP devolve só o cabeçalho; a electrifying.com monta a
+    listagem A-Z do mesmo modo. Enquanto isto usava só urllib, a redescoberta de
+    mercado — a secção 5B do AGENTS.md — não estava automatizada de todo.
+    """
+    script = "JSON.stringify([...document.querySelectorAll('a')].map(a => a.getAttribute('href')).filter(Boolean))"
+    try:
+        opened = subprocess.run(
+            ["agent-browser", "open", url], cwd=ROOT, text=True, capture_output=True, timeout=BROWSER_TIMEOUT
+        )
+        if opened.returncode != 0:
+            return None
+        result = subprocess.run(
+            ["agent-browser", "eval", script], cwd=ROOT, text=True, capture_output=True, timeout=BROWSER_TIMEOUT
+        )
+    except (subprocess.TimeoutExpired, FileNotFoundError, OSError):
+        return None
+    if result.returncode != 0:
+        return None
+    payload = result.stdout.strip()
+    for _ in range(2):
+        try:
+            payload = json.loads(payload)
+        except (json.JSONDecodeError, TypeError):
+            break
+    return payload if isinstance(payload, list) else None
+
+
+REVIEW_PATH = re.compile(r"/reviews/([^/]+?)(?:-reviews)?/([^/]+)/review")
+
+
+def models_from_links(links: list[str]) -> list[str]:
+    """Pares (marca, modelo) a partir dos URL de review da electrifying.com."""
+    found = []
+    for href in links:
+        match = REVIEW_PATH.search(href or "")
+        if match:
+            marca, modelo = match.group(1), match.group(2)
+            found.append(f"{marca.replace('-', ' ')} {modelo.replace('-', ' ')}")
+    return sorted(dict.fromkeys(found))
 
 
 def table_rows(page: str) -> list[list[str]]:
@@ -63,6 +112,17 @@ def table_rows(page: str) -> list[list[str]]:
 
 def catalog_keys(catalog: dict) -> set[str]:
     return {normalize(f"{model['brand']} {model['model']}") for model in catalog["models"]}
+
+
+def unknown_from_names(names: list[str], catalog: dict) -> list[str]:
+    known = catalog_keys(catalog)
+    unknown = []
+    for name in names:
+        key = normalize(name)
+        if not key or any(key.startswith(existing) or existing.startswith(key) for existing in known):
+            continue
+        unknown.append(name)
+    return sorted(dict.fromkeys(unknown))
 
 
 def unknown_from_rows(rows: list[list[str]], catalog: dict) -> list[str]:
@@ -98,24 +158,32 @@ def main() -> int:
         print(f"\nRADAR  {source['name']}\n       {source['url']}")
         try:
             rows = table_rows(fetch(source["url"]))
-        except (urllib.error.URLError, TimeoutError, OSError) as error:
-            print(f"       INACESSÍVEL ({type(error).__name__}).")
-            manual.append(f"{source['name']}: fonte inacessível por HTTP")
-            continue
+        except (urllib.error.URLError, TimeoutError, OSError):
+            rows = []
 
-        if len(rows) <= 1:
-            # Cabeçalho sem corpo: a tabela e preenchida no browser.
-            print("       A tabela vem vazia num pedido HTTP simples: é preenchida por JavaScript.")
-            print("       Este radar TEM de ser lido num browser real; nenhum candidato foi extraído.")
-            manual.append(f"{source['name']}: abrir no browser e comparar com o catálogo")
-            continue
-
-        unknown = unknown_from_rows(rows, catalog)
+        unknown: list[str] = []
+        if len(rows) > 1:
+            unknown = unknown_from_rows(rows, catalog)
+        else:
+            # Sem tabela utilizável no HTML: passar ao browser, que renderiza o
+            # JavaScript e devolve a listagem completa.
+            links = browser_links(source["url"])
+            if links is None:
+                print("       INACESSÍVEL, mesmo com browser.")
+                manual.append(f"{source['name']}: abrir à mão e comparar com o catálogo")
+                continue
+            nomes = models_from_links(links)
+            if not nomes:
+                print("       Browser abriu mas não devolveu modelos reconhecíveis.")
+                manual.append(f"{source['name']}: abrir à mão e comparar com o catálogo")
+                continue
+            print(f"       {len(nomes)} modelos lidos no browser.")
+            unknown = unknown_from_names(nomes, catalog)
         total += len(unknown)
         if not unknown:
-            print(f"       {len(rows) - 1} modelos lidos; nenhum fora do catálogo.")
+            print("       Nenhum modelo fora do catálogo.")
             continue
-        print(f"       {len(rows) - 1} modelos lidos, {len(unknown)} fora do catálogo:")
+        print(f"       {len(unknown)} fora do catálogo:")
         for candidate in unknown[: args.limit]:
             print(f"         - {candidate}")
         if len(unknown) > args.limit:

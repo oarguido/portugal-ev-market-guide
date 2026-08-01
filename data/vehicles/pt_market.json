@@ -22,6 +22,19 @@
         "Inclui veículos comerciais e preços aproximados",
         "Pode conter duplicados ou valores contraditórios entre a tabela e a base interativa"
       ]
+    },
+    {
+      "name": "Electrifying — A-Z de carros elétricos",
+      "url": "https://www.electrifying.com/az-reviews",
+      "type": "secondary_market_discovery",
+      "verified_on": "2026-08-01",
+      "usage_policy": "Radar para descobrir modelos que o catálogo ainda não conhece. Nunca prova preço, disponibilidade nem elegibilidade em Portugal.",
+      "known_limitations": [
+        "Publicação britânica: os preços são em libras e o mercado é o do Reino Unido.",
+        "Inclui modelos que nunca chegam a Portugal, comerciais N1, quadriciclos e conceitos.",
+        "Inclui híbridos e PHEV a par dos 100% elétricos.",
+        "Inclui modelos descontinuados e lançamentos futuros sem data portuguesa."
+      ]
     }
   ],
   "models": [
