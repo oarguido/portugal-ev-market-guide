@@ -25,8 +25,10 @@ from compile_data import ROOT, load_catalog, load_dealers
 
 CACHE = ROOT / "data" / "source_snapshots.json"
 HTML_FINGERPRINT_VERSION = "html-visible-text-v1"
+BROWSER_FINGERPRINT_VERSION = "browser-visible-text-v1"
 BINARY_FINGERPRINT_VERSION = "binary-raw-v1"
-FETCH_ATTEMPTS = 3
+FETCH_ATTEMPTS = 2
+BROWSER_TIMEOUT = 90
 RETRYABLE_HTTP_CODES = {500, 502, 503, 504}
 DYNAMIC_VISIBLE_TEXT = re.compile(r"\bAtualmente\s+(?:aberto|fechado)\b", re.IGNORECASE)
 OG_IMAGE = re.compile(r'<meta[^>]+(?:property|name)=["\']og:image["\'][^>]+content=["\']([^"\']+)', re.IGNORECASE)
@@ -81,6 +83,50 @@ def fetch(url: str, attempts: int = FETCH_ATTEMPTS) -> tuple[bytes, str]:
             print(f"RETRY {attempt}/{attempts}  ligação/timeout  {url}")
         time.sleep(attempt)
     raise RuntimeError(f"fetch sem resultado: {url}")
+
+
+def browser_text(url: str) -> str | None:
+    """Abrir a página num browser real e devolver o texto visível.
+
+    urllib não passa em mini.pt (fecha a ligação), nem em citroen.pt, fiat.pt,
+    jeep.pt, tesla.com ou volvocars.com (403/429). Um browser passa em todas:
+    a mini.pt responde em pouco mais de um segundo, contra três tentativas de
+    40 s de timeout que acabavam sem conteúdo nenhum.
+
+    Enquanto estas fontes ficavam por ler, o preço e a campanha dessas marcas não
+    eram verificados por nada — cerca de um terço do catálogo.
+    """
+    try:
+        opened = subprocess.run(
+            ["agent-browser", "open", url], cwd=ROOT, text=True, capture_output=True, timeout=BROWSER_TIMEOUT
+        )
+        if opened.returncode != 0:
+            return None
+        result = subprocess.run(
+            ["agent-browser", "get", "text", "body"], cwd=ROOT, text=True, capture_output=True, timeout=BROWSER_TIMEOUT
+        )
+    except (subprocess.TimeoutExpired, FileNotFoundError, OSError):
+        return None
+    text = result.stdout.strip() if result.returncode == 0 else ""
+    return text or None
+
+
+def build_browser_snapshot(text: str, url: str, *, source_type: str | None = None) -> dict:
+    normalized = " ".join(unicodedata.normalize("NFKC", text).split())
+    normalized = DYNAMIC_VISIBLE_TEXT.sub("", normalized)
+    digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+    snapshot = {
+        "fingerprint_version": BROWSER_FINGERPRINT_VERSION,
+        "sha256": digest,
+        "raw_sha256": digest,
+        "final_url": url,
+        "bytes": len(text.encode("utf-8")),
+        "normalized_chars": len(normalized),
+        "read_with": "agent-browser",
+    }
+    if source_type:
+        snapshot["source_type"] = source_type
+    return snapshot
 
 
 def normalized_visible_text(body: bytes) -> str:
@@ -213,6 +259,14 @@ def main() -> int:
             print(f"OK {len(body):>8} B  {url}{annotation}")
         except urllib.error.HTTPError as error:
             if error.code in {403, 429}:
+                rendered = browser_text(url)
+                if rendered:
+                    snapshot = build_browser_snapshot(rendered, url, source_type=source_type)
+                    current[url] = snapshot
+                    if snapshot_changed(previous.get(url), snapshot):
+                        changed.append(url)
+                    print(f"OK {len(rendered):>8} B  {url}{annotation} (HTTP {error.code}; lido no browser)")
+                    return
                 blocked = blocked_snapshot(
                     error.code,
                     error.geturl(),
@@ -236,10 +290,17 @@ def main() -> int:
             failed.append(url)
             print(f"ERRO {url}: HTTP {error.code}")
         except (TimeoutError, urllib.error.URLError) as error:
-            # mini.pt e ford.pt nao respondem a urllib mas abrem no browser. Tratar
-            # como bloqueio (igual a 403/429) e nao como falha: caso contrario uma
-            # fonte destas trava o `make update` inteiro e nenhuma baseline e gravada.
-            # Nao prova ausencia de alteracao, por isso vai para revisao manual.
+            # mini.pt e ford.pt nao respondem a urllib mas abrem num browser real,
+            # e em pouco mais de um segundo. Tentar por ai antes de desistir: so
+            # se o browser tambem falhar e que a fonte fica por rever.
+            rendered = browser_text(url)
+            if rendered:
+                snapshot = build_browser_snapshot(rendered, url, source_type=source_type)
+                current[url] = snapshot
+                if snapshot_changed(previous.get(url), snapshot):
+                    changed.append(url)
+                print(f"OK {len(rendered):>8} B  {url}{annotation} (sem resposta a urllib; lido no browser)")
+                return
             blocked = blocked_snapshot(408, url, source_type=source_type)
             previous_snapshot = previous.get(url)
             snapshot = (

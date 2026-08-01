@@ -28,12 +28,71 @@ VALID_LINK_CODES = VERIFIED_LINK_CODES | BLOCKED_LINK_CODES
 LINK_WORKERS = 8
 # 13 das 54 fotografias pesam 71 % dos 23 MB da pasta. O orcamento e um aviso,
 # nao um erro: uma fotografia oficial correta e mais importante que o peso.
+MIN_IMAGE_WIDTH = 600
 MAX_IMAGE_BYTES = 500_000
 MAX_IMAGE_TOTAL_BYTES = 12_000_000
 MODEL_REQUIRED = {"brand", "model", "powertrain", "segment", "availability_status", "eligible", "official_link", "image_path", "last_verified", "data_sources", "variants"}
 VARIANT_REQUIRED = {"name", "battery_capacity_kwh", "wltp_range_combined_km", "power_kw", "power_hp", "pricing"}
 DEALER_REQUIRED = {"brand", "name", "address", "postal_code", "locality", "phone", "email", "official_url", "maps_url", "services", "verified_on"}
 DISCOVERY_REQUIRED = {"name", "url", "type", "verified_on", "usage_policy", "known_limitations"}
+
+
+def image_dimensions(path) -> tuple[str, int, int] | None:
+    """(formato, largura, altura) lendo só o cabeçalho, ou None se ilegível.
+
+    O tamanho em bytes não chega para saber se uma fotografia presta. Uma captura
+    falhada da Stellantis trazia 4,4 KB de placeholder e passava no limite de
+    5 KB por pouco; um ficheiro truncado a meio do download passa à mesma. Ler o
+    cabeçalho responde à pergunta certa: isto é mesmo uma imagem, e do formato
+    que a extensão promete?
+
+    Feito à mão porque o projeto não tem dependências e não vale a pena ganhar
+    uma só para ler três cabeçalhos.
+    """
+    try:
+        header = path.read_bytes()[:32]
+    except OSError:
+        return None
+    if header[:8] == b"\x89PNG\r\n\x1a\n" and header[12:16] == b"IHDR":
+        return "png", int.from_bytes(header[16:20], "big"), int.from_bytes(header[20:24], "big")
+    if header[:2] == b"\xff\xd8":
+        return _jpeg_dimensions(path)
+    if header[:4] == b"RIFF" and header[8:12] == b"WEBP":
+        return _webp_dimensions(path)
+    return None
+
+
+def _jpeg_dimensions(path) -> tuple[str, int, int] | None:
+    data = path.read_bytes()
+    index = 2
+    while index + 9 < len(data):
+        if data[index] != 0xFF:
+            index += 1
+            continue
+        marker = data[index + 1]
+        # SOF0..SOF15, excluindo DHT (C4), JPG (C8) e DAC (CC).
+        if 0xC0 <= marker <= 0xCF and marker not in {0xC4, 0xC8, 0xCC}:
+            height = int.from_bytes(data[index + 5 : index + 7], "big")
+            width = int.from_bytes(data[index + 7 : index + 9], "big")
+            return "jpeg", width, height
+        index += 2 + int.from_bytes(data[index + 2 : index + 4], "big")
+    return None
+
+
+def _webp_dimensions(path) -> tuple[str, int, int] | None:
+    data = path.read_bytes()[:40]
+    chunk = data[12:16]
+    if chunk == b"VP8 ":
+        return "webp", int.from_bytes(data[26:28], "little") & 0x3FFF, int.from_bytes(data[28:30], "little") & 0x3FFF
+    if chunk == b"VP8L":
+        bits = int.from_bytes(data[21:25], "little")
+        return "webp", (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
+    if chunk == b"VP8X":
+        return "webp", int.from_bytes(data[24:27], "little") + 1, int.from_bytes(data[27:30], "little") + 1
+    return None
+
+
+EXTENSION_FORMAT = {".png": "png", ".jpg": "jpeg", ".jpeg": "jpeg", ".webp": "webp"}
 
 
 def effective_price(pricing: dict) -> float | None:
@@ -103,6 +162,17 @@ def validate_catalog(catalog: dict) -> list[str]:
         image = ROOT / "web" / model.get("image_path", "")
         if not model.get("image_path") or not image.is_file() or image.stat().st_size < 5_000:
             errors.append(f"{label}: imagem local ausente ou inválida ({model.get('image_path')!r})")
+        else:
+            measured = image_dimensions(image)
+            if measured is None:
+                errors.append(f"{label}: a fotografia não é uma imagem legível ({model['image_path']})")
+            else:
+                fmt, width, _ = measured
+                expected = EXTENSION_FORMAT.get(image.suffix.lower())
+                if expected and fmt != expected:
+                    errors.append(f"{label}: a fotografia é {fmt} mas a extensão diz {image.suffix}")
+                elif width < MIN_IMAGE_WIDTH:
+                    errors.append(f"{label}: fotografia com apenas {width} px de largura (mínimo {MIN_IMAGE_WIDTH})")
         sources = model.get("data_sources")
         if not isinstance(sources, list) or not sources:
             errors.append(f"{label}: data_sources vazio")
