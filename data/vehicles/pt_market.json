@@ -2584,6 +2584,56 @@
       ]
     },
     {
+      "brand": "Toyota",
+      "model": "bZ4X",
+      "powertrain": "BEV",
+      "segment": "SUV",
+      "release_year": 2026,
+      "availability_status": "available",
+      "eligible": true,
+      "official_link": "https://www.toyota.pt/carros/bz4x",
+      "image_path": "assets/images/vehicles/toyota-bz4x/official.jpg",
+      "last_verified": "2026-08-01",
+      "pros": [
+        "Bateria de 57,7 kWh com carregamento DC até 150 kW",
+        "Campanha com desconto direto de 6.000 € sobre o PVP"
+      ],
+      "cons": [
+        "Autonomia registada é o extremo inferior do intervalo publicado para a gama",
+        "Preço elegível depende da campanha; sem ela o PVP fica acima do limite"
+      ],
+      "data_sources": [
+        {
+          "type": "official_model",
+          "url": "https://www.toyota.pt/carros/bz4x",
+          "verified_on": "2026-08-01"
+        },
+        {
+          "type": "official_price_sheet",
+          "url": "https://www.toyota.pt/carros/bz4x/especificacoes",
+          "verified_on": "2026-08-01"
+        }
+      ],
+      "variants": [
+        {
+          "name": "Exclusive 57,7 kWh",
+          "battery_capacity_kwh": 57.7,
+          "wltp_range_combined_km": 444,
+          "range_note": "A Toyota publica 444–569 km para a gama com baterias de 57,7 e 73,1 kWh, sem separar por versão. Registado o extremo inferior por ser a versão de menor capacidade (AGENTS.md, secção 8).",
+          "power_kw": 123,
+          "power_hp": 167,
+          "wltp_consumption_combined_kwh_100km": 13.9,
+          "max_speed_kmh": 140,
+          "pricing": {
+            "particular_list_price_vat_incl": 45640,
+            "particular_campaign_price_vat_incl": 39640,
+            "campaign_conditions": "Campanha promocional com desconto direto de 6.000 € sobre o PVP de 45.640 €. Não acumula com condições de frota nem outras ofertas em vigor. Preços recomendados, não incluem despesas de legalização, transporte nem ecovalor. Potência publicada como 167 cv; 123 kW é a conversão determinística declarada.",
+            "campaign_valid_until": "2026-08-31"
+          }
+        }
+      ]
+    },
+    {
       "brand": "Volkswagen",
       "model": "ID.3",
       "powertrain": "BEV",

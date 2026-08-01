@@ -219,6 +219,31 @@ Regras de preço:
   condições e a fonte original permanecer registada. Não arredondar nem chamar
   PVP oficial ao valor derivado.
 
+### Intervalos publicados para a gama inteira
+
+Muitas marcas publicam autonomia, potência ou consumo como um intervalo que cobre
+a gama toda — "444 – 569 km" para baterias de "57,7 e 73,1 kWh" — e não por
+versão. Nesse caso, para a versão de menor capacidade regista-se o **extremo
+inferior** do intervalo.
+
+A regra é segura porque anda no mesmo sentido do preço: a versão elegível é
+quase sempre a de bateria mais pequena, e é a essa que corresponde a autonomia
+mais curta. Mais bateria custa mais dinheiro e dá mais autonomia, por isso o
+extremo inferior nunca sobrevaloriza a versão barata. Um comparador que erre tem
+de errar por defeito.
+
+Condições, iguais às da conversão de IVA:
+
+1. o intervalo tem de estar publicado na fonte oficial portuguesa;
+2. a versão registada tem de ser mesmo a de menor capacidade da gama;
+3. a derivação fica escrita em `range_note` na variante, para ninguém confundir
+   o valor com um número medido para aquela versão;
+4. a fonte que publica o intervalo fica registada em `data_sources`.
+
+Não usar esta regra para inventar o extremo superior, nem para preencher um
+valor quando a fonte não publica intervalo nenhum. Sem intervalo publicado, o
+valor continua a exigir confirmação.
+
 Para `data_sources`, usar URLs HTTPS oficiais, um `type` descritivo coerente com
 os valores existentes (`official_model`, `official_campaign`,
 `official_price_sheet`, etc.) e `verified_on` igual a `last_verified`.
