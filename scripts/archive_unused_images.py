@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import shutil
 from pathlib import Path
@@ -33,13 +34,53 @@ def unused_images() -> list[Path]:
     )
 
 
-def archive_images(images: list[Path]) -> None:
+def _digest(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def free_destination(destination: Path) -> Path:
+    """Primeiro nome livre a partir de `destination`: official.png, official-2.png..."""
+    if not destination.exists():
+        return destination
+    for index in range(2, 1_000):
+        candidate = destination.with_name(f"{destination.stem}-{index}{destination.suffix}")
+        if not candidate.exists():
+            return candidate
+    raise FileExistsError(f"demasiadas colisões para {destination}")
+
+
+def archive_images(images: list[Path]) -> list[str]:
+    """Arquivar cada imagem, sem nunca abortar a meio nem apagar conteúdo único.
+
+    A versão anterior levantava FileExistsError na primeira colisão. Como o
+    arquivo acumula execuções anteriores, uma segunda passagem colidia quase
+    sempre — e como o move acontece ficheiro a ficheiro, a operação ficava
+    aplicada a meio: uns arquivados, outros não, e um traceback. Correr outra vez
+    movia mais alguns e voltava a rebentar.
+
+    Agora é idempotente:
+
+    - destino livre: move;
+    - destino ocupado com bytes iguais: a imagem já está arquivada, por isso a
+      cópia ativa é removida (o conteúdo continua no arquivo, verificado por
+      hash antes de remover);
+    - destino ocupado com bytes diferentes: move para um nome livre, para nunca
+      substituir uma imagem arquivada por outra.
+    """
+    notes: list[str] = []
     for source in images:
         destination = ARCHIVE_ROOT / source.relative_to(IMAGE_ROOT)
         destination.parent.mkdir(parents=True, exist_ok=True)
-        if destination.exists():
-            raise FileExistsError(f"já existe no arquivo: {destination}")
-        shutil.move(source, destination)
+        relative = source.relative_to(ROOT)
+        if destination.exists() and _digest(destination) == _digest(source):
+            source.unlink()
+            notes.append(f"{relative}: já estava arquivada com os mesmos bytes; removida da pasta ativa")
+            continue
+        target = free_destination(destination)
+        shutil.move(source, target)
+        if target != destination:
+            notes.append(f"{relative}: arquivada como {target.relative_to(ARCHIVE_ROOT)} (já existia outra com esse nome)")
+    return notes
 
 
 def main() -> int:
@@ -63,7 +104,9 @@ def main() -> int:
         )
         return 0
 
-    archive_images(images)
+    notes = archive_images(images)
+    if notes:
+        print("\n".join(f"NOTA: {note}" for note in notes))
     print(
         f"Arquivadas {len(images)} imagens não referenciadas "
         f"({total_bytes / 1024 / 1024:.1f} MB)."
