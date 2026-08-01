@@ -1,4 +1,5 @@
 import json
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -76,17 +77,38 @@ class ProjectDataTests(unittest.TestCase):
         self.assertEqual(json.loads(payload), self.models)
 
     def test_web_entrypoint_references_existing_local_assets(self):
+        """Todo o asset local referenciado pelo index.html tem de existir.
+
+        Derivado do HTML em vez de uma lista fixa: uma lista fixa esquece um
+        ficheiro novo (specs.js esteve carregado sem estar coberto) e continua
+        verde.
+        """
         html = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
-        for path in (
-            "assets/css/styles.css",
-            "assets/js/search.js",
-            "assets/js/ranking.js",
-            "assets/js/app.js",
-            "assets/js/car_data.js",
-            "assets/favicon.svg",
-        ):
-            self.assertIn(path, html)
-            self.assertTrue((ROOT / "web" / path).is_file())
+        # O src do bundle traz ?v=<hash> para o browser não servir a versão antiga
+        # em cache; o ficheiro no disco é o mesmo sem a query.
+        references = [ref.split("?", 1)[0] for ref in re.findall(r'(?:src|href)="([^"]+)"', html)]
+        local = [
+            reference
+            for reference in references
+            if not reference.startswith(("http://", "https://", "//", "#", "mailto:", "tel:", "data:"))
+        ]
+        self.assertTrue(local, "o index.html tem de referenciar assets locais")
+        for reference in local:
+            with self.subTest(asset=reference):
+                self.assertTrue((ROOT / "web" / reference).is_file(), f"asset ausente: {reference}")
+
+    def test_web_entrypoint_loads_every_application_module(self):
+        """A aplicação não carrega o bundle sem os módulos que o interpretam."""
+        html = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
+        modules = {path.name for path in (ROOT / "web" / "assets" / "js").glob("*.js")}
+        loaded = {src.split("?", 1)[0] for src in re.findall(r'<script src="assets/js/([^"]+)"', html)}
+        self.assertEqual(modules, loaded, "módulo em assets/js/ não carregado pelo index.html")
+
+    def test_offline_page_has_no_remote_resources(self):
+        """A aplicação é offline: nenhum src/href pode apontar para a rede."""
+        html = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
+        remote = re.findall(r'(?:src|href)="((?:https?:)?//[^"]+)"', html)
+        self.assertEqual(remote, [], f"recursos remotos no index.html: {remote}")
 
     def test_server_uses_next_port_when_preferred_port_is_occupied(self):
         replacement = mock.Mock()

@@ -6,6 +6,10 @@
 let flatCars = [];
 let testDriveReviews = [];
 
+// Todo o valor do catálogo interpolado em innerHTML passa por aqui. Ver
+// assets/js/html.js para o motivo.
+const { escapeHtml } = VehicleHtml;
+
 // Initialize App
 document.addEventListener("DOMContentLoaded", () => {
   flattenCarData();
@@ -236,19 +240,19 @@ function renderOverview(filteredList = flatCars) {
       : "N/A";
 
     // Pros & Cons
-    const prosHTML = car.pros.map(pro => `<div class="pro-item"><i class="fa-solid fa-check"></i> <span>${pro}</span></div>`).join("");
-    const consHTML = car.cons.map(con => `<div class="con-item"><i class="fa-solid fa-xmark"></i> <span>${con}</span></div>`).join("");
+    const prosHTML = car.pros.map(pro => `<div class="pro-item"><i class="fa-solid fa-check"></i> <span>${escapeHtml(pro)}</span></div>`).join("");
+    const consHTML = car.cons.map(con => `<div class="con-item"><i class="fa-solid fa-xmark"></i> <span>${escapeHtml(con)}</span></div>`).join("");
 
     const imagePath = car.image_path || "";
     const imageHTML = imagePath
-      ? `<img src="${imagePath}" alt="${car.brand} ${car.model}" class="card-car-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      ? `<img src="${escapeHtml(imagePath)}" alt="${escapeHtml(`${car.brand} ${car.model}`)}" class="card-car-image" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
          <div class="card-image-fallback" style="display: none;"><i class="fa-solid fa-car"></i></div>`
       : `<div class="card-image-fallback" style="display: flex;"><i class="fa-solid fa-car"></i></div>`;
 
     let officialLinkHTML = "";
     if (car.official_link) {
       officialLinkHTML = `
-        <a href="${car.official_link}" target="_blank" rel="noopener noreferrer" class="card-official-link" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent-green); text-decoration: none; font-size: 0.8rem; margin-top: 1rem; font-weight: 600; width: fit-content; transition: color 0.2s;">
+        <a href="${escapeHtml(car.official_link)}" target="_blank" rel="noopener noreferrer" class="card-official-link" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent-green); text-decoration: none; font-size: 0.8rem; margin-top: 1rem; font-weight: 600; width: fit-content; transition: color 0.2s;">
           <i class="fa-solid fa-arrow-up-right-from-square"></i> Website Oficial (PT)
         </a>
       `;
@@ -256,8 +260,8 @@ function renderOverview(filteredList = flatCars) {
 
     const dealer = typeof DEALER_DATA !== "undefined" ? DEALER_DATA[car.brand] : null;
     const dealerLinkHTML = dealer ? `
-      <a href="${dealer.maps_url}" target="_blank" rel="noopener noreferrer" class="card-official-link" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent-blue); text-decoration: none; font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600; width: fit-content;">
-        <i class="fa-solid fa-location-dot"></i> Concessionário mais próximo: ${dealer.name}
+      <a href="${escapeHtml(dealer.maps_url)}" target="_blank" rel="noopener noreferrer" class="card-official-link" style="display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent-blue); text-decoration: none; font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600; width: fit-content;">
+        <i class="fa-solid fa-location-dot"></i> Concessionário mais próximo: ${escapeHtml(dealer.name)}
       </a>
     ` : "";
 
@@ -276,7 +280,7 @@ function renderOverview(filteredList = flatCars) {
         <div class="card-user-reviews" style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; margin-bottom: 0.75rem;">
           <span style="display: flex;">${starsHTML}</span>
           <span style="font-weight: 700; color: #fbbf24;">${car.user_reviews.score.toFixed(1)}</span>
-          <span style="color: var(--text-muted); font-size: 0.75rem;">(${car.user_reviews.total_reviews} avaliações • ${car.user_reviews.source})</span>
+          <span style="color: var(--text-muted); font-size: 0.75rem;">(${escapeHtml(car.user_reviews.total_reviews)} avaliações • ${escapeHtml(car.user_reviews.source)})</span>
         </div>
       `;
     } else {
@@ -294,15 +298,15 @@ function renderOverview(filteredList = flatCars) {
 
       <div class="card-body-content" style="padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1;">
         <div class="card-header" style="margin-bottom: 1rem;">
-          <span class="brand-badge brand-${car.brand.toLowerCase()}">${car.brand}</span>
+          <span class="brand-badge brand-${escapeHtml(car.brand.toLowerCase())}">${escapeHtml(car.brand)}</span>
           <div class="car-price-tag">
             ${priceHTML}
           </div>
         </div>
 
-        <h3 class="car-title">${car.model}</h3>
-        <p class="car-segment" style="margin-bottom: 0.5rem;">${car.variant} • ${car.segment || "Segmento"} • 100% elétrico</p>
-        ${car.pricing.campaign_conditions ? `<p class="price-conditions">${car.pricing.campaign_conditions}${car.pricing.campaign_valid_until ? ` Válida até ${new Date(`${car.pricing.campaign_valid_until}T00:00:00`).toLocaleDateString("pt-PT")}.` : ""}</p>` : ""}
+        <h3 class="car-title">${escapeHtml(car.model)}</h3>
+        <p class="car-segment" style="margin-bottom: 0.5rem;">${escapeHtml(car.variant)} • ${escapeHtml(car.segment || "Segmento")} • 100% elétrico</p>
+        ${car.pricing.campaign_conditions ? `<p class="price-conditions">${escapeHtml(car.pricing.campaign_conditions)}${car.pricing.campaign_valid_until ? ` Válida até ${new Date(`${car.pricing.campaign_valid_until}T00:00:00`).toLocaleDateString("pt-PT")}.` : ""}</p>` : ""}
         ${userReviewHTML}
 
         <div class="card-quick-specs">
@@ -784,7 +788,7 @@ function updateFinanceSimulation() {
     comparisonBox.innerHTML = `
       <div class="comp-detail-row">
         <span>Concessionário / Proposta:</span>
-        <span>${prop.dealer} (${prop.proposal_number})</span>
+        <span>${escapeHtml(prop.dealer)} (${escapeHtml(prop.proposal_number)})</span>
       </div>
       <div class="comp-detail-row">
         <span>Prestação Real na Proposta:</span>
@@ -1085,13 +1089,13 @@ function renderStands() {
     standItem.className = "stand-item";
 
     standItem.innerHTML = `
-      <div class="stand-badge brand-${brand.toLowerCase()}">${brand}</div>
+      <div class="stand-badge brand-${escapeHtml(brand.toLowerCase())}">${escapeHtml(brand)}</div>
       <div class="stand-details">
-        <h4>${dealer.name}</h4>
-        <p><i class="fa-solid fa-map-location-dot"></i> ${dealer.address}, ${dealer.postal_code} ${dealer.locality}</p>
-        ${dealer.email ? `<p><i class="fa-solid fa-envelope"></i> <a href="mailto:${dealer.email}" style="color: var(--text-secondary); text-decoration: none;">${dealer.email}</a></p>` : ""}
-        <p><i class="fa-solid fa-phone"></i> <a href="tel:${dealer.phone.replace(/\s+/g, "")}" style="color: var(--text-secondary); text-decoration: none;">${dealer.phone}</a></p>
-        <p><i class="fa-solid fa-route"></i> <a href="${dealer.maps_url}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">Como chegar</a> · <a href="${dealer.official_url}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-green);">Página oficial</a></p>
+        <h4>${escapeHtml(dealer.name)}</h4>
+        <p><i class="fa-solid fa-map-location-dot"></i> ${escapeHtml(dealer.address)}, ${escapeHtml(dealer.postal_code)} ${escapeHtml(dealer.locality)}</p>
+        ${dealer.email ? `<p><i class="fa-solid fa-envelope"></i> <a href="mailto:${escapeHtml(dealer.email)}" style="color: var(--text-secondary); text-decoration: none;">${escapeHtml(dealer.email)}</a></p>` : ""}
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:${escapeHtml(dealer.phone.replace(/\s+/g, ""))}" style="color: var(--text-secondary); text-decoration: none;">${escapeHtml(dealer.phone)}</a></p>
+        <p><i class="fa-solid fa-route"></i> <a href="${escapeHtml(dealer.maps_url)}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">Como chegar</a> · <a href="${escapeHtml(dealer.official_url)}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-green);">Página oficial</a></p>
       </div>
     `;
     container.appendChild(standItem);

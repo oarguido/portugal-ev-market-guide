@@ -1,0 +1,15 @@
+version: 2
+
+# O projeto não tem dependências de runtime, por isso não há nada a atualizar em
+# Python ou npm. As GitHub Actions são a única dependência externa real, e ficavam
+# a apodrecer em silêncio: checkout, setup-python e setup-node estavam dois a três
+# majors atrás do atual sem nada a avisar.
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "ci"
+    labels:
+      - dependencias

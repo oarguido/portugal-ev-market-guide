@@ -1,0 +1,32 @@
+[
+  {
+    "campaign_price_vat_incl": 39553.0,
+    "list_price_vat_incl": 44553.0,
+    "campaign_valid_until": null,
+    "campaign_conditions": "Exemplo para Junior Elettrica Ti; inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go. Exclusivo Financiamento Stellantis Financial Services, para clientes particulares. Página indica validade até 31/09/2026, data inválida (setembro tem 30 dias).",
+    "evidence": "Exemplo para Junior Elettrica Ti: PVPR de 44.553,00€, PVP campanha de 39.553,00€, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go.",
+    "brand": "Alfa Romeo",
+    "model": "Junior Elettrica",
+    "url": "https://www.alfaromeo.pt/promocoes-automoveis/promocoes/alfa-romeo-junior-elletrica"
+  },
+  {
+    "campaign_price_vat_incl": null,
+    "list_price_vat_incl": 39500.0,
+    "campaign_valid_until": null,
+    "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services; TAEG: 6,5%; Prazo: 36 meses / 30000 kms",
+    "evidence": "DESDE: 39.500€",
+    "brand": "Jeep",
+    "model": "Avenger elétrico",
+    "url": "https://www.jeep.pt/novo-jeep-avenger/eletrico"
+  },
+  {
+    "campaign_price_vat_incl": 31678.0,
+    "list_price_vat_incl": 41803.0,
+    "campaign_valid_until": "2026-07-31",
+    "campaign_conditions": "Contrato de crédito automóvel 60 meses / 50.000 km, exemplo para E-2008 Style Elétrico 156 cv - Bateria 54 kWh, inclui DLTP, pintura metalizada + kit de reparação anti-furo + carregador embarcado 11 kw; entrada inicial de 4.990€, 59 prestações de 250€, prestação final de 19.103,97€, TAN 5,992%, TAEG 7,8%. Válido para clientes particulares, financiamento exclusivo Stellantis Financial Services.",
+    "evidence": "exemplo para E-2008 Style Elétrico 156 cv - Bateria 54 kWh , PVPR de 41.803,00€, PVP campanha de 31.678,00€, inclui DLTP, pintura metalizada + kit de reparação anti-furo + carregador embarcado 11 kw , entrada inicial de 4.990€, montante financiado de 26.688,00€, 59 prestações de 250€, prestação final de 19.103,97€, taxa fixa, TAN de 5,992% e TAEG de 7,8%",
+    "brand": "Peugeot",
+    "model": "E-2008",
+    "url": "https://www.peugeot.pt/comprar/ofertas-do-momento/passageiros/particulares/peugeot-e-2008-easy-credit.html"
+  }
+]

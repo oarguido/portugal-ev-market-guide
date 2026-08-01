@@ -1,0 +1,129 @@
+name: Saúde dos dados
+
+# O valor deste catálogo é ser atual. `make validate` e `make test` não expiram,
+# mas `make freshness` (verificações com mais de 45 dias, campanhas expiradas) e
+# `make links` (fontes mortas) expiram sozinhos com o calendário. Sem uma
+# execução agendada, a decadência dos dados é invisível até alguém abrir a
+# aplicação e ler um preço que já não existe.
+on:
+  schedule:
+    # Segunda-feira às 06:00 UTC. O cron do GitHub só aceita UTC.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: data-health
+  cancel-in-progress: false
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Obter repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # continue-on-error nos dois passos seguintes: queremos o retrato completo
+      # numa só issue, não parar no primeiro achado.
+      - name: Verificar frescura das verificações e campanhas
+        id: freshness
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          make freshness 2>&1 | tee freshness.log
+
+      - name: Verificar fontes oficiais e concessionários
+        id: links
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          make links 2>&1 | tee links.log
+
+      - name: Resumir no relatório da execução
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## Saúde dos dados"
+            echo
+            echo "| Verificação | Resultado |"
+            echo "| --- | --- |"
+            echo "| frescura (45 dias, campanhas) | ${{ steps.freshness.outcome }} |"
+            echo "| fontes e concessionários | ${{ steps.links.outcome }} |"
+            echo
+            # A contagem distingue fontes realmente lidas de fontes que só
+            # responderam anti-bot. Um IP de runner é bloqueado mais vezes que um
+            # browser, por isso este número é normalmente pior aqui que em local.
+            grep "^LIGAÇÕES:" links.log 2>/dev/null || true
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Abrir ou atualizar a issue de decadência dos dados
+        if: steps.freshness.outcome == 'failure' || steps.links.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          LABEL="dados-frescura"
+          gh label create "$LABEL" \
+            --description "Verificações ou fontes do catálogo precisam de revisão humana" \
+            --color "D93F0B" 2>/dev/null || true
+
+          BODY=$(mktemp)
+          {
+            echo "A execução agendada encontrou dados a precisar de revisão."
+            echo
+            echo "- frescura: \`${{ steps.freshness.outcome }}\`"
+            echo "- fontes: \`${{ steps.links.outcome }}\`"
+            echo "- execução: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo
+            echo "Isto **não** se resolve com \`make update-accept\`. Aceitar um"
+            echo "fingerprint significa \"esta versão foi revista\", e nada foi"
+            echo "revisto ainda. Seguir AGENTS.md secções 5, 6 e 11: abrir cada"
+            echo "fonte, confirmar preço, autonomia e condições, e só depois"
+            echo "atualizar \`last_verified\`."
+            echo
+            for log in freshness links; do
+              if [ -s "$log.log" ]; then
+                echo "<details><summary>make $log</summary>"
+                echo
+                echo '```'
+                tail -n 60 "$log.log"
+                echo '```'
+                echo
+                echo "</details>"
+                echo
+              fi
+            done
+          } > "$BODY"
+
+          EXISTING=$(gh issue list --label "$LABEL" --state open --limit 1 \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            # Comentar em vez de abrir outra: a decadência é um estado contínuo,
+            # não um evento novo por semana.
+            gh issue comment "$EXISTING" --body-file "$BODY"
+            echo "Comentado na issue #$EXISTING"
+          else
+            gh issue create \
+              --title "Dados do catálogo precisam de revisão" \
+              --label "$LABEL" \
+              --body-file "$BODY"
+          fi

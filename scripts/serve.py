@@ -20,6 +20,19 @@ class ProjectHTTPServer(http.server.ThreadingHTTPServer):
     allow_reuse_address = True
 
 
+class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
+    """Servir sempre a versão do disco.
+
+    O handler da biblioteca padrão envia Last-Modified sem Cache-Control, o que
+    autoriza o browser a guardar o bundle por heurística. Numa aplicação cujo
+    objetivo é mostrar dados acabados de atualizar, isso mostra os antigos.
+    """
+
+    def end_headers(self) -> None:
+        self.send_header("Cache-Control", "no-store, must-revalidate")
+        super().end_headers()
+
+
 def create_server(
     preferred_port: int,
     attempts: int = DEFAULT_PORT_ATTEMPTS,
@@ -31,7 +44,7 @@ def create_server(
         raise ValueError("o número de tentativas tem de ser positivo")
 
     handler = functools.partial(
-        http.server.SimpleHTTPRequestHandler,
+        NoCacheHandler,
         directory=str(WEB_DIR),
     )
     last_error: OSError | None = None

@@ -9,6 +9,7 @@ from unittest.mock import MagicMock, patch
 import update_catalog
 from update_catalog import (
     BINARY_FINGERPRINT_VERSION,
+    FETCH_ATTEMPTS,
     HTML_FINGERPRINT_VERSION,
     blocked_snapshot,
     build_snapshot,
@@ -109,7 +110,9 @@ class SourceFingerprintTests(unittest.TestCase):
         )
         with self.assertRaises(urllib.error.HTTPError):
             fetch("https://example.pt/modelo")
-        self.assertEqual(urlopen.call_count, 3)
+        # Ligado à constante: as tentativas baixaram de 3 para 2 quando o browser
+        # passou a ser a alternativa, e um número fixo aqui só repetia o valor.
+        self.assertEqual(urlopen.call_count, FETCH_ATTEMPTS)
 
 
     @patch("update_catalog.subprocess.run")

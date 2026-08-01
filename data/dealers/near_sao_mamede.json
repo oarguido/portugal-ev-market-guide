@@ -406,6 +406,23 @@
       "verified_on": "2026-07-23"
     },
     {
+      "brand": "Toyota",
+      "name": "Caetano Auto no Porto",
+      "address": "Estrada da Circunvalação 12541 a 12581",
+      "postal_code": "4100-178",
+      "locality": "Porto",
+      "phone": "226194400",
+      "email": "geral-porto@caetanoauto.pt",
+      "official_url": "https://www.toyota.pt/localizar-concessionario",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Auto%20Porto%20Estrada%20da%20Circunvala%C3%A7%C3%A3o%2012541%204100-178%20Porto",
+      "services": [
+        "sales",
+        "service"
+      ],
+      "distance_note": "6,5 km de São Mamede de Infesta segundo o localizador oficial da Toyota; o seguinte é Rio Tinto a 8,5 km.",
+      "verified_on": "2026-08-01"
+    },
+    {
       "brand": "Volkswagen",
       "name": "VAP Porto – Via Norte",
       "address": "Lugar da Amieira, Via Norte",
