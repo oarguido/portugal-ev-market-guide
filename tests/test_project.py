@@ -84,7 +84,9 @@ class ProjectDataTests(unittest.TestCase):
         verde.
         """
         html = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
-        references = re.findall(r'(?:src|href)="([^"]+)"', html)
+        # O src do bundle traz ?v=<hash> para o browser não servir a versão antiga
+        # em cache; o ficheiro no disco é o mesmo sem a query.
+        references = [ref.split("?", 1)[0] for ref in re.findall(r'(?:src|href)="([^"]+)"', html)]
         local = [
             reference
             for reference in references
@@ -99,7 +101,7 @@ class ProjectDataTests(unittest.TestCase):
         """A aplicação não carrega o bundle sem os módulos que o interpretam."""
         html = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
         modules = {path.name for path in (ROOT / "web" / "assets" / "js").glob("*.js")}
-        loaded = set(re.findall(r'<script src="assets/js/([^"]+)"', html))
+        loaded = {src.split("?", 1)[0] for src in re.findall(r'<script src="assets/js/([^"]+)"', html)}
         self.assertEqual(modules, loaded, "módulo em assets/js/ não carregado pelo index.html")
 
     def test_offline_page_has_no_remote_resources(self):

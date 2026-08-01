@@ -49,7 +49,9 @@ test("os módulos correm no browser e expõem a sua API global", () => {
   // index.html, prova que cada módulo expõe o global de que o próximo depende.
   const html = fs.readFileSync(path.join(root, "web/index.html"), "utf8");
   const ordered = [
-    ...html.matchAll(/<script src="assets\/js\/([^"]+)"><\/script>/g),
+    // O bundle traz ?v=<hash> para invalidar a cache do browser; o nome do
+    // módulo é a parte antes da query.
+    ...html.matchAll(/<script src="assets\/js\/([^"?]+)(?:\?[^"]*)?"><\/script>/g),
   ].map((match) => match[1]);
   assert.deepEqual(
     ordered.slice(0, 2),
