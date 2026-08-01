@@ -142,17 +142,17 @@
       "eligible": true,
       "official_link": "https://www.alfaromeo.pt/modelos/junior-elettrica",
       "image_path": "assets/images/vehicles/alfa-romeo-junior-elettrica/official-exterior.jpg",
-      "last_verified": "2026-07-23",
+      "last_verified": "2026-08-01",
       "data_sources": [
         {
           "type": "official_model",
           "url": "https://www.alfaromeo.pt/modelos/junior-elettrica",
-          "verified_on": "2026-07-23"
+          "verified_on": "2026-08-01"
         },
         {
           "type": "official_campaign",
           "url": "https://www.alfaromeo.pt/promocoes-automoveis/promocoes/alfa-romeo-junior-elletrica",
-          "verified_on": "2026-07-23"
+          "verified_on": "2026-08-01"
         }
       ],
       "variants": [
@@ -165,10 +165,10 @@
           "power_hp": 156,
           "dc_max_kw": 100,
           "pricing": {
-            "particular_list_price_vat_incl": 44553,
-            "particular_campaign_price_vat_incl": 39553,
-            "campaign_conditions": "Campanha particular com condições; confirmar financiamento/retoma.",
-            "campaign_valid_until": "2026-07-31"
+            "particular_list_price_vat_incl": 44553.0,
+            "particular_campaign_price_vat_incl": 39553.0,
+            "campaign_conditions": "Exemplo para Junior Elettrica Ti; inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go. Exclusivo Financiamento Stellantis Financial Services, para clientes particulares. Página indica validade até 31/09/2026, data inválida (setembro tem 30 dias).",
+            "campaign_valid_until": null
           }
         }
       ],
@@ -1149,9 +1149,9 @@
           "dc_max_kw": 100,
           "pricing": {
             "particular_list_price_vat_incl": 39500.0,
-            "particular_campaign_price_vat_incl": 35003.01,
-            "campaign_conditions": "Campanha particular com condições; confirmar retoma/financiamento.",
-            "campaign_valid_until": "2026-07-31"
+            "particular_campaign_price_vat_incl": null,
+            "campaign_conditions": null,
+            "campaign_valid_until": null
           }
         }
       ],
@@ -2111,55 +2111,6 @@
       "cons": [
         "Espaço traseiro limitado",
         "Preço de tabela próximo do teto"
-      ]
-    },
-    {
-      "brand": "Peugeot",
-      "model": "E-2008",
-      "powertrain": "BEV",
-      "segment": "SUV compacto",
-      "release_year": 2024,
-      "availability_status": "available",
-      "eligible": true,
-      "official_link": "https://www.peugeot.pt/our-range/new-peugeot-2008.html",
-      "image_path": "assets/images/vehicles/peugeot-e-2008/official.jpg",
-      "last_verified": "2026-08-01",
-      "data_sources": [
-        {
-          "type": "official_model",
-          "url": "https://www.peugeot.pt/our-range/new-peugeot-2008.html",
-          "verified_on": "2026-08-01"
-        },
-        {
-          "type": "official_campaign",
-          "url": "https://www.peugeot.pt/comprar/ofertas-do-momento/passageiros/particulares/peugeot-e-2008-easy-credit.html",
-          "verified_on": "2026-08-01"
-        }
-      ],
-      "variants": [
-        {
-          "name": "156 cv 54 kWh",
-          "battery_capacity_kwh": 54,
-          "wltp_range_combined_km": 406,
-          "wltp_consumption_combined_kwh_100km": 15.5,
-          "power_kw": 115,
-          "power_hp": 156,
-          "dc_max_kw": 100,
-          "pricing": {
-            "particular_list_price_vat_incl": 41803.0,
-            "particular_campaign_price_vat_incl": 31678.0,
-            "campaign_conditions": "Clientes particulares, exclusivo financiamento Stellantis Financial Services; crédito 60 meses / 50.000 km, entrada 4.990€, TAEG 7,8%; E-2008 Style Elétrico 156 cv - Bateria 54 kWh, inclui DLTP, pintura metalizada, kit de reparação anti-furo e carregador embarcado 11 kw",
-            "campaign_valid_until": "2026-07-31"
-          }
-        }
-      ],
-      "pros": [
-        "Boa autonomia e bagageira",
-        "Rede de assistência ampla"
-      ],
-      "cons": [
-        "Preço de tabela acima do teto",
-        "Preço anunciado depende de crédito"
       ]
     },
     {
