@@ -1,0 +1,22 @@
+[
+  {
+    "campaign_price_vat_incl": null,
+    "list_price_vat_incl": 39500.0,
+    "campaign_valid_until": null,
+    "campaign_conditions": "Campanha 199€/mês: prazo 36 meses / 30000 kms, TAEG 6,5%, EI 9900€, VFG 24219,6€, montante financiado 27653€, exclusivo com financiamento Stellantis Financial Services",
+    "evidence": "DESDE: 39.500€",
+    "brand": "Jeep",
+    "model": "Avenger elétrico",
+    "url": "https://www.jeep.pt/novo-jeep-avenger/eletrico"
+  },
+  {
+    "campaign_price_vat_incl": 31678.0,
+    "list_price_vat_incl": 41803.0,
+    "campaign_valid_until": "2026-07-31",
+    "campaign_conditions": "Clientes particulares, exclusivo financiamento Stellantis Financial Services; crédito 60 meses / 50.000 km, entrada 4.990€, TAEG 7,8%; E-2008 Style Elétrico 156 cv - Bateria 54 kWh, inclui DLTP, pintura metalizada, kit de reparação anti-furo e carregador embarcado 11 kw",
+    "evidence": "exemplo para E-2008 Style Elétrico 156 cv - Bateria 54 kWh , PVPR de 41.803,00€, PVP campanha de 31.678,00€, inclui DLTP, pintura metalizada + kit de reparação anti-furo + carregador embarcado 11 kw , entrada inicial de 4.990€, montante financiado de 26.688,00€, 59 prestações de 250€, prestação final de 19.103,97€, taxa fixa, TAN de 5,992% e TAEG de 7,8% para um MTIC de 35.144,16€",
+    "brand": "Peugeot",
+    "model": "E-2008",
+    "url": "https://www.peugeot.pt/comprar/ofertas-do-momento/passageiros/particulares/peugeot-e-2008-easy-credit.html"
+  }
+]
