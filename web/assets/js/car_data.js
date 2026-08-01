@@ -1612,7 +1612,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "eligible": true,
     "official_link": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
-    "image_path": "assets/images/vehicles/mini-aceman/official.jpg",
+    "image_path": "assets/images/vehicles/mini-aceman/official.webp",
     "last_verified": "2026-08-01",
     "data_sources": [
       {

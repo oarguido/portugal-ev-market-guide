@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import datetime as dt
+import hashlib
 import urllib.error
 import urllib.request
 from urllib.parse import urlparse
@@ -218,6 +219,33 @@ def validate_catalog(catalog: dict) -> list[str]:
     return errors
 
 
+def duplicate_image_errors(catalog: dict) -> list[str]:
+    """Dois modelos com a mesma fotografia byte a byte: um deles está errado.
+
+    Aconteceu duas vezes. Três Opel diferentes ficaram com o mesmo placeholder de
+    4 KB, e o MINI Aceman ficou com a fotografia de um Fiat 500e cor-de-rosa
+    porque a captura reutilizou a página anterior. Nenhuma verificação de
+    cabeçalho ou de tamanho apanha isto — os ficheiros são imagens válidas de
+    carros a sério, só que do carro errado.
+
+    Comparar os digests é barato e apanha a família toda de enganos.
+    """
+    from collections import defaultdict
+
+    digests: dict[str, list[str]] = defaultdict(list)
+    for model in catalog.get("models", []):
+        image = ROOT / "web" / model.get("image_path", "")
+        if not image.is_file():
+            continue
+        digest = hashlib.sha256(image.read_bytes()).hexdigest()
+        digests[digest].append(f"{model.get('brand', '?')} {model.get('model', '?')}")
+    return [
+        f"fotografia repetida em modelos diferentes: {', '.join(sorted(nomes))}"
+        for nomes in digests.values()
+        if len(nomes) > 1
+    ]
+
+
 def validate_dealers(catalog: dict, dealer_catalog: dict) -> list[str]:
     errors: list[str] = []
     if dealer_catalog.get("schema_version") != 1 or dealer_catalog.get("market") != "PT":
@@ -397,6 +425,7 @@ def main() -> int:
     args = parser.parse_args()
     catalog = load_catalog()
     errors = validate_catalog(catalog)
+    errors.extend(duplicate_image_errors(catalog))
     dealer_catalog = load_dealers()
     errors.extend(validate_dealers(catalog, dealer_catalog))
     stale = staleness_warnings(catalog, dealer_catalog)

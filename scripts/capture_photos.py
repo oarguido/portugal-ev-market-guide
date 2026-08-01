@@ -220,7 +220,12 @@ def capture(model: dict) -> Path | None:
         const modelTokens = __MODEL_TOKENS__;
         const candidates = [...document.images].filter(i => {
           const r = i.getBoundingClientRect();
-          return i.naturalWidth >= 700 && i.naturalHeight >= 350 && r.width >= 300 && r.height >= 140;
+          const txt = `${i.alt} ${i.currentSrc || i.src}`.toLowerCase();
+          // Excluir, nao apenas penalizar: no Changan a unica foto de exterior
+          // tinha 307 px de altura e era descartada pelo minimo de 350, deixando
+          // so interiores de 1920x1001 — que ganhavam apesar da penalizacao.
+          if (/interior|cockpit|dashboard|tablier|banco|seat|wheel|jante|detail|logo|icon/.test(txt)) return false;
+          return i.naturalWidth >= 700 && i.naturalHeight >= 260 && r.width >= 300 && r.height >= 100;
         });
         let scored = candidates.map(i => {
           const text = `${i.alt} ${i.currentSrc || i.src}`.toLowerCase();
