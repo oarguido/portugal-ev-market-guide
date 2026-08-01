@@ -95,12 +95,13 @@ correta vale mais que o orçamento.
 
 | Workflow | Quando corre | O que faz |
 |----------|-------------|-----------|
-| `ci.yml` | push em `main`, pull requests | `make lint`, `make validate`, `make test` e confirma que o bundle compilado está commitado |
+| `ci.yml` | push em `main`, pull requests | `make verificar`: lint, dados, compilação e testes; confirma que o bundle compilado está commitado |
 | `data-health.yml` | segunda-feira 06:00 UTC, ou manualmente | `make freshness` e `make links`; abre ou comenta uma issue com a etiqueta `dados-frescura` quando algo apodrece |
 
 A separação é a mesma dos comandos locais: o `ci.yml` verifica o que uma
-alteração pode quebrar, o `data-health.yml` verifica o que o calendário quebra
-sozinho. O GitHub desativa workflows agendados depois de 60 dias sem atividade no
+alteração pode quebrar, o `data-health.yml` verifica o que o calendário e a
+internet quebram sozinhos. Por isso o `make verificar` não corre frescura nem
+ligações: um site alheio em baixo não pode reprovar um pull request. O GitHub desativa workflows agendados depois de 60 dias sem atividade no
 repositório — se as issues semanais pararem, é a primeira coisa a confirmar.
 
 ## Estrutura

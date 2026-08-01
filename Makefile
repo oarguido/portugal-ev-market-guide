@@ -51,13 +51,20 @@ atualizar:
 	-@python3 -u scripts/validate_data.py --check-links
 	@python3 -u scripts/report_pending.py
 
-# Sem rede a escrever nada: só confirma o estado atual. É o que corre no CI e o
-# que se corre antes de publicar.
+# Determinístico e sem rede: só falha por regressão do código ou dos dados. É o
+# que corre no CI.
+#
+# Não corre frescura nem ligações de propósito. Ambas falham por motivos que não
+# são o código: a frescura falha sozinha quando as verificações passam dos 45
+# dias, e as ligações falham quando um site alheio está em baixo. Aconteceu — um
+# timeout da cam.pt reprovou um PR que só mudava a versão de uma action, e o
+# README já avisava que "a suíte de testes passaria a falhar por efeito do
+# tempo, e não por regressão". As duas verificações vivem no `make atualizar` e
+# no workflow semanal, que abre uma issue em vez de bloquear um merge.
 verificar:
 	@$(RUFF) check .
-	@python3 -u scripts/validate_data.py --check-freshness
+	@python3 -u scripts/validate_data.py
 	@python3 -u scripts/compile_data.py
 	@python3 -u -m unittest discover -s tests
 	@node --test tests/*.test.js
-	@python3 -u scripts/validate_data.py --check-links
 	@python3 -u scripts/report_pending.py
