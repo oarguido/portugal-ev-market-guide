@@ -35,7 +35,10 @@ jobs:
           node-version: "22"
 
       - name: Instalar uv
-        uses: astral-sh/setup-uv@v9
+        # Pin exato: o setup-uv não publica uma tag móvel `v9`, só `v9.0.0`.
+        # Confirmei o release e assumi que a tag major existia — não existe, e o
+        # pipeline falhou logo no primeiro arranque. O dependabot trata dos bumps.
+        uses: astral-sh/setup-uv@v9.0.0
         with:
           enable-cache: true
 
