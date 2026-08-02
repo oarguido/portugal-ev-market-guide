@@ -13,3 +13,10 @@ archive/
 # Evidência de pesquisa que pode conter propostas, emails e dados pessoais.
 # As fontes publicáveis permanecem registadas por URL nos JSON canónicos.
 data/documents/
+
+# Configuração local de ferramentas de agente. O .claude/settings.json tem
+# caminhos absolutos da máquina (secção 16.5 do AGENTS.md) e o CLAUDE.md
+# aponta para graphify-out/, que não é publicado. O contrato do projeto é o
+# AGENTS.md, e é deliberadamente neutro quanto ao fornecedor do agente.
+.claude/
+CLAUDE.md
