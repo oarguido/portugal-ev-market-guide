@@ -104,17 +104,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.alfaromeo.pt/modelos/junior-elettrica",
     "image_path": "assets/images/vehicles/alfa-romeo-junior-elettrica/official-exterior.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.alfaromeo.pt/modelos/junior-elettrica",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_campaign",
         "url": "https://www.alfaromeo.pt/promocoes-automoveis/promocoes/alfa-romeo-junior-elletrica",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -127,9 +127,9 @@ const CAR_DATA = [
         "power_hp": 156,
         "dc_max_kw": 100,
         "pricing": {
-          "particular_list_price_vat_incl": 38500.0,
+          "particular_list_price_vat_incl": 44553.0,
           "particular_campaign_price_vat_incl": 39553.0,
-          "campaign_conditions": "Exemplo para Junior Elettrica Ti, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go; exclusivo Financiamento Stellantis Financial Services, clientes particulares",
+          "campaign_conditions": "Exemplo para Junior Elettrica Ti; inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go; contrato de crédito automóvel 36 meses / 30.000 km, exclusivo Financiamento Stellantis Financial Services, para clientes particulares. Página indica \"Condições válidas até 31/09/2026\" (data inexistente no calendário).",
           "campaign_valid_until": null
         }
       }
@@ -394,17 +394,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.citroen.pt/modelos/e-c3.html",
     "image_path": "assets/images/vehicles/citro-n-c3/official.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.citroen.pt/modelos/e-c3.html",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_campaign",
         "url": "https://www.citroen.pt/universo-citroen/noticias/acp.html",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -417,7 +417,7 @@ const CAR_DATA = [
         "power_hp": 113,
         "dc_max_kw": 30,
         "pricing": {
-          "particular_list_price_vat_incl": 19990,
+          "particular_list_price_vat_incl": 19990.0,
           "particular_campaign_price_vat_incl": 17990,
           "campaign_conditions": "Campanha publicada pela Citroën Portugal; confirmar versão, stock e despesas.",
           "campaign_valid_until": null
@@ -1953,12 +1953,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
     "image_path": "assets/images/vehicles/opel-corsa-electric/official.png",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model_and_campaign",
         "url": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -1973,7 +1973,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 35613.0,
           "particular_campaign_price_vat_incl": 30863.0,
-          "campaign_conditions": "Válido para clientes particulares, com financiamento Stellantis Financial Services; inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento, nos concessionários Opel aderentes. Exemplo para Corsa Electric Edition 136cv | Bat. 50kWh, inclui DLTP, sem opções.",
+          "campaign_conditions": "Condições válidas até 31/08/2026, para clientes particulares. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento Stellantis Financial Services; exemplo para Corsa Electric Edition 136cv | Bat. 50kWh, inclui DLTP, sem opções.",
           "campaign_valid_until": "2026-08-31"
         }
       }
@@ -1997,12 +1997,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
     "image_path": "assets/images/vehicles/opel-frontera-electric/official.png",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -2015,7 +2015,7 @@ const CAR_DATA = [
         "power_hp": 113,
         "dc_max_kw": 100,
         "pricing": {
-          "particular_list_price_vat_incl": 31843.0,
+          "particular_list_price_vat_incl": 27490.0,
           "particular_campaign_price_vat_incl": 26843.0,
           "campaign_conditions": "Condições válidas até 31/08/2026, para clientes particulares. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento Stellantis Financial Services, nos concessionários Opel aderentes. Preços da versão Frontera Electric Edition 113cv | Bat. 44kWh, incluem DLTP, sem opções.",
           "campaign_valid_until": "2026-08-31"
@@ -2041,12 +2041,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
     "image_path": "assets/images/vehicles/opel-mokka-electric/official.png",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model_and_campaign",
         "url": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -2061,7 +2061,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 39588.0,
           "particular_campaign_price_vat_incl": 34588.0,
-          "campaign_conditions": "Para clientes particulares, com financiamento exclusivo Stellantis Financial Services; inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento, nos concessionários Opel aderentes. Inclui DLTP, sem opções.",
+          "campaign_conditions": "Para clientes particulares, exclusivo financiamento Stellantis Financial Services; inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento, nos concessionários Opel aderentes.",
           "campaign_valid_until": "2026-08-31"
         }
       }
@@ -2649,17 +2649,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://pt.smart.com/pt/models/hashtag-one/",
     "image_path": "assets/images/vehicles/smart-1/official.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://pt.smart.com/pt/models/hashtag-one/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_campaign",
         "url": "https://pt.smart.com/pt/promotions/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -2698,17 +2698,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://pt.smart.com/pt/models/hashtag-three/",
     "image_path": "assets/images/vehicles/smart-3/official.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://pt.smart.com/pt/models/hashtag-three/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_campaign",
         "url": "https://pt.smart.com/pt/promotions/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
