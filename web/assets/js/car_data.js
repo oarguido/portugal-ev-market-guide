@@ -10,17 +10,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://gac-portugal.pt/aion-ut/",
     "image_path": "assets/images/vehicles/aion-ut/official.webp",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://gac-portugal.pt/aion-ut/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_campaign",
         "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -36,7 +36,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 28190.0,
           "particular_campaign_price_vat_incl": 26560.0,
-          "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade para clientes particulares, versão Aion UT Premium Green, limitado ao stock existente nos concessionários aderentes; inclui pintura metalizada (mono-tom) e não inclui despesas de documentação e transporte; entrada inicial 7.968,00€ + 59 mensalidades de 270,00€, última mensalidade 6 640,00€, TAN 5,93%, TAEG 8,2%, MTIC 23.529,72€; crédito sujeito a aprovação pelo Cetelem.",
+          "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade para clientes particulares, Aion UT Premium Green, limitado ao stock existente nos concessionários aderentes; inclui pintura metalizada (mono-tom) e não inclui despesas de documentação e transporte; entrada inicial 7.968,00€ + 59 mensalidades de 270,00€, última mensalidade 6 640,00€; TAN 5,93%, TAEG 8,2%, MTIC 23.529,72€; PVP sem financiamento: 28.190,00€",
           "campaign_valid_until": "2026-08-31"
         }
       }
@@ -60,12 +60,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.abarth.pt/novo-abarth-electric-500e",
     "image_path": "assets/images/vehicles/abarth-500e/official.png",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.abarth.pt/novo-abarth-electric-500e",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -129,7 +129,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 44553.0,
           "particular_campaign_price_vat_incl": 39553.0,
-          "campaign_conditions": "Exemplo para Junior Elettrica Ti; inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go; contrato de crédito automóvel 36 meses / 30.000 km, exclusivo Financiamento Stellantis Financial Services, para clientes particulares. Página indica \"Condições válidas até 31/09/2026\" (data inexistente no calendário).",
+          "campaign_conditions": "Exemplo para Junior Elettrica Ti; inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go; exclusivo Financiamento Stellantis Financial Services, clientes particulares",
           "campaign_valid_until": null
         }
       }
@@ -418,8 +418,8 @@ const CAR_DATA = [
         "dc_max_kw": 30,
         "pricing": {
           "particular_list_price_vat_incl": 19990.0,
-          "particular_campaign_price_vat_incl": 17990,
-          "campaign_conditions": "Campanha publicada pela Citroën Portugal; confirmar versão, stock e despesas.",
+          "particular_campaign_price_vat_incl": 17990.0,
+          "campaign_conditions": "Preço \"a partir de\" com a campanha em vigor, na versão BEV de Autonomia Urbana; 19.950€ na versão BEV de Autonomia Conforto.",
           "campaign_valid_until": null
         }
       },
@@ -625,12 +625,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
     "image_path": "assets/images/vehicles/dacia-spring/official.webp",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -669,12 +669,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://caetano.pt/dongfeng/carros-novos/box/",
     "image_path": "assets/images/vehicles/dongfeng-box/official.webp",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_importer",
         "url": "https://caetano.pt/dongfeng/carros-novos/box/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -713,17 +713,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.fiat.pt/modelos/fiat-500-eletrico",
     "image_path": "assets/images/vehicles/fiat-500e/official.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.fiat.pt/modelos/fiat-500-eletrico",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_campaign",
         "url": "https://www.fiat.pt/promocoes-carros-particulares/novo-500-eletrico-cabrio",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -737,9 +737,9 @@ const CAR_DATA = [
         "dc_max_kw": 85,
         "pricing": {
           "particular_list_price_vat_incl": 29853.0,
-          "particular_campaign_price_vat_incl": null,
-          "campaign_conditions": null,
-          "campaign_valid_until": null
+          "particular_campaign_price_vat_incl": 25500.0,
+          "campaign_conditions": "PVP campanha com retoma, exclusivo com financiamento Stellantis Financial Services, exclui DLTP e pintura, para clientes particulares, limitado ao stock existente",
+          "campaign_valid_until": "2026-09-30"
         }
       }
     ],
@@ -821,17 +821,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.fiat.pt/modelos/grande-panda-electrico",
     "image_path": "assets/images/vehicles/fiat-grande-panda-el-trico/official.png",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.fiat.pt/modelos/grande-panda-electrico",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_campaign",
         "url": "https://www.fiat.pt/promocoes-carros-particulares/grande-panda-abertura-encomendas",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -846,7 +846,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 27953.0,
           "particular_campaign_price_vat_incl": 23100.0,
-          "campaign_conditions": "Exclusivo com financiamento Stellantis Financial Services; contrato crédito 36 meses / 40.000 km, exclui DLTP, PVP campanha com retoma, para clientes particulares, limitado ao stock existente.",
+          "campaign_conditions": "PVP campanha com retoma, exclusivo com financiamento Stellantis Financial Services, clientes particulares, exclui DLTP, limitado ao stock existente",
           "campaign_valid_until": "2026-09-30"
         }
       }
@@ -870,12 +870,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://caetano.pt/geely/carros-novos/e5/",
     "image_path": "assets/images/vehicles/geely-e5/official.webp",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_importer",
         "url": "https://caetano.pt/geely/carros-novos/e5/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -973,17 +973,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.hyundai.pt/carros/novo-kauai-ev/",
     "image_path": "assets/images/vehicles/hyundai-kauai-ev/official.webp",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.hyundai.pt/carros/novo-kauai-ev/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_dealer_price",
         "url": "https://caetano.pt/hyundai/carros-novos/kauai/eletrico/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -1039,17 +1039,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://omodajaecoo.pt/jaecoo/jaecoo-5-ev/",
     "image_path": "assets/images/vehicles/jaecoo-5-ev/official.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://omodajaecoo.pt/jaecoo/jaecoo-5-ev/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_campaign",
         "url": "https://omodajaecoo.pt/0-juros/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -1087,17 +1087,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.jeep.pt/novo-jeep-avenger/eletrico",
     "image_path": "assets/images/vehicles/jeep-avenger-el-trico/official-hero.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.jeep.pt/novo-jeep-avenger/eletrico",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_campaign",
         "url": "https://www.jeep.pt/promocoes-suv-4x4/oferta/avenger-100-eletrico-particular",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -1490,17 +1490,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.mgmotor.pt/model/mg4/",
     "image_path": "assets/images/vehicles/mg-mg4/official.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.mgmotor.pt/model/mg4/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_price",
         "url": "https://www.mgmotor.pt/technology",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -1781,12 +1781,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
     "image_path": "assets/images/vehicles/nissan-micra/official.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -1855,17 +1855,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://omodajaecoo.pt/omoda/omoda-5-ev/",
     "image_path": "assets/images/vehicles/omoda-5-ev/official.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://omodajaecoo.pt/omoda/omoda-5-ev/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_campaign",
         "url": "https://omodajaecoo.pt/0-juros/",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -1973,7 +1973,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 35613.0,
           "particular_campaign_price_vat_incl": 30863.0,
-          "campaign_conditions": "Condições válidas até 31/08/2026, para clientes particulares. Inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento Stellantis Financial Services; exemplo para Corsa Electric Edition 136cv | Bat. 50kWh, inclui DLTP, sem opções.",
+          "campaign_conditions": "Para clientes particulares; inclui campanha de apoio à Retoma e Desconto exclusivo ao Financiamento Stellantis Financial Services, nos concessionários Opel aderentes; exemplo Corsa Electric Edition 136cv Bat. 50kWh, inclui DLTP, sem opções",
           "campaign_valid_until": "2026-08-31"
         }
       }
@@ -2085,12 +2085,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.peugeot.pt/showroom/novo-peugeot-208/eletrico.html",
     "image_path": "assets/images/vehicles/peugeot-e-208/official.jpg",
-    "last_verified": "2026-07-23",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.peugeot.pt/showroom/novo-peugeot-208/eletrico.html",
-        "verified_on": "2026-07-23"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -2103,7 +2103,7 @@ const CAR_DATA = [
         "power_hp": 156,
         "dc_max_kw": 100,
         "pricing": {
-          "particular_list_price_vat_incl": 35460,
+          "particular_list_price_vat_incl": 26435.0,
           "particular_campaign_price_vat_incl": null,
           "campaign_conditions": "Preço de mercado nacional verificado; confirmar configuração no concessionário.",
           "campaign_valid_until": null
@@ -2129,12 +2129,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
     "image_path": "assets/images/vehicles/renault-4-e-tech-el-trico/official.png",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_versions_and_price",
         "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -2335,17 +2335,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.renault.pt/veiculos-eletricos/twingo.html",
     "image_path": "assets/images/vehicles/renault-twingo-e-tech-el-trico/official.webp",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_specification",
         "url": "https://www.renault.pt/veiculos-eletricos/twingo/caracteristicas.html",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
@@ -2506,7 +2506,7 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.toyota.pt/carros/bz4x",
     "image_path": "assets/images/vehicles/toyota-bz4x/official.jpg",
-    "last_verified": "2026-08-01",
+    "last_verified": "2026-08-02",
     "pros": [
       "Bateria de 57,7 kWh com carregamento DC até 150 kW",
       "Campanha com desconto direto de 6.000 € sobre o PVP"
@@ -2519,12 +2519,12 @@ const CAR_DATA = [
       {
         "type": "official_model",
         "url": "https://www.toyota.pt/carros/bz4x",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       },
       {
         "type": "official_price_sheet",
         "url": "https://www.toyota.pt/carros/bz4x/especificacoes",
-        "verified_on": "2026-08-01"
+        "verified_on": "2026-08-02"
       }
     ],
     "variants": [
