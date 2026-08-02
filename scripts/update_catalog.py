@@ -29,7 +29,6 @@ HTML_FINGERPRINT_VERSION = "html-visible-text-v1"
 BROWSER_FINGERPRINT_VERSION = "browser-visible-text-v1"
 BINARY_FINGERPRINT_VERSION = "binary-raw-v1"
 FETCH_ATTEMPTS = 2
-BROWSER_TIMEOUT = 90
 RETRYABLE_HTTP_CODES = {500, 502, 503, 504}
 DYNAMIC_VISIBLE_TEXT = re.compile(r"\bAtualmente\s+(?:aberto|fechado)\b", re.IGNORECASE)
 OG_IMAGE = re.compile(r'<meta[^>]+(?:property|name)=["\']og:image["\'][^>]+content=["\']([^"\']+)', re.IGNORECASE)
@@ -88,7 +87,7 @@ def fetch(url: str, attempts: int = FETCH_ATTEMPTS) -> tuple[bytes, str]:
 
 def browser_text(url: str) -> str | None:
     """Texto da página lido num browser real. Ver scripts/browser.py."""
-    return page_text(url, timeout=BROWSER_TIMEOUT)
+    return page_text(url)
 
 
 

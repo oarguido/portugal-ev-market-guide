@@ -26,10 +26,11 @@ import json
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from rules import MAX_PRICE_EUR
+
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "vehicles" / "pt_market.json"
 DEALERS_PATH = ROOT / "data" / "dealers" / "near_sao_mamede.json"
-MAX_PRICE = 40_000
 CAMPAIGN_FIELDS = (
     "particular_campaign_price_vat_incl",
     "campaign_conditions",
@@ -86,8 +87,8 @@ def expire_catalog(catalog: dict, dealer_catalog: dict, reference: dt.date) -> l
             if not isinstance(price, (int, float)) or price <= 0:
                 report.append(f"VARIANTE REMOVIDA  {vlabel}: ficou sem preço elegível")
                 continue
-            if price > MAX_PRICE:
-                report.append(f"VARIANTE REMOVIDA  {vlabel}: PVP {price} € excede o limite de {MAX_PRICE} €")
+            if price > MAX_PRICE_EUR:
+                report.append(f"VARIANTE REMOVIDA  {vlabel}: PVP {price} € excede o limite de {MAX_PRICE_EUR} €")
                 continue
             surviving_variants.append(variant)
 

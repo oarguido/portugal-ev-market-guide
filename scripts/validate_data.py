@@ -12,18 +12,16 @@ from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
 from compile_data import ROOT, load_catalog, load_dealers, vehicle_records
+from rules import MAX_AGE_DAYS, MAX_PRICE_EUR
 
 # Data local portuguesa: campanhas e verificacoes sao datadas no fuso do mercado.
 TODAY = dt.datetime.now(tz=ZoneInfo("Europe/Lisbon")).date()
-MAX_PRICE = 40_000
-MAX_AGE_DAYS = 45
 # 200/301/302 provam que a ligacao esta viva E que o conteudo foi lido.
 VERIFIED_LINK_CODES = {200, 301, 302}
 # 403/429 = anti-bot; 408 = sem resposta a urllib mas acessivel no browser (ver
 # check_link). A ligacao nao esta quebrada, mas tambem NAO prova que a pagina
 # continua igual: exige revisao no browser (AGENTS.md secao 4).
 BLOCKED_LINK_CODES = {403, 408, 429}
-VALID_LINK_CODES = VERIFIED_LINK_CODES | BLOCKED_LINK_CODES
 # 100 fontes em serie com timeout de 30 s levam minutos; mini.pt sozinho custa 4
 # timeouts completos. Verificar em paralelo mantem o resultado igual e ordenado.
 LINK_WORKERS = 8
@@ -111,7 +109,7 @@ def validate_catalog(catalog: dict) -> list[str]:
         scope.get("powertrain") != "BEV"
         or scope.get("vehicle_type") != "M1 passenger car"
         or scope.get("condition") != "new"
-        or scope.get("maximum_vat_inclusive_price_eur") != MAX_PRICE
+        or scope.get("maximum_vat_inclusive_price_eur") != MAX_PRICE_EUR
     ):
         errors.append("scope tem de ser M1, novo, exclusivamente BEV e limitado a 40.000 €")
     discovery_sources = catalog.get("discovery_sources", [])
@@ -204,7 +202,7 @@ def validate_catalog(catalog: dict) -> list[str]:
                     errors.append(f"{vlabel}: {numeric} inválido")
             pricing = variant.get("pricing", {})
             price = effective_price(pricing)
-            if not isinstance(price, (int, float)) or price <= 0 or price > MAX_PRICE:
+            if not isinstance(price, (int, float)) or price <= 0 or price > MAX_PRICE_EUR:
                 errors.append(f"{vlabel}: preço elegível inválido/acima de 40.000 € ({price})")
             if pricing.get("particular_campaign_price_vat_incl") and not str(
                 pricing.get("campaign_conditions") or ""

@@ -26,11 +26,12 @@ import argparse
 import html as html_module
 import json
 import re
-import subprocess
 import unicodedata
 import urllib.error
 import urllib.request
 from pathlib import Path
+
+from browser import evaluate, open_page
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "vehicles" / "pt_market.json"
@@ -41,9 +42,6 @@ def normalize(value: str) -> str:
     stripped = unicodedata.normalize("NFKD", value)
     ascii_only = "".join(char for char in stripped if not unicodedata.combining(char))
     return " ".join(re.sub(r"[^a-z0-9]+", " ", ascii_only.lower()).split())
-
-
-BROWSER_TIMEOUT = 120
 
 
 def fetch(url: str) -> str:
@@ -61,26 +59,14 @@ def browser_links(url: str) -> list[str] | None:
     mercado — a secção 5B do AGENTS.md — não estava automatizada de todo.
     """
     script = "JSON.stringify([...document.querySelectorAll('a')].map(a => a.getAttribute('href')).filter(Boolean))"
+    if not open_page(url):
+        return None
+    payload = evaluate(script)
     try:
-        opened = subprocess.run(
-            ["agent-browser", "open", url], cwd=ROOT, text=True, capture_output=True, timeout=BROWSER_TIMEOUT
-        )
-        if opened.returncode != 0:
-            return None
-        result = subprocess.run(
-            ["agent-browser", "eval", script], cwd=ROOT, text=True, capture_output=True, timeout=BROWSER_TIMEOUT
-        )
-    except (subprocess.TimeoutExpired, FileNotFoundError, OSError):
+        ligacoes = json.loads(payload)
+    except (json.JSONDecodeError, ValueError):
         return None
-    if result.returncode != 0:
-        return None
-    payload = result.stdout.strip()
-    for _ in range(2):
-        try:
-            payload = json.loads(payload)
-        except (json.JSONDecodeError, TypeError):
-            break
-    return payload if isinstance(payload, list) else None
+    return ligacoes if isinstance(ligacoes, list) else None
 
 
 REVIEW_PATH = re.compile(r"/reviews/([^/]+?)(?:-reviews)?/([^/]+)/review")

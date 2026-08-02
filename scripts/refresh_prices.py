@@ -41,7 +41,6 @@ from browser import page_text as browser_text
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "vehicles" / "pt_market.json"
 PROPOSALS_PATH = ROOT / "data" / "price_proposals.json"
-BROWSER_TIMEOUT = 120
 LLM_TIMEOUT = 180
 MAX_PAGE_CHARS = 18_000
 TODAY = dt.datetime.now(tz=ZoneInfo("Europe/Lisbon")).date().isoformat()

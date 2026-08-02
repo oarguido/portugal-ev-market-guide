@@ -19,12 +19,13 @@ import json
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from rules import MAX_AGE_DAYS
+
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "vehicles" / "pt_market.json"
 DEALERS_PATH = ROOT / "data" / "dealers" / "near_sao_mamede.json"
 SNAPSHOTS_PATH = ROOT / "data" / "source_snapshots.json"
 TODAY = dt.datetime.now(tz=ZoneInfo("Europe/Lisbon")).date()
-MAX_AGE_DAYS = 45
 EXPIRING_SOON_DAYS = 30
 BLOCKED_STATUS = {403, 408, 429}
 STALE_SNAPSHOT_HINT = (
@@ -95,7 +96,7 @@ def build_sections(catalog: dict, dealers: dict, snapshots: dict) -> list[tuple[
             blocked,
         ),
         (
-            "VERIFICAÇÕES A ENVELHECER — reabrir as fontes antes dos 45 dias",
+            f"VERIFICAÇÕES A ENVELHECER — reabrir as fontes antes dos {MAX_AGE_DAYS} dias",
             sorted(ageing),
         ),
     ]

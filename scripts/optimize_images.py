@@ -29,7 +29,6 @@ ARCHIVE_ROOT = ROOT / "archive" / "originais-antes-de-recomprimir"
 MAX_BYTES = 500_000
 MAX_LONG_EDGE = 1600
 JPEG_QUALITY = 82
-MIN_WIDTH = 600
 
 
 def sips_available() -> bool:
