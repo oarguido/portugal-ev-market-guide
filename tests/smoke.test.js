@@ -22,7 +22,22 @@ const path = require("node:path");
 const test = require("node:test");
 
 const root = path.resolve(__dirname, "..");
-const PORT = 8791;
+// Sem porta fixa: o serve.py salta para a seguinte livre quando a pedida está
+// ocupada, e um teste que continuasse a pedir a porta original falharia sem
+// razão. Lê-se a porta que o servidor anuncia.
+function arrancarServidor() {
+  const proc = spawn("python3", ["scripts/serve.py", "--port", "0"], { cwd: root, stdio: ["ignore", "pipe", "ignore"] });
+  return new Promise((resolve, reject) => {
+    const limite = setTimeout(() => reject(new Error("o servidor não anunciou a porta")), 20000);
+    let saida = "";
+    proc.stdout.on("data", chunk => {
+      saida += chunk.toString();
+      const m = saida.match(/http:\/\/localhost:(\d+)/);
+      if (m) { clearTimeout(limite); resolve({ proc, porta: Number(m[1]) }); }
+    });
+    proc.on("error", err => { clearTimeout(limite); reject(err); });
+  });
+}
 
 function temAgentBrowser() {
   try {
@@ -71,18 +86,14 @@ test(
       0,
     );
 
-    const servidor = spawn(
-      "python3",
-      ["scripts/serve.py", "--port", String(PORT)],
-      { cwd: root, stdio: "ignore" },
-    );
+    const { proc: servidor, porta } = await arrancarServidor();
     try {
       assert.ok(
-        await esperarServidor(`http://127.0.0.1:${PORT}/index.html`),
+        await esperarServidor(`http://127.0.0.1:${porta}/index.html`),
         "o servidor não arrancou",
       );
 
-      browser(["open", `http://127.0.0.1:${PORT}/index.html`]);
+      browser(["open", `http://127.0.0.1:${porta}/index.html`]);
       const bruto = browser([
         "eval",
         `(async () => {
@@ -141,13 +152,9 @@ test(
   async () => {
     // A regressão real: depois de uma atualização o browser continuava a servir o
     // bundle antigo e a pedir fotografias que já tinham sido arquivadas.
-    const servidor = spawn(
-      "python3",
-      ["scripts/serve.py", "--port", String(PORT + 1)],
-      { cwd: root, stdio: "ignore" },
-    );
+    const { proc: servidor, porta } = await arrancarServidor();
     try {
-      const base = `http://127.0.0.1:${PORT + 1}`;
+      const base = `http://127.0.0.1:${porta}`;
       assert.ok(
         await esperarServidor(`${base}/index.html`),
         "o servidor não arrancou",
