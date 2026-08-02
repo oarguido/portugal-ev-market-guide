@@ -225,6 +225,11 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--refresh-photos", action="store_true")
     parser.add_argument("--accept-source-changes", action="store_true", help="Store current fingerprints after reviewing changed official pages")
+    parser.add_argument(
+        "--retry-blocked",
+        action="store_true",
+        help="Ler apenas as fontes que ainda só têm um código HTTP na baseline",
+    )
     args = parser.parse_args()
     catalog = load_catalog()
     dealer_catalog = load_dealers()
@@ -245,6 +250,27 @@ def main() -> int:
         if url in processed:
             return
         processed.add(url)
+        if args.retry_blocked:
+            if previous.get(url, {}).get("sha256"):
+                # Já foi lida com conteúdo; não gastar tempo outra vez. As fontes
+                # por ler estão no fim da ordem alfabética e uma execução
+                # interrompida nunca lá chegava.
+                current[url] = previous[url]
+                return
+            # Sabemos que esta fonte bloqueia o urllib: ir direto ao browser em
+            # vez de gastar duas tentativas de 40 s a confirmar o que já se sabe.
+            rendered = browser_text(url)
+            if rendered:
+                snapshot = build_browser_snapshot(rendered, url, source_type=source_type)
+                current[url] = snapshot
+                if snapshot_changed(previous.get(url), snapshot):
+                    changed.append(url)
+                print(f"OK {len(rendered):>8} B  {url}{annotation} (direto ao browser)")
+                save_snapshots(previous, current)
+                return
+            print(f"SEM CONTEÚDO  {url}{annotation} (nem o browser leu)")
+            current[url] = previous.get(url, blocked_snapshot(408, url, source_type=source_type))
+            return
         try:
             body, destination = fetch(url)
             pages[url] = (body, destination)
