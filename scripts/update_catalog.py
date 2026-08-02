@@ -206,6 +206,21 @@ def refresh_photo(model: dict, html: bytes, page_url: str) -> bool:
     return True
 
 
+def save_snapshots(previous: dict, current: dict) -> None:
+    """Gravar a baseline, mesclando o que já lá estava com o que se leu agora.
+
+    Antes só se gravava no fim. Uma passagem por 100 fontes com browser demora
+    mais de dez minutos e, se morresse ao minuto oito, não guardava nada — a
+    execução seguinte recomeçava do zero. É o mesmo defeito que o arquivamento
+    de imagens tinha: trabalho feito, nada persistido.
+
+    Cada entrada é um fingerprint independente, por isso gravar a meio é
+    seguro: fica lá o que já foi lido e o resto continua com o valor antigo.
+    """
+    merged = {**previous, **current}
+    CACHE.write_text(json.dumps(merged, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--refresh-photos", action="store_true")
@@ -238,6 +253,8 @@ def main() -> int:
             if snapshot_changed(previous.get(url), snapshot):
                 changed.append(url)
             print(f"OK {len(body):>8} B  {url}{annotation}")
+            if args.accept_source_changes:
+                save_snapshots(previous, current)
         except urllib.error.HTTPError as error:
             if error.code in {403, 429}:
                 rendered = browser_text(url)
@@ -323,7 +340,7 @@ def main() -> int:
                 print(f"FOTO {model['brand']} {model['model']}")
         (ROOT / "data" / "vehicles" / "pt_market.json").write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if not failed and (args.accept_source_changes or not CACHE.exists()):
-        CACHE.write_text(json.dumps(current, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        save_snapshots(previous, current)
     if failed:
         print(f"\nFalha persistente em {len(failed)} fonte(s); nenhuma baseline foi gravada.")
         return 1
