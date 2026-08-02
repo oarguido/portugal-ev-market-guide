@@ -36,6 +36,8 @@ import subprocess
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from browser import page_text as browser_text
+
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "vehicles" / "pt_market.json"
 PROPOSALS_PATH = ROOT / "data" / "price_proposals.json"
@@ -70,17 +72,6 @@ TEXTO DA PÁGINA:
 {text}
 """
 
-
-def browser_text(url: str) -> str | None:
-    """Abrir num browser real e devolver o texto do body."""
-    try:
-        opened = subprocess.run(["agent-browser", "open", url], cwd=ROOT, text=True, capture_output=True, timeout=BROWSER_TIMEOUT)
-        if opened.returncode != 0:
-            return None
-        result = subprocess.run(["agent-browser", "get", "text", "body"], cwd=ROOT, text=True, capture_output=True, timeout=BROWSER_TIMEOUT)
-    except (subprocess.TimeoutExpired, FileNotFoundError):
-        return None
-    return result.stdout if result.returncode == 0 and result.stdout.strip() else None
 
 
 def extract(url: str, model: str, text: str) -> dict | None:

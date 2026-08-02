@@ -21,6 +21,7 @@ from html.parser import HTMLParser
 from typing import ClassVar
 from urllib.parse import urljoin
 
+from browser import page_text
 from compile_data import ROOT, load_catalog, load_dealers
 
 CACHE = ROOT / "data" / "source_snapshots.json"
@@ -86,29 +87,9 @@ def fetch(url: str, attempts: int = FETCH_ATTEMPTS) -> tuple[bytes, str]:
 
 
 def browser_text(url: str) -> str | None:
-    """Abrir a página num browser real e devolver o texto visível.
+    """Texto da página lido num browser real. Ver scripts/browser.py."""
+    return page_text(url, timeout=BROWSER_TIMEOUT)
 
-    urllib não passa em mini.pt (fecha a ligação), nem em citroen.pt, fiat.pt,
-    jeep.pt, tesla.com ou volvocars.com (403/429). Um browser passa em todas:
-    a mini.pt responde em pouco mais de um segundo, contra três tentativas de
-    40 s de timeout que acabavam sem conteúdo nenhum.
-
-    Enquanto estas fontes ficavam por ler, o preço e a campanha dessas marcas não
-    eram verificados por nada — cerca de um terço do catálogo.
-    """
-    try:
-        opened = subprocess.run(
-            ["agent-browser", "open", url], cwd=ROOT, text=True, capture_output=True, timeout=BROWSER_TIMEOUT
-        )
-        if opened.returncode != 0:
-            return None
-        result = subprocess.run(
-            ["agent-browser", "get", "text", "body"], cwd=ROOT, text=True, capture_output=True, timeout=BROWSER_TIMEOUT
-        )
-    except (subprocess.TimeoutExpired, FileNotFoundError, OSError):
-        return None
-    text = result.stdout.strip() if result.returncode == 0 else ""
-    return text or None
 
 
 def build_browser_snapshot(text: str, url: str, *, source_type: str | None = None) -> dict:

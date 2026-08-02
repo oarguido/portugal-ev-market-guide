@@ -7,19 +7,12 @@ import base64
 import binascii
 import json
 import re
-import subprocess
 from pathlib import Path
 from urllib.parse import urljoin
 
+from browser import run
 from compile_data import CATALOG_PATH, ROOT, load_catalog
 from update_catalog import fetch
-
-
-def run(*arguments: str, timeout: int = 90) -> subprocess.CompletedProcess[str]:
-    return subprocess.run(
-        ["agent-browser", *arguments], cwd=ROOT, text=True,
-        capture_output=True, timeout=timeout, check=False,
-    )
 
 
 def slug(model: dict) -> str:
