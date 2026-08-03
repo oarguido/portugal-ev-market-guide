@@ -846,9 +846,15 @@ function updateTCO() {
   const selectedId = document.getElementById("tco-select-model")?.value;
   const car = flatCars.find(item => item.id === selectedId) || flatCars[0];
   const cons = car?.specifications.wltp_consumption_combined_kwh_100km;
-  if (car && !cons) {
+  // Sem carro OU sem consumo publicado não há poupança que se possa afirmar.
+  // Com `car && !cons` o caso de catálogo vazio escapava: annualElecCost ficava
+  // em 0 e o painel anunciava uma poupança igual ao custo total da gasolina —
+  // um número inventado, que é precisamente o que a secção 1 do AGENTS.md proíbe.
+  if (!car || !cons) {
     document.getElementById("tco-savings-title").textContent = "Poupança não calculável";
-    document.getElementById("tco-savings-text").textContent = `${car.brand} ${car.model} (${car.variant}): consumo WLTP não publicado pela marca, por isso não é possível estimar o custo de carregamento.`;
+    document.getElementById("tco-savings-text").textContent = car
+      ? `${car.brand} ${car.model} (${car.variant}): consumo WLTP não publicado pela marca, por isso não é possível estimar o custo de carregamento.`
+      : "Nenhum modelo selecionado, por isso não é possível estimar a poupança.";
     return;
   }
   const annualElecCost = cons ? (annualKm / 100) * cons * elecPrice : 0;
@@ -1062,15 +1068,6 @@ function formatCurrency(val) {
 function formatNumber(val) {
   if (val === null || val === undefined) return "";
   return new Intl.NumberFormat("pt-PT").format(val);
-}
-
-// Safer parse
-function jsonParse(str) {
-  try {
-    return JSON.parse(str);
-  } catch (e) {
-    return null;
-  }
 }
 
 function renderStands() {
