@@ -249,6 +249,24 @@ def main() -> int:
         if url in processed:
             return
         processed.add(url)
+        # Uma fonte que já foi lida no browser volta a ser lida no browser, sem
+        # passar pelo urllib. Poupa dois timeouts de 40 s em cada uma que fecha a
+        # ligação (as quatro da mini.pt custavam ~5 minutos por execução), e
+        # mantém o método de leitura constante — alternar entre urllib e browser
+        # troca o fingerprint_version e faria a fonte parecer alterada sem o ser.
+        if previous.get(url, {}).get("read_with") == "agent-browser":
+            rendered = browser_text(url)
+            if rendered:
+                snapshot = build_browser_snapshot(rendered, url, source_type=source_type)
+                current[url] = snapshot
+                if snapshot_changed(previous.get(url), snapshot):
+                    changed.append(url)
+                print(f"OK {len(rendered):>8} B  {url}{annotation} (browser, como na última leitura)")
+                if args.accept_source_changes:
+                    save_snapshots(previous, current)
+                return
+            # O browser falhou: cair para o caminho normal em vez de desistir.
+
         if args.retry_blocked:
             if previous.get(url, {}).get("sha256"):
                 # Já foi lida com conteúdo; não gastar tempo outra vez. As fontes
