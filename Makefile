@@ -14,7 +14,7 @@
 # python3 -u em todo o lado: sem isso o stdout fica em buffer quando a saída
 # não é um terminal, e `make atualizar` passa quinze minutos calado a parecer
 # pendurado. Nota sobre -u: é a diferença entre acompanhar e adivinhar.
-RUFF ?= uv run --group dev ruff
+RUFF ?= $(shell command -v uv >/dev/null 2>&1 && echo "uv run --group dev ruff" || echo "ruff")
 
 serve:
 	python3 -u scripts/serve.py

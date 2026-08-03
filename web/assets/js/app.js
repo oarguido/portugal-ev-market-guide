@@ -5,6 +5,7 @@
 // Global State
 let flatCars = [];
 let testDriveReviews = [];
+let selectedCompareCars = [];
 
 // Todo o valor do catálogo interpolado em innerHTML passa por aqui. Ver
 // assets/js/html.js para o motivo.
@@ -291,18 +292,42 @@ function renderOverview(filteredList = flatCars) {
       `;
     }
 
+    // Micro Badges
+    let badgesHTML = "";
+    if (displayPrice && displayPrice <= 25000) {
+      badgesHTML += `<span class="card-badge badge-budget"><i class="fa-solid fa-piggy-bank"></i> ≤ 25k €</span>`;
+    }
+    if (car.specifications.wltp_range_combined_km && car.specifications.wltp_range_combined_km >= 400) {
+      badgesHTML += `<span class="card-badge badge-range"><i class="fa-solid fa-route"></i> 400+ km</span>`;
+    }
+    if (car.charging.dc_max_kw && car.charging.dc_max_kw >= 100) {
+      badgesHTML += `<span class="card-badge badge-fast-charge"><i class="fa-solid fa-bolt"></i> DC ${car.charging.dc_max_kw} kW</span>`;
+    }
+    if (campaignPrice) {
+      badgesHTML += `<span class="card-badge badge-campaign"><i class="fa-solid fa-tag"></i> Campanha</span>`;
+    }
+
+    const isSelected = selectedCompareCars.some(c => c.id === car.id);
+    const compareBtnHTML = `
+      <button class="btn-compare-card ${isSelected ? "selected" : ""}" data-car-id="${car.id}">
+        <i class="fa-solid ${isSelected ? "fa-check" : "fa-plus"}"></i> ${isSelected ? "Selecionado para Comparar" : "Adicionar à Comparação"}
+      </button>
+    `;
+
     card.innerHTML = `
       <div class="card-image-wrapper">
         ${imageHTML}
       </div>
 
       <div class="card-body-content" style="padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1;">
-        <div class="card-header" style="margin-bottom: 1rem;">
+        <div class="card-header" style="margin-bottom: 0.5rem;">
           <span class="brand-badge brand-${escapeHtml(car.brand.toLowerCase())}">${escapeHtml(car.brand)}</span>
           <div class="car-price-tag">
             ${priceHTML}
           </div>
         </div>
+
+        ${badgesHTML ? `<div class="card-badges">${badgesHTML}</div>` : ""}
 
         <h3 class="car-title">${escapeHtml(car.model)}</h3>
         <p class="car-segment" style="margin-bottom: 0.5rem;">${escapeHtml(car.variant)} • ${escapeHtml(car.segment || "Segmento")} • 100% elétrico</p>
@@ -339,11 +364,18 @@ function renderOverview(filteredList = flatCars) {
         </div>
         ${officialLinkHTML}
         ${dealerLinkHTML}
+        ${compareBtnHTML}
       </div>
     `;
 
+    const compareBtn = card.querySelector(".btn-compare-card");
+    if (compareBtn) {
+      compareBtn.addEventListener("click", () => toggleCompareCar(car));
+    }
+
     container.appendChild(card);
   });
+  updateCompareDrawer();
 }
 
 /* ==========================================================================
@@ -358,6 +390,14 @@ function setupFilters() {
   const btnLilianaRules = document.getElementById("btn-liliana-rules");
   const btnClearFilters = document.getElementById("btn-clear-filters");
 
+  const btnBudget = document.getElementById("btn-filter-budget");
+  const btnRange = document.getElementById("btn-filter-range");
+  const btnFastCharge = document.getElementById("btn-filter-fastcharge");
+
+  const resetPresetClasses = () => {
+    document.querySelectorAll(".preset-btn").forEach(b => b.classList.remove("active"));
+  };
+
   if (searchInput) searchInput.addEventListener("input", () => renderOverview(getFilteredCars()));
   if (priceSlider) priceSlider.addEventListener("input", () => renderOverview(getFilteredCars()));
   if (rangeSlider) rangeSlider.addEventListener("input", () => renderOverview(getFilteredCars()));
@@ -366,6 +406,8 @@ function setupFilters() {
 
   if (btnLilianaRules) {
     btnLilianaRules.addEventListener("click", () => {
+      resetPresetClasses();
+      btnLilianaRules.classList.add("active");
       if (priceSlider) priceSlider.value = "35000";
       if (rangeSlider) rangeSlider.value = "300";
       if (yearSelect) yearSelect.value = "all";
@@ -374,8 +416,47 @@ function setupFilters() {
     });
   }
 
+  if (btnBudget) {
+    btnBudget.addEventListener("click", () => {
+      resetPresetClasses();
+      btnBudget.classList.add("active");
+      if (priceSlider) priceSlider.value = "25000";
+      if (rangeSlider) rangeSlider.value = "80";
+      if (yearSelect) yearSelect.value = "all";
+      if (searchInput) searchInput.value = "";
+      renderOverview(getFilteredCars());
+    });
+  }
+
+  if (btnRange) {
+    btnRange.addEventListener("click", () => {
+      resetPresetClasses();
+      btnRange.classList.add("active");
+      if (priceSlider) priceSlider.value = "40000";
+      if (rangeSlider) rangeSlider.value = "400";
+      if (yearSelect) yearSelect.value = "all";
+      if (searchInput) searchInput.value = "";
+      renderOverview(getFilteredCars());
+    });
+  }
+
+  if (btnFastCharge) {
+    btnFastCharge.addEventListener("click", () => {
+      resetPresetClasses();
+      btnFastCharge.classList.add("active");
+      if (priceSlider) priceSlider.value = "40000";
+      if (rangeSlider) rangeSlider.value = "80";
+      if (yearSelect) yearSelect.value = "all";
+      if (searchInput) searchInput.value = "";
+      const fastChargeCars = flatCars.filter(c => c.charging && c.charging.dc_max_kw >= 100);
+      renderOverview(fastChargeCars);
+    });
+  }
+
   if (btnClearFilters) {
     btnClearFilters.addEventListener("click", () => {
+      resetPresetClasses();
+      btnClearFilters.classList.add("active");
       if (priceSlider) priceSlider.value = "40000";
       if (rangeSlider) rangeSlider.value = "80";
       if (yearSelect) yearSelect.value = "all";
@@ -384,8 +465,68 @@ function setupFilters() {
     });
   }
 
+  // Floating Compare Drawer button click
+  const btnOpenDrawerCompare = document.getElementById("btn-open-drawer-compare");
+  if (btnOpenDrawerCompare) {
+    btnOpenDrawerCompare.addEventListener("click", () => {
+      if (selectedCompareCars.length > 0) {
+        const selectA = document.getElementById("compare-car-1");
+        const selectB = document.getElementById("compare-car-2");
+        if (selectA && selectedCompareCars[0]) selectA.value = selectedCompareCars[0].id;
+        if (selectB && selectedCompareCars[1]) selectB.value = selectedCompareCars[1].id;
+        const navCompare = document.getElementById("nav-compare");
+        if (navCompare) navCompare.click();
+      }
+    });
+  }
+
   // Run initial calculation to update labels
   getFilteredCars();
+}
+
+/* ==========================================================================
+   Floating Comparison Drawer Helpers
+   ========================================================================== */
+function toggleCompareCar(car) {
+  const index = selectedCompareCars.findIndex(c => c.id === car.id);
+  if (index >= 0) {
+    selectedCompareCars.splice(index, 1);
+  } else {
+    if (selectedCompareCars.length >= 3) {
+      alert("Podes selecionar até 3 carros em simultâneo para comparar.");
+      return;
+    }
+    selectedCompareCars.push(car);
+  }
+  renderOverview(getFilteredCars());
+}
+
+function updateCompareDrawer() {
+  const drawer = document.getElementById("floating-compare-drawer");
+  const countEl = document.getElementById("compare-count");
+  const chipsEl = document.getElementById("drawer-chips");
+  if (!drawer || !countEl || !chipsEl) return;
+
+  countEl.textContent = selectedCompareCars.length;
+  if (selectedCompareCars.length === 0) {
+    drawer.classList.remove("visible");
+  } else {
+    drawer.classList.add("visible");
+    chipsEl.innerHTML = selectedCompareCars.map(c => `
+      <div class="drawer-chip">
+        <span>${escapeHtml(c.brand)} ${escapeHtml(c.model)}</span>
+        <i class="fa-solid fa-xmark remove-chip" data-id="${c.id}"></i>
+      </div>
+    `).join("");
+
+    chipsEl.querySelectorAll(".remove-chip").forEach(icon => {
+      icon.addEventListener("click", (e) => {
+        const id = e.target.getAttribute("data-id");
+        selectedCompareCars = selectedCompareCars.filter(c => c.id !== id);
+        renderOverview(getFilteredCars());
+      });
+    });
+  }
 }
 
 function getFilteredCars() {

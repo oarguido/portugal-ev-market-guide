@@ -98,8 +98,14 @@ test(
         "eval",
         `(async () => {
       const s = ms => new Promise(r => setTimeout(r, ms));
-      for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await s(70); }
-      await s(1500);
+      for (let y = 0; y <= document.body.scrollHeight; y += 400) { window.scrollTo(0, y); await s(40); }
+      window.scrollTo(0, document.body.scrollHeight);
+      const deadline = Date.now() + 5000;
+      while (Date.now() < deadline) {
+        const pending = [...document.querySelectorAll('img.card-car-image')].filter(i => !i.complete);
+        if (pending.length === 0) break;
+        await s(100);
+      }
       const imgs = [...document.querySelectorAll('img.card-car-image')];
       return JSON.stringify({
         cartoes: document.querySelectorAll('.car-card').length,

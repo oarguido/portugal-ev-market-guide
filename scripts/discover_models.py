@@ -72,14 +72,22 @@ def browser_links(url: str) -> list[str] | None:
 REVIEW_PATH = re.compile(r"/reviews/([^/]+?)(?:-reviews)?/([^/]+)/review")
 
 
+EXCLUDED_KEYWORDS = {"phev", "hybrid", "plug in", "tfsi e", "e hybrid", "mild hybrid", "concept"}
+EXCLUDED_BRANDS = {"bentley", "rolls royce", "aston martin", "ferrari", "lamborghini", "mclaren", "porsche", "maserati"}
+
 def models_from_links(links: list[str]) -> list[str]:
-    """Pares (marca, modelo) a partir dos URL de review da electrifying.com."""
+    """Pares (marca, modelo) a partir dos URL de review da electrifying.com, filtrando ruído óbvio (PHEVs/híbridos e ultra-luxo)."""
     found = []
     for href in links:
         match = REVIEW_PATH.search(href or "")
         if match:
-            marca, modelo = match.group(1), match.group(2)
-            found.append(f"{marca.replace('-', ' ')} {modelo.replace('-', ' ')}")
+            marca, modelo = match.group(1).replace('-', ' '), match.group(2).replace('-', ' ')
+            full_name = f"{marca} {modelo}".lower()
+            if any(b in full_name for b in EXCLUDED_BRANDS):
+                continue
+            if any(k in full_name for k in EXCLUDED_KEYWORDS):
+                continue
+            found.append(f"{marca.title()} {modelo}")
     return sorted(dict.fromkeys(found))
 
 

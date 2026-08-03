@@ -6,22 +6,6 @@
   "last_verified": "2026-07-23",
   "dealers": [
     {
-      "brand": "AION",
-      "name": "GAC AION Porto – Carby",
-      "address": "Estrada da Circunvalação, 10408",
-      "postal_code": "4460-383",
-      "locality": "Porto",
-      "phone": "+351 210 496 929",
-      "email": null,
-      "official_url": "https://gac-portugal.pt/rede-de-concessionarios/",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=GAC%20AION%20Carby%20Porto%20Circunvalacao%2010408",
-      "services": [
-        "sales",
-        "service"
-      ],
-      "verified_on": "2026-07-23"
-    },
-    {
       "brand": "Abarth",
       "name": "C.A.M. – Porto Delfim Ferreira",
       "address": "Rua Delfim Ferreira, 421",
@@ -31,6 +15,22 @@
       "email": null,
       "official_url": "https://rede.abarth.pt/cam-porto/contacte-nos/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Abarth%20CAM%20Porto%20Rua%20Delfim%20Ferreira%20421",
+      "services": [
+        "sales",
+        "service"
+      ],
+      "verified_on": "2026-07-23"
+    },
+    {
+      "brand": "AION",
+      "name": "GAC AION Porto – Carby",
+      "address": "Estrada da Circunvalação, 10408",
+      "postal_code": "4460-383",
+      "locality": "Porto",
+      "phone": "+351 210 496 929",
+      "email": null,
+      "official_url": "https://gac-portugal.pt/rede-de-concessionarios/",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=GAC%20AION%20Carby%20Porto%20Circunvalacao%2010408",
       "services": [
         "sales",
         "service"
@@ -118,6 +118,22 @@
       "verified_on": "2026-07-23"
     },
     {
+      "brand": "Cupra",
+      "name": "Cupra Garage Porto – Caetano Energy",
+      "address": "Rua do Amial, 714",
+      "postal_code": "4200-055",
+      "locality": "Porto",
+      "phone": "+351 225 081 000",
+      "email": null,
+      "official_url": "https://www.cupraofficial.pt/o-seu-cupra/concessionarios",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Cupra%20Garage%20Porto%20Amial",
+      "services": [
+        "sales",
+        "service"
+      ],
+      "verified_on": "2026-08-04"
+    },
+    {
       "brand": "Dacia",
       "name": "Dacia Porto Circunvalação Caetano",
       "address": "Estrada Interior da Circunvalação, 12679",
@@ -164,6 +180,22 @@
         "service"
       ],
       "verified_on": "2026-07-23"
+    },
+    {
+      "brand": "Ford",
+      "name": "C.A.M. – Ford Matosinhos",
+      "address": "Rua de Sendim, 180",
+      "postal_code": "4450-264",
+      "locality": "Matosinhos",
+      "phone": "+351 229 397 000",
+      "email": null,
+      "official_url": "https://www.ford.pt/concessionarios",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ford%20CAM%20Matosinhos",
+      "services": [
+        "sales",
+        "service"
+      ],
+      "verified_on": "2026-08-03"
     },
     {
       "brand": "Geely",
@@ -259,6 +291,22 @@
         "service"
       ],
       "verified_on": "2026-07-23"
+    },
+    {
+      "brand": "Mazda",
+      "name": "Caetano Auto – Mazda Senhora da Hora",
+      "address": "Rua Vasco da Gama, 780",
+      "postal_code": "4460-439",
+      "locality": "Senhora da Hora",
+      "phone": "+351 229 576 000",
+      "email": null,
+      "official_url": "https://www.mazda.pt/formularios/localizar-um-concessionario/",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Mazda%20Caetano%20Auto%20Senhora%20da%20Hora",
+      "services": [
+        "sales",
+        "service"
+      ],
+      "verified_on": "2026-08-04"
     },
     {
       "brand": "MG",
@@ -373,6 +421,22 @@
       "verified_on": "2026-07-23"
     },
     {
+      "brand": "smart",
+      "name": "Sociedade Comercial C. Santos – Boavista",
+      "address": "Avenida da Boavista, 3743",
+      "postal_code": "4100-139",
+      "locality": "Porto",
+      "phone": "+351 226 102 708",
+      "email": null,
+      "official_url": "https://pt.smart.com/pt/retailer-list/",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=smart%20Sociedade%20Comercial%20C%20Santos%20Boavista",
+      "services": [
+        "sales",
+        "service"
+      ],
+      "verified_on": "2026-07-23"
+    },
+    {
       "brand": "Suzuki",
       "name": "Motorlife – Citiauto",
       "address": "Avenida Vasco da Gama, 2695",
@@ -448,22 +512,6 @@
       "email": null,
       "official_url": "https://volvo.jop.pt/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=JOP%20Volvo%20Porto%20Manuel%20Pinto%20de%20Azevedo%20671",
-      "services": [
-        "sales",
-        "service"
-      ],
-      "verified_on": "2026-07-23"
-    },
-    {
-      "brand": "smart",
-      "name": "Sociedade Comercial C. Santos – Boavista",
-      "address": "Avenida da Boavista, 3743",
-      "postal_code": "4100-139",
-      "locality": "Porto",
-      "phone": "+351 226 102 708",
-      "email": null,
-      "official_url": "https://pt.smart.com/pt/retailer-list/",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=smart%20Sociedade%20Comercial%20C%20Santos%20Boavista",
       "services": [
         "sales",
         "service"

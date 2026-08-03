@@ -70,12 +70,21 @@
             <i class="fa-solid fa-filter"></i> Filtros de Pesquisa
           </h3>
           <!-- Configurações Rápidas -->
-          <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.2rem; align-items: center;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.2rem; align-items: center;">
             <span style="font-size: 0.8rem; color: var(--text-secondary);">Configurações Rápidas:</span>
-            <button id="btn-liliana-rules" class="btn" style="background: rgba(16, 185, 129, 0.15); border: 1px solid var(--accent-green); color: #fff; border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem; cursor: pointer; transition: all 0.2s; outline: none;">
+            <button id="btn-liliana-rules" class="preset-btn active">
               <i class="fa-solid fa-heart" style="color: var(--accent-green);"></i> Preferências da Liliana (≤ 35.000 € | ≥ 300 km)
             </button>
-            <button id="btn-clear-filters" class="btn" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--panel-border); color: var(--text-secondary); border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem; cursor: pointer; transition: all 0.2s; outline: none;">
+            <button id="btn-filter-budget" class="preset-btn">
+              <i class="fa-solid fa-piggy-bank" style="color: #34d399;"></i> Citadinos (≤ 25.000 €)
+            </button>
+            <button id="btn-filter-range" class="preset-btn">
+              <i class="fa-solid fa-route" style="color: #60a5fa;"></i> Grandes Viagens (≥ 400 km)
+            </button>
+            <button id="btn-filter-fastcharge" class="preset-btn">
+              <i class="fa-solid fa-bolt" style="color: #f59e0b;"></i> Carregamento Rápido (≥ 100 kW)
+            </button>
+            <button id="btn-clear-filters" class="preset-btn">
               <i class="fa-solid fa-eraser"></i> Mostrar Todos
             </button>
           </div>
@@ -512,8 +521,19 @@
 
   </div>
 
+  <!-- Floating Comparison Drawer -->
+  <div id="floating-compare-drawer" class="floating-compare-drawer" aria-live="polite">
+    <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent-green); display: flex; align-items: center; gap: 0.4rem;">
+      <i class="fa-solid fa-code-compare"></i> Comparação (<span id="compare-count">0</span>/3):
+    </div>
+    <div id="drawer-chips" class="drawer-chips"></div>
+    <button id="btn-open-drawer-compare" class="btn btn-primary" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;">
+      Comparar Agora <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+
   <!-- JavaScript Files -->
-  <script src="assets/js/car_data.js?v=1aaf54503586"></script>
+  <script src="assets/js/car_data.js?v=fc12e0db58ab"></script>
   <script src="assets/js/html.js"></script>
   <script src="assets/js/search.js"></script>
   <script src="assets/js/ranking.js"></script>
