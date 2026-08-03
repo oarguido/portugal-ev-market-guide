@@ -2504,6 +2504,11 @@
           "type": "official_configurator",
           "url": "https://www.tesla.com/pt_PT/model3",
           "verified_on": "2026-07-23"
+        },
+        {
+          "type": "official_media_asset",
+          "url": "https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Model-3-Main-Hero-Desktop-LHD",
+          "verified_on": "2026-07-23"
         }
       ],
       "variants": [
@@ -2776,7 +2781,7 @@
           "pricing": {
             "particular_list_price_vat_incl": null,
             "particular_campaign_price_vat_incl": 39556,
-            "campaign_conditions": "Equivalente com IVA de campanha de pronto pagamento.",
+            "campaign_conditions": "Equivalente com IVA de campanha de pronto pagamento. A smart publica apenas o preço de entrada da gama (39.950 € para a versão Pro); o PVP desta versão não é publicado em pt.smart.com, por isso fica null em vez de estimado (AGENTS.md secção 1). Verificado a 2026-08-03.",
             "campaign_valid_until": null
           }
         }
