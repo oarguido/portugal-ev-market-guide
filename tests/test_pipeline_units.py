@@ -87,6 +87,33 @@ class RadarDeMercado(unittest.TestCase):
         c = self.catalogo("Kia EV3")
         self.assertEqual(discover_models.unknown_from_names(["kia ev9", "kia ev9"], c), ["kia ev9"])
 
+    def test_grafia_colada_do_mesmo_modelo_nao_e_proposta(self):
+        """A electrifying.com escreve "e208"; o catálogo escreve "E-208".
+
+        Medido contra a fonte real em 2026-08-03: era o único falso candidato em
+        285. Comparar só por prefixo da forma com espaços não o apanha, porque a
+        diferença está a meio da string, não no fim.
+        """
+        c = self.catalogo("Peugeot E-208")
+        self.assertEqual(discover_models.unknown_from_names(["peugeot e208"], c), [])
+
+    def test_modelo_diferente_com_grafia_colada_continua_a_ser_proposto(self):
+        """Compactar não pode cegar o radar: o e-2008 não é o e-208."""
+        c = self.catalogo("Peugeot E-208")
+        self.assertEqual(discover_models.unknown_from_names(["peugeot e2008"], c), ["peugeot e2008"])
+
+    def test_celula_sem_nome_legivel_nao_vira_candidato(self):
+        """Um travessão de tabela não é um carro: não há o que confirmar em fonte oficial."""
+        c = self.catalogo("Kia EV3")
+        rows = [["Modelo", "Preço"], ["—", "—"], ["", ""], ["   ", "n.d."]]
+        self.assertEqual(discover_models.unknown_from_rows(rows, c), [])
+
+    def test_grafia_colada_tambem_e_filtrada_na_tabela(self):
+        """O mesmo modelo lido de uma tabela HTML, não de um link, tem de dar o mesmo."""
+        c = self.catalogo("Peugeot E-208")
+        rows = [["Modelo", "Preço"], ["Peugeot e208", "31.900 €"]]
+        self.assertEqual(discover_models.unknown_from_rows(rows, c), [])
+
 
 class OtimizacaoDeImagens(unittest.TestCase):
     def cenario(self, tmp: Path, tamanho_recomprimido: int) -> tuple[dict, list[str]]:

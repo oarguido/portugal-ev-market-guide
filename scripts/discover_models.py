@@ -96,39 +96,61 @@ def table_rows(page: str) -> list[list[str]]:
     return rows
 
 
+def comparison_key(value: str) -> str:
+    """Forma de comparação de nomes: sem acentos, maiúsculas, pontuação nem espaços.
+
+    Colar os espaços é o que faz o `e208` da electrifying.com encontrar o
+    `Peugeot E-208` do catálogo. Sem isso a diferença fica a meio da string e
+    nenhum dos dois nomes é prefixo do outro, por isso o modelo era proposto como
+    candidato novo em cada atualização.
+
+    Colar não desfaz nenhum prefixo que já existisse com espaços — se um nome
+    começava pelo outro, continua a começar. Logo esta forma substitui a
+    comparação com espaços em vez de a acompanhar.
+    """
+    return normalize(value).replace(" ", "")
+
+
 def catalog_keys(catalog: dict) -> set[str]:
-    return {normalize(f"{model['brand']} {model['model']}") for model in catalog["models"]}
+    return {comparison_key(f"{model['brand']} {model['model']}") for model in catalog["models"]}
+
+
+def is_new_candidate(name: str, known: set[str]) -> bool:
+    """Se este nome merece ser proposto ao revisor, ou já está no catálogo.
+
+    Um candidato conta como conhecido quando partilha o prefixo marca+modelo com
+    uma entrada existente: "Kia EV3 GT Line" não é um modelo novo em relação a
+    "Kia EV3".
+
+    Fica de fora, de propósito, aproximar nomes escritos com peças diferentes:
+    "Peugeot e2008" continua a ser proposto mesmo com o "Peugeot E-208" no
+    catálogo. O risco não é simétrico — um falso candidato dá trabalho a
+    descartar, um modelo escondido nunca chega a ser visto.
+
+    Um nome que não sobreviva à normalização — uma célula vazia, um travessão de
+    tabela — não é candidato nenhum: não há o que confirmar em fonte oficial.
+    """
+    key = comparison_key(name)
+    if not key:
+        return False
+    return not any(key.startswith(existing) or existing.startswith(key) for existing in known)
 
 
 def unknown_from_names(names: list[str], catalog: dict) -> list[str]:
     known = catalog_keys(catalog)
-    unknown = []
-    for name in names:
-        key = normalize(name)
-        if not key or any(key.startswith(existing) or existing.startswith(key) for existing in known):
-            continue
-        unknown.append(name)
+    unknown = [name for name in names if is_new_candidate(name, known)]
     return sorted(dict.fromkeys(unknown))
 
 
 def unknown_from_rows(rows: list[list[str]], catalog: dict) -> list[str]:
     """Modelos da tabela do radar que o catálogo ainda não conhece.
 
-    A primeira linha é o cabeçalho e a primeira coluna é o modelo. Um candidato
-    conta como conhecido quando partilha o prefixo marca+modelo com uma entrada
-    existente: "Kia EV3 GT Line" não é um modelo novo em relação a "Kia EV3".
+    A primeira linha é o cabeçalho e a primeira coluna é o modelo. Extraída essa
+    coluna, a decisão é a mesma dos radares lidos por links, por isso esta via
+    delega em vez de repetir: as duas tinham a regra copiada e o
+    `mutation_check.py` só mutava a primeira ocorrência, logo só protegia uma.
     """
-    known = catalog_keys(catalog)
-    unknown = []
-    for cells in rows[1:]:
-        name = cells[0].strip()
-        if not name:
-            continue
-        key = normalize(name)
-        if not key or any(key.startswith(existing) or existing.startswith(key) for existing in known):
-            continue
-        unknown.append(name)
-    return sorted(dict.fromkeys(unknown))
+    return unknown_from_names([cells[0].strip() for cells in rows[1:]], catalog)
 
 
 def main() -> int:

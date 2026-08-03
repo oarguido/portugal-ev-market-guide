@@ -50,6 +50,19 @@ class ArchiveImagesTests(unittest.TestCase):
         path.write_bytes(content)
         return path
 
+    def test_ds_store_nunca_conta_como_fotografia_por_arquivar(self):
+        """O `.DS_Store` do macOS não é uma fotografia e não pode ir para o arquivo.
+
+        A fixture cria o seu próprio `.DS_Store` de propósito. Um teste de mutação
+        mostrou que a política só estava protegida por dois `.DS_Store` reais que
+        por acaso estavam em `web/assets/images/` — ambos ignorados pelo git, logo
+        ausentes de um clone fresco. Ou seja: em CI, ninguém protegia esta linha.
+        """
+        foto = self.make_image("marca/official.png", b"foto")
+        lixo = self.make_image("marca/.DS_Store", b"\x00\x00lixo do Finder")
+        self.assertEqual(archive_unused_images.unused_images(), [foto])
+        self.assertTrue(lixo.exists(), "o .DS_Store devia ficar onde está, não ser arquivado")
+
     def test_destino_livre_move_a_imagem(self):
         source = self.make_image("marca/official.png", b"foto")
         archive_images([source])
