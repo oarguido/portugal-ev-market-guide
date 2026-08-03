@@ -208,5 +208,110 @@ class RegrasDoCatalogo(unittest.TestCase):
         self.assertEqual(catalogo_real["scope"]["maximum_vat_inclusive_price_eur"], rules.MAX_PRICE_EUR)
 
 
+class CamposObrigatorios(unittest.TestCase):
+    """Verificações que sobrevivem a mutações por o catálogo real ser válido.
+
+    Um teste que só corre sobre dados corretos nunca vê a verificação falhar: podia
+    estar desligada. Estes usam fixtures deliberadamente inválidas.
+    """
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        raiz = Path(self._tmp.name)
+        self.web = raiz / "web"
+        (self.web / "img").mkdir(parents=True)
+        (self.web / "img" / "foto.png").write_bytes(png(1200, 800, preenchimento=20_000))
+        patch = mock.patch.object(validate_data, "ROOT", raiz)
+        patch.start()
+        self.addCleanup(patch.stop)
+        self.addCleanup(self._tmp.cleanup)
+
+    def base(self) -> dict:
+        return catalogo("img/foto.png")
+
+    def test_fonte_nao_oficial_e_recusada(self):
+        c = self.base()
+        c["models"][0]["data_sources"][0]["type"] = "imprensa"
+        erros = validate_catalog(c)
+        self.assertTrue(any("não é oficial" in e for e in erros), erros)
+
+    def test_data_de_fonte_diferente_do_last_verified_e_recusada(self):
+        c = self.base()
+        c["models"][0]["data_sources"][0]["verified_on"] = "2020-01-01"
+        erros = validate_catalog(c)
+        self.assertTrue(any("data inconsistente" in e for e in erros), erros)
+
+    def test_powertrain_que_nao_e_bev_e_recusado(self):
+        c = self.base()
+        c["models"][0]["powertrain"] = "PHEV"
+        erros = validate_catalog(c)
+        self.assertTrue(any("powertrain não é BEV" in e for e in erros), erros)
+
+    def test_modelo_duplicado_e_recusado(self):
+        c = self.base()
+        c["models"].append(json.loads(json.dumps(c["models"][0])))
+        erros = validate_catalog(c)
+        self.assertTrue(any("duplicado" in e for e in erros), erros)
+
+    def test_variante_duplicada_e_recusada(self):
+        c = self.base()
+        c["models"][0]["variants"].append(json.loads(json.dumps(c["models"][0]["variants"][0])))
+        erros = validate_catalog(c)
+        self.assertTrue(any("variante duplicada" in e for e in erros), erros)
+
+    def test_preco_acima_do_limite_e_recusado(self):
+        c = self.base()
+        c["models"][0]["variants"][0]["pricing"]["particular_list_price_vat_incl"] = rules.MAX_PRICE_EUR + 1
+        erros = validate_catalog(c)
+        self.assertTrue(any("acima de" in e for e in erros), erros)
+
+    def test_campanha_sem_condicoes_e_recusada(self):
+        c = self.base()
+        c["models"][0]["variants"][0]["pricing"]["particular_campaign_price_vat_incl"] = 30_000
+        erros = validate_catalog(c)
+        self.assertTrue(any("sem condições" in e for e in erros), erros)
+
+    def test_fonte_sem_https_e_recusada(self):
+        c = self.base()
+        c["models"][0]["data_sources"][0]["url"] = "http://exemplo.pt/modelo"
+        erros = validate_catalog(c)
+        self.assertTrue(any("HTTPS" in e for e in erros), erros)
+
+
+class ConcessionariosObrigatorios(unittest.TestCase):
+    def base_dealers(self, **alteracoes) -> dict:
+        dealer = {
+            "brand": "Marca",
+            "name": "Stand",
+            "address": "Rua A",
+            "postal_code": "4000-001",
+            "locality": "Porto",
+            "phone": "220000000",
+            "email": "a@b.pt",
+            "official_url": "https://exemplo.pt/stand",
+            "maps_url": "https://maps.example.com/x",
+            "services": ["sales"],
+            "verified_on": validate_data.TODAY.isoformat(),
+        }
+        dealer.update(alteracoes)
+        return {"schema_version": 1, "market": "PT", "reference_location": "São Mamede de Infesta, Matosinhos", "dealers": [dealer]}
+
+    def test_stand_valido_passa(self):
+        self.assertEqual(validate_data.validate_dealers(catalogo("x"), self.base_dealers()), [])
+
+    def test_stand_que_nao_vende_novos_e_recusado(self):
+        erros = validate_data.validate_dealers(catalogo("x"), self.base_dealers(services=["service"]))
+        self.assertTrue(any("vender veículos novos" in e for e in erros), erros)
+
+    def test_marca_sem_stand_e_recusada(self):
+        vazio = {"schema_version": 1, "market": "PT", "reference_location": "São Mamede de Infesta, Matosinhos", "dealers": []}
+        erros = validate_data.validate_dealers(catalogo("x"), vazio)
+        self.assertTrue(any("sem concessionário" in e for e in erros), erros)
+
+    def test_stand_de_marca_inexistente_e_recusado(self):
+        erros = validate_data.validate_dealers(catalogo("x"), self.base_dealers(brand="Inexistente"))
+        self.assertTrue(any("sem marca ativa" in e for e in erros), erros)
+
+
 if __name__ == "__main__":
     unittest.main()

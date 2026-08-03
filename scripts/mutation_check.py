@@ -51,6 +51,27 @@ MUTACOES = [
     ("web/assets/js/search.js", "return normalizedQuery", "return true; return normalizedQuery", "pesquisa devolve tudo"),
     # --- ranking ---
     ("web/assets/js/ranking.js", "price: 0.45", "price: 0.90", "peso do preço duplica"),
+    # --- browser / camada partilhada ---
+    ("scripts/browser.py", 'return descodificado if isinstance(descodificado, str) else saida', 'return saida', "evaluate deixa de descascar as aspas"),
+    ("scripts/browser.py", "return texto or None", "return texto", "page_text devolve string vazia em vez de None"),
+    # --- descoberta ---
+    ("scripts/discover_models.py", "if not key or any(key.startswith(existing) or existing.startswith(key) for existing in known)", "if not key", "radar volta a propor modelos já no catálogo"),
+    # --- extração de preços ---
+    ("scripts/refresh_prices.py", 'elif evidence not in " ".join(page_text.split()):', "elif False:", "aceita citação que não está na página"),
+    ("scripts/refresh_prices.py", 'if digits(f"{price:.0f}") not in haystack:', "if False:", "aceita preço que não aparece na página"),
+    ("scripts/refresh_prices.py", "if len(variants) == 1:", "if True:", "aplica a proposta à primeira variante seja como for"),
+    # --- otimização de imagens ---
+    ("scripts/optimize_images.py", "if novo >= original:", "if False:", "aceita recompressão que aumenta o ficheiro"),
+    # --- arquivamento ---
+    ("scripts/archive_unused_images.py", 'and path.name != ".DS_Store"', "", "trata .DS_Store como fotografia"),
+    # --- compilação ---
+    ("scripts/compile_data.py", "if updated == html:\n        return False", "if False:\n        return False", "carimbo da versão deixa de ser detetado"),
+    # --- validação: campos obrigatórios ---
+    ("scripts/validate_data.py", 'if not str(source.get("type", "")).startswith("official_"):', "if False:", "aceita fonte não oficial"),
+    ("scripts/validate_data.py", 'if source.get("verified_on") != model.get("last_verified"):', "if False:", "aceita datas de fonte incoerentes"),
+    ("scripts/validate_data.py", 'if model.get("powertrain") != "BEV":', "if False:", "aceita powertrain que não é BEV"),
+    ("scripts/validate_data.py", "if key in seen:", "if False:", "aceita modelo duplicado"),
+    ("scripts/validate_data.py", 'if "sales" not in dealer.get("services", []):', "if False:", "aceita stand que não vende novos"),
 ]
 
 
