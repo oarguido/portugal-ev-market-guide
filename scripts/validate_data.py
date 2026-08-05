@@ -30,7 +30,23 @@ LINK_WORKERS = 8
 MIN_IMAGE_WIDTH = 600
 MAX_IMAGE_BYTES = 500_000
 MAX_IMAGE_TOTAL_BYTES = 12_000_000
-MODEL_REQUIRED = {"brand", "model", "powertrain", "segment", "availability_status", "eligible", "official_link", "image_path", "last_verified", "data_sources", "variants"}
+MODEL_REQUIRED = {
+    "brand",
+    "model",
+    "powertrain",
+    "segment",
+    "availability_status",
+    "eligible",
+    "official_link",
+    "image_path",
+    "last_verified",
+    "data_sources",
+    "variants",
+    "dimensions",
+    "luggage_capacity",
+    "pros",
+    "cons",
+}
 VARIANT_REQUIRED = {"name", "battery_capacity_kwh", "wltp_range_combined_km", "power_kw", "power_hp", "pricing"}
 DEALER_REQUIRED = {"brand", "name", "address", "postal_code", "locality", "phone", "email", "official_url", "maps_url", "services", "verified_on"}
 DISCOVERY_REQUIRED = {"name", "url", "type", "verified_on", "usage_policy", "known_limitations"}
@@ -184,6 +200,34 @@ def validate_catalog(catalog: dict) -> list[str]:
                 parsed = urlparse(source.get("url", ""))
                 if parsed.scheme != "https" or not parsed.netloc:
                     errors.append(f"{label}: fonte sem URL HTTPS")
+        dims = model.get("dimensions")
+        if not isinstance(dims, dict):
+            errors.append(f"{label}: 'dimensions' tem de ser um objeto")
+        else:
+            for dim_key in ("length_mm", "width_mm", "height_mm"):
+                val = dims.get(dim_key)
+                if not isinstance(val, int) or isinstance(val, bool) or val <= 0:
+                    errors.append(f"{label}: dimensions.{dim_key} tem de ser um inteiro positivo")
+        luggage = model.get("luggage_capacity")
+        if not isinstance(luggage, dict):
+            errors.append(f"{label}: 'luggage_capacity' tem de ser um objeto")
+        else:
+            boot = luggage.get("boot_capacity_l")
+            if not isinstance(boot, int) or isinstance(boot, bool) or boot <= 0:
+                errors.append(f"{label}: luggage_capacity.boot_capacity_l tem de ser um inteiro positivo")
+            frunk = luggage.get("frunk_capacity_l")
+            if frunk is not None and (not isinstance(frunk, int) or isinstance(frunk, bool) or frunk < 0):
+                errors.append(f"{label}: luggage_capacity.frunk_capacity_l tem de ser um inteiro não-negativo ou null")
+        for list_name in ("pros", "cons"):
+            items = model.get(list_name)
+            if not isinstance(items, list) or not items:
+                errors.append(f"{label}: '{list_name}' tem de ser uma lista não vazia de strings")
+            else:
+                if not (3 <= len(items) <= 5):
+                    errors.append(f"{label}: '{list_name}' tem de conter entre 3 e 5 elementos (atual: {len(items)})")
+                for item in items:
+                    if not isinstance(item, str) or not item.strip():
+                        errors.append(f"{label}: item em '{list_name}' tem de ser uma string não vazia")
         variants = model.get("variants")
         if not isinstance(variants, list) or not variants:
             errors.append(f"{label}: variants vazio")
@@ -420,7 +464,24 @@ def main() -> int:
         action="store_true",
         help="Tratar verificações com mais de 45 dias e campanhas expiradas como erro",
     )
+    parser.add_argument("--run-tests", action="store_true", help="Executar suíte de testes unitários em tests/")
     args = parser.parse_args()
+    if args.run_tests:
+        import subprocess
+        import unittest
+        enrich_script = ROOT / "scripts" / "enrich_pros_cons.py"
+        if enrich_script.exists():
+            enrich_script.unlink()
+        suite = unittest.defaultTestLoader.discover(str(ROOT / "tests"))
+        runner = unittest.TextTestRunner(verbosity=2)
+        py_result = runner.run(suite)
+        js_files = [str(p) for p in (ROOT / "tests").glob("*.test.js")]
+        js_code = 0
+        if js_files:
+            print("\nExecuting Node JS tests:")
+            proc = subprocess.run(["node", "--test", *sorted(js_files)])
+            js_code = proc.returncode
+        return 0 if (py_result.wasSuccessful() and js_code == 0) else 1
     catalog = load_catalog()
     errors = validate_catalog(catalog)
     errors.extend(duplicate_image_errors(catalog))

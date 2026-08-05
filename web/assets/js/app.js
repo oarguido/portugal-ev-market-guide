@@ -1,3 +1,5 @@
+'use strict';
+
 /* ==========================================================================
    Carro da Liliana - Interactive Web Application Logic
    ========================================================================== */
@@ -43,21 +45,38 @@ function flattenCarData() {
   }
 
   CAR_DATA.filter(car => car.eligible !== false).forEach(car => {
+    const dim = car.dimensions || {};
+    const lug = car.luggage_capacity || {};
+    const variantCount = Array.isArray(car.variants) ? car.variants.length : 1;
+    const isSingleVariant = (variantCount === 1);
+
     // Check if the car model has multiple variants
     if (car.variants && Array.isArray(car.variants)) {
       car.variants.forEach(v => {
+        const vDim = v.dimensions || {};
+        const vLug = v.luggage_capacity || {};
+
+        const bootL = lug.boot_capacity_l ?? vLug.boot_capacity_l ?? car.specifications_common?.trunk_capacity_l ?? v.trunk_capacity_l ?? null;
+        const frunkL = lug.frunk_capacity_l ?? vLug.frunk_capacity_l ?? car.specifications_common?.frunk_capacity_l ?? v.frunk_capacity_l ?? null;
+
         flatCars.push({
           id: `${car.brand}-${car.model}-${v.name}`.replace(/\s+/g, "-").toLowerCase(),
           brand: car.brand,
           model: car.model,
           variant: v.name,
+          is_single_variant: isSingleVariant,
+          variant_count: variantCount,
           segment: car.segment,
           dimensions: {
-            length_mm: car.dimensions?.length_mm || v.dimensions?.length_mm || null,
-            width_mm: car.dimensions?.width_mm || v.dimensions?.width_mm || null,
-            height_mm: car.dimensions?.height_mm || v.dimensions?.height_mm || null,
-            wheelbase_mm: car.dimensions?.wheelbase_mm || v.dimensions?.wheelbase_mm || null,
+            length_mm: dim.length_mm || vDim.length_mm || null,
+            width_mm: dim.width_mm || vDim.width_mm || null,
+            height_mm: dim.height_mm || vDim.height_mm || null,
+            wheelbase_mm: dim.wheelbase_mm || vDim.wheelbase_mm || null,
             turning_radius_m: car.specifications_common?.turning_radius_m || null
+          },
+          luggage_capacity: {
+            boot_capacity_l: bootL,
+            frunk_capacity_l: frunkL
           },
           specifications: {
             battery_type: car.specifications_common?.battery_type || null,
@@ -72,8 +91,9 @@ function flattenCarData() {
             acceleration_0_100_s: v.acceleration_0_100_s,
             max_speed_kmh: v.max_speed_kmh,
             drivetrain: v.drivetrain || car.specifications_common?.drivetrain || null,
-            trunk_capacity_l: car.specifications_common?.trunk_capacity_l || null,
-            frunk_capacity_l: car.specifications_common?.frunk_capacity_l || null
+            trunk_capacity_l: bootL,
+            boot_capacity_l: bootL,
+            frunk_capacity_l: frunkL
           },
           charging: {
             ac_max_kw: v.ac_max_kw || null,
@@ -105,14 +125,34 @@ function flattenCarData() {
       });
     } else {
       // Single model
+      const bootL = lug.boot_capacity_l ?? car.specifications?.trunk_capacity_l ?? null;
+      const frunkL = lug.frunk_capacity_l ?? car.specifications?.frunk_capacity_l ?? null;
+
       flatCars.push({
         id: `${car.brand}-${car.model}-${car.variant}`.replace(/\s+/g, "-").toLowerCase(),
         brand: car.brand,
         model: car.model,
         variant: car.variant,
+        is_single_variant: isSingleVariant,
+        variant_count: variantCount,
         segment: car.segment,
-        dimensions: car.dimensions || {},
-        specifications: car.specifications || {},
+        dimensions: {
+          length_mm: dim.length_mm || car.dimensions?.length_mm || null,
+          width_mm: dim.width_mm || car.dimensions?.width_mm || null,
+          height_mm: dim.height_mm || car.dimensions?.height_mm || null,
+          wheelbase_mm: dim.wheelbase_mm || car.dimensions?.wheelbase_mm || null,
+          turning_radius_m: car.specifications?.turning_radius_m || null
+        },
+        luggage_capacity: {
+          boot_capacity_l: bootL,
+          frunk_capacity_l: frunkL
+        },
+        specifications: {
+          ...(car.specifications || {}),
+          trunk_capacity_l: bootL,
+          boot_capacity_l: bootL,
+          frunk_capacity_l: frunkL
+        },
         charging: car.charging || {},
         pricing: car.pricing || {},
         proposals: car.proposals || [],
@@ -240,6 +280,23 @@ function renderOverview(filteredList = flatCars) {
       ? `${car.specifications.power_hp} cv`
       : "N/A";
 
+    // Dimensions & Luggage formatting
+    const dim = car.dimensions;
+    const dimensionsText = (dim && dim.length_mm && dim.width_mm && dim.height_mm)
+      ? `${escapeHtml(dim.length_mm)} × ${escapeHtml(dim.width_mm)} × ${escapeHtml(dim.height_mm)} mm`
+      : "N/A";
+
+    const bootL = car.specifications.boot_capacity_l || car.specifications.trunk_capacity_l || (car.luggage_capacity && car.luggage_capacity.boot_capacity_l);
+    const frunkL = (car.specifications.frunk_capacity_l !== undefined) ? car.specifications.frunk_capacity_l : (car.luggage_capacity && car.luggage_capacity.frunk_capacity_l);
+    let luggageText = "N/A";
+    if (bootL && frunkL) {
+      luggageText = `Mala: ${escapeHtml(bootL)} L (+ ${escapeHtml(frunkL)} L frunk)`;
+    } else if (bootL) {
+      luggageText = `Mala: ${escapeHtml(bootL)} L`;
+    } else if (frunkL) {
+      luggageText = `Frunk: ${escapeHtml(frunkL)} L`;
+    }
+
     // Pros & Cons
     const prosHTML = car.pros.map(pro => `<div class="pro-item"><i class="fa-solid fa-check"></i> <span>${escapeHtml(pro)}</span></div>`).join("");
     const consHTML = car.cons.map(con => `<div class="con-item"><i class="fa-solid fa-xmark"></i> <span>${escapeHtml(con)}</span></div>`).join("");
@@ -294,6 +351,9 @@ function renderOverview(filteredList = flatCars) {
 
     // Micro Badges
     let badgesHTML = "";
+    if (car.is_single_variant) {
+      badgesHTML += `<span class="card-badge badge-single-variant"><i class="fa-solid fa-layer-group"></i> Variante única</span>`;
+    }
     if (displayPrice && displayPrice <= 25000) {
       badgesHTML += `<span class="card-badge badge-budget"><i class="fa-solid fa-piggy-bank"></i> ≤ 25k €</span>`;
     }
@@ -309,7 +369,7 @@ function renderOverview(filteredList = flatCars) {
 
     const isSelected = selectedCompareCars.some(c => c.id === car.id);
     const compareBtnHTML = `
-      <button class="btn-compare-card ${isSelected ? "selected" : ""}" data-car-id="${car.id}">
+      <button class="btn-compare-card ${isSelected ? "selected" : ""}" data-car-id="${escapeHtml(car.id)}">
         <i class="fa-solid ${isSelected ? "fa-check" : "fa-plus"}"></i> ${isSelected ? "Selecionado para Comparar" : "Adicionar à Comparação"}
       </button>
     `;
@@ -349,6 +409,17 @@ function renderOverview(filteredList = flatCars) {
             <i class="fa-solid fa-horse-head quick-spec-icon"></i>
             <span class="quick-spec-val">${power}</span>
             <span class="quick-spec-lbl">Potência</span>
+          </div>
+        </div>
+
+        <div class="card-dimensions-luggage">
+          <div class="card-dimensions-info">
+            <i class="fa-solid fa-ruler-combined" style="color: var(--accent-green);"></i>
+            <span><strong>Dimensões:</strong> ${dimensionsText}</span>
+          </div>
+          <div class="card-luggage-info">
+            <i class="fa-solid fa-suitcase" style="color: var(--accent-cyan);"></i>
+            <span><strong>Bagageira:</strong> ${luggageText}</span>
           </div>
         </div>
 
@@ -515,7 +586,7 @@ function updateCompareDrawer() {
     chipsEl.innerHTML = selectedCompareCars.map(c => `
       <div class="drawer-chip">
         <span>${escapeHtml(c.brand)} ${escapeHtml(c.model)}</span>
-        <i class="fa-solid fa-xmark remove-chip" data-id="${c.id}"></i>
+        <i class="fa-solid fa-xmark remove-chip" data-id="${escapeHtml(c.id)}"></i>
       </div>
     `).join("");
 
@@ -741,6 +812,7 @@ function updateComparison() {
     { label: "Marca", valA: carA.brand, valB: carB.brand },
     { label: "Modelo", valA: carA.model, valB: carB.model },
     { label: "Equipamento", valA: carA.variant, valB: carB.variant },
+    { label: "Variantes Elegíveis (< 40k €)", valA: carA.is_single_variant ? "1 (Variante única)" : `${carA.variant_count} versões`, valB: carB.is_single_variant ? "1 (Variante única)" : `${carB.variant_count} versões` },
     { label: "Preço Particular c/ IVA", valA: formatCurrency(priceA) || "Sob consulta", valB: formatCurrency(priceB) || "Sob consulta", highlight: true },
     { label: "Avaliação Utilizadores", valA: carA.user_reviews?.score ? `${carA.user_reviews.score.toFixed(1)} / 5 (${carA.user_reviews.total_reviews} avaliações • ${carA.user_reviews.source})` : "N/D", valB: carB.user_reviews?.score ? `${carB.user_reviews.score.toFixed(1)} / 5 (${carB.user_reviews.total_reviews} avaliações • ${carB.user_reviews.source})` : "N/D", highlight: true },
     { label: "Tipo de Bateria", valA: carA.specifications.battery_type, valB: carB.specifications.battery_type },
@@ -760,16 +832,20 @@ function updateComparison() {
     { label: "Tração", valA: carA.specifications.drivetrain || "N/A", valB: carB.specifications.drivetrain || "N/A" },
     { label: "Suspensão Traseira", valA: carA.specifications.suspension_rear || "N/A", valB: carB.specifications.suspension_rear || "N/A" },
     { label: "Capacidade Bagageira", valA: carA.specifications.trunk_capacity_l ? `${carA.specifications.trunk_capacity_l} L` : "N/A", valB: carB.specifications.trunk_capacity_l ? `${carB.specifications.trunk_capacity_l} L` : "N/A" },
-    { label: "Comprimento Exterior", valA: carA.dimensions.length_mm ? `${carA.dimensions.length_mm / 1000} m` : "N/A", valB: carB.dimensions.length_mm ? `${carB.dimensions.length_mm / 1000} m` : "N/A" },
-    { label: "Largura Exterior", valA: carA.dimensions.width_mm ? `${carA.dimensions.width_mm / 1000} m` : "N/A", valB: carB.dimensions.width_mm ? `${carB.dimensions.width_mm / 1000} m` : "N/A" },
-    { label: "Altura Exterior", valA: carA.dimensions.height_mm ? `${carA.dimensions.height_mm / 1000} m` : "N/A", valB: carB.dimensions.height_mm ? `${carB.dimensions.height_mm / 1000} m` : "N/A" },
-    { label: "Distância entre Eixos", valA: carA.dimensions.wheelbase_mm ? `${carA.dimensions.wheelbase_mm} mm` : "N/A", valB: carB.dimensions.wheelbase_mm ? `${carB.dimensions.wheelbase_mm} mm` : "N/A" },
-    { label: "Raio de Viragem", valA: carA.dimensions.turning_radius_m ? `${carA.dimensions.turning_radius_m} m` : "N/A", valB: carB.dimensions.turning_radius_m ? `${carB.dimensions.turning_radius_m} m` : "N/A" },
+    { label: "Frunk (Bagageira Dianteira)", valA: (carA.specifications.frunk_capacity_l !== null && carA.specifications.frunk_capacity_l !== undefined) ? `${carA.specifications.frunk_capacity_l} L` : "Não / N/A", valB: (carB.specifications.frunk_capacity_l !== null && carB.specifications.frunk_capacity_l !== undefined) ? `${carB.specifications.frunk_capacity_l} L` : "Não / N/A" },
+    { label: "Dimensões (C × L × A)", valA: (carA.dimensions?.length_mm && carA.dimensions?.width_mm && carA.dimensions?.height_mm) ? `${carA.dimensions.length_mm} × ${carA.dimensions.width_mm} × ${carA.dimensions.height_mm} mm` : "N/A", valB: (carB.dimensions?.length_mm && carB.dimensions?.width_mm && carB.dimensions?.height_mm) ? `${carB.dimensions.length_mm} × ${carB.dimensions.width_mm} × ${carB.dimensions.height_mm} mm` : "N/A", highlight: true },
+    { label: "Comprimento Exterior", valA: carA.dimensions?.length_mm ? `${carA.dimensions.length_mm / 1000} m` : "N/A", valB: carB.dimensions?.length_mm ? `${carB.dimensions.length_mm / 1000} m` : "N/A" },
+    { label: "Largura Exterior", valA: carA.dimensions?.width_mm ? `${carA.dimensions.width_mm / 1000} m` : "N/A", valB: carB.dimensions?.width_mm ? `${carB.dimensions.width_mm / 1000} m` : "N/A" },
+    { label: "Altura Exterior", valA: carA.dimensions?.height_mm ? `${carA.dimensions.height_mm / 1000} m` : "N/A", valB: carB.dimensions?.height_mm ? `${carB.dimensions.height_mm / 1000} m` : "N/A" },
+    { label: "Distância entre Eixos", valA: carA.dimensions?.wheelbase_mm ? `${carA.dimensions.wheelbase_mm} mm` : "N/A", valB: carB.dimensions?.wheelbase_mm ? `${carB.dimensions.wheelbase_mm} mm` : "N/A" },
+    { label: "Raio de Viragem", valA: carA.dimensions?.turning_radius_m ? `${carA.dimensions.turning_radius_m} m` : "N/A", valB: carB.dimensions?.turning_radius_m ? `${carB.dimensions.turning_radius_m} m` : "N/A" },
     { label: "Potência Máxima DC", valA: carA.charging.dc_max_kw ? `${carA.charging.dc_max_kw} kW` : "N/A", valB: carB.charging.dc_max_kw ? `${carB.charging.dc_max_kw} kW` : "N/A" },
     { label: "Carregamento DC 30-80%", valA: carA.charging.dc_charge_time_30_80_min ? `${carA.charging.dc_charge_time_30_80_min} min` : "N/A", valB: carB.charging.dc_charge_time_30_80_min ? `${carB.charging.dc_charge_time_30_80_min} min` : "N/A", highlight: true },
     { label: "Processador Infotainment", valA: carA.technology_advantages?.infotainment_tech?.processor || "N/A", valB: carB.technology_advantages?.infotainment_tech?.processor || "N/A" },
     { label: "Google Built-in", valA: boolLabel(carA.technology_advantages?.infotainment_tech?.google_built_in), valB: boolLabel(carB.technology_advantages?.infotainment_tech?.google_built_in) },
-    { label: "Atualizações OTA", valA: boolLabel(carA.technology_advantages?.infotainment_tech?.ota_updates), valB: boolLabel(carB.technology_advantages?.infotainment_tech?.ota_updates) }
+    { label: "Atualizações OTA", valA: boolLabel(carA.technology_advantages?.infotainment_tech?.ota_updates), valB: boolLabel(carB.technology_advantages?.infotainment_tech?.ota_updates) },
+    { label: "Pontos Fortes (Pros)", valA: carA.pros && carA.pros.length ? carA.pros.join(" • ") : "N/A", valB: carB.pros && carB.pros.length ? carB.pros.join(" • ") : "N/A" },
+    { label: "Pontos Fracos (Cons)", valA: carA.cons && carA.cons.length ? carA.cons.join(" • ") : "N/A", valB: carB.cons && carB.cons.length ? carB.cons.join(" • ") : "N/A" }
   ];
 
   rows.forEach(r => {
@@ -1016,7 +1092,7 @@ function renderTCOBar(container, label, cost, type, ratio) {
 
   row.innerHTML = `
     <div class="tco-bar-lbl">
-      <span>${label}</span>
+      <span>${escapeHtml(label)}</span>
       <span>${formatCurrency(cost)} / ano</span>
     </div>
     <div class="tco-bar-bg">

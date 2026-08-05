@@ -1,6 +1,7 @@
+"use strict";
+
 /* Ordenação transparente por preço, autonomia e recência. */
 (function exposeVehicleRanking(root) {
-  "use strict";
 
   const WEIGHTS = Object.freeze({
     price: 0.45,

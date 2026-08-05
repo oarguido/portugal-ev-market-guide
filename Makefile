@@ -1,15 +1,11 @@
-.PHONY: serve atualizar verificar
+.PHONY: serve atualizar verificar audit lint validate test links budgets
 
-# Três comandos, e mais nenhum:
+# Três comandos principais:
 #
 #   make serve       abrir a aplicação
 #   make atualizar   atualizar tudo o que é possível atualizar sozinho
 #   make verificar   confirmar que o que está publicado continua de pé
-#
-# Os scripts em scripts/ continuam a poder ser chamados à mão para trabalho
-# cirúrgico (ver `python3 -u scripts/<nome>.py --help`), mas o dia-a-dia são estes
-# três. Uma lista de treze alvos obrigava a saber qual deles corresponde ao que
-# se quer fazer; esta não.
+#   make audit       lint, validação, frescura, testes e verificação de links
 
 # python3 -u em todo o lado: sem isso o stdout fica em buffer quando a saída
 # não é um terminal, e `make atualizar` passa quinze minutos calado a parecer
@@ -53,14 +49,6 @@ atualizar:
 
 # Determinístico e sem rede: só falha por regressão do código ou dos dados. É o
 # que corre no CI.
-#
-# Não corre frescura nem ligações de propósito. Ambas falham por motivos que não
-# são o código: a frescura falha sozinha quando as verificações passam dos 45
-# dias, e as ligações falham quando um site alheio está em baixo. Aconteceu — um
-# timeout da cam.pt reprovou um PR que só mudava a versão de uma action, e o
-# README já avisava que "a suíte de testes passaria a falhar por efeito do
-# tempo, e não por regressão". As duas verificações vivem no `make atualizar` e
-# no workflow semanal, que abre uma issue em vez de bloquear um merge.
 verificar:
 	@$(RUFF) check .
 	@python3 -u scripts/validate_data.py
@@ -68,3 +56,30 @@ verificar:
 	@python3 -u -m unittest discover -s tests
 	@node --test tests/*.test.js
 	@python3 -u scripts/report_pending.py
+
+lint:
+	@$(RUFF) check .
+
+validate:
+	@python3 -u scripts/validate_data.py
+	@python3 -u scripts/compile_data.py
+
+test:
+	@python3 -u -m unittest discover -s tests
+	@node --test tests/*.test.js
+
+links:
+	-@python3 -u scripts/validate_data.py --check-links
+
+budgets:
+	@python3 -u scripts/validate_data.py --check-budgets
+
+audit:
+	@$(RUFF) check .
+	@python3 -u scripts/validate_data.py --check-freshness
+	@python3 -u scripts/compile_data.py
+	@python3 -u -m unittest discover -s tests
+	@node --test tests/*.test.js
+	-@python3 -u scripts/validate_data.py --check-links
+	@python3 -u scripts/report_pending.py
+

@@ -568,6 +568,26 @@ textarea:focus-visible {
   letter-spacing: 0.05em;
 }
 
+/* Card Dimensions & Luggage Info */
+.card-dimensions-luggage {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+
+.card-dimensions-info, .card-luggage-info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 /* ==========================================================================
    TECHNICAL COMPARATOR
    ========================================================================== */
@@ -1218,6 +1238,12 @@ textarea:focus-visible {
   background: rgba(245, 158, 11, 0.15);
   color: #fbbf24;
   border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-single-variant {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 /* Quick Filter Preset Buttons */

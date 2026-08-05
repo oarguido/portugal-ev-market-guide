@@ -1,6 +1,7 @@
+"use strict";
+
 /* Pesquisa tolerante para o catálogo automóvel. */
 (function exposeVehicleSearch(root) {
-  "use strict";
 
   function normalizeSearchText(value) {
     return String(value ?? "")

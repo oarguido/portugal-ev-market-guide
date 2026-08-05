@@ -107,6 +107,9 @@ test(
         await s(100);
       }
       const imgs = [...document.querySelectorAll('img.card-car-image')];
+      imgs.forEach(i => { i.loading = 'eager'; });
+      await Promise.all(imgs.map(i => i.decode ? i.decode().catch(() => {}) : null));
+      await s(200);
       return JSON.stringify({
         cartoes: document.querySelectorAll('.car-card').length,
         imagens: imgs.length,

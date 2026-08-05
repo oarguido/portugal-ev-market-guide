@@ -3,7 +3,7 @@
   "market": "PT",
   "reference_location": "São Mamede de Infesta, Matosinhos",
   "selection_rule": "Nearest official new-car sales location found for each active catalogue brand; confirm appointment and stock before travelling.",
-  "last_verified": "2026-07-23",
+  "last_verified": "2026-08-05",
   "dealers": [
     {
       "brand": "Abarth",
@@ -19,7 +19,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "AION",
@@ -35,7 +35,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Alfa Romeo",
@@ -51,7 +51,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Alpine",
@@ -67,7 +67,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "BYD",
@@ -83,7 +83,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Changan",
@@ -99,7 +99,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Citroën",
@@ -115,7 +115,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Cupra",
@@ -131,7 +131,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-04"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Dacia",
@@ -147,7 +147,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Dongfeng",
@@ -163,7 +163,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Fiat",
@@ -179,7 +179,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Ford",
@@ -195,7 +195,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-03"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Geely",
@@ -210,7 +210,7 @@
       "services": [
         "sales"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Hyundai",
@@ -226,7 +226,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Jaecoo",
@@ -242,7 +242,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Jeep",
@@ -258,7 +258,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Kia",
@@ -274,7 +274,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Leapmotor",
@@ -290,7 +290,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Mazda",
@@ -306,7 +306,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-04"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "MG",
@@ -322,7 +322,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "MINI",
@@ -338,7 +338,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-26"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Nissan",
@@ -354,7 +354,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Omoda",
@@ -370,7 +370,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Opel",
@@ -386,7 +386,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Peugeot",
@@ -402,7 +402,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Renault",
@@ -418,7 +418,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "smart",
@@ -434,7 +434,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Suzuki",
@@ -450,7 +450,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Tesla",
@@ -467,7 +467,7 @@
         "service",
         "delivery"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Toyota",
@@ -484,7 +484,7 @@
         "service"
       ],
       "distance_note": "6,5 km de São Mamede de Infesta segundo o localizador oficial da Toyota; o seguinte é Rio Tinto a 8,5 km.",
-      "verified_on": "2026-08-01"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Volkswagen",
@@ -500,7 +500,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Volvo",
@@ -516,7 +516,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     },
     {
       "brand": "Škoda",
@@ -532,7 +532,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-07-23"
+      "verified_on": "2026-08-05"
     }
   ]
 }

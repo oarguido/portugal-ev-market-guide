@@ -69,6 +69,17 @@ def catalogo(image_path: str) -> dict:
                 "image_path": image_path,
                 "last_verified": validate_data.TODAY.isoformat(),
                 "data_sources": [{"type": "official_model", "url": "https://exemplo.pt/modelo", "verified_on": validate_data.TODAY.isoformat()}],
+                "dimensions": {
+                    "length_mm": 4200,
+                    "width_mm": 1780,
+                    "height_mm": 1540,
+                },
+                "luggage_capacity": {
+                    "boot_capacity_l": 350,
+                    "frunk_capacity_l": None,
+                },
+                "pros": ["Bom desempenho", "Preço competitivo", "Boa garantia de bateria"],
+                "cons": ["Mala modesta", "Carregamento AC 7 kW", "Materiais plásticos no interior"],
                 "variants": [
                     {
                         "name": "Base",
@@ -311,6 +322,111 @@ class ConcessionariosObrigatorios(unittest.TestCase):
     def test_stand_de_marca_inexistente_e_recusado(self):
         erros = validate_data.validate_dealers(catalogo("x"), self.base_dealers(brand="Inexistente"))
         self.assertTrue(any("sem marca ativa" in e for e in erros), erros)
+
+
+class NovosCamposEsquema(unittest.TestCase):
+    """Testes de guarda para dimensões, capacidade de bagagem, pros e cons."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        raiz = Path(self._tmp.name)
+        self.web = raiz / "web"
+        (self.web / "img").mkdir(parents=True)
+        (self.web / "img" / "foto.png").write_bytes(png(1200, 800, preenchimento=20_000))
+        patch = mock.patch.object(validate_data, "ROOT", raiz)
+        patch.start()
+        self.addCleanup(patch.stop)
+        self.addCleanup(self._tmp.cleanup)
+
+    def base(self) -> dict:
+        return catalogo("img/foto.png")
+
+    def test_dimensoes_invalidas_sao_recusadas(self):
+        c = self.base()
+        c["models"][0]["dimensions"] = "não é objeto"
+        erros = validate_catalog(c)
+        self.assertTrue(any("'dimensions' tem de ser um objeto" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["dimensions"]["length_mm"] = 0
+        erros = validate_catalog(c)
+        self.assertTrue(any("dimensions.length_mm tem de ser um inteiro positivo" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["dimensions"]["width_mm"] = -10
+        erros = validate_catalog(c)
+        self.assertTrue(any("dimensions.width_mm tem de ser um inteiro positivo" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["dimensions"]["height_mm"] = "1540"
+        erros = validate_catalog(c)
+        self.assertTrue(any("dimensions.height_mm tem de ser um inteiro positivo" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["dimensions"]["length_mm"] = True
+        erros = validate_catalog(c)
+        self.assertTrue(any("dimensions.length_mm tem de ser um inteiro positivo" in e for e in erros), erros)
+
+    def test_capacidade_bagageira_invalida_e_recusada(self):
+        c = self.base()
+        c["models"][0]["luggage_capacity"] = []
+        erros = validate_catalog(c)
+        self.assertTrue(any("'luggage_capacity' tem de ser um objeto" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["luggage_capacity"]["boot_capacity_l"] = 0
+        erros = validate_catalog(c)
+        self.assertTrue(any("luggage_capacity.boot_capacity_l tem de ser um inteiro positivo" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["luggage_capacity"]["frunk_capacity_l"] = -1
+        erros = validate_catalog(c)
+        self.assertTrue(any("luggage_capacity.frunk_capacity_l tem de ser um inteiro não-negativo ou null" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["luggage_capacity"]["frunk_capacity_l"] = "25"
+        erros = validate_catalog(c)
+        self.assertTrue(any("luggage_capacity.frunk_capacity_l tem de ser um inteiro não-negativo ou null" in e for e in erros), erros)
+
+    def test_frunk_valido_com_inteiro_e_null_passam(self):
+        c = self.base()
+        c["models"][0]["luggage_capacity"]["frunk_capacity_l"] = 0
+        self.assertEqual(validate_catalog(c), [])
+
+        c = self.base()
+        c["models"][0]["luggage_capacity"]["frunk_capacity_l"] = 25
+        self.assertEqual(validate_catalog(c), [])
+
+    def test_pros_e_cons_invalidos_sao_recusados(self):
+        c = self.base()
+        c["models"][0]["pros"] = []
+        erros = validate_catalog(c)
+        self.assertTrue(any("'pros' tem de ser uma lista não vazia" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["pros"] = ["Bom desempenho", "Preço competitivo"]
+        erros = validate_catalog(c)
+        self.assertTrue(any("'pros' tem de conter entre 3 e 5 elementos" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["cons"] = ["Um", "Dois", "Três", "Quatro", "Cinco", "Seis"]
+        erros = validate_catalog(c)
+        self.assertTrue(any("'cons' tem de conter entre 3 e 5 elementos" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["cons"] = ["   ", "Segundo", "Terceiro"]
+        erros = validate_catalog(c)
+        self.assertTrue(any("item em 'cons' tem de ser uma string não vazia" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["pros"] = [123, "Segundo", "Terceiro"]
+        erros = validate_catalog(c)
+        self.assertTrue(any("item em 'pros' tem de ser uma string não vazia" in e for e in erros), erros)
+
+        c = self.base()
+        c["models"][0]["cons"] = None
+        erros = validate_catalog(c)
+        self.assertTrue(any("'cons' tem de ser uma lista não vazia" in e for e in erros), erros)
 
 
 if __name__ == "__main__":

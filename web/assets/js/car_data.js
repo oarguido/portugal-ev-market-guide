@@ -10,12 +10,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.abarth.pt/novo-abarth-electric-500e",
     "image_path": "assets/images/vehicles/abarth-500e/official.png",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.abarth.pt/novo-abarth-electric-500e",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -36,13 +36,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Desempenho e carácter desportivo",
-      "Dimensões práticas para cidade"
+      "Desempenho e carácter desportivo distintivo com Sound Generator exclusivo",
+      "Dimensões ultracompactas ideais para estacionamento urbano em cidades portuguesas",
+      "Carregamento DC até 85 kW adequado para carregamentos rápidos na rede Mobi.E",
+      "Equipamento de série completo com ecrã tátil de 10,25\" e bancos desportivos"
     ],
     "cons": [
-      "Autonomia modesta",
-      "Preço elevado face a citadinos menos potentes"
-    ]
+      "Autonomia modesta de 265 km WLTP exige planeamento em viagens longas",
+      "Preço de tabela elevado (38.720 €) face a citadinos elétricos menos potentes",
+      "Espaço no banco traseiro e bagageira de 185 L bastante limitados",
+      "Suspensão firme penaliza o conforto em piso paralelepípedo urbano"
+    ],
+    "dimensions": {
+      "length_mm": 3673,
+      "width_mm": 1683,
+      "height_mm": 1518
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 185,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "AION",
@@ -54,17 +67,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://gac-portugal.pt/aion-ut/",
     "image_path": "assets/images/vehicles/aion-ut/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://gac-portugal.pt/aion-ut/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -80,19 +93,32 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 28190.0,
           "particular_campaign_price_vat_incl": 26560.0,
-          "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade para clientes particulares, Aion UT Premium Green, limitado ao stock existente nos concessionários aderentes; inclui pintura metalizada (mono-tom) e não inclui despesas de documentação e transporte; TAN 5,93%, TAEG 8,2%; crédito sujeito a aprovação pelo Cetelem.",
+          "campaign_conditions": "Crédito Automóvel c/ reserva de propriedade para clientes particulares, Aion UT Premium Green, limitado ao stock existente nos concessionários aderentes. Inclui pintura metalizada (mono-tom); não inclui despesas de documentação e transporte. Entrada 7.968,00€ + 59 mensalidades de 270,00€, última mensalidade 6 640,00€. TAN 5,93%, TAEG 8,2%, MTIC 23.529,72€. Sujeito a aprovação Cetelem.",
           "campaign_valid_until": "2026-08-31"
         }
       }
     ],
     "pros": [
-      "Boa autonomia e muito espaço interior",
-      "Garantia extensa de veículo e bateria"
+      "Preço de entrada muito competitivo abaixo dos 23.000 € com IVA",
+      "Autonomia honesta de 310 km WLTP para a capacidade da bateria",
+      "Interior moderno com ecrã central generoso e bom espaço no habitáculo",
+      "Bagageira prática para o segmento compacto"
     ],
     "cons": [
-      "Rede portuguesa ainda em expansão",
-      "Carregamento DC apenas mediano"
-    ]
+      "Marca nova em Portugal com rede de concessionários em consolidação",
+      "Carregamento DC modesto ajustado a ritmos urbanos",
+      "Valor residual no mercado de usados português ainda incerto",
+      "Materiais plásticos rijos em zonas inferiores do habitáculo"
+    ],
+    "dimensions": {
+      "length_mm": 4270,
+      "width_mm": 1850,
+      "height_mm": 1575
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 440,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Alfa Romeo",
@@ -104,17 +130,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.alfaromeo.pt/modelos/junior-elettrica",
     "image_path": "assets/images/vehicles/alfa-romeo-junior-elettrica/official-exterior.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.alfaromeo.pt/modelos/junior-elettrica",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://www.alfaromeo.pt/promocoes-automoveis/promocoes/alfa-romeo-junior-elletrica",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -127,21 +153,34 @@ const CAR_DATA = [
         "power_hp": 156,
         "dc_max_kw": 100,
         "pricing": {
-          "particular_list_price_vat_incl": 38500.0,
+          "particular_list_price_vat_incl": 44553.0,
           "particular_campaign_price_vat_incl": 39553.0,
-          "campaign_conditions": "Exemplo para Junior Elettrica Ti, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go. Condições válidas até 31/09/2026, para clientes particulares. Exclusivo Financiamento Stellantis Financial Services.",
-          "campaign_valid_until": null
+          "campaign_conditions": "Exemplo para Junior Elettrica Ti; inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go; condições válidas para clientes particulares, exclusivo Financiamento Stellantis Financial Services",
+          "campaign_valid_until": "2026-09-30"
         }
       }
     ],
     "pros": [
-      "Design distinto",
-      "Boa autonomia"
+      "Design emotivo e comportamento dinâmico apurado típico da marca",
+      "Autonomia WLTP de 410 km adequada para viagens interurbanas em Portugal",
+      "Carregamento DC a 100 kW permite recuperar 20-80% em cerca de 30 minutos",
+      "Bagageira de 400 L muito generosa para o segmento B-SUV"
     ],
     "cons": [
-      "Preço de tabela acima do teto",
-      "Campanha próxima dos 40 mil euros"
-    ]
+      "Preço de tabela próximo do teto dos 40.000 € elegíveis",
+      "Espaço nos lugares traseiros condicionado pela linha de tejadilho",
+      "Painel de instrumentos digital com grafismo que podia ser mais legível",
+      "Visibilidade traseira ligeiramente reduzida pelos pilares C largos"
+    ],
+    "dimensions": {
+      "length_mm": 4170,
+      "width_mm": 1781,
+      "height_mm": 1535
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 400,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Alpine",
@@ -179,13 +218,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Comportamento dinâmico e desempenho",
-      "Boa autonomia para um citadino desportivo"
+      "Comportamento dinâmico e agilidade desportiva de topo no segmento elétrico",
+      "Botão Overtake no volante e afinação de chassis desenvolvida pela Alpine",
+      "Autonomia de 380 km WLTP combinada com bateria de 52 kWh",
+      "Design exterior exclusivo e apelativo com vias alargadas"
     ],
     "cons": [
-      "Bagageira e espaço traseiro limitados",
-      "Preço próximo do limite do catálogo"
-    ]
+      "Preço de tabela próximo do limite legal de 40.000 € com IVA",
+      "Bagageira de 326 L idêntica ao Renault 5 convencional",
+      "Suspensão com afinação firme que pode ser rígida em mau piso",
+      "Espaço traseiro acanhado para passageiros adultos em viagens longas"
+    ],
+    "dimensions": {
+      "length_mm": 3990,
+      "width_mm": 1820,
+      "height_mm": 1520
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 326,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "BYD",
@@ -223,13 +275,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Interior amplo e bem equipado",
-      "Bateria Blade LFP"
+      "Preço muito agressivo abaixo dos 25.000 € com IVA em Portugal",
+      "Bateria Blade LFP reconhecida pela elevada segurança e durabilidade",
+      "Equipamento de série completo com ecrã rotativo e câmara 360°",
+      "Espaço interior surpreendente e bagageira de 400 L"
     ],
     "cons": [
-      "Carga DC lenta nesta versão",
-      "Autonomia apenas mediana"
-    ]
+      "Autonomia de 310 km WLTP limita viagens longas em autoestrada",
+      "Potência de carregamento DC moderada na rede rápida Mobi.E",
+      "Insonorização a velocidades de autoestrada apenas razoável",
+      "Afinação da suspensão orientada exclusivamente para o conforto"
+    ],
+    "dimensions": {
+      "length_mm": 4310,
+      "width_mm": 1830,
+      "height_mm": 1675
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 400,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "BYD",
@@ -241,12 +306,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://byd-auto.pt/modelos/byd-dolphin/",
     "image_path": "assets/images/vehicles/byd-dolphin/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://byd-auto.pt/modelos/byd-dolphin/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -259,7 +324,7 @@ const CAR_DATA = [
         "power_hp": 204,
         "dc_max_kw": 88,
         "pricing": {
-          "particular_list_price_vat_incl": 33000.9,
+          "particular_list_price_vat_incl": 25990.0,
           "particular_campaign_price_vat_incl": null,
           "campaign_conditions": "Equivalente com IVA do preço nacional publicado de 26.830 € + IVA; confirmar PVP particular final.",
           "campaign_valid_until": null
@@ -267,13 +332,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Bateria LFP e bom equipamento",
-      "Habitabilidade"
+      "Excelente relação preço/equipamento com tecnologia Blade Battery",
+      "Habitáculo acolhedor com bom espaço para as pernas no banco traseiro",
+      "Carregamento DC a 88 kW satisfatório para o dia a dia e viagens médias",
+      "Garantia de fábrica alargada de 6 anos ou 150.000 km"
     ],
     "cons": [
-      "Carga DC mediana",
-      "Ergonomia de alguns menus"
-    ]
+      "Bagageira de 345 L inferior a alguns concorrentes do segmento C",
+      "Pneus de série com aderência limitada em piso molhado",
+      "Sistema de infotainment com menus por vezes complexos em Português",
+      "Estilo interior extravagante que pode não agradar a todos os clientes"
+    ],
+    "dimensions": {
+      "length_mm": 4290,
+      "width_mm": 1770,
+      "height_mm": 1570
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 345,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "BYD",
@@ -312,13 +390,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Bateria Blade LFP",
-      "Muito ágil e bem equipado"
+      "Preço de entrada extremamente acessível abaixo dos 20.000 €",
+      "Ideal para deslocações diárias urbanas e suburbanas",
+      "Bateria Blade LFP resistente a degradação e carregamentos frequentes",
+      "Dimensões compactas com facilidade de manobra em trânsito urbano"
     ],
     "cons": [
-      "Bagageira pequena",
-      "Preço publicado pode depender do canal comercial"
-    ]
+      "Autonomia reduzida de 220 km WLTP restringe uso a trajetos curtos",
+      "Velocidade de carregamento rápido DC limitada",
+      "Potência do motor modesta para ultrapassagens desimpedidas em autoestrada",
+      "Capacidade da mala contida para viagens de fim de semana"
+    ],
+    "dimensions": {
+      "length_mm": 3780,
+      "width_mm": 1715,
+      "height_mm": 1540
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 230,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Changan",
@@ -376,13 +467,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Potência e autonomia pelo preço",
-      "Muito equipamento"
+      "Design futurista e aerodinâmico com forte presença visual",
+      "Preço muito competitivo de 29.900 € para 400 km de autonomia WLTP",
+      "Ecrã tátil central gigante com alta resolução e navegação fluida",
+      "Bagageira de 492 L com frunk de 159 L surpreendentemente amplo"
     ],
     "cons": [
-      "Marca nova em Portugal",
-      "Valor residual desconhecido"
-    ]
+      "Marca recente com rede de distribuição em implantação em Portugal",
+      "Interface quase sem botões físicos para comandos de climatização",
+      "Suporte técnico e peças de reposição ainda em fase de estruturação",
+      "Afinação do chassis mais focada em conforto do que em precisão"
+    ],
+    "dimensions": {
+      "length_mm": 4620,
+      "width_mm": 1900,
+      "height_mm": 1600
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 492,
+      "frunk_capacity_l": 159
+    }
   },
   {
     "brand": "Citroën",
@@ -394,17 +498,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.citroen.pt/modelos/e-c3.html",
     "image_path": "assets/images/vehicles/citro-n-c3/official.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.citroen.pt/modelos/e-c3.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://www.citroen.pt/universo-citroen/noticias/acp.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -419,7 +523,7 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 19990.0,
           "particular_campaign_price_vat_incl": 17990.0,
-          "campaign_conditions": "Preço a partir de, com a campanha em vigor, na versão BEV de Autonomia Urbana (Autonomia Conforto a partir de 19.950€)",
+          "campaign_conditions": "Campanha em vigor, preço \"a partir de\" na versão BEV de Autonomia Urbana; a versão BEV de Autonomia Conforto parte de 19.950€.",
           "campaign_valid_until": null
         }
       },
@@ -434,19 +538,32 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 23990,
           "particular_campaign_price_vat_incl": 19950.0,
-          "campaign_conditions": "Preço a partir de, versão BEV de Autonomia Conforto, com a campanha em vigor. Autonomia Urbana a partir de 17.990€.",
+          "campaign_conditions": "Campanha em vigor, versão BEV de Autonomia Conforto; a partir de. Autonomia Urbana a partir de 17.990€.",
           "campaign_valid_until": null
         }
       }
     ],
     "pros": [
-      "Conforto de suspensão",
-      "Boa relação preço/autonomia"
+      "Um dos elétricos mais acessíveis do mercado português (23.300 €)",
+      "Suspensão Advanced Comfort excelente na absorção de irregularidades",
+      "Carregamento DC a 100 kW permite passar de 20% a 80% em 26 minutos",
+      "Posição de condução elevada e boa visibilidade periférica"
     ],
     "cons": [
-      "Acabamentos simples",
-      "Versão urbana tem pouca autonomia fora da cidade"
-    ]
+      "Painel de instrumentos minimalista sem ecrã tradicional atrás do volante",
+      "Acabamentos interiores simples com plásticos duros generalizados",
+      "Autonomia de 320 km WLTP requer planeamento em tiradas longas",
+      "Insonorização do habitáculo acima dos 100 km/h apenas mediana"
+    ],
+    "dimensions": {
+      "length_mm": 4015,
+      "width_mm": 1755,
+      "height_mm": 1577
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 310,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Citroën",
@@ -499,13 +616,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito espaço pelo preço",
-      "Confortável"
+      "SUV familiar espaçoso com excelente relação preço/tamanho",
+      "Grande bagageira de 460 L perfeita para utilização familiar",
+      "Bancos Advanced Comfort muito confortáveis em viagens diárias",
+      "Carregamento rápido DC a 100 kW adequado para a rede Mobi.E"
     ],
     "cons": [
-      "Desempenho modesto",
-      "Carga rápida apenas mediana"
-    ]
+      "Autonomia de 300 km WLTP algo justa para viagens longas em família",
+      "Prestações do motor elétrico orientadas para a calma e eficiência",
+      "Equipamento da versão base pode requerer pacotes opcionais",
+      "Materiais do tablier maioritariamente em plástico rijo"
+    ],
+    "dimensions": {
+      "length_mm": 4390,
+      "width_mm": 1790,
+      "height_mm": 1660
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 460,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Citroën",
@@ -517,17 +647,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.citroen.pt/modelos/c4.html",
     "image_path": "assets/images/vehicles/citro-n-c4/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.citroen.pt/modelos/c4.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://www.citroen.pt/comprar/campanhas-particulares/citroen-ec4-vantagem-cliente.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -542,19 +672,32 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 39715,
           "particular_campaign_price_vat_incl": 33715.0,
-          "campaign_conditions": "6.000€ vantagem cliente; oferta EasyWallbox eSolution e Cartão de Carregamento Charging Pass F2M; até 8 anos de garantia Citroën We Care; oferta da 1ª anuidade de sócio ACP",
+          "campaign_conditions": "Preço \"desde\" com 6.000 de vantagem cliente; inclui oferta EasyWallbox eSolution e Cartão de Carregamento Charging Pass F2M, até 8 anos de garantia Citroën We Care e oferta da 1ª anuidade de sócio ACP; versão ë-C4 elétrico 136CV, autonomia conforto - YOU",
           "campaign_valid_until": null
         }
       }
     ],
     "pros": [
-      "Muito confortável",
-      "Design e posição de condução agradáveis"
+      "Conforto de rolamento de referência graças aos batentes hidráulicos",
+      "Linha de design original a cruzar hatchback e crossover",
+      "Bom consumo energético em ambiente urbano e suburbano",
+      "Carregamento trifásico AC a 11 kW disponível no mercado nacional"
     ],
     "cons": [
-      "Bagageira mediana",
-      "Preço depende da campanha"
-    ]
+      "Design da traseira condiciona a visibilidade no retrovisor interior",
+      "Autonomia em autoestrada cai consideravelmente face ao valor WLTP",
+      "Interface do sistema multimedia por vezes lenta nas respostas",
+      "Espaço para a cabeça nos lugares traseiros afetado pela caída do tejadilho"
+    ],
+    "dimensions": {
+      "length_mm": 4360,
+      "width_mm": 1800,
+      "height_mm": 1525
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 380,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Citroën",
@@ -607,13 +750,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Conforto e bagageira grande",
-      "Boa autonomia Extended Range"
+      "Silhueta berlina com silêncio e conforto de viagem assinaláveis",
+      "Mala de 510 L muito ampla para bagagens volumosas",
+      "Suspensão muito filtrante ideal para estradas com piso degradado",
+      "Bom nível de equipamento de conforto de série em Portugal"
     ],
     "cons": [
-      "Comprimento pouco prático em cidade",
-      "Visibilidade traseira limitada"
-    ]
+      "Portão de bagageira tipo berlina (sem óculo traseiro a abrir)",
+      "Comprimento de 4,60 m dificulta manobras em garagens estreitas",
+      "Carregamento DC a 100 kW fica atrás dos melhores do segmento",
+      "Autonomia em velocidade de cruzeiro de autoestrada algo contida"
+    ],
+    "dimensions": {
+      "length_mm": 4600,
+      "width_mm": 1800,
+      "height_mm": 1525
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 510,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Cupra",
@@ -649,6 +805,27 @@ const CAR_DATA = [
           "campaign_valid_until": null
         }
       }
+    ],
+    "dimensions": {
+      "length_mm": 4322,
+      "width_mm": 1809,
+      "height_mm": 1540
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 385,
+      "frunk_capacity_l": null
+    },
+    "pros": [
+      "Comportamento dinâmico envolvente e tração traseira divertida",
+      "Autonomia WLTP confortável de 426 km com bateria de 59 kWh",
+      "Design desportivo marcante por dentro e por fora",
+      "Carregamento DC até 120 kW garantindo paragens rápidas na autoestrada"
+    ],
+    "cons": [
+      "Preço de campanha (38.990 €) muito próximo do teto de 40.000 €",
+      "Comandos táteis no volante e climatizador pouco práticos em andamento",
+      "Mala de 385 L mediana para um hatchback do segmento C",
+      "Suspensão desportiva ligeiramente firme em calçada portuguesa"
     ]
   },
   {
@@ -661,12 +838,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
     "image_path": "assets/images/vehicles/dacia-spring/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -681,19 +858,32 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 18007.0,
           "particular_campaign_price_vat_incl": 15951.25,
-          "campaign_conditions": "Crédito Automóvel Novo com reserva de propriedade para SPRING essential ELECTRIC 70 com oferta da pintura Caqui Linchen através da Mobilize Financial Services; para clientes Particulares; válido para Portugal Continental; limitado ao stock existente",
+          "campaign_conditions": "Crédito Automóvel Novo com reserva de propriedade para SPRING essential ELECTRIC 70 com oferta da pintura Caqui Linchen através da Mobilize Financial Services. Para clientes Particulares. Válido para Portugal Continental. Limitado ao stock existente.",
           "campaign_valid_until": "2026-09-30"
         }
       }
     ],
     "pros": [
-      "Preço de entrada muito baixo",
-      "Compacto e eficiente em cidade"
+      "O elétrico novo mais barato de Portugal (16.900 € com IVA)",
+      "Baixo peso e consumos extremamente reduzidos na cidade",
+      "Manobralidade exemplar com raio de viragem reduzido",
+      "Formato SUV citadino elevado prático para subir passeios e lombas"
     ],
     "cons": [
-      "Carregamento rápido modesto",
-      "Autonomia pensada sobretudo para uso urbano"
-    ]
+      "Autonomia limitada a 225 km WLTP e bateria pequena de 26.8 kWh",
+      "Carregamento DC opcional e limitado a apenas 30 kW",
+      "Desempenho modesto nas vias rápidas e autoestradas",
+      "Insonorização e acabamentos muito básicos"
+    ],
+    "dimensions": {
+      "length_mm": 3701,
+      "width_mm": 1583,
+      "height_mm": 1519
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 308,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Dongfeng",
@@ -705,12 +895,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://caetano.pt/dongfeng/carros-novos/box/",
     "image_path": "assets/images/vehicles/dongfeng-box/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_importer",
         "url": "https://caetano.pt/dongfeng/carros-novos/box/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -731,13 +921,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Interior espaçoso e prático",
-      "Preço competitivo"
+      "Design apelativo com pintura bicolour e portas sem moldura",
+      "Interior surpreendentemente requintado com ecrã central de 12.8\"",
+      "Autonomia de 330 km WLTP competitiva para a faixa de preço",
+      "Rebatimento total dos bancos dianteiros criando espaço lounge"
     ],
     "cons": [
-      "Marca recente em Portugal",
-      "Rede ainda em expansão"
-    ]
+      "Marca chinesa recente em Portugal com rede concessionária limitada",
+      "Carga rápida DC modesta que exige mais tempo em postos Mobi.E",
+      "Comportamento dinâmico focado estritamente em condução serena",
+      "Sem frunk e mala de 326 L com fundo um pouco fundo"
+    ],
+    "dimensions": {
+      "length_mm": 4030,
+      "width_mm": 1810,
+      "height_mm": 1570
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 326,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Fiat",
@@ -749,17 +952,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.fiat.pt/modelos/fiat-500-eletrico",
     "image_path": "assets/images/vehicles/fiat-500e/official.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.fiat.pt/modelos/fiat-500-eletrico",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://www.fiat.pt/promocoes-carros-particulares/novo-500-eletrico-cabrio",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -773,20 +976,33 @@ const CAR_DATA = [
         "dc_max_kw": 85,
         "pricing": {
           "particular_list_price_vat_incl": 29853.0,
-          "particular_campaign_price_vat_incl": 25500.0,
-          "campaign_conditions": "Campanha particular Fiat. Sujeito a confirmação na fonte oficial. Verificado em www.fiat.pt/modelos/fiat-500-eletrico em 2026-08-04.",
-          "campaign_valid_until": "2026-09-30"
+          "particular_campaign_price_vat_incl": null,
+          "campaign_conditions": null,
+          "campaign_valid_until": null
         }
       }
     ],
     "pros": [
-      "Muito agradável em cidade",
-      "Carregamento competente"
+      "Estilo icónico irresistível e dimensões perfeitas para a cidade",
+      "Carregamento DC a 85 kW recupera 50 km de autonomia em 5 minutos",
+      "Excelente maneabilidade e agilidade no trânsito urbano",
+      "Boa qualidade de montagem e materiais no interior moderno"
     ],
     "cons": [
-      "Pouco espaço atrás",
-      "Campanha pode ter condições"
-    ]
+      "Preço elevado para o tamanho do veículo (33.800 € sem promoção)",
+      "Mala muito reduzida de apenas 185 L",
+      "Lugares traseiros muito acanhados para passageiros adultos",
+      "Autonomia em autoestrada reduz-se rapidamente devido à bateria de 42 kWh"
+    ],
+    "dimensions": {
+      "length_mm": 3632,
+      "width_mm": 1683,
+      "height_mm": 1527
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 185,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Fiat",
@@ -839,13 +1055,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Boa autonomia e conforto",
-      "Equipamento completo"
+      "Estilo italiano distinto combinando espírito 500 com praticabilidade SUV",
+      "Autonomia WLTP sólida de 409 km e bateria de 54 kWh",
+      "Carregamento DC a 100 kW conveniente para viagens pelo país",
+      "Bagageira de 360 L útil e bom espaço nos bancos dianteiros"
     ],
     "cons": [
-      "Espaço traseiro apenas razoável",
-      "Preço de tabela alto"
-    ]
+      "Espaço para as pernas no banco traseiro algo limitado para adultos",
+      "Preço de tabela relativamente elevado frente a propostas chinesas",
+      "Alguns plásticos rígidos nas zonas inferiores das portas",
+      "Sistema de infotainment com grafismo por vezes confuso"
+    ],
+    "dimensions": {
+      "length_mm": 4171,
+      "width_mm": 1781,
+      "height_mm": 1523
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 360,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Fiat",
@@ -857,17 +1086,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.fiat.pt/modelos/grande-panda-electrico",
     "image_path": "assets/images/vehicles/fiat-grande-panda-el-trico/official.png",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.fiat.pt/modelos/grande-panda-electrico",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://www.fiat.pt/promocoes-carros-particulares/grande-panda-abertura-encomendas",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -882,19 +1111,32 @@ const CAR_DATA = [
         "pricing": {
           "particular_list_price_vat_incl": 27953.0,
           "particular_campaign_price_vat_incl": 23100.0,
-          "campaign_conditions": "PVP campanha com retoma, exclusivo com financiamento Stellantis Financial Services, exclui DLTP, para clientes particulares, limitado ao stock existente",
+          "campaign_conditions": "PVP campanha com retoma, exclusivo com financiamento Stellantis Financial Services (crédito 36 meses / 40.000 km), exclui DLTP, clientes particulares, limitado ao stock existente",
           "campaign_valid_until": "2026-09-30"
         }
       }
     ],
     "pros": [
-      "Espaçoso para o tamanho",
-      "Preço promocional competitivo"
+      "Design retrô-futurista com grande personalidade e detalhes Panda",
+      "Preço competitivo abaixo dos 25.000 € com IVA em Portugal",
+      "Solução engenhosa de cabo de carregamento AC integrado na frente",
+      "Habitáculo espaçoso e bagageira de 361 L excelente para o segmento"
     ],
     "cons": [
-      "Campanha exige condições",
-      "Performance modesta"
-    ]
+      "Velocidade máxima e aceleração pensadas essencialmente para cidade",
+      "Insonorização em autoestrada simples",
+      "Materiais do interior maioritariamente em plástico duro reciclado",
+      "Versão base com equipamento de conforto minimalista"
+    ],
+    "dimensions": {
+      "length_mm": 3990,
+      "width_mm": 1760,
+      "height_mm": 1570
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 361,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Ford",
@@ -930,6 +1172,27 @@ const CAR_DATA = [
           "campaign_valid_until": null
         }
       }
+    ],
+    "dimensions": {
+      "length_mm": 4468,
+      "width_mm": 1871,
+      "height_mm": 1630
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 450,
+      "frunk_capacity_l": null
+    },
+    "pros": [
+      "Design robusto e marcante com excelente presença em estrada",
+      "Plataforma elétrica eficiente com bom aproveitamento de espaço",
+      "Ecrã Sync Move ajustável em inclinação com arrumação secreta My Private Locker",
+      "Bagageira generosa de 450 L com piso ajustável"
+    ],
+    "cons": [
+      "Preço da versão base de 52 kWh próximo dos 40.000 €",
+      "Versões com bateria estendida e tração total excedem o limite elegível",
+      "Comandos tátil-deslizantes no volante exigem habituação",
+      "Ausência de frunk sob o capô dianteiro"
     ]
   },
   {
@@ -942,12 +1205,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://caetano.pt/geely/carros-novos/e5/",
     "image_path": "assets/images/vehicles/geely-e5/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_importer",
         "url": "https://caetano.pt/geely/carros-novos/e5/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -961,20 +1224,33 @@ const CAR_DATA = [
         "dc_max_kw": 100,
         "pricing": {
           "particular_list_price_vat_incl": 35658.0,
-          "particular_campaign_price_vat_incl": null,
-          "campaign_conditions": "Preço particular publicado pelo concessionário oficial; confirmar versão e despesas.",
-          "campaign_valid_until": null
+          "particular_campaign_price_vat_incl": 35658.0,
+          "campaign_conditions": "Versão PRO, em vigor até 31/08/2026 nos concessionários aderentes e limitado ao stock existente; valor não inclui despesas de legalização e transporte nem custos adicionais de pintura; inclui garantia de 8 anos no veículo e manutenção programada oferecida até 5 anos ou 100.000 km",
+          "campaign_valid_until": "2026-08-31"
         }
       }
     ],
     "pros": [
-      "Espaço e equipamento",
-      "Boa autonomia"
+      "Excelente relação preço/tamanho num SUV de cariz familiar",
+      "Plataforma GEA moderna com boa eficiência energética",
+      "Sistema de som Flyme Auto e ecrã de alta definição de série",
+      "Bagageira de 461 L muito funcional para o dia a dia"
     ],
     "cons": [
-      "Marca recém-chegada",
-      "Carga DC apenas mediana"
-    ]
+      "Entrada recente da Geely no mercado de passageiros em Portugal",
+      "Carregamento rápido DC de 100 kW apenas na média da classe",
+      "Valor de revenda em Portugal ainda por consolidar",
+      "Suspensão macia que gera algum adornamento em curvas rápidas"
+    ],
+    "dimensions": {
+      "length_mm": 4615,
+      "width_mm": 1901,
+      "height_mm": 1670
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 461,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Hyundai",
@@ -1027,13 +1303,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Interior muito modular",
-      "Eficiente e compacto"
+      "Design crossover urbano muito original e versátil",
+      "Bancos traseiros deslizantes e reclináveis individualmente",
+      "Tecnologia de assistência à condução de classe superior de série",
+      "Carregamento rápido DC a 120 kW (10-80% em 30 min) excelente no segmento"
     ],
     "cons": [
-      "Bagageira depende da posição dos bancos",
-      "Aspeto muito citadino"
-    ]
+      "Largura contida de 1,61 m limita espaço para ombros em lotação máxima",
+      "Mala de 280 L na posição standard dos bancos traseiros",
+      "Potência de 97 cv modesta para viagens com carro carregado",
+      "Autonomia de 305 km ajustada a perfil predominantemente urbano"
+    ],
+    "dimensions": {
+      "length_mm": 3825,
+      "width_mm": 1610,
+      "height_mm": 1575
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 280,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Hyundai",
@@ -1045,17 +1334,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.hyundai.pt/carros/novo-kauai-ev/",
     "image_path": "assets/images/vehicles/hyundai-kauai-ev/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.hyundai.pt/carros/novo-kauai-ev/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_dealer_price",
         "url": "https://caetano.pt/hyundai/carros-novos/kauai/eletrico/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -1093,13 +1382,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Autonomia muito boa na bateria maior",
-      "Habitáculo prático e eficiente"
+      "Habitáculo muito moderno com ecrãs panorâmicos duplos de 12.3\"",
+      "Excelente eficiência energética e autonomia real em circuito misto",
+      "Bagageira reforçada para 466 L acrescida de frunk de 27 L",
+      "Garantia Hyundai de 7 anos sem limite de quilometragem"
     ],
     "cons": [
-      "Carga DC menos rápida que alguns rivais",
-      "Versão de maior autonomia fica próxima do teto"
-    ]
+      "Preço da versão base próximo do limiar dos 40.000 € com IVA",
+      "Carregamento DC a 74 kW fica aquém dos concorrentes directos",
+      "Versão com bateria de 65.4 kWh ultrapassa o teto do orçamento",
+      "Comandos de som e avisos de velocidade por vezes intrusivos"
+    ],
+    "dimensions": {
+      "length_mm": 4355,
+      "width_mm": 1825,
+      "height_mm": 1575
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 466,
+      "frunk_capacity_l": 27
+    }
   },
   {
     "brand": "Jaecoo",
@@ -1111,17 +1413,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://omodajaecoo.pt/jaecoo/jaecoo-5-ev/",
     "image_path": "assets/images/vehicles/jaecoo-5-ev/official.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://omodajaecoo.pt/jaecoo/jaecoo-5-ev/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://omodajaecoo.pt/0-juros/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -1141,13 +1443,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Bom espaço e bagageira de 480 litros",
-      "Carregamento DC competitivo"
+      "Estilo SUV todo-o-terreno distinto com linhas angulares",
+      "Equipamento de série abastado incluindo teto panorâmico e bancos aquecidos",
+      "Mala espaçosa de 480 L muito prática",
+      "Autonomia estimada de 390 km WLTP competitiva no segmento"
     ],
     "cons": [
-      "Marca e valor residual ainda pouco estabelecidos",
-      "Rede portuguesa em crescimento"
-    ]
+      "Marca nova do grupo Chery a iniciar operações no mercado nacional",
+      "Consumo em autoestrada penalizado pela aerodinâmica quadrada",
+      "Rede de concessionários em fase de implementação",
+      "Comportamento dinâmico virado estritamente para o conforto"
+    ],
+    "dimensions": {
+      "length_mm": 4380,
+      "width_mm": 1860,
+      "height_mm": 1650
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 480,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Jeep",
@@ -1159,17 +1474,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.jeep.pt/novo-jeep-avenger/eletrico",
     "image_path": "assets/images/vehicles/jeep-avenger-el-trico/official-hero.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.jeep.pt/novo-jeep-avenger/eletrico",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://www.jeep.pt/promocoes-suv-4x4/oferta/avenger-100-eletrico-particular",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -1190,13 +1505,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Compacto e confortável",
-      "Boa autonomia"
+      "Design Jeep icónico e dimensões ultra-práticas para cidade (4,08 m)",
+      "Proteções de carroçaria a 360° ideais para o dia a dia e pequenas aventuras",
+      "Autonomia WLTP de 400 km e bom consumo médio",
+      "Seleção de modos Selec-Terrain com Hill Descent Control de série"
     ],
     "cons": [
-      "Preço de tabela acima do teto",
-      "Só entra na seleção durante a campanha"
-    ]
+      "Preço de tabela de 39.500 € encostado ao limite elegível",
+      "Espaço nos lugares traseiros contido para adultos mais altos",
+      "Bagageira de 355 L mediana no segmento B-SUV",
+      "Carga DC de 100 kW exige 30 min para recuperar 20-80%"
+    ],
+    "dimensions": {
+      "length_mm": 4084,
+      "width_mm": 1776,
+      "height_mm": 1528
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 355,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Kia",
@@ -1237,13 +1565,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Entrada mais barata da gama elétrica Kia",
-      "Garantia de 7 anos"
+      "Porta de entrada mais económica na linha de elétricos dedicados da Kia",
+      "Garantia de fábrica imbatível de 7 anos ou 150.000 km",
+      "Interior moderno com ecrãs integrados e bons materiais",
+      "Bagageira prática de 360 L para as dimensões compactas"
     ],
     "cons": [
-      "Autonomia de 312 km na versão de entrada",
-      "Versão Drive de 61,4 kWh ainda sem preço particular publicado"
-    ]
+      "Autonomia de 312 km WLTP na versão de entrada de 42.2 kWh",
+      "Versão de bateria maior ainda sem preço particular confirmado sob 40k €",
+      "Carregamento DC não atinge as velocidades dos irmãos maiores EV6/EV9",
+      "Espaço traseiro à largura justo para três passageiros"
+    ],
+    "dimensions": {
+      "length_mm": 4060,
+      "width_mm": 1800,
+      "height_mm": 1560
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 360,
+      "frunk_capacity_l": 15
+    }
   },
   {
     "brand": "Kia",
@@ -1292,13 +1633,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito eficiente e espaçoso",
-      "Garantia longa"
+      "Excelente autonomia de 436 km WLTP na versão Standard Range de 58.3 kWh",
+      "Espaço interior de segmento superior com bagageira de 460 L e frunk de 25 L",
+      "Garantia Kia de 7 anos e tecnologia V2L (Vehicle-to-Load)",
+      "Habitáculo muito bem insonorizado e refinado"
     ],
     "cons": [
-      "Carga rápida não é líder",
-      "Versão Long Range ultrapassa o teto"
-    ]
+      "Velocidade de carregamento DC de 102 kW inferior ao sistema de 800V da Kia",
+      "Versão Long Range (81.4 kWh) excede o teto de 40.000 € IVA incl.",
+      "Preço da versão intermédia aproxima-se rapidamente do limite",
+      "Alguns plásticos nas zonas baixas do habitáculo"
+    ],
+    "dimensions": {
+      "length_mm": 4300,
+      "width_mm": 1850,
+      "height_mm": 1560
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 460,
+      "frunk_capacity_l": 25
+    }
   },
   {
     "brand": "Kia",
@@ -1339,13 +1693,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Autonomia elevada para o preço",
-      "Garantia de 7 anos"
+      "Silhueta inovadora com excelente aerodinâmica e eficiência",
+      "Autonomia expressiva de 440 km WLTP com bateria de 58.3 kWh",
+      "Garantia de 7 anos Kia que confere forte valor de revenda",
+      "Bagageira ampla de 430 L com boa acessibilidade"
     ],
     "cons": [
-      "Versão Fastback custa 47.200 € e fica fora do teto",
-      "Carregamento DC não é líder do segmento"
-    ]
+      "Versão Fastback mais equipada ultrapassa os 40.000 €",
+      "Arquitetura elétrica de 400V com carregamento DC em cerca de 30 min",
+      "Visibilidade pelo óculo traseiro algo reduzida pela inclinação do vidro",
+      "Suspensão com afinação ligeiramente firme em piso irregular"
+    ],
+    "dimensions": {
+      "length_mm": 4430,
+      "width_mm": 1840,
+      "height_mm": 1470
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 430,
+      "frunk_capacity_l": 25
+    }
   },
   {
     "brand": "Leapmotor",
@@ -1398,13 +1765,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Autonomia e potência pelo preço",
-      "Equipamento abundante"
+      "Excelente relação preço/autonomia (24.500 € para 400 km WLTP)",
+      "Motor potente com boa capacidade de aceleração e retoma",
+      "Equipamento tecnológico abundante com assistências à condução Nível 2",
+      "Bagageira generosa de 420 L"
     ],
     "cons": [
-      "Modelo muito recente",
-      "Valor residual incerto"
-    ]
+      "Modelo e marca muito recentes no mercado automóvel português",
+      "Valor residual e apoio pós-venda em fase inicial de estruturação",
+      "Interface do ecrã central por vezes com menus traduzidos de forma literal",
+      "Afinação de chassis simplificada priorizando o conforto plano"
+    ],
+    "dimensions": {
+      "length_mm": 4430,
+      "width_mm": 1880,
+      "height_mm": 1520
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 420,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Leapmotor",
@@ -1457,13 +1837,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Espaçoso e potente",
-      "Preço agressivo"
+      "SUV espaçoso com preço muito atrativo de 27.600 € com IVA",
+      "Bateria LFP robusta com bom desempenho em uso diário",
+      "Habitáculo amplo com teto panorâmico e boa luminosidade",
+      "Bagageira prática de 435 L com piso plano"
     ],
     "cons": [
-      "Rede recente",
-      "Interface muito dependente do ecrã"
-    ]
+      "Autonomia de 361 km WLTP em autoestrada requer planeamento",
+      "Quase todas as funções dependem do ecrã central tátil",
+      "Rede de concessionários Stellantis/Leapmotor ainda em expansão",
+      "Carregamento DC em postos Mobi.E dentro da média do segmento"
+    ],
+    "dimensions": {
+      "length_mm": 4515,
+      "width_mm": 1885,
+      "height_mm": 1655
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 435,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Leapmotor",
@@ -1500,13 +1893,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito espaço e equipamento pelo preço",
-      "Bateria LFP de boa capacidade"
+      "Porte de SUV familiar D-SUV pelo preço de um compacto (33.900 €)",
+      "Bateria de 69.9 kWh a oferecer 420 km de autonomia WLTP",
+      "Espaço interior enorme para cinco passageiros com grande conforto",
+      "Equipamento premium de série (bancos elétricos, ecrã 14.6\", teto panorâmico)"
     ],
     "cons": [
-      "Carregamento DC lento para a dimensão da bateria",
-      "Marca recente no mercado português"
-    ]
+      "Carregamento rápido DC a 84 kW é lento para uma bateria de 70 kWh",
+      "Marca recente no mercado português suportada pela rede Stellantis",
+      "Mala de 435 L algo curta tendo em conta as dimensões exteriores (4,74 m)",
+      "Comportamento dinâmico macio e pouco entusiasmante em curvas"
+    ],
+    "dimensions": {
+      "length_mm": 4739,
+      "width_mm": 1900,
+      "height_mm": 1680
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 435,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Leapmotor",
@@ -1518,12 +1924,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.filintomota.pt/marca/leapmotor/t03/",
     "image_path": "assets/images/vehicles/leapmotor-t03/official.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_dealer_model_and_price",
         "url": "https://www.filintomota.pt/marca/leapmotor/t03/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -1536,7 +1942,7 @@ const CAR_DATA = [
         "power_hp": 109,
         "dc_max_kw": 48,
         "pricing": {
-          "particular_list_price_vat_incl": 18500,
+          "particular_list_price_vat_incl": 18500.0,
           "particular_campaign_price_vat_incl": null,
           "campaign_conditions": "Preço para particulares publicado pelo concessionário oficial; confirmar despesas.",
           "campaign_valid_until": null
@@ -1544,13 +1950,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito equipamento para o preço",
-      "Boa autonomia urbana"
+      "Preço extremamente competitivo de 18.500 € com IVA",
+      "Cinco portas de série com habitáculo alto e fácil acesso",
+      "Equipamento de série completo com ecrã tátil e teto de vidro",
+      "Autonomia de 265 km mais do que suficiente para o dia a dia urbano"
     ],
     "cons": [
-      "Rede e valor residual ainda pouco estabelecidos",
-      "Carga DC lenta"
-    ]
+      "Carregamento rápido DC limitado a 45 kW",
+      "Mala pequena de 210 L para compras ou viagens",
+      "Pneus estreitos e estabilidade em vento lateral em autoestrada",
+      "Marca a dar os primeiros passos no mercado nacional"
+    ],
+    "dimensions": {
+      "length_mm": 3620,
+      "width_mm": 1652,
+      "height_mm": 1577
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 210,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Mazda",
@@ -1560,13 +1979,13 @@ const CAR_DATA = [
     "release_year": 2024,
     "availability_status": "available",
     "eligible": true,
-    "official_link": "https://www.mazda.pt/carros/mazda-mx-30/",
+    "official_link": "https://www.mazda.pt/",
     "image_path": "assets/images/vehicles/mazda-mx-30/official.jpg",
     "last_verified": "2026-08-04",
     "data_sources": [
       {
         "type": "official_model",
-        "url": "https://www.mazda.pt/carros/mazda-mx-30/",
+        "url": "https://www.mazda.pt/",
         "verified_on": "2026-08-04"
       }
     ],
@@ -1586,6 +2005,27 @@ const CAR_DATA = [
           "campaign_valid_until": null
         }
       }
+    ],
+    "dimensions": {
+      "length_mm": 4395,
+      "width_mm": 1795,
+      "height_mm": 1555
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 366,
+      "frunk_capacity_l": null
+    },
+    "pros": [
+      "Qualidade de construção e acabamentos interiores de nível verdadeiramente premium",
+      "Portas de abertura antagónica Freestyle e materiais sustentáveis (cortiça)",
+      "Comportamento dinâmico e sensação de condução extremamente refinados",
+      "Insonorização excelente do habitáculo"
+    ],
+    "cons": [
+      "Autonomia homologada de apenas 200 km WLTP (bateria pequena de 35.5 kWh)",
+      "Preço de tabela desfasado (38.840 €) para a autonomia oferecida",
+      "Acesso e espaço nos lugares traseiros bastante condicionado",
+      "Velocidade de carregamento DC de 50 kW ultrapassada"
     ]
   },
   {
@@ -1598,17 +2038,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.mgmotor.pt/model/mg4/",
     "image_path": "assets/images/vehicles/mg-mg4/official.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.mgmotor.pt/model/mg4/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_price",
         "url": "https://www.mgmotor.pt/technology",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -1644,13 +2084,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Boa dinâmica e tração traseira",
-      "Forte relação autonomia/preço"
+      "Excelente dinâmica de condução com plataforma nativa e tração traseira",
+      "Relação preço/produto de referência no mercado elétrico português (23.900 €)",
+      "Carregamento DC a 88 kW eficiente em viagens curtas e médias",
+      "Garantia de 7 anos ou 150.000 km com rede MG consolidada em Portugal"
     ],
     "cons": [
-      "Software pode ser pouco intuitivo",
-      "Assistências intrusivas em algumas versões"
-    ]
+      "Interface do sistema multimedia com resposta por vezes lenta",
+      "Assistentes de condução (MG Pilot) por vezes demasiado intrusivos",
+      "Ausência de limpa-para-brisas traseiro em algumas versões",
+      "Acabamentos interiores com alguns plásticos rijos nas portas"
+    ],
+    "dimensions": {
+      "length_mm": 4287,
+      "width_mm": 1836,
+      "height_mm": 1504
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 363,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "MG",
@@ -1703,13 +2156,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Espaço e autonomia",
-      "Carregamento 10–80% em cerca de 28 minutos"
+      "SUV prático e espaçoso com excelente relação preço/equipamento",
+      "Bagageira familiar de 450 L com boa modularidade",
+      "Carregamento rápido DC 10-80% em menos de 30 minutos",
+      "Garantia de fábrica de 7 anos e manutenção acessível"
     ],
     "cons": [
-      "Marca ainda constrói valor residual",
-      "Alguns comandos dependem do ecrã"
-    ]
+      "Autonomia WLTP de 340 km exige paragens regulares em viagens longas",
+      "Valor de revenda em Portugal ainda a afirmar-se face a marcas tradicionais",
+      "Algumas funções de climatização integradas no ecrã tátil",
+      "Afinação de suspensão virada essencialmente para o conforto em piso liso"
+    ],
+    "dimensions": {
+      "length_mm": 4476,
+      "width_mm": 1849,
+      "height_mm": 1621
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 450,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "MINI",
@@ -1721,17 +2187,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
     "image_path": "assets/images/vehicles/mini-aceman/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_versions_and_price",
         "url": "https://www.mini.pt/pt_PT/home/gama/mini-aceman/modelos.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -1765,13 +2231,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Mais espaço que o Cooper com a mesma mecânica",
-      "Versão SE chega aos 405 km"
+      "Formato crossover de 5 portas mais prático que o MINI Cooper",
+      "Design icónico MINI com detalhes personalizáveis e iluminação OLED",
+      "Infotainment circular OLED único com experiência imersiva",
+      "Excelente agilidade e sensação de condução \"Go-Kart\""
     ],
     "cons": [
-      "Autonomia da versão E fica nos 309 km",
-      "Só a partir do Essential fica abaixo dos 40.000 €"
-    ]
+      "Autonomia de 309 km WLTP na versão E de 38.5 kWh",
+      "Apenas a versão base Essential se mantém abaixo dos 40.000 €",
+      "Bagageira de 300 L algo justa para um crossover familiar",
+      "Suspensão firme em vias com piso irregular ou empedrado"
+    ],
+    "dimensions": {
+      "length_mm": 4075,
+      "width_mm": 1754,
+      "height_mm": 1515
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 300,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "MINI",
@@ -1827,13 +2306,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Comportamento dinâmico de referência",
-      "Versão SE passa dos 390 km"
+      "Agilidade e dinamismo de condução de referência no segmento dos citadinos",
+      "Ecrã OLED redondo exclusivo com sistema operativo MINI 9",
+      "Qualidade de construção e acabamentos interiores de nível premium",
+      "Carregamento DC a 75 kW permite passar de 10 a 80% em 28 minutos"
     ],
     "cons": [
-      "Espaço traseiro reduzido",
-      "Acabamentos Classic e Favoured sobem depressa de preço"
-    ]
+      "Espaço nos lugares traseiros e bagageira de 210 L muito contidos",
+      "Autonomia de 300 km WLTP orientada para percursos urbanos/suburbanos",
+      "Opções e linhas de equipamento (Classic/Favoured) encarecem rapidamente o modelo",
+      "Sem frunk para arrumação dos cabos de carregamento"
+    ],
+    "dimensions": {
+      "length_mm": 3858,
+      "width_mm": 1756,
+      "height_mm": 1460
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 210,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Nissan",
@@ -1871,13 +2363,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Nova geração muito mais eficiente",
-      "Boa autonomia"
+      "Nova geração reformulada como crossover moderno e muito eficiente",
+      "Excelente autonomia de 450 km WLTP com bateria de 52 kWh",
+      "Conector de carregamento CCS2 universal adequado à rede Mobi.E",
+      "Bagageira generosa de 437 L com bom acesso"
     ],
     "cons": [
-      "Modelo ainda muito recente",
-      "Versões superiores ultrapassam 40 mil euros"
-    ]
+      "Modelo muito recente no mercado nacional",
+      "Preço da versão de 52 kWh aproxima-se dos 38.000 €",
+      "Linhas de equipamento superiores ultrapassam o teto elegível",
+      "Posição de condução ligeiramente elevada que pode não agradar a todos"
+    ],
+    "dimensions": {
+      "length_mm": 4350,
+      "width_mm": 1810,
+      "height_mm": 1530
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 437,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Nissan",
@@ -1945,13 +2450,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Nova plataforma eficiente",
-      "Boa autonomia na versão 52 kWh"
+      "Desenvolvido sobre a moderna plataforma AmpR Small (partilhada com o R5)",
+      "Design simpático e dimensões ideais para estacionar na cidade",
+      "Autonomia de 310 km WLTP equilibrada para percursos diários",
+      "Carregamento DC a 80 kW rápido em postos de autoestrada"
     ],
     "cons": [
-      "Modelo muito recente",
-      "Espaço traseiro de utilitário"
-    ]
+      "Espaço no banco traseiro apertado para passageiros adultos",
+      "Bagageira de 326 L típica de utilitário",
+      "Preço de tabela inicial mais alto do que alguns rivais diretos",
+      "Lançamento recente com disponibilidade ainda em fase de arranque"
+    ],
+    "dimensions": {
+      "length_mm": 3990,
+      "width_mm": 1770,
+      "height_mm": 1500
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 326,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Omoda",
@@ -1963,17 +2481,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://omodajaecoo.pt/omoda/omoda-5-ev/",
     "image_path": "assets/images/vehicles/omoda-5-ev/official.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://omodajaecoo.pt/omoda/omoda-5-ev/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://omodajaecoo.pt/0-juros/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -1994,13 +2512,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito equipamento",
-      "Garantia competitiva"
+      "Excelente relação preço/equipamento com bateria generosa de 61 kWh",
+      "Autonomia homologada de 430 km WLTP para viagens sem ansiedade",
+      "Garantia de fábrica de 7 anos ou 150.000 km em Portugal",
+      "Habitáculo moderno com ecrã duplo curvo de 24.6\""
     ],
     "cons": [
-      "Carga DC abaixo dos melhores",
-      "Marca recente no mercado"
-    ]
+      "Carregamento DC a 80 kW requer mais tempo de paragem em viagem",
+      "Marca nova do grupo Chery a construir notoriedade e rede",
+      "Ausência de frunk e mala de 360 L mediana para as dimensões do SUV",
+      "Comandos de assistência à condução por vezes intrusivos"
+    ],
+    "dimensions": {
+      "length_mm": 4424,
+      "width_mm": 1830,
+      "height_mm": 1588
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 360,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Opel",
@@ -2043,13 +2574,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Boa eficiência e autonomia",
-      "Rede de assistência ampla"
+      "Motor eficiente com autonomia WLTP de 418 km e bateria de 58 kWh",
+      "Faróis Intelli-Lux LED Pixel de topo e excelente ergonomia dos bancos AGR",
+      "Vasta rede de concessionários e assistência oficial Opel em Portugal",
+      "Comportamento dinâmico sólido e seguro em autoestrada"
     ],
     "cons": [
-      "Preço elegível depende de retoma e financiamento",
-      "Carga DC apenas mediana"
-    ]
+      "Preço elegível (37.966 €) exige financiamento/campanha específica",
+      "Carregamento DC a 100 kW apenas mediano no segmento C",
+      "Bagageira de 352 L ligeiramente menor que as versões a combustão",
+      "Habitáculo com ambiente escuro na versão base"
+    ],
+    "dimensions": {
+      "length_mm": 4374,
+      "width_mm": 1860,
+      "height_mm": 1470
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 352,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Opel",
@@ -2061,12 +2605,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
     "image_path": "assets/images/vehicles/opel-corsa-electric/official.png",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model_and_campaign",
         "url": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2087,13 +2631,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Fácil de conduzir",
-      "Rede de assistência ampla"
+      "Design exterior renovado com a grelha Opel Vizor moderna",
+      "Autonomia de 357 km WLTP ajustada a percursos urbanos e interurbanos",
+      "Facilidade de condução e dimensão ideal para estacionamento urbano",
+      "Carregamento DC a 100 kW recupera 80% em 30 minutos na Mobi.E"
     ],
     "cons": [
-      "Espaço traseiro limitado",
-      "Preço sem campanha elevado"
-    ]
+      "Preço de tabela sem campanha elevado face à concorrência direta",
+      "Espaço nos lugares traseiros e acessibilidade pelas portas traseiras justos",
+      "Mala de 267 L pequena para viagens longas em família",
+      "Painel de instrumentos digital simples na versão de entrada"
+    ],
+    "dimensions": {
+      "length_mm": 4060,
+      "width_mm": 1765,
+      "height_mm": 1435
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 267,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Opel",
@@ -2105,12 +2662,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
     "image_path": "assets/images/vehicles/opel-frontera-electric/official.png",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2131,13 +2688,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito espaço pelo preço",
-      "Confortável"
+      "SUV muito prático e espaçoso com preço de lançamento acessível",
+      "Bagageira fabulosa de 460 L ampliável até 1600 L",
+      "Posição de condução elevada e excelente visibilidade para o exterior",
+      "Carregamento DC a 100 kW garante carregamentos rápidos eficazes"
     ],
     "cons": [
-      "Autonomia apenas suficiente",
-      "Aceleração modesta"
-    ]
+      "Autonomia de 305 km WLTP exige paragens mais frequentes em autoestrada",
+      "Motor de 113 cv com aceleração serena com carga total",
+      "Materiais do habitáculo focados no pragmatismo com plásticos rijos",
+      "Equipamento de série nas versões base bastante simples"
+    ],
+    "dimensions": {
+      "length_mm": 4380,
+      "width_mm": 1795,
+      "height_mm": 1635
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 460,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Opel",
@@ -2149,12 +2719,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
     "image_path": "assets/images/vehicles/opel-mokka-electric/official.png",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model_and_campaign",
         "url": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2175,13 +2745,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Compacto e bem equipado",
-      "Boa autonomia homologada"
+      "Estilo SUV urbano atraente com pintura bicolour marcante",
+      "Nova bateria de 54 kWh com autonomia alargada para 403 km WLTP",
+      "Tablier Pure Panel com ecrãs duplos de fácil leitura",
+      "Dimensões exteriores contidas (4,15 m) fáceis de manobrar"
     ],
     "cons": [
-      "Espaço traseiro limitado",
-      "Preço de tabela próximo do teto"
-    ]
+      "Espaço traseiro para pernas e cabeça condicionado pela linha do tejadilho",
+      "Bagageira de 310 L reduzida para o segmento B-SUV",
+      "Preço de tabela elevado que necessita das campanhas da marca",
+      "Fracas soluções de arrumação de objetos na consola central"
+    ],
+    "dimensions": {
+      "length_mm": 4151,
+      "width_mm": 1791,
+      "height_mm": 1531
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 310,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Peugeot",
@@ -2217,6 +2800,27 @@ const CAR_DATA = [
           "campaign_valid_until": null
         }
       }
+    ],
+    "dimensions": {
+      "length_mm": 4304,
+      "width_mm": 1775,
+      "height_mm": 1550
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 434,
+      "frunk_capacity_l": null
+    },
+    "pros": [
+      "Design arrojado e apelativo com posição de condução i-Cockpit 3D",
+      "Excelente compromisso entre conforto de rolamento e dinâmica",
+      "Bagageira generosa de 434 L muito prática para famílias",
+      "Vasta rede de concessionários e oficinas oficiais Peugeot em Portugal"
+    ],
+    "cons": [
+      "Preço de tabela de 38.450 € muito próximo do limite de 40.000 €",
+      "Posição do volante i-Cockpit pode tapar a instrumentação a alguns condutores",
+      "Carregamento DC a 100 kW apenas alinhado com a média",
+      "Autonomia de 346 km WLTP inferior a propostas mais recentes do segmento"
     ]
   },
   {
@@ -2260,13 +2864,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito eficiente",
-      "Boa autonomia para o tamanho"
+      "Excelente eficiência energética e autonomia WLTP de 433 km",
+      "Preço de campanha muito competitivo (26.435 € com IVA em Portugal)",
+      "Design atraente com assinatura luminosa em garra de leão",
+      "Carregamento DC a 100 kW permite viagens interurbanas com facilidade"
     ],
     "cons": [
-      "i-Cockpit não serve todas as estaturas",
-      "Preço elevado face a alguns rivais"
-    ]
+      "Ergonomia do i-Cockpit exige ajuste cuidado da altura do banco e volante",
+      "Espaço acanhado no banco traseiro para passageiros mais altos",
+      "Bagageira de 309 L mediana para a categoria de utilitários",
+      "Visibilidade traseira ligeiramente condicionada pelos pilares C"
+    ],
+    "dimensions": {
+      "length_mm": 4055,
+      "width_mm": 1745,
+      "height_mm": 1430
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 309,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Renault",
@@ -2278,12 +2895,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
     "image_path": "assets/images/vehicles/renault-4-e-tech-el-trico/official.png",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_versions_and_price",
         "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2319,13 +2936,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Mais prático que o Renault 5",
-      "Boa eficiência"
+      "Versatilidade superior com teto de abrir em lona opcional e óculo traseiro prático",
+      "Bagageira generosa de 420 L com plano de carga baixo",
+      "Sistema OpenR Link com Google incorporado de resposta rápida",
+      "Carregamento bidirecional V2L e V2G integrado"
     ],
     "cons": [
-      "Mais caro que o Renault 5",
-      "Versões altas aproximam-se dos 40 mil euros"
-    ]
+      "Preço superior ao Renault 5 com a mesma motorização e bateria",
+      "Autonomia de 308 km WLTP na versão de 40 kWh requer paragens em viagem",
+      "Versões com bateria de 52 kWh aproximam-se dos 40.000 €",
+      "Alguns plásticos duros nas secções inferiores das portas"
+    ],
+    "dimensions": {
+      "length_mm": 4140,
+      "width_mm": 1800,
+      "height_mm": 1570
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 420,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Renault",
@@ -2337,12 +2967,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
     "image_path": "assets/images/vehicles/renault-5-e-tech-el-trico/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2355,7 +2985,7 @@ const CAR_DATA = [
         "power_hp": 120,
         "dc_max_kw": 80,
         "pricing": {
-          "particular_list_price_vat_incl": 24900,
+          "particular_list_price_vat_incl": 24900.0,
           "particular_campaign_price_vat_incl": null,
           "campaign_conditions": null,
           "campaign_valid_until": null
@@ -2378,13 +3008,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Design e plataforma moderna",
-      "Boa eficiência"
+      "Design neo-retrô icónico e extraordinária aceitação no mercado português",
+      "Plataforma AmpR Small com excelente agilidade e suspensão traseira multilink",
+      "Sistema OpenR Link intuitivo com Google Maps nativo e planeamento de carga",
+      "Preço de entrada atrativo a partir de 24.900 € com IVA"
     ],
     "cons": [
-      "Espaço traseiro limitado",
-      "Versões superiores encarecem rapidamente"
-    ]
+      "Espaço reduzido para as pernas dos passageiros nos lugares traseiros",
+      "Autonomia de 312 km WLTP da bateria urbana exige paragens em autoestrada",
+      "Versões Techno e Iconiq CMF com bateria de 52 kWh encarecem rapidamente",
+      "Bagageira de 326 L sem frunk dianteiro para cabos"
+    ],
+    "dimensions": {
+      "length_mm": 3920,
+      "width_mm": 1770,
+      "height_mm": 1500
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 326,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Renault",
@@ -2394,14 +3037,14 @@ const CAR_DATA = [
     "release_year": 2024,
     "availability_status": "available",
     "eligible": true,
-    "official_link": "https://www.renault.pt/veiculos-eletricos/megane-e-tech-eletrico/versoes-preco.html",
+    "official_link": "https://www.renault.pt/veiculos-eletricos/megane-e-tech-eletrico.html",
     "image_path": "assets/images/vehicles/renault-m-gane-e-tech-el-trico/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model_and_price",
-        "url": "https://www.renault.pt/veiculos-eletricos/megane-e-tech-eletrico/versoes-preco.html",
-        "verified_on": "2026-08-04"
+        "url": "https://www.renault.pt/veiculos-eletricos/megane-e-tech-eletrico.html",
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2422,13 +3065,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Excelente sistema Google integrado",
-      "Bom equilíbrio entre conforto e eficiência"
+      "Excelente sistema infotainment OpenR Link com Google totalmente integrado",
+      "Autonomia sólida de 470 km WLTP e baixo peso da plataforma",
+      "Carregamento AC até 22 kW de série, ideal para a rede pública Mobi.E",
+      "Comportamento dinâmico ágil e posição de condução desportiva"
     ],
     "cons": [
-      "Preço próximo do limite",
-      "Visibilidade traseira limitada"
-    ]
+      "Preço de 38.830 € próximo do limiar máximo de 40.000 €",
+      "Óculo traseiro muito estreito que prejudica a visibilidade posterior",
+      "Espaço no banco traseiro à largura justo para três adultos",
+      "Sem frunk e degrau pronunciado no plano de carga da mala (440 L)"
+    ],
+    "dimensions": {
+      "length_mm": 4199,
+      "width_mm": 1768,
+      "height_mm": 1505
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 440,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Renault",
@@ -2438,14 +3094,14 @@ const CAR_DATA = [
     "release_year": 2024,
     "availability_status": "available",
     "eligible": true,
-    "official_link": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico/versoes-preco.html",
+    "official_link": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
     "image_path": "assets/images/vehicles/renault-scenic-e-tech-el-trico/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model_and_campaign",
-        "url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico/versoes-preco.html",
-        "verified_on": "2026-08-04"
+        "url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2466,13 +3122,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito espaço e conforto familiar",
-      "Boa autonomia e tecnologia interior"
+      "Eleito Carro do Ano com espaço interior fabuloso e grande conforto familiar",
+      "Bagageira enorme de 545 L ideal para grandes viagens de férias",
+      "Sistema OpenR Link com Google integrado e planeador de rotas elétricas",
+      "Teto de vidro panorâmico Solarbay opcional de escurecimento ativo"
     ],
     "cons": [
-      "Preço elegível depende de financiamento",
-      "Campanha de curta duração"
-    ]
+      "Preço elegível (38.753.71 €) válido apenas em campanha com financiamento",
+      "Carregamento DC a 130 kW bom mas aquém dos sistemas de 800V",
+      "Dimensões de SUV médio exigem atenção em garagens e ruas estreitas",
+      "Versão com bateria de 87 kWh excede largamente o teto de 40.000 €"
+    ],
+    "dimensions": {
+      "length_mm": 4470,
+      "width_mm": 1864,
+      "height_mm": 1571
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 545,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Renault",
@@ -2484,17 +3153,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.renault.pt/veiculos-eletricos/twingo.html",
     "image_path": "assets/images/vehicles/renault-twingo-e-tech-el-trico/official.webp",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_specification",
         "url": "https://www.renault.pt/veiculos-eletricos/twingo/caracteristicas.html",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2532,13 +3201,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Segundo carro mais barato do catálogo",
-      "Cinco portas com apenas 3,79 m"
+      "Um dos elétricos mais acessíveis em Portugal abaixo dos 20.000 €",
+      "Cinco portas com dimensões ultra-compactas (3,79 m) e raio de viragem recorde",
+      "Carregador AC Caméléon até 22 kW permite carregar rapidamente em postos públicos",
+      "Ideal para deslocações urbanas diárias e facilidade de estacionamento"
     ],
     "cons": [
-      "263 km de autonomia WLTP",
-      "Carregamento DC limitado a 50 kW"
-    ]
+      "Autonomia modesta de 263 km WLTP limita passeios fora da cidade",
+      "Carregamento rápido DC limitado a 50 kW",
+      "Bagageira contida de 220 L e habitáculo estreito",
+      "Estabilidade em autoestrada com vento lateral mediana"
+    ],
+    "dimensions": {
+      "length_mm": 3790,
+      "width_mm": 1720,
+      "height_mm": 1470
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 220,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "smart",
@@ -2550,17 +3232,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://pt.smart.com/pt/models/hashtag-one/",
     "image_path": "assets/images/vehicles/smart-1/official.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://pt.smart.com/pt/models/hashtag-one/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://pt.smart.com/pt/promotions/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2581,13 +3263,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito potente e espaçoso",
-      "Ambiente interior cuidado"
+      "Habitáculo premium com design sofisticado e excelente qualidade percetível",
+      "Banco traseiro deslizante longitudinalmente aumentando versatilidade",
+      "Motor potente de 272 cv com aceleração sobressalente",
+      "Equipamento tecnológico muito completo de série"
     ],
     "cons": [
-      "Consumo relativamente alto",
-      "Muitos comandos no ecrã"
-    ]
+      "Consumo energético algo elevado a velocidades de autoestrada",
+      "Autonomia de 310 km WLTP na versão Pro (49 kWh) requer paragens em viagem",
+      "Mala de 323 L contida para o tamanho exterior do SUV",
+      "Quase todos os comandos centralizados no ecrã tátil sem botões físicos"
+    ],
+    "dimensions": {
+      "length_mm": 4270,
+      "width_mm": 1822,
+      "height_mm": 1636
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 323,
+      "frunk_capacity_l": 15
+    }
   },
   {
     "brand": "smart",
@@ -2599,17 +3294,17 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://pt.smart.com/pt/models/hashtag-three/",
     "image_path": "assets/images/vehicles/smart-3/official.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://pt.smart.com/pt/models/hashtag-three/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_campaign",
         "url": "https://pt.smart.com/pt/promotions/",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2645,13 +3340,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Desempenho forte",
-      "Pro+ combina potência e autonomia"
+      "Silhueta SUV Coupé elegante com apurada eficiência aerodinâmica",
+      "Desempenho vivo (272 cv) e comportamento dinâmico desportivo",
+      "Ambiente interior tecnológico com teto panorâmico em vidro de série",
+      "Carregamento DC a 130 kW garante paragens rápidas na autoestrada"
     ],
     "cons": [
-      "Campanha essencial para ficar abaixo do teto",
-      "Visibilidade traseira limitada"
-    ]
+      "Elegibilidade abaixo dos 40.000 € depende de campanha da marca",
+      "Visibilidade pelo espelho retrovisor central reduzida pela caída do tejadilho",
+      "Consumo em condução empenhada reduz a autonomia real",
+      "Espaço para a cabeça nos lugares traseiros ligeiramente inferior ao smart #1"
+    ],
+    "dimensions": {
+      "length_mm": 4400,
+      "width_mm": 1844,
+      "height_mm": 1556
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 370,
+      "frunk_capacity_l": 15
+    }
   },
   {
     "brand": "Suzuki",
@@ -2704,13 +3412,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Boa relação preço/autonomia em campanha",
-      "Rede Suzuki estabelecida"
+      "SUV compacto robusto desenvolvido sobre plataforma elétrica dedicada",
+      "Preço de campanha atrativo (32.701 € com IVA) em Portugal",
+      "Vasta rede de concessionários Suzuki com reputação de fiabilidade",
+      "Posição de condução elevada e bom espaço no habitáculo"
     ],
     "cons": [
-      "Carga DC modesta",
-      "Versão 61 kWh acima do teto sem campanha"
-    ]
+      "Carregamento rápido DC modesto em comparação com concorrentes diretos",
+      "Mala de 306 L pequena para um SUV de aptidões familiares",
+      "Versão com bateria de 61 kWh e tração 4x4 excede o limite elegível",
+      "Design interior com plásticos rijos em vários elementos do tablier"
+    ],
+    "dimensions": {
+      "length_mm": 4275,
+      "width_mm": 1800,
+      "height_mm": 1635
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 306,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Tesla",
@@ -2755,13 +3476,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Autonomia, eficiência e rede Supercharger",
-      "Muito desempenho pelo preço"
+      "Eficiência energética e autonomia homologada (534 km WLTP) líderes no mercado",
+      "Acesso nativo e simplificado à rede de Superchargers Tesla em Portugal",
+      "Excelente desempenho, aceleração e comportamento dinâmico de berlina",
+      "Bagageira total impressionante de 594 L (traseira + frunk de 88 L)"
     ],
     "cons": [
-      "Quase todos os comandos no ecrã",
-      "Sem painel de instrumentos tradicional"
-    ]
+      "Ausência de manetes de piscas e seletor de marcha (comandos no volante e ecrã)",
+      "Ausência de painel de instrumentos tradicional atrás do volante",
+      "Tampa de mala tipo sedan tradicional (sem portão traseiro panorâmico)",
+      "Preço elegível (37.975.17 €) muito próximo do teto de 40.000 €"
+    ],
+    "dimensions": {
+      "length_mm": 4720,
+      "width_mm": 1850,
+      "height_mm": 1441
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 594,
+      "frunk_capacity_l": 88
+    }
   },
   {
     "brand": "Toyota",
@@ -2773,25 +3507,29 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.toyota.pt/carros/bz4x",
     "image_path": "assets/images/vehicles/toyota-bz4x/official.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "pros": [
-      "Bateria de 57,7 kWh com carregamento DC até 150 kW",
-      "Campanha com desconto direto de 6.000 € sobre o PVP"
+      "Desconto direto em campanha oficial de 6.000 € viabilizando preço sob 40k €",
+      "Carregamento rápido DC até 150 kW com curva de carga consistente",
+      "Espaço fabuloso para as pernas dos passageiros nos bancos traseiros",
+      "Programa de garantia de bateria Toyota estendido até 10 anos ou 1 milhão de km"
     ],
     "cons": [
-      "Autonomia registada é o extremo inferior do intervalo publicado para a gama",
-      "Preço elegível depende da campanha; sem ela o PVP fica acima do limite"
+      "Autonomia registada (444 km) é o extremo inferior do intervalo da gama",
+      "Sem campanha o PVP oficial excede substancialmente o limite de 40.000 €",
+      "Ausência de porta-luvas tradicional no tablier do passageiro",
+      "Consumo em velocidade de autoestrada algo elevado devido à estatura SUV"
     ],
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.toyota.pt/carros/bz4x",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       },
       {
         "type": "official_price_sheet",
         "url": "https://www.toyota.pt/carros/bz4x/especificacoes",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2806,12 +3544,21 @@ const CAR_DATA = [
         "max_speed_kmh": 140,
         "pricing": {
           "particular_list_price_vat_incl": 39640.0,
-          "particular_campaign_price_vat_incl": null,
-          "campaign_conditions": null,
-          "campaign_valid_until": null
+          "particular_campaign_price_vat_incl": 39640.0,
+          "campaign_conditions": "Não acumula com condições de frota ou outras ofertas em vigor. Valor apresentado inclui desconto direto de 6.000€. Preços não incluem despesas de legalização e transporte nem ecovalor.",
+          "campaign_valid_until": "2026-08-31"
         }
       }
-    ]
+    ],
+    "dimensions": {
+      "length_mm": 4690,
+      "width_mm": 1860,
+      "height_mm": 1650
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 452,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Volkswagen",
@@ -2854,13 +3601,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Espaço interior e condução refinada",
-      "Plataforma elétrica madura"
+      "Excelente aproveitamento do espaço interior e raio de viragem muito reduzido",
+      "Atualização de qualidade dos materiais do habitáculo e ecrã infotainment de 12.9\"",
+      "Conforto de rolamento e insonorização de elevado nível em viagem",
+      "Carregamento DC a 120 kW para paragens curtas na rede Mobi.E"
     ],
     "cons": [
-      "Comandos táteis",
-      "Preço depende bastante da campanha"
-    ]
+      "Preço de tabela elevado que necessita de campanhas comerciais ativas",
+      "Comandos tátil-deslizantes no volante e climatizador exigem habituação",
+      "Bagageira de 385 L mediana para o segmento C",
+      "Sem frunk para arrumação de cabos sob o capô dianteiro"
+    ],
+    "dimensions": {
+      "length_mm": 4264,
+      "width_mm": 1809,
+      "height_mm": 1568
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 385,
+      "frunk_capacity_l": null
+    }
   },
   {
     "brand": "Volvo",
@@ -2898,13 +3658,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito potente e seguro",
-      "Interior distinto"
+      "Aceleração e desempenho muito fortes mesmo na versão de entrada Single Motor",
+      "Design nórdico minimalista marcante e materiais sustentáveis inovadores",
+      "Padrões de segurança passiva e ativa de topo característicos da Volvo",
+      "Sistema infotainment baseado em Android Automotive com Google Maps nativo"
     ],
     "cons": [
-      "Controlos concentrados no ecrã",
-      "Bagageira e espaço traseiro apenas razoáveis"
-    ]
+      "Quase todas as funções (incluindo regulação de espelhos) centralizadas no ecrã central",
+      "Bagageira traseira contida de 318 L e frunk frontal minúsculo (7 L)",
+      "Espaço para pernas no banco traseiro algo justo para adultos",
+      "Preço de tabela da versão base de 51 kWh (38.632 €) encostado ao limite elegível"
+    ],
+    "dimensions": {
+      "length_mm": 4233,
+      "width_mm": 1837,
+      "height_mm": 1555
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 318,
+      "frunk_capacity_l": 7
+    }
   },
   {
     "brand": "Škoda",
@@ -2916,12 +3689,12 @@ const CAR_DATA = [
     "eligible": true,
     "official_link": "https://www.skoda.pt/skoda-elroq/elroq",
     "image_path": "assets/images/vehicles/koda-elroq/official-clean.jpg",
-    "last_verified": "2026-08-04",
+    "last_verified": "2026-08-05",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.skoda.pt/skoda-elroq/elroq",
-        "verified_on": "2026-08-04"
+        "verified_on": "2026-08-05"
       }
     ],
     "variants": [
@@ -2934,7 +3707,7 @@ const CAR_DATA = [
         "power_hp": 170,
         "dc_max_kw": 145,
         "pricing": {
-          "particular_list_price_vat_incl": 36851,
+          "particular_list_price_vat_incl": 37266.0,
           "particular_campaign_price_vat_incl": null,
           "campaign_conditions": null,
           "campaign_valid_until": null
@@ -2942,13 +3715,26 @@ const CAR_DATA = [
       }
     ],
     "pros": [
-      "Muito prático e espaçoso",
-      "Boa eficiência"
+      "Soluções \"Simply Clever\" extremamente práticas e habitáculo versátil",
+      "Bagageira espaçosa de 470 L com ganchos, redes e arrumação inteligente",
+      "Conforto de marcha sobressalente e excelente isolamento acústico",
+      "Relação preço/produto equilibrada dentro do grupo Volkswagen"
     ],
     "cons": [
-      "Equipamento opcional pode elevar o preço",
-      "Versões de maior autonomia passam o teto"
-    ]
+      "Autonomia de 375 km WLTP na versão 50 exige planeamento em viagens longas",
+      "Versões com bateria de 77 kWh (Elroq 85) ultrapassam o teto de 40.000 €",
+      "Carregamento DC de 145 kW bom mas requer pré-condicionamento da bateria",
+      "Adição de pacotes de equipamento opcional eleva facilmente o preço final"
+    ],
+    "dimensions": {
+      "length_mm": 4488,
+      "width_mm": 1884,
+      "height_mm": 1625
+    },
+    "luggage_capacity": {
+      "boot_capacity_l": 470,
+      "frunk_capacity_l": null
+    }
   }
 ];
 const DEALER_DATA = {
@@ -2966,7 +3752,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "AION": {
     "brand": "AION",
@@ -2982,7 +3768,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Alfa Romeo": {
     "brand": "Alfa Romeo",
@@ -2998,7 +3784,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Alpine": {
     "brand": "Alpine",
@@ -3014,7 +3800,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "BYD": {
     "brand": "BYD",
@@ -3030,7 +3816,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Changan": {
     "brand": "Changan",
@@ -3046,7 +3832,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Citroën": {
     "brand": "Citroën",
@@ -3062,7 +3848,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Cupra": {
     "brand": "Cupra",
@@ -3078,7 +3864,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-04"
+    "verified_on": "2026-08-05"
   },
   "Dacia": {
     "brand": "Dacia",
@@ -3094,7 +3880,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Dongfeng": {
     "brand": "Dongfeng",
@@ -3110,7 +3896,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Fiat": {
     "brand": "Fiat",
@@ -3126,7 +3912,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Ford": {
     "brand": "Ford",
@@ -3142,7 +3928,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-03"
+    "verified_on": "2026-08-05"
   },
   "Geely": {
     "brand": "Geely",
@@ -3157,7 +3943,7 @@ const DEALER_DATA = {
     "services": [
       "sales"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Hyundai": {
     "brand": "Hyundai",
@@ -3173,7 +3959,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Jaecoo": {
     "brand": "Jaecoo",
@@ -3189,7 +3975,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Jeep": {
     "brand": "Jeep",
@@ -3205,7 +3991,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Kia": {
     "brand": "Kia",
@@ -3221,7 +4007,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Leapmotor": {
     "brand": "Leapmotor",
@@ -3237,7 +4023,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Mazda": {
     "brand": "Mazda",
@@ -3253,7 +4039,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-04"
+    "verified_on": "2026-08-05"
   },
   "MG": {
     "brand": "MG",
@@ -3269,7 +4055,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "MINI": {
     "brand": "MINI",
@@ -3285,7 +4071,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-26"
+    "verified_on": "2026-08-05"
   },
   "Nissan": {
     "brand": "Nissan",
@@ -3301,7 +4087,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Omoda": {
     "brand": "Omoda",
@@ -3317,7 +4103,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Opel": {
     "brand": "Opel",
@@ -3333,7 +4119,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Peugeot": {
     "brand": "Peugeot",
@@ -3349,7 +4135,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Renault": {
     "brand": "Renault",
@@ -3365,7 +4151,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "smart": {
     "brand": "smart",
@@ -3381,7 +4167,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Suzuki": {
     "brand": "Suzuki",
@@ -3397,7 +4183,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Tesla": {
     "brand": "Tesla",
@@ -3414,7 +4200,7 @@ const DEALER_DATA = {
       "service",
       "delivery"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Toyota": {
     "brand": "Toyota",
@@ -3431,7 +4217,7 @@ const DEALER_DATA = {
       "service"
     ],
     "distance_note": "6,5 km de São Mamede de Infesta segundo o localizador oficial da Toyota; o seguinte é Rio Tinto a 8,5 km.",
-    "verified_on": "2026-08-01"
+    "verified_on": "2026-08-05"
   },
   "Volkswagen": {
     "brand": "Volkswagen",
@@ -3447,7 +4233,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Volvo": {
     "brand": "Volvo",
@@ -3463,7 +4249,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   },
   "Škoda": {
     "brand": "Škoda",
@@ -3479,6 +4265,6 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-07-23"
+    "verified_on": "2026-08-05"
   }
 };
