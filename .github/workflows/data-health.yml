@@ -1,10 +1,10 @@
 name: Saúde dos dados
 
-# O valor deste catálogo é ser atual. `make validate` e `make test` não expiram,
-# mas `make freshness` (verificações com mais de 45 dias, campanhas expiradas) e
-# `make links` (fontes mortas) expiram sozinhos com o calendário. Sem uma
-# execução agendada, a decadência dos dados é invisível até alguém abrir a
-# aplicação e ler um preço que já não existe.
+# O valor deste catálogo é ser atual. `make validate` falha fechado para provas
+# confirmed/atuais envelhecidas e a compilação recusa escrever bundle inválido;
+# `make freshness` acrescenta verificações globais com mais de 45 dias e
+# campanhas expiradas. `make links` verifica fontes externas. Sem execução
+# agendada, a decadência dos dados é invisível até alguém abrir a aplicação.
 on:
   schedule:
     # Segunda-feira às 06:00 UTC. O cron do GitHub só aceita UTC.
@@ -38,8 +38,16 @@ jobs:
         with:
           node-version: "22"
 
-      # continue-on-error nos dois passos seguintes: queremos o retrato completo
+      # continue-on-error nos três passos seguintes: queremos o retrato completo
       # numa só issue, não parar no primeiro achado.
+      - name: Validar e compilar catálogo fail-closed
+        id: validate
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          make validate 2>&1 | tee validate.log
+
       - name: Verificar frescura das verificações e campanhas
         id: freshness
         continue-on-error: true
@@ -65,6 +73,7 @@ jobs:
             echo
             echo "| Verificação | Resultado |"
             echo "| --- | --- |"
+            echo "| validação e compilação fail-closed | ${{ steps.validate.outcome }} |"
             echo "| frescura (45 dias, campanhas) | ${{ steps.freshness.outcome }} |"
             echo "| fontes e concessionários | ${{ steps.links.outcome }} |"
             echo
@@ -75,7 +84,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Abrir ou atualizar a issue de decadência dos dados
-        if: steps.freshness.outcome == 'failure' || steps.links.outcome == 'failure'
+        if: steps.validate.outcome == 'failure' || steps.freshness.outcome == 'failure' || steps.links.outcome == 'failure'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
@@ -88,8 +97,9 @@ jobs:
 
           BODY=$(mktemp)
           {
-            echo "A execução agendada encontrou dados a precisar de revisão."
+            echo "A execução agendada encontrou dados ou fontes a precisar de revisão."
             echo
+            echo "- validação/compilação: \`${{ steps.validate.outcome }}\`"
             echo "- frescura: \`${{ steps.freshness.outcome }}\`"
             echo "- fontes: \`${{ steps.links.outcome }}\`"
             echo "- execução: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
@@ -100,7 +110,7 @@ jobs:
             echo "fonte, confirmar preço, autonomia e condições, e só depois"
             echo "atualizar \`last_verified\`."
             echo
-            for log in freshness links; do
+            for log in validate freshness links; do
               if [ -s "$log.log" ]; then
                 echo "<details><summary>make $log</summary>"
                 echo

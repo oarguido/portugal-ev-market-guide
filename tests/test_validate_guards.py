@@ -12,6 +12,7 @@ Guardas sem teste são guardas que alguém remove sem querer.
 """
 
 import json
+import math
 import struct
 import sys
 import tempfile
@@ -25,7 +26,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import rules
 import validate_data
-from validate_data import BLOCKED_LINK_CODES, VERIFIED_LINK_CODES, duplicate_image_errors, validate_catalog
+from validate_data import (
+    BLOCKED_LINK_CODES,
+    VERIFIED_LINK_CODES,
+    duplicate_image_errors,
+    validate_catalog,
+)
 
 
 def png(width: int, height: int, preenchimento: int = 0) -> bytes:
@@ -37,15 +43,71 @@ def png(width: int, height: int, preenchimento: int = 0) -> bytes:
 
 def catalogo(image_path: str) -> dict:
     """Catálogo mínimo que só falha por causa da fotografia."""
+    today = validate_data.TODAY.isoformat()
+
+    def oferta(amount=29_000, *, kind="list_price", classification="confirmed", conditions=None):
+        evidence = f"PVP particular {amount:,.0f} €".replace(",", ".")
+        return {
+            "kind": kind,
+            "classification": classification,
+            "amount_eur": amount,
+            "currency": "EUR",
+            "source_url": "https://exemplo.pt/modelo",
+            "source_authority": "manufacturer_or_importer_pt",
+            "market": "PT",
+            "variant": "Base",
+            "conditions": conditions,
+            "vat_included": True,
+            "proof": {
+                "url": "https://exemplo.pt/modelo",
+                "source_url": "https://exemplo.pt/modelo",
+                "authority": "manufacturer_or_importer_pt",
+                "market": "PT",
+                "audience": "particular",
+                "variant": "Base",
+                "vat_basis": "included",
+                "literal_excerpt": evidence,
+                "status": "verified",
+                "source_type": "official_model",
+                "recorded_on": today,
+                "verified_on": today,
+                "source_authority": "manufacturer_or_importer_pt",
+                "customer": "private",
+            },
+            "derivation": None,
+            "recorded_on": today,
+            "verified_on": today,
+            "customer": "private",
+            "audience": "particular",
+            "validity": {"valid_from": None, "valid_until": None},
+            "valid_until": None,
+            "vat": "included",
+            "vat_status": "included",
+            "evidence": evidence,
+            "evidence_record": {
+                "url": "https://exemplo.pt/modelo",
+                "source_url": "https://exemplo.pt/modelo",
+                "market": "PT",
+                "recorded_on": today,
+                "verified_on": today,
+                "literal_excerpt": evidence,
+            },
+            "source_type": "official_model",
+        }
     return {
-        "schema_version": 2,
+        "schema_version": 3,
         "market": "PT",
         "currency": "EUR",
+        "last_verified": today,
         "scope": {
             "powertrain": "BEV",
             "vehicle_type": "M1 passenger car",
             "condition": "new",
             "maximum_vat_inclusive_price_eur": validate_data.MAX_PRICE_EUR,
+            "price_rule": "Só ofertas confirmadas provam limite.",
+            "reference_price_policy": "Referências não contam.",
+            "eligibility_statuses": ["confirmed_eligible", "potential_reference", "not_demonstrated"],
+            "null_policy": "null significa por confirmar.",
         },
         "discovery_sources": [
             {
@@ -61,10 +123,13 @@ def catalogo(image_path: str) -> dict:
             {
                 "brand": "Marca",
                 "model": "Modelo",
+                "release_year": 2025,
                 "powertrain": "BEV",
                 "segment": "Citadino",
                 "availability_status": "available",
-                "eligible": True,
+                "eligibility_status": "confirmed_eligible",
+                "eligibility_tier": "confirmed_eligible",
+                "eligibility_reason": "Existe oferta confirmada.",
                 "official_link": "https://exemplo.pt/modelo",
                 "image_path": image_path,
                 "last_verified": validate_data.TODAY.isoformat(),
@@ -87,7 +152,12 @@ def catalogo(image_path: str) -> dict:
                         "wltp_range_combined_km": 300,
                         "power_kw": 100,
                         "power_hp": 136,
-                        "pricing": {"particular_list_price_vat_incl": 29_000},
+                        "eligibility_status": "confirmed_eligible",
+                        "eligibility_tier": "confirmed_eligible",
+                        "battery_technology": {"chemistry": None, "generation": None, "architecture": None, "source_url": None, "verified_on": None},
+                        "pricing": {
+                            "offers": [oferta()],
+                        },
                     }
                 ],
             }
@@ -272,15 +342,76 @@ class CamposObrigatorios(unittest.TestCase):
 
     def test_preco_acima_do_limite_e_recusado(self):
         c = self.base()
-        c["models"][0]["variants"][0]["pricing"]["particular_list_price_vat_incl"] = rules.MAX_PRICE_EUR + 1
+        c["models"][0]["variants"][0]["pricing"]["offers"][0]["amount_eur"] = rules.MAX_PRICE_EUR + 1
         erros = validate_catalog(c)
-        self.assertTrue(any("acima de" in e for e in erros), erros)
+        self.assertTrue(any("eligibility_tier" in e for e in erros), erros)
 
     def test_campanha_sem_condicoes_e_recusada(self):
         c = self.base()
-        c["models"][0]["variants"][0]["pricing"]["particular_campaign_price_vat_incl"] = 30_000
+        campaign = json.loads(json.dumps(c["models"][0]["variants"][0]["pricing"]["offers"][0]))
+        campaign.update(kind="campaign_price", amount_eur=30_000, conditions=None)
+        c["models"][0]["variants"][0]["pricing"]["offers"].append(campaign)
         erros = validate_catalog(c)
         self.assertTrue(any("sem condições" in e for e in erros), erros)
+
+    def test_campanha_superior_ao_pvp_e_recusada(self):
+        c = self.base()
+        pricing = c["models"][0]["variants"][0]["pricing"]
+        campaign = json.loads(json.dumps(pricing["offers"][0]))
+        campaign.update(kind="campaign_price", amount_eur=30_001, conditions="Financiamento para particulares", evidence="Campanha 30.001 €")
+        campaign["proof"]["literal_excerpt"] = campaign["evidence"]
+        campaign["evidence_record"]["literal_excerpt"] = campaign["evidence"]
+        pricing["offers"][0]["amount_eur"] = 30_000
+        pricing["offers"].append(campaign)
+        erros = validate_catalog(c)
+        self.assertTrue(any("não pode exceder o PVP" in e for e in erros), erros)
+
+    def test_preco_infinito_nan_negativo_ou_booleano_e_recusado(self):
+        for valor in (math.inf, math.nan, -1, True):
+            with self.subTest(valor=valor):
+                c = self.base()
+                c["models"][0]["variants"][0]["pricing"]["offers"][0]["amount_eur"] = valor
+                erros = validate_catalog(c)
+                self.assertTrue(any("amount_eur" in e for e in erros), erros)
+
+    def test_zero_e_nao_negativo_mas_nao_elegivel(self):
+        c = self.base()
+        c["models"][0]["variants"][0]["pricing"]["offers"][0]["amount_eur"] = 0
+        erros = validate_catalog(c)
+        self.assertTrue(any("amount_eur" in e for e in erros), erros)
+
+    def test_validade_de_campanha_tem_formato_explicito_ou_null(self):
+        base = self.base()
+        campaign = json.loads(json.dumps(base["models"][0]["variants"][0]["pricing"]["offers"][0]))
+        campaign.update(kind="campaign_price", amount_eur=28_000, conditions="Financiamento para particulares", evidence="Campanha 28.000 €")
+        campaign["proof"]["literal_excerpt"] = campaign["evidence"]
+        campaign["evidence_record"]["literal_excerpt"] = campaign["evidence"]
+        base["models"][0]["variants"][0]["pricing"]["offers"].append(campaign)
+        self.assertEqual(validate_catalog(base), [])
+        for expiry in ("", "31/08/2026", "2026-02-30"):
+            with self.subTest(expiry=expiry):
+                c = self.base()
+                campaign = json.loads(json.dumps(c["models"][0]["variants"][0]["pricing"]["offers"][0]))
+                campaign.update(kind="campaign_price", amount_eur=28_000, conditions="Financiamento para particulares", evidence="Campanha 28.000 €")
+                campaign["proof"]["literal_excerpt"] = campaign["evidence"]
+                campaign["evidence_record"]["literal_excerpt"] = campaign["evidence"]
+                campaign["validity"] = {"valid_from": None, "valid_until": expiry}
+                campaign["valid_until"] = expiry
+                c["models"][0]["variants"][0]["pricing"]["offers"].append(campaign)
+                erros = validate_catalog(c)
+                self.assertTrue(any("validity.valid_until" in e for e in erros), erros)
+
+    def test_condicoes_de_campanha_tem_de_ser_texto_material(self):
+        for conditions in (None, "", "   ", "N/A", "por confirmar", 123):
+            with self.subTest(conditions=conditions):
+                c = self.base()
+                campaign = json.loads(json.dumps(c["models"][0]["variants"][0]["pricing"]["offers"][0]))
+                campaign.update(kind="campaign_price", amount_eur=30_000, conditions=conditions, evidence="Campanha 30.000 €")
+                campaign["proof"]["literal_excerpt"] = campaign["evidence"]
+                campaign["evidence_record"]["literal_excerpt"] = campaign["evidence"]
+                c["models"][0]["variants"][0]["pricing"]["offers"].append(campaign)
+                erros = validate_catalog(c)
+                self.assertTrue(any("condições materiais" in e for e in erros), erros)
 
     def test_fonte_sem_https_e_recusada(self):
         c = self.base()
@@ -322,6 +453,42 @@ class ConcessionariosObrigatorios(unittest.TestCase):
     def test_stand_de_marca_inexistente_e_recusado(self):
         erros = validate_data.validate_dealers(catalogo("x"), self.base_dealers(brand="Inexistente"))
         self.assertTrue(any("sem marca ativa" in e for e in erros), erros)
+
+
+class TecnologiaDaBateriaOpcional(unittest.TestCase):
+    """Campos documentados podem entrar quando provados, sem valores inventados."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        raiz = Path(self._tmp.name)
+        self.web = raiz / "web"
+        (self.web / "img").mkdir(parents=True)
+        (self.web / "img" / "foto.png").write_bytes(png(1200, 800, preenchimento=20_000))
+        patch = mock.patch.object(validate_data, "ROOT", raiz)
+        patch.start()
+        self.addCleanup(patch.stop)
+        self.addCleanup(self._tmp.cleanup)
+
+    def test_tecnologia_documentada_valida_passes(self):
+        c = catalogo("img/foto.png")
+        c["models"][0]["variants"][0]["battery_technology"] = {
+            "chemistry": "LFP",
+            "generation": "Blade Battery",
+            "architecture": "cell-to-pack",
+            "source_url": "https://exemplo.pt/bateria",
+            "verified_on": validate_data.TODAY.isoformat(),
+        }
+        self.assertEqual(validate_catalog(c), [])
+
+    def test_tecnologia_desconhecida_pode_ser_null_ou_ausente(self):
+        c = catalogo("img/foto.png")
+        self.assertEqual(validate_catalog(c), [])
+
+    def test_tecnologia_com_tipo_invalido_e_recusada(self):
+        c = catalogo("img/foto.png")
+        c["models"][0]["variants"][0]["battery_technology"]["chemistry"] = 123
+        erros = validate_catalog(c)
+        self.assertTrue(any("battery_technology.chemistry" in e for e in erros), erros)
 
 
 class NovosCamposEsquema(unittest.TestCase):

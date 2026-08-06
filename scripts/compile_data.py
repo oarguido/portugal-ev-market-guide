@@ -53,8 +53,21 @@ def stamp_index(bundle: str) -> bool:
 
 
 def compile_data() -> None:
-    models = vehicle_records()
-    dealers = {dealer["brand"]: dealer for dealer in load_dealers()["dealers"]}
+    catalog = load_catalog()
+    dealer_catalog = load_dealers()
+    # Fail closed before touching bundle or index. A stale generated bundle is
+    # safer than publishing a v2/invalid catalogue as if it were v3.
+    from validate_data import duplicate_image_errors, validate_catalog, validate_dealers
+
+    errors = validate_catalog(catalog)
+    errors.extend(duplicate_image_errors(catalog))
+    errors.extend(validate_dealers(catalog, dealer_catalog))
+    if errors:
+        rendered = "\n".join(f"ERRO: {error}" for error in errors)
+        raise ValueError(f"catálogo recusado; bundle não foi escrito:\n{rendered}")
+
+    models = catalog["models"]
+    dealers = {dealer["brand"]: dealer for dealer in dealer_catalog["dealers"]}
     output = "// Gerado automaticamente por scripts/compile_data.py; não editar.\n"
     output += "const CAR_DATA = " + json.dumps(models, indent=2, ensure_ascii=False) + ";\n"
     output += "const DEALER_DATA = " + json.dumps(dealers, indent=2, ensure_ascii=False) + ";\n"
@@ -64,7 +77,11 @@ def compile_data() -> None:
     if stamp_index(output):
         print("index.html: versão do bundle atualizada")
     variants = sum(len(model["variants"]) for model in models)
-    print(f"Compilados {len(models)} modelos / {variants} variantes em {BUNDLE_PATH.relative_to(ROOT)}")
+    try:
+        location = BUNDLE_PATH.relative_to(ROOT)
+    except ValueError:
+        location = BUNDLE_PATH
+    print(f"Compilados {len(models)} modelos / {variants} variantes em {location}")
 
 
 if __name__ == "__main__":

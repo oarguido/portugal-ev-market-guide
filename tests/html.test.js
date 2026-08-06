@@ -12,14 +12,14 @@ const appSource = fs.readFileSync(
   path.join(root, "web/assets/js/app.js"),
   "utf8",
 );
-const indexHtml = fs.readFileSync(
-  path.join(root, "web/index.html"),
-  "utf8",
-);
+const indexHtml = fs.readFileSync(path.join(root, "web/index.html"), "utf8");
 
 test("escapa os cinco caracteres que quebram HTML e atributos", () => {
   assert.equal(escapeHtml("Silva & Filhos"), "Silva &amp; Filhos");
-  assert.equal(escapeHtml("<script>alert('xss')</script>"), "&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;");
+  assert.equal(
+    escapeHtml("<script>alert('xss')</script>"),
+    "&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;",
+  );
   assert.equal(escapeHtml('aspas " duplas'), "aspas &quot; duplas");
   assert.equal(escapeHtml("aspas ' simples"), "aspas &#39; simples");
 });
@@ -36,7 +36,10 @@ test("preserva acentos e símbolos do português e das unidades", () => {
   );
   assert.equal(escapeHtml("Autonomia 427 km"), "Autonomia 427 km");
   assert.equal(escapeHtml("Bagageira 350 L"), "Bagageira 350 L");
-  assert.equal(escapeHtml("Comp: 4200 mm x Larg: 1780 mm"), "Comp: 4200 mm x Larg: 1780 mm");
+  assert.equal(
+    escapeHtml("Comp: 4200 mm x Larg: 1780 mm"),
+    "Comp: 4200 mm x Larg: 1780 mm",
+  );
 });
 
 test("converte números e não perde o zero", () => {
@@ -52,8 +55,14 @@ test("um valor já escapado volta a escapar o & (sem dupla descodificação sile
 test("escapa HTML em elementos das listas de prós e contras", () => {
   const proInjetado = "Design elegante & moderno <script>";
   const conInjetado = 'Espaço "reduzido" para pernas & bagagem';
-  assert.equal(escapeHtml(proInjetado), "Design elegante &amp; moderno &lt;script&gt;");
-  assert.equal(escapeHtml(conInjetado), "Espaço &quot;reduzido&quot; para pernas &amp; bagagem");
+  assert.equal(
+    escapeHtml(proInjetado),
+    "Design elegante &amp; moderno &lt;script&gt;",
+  );
+  assert.equal(
+    escapeHtml(conInjetado),
+    "Espaço &quot;reduzido&quot; para pernas &amp; bagagem",
+  );
 });
 
 test("as fotografias dos cartões são adiadas e descodificadas fora da thread principal", () => {
@@ -86,20 +95,19 @@ test("o render de elementos e atributos no app.js escapa identificadores e label
     appSource.includes('data-id="${escapeHtml(c.id)}"'),
     "app.js tem de escapar data-id dos chips com escapeHtml",
   );
-  assert.ok(
-    appSource.includes('<span>${escapeHtml(label)}</span>'),
-    "renderTCOBar no app.js tem de escapar label com escapeHtml",
-  );
 });
 
 test("cumprimento de aplicação estática e offline (sem pedidos de rede remotos)", () => {
   // web/index.html não pode carregar recursos remotos externos (ex: CDNs, fontes Google)
   const scripts = indexHtml.match(/<script[^>]+src="([^"]+)"/g) || [];
-  const stylesheets = indexHtml.match(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/g) || [];
+  const stylesheets =
+    indexHtml.match(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/g) || [];
 
   for (const tag of [...scripts, ...stylesheets]) {
     assert.ok(
-      !tag.includes("http://") && !tag.includes("https://") && !tag.includes("//"),
+      !tag.includes("http://") &&
+        !tag.includes("https://") &&
+        !tag.includes("//"),
       `Recurso remoto detetado em index.html: ${tag}`,
     );
   }

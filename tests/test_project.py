@@ -1,6 +1,7 @@
 import json
 import re
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -42,9 +43,15 @@ class ProjectDataTests(unittest.TestCase):
             self.assertEqual(model["powertrain"], "BEV")
             self.assertEqual(model["availability_status"], "available")
             for variant in model["variants"]:
-                self.assertLessEqual(effective_price(variant["pricing"]), 40_000)
-                if variant["pricing"].get("particular_campaign_price_vat_incl"):
-                    self.assertTrue(variant["pricing"].get("campaign_conditions"))
+                price = effective_price(variant["pricing"])
+                if variant["eligibility_tier"] == "confirmed_eligible":
+                    self.assertIsNotNone(price)
+                    self.assertLessEqual(price, 40_000)
+                else:
+                    self.assertIsNone(price, "referências não podem alimentar preço efetivo")
+                for offer in variant["pricing"]["offers"]:
+                    if offer["kind"] == "campaign_price" and offer["classification"] == "confirmed":
+                        self.assertTrue(offer["conditions"])
 
     def test_every_vehicle_source_is_official(self):
         for model in self.models:
@@ -71,8 +78,11 @@ class ProjectDataTests(unittest.TestCase):
         self.assertEqual(len(dealer_brands), len(active_brands))
 
     def test_generated_bundle_matches_catalog(self):
-        compile_data.compile_data()
-        text = compile_data.BUNDLE_PATH.read_text(encoding="utf-8")
+        with tempfile.TemporaryDirectory() as temporary:
+            bundle_path = Path(temporary) / "car_data.js"
+            with mock.patch.object(compile_data, "BUNDLE_PATH", bundle_path), mock.patch.object(compile_data, "stamp_index", return_value=False):
+                compile_data.compile_data()
+            text = bundle_path.read_text(encoding="utf-8")
         payload = text.split("const CAR_DATA = ", 1)[1].split(";\nconst DEALER_DATA = ", 1)[0]
         self.assertEqual(json.loads(payload), self.models)
 

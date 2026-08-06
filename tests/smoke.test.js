@@ -117,7 +117,7 @@ test(
         partidas: imgs.filter(i => i.complete && i.naturalWidth === 0).length,
         fallbacks: [...document.querySelectorAll('.card-image-fallback')].filter(d => d.style.display === 'flex').length,
         semTitulo: [...document.querySelectorAll('.car-card')].filter(c => !c.querySelector('.car-title')?.textContent?.trim()).length,
-        semPreco: [...document.querySelectorAll('.car-card')].filter(c => !/[0-9]/.test(c.querySelector('.car-price-tag')?.textContent || '')).length
+        semPreco: [...document.querySelectorAll('.car-card')].filter(c => !c.querySelector('.price-main')?.textContent?.trim()).length
       });
     })()`,
       ]);
@@ -147,7 +147,7 @@ test(
       assert.equal(
         visto.semPreco,
         0,
-        "todos os cartões têm de mostrar um preço",
+        "todos os cartões têm de mostrar valor confirmado, referência ou estado desconhecido",
       );
     } finally {
       servidor.kill();

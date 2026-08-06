@@ -102,6 +102,22 @@
       "verified_on": "2026-08-05"
     },
     {
+      "brand": "CUPRA",
+      "name": "CUPRA Garage Porto – Caetano Energy",
+      "address": "Rua do Amial, 714",
+      "postal_code": "4200-055",
+      "locality": "Porto",
+      "phone": "+351 225 081 000",
+      "email": null,
+      "official_url": "https://www.cupraofficial.pt/o-seu-cupra/concessionarios",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=CUPRA%20Garage%20Porto%20Rua%20do%20Amial%20714",
+      "services": [
+        "sales",
+        "service"
+      ],
+      "verified_on": "2026-08-06"
+    },
+    {
       "brand": "Citroën",
       "name": "Filinto Mota Grande Porto – Circunvalação",
       "address": "Estrada Exterior da Circunvalação, 10686",
@@ -111,22 +127,6 @@
       "email": "stand.circunvalacao@filintomota.pt",
       "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
-      "services": [
-        "sales",
-        "service"
-      ],
-      "verified_on": "2026-08-05"
-    },
-    {
-      "brand": "Cupra",
-      "name": "Cupra Garage Porto – Caetano Energy",
-      "address": "Rua do Amial, 714",
-      "postal_code": "4200-055",
-      "locality": "Porto",
-      "phone": "+351 225 081 000",
-      "email": null,
-      "official_url": "https://www.cupraofficial.pt/o-seu-cupra/concessionarios",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Cupra%20Garage%20Porto%20Amial",
       "services": [
         "sales",
         "service"

@@ -1,4 +1,37 @@
 {
+  "$schema": "https://opencode.ai/config.json",
+  "formatter": {
+    "ruff": {
+      "command": [
+        "uv",
+        "run",
+        "--group",
+        "dev",
+        "ruff",
+        "format",
+        "$FILE"
+      ],
+      "extensions": [
+        ".py",
+        ".pyi"
+      ]
+    },
+    "prettier": {
+      "command": [
+        "npx",
+        "--no-install",
+        "prettier",
+        "--write",
+        "$FILE"
+      ],
+      "extensions": [
+        ".json",
+        ".html",
+        ".css",
+        ".js"
+      ]
+    }
+  },
   "plugin": [
     ".opencode/plugins/graphify.js"
   ]

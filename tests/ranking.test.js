@@ -3,6 +3,8 @@
 const assert = require("node:assert/strict");
 const test = require("node:test");
 
+const VehiclePrices = require("../web/assets/js/prices.js");
+globalThis.VehiclePrices = VehiclePrices;
 const {
   WEIGHTS,
   getPriceRangeBreakdown,
@@ -11,7 +13,7 @@ const {
 
 function car({ price = 30_000, range = 400, year = 2025, reviews, technology }) {
   return {
-    pricing: { particular_list_price_vat_incl: price },
+    pricing: { offers: [{ type: "list", classification: "confirmed", amount_eur: price, vat_included: true, audience: "private", source_url: "https://example.test/price", verified_on: "2026-08-01" }] },
     specifications: { wltp_range_combined_km: range },
     release_year: year,
     user_reviews: reviews,

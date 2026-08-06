@@ -1,4 +1,4 @@
-"""Testes da remoção de campanhas expiradas e da cascata de elegibilidade.
+"""Testes da expiração de ofertas e da cascata de elegibilidade.
 
 Este passo apaga dados do catálogo, por isso os limites importam mais do que o
 caminho feliz: uma campanha sem validade publicada não pode ser declarada
@@ -18,17 +18,69 @@ from expire_campaigns import expire_catalog, is_expired
 HOJE = dt.date(2026, 8, 1)
 
 
-def pricing(campaign=None, expiry=None, listed=None):
+def offer(amount, *, kind="list_price", expiry=None, classification="confirmed"):
     return {
-        "particular_campaign_price_vat_incl": campaign,
-        "particular_list_price_vat_incl": listed,
-        "campaign_conditions": "condições" if campaign else None,
-        "campaign_valid_until": expiry,
+        "kind": kind,
+        "classification": classification,
+        "amount_eur": amount,
+        "currency": "EUR",
+        "source_url": "https://exemplo.pt/modelo",
+        "source_authority": "manufacturer_or_importer_pt",
+        "market": "PT",
+        "variant": "Base",
+        "conditions": "condições" if kind == "campaign_price" else None,
+        "customer": "private",
+        "audience": "particular",
+        "vat": "included",
+        "vat_included": True,
+        "proof": {
+            "url": "https://exemplo.pt/modelo",
+            "status": "verified",
+            "authority": "manufacturer_or_importer_pt",
+            "source_authority": "manufacturer_or_importer_pt",
+            "source_url": "https://exemplo.pt/modelo",
+            "source_type": "official_model",
+            "market": "PT",
+            "audience": "particular",
+            "customer": "private",
+            "variant": "Base",
+            "vat_basis": "included",
+            "recorded_on": "2026-08-01",
+            "verified_on": "2026-08-01",
+            "literal_excerpt": f"Preço {amount} €",
+        },
+        "evidence": f"Preço {amount} €",
+        "evidence_record": {
+            "source_url": "https://exemplo.pt/modelo",
+            "recorded_on": "2026-08-01",
+            "verified_on": "2026-08-01",
+            "literal_excerpt": f"Preço {amount} €",
+        },
+        "derivation": None,
+        "recorded_on": "2026-08-01",
+        "verified_on": "2026-08-01",
+        "validity": {"valid_from": None, "valid_until": expiry},
+        "valid_until": expiry,
     }
 
 
+def pricing(campaign=None, expiry=None, listed=None):
+    offers = []
+    if listed is not None:
+        offers.append(offer(listed))
+    if campaign is not None:
+        offers.append(offer(campaign, kind="campaign_price", expiry=expiry))
+    return {"offers": offers}
+
+
 def catalog(*variants, brand="Marca", model="Modelo"):
-    return {"models": [{"brand": brand, "model": model, "variants": [{"name": f"v{i}", "pricing": p} for i, p in enumerate(variants)]}]}
+    return {
+        "models": [{
+            "brand": brand,
+            "model": model,
+            "variants": [{"name": f"v{i}", "pricing": p} for i, p in enumerate(variants)],
+        }]
+    }
 
 
 class IsExpiredTests(unittest.TestCase):
@@ -62,11 +114,11 @@ class CascadeTests(unittest.TestCase):
         data = catalog(pricing(37_830, "2026-07-31", listed=39_000))
         report = expire_catalog(data, {"dealers": []}, HOJE)
         variant = data["models"][0]["variants"][0]
-        self.assertIsNone(variant["pricing"]["particular_campaign_price_vat_incl"])
-        self.assertIsNone(variant["pricing"]["campaign_conditions"])
-        self.assertIsNone(variant["pricing"]["campaign_valid_until"])
-        self.assertEqual(variant["pricing"]["particular_list_price_vat_incl"], 39_000)
-        self.assertTrue(any("CAMPANHA EXPIRADA" in line for line in report))
+        self.assertEqual(len(variant["pricing"]["offers"]), 2)
+        campaign = next(item for item in variant["pricing"]["offers"] if item["kind"] == "campaign_price")
+        self.assertEqual(campaign["validity"]["valid_until"], "2026-07-31")
+        self.assertEqual(variant["eligibility_tier"], "confirmed_eligible")
+        self.assertTrue(any("OFERTA EXPIRADA" in line for line in report))
         self.assertFalse(any("VARIANTE REMOVIDA" in line for line in report))
 
     def test_campanha_expirada_com_pvp_acima_do_limite_remove_a_variante(self):
@@ -78,7 +130,7 @@ class CascadeTests(unittest.TestCase):
         data = catalog(pricing(30_000, "2026-07-31", listed=None))
         report = expire_catalog(data, {"dealers": []}, HOJE)
         self.assertEqual(data["models"], [])
-        self.assertTrue(any("ficou sem preço elegível" in line for line in report))
+        self.assertTrue(any("VARIANTE REMOVIDA" in line for line in report))
 
     def test_variante_elegivel_sobrevive_e_o_modelo_fica(self):
         data = catalog(
@@ -93,7 +145,8 @@ class CascadeTests(unittest.TestCase):
         data = catalog(pricing(26_560, "2026-08-31", listed=28_190))
         report = expire_catalog(data, {"dealers": []}, HOJE)
         self.assertEqual(report, [])
-        self.assertEqual(data["models"][0]["variants"][0]["pricing"]["particular_campaign_price_vat_incl"], 26_560)
+        campaign = next(item for item in data["models"][0]["variants"][0]["pricing"]["offers"] if item["kind"] == "campaign_price")
+        self.assertEqual(campaign["amount_eur"], 26_560)
 
     def test_marca_sem_modelos_perde_o_concessionario(self):
         data = catalog(pricing(35_003, "2026-07-31", listed=47_003), brand="Jeep")
@@ -115,8 +168,10 @@ class CascadeTests(unittest.TestCase):
 
     def test_correr_duas_vezes_nao_muda_mais_nada(self):
         data = catalog(pricing(37_830, "2026-07-31", listed=39_000))
-        expire_catalog(data, {"dealers": []}, HOJE)
-        self.assertEqual(expire_catalog(data, {"dealers": []}, HOJE), [])
+        primeira = expire_catalog(data, {"dealers": []}, HOJE)
+        segunda = expire_catalog(data, {"dealers": []}, HOJE)
+        self.assertEqual(segunda, primeira)
+        self.assertEqual(data["models"][0]["variants"][0]["eligibility_tier"], "confirmed_eligible")
 
 
 if __name__ == "__main__":

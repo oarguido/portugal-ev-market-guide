@@ -57,8 +57,11 @@ class StalenessTests(unittest.TestCase):
         def catalog_with_expiry(expiry: str) -> dict:
             data = catalog_verified_on(validate_data.TODAY.isoformat())
             data["models"][0]["variants"][0]["pricing"] = {
-                "particular_campaign_price_vat_incl": 29_990,
-                "campaign_valid_until": expiry,
+                "offers": [{
+                    "kind": "campaign_price",
+                    "amount_eur": 29_990,
+                    "validity": {"valid_from": None, "valid_until": expiry},
+                }],
             }
             return data
 
@@ -71,8 +74,11 @@ class StalenessTests(unittest.TestCase):
         """Uma validade órfã sem campanha ativa não é uma campanha expirada."""
         data = catalog_verified_on(validate_data.TODAY.isoformat())
         data["models"][0]["variants"][0]["pricing"] = {
-            "particular_campaign_price_vat_incl": None,
-            "campaign_valid_until": (validate_data.TODAY - dt.timedelta(days=30)).isoformat(),
+            "offers": [{
+                "kind": "list_price",
+                "amount_eur": 29_990,
+                "validity": {"valid_from": None, "valid_until": (validate_data.TODAY - dt.timedelta(days=30)).isoformat()},
+            }],
         }
         self.assertEqual(staleness_warnings(data, EMPTY_DEALERS), [])
 

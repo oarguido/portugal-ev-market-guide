@@ -2,7 +2,9 @@
 
 This intentionally never guesses new prices. It downloads every official source,
 stores a content fingerprint, reports changed pages for human review, optionally
-refreshes official Open Graph photos, then validates and compiles approved JSON.
+stages Open Graph photo proposals for visual review, then validates and compiles
+approved JSON. Photo proposals never touch canonical assets or catalogue metadata
+until a separate explicit acceptance command is used.
 """
 
 from __future__ import annotations
@@ -18,6 +20,7 @@ import unicodedata
 import urllib.error
 import urllib.request
 from html.parser import HTMLParser
+from pathlib import Path
 from typing import ClassVar
 from urllib.parse import urljoin
 
@@ -33,6 +36,7 @@ RETRYABLE_HTTP_CODES = {500, 502, 503, 504}
 DYNAMIC_VISIBLE_TEXT = re.compile(r"\bAtualmente\s+(?:aberto|fechado)\b", re.IGNORECASE)
 OG_IMAGE = re.compile(r'<meta[^>]+(?:property|name)=["\']og:image["\'][^>]+content=["\']([^"\']+)', re.IGNORECASE)
 OG_IMAGE_REVERSED = re.compile(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\']og:image["\']', re.IGNORECASE)
+MIN_PHOTO_BYTES = 5_000
 
 
 class VisibleTextParser(HTMLParser):
@@ -187,22 +191,138 @@ def slug(model: dict) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value).strip("-")
 
 
-def refresh_photo(model: dict, html: bytes, page_url: str) -> bool:
+def photo_proposal_root() -> Path:
+    """Pasta ignorada pelo Git onde uma pessoa pode abrir propostas visuais."""
+    return ROOT / "archive" / "photo-proposals"
+
+
+def photo_extension(data: bytes) -> str | None:
+    if data.startswith(b"\x89PNG\r\n\x1a\n"):
+        return ".png"
+    if data[:2] == b"\xff\xd8":
+        return ".jpg"
+    if len(data) >= 12 and data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return ".webp"
+    return None
+
+
+def _photo_candidate(html: bytes, page_url: str) -> tuple[bytes, str, str] | None:
     text = html.decode("utf-8", errors="ignore")
     match = OG_IMAGE.search(text) or OG_IMAGE_REVERSED.search(text)
     if not match:
-        return False
+        return None
     image_url = urljoin(page_url, match.group(1).replace("&amp;", "&"))
-    image_data, _ = fetch(image_url)
-    if len(image_data) < 5_000:
-        return False
-    extension = ".png" if image_data.startswith(b"\x89PNG") else ".jpg"
-    directory = ROOT / "web" / "assets" / "images" / "vehicles" / slug(model)
+    try:
+        image_data, final_url = fetch(image_url)
+    except (OSError, TimeoutError):
+        return None
+    if len(image_data) < MIN_PHOTO_BYTES:
+        return None
+    extension = photo_extension(image_data)
+    if extension is None:
+        return None
+    return image_data, final_url, extension
+
+
+def _load_photo_manifest() -> dict[str, dict]:
+    path = photo_proposal_root() / "manifest.json"
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return payload if isinstance(payload, dict) else {}
+
+
+def _save_photo_manifest(manifest: dict[str, dict]) -> None:
+    root = photo_proposal_root()
+    root.mkdir(parents=True, exist_ok=True)
+    path = root / "manifest.json"
+    if manifest:
+        path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    else:
+        path.unlink(missing_ok=True)
+
+
+def _stage_photo_proposal(model: dict, image_data: bytes, source_url: str, extension: str) -> None:
+    root = photo_proposal_root()
+    directory = root / slug(model)
     directory.mkdir(parents=True, exist_ok=True)
     target = directory / f"official{extension}"
     target.write_bytes(image_data)
-    model["image_path"] = str(target.relative_to(ROOT / "web"))
+    manifest = _load_photo_manifest()
+    manifest[slug(model)] = {
+        "brand": model["brand"],
+        "model": model["model"],
+        "path": str(target.relative_to(root)),
+        "source_url": source_url,
+    }
+    _save_photo_manifest(manifest)
+
+
+def refresh_photo(model: dict, html: bytes, page_url: str) -> bool:
+    """Stage an Open Graph photo proposal; never mutate canonical catalogue data.
+
+    The image can be a valid photo of a different vehicle. Only a person can
+    make that visual distinction, so automatic discovery writes to ignored
+    ``archive/photo-proposals`` and leaves ``image_path`` untouched.
+    """
+    candidate = _photo_candidate(html, page_url)
+    if candidate is None:
+        return False
+    image_data, source_url, extension = candidate
+    _stage_photo_proposal(model, image_data, source_url, extension)
     return True
+
+
+def accept_photo_proposals(catalog: dict) -> list[str]:
+    """Apply staged photos only after explicit human visual review.
+
+    Acceptance changes only the local image path. It deliberately does not date
+    ``last_verified`` or any ``data_sources`` entry: reviewing a picture is not
+    proof that model facts or prices were reverified.
+    """
+    root = photo_proposal_root().resolve()
+    manifest = _load_photo_manifest()
+    accepted: list[str] = []
+    remaining: dict[str, dict] = {}
+    for key, proposal in sorted(manifest.items()):
+        if not isinstance(proposal, dict):
+            continue
+        model = next(
+            (item for item in catalog.get("models", []) if item.get("brand") == proposal.get("brand") and item.get("model") == proposal.get("model")),
+            None,
+        )
+        relative_path = proposal.get("path")
+        if model is None or not isinstance(relative_path, str):
+            remaining[key] = proposal
+            continue
+        candidate = (root / relative_path).resolve()
+        try:
+            candidate.relative_to(root)
+        except ValueError:
+            remaining[key] = proposal
+            continue
+        try:
+            image_data = candidate.read_bytes()
+        except OSError:
+            remaining[key] = proposal
+            continue
+        extension = photo_extension(image_data)
+        if len(image_data) < MIN_PHOTO_BYTES or extension is None:
+            remaining[key] = proposal
+            continue
+
+        directory = ROOT / "web" / "assets" / "images" / "vehicles" / slug(model)
+        directory.mkdir(parents=True, exist_ok=True)
+        target = directory / f"official{extension}"
+        target.write_bytes(image_data)
+        model["image_path"] = str(target.relative_to(ROOT / "web"))
+        accepted.append(f"{model['brand']} {model['model']}")
+
+    _save_photo_manifest(remaining)
+    return accepted
 
 
 def save_snapshots(previous: dict, current: dict) -> None:
@@ -222,7 +342,16 @@ def save_snapshots(previous: dict, current: dict) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--refresh-photos", action="store_true")
+    parser.add_argument(
+        "--refresh-photos",
+        action="store_true",
+        help="descobrir e guardar propostas de fotografia para revisão visual; não altera o catálogo",
+    )
+    parser.add_argument(
+        "--accept-photo-review",
+        action="store_true",
+        help="aplicar propostas já revistas visualmente em archive/photo-proposals",
+    )
     parser.add_argument("--accept-source-changes", action="store_true", help="Store current fingerprints after reviewing changed official pages")
     parser.add_argument(
         "--retry-blocked",
@@ -230,6 +359,8 @@ def main() -> int:
         help="Ler apenas as fontes que ainda só têm um código HTTP na baseline",
     )
     args = parser.parse_args()
+    if args.refresh_photos and args.accept_photo_review:
+        parser.error("usar --refresh-photos e --accept-photo-review em execuções separadas")
     catalog = load_catalog()
     dealer_catalog = load_dealers()
     previous = json.loads(CACHE.read_text(encoding="utf-8")) if CACHE.exists() else {}
@@ -380,8 +511,10 @@ def main() -> int:
         for model in catalog["models"]:
             body, final_url = pages.get(model["official_link"], (b"", model["official_link"]))
             if body and refresh_photo(model, body, final_url):
-                print(f"FOTO {model['brand']} {model['model']}")
-        (ROOT / "data" / "vehicles" / "pt_market.json").write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                print(
+                    f"FOTO PROPOSTA {model['brand']} {model['model']}: "
+                    "abrir archive/photo-proposals e rever visualmente antes de aceitar"
+                )
     if not failed and (args.accept_source_changes or not CACHE.exists()):
         save_snapshots(previous, current)
     if failed:
@@ -398,12 +531,19 @@ def main() -> int:
         print("\nFontes alteradas; rever os campos associados e voltar a executar com --accept-source-changes:")
         print("\n".join(changed))
         return 2
+    if args.accept_photo_review:
+        accepted = accept_photo_proposals(catalog)
+        if accepted:
+            catalog_path = ROOT / "data" / "vehicles" / "pt_market.json"
+            catalog_path.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            print("FOTOS ACEITES APÓS REVISÃO VISUAL: " + ", ".join(accepted))
+        else:
+            print("Nenhuma proposta de fotografia revista para aceitar.")
     commands = [
         [sys.executable, str(ROOT / "scripts" / "validate_data.py")],
         [sys.executable, str(ROOT / "scripts" / "compile_data.py")],
-        # Os testes correm diretamente e não por `make test`: o Makefile foi
-        # reduzido a três alvos e esse deixou de existir. Como o `make atualizar`
-        # chama este script com `-@`, a falha vinha a ser engolida em silêncio.
+        # Os testes correm diretamente e não por `make test`, para este gate não
+        # depender de targets de shell nem esconder uma falha no subprocesso.
         [sys.executable, "-m", "unittest", "discover", "-s", "tests"],
         ["node", "--test", *sorted(str(path) for path in (ROOT / "tests").glob("*.test.js"))],
     ]

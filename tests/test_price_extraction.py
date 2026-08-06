@@ -9,7 +9,6 @@ catálogo passaria a aceitar o que o modelo imaginasse.
 É a verificação mais consequente do projeto inteiro.
 """
 
-import datetime as dt
 import sys
 import unittest
 from pathlib import Path
@@ -26,16 +25,40 @@ PAGINA = (
 )
 
 
-def proposta(**alteracoes) -> dict:
-    base = {
-        "campaign_price_vat_incl": 35553.0,
-        "list_price_vat_incl": 46553.0,
-        "campaign_valid_until": "2026-08-31",
-        "campaign_conditions": "Crédito 36 meses",
-        "evidence": "PVPR de 46.553,00€, PVP campanha de 35.553,00€",
+def proposta(
+    *,
+    campaign_amount=35553.0,
+    list_amount=46553.0,
+    campaign_valid_until="2026-08-31",
+    campaign_conditions: str | None = "Crédito 36 meses",
+    evidence="PVPR de 46.553,00€, PVP campanha de 35.553,00€",
+) -> dict:
+    return {
+        "offers": [
+            {
+                "kind": "list_price",
+                "amount_eur": list_amount,
+                "vat": "included",
+                "customer": "private",
+                "variant": "Base",
+                "conditions": None,
+                "validity": {"valid_from": None, "valid_until": None},
+                "evidence": evidence,
+                "derivation": None,
+            },
+            {
+                "kind": "campaign_price",
+                "amount_eur": campaign_amount,
+                "vat": "included",
+                "customer": "private",
+                "variant": "Base",
+                "conditions": campaign_conditions,
+                "validity": {"valid_from": None, "valid_until": campaign_valid_until},
+                "evidence": evidence,
+                "derivation": None,
+            },
+        ]
     }
-    base.update(alteracoes)
-    return base
 
 
 class BarreiraDaCitacao(unittest.TestCase):
@@ -52,11 +75,11 @@ class BarreiraDaCitacao(unittest.TestCase):
         self.assertTrue(any("não aparece literalmente" in p for p in problemas), problemas)
 
     def test_preco_de_campanha_que_nao_esta_na_pagina_e_recusado(self):
-        problemas = verify(proposta(campaign_price_vat_incl=31999.0), PAGINA)
+        problemas = verify(proposta(campaign_amount=31999.0), PAGINA)
         self.assertTrue(any("31999" in p and "não aparece" in p for p in problemas), problemas)
 
     def test_pvp_que_nao_esta_na_pagina_e_recusado(self):
-        problemas = verify(proposta(list_price_vat_incl=44000.0), PAGINA)
+        problemas = verify(proposta(list_amount=44000.0), PAGINA)
         self.assertTrue(any("44000" in p and "não aparece" in p for p in problemas), problemas)
 
     def test_validade_que_nao_esta_na_pagina_e_recusada(self):
@@ -71,7 +94,7 @@ class BarreiraDaCitacao(unittest.TestCase):
     def test_preco_negativo_ou_zero_e_recusado(self):
         for valor in (0, -100):
             with self.subTest(valor=valor):
-                problemas = verify(proposta(campaign_price_vat_incl=valor), PAGINA)
+                problemas = verify(proposta(campaign_amount=valor), PAGINA)
                 self.assertTrue(problemas, f"{valor} devia ser recusado")
 
     def test_validade_fora_do_formato_iso_e_recusada(self):
@@ -105,7 +128,12 @@ class EscolhaDaVariante(unittest.TestCase):
     def variante(self, nome, campanha=None, pvp=None) -> dict:
         return {
             "name": nome,
-            "pricing": {"particular_campaign_price_vat_incl": campanha, "particular_list_price_vat_incl": pvp},
+            "pricing": {
+                "offers": [
+                    *([{"kind": "campaign_price", "amount_eur": campanha}] if campanha is not None else []),
+                    *([{"kind": "list_price", "amount_eur": pvp}] if pvp is not None else []),
+                ]
+            },
         }
 
     def test_modelo_com_uma_variante_e_inequivoco(self):
@@ -122,19 +150,18 @@ class EscolhaDaVariante(unittest.TestCase):
 
     def test_proposta_ambigua_nao_altera_o_catalogo(self):
         catalogo = {"models": [self.modelo(self.variante("Base", pvp=29000), self.variante("Alta", pvp=31000))]}
-        antes = catalogo["models"][0]["variants"][0]["pricing"]["particular_list_price_vat_incl"]
+        antes = catalogo["models"][0]["variants"][0]["pricing"]["offers"]
         relatorio = apply_proposals(catalogo, [{**proposta(), "brand": "Marca", "model": "Modelo"}])
-        self.assertTrue(any("AMBÍGUO" in linha for linha in relatorio), relatorio)
-        self.assertEqual(catalogo["models"][0]["variants"][0]["pricing"]["particular_list_price_vat_incl"], antes)
+        self.assertTrue(any("NÃO APLICADA" in linha for linha in relatorio), relatorio)
+        self.assertEqual(catalogo["models"][0]["variants"][0]["pricing"]["offers"], antes)
 
-    def test_aplicar_datou_a_verificacao_de_hoje(self):
-        hoje = dt.datetime.now(tz=__import__("zoneinfo").ZoneInfo("Europe/Lisbon")).date().isoformat()
+    def test_aplicar_nao_muda_catalogo_nem_datas(self):
         modelo = self.modelo(self.variante("Base"))
         modelo["data_sources"] = [{"type": "official_model", "url": "https://exemplo.pt", "verified_on": "2020-01-01"}]
         catalogo = {"models": [modelo]}
         apply_proposals(catalogo, [{**proposta(), "brand": "Marca", "model": "Modelo"}])
-        self.assertEqual(catalogo["models"][0]["last_verified"], hoje)
-        self.assertEqual(catalogo["models"][0]["data_sources"][0]["verified_on"], hoje)
+        self.assertNotIn("last_verified", catalogo["models"][0])
+        self.assertEqual(catalogo["models"][0]["data_sources"][0]["verified_on"], "2020-01-01")
 
 
 if __name__ == "__main__":

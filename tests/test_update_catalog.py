@@ -1,4 +1,5 @@
 import contextlib
+import copy
 import io
 import pathlib
 import tempfile
@@ -11,10 +12,12 @@ from update_catalog import (
     BINARY_FINGERPRINT_VERSION,
     FETCH_ATTEMPTS,
     HTML_FINGERPRINT_VERSION,
+    accept_photo_proposals,
     blocked_snapshot,
     build_snapshot,
     fetch,
     normalized_visible_text,
+    refresh_photo,
     snapshot_changed,
 )
 
@@ -149,6 +152,81 @@ class SourceFingerprintTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn("REVER MANUALMENTE NO BROWSER", printed)
         self.assertIn("https://bloqueado.pt/modelo (HTTP 403)", printed)
+
+
+class PhotoProposalTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = pathlib.Path(self.tmp.name)
+        self.root_patch = patch.object(update_catalog, "ROOT", self.root)
+        self.root_patch.start()
+        self.addCleanup(self.root_patch.stop)
+        self.addCleanup(self.tmp.cleanup)
+        self.model = {
+            "brand": "Marca",
+            "model": "Modelo",
+            "official_link": "https://marca.pt/modelo",
+            "image_path": "assets/images/vehicles/marca-modelo/official.jpg",
+            "last_verified": "2026-01-01",
+            "data_sources": [{"url": "https://marca.pt/modelo", "verified_on": "2026-01-01"}],
+        }
+        self.canonical = self.root / "web" / self.model["image_path"]
+        self.canonical.parent.mkdir(parents=True)
+        self.original = b"canonical local photo"
+        self.canonical.write_bytes(self.original)
+        self.candidate = b"\xff\xd8" + b"photo from a different model" * 300
+
+    def test_mismatched_og_image_stays_proposal_and_cannot_replace_canonical(self):
+        html = b'<meta property="og:image" content="/other-model.jpg">'
+        with patch("update_catalog.fetch", return_value=(self.candidate, "https://marca.pt/other-model.jpg")):
+            self.assertTrue(refresh_photo(self.model, html, "https://marca.pt/modelo"))
+
+        self.assertEqual(self.model["image_path"], "assets/images/vehicles/marca-modelo/official.jpg")
+        self.assertEqual(self.canonical.read_bytes(), self.original)
+        proposal = self.root / "archive" / "photo-proposals" / "marca-modelo" / "official.jpg"
+        self.assertEqual(proposal.read_bytes(), self.candidate)
+        manifest = (proposal.parent.parent / "manifest.json").read_text(encoding="utf-8")
+        self.assertIn("other-model.jpg", manifest)
+
+    def test_missing_og_image_does_not_create_or_replace_photo(self):
+        with patch("update_catalog.fetch") as fetch_mock:
+            self.assertFalse(refresh_photo(self.model, b"<html><body>sem imagem</body></html>", "https://marca.pt/modelo"))
+        fetch_mock.assert_not_called()
+        self.assertEqual(self.model["image_path"], "assets/images/vehicles/marca-modelo/official.jpg")
+        self.assertEqual(self.canonical.read_bytes(), self.original)
+        self.assertFalse((self.root / "archive" / "photo-proposals").exists())
+
+    def test_acceptance_is_explicit_and_does_not_refresh_verification_metadata(self):
+        html = b'<meta property="og:image" content="/model.jpg">'
+        with patch("update_catalog.fetch", return_value=(self.candidate, "https://marca.pt/model.jpg")):
+            refresh_photo(self.model, html, "https://marca.pt/modelo")
+
+        catalog = {"models": [copy.deepcopy(self.model)]}
+        accepted = accept_photo_proposals(catalog)
+        self.assertEqual(accepted, ["Marca Modelo"])
+        accepted_model = catalog["models"][0]
+        self.assertEqual(self.canonical.read_bytes(), self.candidate)
+        self.assertEqual(accepted_model["last_verified"], "2026-01-01")
+        self.assertEqual(accepted_model["data_sources"][0]["verified_on"], "2026-01-01")
+
+    @patch("update_catalog.subprocess.run")
+    def test_refresh_photos_flag_preserves_catalog_and_dates(self, run):
+        catalog = {"discovery_sources": [], "models": [copy.deepcopy(self.model)]}
+        page = b'<html><meta property="og:image" content="/model.jpg"></html>'
+        cache = self.root / "source_snapshots.json"
+        with (
+            patch.object(update_catalog, "CACHE", cache),
+            patch.object(update_catalog, "load_catalog", return_value=catalog),
+            patch.object(update_catalog, "load_dealers", return_value={"dealers": []}),
+            patch("update_catalog.fetch", side_effect=[(page, "https://marca.pt/modelo"), (self.candidate, "https://marca.pt/model.jpg")]),
+            patch("sys.argv", ["update_catalog.py", "--refresh-photos"]),
+        ):
+            code = update_catalog.main()
+
+        self.assertEqual(code, 0)
+        self.assertEqual(catalog["models"][0], self.model)
+        self.assertEqual(run.call_count, 4)
+        self.assertTrue((self.root / "archive" / "photo-proposals" / "marca-modelo" / "official.jpg").exists())
 
 
 if __name__ == "__main__":

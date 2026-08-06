@@ -1,21 +1,11 @@
 #!/usr/bin/env python3
-"""Remover do catálogo as campanhas cuja validade já passou, e o que deixa de ser elegível.
+"""Recalcular elegibilidade v3 sem apagar ofertas de referência.
 
-Uma campanha expirada não é um aviso: é informação errada no portal. Quem abre a
-aplicação vê um preço que já ninguém pratica. Este passo apaga o preço de
-campanha, as condições e a validade, e depois deixa o catálogo cair para o PVP.
-
-A queda tem consequências em cascata, todas na secção 6 do AGENTS.md:
-
-- se a variante ficar sem preço elegível até ao limite, deixa de ser elegível e
-  sai do catálogo (regra 6.10);
-- se o modelo ficar sem variantes, sai também (regra 6.11);
-- se a marca ficar sem modelos, o concessionário preferencial dessa marca sai
-  (regra 9), porque o conjunto de marcas tem de ser igual dos dois lados.
-
-Nada é adivinhado: a única coisa que este script decide é que uma data que já
-passou, passou. Se a marca publicou entretanto uma campanha nova, ela volta a
-entrar pela revisão humana das fontes — não por omissão deste passo.
+Uma oferta expirada deixa de contar como confirmada atual, mas permanece no
+registo para não transformar histórico ou preço de referência em ausência de
+dados. Variantes com ofertas ``reference`` sobrevivem como
+``potential_reference``; só variantes sem qualquer base de preço atual são
+removidas.
 """
 
 from __future__ import annotations
@@ -26,89 +16,91 @@ import json
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from rules import MAX_PRICE_EUR
+from rules import effective_confirmed_offer, iso_date, variant_eligibility_tier
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "vehicles" / "pt_market.json"
 DEALERS_PATH = ROOT / "data" / "dealers" / "near_sao_mamede.json"
-CAMPAIGN_FIELDS = (
-    "particular_campaign_price_vat_incl",
-    "campaign_conditions",
-    "campaign_valid_until",
-)
 
 
 def today() -> dt.date:
     return dt.datetime.now(tz=ZoneInfo("Europe/Lisbon")).date()
 
 
-def effective_price(pricing: dict) -> float | None:
-    return pricing.get("particular_campaign_price_vat_incl") or pricing.get("particular_list_price_vat_incl")
+def effective_price(pricing: dict, reference: dt.date | None = None) -> float | None:
+    variant = {"pricing": pricing}
+    offer = effective_confirmed_offer(variant, reference or today())
+    return offer.get("amount_eur") if offer else None
+
+
+def expired_campaigns(pricing: dict, reference: dt.date) -> list[dict]:
+    offers = pricing.get("offers", []) if isinstance(pricing, dict) else []
+    return [
+        offer
+        for offer in offers
+        if isinstance(offer, dict)
+        and offer.get("kind") == "campaign_price"
+        and isinstance(offer.get("validity"), dict)
+        and offer["validity"].get("valid_until")
+        and (expiry := iso_date(offer["validity"]["valid_until"])) is not None
+        and expiry < reference
+    ]
 
 
 def is_expired(pricing: dict, reference: dt.date) -> bool:
-    """Uma campanha só expira se tiver preço de campanha E validade já passada.
-
-    Sem validade publicada o catálogo guarda `null` (AGENTS.md secção 8) e a
-    campanha não pode ser declarada expirada — tem de ser confirmada na fonte.
-    """
-    if not pricing.get("particular_campaign_price_vat_incl"):
-        return False
-    expiry = pricing.get("campaign_valid_until")
-    if not expiry:
-        return False
-    try:
-        return dt.date.fromisoformat(expiry) < reference
-    except (TypeError, ValueError):
-        return False
+    """Compatibilidade de API: existe campanha v3 com validade já passada."""
+    return bool(expired_campaigns(pricing, reference))
 
 
 def expire_catalog(catalog: dict, dealer_catalog: dict, reference: dt.date) -> list[str]:
-    """Aplicar a cascata no sítio e devolver o relatório do que mudou."""
     report: list[str] = []
-    surviving_models = []
+    surviving_models: list[dict] = []
 
     for model in catalog.get("models", []):
         label = f"{model.get('brand', '?')} {model.get('model', '?')}"
-        surviving_variants = []
-
+        surviving_variants: list[dict] = []
         for variant in model.get("variants", []):
             vlabel = f"{label} / {variant.get('name', '?')}"
             pricing = variant.get("pricing", {})
+            for offer in expired_campaigns(pricing, reference):
+                report.append(
+                    f"OFERTA EXPIRADA    {vlabel}: {offer.get('amount_eur')} € válida até "
+                    f"{offer.get('validity', {}).get('valid_until')} excluída da elegibilidade confirmada"
+                )
 
-            if is_expired(pricing, reference):
-                expired_price = pricing["particular_campaign_price_vat_incl"]
-                expiry = pricing["campaign_valid_until"]
-                for field in CAMPAIGN_FIELDS:
-                    pricing[field] = None
-                report.append(f"CAMPANHA EXPIRADA  {vlabel}: {expired_price} € válida até {expiry} removida")
-
-            price = effective_price(pricing)
-            if not isinstance(price, (int, float)) or price <= 0:
-                report.append(f"VARIANTE REMOVIDA  {vlabel}: ficou sem preço elegível")
-                continue
-            if price > MAX_PRICE_EUR:
-                report.append(f"VARIANTE REMOVIDA  {vlabel}: PVP {price} € excede o limite de {MAX_PRICE_EUR} €")
+            tier = variant_eligibility_tier(variant, reference)
+            variant["eligibility_status"] = tier
+            variant["eligibility_tier"] = tier
+            if tier == "not_demonstrated":
+                report.append(f"VARIANTE REMOVIDA  {vlabel}: sem oferta atual ou referência conservável")
                 continue
             surviving_variants.append(variant)
 
         if not surviving_variants:
-            report.append(f"MODELO REMOVIDO    {label}: ficou sem variantes elegíveis")
+            report.append(f"MODELO REMOVIDO    {label}: ficou sem variantes demonstráveis")
             continue
         model["variants"] = surviving_variants
+        model_tier = "confirmed_eligible" if any(item.get("eligibility_tier") == "confirmed_eligible" for item in surviving_variants) else "potential_reference" if any(
+            item.get("eligibility_tier") == "potential_reference" for item in surviving_variants
+        ) else "not_demonstrated"
+        model["eligibility_status"] = model_tier
+        model["eligibility_tier"] = model_tier
+        model["eligibility_reason"] = {
+            "confirmed_eligible": "Existe oferta confirmada atual dentro do limite.",
+            "potential_reference": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+            "not_demonstrated": "Não existe oferta atual demonstrável.",
+        }[model_tier]
         surviving_models.append(model)
 
     catalog["models"] = surviving_models
-
     active_brands = {model["brand"] for model in surviving_models}
-    surviving_dealers = []
+    surviving_dealers: list[dict] = []
     for dealer in dealer_catalog.get("dealers", []):
         if dealer.get("brand") in active_brands:
             surviving_dealers.append(dealer)
         else:
             report.append(f"STAND REMOVIDO     {dealer.get('brand', '?')}: a marca deixou de ter modelos no catálogo")
     dealer_catalog["dealers"] = surviving_dealers
-
     return report
 
 
@@ -118,24 +110,20 @@ def write_json(path: Path, payload: dict) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--apply", action="store_true", help="escrever as alterações nos JSON canónicos")
+    parser.add_argument("--apply", action="store_true", help="escrever alterações v3 nos JSON canónicos")
     parser.add_argument("--date", help="data de referência ISO (por omissão, hoje em Lisboa)")
     args = parser.parse_args()
-
     reference = dt.date.fromisoformat(args.date) if args.date else today()
     catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     dealer_catalog = json.loads(DEALERS_PATH.read_text(encoding="utf-8"))
-
     report = expire_catalog(catalog, dealer_catalog, reference)
     if not report:
-        print(f"Nenhuma campanha expirada em {reference}.")
+        print(f"Nenhuma oferta expirada em {reference}.")
         return 0
-
     print("\n".join(report))
     if not args.apply:
         print(f"\n{len(report)} alteração(ões) pendentes; nada foi escrito. Repetir com --apply.")
         return 0
-
     write_json(CATALOG_PATH, catalog)
     write_json(DEALERS_PATH, dealer_catalog)
     variants = sum(len(model["variants"]) for model in catalog["models"])
