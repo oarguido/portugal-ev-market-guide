@@ -752,12 +752,17 @@
       "availability_status": "available",
       "official_link": "https://byd-auto.pt/modelos/byd-dolphin/",
       "image_path": "assets/images/vehicles/byd-dolphin/official.webp",
-      "last_verified": "2026-08-06",
+      "last_verified": "2026-08-07",
       "data_sources": [
         {
           "type": "official_model",
           "url": "https://byd-auto.pt/modelos/byd-dolphin/",
-          "verified_on": "2026-08-06"
+          "verified_on": "2026-08-07"
+        },
+        {
+          "type": "official_campaign",
+          "url": "https://www.byd-auto.pt/campanhas/byd-dolphin",
+          "verified_on": "2026-08-07"
         }
       ],
       "variants": [
@@ -772,59 +777,59 @@
           "pricing": {
             "offers": [
               {
-                "classification": "confirmed",
+                "classification": "reference",
                 "amount_eur": 25990.0,
                 "currency": "EUR",
-                "source_url": "https://byd-auto.pt/modelos/byd-dolphin/",
+                "source_url": "https://www.byd-auto.pt/campanhas/byd-dolphin",
                 "source_authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "variant": "Comfort 60.4 kWh",
                 "conditions": null,
-                "vat_included": true,
+                "vat_included": false,
                 "proof": {
-                  "url": "https://byd-auto.pt/modelos/byd-dolphin/",
-                  "source_url": "https://byd-auto.pt/modelos/byd-dolphin/",
+                  "url": "https://www.byd-auto.pt/campanhas/byd-dolphin",
+                  "source_url": "https://www.byd-auto.pt/campanhas/byd-dolphin",
                   "authority": "manufacturer_or_importer_pt",
                   "market": "PT",
-                  "audience": "particular",
+                  "audience": "unknown",
                   "variant": "Comfort 60.4 kWh",
-                  "vat_basis": "included",
-                  "literal_excerpt": "PREÇO CHAVE NA MÃO 25.990€",
-                  "status": "verified",
-                  "source_type": "official_model",
-                  "recorded_on": "2026-08-06",
-                  "verified_on": "2026-08-06",
+                  "vat_basis": "excluded",
+                  "literal_excerpt": "Mobilidade inteligente, versátil e ainda mais sofisticada, a 25.990 € (+IVA)*.",
+                  "status": "legacy_unverified",
+                  "source_type": "official_campaign",
+                  "recorded_on": "2026-08-07",
+                  "verified_on": null,
                   "source_authority": "manufacturer_or_importer_pt",
-                  "customer": "private"
+                  "customer": "unknown"
                 },
                 "derivation": null,
-                "recorded_on": "2026-08-06",
-                "verified_on": "2026-08-06",
-                "legacy_unverified": false,
+                "recorded_on": "2026-08-07",
+                "verified_on": null,
+                "legacy_unverified": true,
                 "kind": "list_price",
-                "customer": "private",
-                "audience": "particular",
+                "customer": "unknown",
+                "audience": "unknown",
                 "validity": {
                   "valid_from": null,
                   "valid_until": null
                 },
                 "valid_until": null,
-                "vat": "included",
-                "vat_status": "included",
-                "evidence": "PREÇO CHAVE NA MÃO 25.990€",
+                "vat": "excluded",
+                "vat_status": "excluded",
+                "evidence": "Mobilidade inteligente, versátil e ainda mais sofisticada, a 25.990 € (+IVA)*.",
                 "evidence_record": {
-                  "url": "https://byd-auto.pt/modelos/byd-dolphin/",
-                  "source_url": "https://byd-auto.pt/modelos/byd-dolphin/",
+                  "url": "https://www.byd-auto.pt/campanhas/byd-dolphin",
+                  "source_url": "https://www.byd-auto.pt/campanhas/byd-dolphin",
                   "market": "PT",
-                  "recorded_on": "2026-08-06",
-                  "verified_on": "2026-08-06",
-                  "literal_excerpt": "PREÇO CHAVE NA MÃO 25.990€"
+                  "recorded_on": "2026-08-07",
+                  "verified_on": null,
+                  "literal_excerpt": "Mobilidade inteligente, versátil e ainda mais sofisticada, a 25.990 € (+IVA)*."
                 },
-                "source_type": "official_model"
+                "source_type": "official_campaign"
               }
             ]
           },
-          "eligibility_status": "confirmed_eligible",
+          "eligibility_status": "potential_reference",
           "battery_technology": {
             "chemistry": null,
             "generation": null,
@@ -832,17 +837,17 @@
             "source_url": null,
             "verified_on": null
           },
-          "eligibility_tier": "confirmed_eligible"
+          "eligibility_tier": "potential_reference"
         }
       ],
       "pros": [
-        "Preço particular confirmado com IVA incluído, sem promoção temporária a expirar",
+        "Dados comerciais de referência; confirmar preço particular, IVA e condições finais",
         "Habitáculo acolhedor com bom espaço para as pernas no banco traseiro",
         "Carregamento DC a 88 kW satisfatório para o dia a dia e viagens médias",
         "Garantia de fábrica alargada de 6 anos ou 150.000 km"
       ],
       "cons": [
-        "Bagageira de 345 L inferior a alguns concorrentes do segmento C",
+        "Bagageira de 364 L inferior a alguns concorrentes do segmento C",
         "Pneus de série com aderência limitada em piso molhado",
         "Sistema de infotainment com menus por vezes complexos em Português",
         "Estilo interior extravagante que pode não agradar a todos os clientes"
@@ -856,9 +861,9 @@
         "boot_capacity_l": 364,
         "frunk_capacity_l": null
       },
-      "eligibility_status": "confirmed_eligible",
-      "eligibility_reason": "PVP chave na mão de 25.990 € confirmado na página oficial BYD Portugal, para particulares, IVA incluído por convenção legal de preço de venda ao público.",
-      "eligibility_tier": "confirmed_eligible"
+      "eligibility_status": "potential_reference",
+      "eligibility_reason": "Página oficial BYD contradiz-se: a página do modelo mostra \"PREÇO CHAVE NA MÃO 25.990€\" mas a página da campanha e a mesma página do modelo dizem \"25.990 € (+IVA)\" — preço sem IVA. Sem IVA confirmado, não pode contar para o limite de 40.000 €.",
+      "eligibility_tier": "potential_reference"
     },
     {
       "brand": "BYD",
