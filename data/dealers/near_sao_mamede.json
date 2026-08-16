@@ -3,7 +3,7 @@
   "market": "PT",
   "reference_location": "São Mamede de Infesta, Matosinhos",
   "selection_rule": "Nearest official new-car sales location found for each active catalogue brand; confirm appointment and stock before travelling.",
-  "last_verified": "2026-08-05",
+  "last_verified": "2026-08-16",
   "dealers": [
     {
       "brand": "Abarth",
@@ -19,7 +19,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "AION",
@@ -35,7 +35,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Alfa Romeo",
@@ -45,13 +45,13 @@
       "locality": "Porto",
       "phone": "+351 220 001 430",
       "email": null,
-      "official_url": "https://www.cam.pt/",
+      "official_url": "https://rede.alfaromeo.pt/cam-porto/contacte-nos/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
       "services": [
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Alpine",
@@ -67,7 +67,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "BYD",
@@ -83,7 +83,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Changan",
@@ -99,7 +99,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "CUPRA",
@@ -115,7 +115,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-06"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Citroën",
@@ -131,7 +131,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Dacia",
@@ -147,7 +147,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Dongfeng",
@@ -163,7 +163,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Fiat",
@@ -179,7 +179,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Ford",
@@ -195,7 +195,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Geely",
@@ -210,7 +210,7 @@
       "services": [
         "sales"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Hyundai",
@@ -226,7 +226,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Jaecoo",
@@ -242,7 +242,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Jeep",
@@ -252,13 +252,13 @@
       "locality": "Porto",
       "phone": "+351 220 001 430",
       "email": null,
-      "official_url": "https://www.cam.pt/",
+      "official_url": "https://rede.jeep.pt/cam-porto/contacte-nos/",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
       "services": [
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Kia",
@@ -274,7 +274,23 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
+    },
+    {
+      "brand": "Lancia",
+      "name": "C.A.M. Porto – Delfim Ferreira",
+      "address": "Rua Delfim Ferreira, 421",
+      "postal_code": "4100-201",
+      "locality": "Porto",
+      "phone": "+351 220 001 430",
+      "email": null,
+      "official_url": "https://www.lancia.pt/concessionarios",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Lancia%20CAM%20Porto%20Rua%20Delfim%20Ferreira%20421",
+      "services": [
+        "sales",
+        "service"
+      ],
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Leapmotor",
@@ -290,7 +306,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Mazda",
@@ -306,7 +322,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "MG",
@@ -322,7 +338,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "MINI",
@@ -338,7 +354,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Nissan",
@@ -354,7 +370,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Omoda",
@@ -370,7 +386,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Opel",
@@ -386,7 +402,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Peugeot",
@@ -402,7 +418,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Renault",
@@ -418,7 +434,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "smart",
@@ -434,7 +450,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Suzuki",
@@ -450,7 +466,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Tesla",
@@ -467,7 +483,7 @@
         "service",
         "delivery"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Toyota",
@@ -484,7 +500,7 @@
         "service"
       ],
       "distance_note": "6,5 km de São Mamede de Infesta segundo o localizador oficial da Toyota; o seguinte é Rio Tinto a 8,5 km.",
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Volkswagen",
@@ -500,7 +516,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Volvo",
@@ -516,7 +532,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     },
     {
       "brand": "Škoda",
@@ -532,7 +548,7 @@
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-05"
+      "verified_on": "2026-08-16"
     }
   ]
 }
