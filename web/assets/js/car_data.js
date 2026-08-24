@@ -9022,42 +9022,42 @@ const CAR_DATA = [
     "model": "ID.3",
     "powertrain": "BEV",
     "segment": "Hatchback",
-    "release_year": 2024,
+    "release_year": 2026,
     "availability_status": "available",
     "official_link": "https://www.volkswagen.pt/id3/id3",
     "image_path": "assets/images/vehicles/volkswagen-id-3/official.webp",
-    "last_verified": "2026-08-16",
+    "last_verified": "2026-08-24",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.volkswagen.pt/id3/id3",
-        "verified_on": "2026-08-16"
+        "verified_on": "2026-08-24"
       },
       {
         "type": "official_campaign",
         "url": "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados",
-        "verified_on": "2026-08-16"
+        "verified_on": "2026-08-24"
       }
     ],
     "variants": [
       {
-        "name": "Pure",
-        "battery_capacity_kwh": 52,
-        "wltp_range_combined_km": 388,
-        "wltp_consumption_combined_kwh_100km": 15.3,
+        "name": "Trend 50 kWh",
+        "battery_capacity_kwh": 50,
+        "wltp_range_combined_km": 417,
+        "wltp_consumption_combined_kwh_100km": 14.0,
         "power_kw": 125,
         "power_hp": 170,
-        "dc_max_kw": 145,
+        "dc_max_kw": 120,
         "pricing": {
           "offers": [
             {
               "classification": "confirmed",
-              "amount_eur": 39990,
+              "amount_eur": 35079,
               "currency": "EUR",
               "source_url": "https://www.volkswagen.pt/id3/id3",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
-              "variant": "Pure",
+              "variant": "Trend 50 kWh",
               "conditions": null,
               "vat_included": true,
               "proof": {
@@ -9066,19 +9066,19 @@ const CAR_DATA = [
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
-                "variant": "Pure",
+                "variant": "Trend 50 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Volkswagen ID.3 Pure a partir de 39.990 €",
+                "literal_excerpt": "Volkswagen ID.3 Neo Trend 50kWh 170cv — PVPR a partir de 35.079,00 €",
                 "status": "verified",
                 "source_type": "official_model",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-08-16",
+                "recorded_on": "2026-08-24",
+                "verified_on": "2026-08-24",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-08-16",
+              "recorded_on": "2026-08-24",
+              "verified_on": "2026-08-24",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -9090,67 +9090,67 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Volkswagen ID.3 Pure a partir de 39.990 €",
+              "evidence": "Volkswagen ID.3 Neo Trend 50kWh 170cv — PVPR a partir de 35.079,00 €",
               "evidence_record": {
                 "url": "https://www.volkswagen.pt/id3/id3",
                 "source_url": "https://www.volkswagen.pt/id3/id3",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-08-16",
-                "literal_excerpt": "Volkswagen ID.3 Pure a partir de 39.990 €"
+                "recorded_on": "2026-08-24",
+                "verified_on": "2026-08-24",
+                "literal_excerpt": "Volkswagen ID.3 Neo Trend 50kWh 170cv — PVPR a partir de 35.079,00 €"
               },
               "source_type": "official_model"
             },
             {
-              "classification": "confirmed",
-              "amount_eur": 35990,
+              "classification": "reference",
+              "amount_eur": 24600,
               "currency": "EUR",
-              "source_url": "https://www.volkswagen.pt/id3/id3",
+              "source_url": "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
-              "variant": "Pure",
-              "conditions": "Valor indicativo após vantagem de campanha; confirmar configuração e financiamento.",
-              "vat_included": true,
+              "variant": "Trend 50 kWh",
+              "conditions": "Campanha exclusiva a Concessionários Volkswagen aderentes. Válido para Empresas e ENI até 30/09/2026. Preço sem IVA (24.600€ + IVA = ~30.258€ com IVA a 23%).",
+              "vat_included": null,
               "proof": {
-                "url": "https://www.volkswagen.pt/id3/id3",
-                "source_url": "https://www.volkswagen.pt/id3/id3",
+                "url": "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados",
+                "source_url": "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
-                "audience": "particular",
-                "variant": "Pure",
-                "vat_basis": "included",
-                "literal_excerpt": "Volkswagen ID.3 Pure PVP campanha de 35.990 €",
+                "audience": "company",
+                "variant": "Trend 50 kWh",
+                "vat_basis": "excluded",
+                "literal_excerpt": "ID.3 Neo 50kWh 170cv Trend a partir de 24.600€ + IVA",
                 "status": "verified",
-                "source_type": "official_model",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-08-16",
+                "source_type": "official_campaign",
+                "recorded_on": "2026-08-24",
+                "verified_on": "2026-08-24",
                 "source_authority": "manufacturer_or_importer_pt",
-                "customer": "private"
+                "customer": "company"
               },
               "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-08-16",
+              "recorded_on": "2026-08-24",
+              "verified_on": "2026-08-24",
               "legacy_unverified": false,
               "kind": "campaign_price",
-              "customer": "private",
-              "audience": "particular",
+              "customer": "company",
+              "audience": "company",
               "validity": {
                 "valid_from": null,
-                "valid_until": null
+                "valid_until": "2026-09-30"
               },
-              "valid_until": null,
-              "vat": "included",
-              "vat_status": "included",
-              "evidence": "Volkswagen ID.3 Pure PVP campanha de 35.990 €",
+              "valid_until": "2026-09-30",
+              "vat": "excluded",
+              "vat_status": "excluded",
+              "evidence": "ID.3 Neo 50kWh 170cv Trend a partir de 24.600€ + IVA",
               "evidence_record": {
-                "url": "https://www.volkswagen.pt/id3/id3",
-                "source_url": "https://www.volkswagen.pt/id3/id3",
+                "url": "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados",
+                "source_url": "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-08-16",
-                "literal_excerpt": "Volkswagen ID.3 Pure PVP campanha de 35.990 €"
+                "recorded_on": "2026-08-24",
+                "verified_on": "2026-08-24",
+                "literal_excerpt": "ID.3 Neo 50kWh 170cv Trend a partir de 24.600€ + IVA"
               },
-              "source_type": "official_model"
+              "source_type": "official_campaign"
             }
           ]
         },
