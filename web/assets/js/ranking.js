@@ -16,9 +16,9 @@
     car,
     referenceYear = new Date().getFullYear(),
   ) {
-    const priceOffer = globalThis.VehiclePrices?.getPrice(car, {
-      allowReference: true,
-    });
+    const priceOffer =
+      globalThis.VehiclePrices?.getFilterPrice(car, "all") ||
+      globalThis.VehiclePrices?.getPrice(car);
     const price = priceOffer?.amount || null;
     const range =
       car.specifications?.wltp_range_combined_km ||
