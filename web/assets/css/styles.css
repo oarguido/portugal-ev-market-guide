@@ -1536,9 +1536,97 @@ input[type="range"] {
   border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
+.badge-eur-km {
+  background: rgba(234, 179, 8, 0.14);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.28);
+}
+
+.badge-v2l {
+  background: rgba(14, 165, 233, 0.14);
+  color: #38bdf8;
+  border: 1px solid rgba(14, 165, 233, 0.28);
+}
+
+.badge-pump {
+  background: rgba(168, 85, 247, 0.14);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.28);
+}
+
 /* ==========================================================================
-   Quick Filter Preset Buttons
+   Quick Filter Preset Buttons & Segment Chips
    ========================================================================== */
+.filter-header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.btn-toggle-filters {
+  display: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--panel-border);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-toggle-filters:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.segment-chips-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.segment-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.segment-chip {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--panel-border);
+  color: var(--text-secondary);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  outline: none;
+  font-family: var(--font-body);
+}
+
+.segment-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.segment-chip.active {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: var(--accent-green);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+  font-weight: 600;
+}
+
 .preset-btn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--panel-border);
@@ -1568,6 +1656,79 @@ input[type="range"] {
   border-color: var(--accent-green);
   color: #fff;
   box-shadow: 0 0 14px rgba(16, 185, 129, 0.25);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Favorite Button on Card
+   ========================================================================== */
+.btn-card-favorite {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(11, 15, 23, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-card-favorite:hover {
+  background: rgba(11, 15, 23, 0.95);
+  border-color: #f43f5e;
+  color: #f43f5e;
+  transform: scale(1.12);
+}
+
+.btn-card-favorite.active {
+  background: rgba(244, 63, 94, 0.2);
+  border-color: #f43f5e;
+  color: #f43f5e;
+  box-shadow: 0 0 14px rgba(244, 63, 94, 0.35);
+}
+
+/* ==========================================================================
+   Smart Differential Summary Card in Comparator
+   ========================================================================== */
+.comparison-summary-card {
+  margin-bottom: 1.5rem;
+  padding: 1.1rem 1.4rem;
+  border-left: 3px solid var(--accent-green);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(23, 32, 48, 0.8) 100%);
+  border-radius: var(--radius-md);
+}
+
+.diff-header {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-green);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.diff-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.diff-body em {
+  font-style: normal;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -1710,6 +1871,31 @@ input[type="range"] {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+
+  .btn-toggle-filters {
+    display: inline-flex;
+  }
+
+  .filter-body-wrapper.collapsed {
+    display: none;
+  }
+
+  .filter-presets,
+  .segment-chips {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.4rem;
+    scrollbar-width: thin;
+  }
+
+  .preset-btn,
+  .segment-chip {
+    flex-shrink: 0;
+    scroll-snap-align: start;
   }
 
   .visual-bars-container {

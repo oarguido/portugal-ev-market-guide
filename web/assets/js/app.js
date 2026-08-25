@@ -8,6 +8,48 @@
 let flatCars = [];
 let testDriveReviews = [];
 let selectedCompareCars = [];
+let activeSegment = "all";
+let filterOnlyFavorites = false;
+
+// Favorites management (stored locally in browser)
+function getFavorites() {
+  try {
+    const saved =
+      typeof localStorage !== "undefined"
+        ? localStorage.getItem("carro_liliana_favorites")
+        : null;
+    return saved ? JSON.parse(saved) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function isFavorite(carId) {
+  return getFavorites().includes(carId);
+}
+
+function toggleFavorite(carId) {
+  let favs = getFavorites();
+  if (favs.includes(carId)) {
+    favs = favs.filter((id) => id !== carId);
+  } else {
+    favs.push(carId);
+  }
+  try {
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("carro_liliana_favorites", JSON.stringify(favs));
+    }
+  } catch (e) {}
+  updateFavoriteCount();
+  renderOverview(getFilteredCars());
+}
+
+function updateFavoriteCount() {
+  const countEl = document.getElementById("fav-count");
+  if (countEl) {
+    countEl.textContent = getFavorites().length;
+  }
+}
 
 // Todo o valor do catálogo interpolado em innerHTML passa por aqui. Ver
 // assets/js/html.js para o motivo.
@@ -24,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   flattenCarData();
   setupNavigation();
   setupFilters();
+  updateFavoriteCount();
   renderOverview(getFilteredCars());
   renderStands();
   populateDropdowns();
@@ -310,11 +353,12 @@ function renderOverview(filteredList = flatCars) {
   }
 
   if (filteredList.length === 0) {
+    const isFavEmpty = filterOnlyFavorites && getFavorites().length === 0;
     container.innerHTML = `
       <div class="glass-panel empty-state">
-        <i class="fa-solid fa-car-burst"></i>
-        <h3>Nenhum carro encontrado</h3>
-        <p>Tenta ajustar os filtros de pesquisa para veres mais opções.</p>
+        <i class="fa-solid ${isFavEmpty ? "fa-heart-crack" : "fa-car-burst"}"></i>
+        <h3>${isFavEmpty ? "Ainda não tens favoritos guardados" : "Nenhum carro encontrado"}</h3>
+        <p>${isFavEmpty ? "Clica no ícone de coração (❤️) em qualquer carro para adicionares à tua lista personalizada!" : "Tenta ajustar os filtros de pesquisa para veres mais opções."}</p>
       </div>
     `;
     return;
@@ -469,6 +513,41 @@ function renderOverview(filteredList = flatCars) {
       badgesHTML += `<span class="card-badge badge-campaign"><i class="fa-solid fa-tag"></i> Campanha</span>`;
     }
 
+    // Price per km metric
+    if (
+      displayPrice &&
+      displayPrice.amount &&
+      car.specifications.wltp_range_combined_km
+    ) {
+      const euroPerKm = Math.round(
+        displayPrice.amount / car.specifications.wltp_range_combined_km,
+      );
+      badgesHTML += `<span class="card-badge badge-eur-km" title="Rácio custo por km de autonomia WLTP"><i class="fa-solid fa-coins"></i> ${euroPerKm} €/km</span>`;
+    }
+
+    // V2L & Heat pump tech pills
+    const hasV2L = Boolean(
+      car.technology_advantages?.bidirectional_charging?.v2l_supported ||
+        car.technology_advantages?.battery_tech?.bidirectional_charging
+          ?.v2l_supported,
+    );
+    const hasPump = Boolean(
+      car.technology_advantages?.battery_tech?.heat_pump_included,
+    );
+    if (hasV2L) {
+      badgesHTML += `<span class="card-badge badge-v2l" title="Alimentação bidirecional V2L"><i class="fa-solid fa-plug"></i> V2L</span>`;
+    }
+    if (hasPump) {
+      badgesHTML += `<span class="card-badge badge-pump" title="Bomba de calor incluída"><i class="fa-solid fa-snowflake"></i> Bomba Calor</span>`;
+    }
+
+    const isFav = isFavorite(car.id);
+    const favBtnHTML = `
+      <button type="button" class="btn-card-favorite ${isFav ? "active" : ""}" data-fav-id="${escapeHtml(car.id)}" title="${isFav ? "Remover dos favoritos" : "Guardar nos favoritos"}" aria-label="Favorito">
+        <i class="fa-${isFav ? "solid" : "regular"} fa-heart"></i>
+      </button>
+    `;
+
     const isSelected = selectedCompareCars.some((c) => c.id === car.id);
     const compareBtnHTML = `
       <button class="btn-compare-card ${isSelected ? "selected" : ""}" data-car-id="${escapeHtml(car.id)}">
@@ -479,6 +558,7 @@ function renderOverview(filteredList = flatCars) {
     card.innerHTML = `
       <div class="card-image-wrapper">
         ${imageHTML}
+        ${favBtnHTML}
       </div>
 
       <div class="card-body-content">
@@ -541,6 +621,14 @@ function renderOverview(filteredList = flatCars) {
       </div>
     `;
 
+    const favBtn = card.querySelector(".btn-card-favorite");
+    if (favBtn) {
+      favBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleFavorite(car.id);
+      });
+    }
+
     const compareBtn = card.querySelector(".btn-compare-card");
     if (compareBtn) {
       compareBtn.addEventListener("click", () => toggleCompareCar(car));
@@ -562,8 +650,12 @@ function setupFilters() {
   const yearSelect = document.getElementById("filter-year");
   const sortSelect = document.getElementById("filter-sort");
   const priceStatusSelect = document.getElementById("filter-price-status");
+  const brandSelect = document.getElementById("filter-brand");
   const btnLilianaRules = document.getElementById("btn-liliana-rules");
+  const btnFavorites = document.getElementById("btn-filter-favorites");
   const btnClearFilters = document.getElementById("btn-clear-filters");
+  const btnToggleFilters = document.getElementById("btn-toggle-filters");
+  const filterBodyWrapper = document.getElementById("filter-body-wrapper");
 
   const btnBudget = document.getElementById("btn-filter-budget");
   const btnRange = document.getElementById("btn-filter-range");
@@ -574,6 +666,47 @@ function setupFilters() {
       .querySelectorAll(".preset-btn")
       .forEach((b) => b.classList.remove("active"));
   };
+
+  const resetSegmentChips = () => {
+    document
+      .querySelectorAll(".segment-chip")
+      .forEach((c) => c.classList.remove("active"));
+    const allChip = document.querySelector('.segment-chip[data-segment="all"]');
+    if (allChip) allChip.classList.add("active");
+    activeSegment = "all";
+  };
+
+  if (btnToggleFilters && filterBodyWrapper) {
+    btnToggleFilters.addEventListener("click", () => {
+      const isExpanded =
+        btnToggleFilters.getAttribute("aria-expanded") === "true";
+      btnToggleFilters.setAttribute("aria-expanded", String(!isExpanded));
+      filterBodyWrapper.classList.toggle("collapsed", isExpanded);
+      const icon = btnToggleFilters.querySelector("i");
+      const label = btnToggleFilters.querySelector("span");
+      if (icon && label) {
+        if (isExpanded) {
+          icon.className = "fa-solid fa-chevron-down";
+          label.textContent = "Mostrar Filtros";
+        } else {
+          icon.className = "fa-solid fa-chevron-up";
+          label.textContent = "Recolher";
+        }
+      }
+    });
+  }
+
+  // Segment chips
+  document.querySelectorAll(".segment-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      document
+        .querySelectorAll(".segment-chip")
+        .forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      activeSegment = chip.getAttribute("data-segment") || "all";
+      renderOverview(getFilteredCars());
+    });
+  });
 
   if (searchInput)
     searchInput.addEventListener("input", () =>
@@ -603,15 +736,31 @@ function setupFilters() {
     priceStatusSelect.addEventListener("change", () =>
       renderOverview(getFilteredCars()),
     );
+  if (brandSelect)
+    brandSelect.addEventListener("change", () =>
+      renderOverview(getFilteredCars()),
+    );
 
   if (btnLilianaRules) {
     btnLilianaRules.addEventListener("click", () => {
       resetPresetClasses();
+      resetSegmentChips();
       btnLilianaRules.classList.add("active");
+      filterOnlyFavorites = false;
       if (priceSlider) priceSlider.value = "35000";
       if (rangeSlider) rangeSlider.value = "300";
       if (yearSelect) yearSelect.value = "all";
+      if (brandSelect) brandSelect.value = "all";
       if (searchInput) searchInput.value = "";
+      renderOverview(getFilteredCars());
+    });
+  }
+
+  if (btnFavorites) {
+    btnFavorites.addEventListener("click", () => {
+      resetPresetClasses();
+      btnFavorites.classList.add("active");
+      filterOnlyFavorites = true;
       renderOverview(getFilteredCars());
     });
   }
@@ -619,10 +768,13 @@ function setupFilters() {
   if (btnBudget) {
     btnBudget.addEventListener("click", () => {
       resetPresetClasses();
+      resetSegmentChips();
       btnBudget.classList.add("active");
+      filterOnlyFavorites = false;
       if (priceSlider) priceSlider.value = "25000";
       if (rangeSlider) rangeSlider.value = "80";
       if (yearSelect) yearSelect.value = "all";
+      if (brandSelect) brandSelect.value = "all";
       if (searchInput) searchInput.value = "";
       renderOverview(getFilteredCars());
     });
@@ -631,10 +783,13 @@ function setupFilters() {
   if (btnRange) {
     btnRange.addEventListener("click", () => {
       resetPresetClasses();
+      resetSegmentChips();
       btnRange.classList.add("active");
+      filterOnlyFavorites = false;
       if (priceSlider) priceSlider.value = "40000";
       if (rangeSlider) rangeSlider.value = "400";
       if (yearSelect) yearSelect.value = "all";
+      if (brandSelect) brandSelect.value = "all";
       if (searchInput) searchInput.value = "";
       renderOverview(getFilteredCars());
     });
@@ -643,10 +798,13 @@ function setupFilters() {
   if (btnFastCharge) {
     btnFastCharge.addEventListener("click", () => {
       resetPresetClasses();
+      resetSegmentChips();
       btnFastCharge.classList.add("active");
+      filterOnlyFavorites = false;
       if (priceSlider) priceSlider.value = "40000";
       if (rangeSlider) rangeSlider.value = "80";
       if (yearSelect) yearSelect.value = "all";
+      if (brandSelect) brandSelect.value = "all";
       if (searchInput) searchInput.value = "";
       renderOverview(getFilteredCars());
     });
@@ -655,10 +813,16 @@ function setupFilters() {
   if (btnClearFilters) {
     btnClearFilters.addEventListener("click", () => {
       resetPresetClasses();
+      resetSegmentChips();
       btnClearFilters.classList.add("active");
+      filterOnlyFavorites = false;
       if (priceSlider) priceSlider.value = "40000";
       if (rangeSlider) rangeSlider.value = "80";
+      if (batterySlider) batterySlider.value = "0";
       if (yearSelect) yearSelect.value = "all";
+      if (brandSelect) brandSelect.value = "all";
+      if (priceStatusSelect) priceStatusSelect.value = "all";
+      if (sortSelect) sortSelect.value = "default";
       if (searchInput) searchInput.value = "";
       renderOverview(getFilteredCars());
     });
@@ -744,6 +908,7 @@ function getFilteredCars() {
   const yearSelect = document.getElementById("filter-year");
   const sortSelect = document.getElementById("filter-sort");
   const priceStatusSelect = document.getElementById("filter-price-status");
+  const brandSelect = document.getElementById("filter-brand");
 
   const searchVal = searchInput ? searchInput.value : "";
   const maxPriceVal = priceSlider ? parseFloat(priceSlider.value) : 40000;
@@ -752,6 +917,7 @@ function getFilteredCars() {
   const yearVal = yearSelect ? yearSelect.value : "all";
   const sortVal = sortSelect ? sortSelect.value : "default";
   const priceStatusVal = priceStatusSelect ? priceStatusSelect.value : "all";
+  const brandVal = brandSelect ? brandSelect.value : "all";
 
   // Update labels
   const priceDisplay = document.getElementById("filter-price-val");
@@ -788,6 +954,47 @@ function getFilteredCars() {
       minBatteryVal > 0 ? `≥ ${minBatteryVal} kWh` : "Qualquer";
 
   const filtered = flatCars.filter((car) => {
+    // Favorites filter
+    if (filterOnlyFavorites && !isFavorite(car.id)) {
+      return false;
+    }
+
+    // Segment filter
+    if (activeSegment !== "all") {
+      const seg = String(car.segment || "").toLowerCase();
+      if (activeSegment === "citadino" && !seg.includes("citadino")) {
+        return false;
+      }
+      if (
+        activeSegment === "hatchback" &&
+        !seg.includes("hatchback") &&
+        !seg.includes("compacto") &&
+        !seg.includes("utilit")
+      ) {
+        return false;
+      }
+      if (
+        activeSegment === "suv" &&
+        !seg.includes("suv") &&
+        !seg.includes("crossover")
+      ) {
+        return false;
+      }
+      if (
+        activeSegment === "berlina" &&
+        !seg.includes("berlina") &&
+        !seg.includes("fastback") &&
+        !seg.includes("familiar")
+      ) {
+        return false;
+      }
+    }
+
+    // Brand filter
+    if (brandVal !== "all" && car.brand !== brandVal) {
+      return false;
+    }
+
     // Search filter
     const matchesSearch = VehicleSearch.matchesVehicleSearch(car, searchVal);
 
@@ -877,6 +1084,7 @@ function populateDropdowns() {
   const compSelect1 = document.getElementById("comp-select-1");
   const compSelect2 = document.getElementById("comp-select-2");
   const tdSelectModel = document.getElementById("td-select-model");
+  const filterBrand = document.getElementById("filter-brand");
 
   const selects = [compSelect1, compSelect2, tdSelectModel];
 
@@ -891,6 +1099,22 @@ function populateDropdowns() {
       select.appendChild(option);
     });
   });
+
+  // Populate brand filter select
+  if (filterBrand) {
+    const brandsMap = {};
+    flatCars.forEach((c) => {
+      brandsMap[c.brand] = (brandsMap[c.brand] || 0) + 1;
+    });
+    const sortedBrands = Object.keys(brandsMap).sort();
+    filterBrand.innerHTML = `<option value="all">Todas as marcas (${flatCars.length})</option>`;
+    sortedBrands.forEach((b) => {
+      const opt = document.createElement("option");
+      opt.value = b;
+      opt.textContent = `${b} (${brandsMap[b]})`;
+      filterBrand.appendChild(opt);
+    });
+  }
 
   // Set defaults
   if (compSelect1 && compSelect2 && flatCars.length >= 2) {
@@ -940,48 +1164,28 @@ function updateComparison() {
   // Range Combined
   const valRangeA = carA.specifications.wltp_range_combined_km || 0;
   const valRangeB = carB.specifications.wltp_range_combined_km || 0;
-  document.getElementById("val-range-a").textContent = valRangeA
-    ? `${valRangeA} km`
-    : "N/A";
-  document.getElementById("val-range-b").textContent = valRangeB
-    ? `${valRangeB} km`
-    : "N/A";
+  document.getElementById("val-range-a").textContent = `${valRangeA} km`;
+  document.getElementById("val-range-b").textContent = `${valRangeB} km`;
   document.getElementById("bar-range-a").style.width =
     `${Math.min(100, (valRangeA / maxRange) * 100)}%`;
   document.getElementById("bar-range-b").style.width =
     `${Math.min(100, (valRangeB / maxRange) * 100)}%`;
 
-  // Accel (inverse: lower is better, but bar size represents speed)
+  // Acceleration (Less is better)
   const valAccelA = carA.specifications.acceleration_0_100_s || 0;
   const valAccelB = carB.specifications.acceleration_0_100_s || 0;
-  document.getElementById("val-accel-a").textContent = valAccelA
-    ? `${valAccelA}s`
-    : "N/A";
-  document.getElementById("val-accel-b").textContent = valAccelB
-    ? `${valAccelB}s`
-    : "N/A";
-
-  // Higher performance (lower 0-100 time) fills more bar
-  const pctAccelA = valAccelA
-    ? ((maxAccel - valAccelA) / (maxAccel - 5)) * 100
-    : 0;
-  const pctAccelB = valAccelB
-    ? ((maxAccel - valAccelB) / (maxAccel - 5)) * 100
-    : 0;
+  document.getElementById("val-accel-a").textContent = `${valAccelA}s`;
+  document.getElementById("val-accel-b").textContent = `${valAccelB}s`;
   document.getElementById("bar-accel-a").style.width =
-    `${Math.max(5, Math.min(100, pctAccelA))}%`;
+    `${Math.min(100, (valAccelA / maxAccel) * 100)}%`;
   document.getElementById("bar-accel-b").style.width =
-    `${Math.max(5, Math.min(100, pctAccelB))}%`;
+    `${Math.min(100, (valAccelB / maxAccel) * 100)}%`;
 
   // Battery
   const valBatteryA = carA.specifications.battery_capacity_kwh || 0;
   const valBatteryB = carB.specifications.battery_capacity_kwh || 0;
-  document.getElementById("val-battery-a").textContent = valBatteryA
-    ? `${valBatteryA} kWh`
-    : "N/A";
-  document.getElementById("val-battery-b").textContent = valBatteryB
-    ? `${valBatteryB} kWh`
-    : "N/A";
+  document.getElementById("val-battery-a").textContent = `${valBatteryA} kWh`;
+  document.getElementById("val-battery-b").textContent = `${valBatteryB} kWh`;
   document.getElementById("bar-battery-a").style.width =
     `${Math.min(100, (valBatteryA / maxBattery) * 100)}%`;
   document.getElementById("bar-battery-b").style.width =
@@ -990,16 +1194,49 @@ function updateComparison() {
   // Trunk
   const valTrunkA = carA.specifications.trunk_capacity_l || 0;
   const valTrunkB = carB.specifications.trunk_capacity_l || 0;
-  document.getElementById("val-trunk-a").textContent = valTrunkA
-    ? `${valTrunkA} L`
-    : "N/A";
-  document.getElementById("val-trunk-b").textContent = valTrunkB
-    ? `${valTrunkB} L`
-    : "N/A";
+  document.getElementById("val-trunk-a").textContent = `${valTrunkA} L`;
+  document.getElementById("val-trunk-b").textContent = `${valTrunkB} L`;
   document.getElementById("bar-trunk-a").style.width =
     `${Math.min(100, (valTrunkA / maxTrunk) * 100)}%`;
   document.getElementById("bar-trunk-b").style.width =
     `${Math.min(100, (valTrunkB / maxTrunk) * 100)}%`;
+
+  // Automated Smart Differential Box
+  const diffBox = document.getElementById("comp-differential-box");
+  if (diffBox) {
+    const priceA = getPrice(carA);
+    const priceB = getPrice(carB);
+    const hasBothPrices = priceA?.amount && priceB?.amount;
+    const rangeDiff = valRangeA - valRangeB;
+    const trunkDiff = valTrunkA - valTrunkB;
+    const priceDiff = hasBothPrices ? priceA.amount - priceB.amount : null;
+
+    let diffText = "";
+    if (rangeDiff !== 0) {
+      const moreRangeCar = rangeDiff > 0 ? `${carA.brand} ${carA.model}` : `${carB.brand} ${carB.model}`;
+      const absRange = Math.abs(rangeDiff);
+      diffText += `<strong>Autonomia:</strong> <em>${escapeHtml(moreRangeCar)}</em> tem <strong>+${absRange} km</strong> de alcance WLTP. `;
+    }
+    if (hasBothPrices && priceDiff !== 0) {
+      const cheaperCar = priceDiff < 0 ? `${carA.brand} ${carA.model}` : `${carB.brand} ${carB.model}`;
+      const absPrice = Math.abs(priceDiff);
+      diffText += `· <strong>Preço:</strong> <em>${escapeHtml(cheaperCar)}</em> é <strong>${formatCurrency(absPrice)} mais acessível</strong>. `;
+    }
+    if (trunkDiff !== 0) {
+      const biggerBootCar = trunkDiff > 0 ? `${carA.brand} ${carA.model}` : `${carB.brand} ${carB.model}`;
+      diffText += `· <strong>Bagageira:</strong> <em>${escapeHtml(biggerBootCar)}</em> oferece <strong>+${Math.abs(trunkDiff)} L</strong>.`;
+    }
+
+    if (diffText) {
+      diffBox.style.display = "block";
+      diffBox.innerHTML = `
+        <div class="diff-header"><i class="fa-solid fa-scale-balanced"></i> Comparação Direta Automatizada</div>
+        <p class="diff-body">${diffText}</p>
+      `;
+    } else {
+      diffBox.style.display = "none";
+    }
+  }
 
   // 2. Comparison Table
   const tbody = document.getElementById("tech-comparison-tbody");

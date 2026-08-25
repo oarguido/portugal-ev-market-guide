@@ -94,152 +94,166 @@
           </div>
 
           <!-- FILTROS -->
+          <!-- FILTROS -->
           <div class="glass-panel filter-panel">
-            <h3 class="filter-heading">
-              <i class="fa-solid fa-filter"></i> Filtros de Pesquisa
-            </h3>
-            <!-- Configurações Rápidas -->
-            <div class="filter-presets">
-              <span class="filter-presets-label">Configurações Rápidas:</span>
-              <button id="btn-liliana-rules" class="preset-btn active">
-                <i
-                  class="fa-solid fa-heart"
-                  style="color: var(--accent-green)"
-                ></i>
-                Preferências da Liliana (≤ 35.000 € | ≥ 300 km)
-              </button>
-              <button id="btn-filter-budget" class="preset-btn">
-                <i class="fa-solid fa-piggy-bank" style="color: #34d399"></i>
-                Citadinos (≤ 25.000 €)
-              </button>
-              <button id="btn-filter-range" class="preset-btn">
-                <i class="fa-solid fa-route" style="color: #60a5fa"></i> Grandes
-                Viagens (≥ 400 km)
-              </button>
-              <button id="btn-filter-fastcharge" class="preset-btn">
-                <i class="fa-solid fa-bolt" style="color: #f59e0b"></i>
-                Carregamento Rápido (≥ 100 kW)
-              </button>
-              <button id="btn-clear-filters" class="preset-btn">
-                <i class="fa-solid fa-eraser"></i> Mostrar Todos
+            <div class="filter-header-flex">
+              <h3 class="filter-heading">
+                <i class="fa-solid fa-filter"></i> Filtros de Pesquisa
+              </h3>
+              <button id="btn-toggle-filters" class="btn-toggle-filters" aria-expanded="true" aria-controls="filter-body-wrapper" type="button">
+                <i class="fa-solid fa-chevron-up"></i> <span>Recolher</span>
               </button>
             </div>
-            <div class="filter-grid">
-              <!-- Pesquisa Texto -->
-              <div class="filter-group">
-                <label class="filter-label" for="filter-search"
-                  >Pesquisar marca, modelo ou versão</label
-                >
-                <div class="input-with-icon">
+
+            <div id="filter-body-wrapper" class="filter-body-wrapper">
+              <!-- Configurações Rápidas -->
+              <div class="filter-presets">
+                <span class="filter-presets-label"><i class="fa-solid fa-bolt"></i> Atalhos:</span>
+                <button id="btn-liliana-rules" class="preset-btn active">
+                  <i class="fa-solid fa-heart" style="color: var(--accent-green)"></i>
+                  Preferências da Liliana (≤ 35.000 € | ≥ 300 km)
+                </button>
+                <button id="btn-filter-favorites" class="preset-btn">
+                  <i class="fa-solid fa-heart" style="color: #f43f5e"></i>
+                  Os Nossos Favoritos (<span id="fav-count">0</span>)
+                </button>
+                <button id="btn-filter-budget" class="preset-btn">
+                  <i class="fa-solid fa-piggy-bank" style="color: #34d399"></i>
+                  Citadinos (≤ 25.000 €)
+                </button>
+                <button id="btn-filter-range" class="preset-btn">
+                  <i class="fa-solid fa-route" style="color: #60a5fa"></i>
+                  Grandes Viagens (≥ 400 km)
+                </button>
+                <button id="btn-filter-fastcharge" class="preset-btn">
+                  <i class="fa-solid fa-bolt" style="color: #f59e0b"></i>
+                  Carga Rápida (≥ 100 kW)
+                </button>
+                <button id="btn-clear-filters" class="preset-btn">
+                  <i class="fa-solid fa-eraser"></i> Mostrar Todos
+                </button>
+              </div>
+
+              <!-- Segment Chips -->
+              <div class="segment-chips-container">
+                <span class="filter-presets-label"><i class="fa-solid fa-car-side"></i> Segmento:</span>
+                <div class="segment-chips" role="radiogroup" aria-label="Filtrar por segmento">
+                  <button type="button" class="segment-chip active" data-segment="all">Todos</button>
+                  <button type="button" class="segment-chip" data-segment="citadino">Citadinos</button>
+                  <button type="button" class="segment-chip" data-segment="hatchback">Hatchbacks</button>
+                  <button type="button" class="segment-chip" data-segment="suv">SUVs & Crossovers</button>
+                  <button type="button" class="segment-chip" data-segment="berlina">Berlinas</button>
+                </div>
+              </div>
+
+              <div class="filter-grid">
+                <!-- Pesquisa Texto -->
+                <div class="filter-group">
+                  <label class="filter-label" for="filter-search">Pesquisar texto livre</label>
+                  <div class="input-with-icon">
+                    <input
+                      type="text"
+                      id="filter-search"
+                      placeholder="Ex: Renault 5, MG4, Dolphin..."
+                      class="form-input"
+                    />
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <!-- Filtro por Marca -->
+                <div class="filter-group">
+                  <label class="filter-label" for="filter-brand">Marca</label>
+                  <select id="filter-brand" class="form-select">
+                    <option value="all">Todas as marcas</option>
+                  </select>
+                </div>
+                <!-- Preço Máximo -->
+                <div class="filter-group">
+                  <div class="filter-label">
+                    <label for="filter-price">Valor máximo publicado</label>
+                    <span id="filter-price-val" class="filter-value">Qualquer</span>
+                  </div>
                   <input
-                    type="text"
-                    id="filter-search"
-                    placeholder="Ex: BYD, Renault..."
-                    class="form-input"
+                    type="range"
+                    id="filter-price"
+                    min="15000"
+                    max="40000"
+                    step="1000"
+                    value="40000"
                   />
-                  <i
-                    class="fa-solid fa-magnifying-glass"
-                    aria-hidden="true"
-                  ></i>
+                  <p id="filter-price-note" class="filter-note" role="status"></p>
                 </div>
-              </div>
-              <!-- Preço Máximo -->
-              <div class="filter-group">
-                <div class="filter-label">
-                  <label for="filter-price">Valor máximo publicado</label>
-                  <span id="filter-price-val" class="filter-value"
-                    >Qualquer</span
-                  >
+                <!-- Autonomia Mínima -->
+                <div class="filter-group">
+                  <div class="filter-label">
+                    <label for="filter-range">Autonomia Mínima (WLTP)</label>
+                    <span id="filter-range-val" class="filter-value">Qualquer</span>
+                  </div>
+                  <input
+                    type="range"
+                    id="filter-range"
+                    min="80"
+                    max="600"
+                    step="20"
+                    value="80"
+                  />
                 </div>
-                <input
-                  type="range"
-                  id="filter-price"
-                  min="15000"
-                  max="40000"
-                  step="1000"
-                  value="40000"
-                />
-                <p id="filter-price-note" class="filter-note" role="status"></p>
-              </div>
-              <!-- Autonomia Mínima -->
-              <div class="filter-group">
-                <div class="filter-label">
-                  <label for="filter-range">Autonomia Mínima (WLTP)</label>
-                  <span id="filter-range-val" class="filter-value"
-                    >Qualquer</span
-                  >
+                <div class="filter-group">
+                  <div class="filter-label">
+                    <label for="filter-battery">Bateria mínima</label>
+                    <output
+                      id="filter-battery-val"
+                      class="filter-value"
+                      for="filter-battery"
+                    >Qualquer</output>
+                  </div>
+                  <input
+                    type="range"
+                    id="filter-battery"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value="0"
+                  />
                 </div>
-                <input
-                  type="range"
-                  id="filter-range"
-                  min="80"
-                  max="600"
-                  step="20"
-                  value="80"
-                />
-              </div>
-              <div class="filter-group">
-                <div class="filter-label">
-                  <label for="filter-battery">Bateria mínima</label>
-                  <output
-                    id="filter-battery-val"
-                    class="filter-value"
-                    for="filter-battery"
-                    >Qualquer</output
-                  >
+                <!-- Ano de Lançamento -->
+                <div class="filter-group">
+                  <label class="filter-label" for="filter-year">Ano de Lançamento</label>
+                  <select id="filter-year" class="form-select">
+                    <option value="all">Qualquer ano</option>
+                    <option value="2023">&gt;= 2023</option>
+                    <option value="2024">&gt;= 2024</option>
+                    <option value="2025">&gt;= 2025 (Mais Recentes)</option>
+                  </select>
                 </div>
-                <input
-                  type="range"
-                  id="filter-battery"
-                  min="0"
-                  max="100"
-                  step="1"
-                  value="0"
-                />
-              </div>
-              <!-- Ano de Lançamento -->
-              <div class="filter-group">
-                <label class="filter-label" for="filter-year"
-                  >Ano de Lançamento</label
-                >
-                <select id="filter-year" class="form-select">
-                  <option value="all">Qualquer ano</option>
-                  <option value="2023">>= 2023</option>
-                  <option value="2024">>= 2024</option>
-                  <option value="2025">>= 2025 (Mais Recentes)</option>
-                </select>
-              </div>
-              <div class="filter-group">
-                <label class="filter-label" for="filter-price-status"
-                  >Estado do preço</label
-                >
-                <select id="filter-price-status" class="form-select">
-                  <option value="all">Todos os estados</option>
-                  <option value="confirmed_eligible">
-                    Preço confirmado c/ IVA
-                  </option>
-                  <option value="potential_reference">Apenas referência</option>
-                </select>
-              </div>
-              <!-- Ordenação -->
-              <div class="filter-group">
-                <label class="filter-label" for="filter-sort"
-                  >Ordenar por</label
-                >
-                <select id="filter-sort" class="form-select">
-                  <option value="default">Melhor preço/autonomia</option>
-                  <option value="price-asc">Preço: Baixo para Alto</option>
-                  <option value="price-desc">Preço: Alto para Baixo</option>
-                  <option value="range-desc">
-                    Autonomia: Maior para Menor
-                  </option>
-                  <option value="rating-desc">
-                    Avaliação Utilizadores: Melhor para Pior
-                  </option>
-                  <option value="year-desc">
-                    Ano: Mais Recente para Antigo
-                  </option>
-                </select>
+                <div class="filter-group">
+                  <label class="filter-label" for="filter-price-status">Estado do preço</label>
+                  <select id="filter-price-status" class="form-select">
+                    <option value="all">Todos os estados</option>
+                    <option value="confirmed_eligible">
+                      Preço confirmado c/ IVA
+                    </option>
+                    <option value="potential_reference">Apenas referência</option>
+                  </select>
+                </div>
+                <!-- Ordenação -->
+                <div class="filter-group">
+                  <label class="filter-label" for="filter-sort">Ordenar por</label>
+                  <select id="filter-sort" class="form-select">
+                    <option value="default">Melhor preço/autonomia</option>
+                    <option value="price-asc">Preço: Baixo para Alto</option>
+                    <option value="price-desc">Preço: Alto para Baixo</option>
+                    <option value="range-desc">
+                      Autonomia: Maior para Menor
+                    </option>
+                    <option value="rating-desc">
+                      Avaliação Utilizadores: Melhor para Pior
+                    </option>
+                    <option value="year-desc">
+                      Ano: Mais Recente para Antigo
+                    </option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
@@ -281,6 +295,9 @@
               <select id="comp-select-2" class="form-select"></select>
             </div>
           </div>
+
+          <!-- Automated Smart Differential Box -->
+          <div id="comp-differential-box" class="glass-panel comparison-summary-card" style="display: none;"></div>
 
           <figure
             class="comparison-visualization"
