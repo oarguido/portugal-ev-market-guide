@@ -1,36 +1,36 @@
 {
   "https://evmag.pt/guia-de-carros-eletricos-interativo/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "4f12114ef256965311fb20a82cfa3bdf84c002ae98eb2a6998c71b4a9fa6bce3",
-    "raw_sha256": "428b6f4cb703a743a3c8c008254200319eba59147f6931a493bd778d87e2baa3",
+    "sha256": "4ae0eea6a6b3763925781d85a7e48f9df20d8d17c996e099e571f1c52c83580c",
+    "raw_sha256": "86c09bd9167a9b2c587d1e0db741f5037d4071e35d31d40bb8e32cda330937af",
     "final_url": "https://evmag.pt/guia-de-carros-eletricos-interativo/",
-    "bytes": 232579,
-    "normalized_chars": 3129,
+    "bytes": 233057,
+    "normalized_chars": 3128,
     "source_type": "secondary_market_discovery"
   },
   "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "89c14150baaf5c5cc84c68f5a9937a9e8e50988e3d9b8559b0c9e40dd0d42015",
-    "raw_sha256": "209fbc352d1529e6c49cd63be3a9a8a9b6631d63cd6498ed8aba1d4505f7509e",
+    "sha256": "d446d8d0e12eb68660a6704f46678263a88c2189f808f5a154b425a8648ba03b",
+    "raw_sha256": "b5599919e2d438aa9d8608a2f96a7315086aab44839ec0a97959a9984cca3611",
     "final_url": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
-    "bytes": 634749,
-    "normalized_chars": 13628
+    "bytes": 634936,
+    "normalized_chars": 13705
   },
   "https://www.filintomota.pt/marca/leapmotor/t03/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "39daeb862fb67ed6e2e9b178c84e96956653aef33c23a8d6b1f6c6fcac9466db",
-    "raw_sha256": "6e4bcc96e27626a28910414601e511d8b37bb6fc8c1c61e2325c93d3c8f1f440",
+    "raw_sha256": "0d5b726d619491789cf333ab8f25d854e5944ee2ada742ea9325e27da34aa472",
     "final_url": "https://www.filintomota.pt/marca/leapmotor/t03/",
-    "bytes": 460148,
+    "bytes": 460241,
     "normalized_chars": 11995
   },
   "https://www.citroen.pt/modelos/e-c3.html": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "2cf1f34cb9dcc3fd8d9e64a53a54bcea96e5cd70711f98f9d431de9305bce13e",
-    "raw_sha256": "2cf1f34cb9dcc3fd8d9e64a53a54bcea96e5cd70711f98f9d431de9305bce13e",
+    "sha256": "f785d2cbc6f5ea8d653f0e3e900883bf5664f866f4732a5e43774bf3f682ae74",
+    "raw_sha256": "f785d2cbc6f5ea8d653f0e3e900883bf5664f866f4732a5e43774bf3f682ae74",
     "final_url": "https://www.citroen.pt/modelos/e-c3.html",
-    "bytes": 29997,
-    "normalized_chars": 28434,
+    "bytes": 29545,
+    "normalized_chars": 28030,
     "read_with": "agent-browser"
   },
   "https://www.citroen.pt/universo-citroen/noticias/acp.html": {
@@ -44,35 +44,35 @@
   },
   "https://byd-auto.pt/modelos/byd-dolphin-surf/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "93dbbed5e666d372b30227707ed49405b02531f81ba4d804581f3b3a2f32f52d",
-    "raw_sha256": "a773831adc10a6021ab1581cde587f5bfbae3ba67ae37676a12ae643ddcfd66b",
+    "sha256": "46f5bc0b762f708331c0ea7b6938596ff4e26dd0c7744e86e790c7dc105641bb",
+    "raw_sha256": "974ab4886679c8c001a0253f4808b4804db64bf005a5f204d8a56bbd91839fd1",
     "final_url": "https://byd-auto.pt/modelos/byd-dolphin-surf",
-    "bytes": 412491,
-    "normalized_chars": 9192
+    "bytes": 409957,
+    "normalized_chars": 9179
   },
   "https://www.mgmotor.pt/model/mg4/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "d65759e6c0de30bdee4b831d651c80d63e4864278d5de0937dd40006f7866453",
-    "raw_sha256": "a68778fc2df2bc8936ad019f8e5faaf73b1cdae97920d1723a9a28534ad80eae",
+    "sha256": "719f4ac0a2adb6507369c0dede60d922b2442a70aab08769654bf2658757a5fe",
+    "raw_sha256": "73ea6e39fd1d288879560d3004892fa7898e9df65c194d99f836b5f82748f8b4",
     "final_url": "https://www.mgmotor.pt/model/mg4/",
-    "bytes": 265390,
-    "normalized_chars": 7020
+    "bytes": 296053,
+    "normalized_chars": 7205
   },
   "https://www.mgmotor.pt/technology": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "6e774a4f5f000fe2311835f2cfbdcb73b311d9836d4cb446a443fab155dd216f",
-    "raw_sha256": "0910eba01133dd63ea611f05b44e986e4e79c34129e783c1b19fcd4f19da4188",
+    "sha256": "09eb1484844083922dee7ac32f96556045224790ffc84b2dfd2413c232fd660c",
+    "raw_sha256": "c92c01950f2f847a912390ea92289f80d054bb220ff18c9226d5e566bb734a7d",
     "final_url": "https://www.mgmotor.pt/technology",
-    "bytes": 299591,
-    "normalized_chars": 6467
+    "bytes": 339717,
+    "normalized_chars": 7716
   },
   "https://www.hyundai.pt/carros/novo-inster/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "12df47b54eb4c1a38e9946c28b450fd4514358937e38300a6e3a165aa57c14b5",
-    "raw_sha256": "c3d0c64f3708b1c992afe56f7f75e237faecd3acf0e6f937dc807aff9f409f74",
+    "sha256": "f4d022cc24c6995d812f332de57ccecd9fb8268d13dd020c9f3005ed2e74c70a",
+    "raw_sha256": "86bb7f8724bfeb859ba186821ba723871d35244c5370111b30c1369287b22275",
     "final_url": "https://www.hyundai.pt/carros/novo-inster/",
-    "bytes": 87275,
-    "normalized_chars": 10327
+    "bytes": 86155,
+    "normalized_chars": 10324
   },
   "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico.html": {
     "fingerprint_version": "html-visible-text-v1",
@@ -120,36 +120,36 @@
   },
   "https://caetano.pt/dongfeng/carros-novos/box/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "df5a5b0f7426a2b96ca5e63a48301938efce7d7ec382fa282255acd3dfa40390",
-    "raw_sha256": "f9b051ac3989ddcc2b17f307ce215f0f8c1238db655abb4ad3a52d9088181b75",
+    "sha256": "5f8d811f3563181916a81b4645fe5ea7f2fce6fab1a01c61cc24aa8e20de7692",
+    "raw_sha256": "b90f87f914b417f9b4e44b66443aebfadf3c6c27a1a4c1752c174f245e8c7e31",
     "final_url": "https://caetano.pt/dongfeng/carros-novos/box/",
-    "bytes": 268645,
+    "bytes": 268218,
     "normalized_chars": 8315
   },
   "https://www.citroen.pt/modelos/e-c3-aircross.html": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "52e1e7cb9e4f367621d5284a57c04f073c5c5364ca55d14f611f0a85b6386170",
-    "raw_sha256": "52e1e7cb9e4f367621d5284a57c04f073c5c5364ca55d14f611f0a85b6386170",
+    "sha256": "d2018e43a1b397486013315c99023ea4b7b788e53d65a6e3be6315124bee20df",
+    "raw_sha256": "d2018e43a1b397486013315c99023ea4b7b788e53d65a6e3be6315124bee20df",
     "final_url": "https://www.citroen.pt/modelos/e-c3-aircross.html",
-    "bytes": 25069,
-    "normalized_chars": 24030,
+    "bytes": 25036,
+    "normalized_chars": 23998,
     "read_with": "agent-browser"
   },
   "https://www.mgmotor.pt/model/mgs5": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "500a3fc449e32b0402eec9b680ade4ad08071e2720b67793f5f9d17da38d6ed0",
-    "raw_sha256": "71483dc2a6e9a13ace9e883ac6caa42d30bb5b5318323abab90946fe2348af46",
+    "sha256": "7088913982630cadf38da8807eaf3fc923f567ade76feb231292fc3e741f92c9",
+    "raw_sha256": "b1df98cb1635cc8e5b4b107d962aa97be8e4fcd6b0f1a96dff111d8eb51e9233",
     "final_url": "https://www.mgmotor.pt/model/mgs5",
-    "bytes": 293791,
-    "normalized_chars": 3926
+    "bytes": 333261,
+    "normalized_chars": 4111
   },
   "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "ba749c6d776aa66044223c9c1d056a6cae4fe3ae32ec9193cc82ef4e8acf7296",
-    "raw_sha256": "f5029615fe82cecfd2c14e51dc03bd3dda90433e42f84799b14c0e48490825f9",
+    "sha256": "48d3dd75b6d53b202ea79250ed7f3e0aafc05c9efb026d155e7ea78dca298b4d",
+    "raw_sha256": "625119cc8018d5c06d72c13e82e9074d674b9d77ebb7435d348f5045070b1798",
     "final_url": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
-    "bytes": 438681,
-    "normalized_chars": 15458
+    "bytes": 438713,
+    "normalized_chars": 15468
   },
   "https://www.peugeot.pt/showroom/novo-peugeot-208/eletrico.html": {
     "fingerprint_version": "browser-visible-text-v1",
@@ -162,27 +162,27 @@
   },
   "https://omodajaecoo.pt/omoda/omoda-5-ev/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "3fd40131eb4751b0e4adc17aa5e79be78a2182b3a805249a034699f5ac284491",
-    "raw_sha256": "4dab27e3c128c2d104657e5394c3c8584bb8f7e66fffae5b6f01a4fbeac38cc0",
+    "sha256": "28f63dd2b8ced7c47a8cd58e5e85cc021ca9710866fdcfbc0154097db885d070",
+    "raw_sha256": "abf7ab6d52aeb36f563758e4824e0d35b67d712d2cbb52e49d3e63e4ca21b339",
     "final_url": "https://omodajaecoo.pt/omoda/omoda-5-ev/",
-    "bytes": 235965,
-    "normalized_chars": 7395
+    "bytes": 241996,
+    "normalized_chars": 7483
   },
   "https://omodajaecoo.pt/0-juros/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "44bf6193fe8f5d77b3277dabd753706fda5e32181d5ff5e08c8360ca970dbb1d",
-    "raw_sha256": "80490c03e4a16fef1c74fc1c878d18c67e447a600acb44e897f3bc41b6649d12",
+    "sha256": "eb4bd90ee861b4d20cbac3f196843f9890ec5e01e56f20d7c15045e5ca516876",
+    "raw_sha256": "2bf62264b438692a050685bacd3679d0f7cc100a6c72d1ff972aa3a4b8e7a4cd",
     "final_url": "https://omodajaecoo.pt/0-juros/",
-    "bytes": 175653,
-    "normalized_chars": 10901
+    "bytes": 181484,
+    "normalized_chars": 10990
   },
   "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "c9128ab1838464ebe32b17fe7e96d896c1da495895a7a806c0e72101a21146e6",
-    "raw_sha256": "21c007997947c893367e6ebb26ecf7ecdbb06c85fb5c2a03548df7e467d94e0a",
+    "sha256": "a9a174d4276aae96be7ee14e6d1e2955beaad3ff03ae740e14d5566043973403",
+    "raw_sha256": "1577d9e443c09cd4fd36e30c928fab2bb9b4bc58c14f38a67762784bc75519a2",
     "final_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
-    "bytes": 1015859,
-    "normalized_chars": 51799
+    "bytes": 992373,
+    "normalized_chars": 52133
   },
   "https://www.filintomota.pt/campanhas/novo-leapmotor-b05-a-partir-de-24500-euros/": {
     "fingerprint_version": "html-visible-text-v1",
@@ -195,34 +195,34 @@
   "https://www.filintomota.pt/marca/leapmotor/b10/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "c6136ac1b3aa8e668e0e218fb14e4f041fb32acbdd1b6b0861e5423f33bcf07c",
-    "raw_sha256": "cea84b6d4ac936f38a8c04d15cae9de2652783feecf78de72f82b88881590e37",
+    "raw_sha256": "1fe357a7ebe4b0349b7fc2b70faeda1623563332e6e78ca8af5945c3fb7e59d0",
     "final_url": "https://www.filintomota.pt/marca/leapmotor/b10/",
-    "bytes": 465501,
+    "bytes": 463571,
     "normalized_chars": 10807
   },
   "https://kia.pt/modelos/kia-ev3/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "f36eaee5ec2ccbb4a2df5a644ef18f2357d97d2d2b821c35d5e3acc496150be6",
-    "raw_sha256": "1d9e9172ea5857af664939572b6944c751d4ddef3a07ddcf210126288676f2aa",
+    "sha256": "a70fb326789bf041dd2096cf42fe73ea6b6d8a2b5d19ab85cd79731004db7768",
+    "raw_sha256": "2e9e0ee70e653b5c7dad443062602f4ff5c1c7282bbafaa0b5b33cbbaee78569",
     "final_url": "https://kia.pt/modelos/kia-ev3/",
-    "bytes": 371488,
-    "normalized_chars": 27355
+    "bytes": 381825,
+    "normalized_chars": 27454
   },
   "https://www.filintomota.pt/marca/kia/ev3/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "8c2b0138529f3c05dd58b776066264ca163f866a4a49bc8927adf18d8aabed38",
-    "raw_sha256": "5155c743ee2e48d8f2a8d7df77481bf2794fb4c36c8f796ee02a48dcecd9cd80",
-    "final_url": "https://www.filintomota.pt/marca/kia/ev3/?doing_wp_cron=1785946600.4968008995056152343750",
-    "bytes": 464447,
+    "raw_sha256": "fb0653dacdc654aa506f36766f705d97158cd3f1a726a3cc082c56c5e072b6ce",
+    "final_url": "https://www.filintomota.pt/marca/kia/ev3/",
+    "bytes": 462625,
     "normalized_chars": 10161
   },
   "https://byd-auto.pt/modelos/byd-dolphin/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "bf78487fd6386d3b7db10ec48dea154b3d4531dd0c47ba35f1854cf8f9908bee",
-    "raw_sha256": "2abf48e9969f71255f3ae347d69ae7b81185bdd4b4d241976bcbf9d5b7ec1eeb",
+    "sha256": "2137e3f0d59904eeb4ece5600ba83186d93267ced0298aed6eefae04e90f6b1b",
+    "raw_sha256": "6540994bf88c93911be18095ee45eec40f60c848875fe7cc8b41698901d2f4ff",
     "final_url": "https://byd-auto.pt/modelos/byd-dolphin",
-    "bytes": 427340,
-    "normalized_chars": 8787
+    "bytes": 472403,
+    "normalized_chars": 17858
   },
   "https://www.fiat.pt/content/dam/fiat2023/pt/trimcomparison/apr26/Comparativo-600e.pdf": {
     "fingerprint_version": "browser-visible-text-v1",
@@ -235,77 +235,77 @@
   },
   "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "35275afb8e762c14e0f6c1013eb7af33a6c86b7a19076f305b4949eabcb6efc2",
-    "raw_sha256": "35275afb8e762c14e0f6c1013eb7af33a6c86b7a19076f305b4949eabcb6efc2",
+    "sha256": "321c395296ea56a809ce476d40b9b2a742d6419dd3ed31a51aac8cf6e8e182ca",
+    "raw_sha256": "321c395296ea56a809ce476d40b9b2a742d6419dd3ed31a51aac8cf6e8e182ca",
     "final_url": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
-    "bytes": 19198,
-    "normalized_chars": 18297,
+    "bytes": 19183,
+    "normalized_chars": 18280,
     "read_with": "agent-browser"
   },
   "https://www.opel.pt/carros/frontera/frontera/vista-geral.html": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "89b2c0973cedb15c3856a36e02efb4c88e086525a51c1d7f2132b83b7f9121a0",
-    "raw_sha256": "89b2c0973cedb15c3856a36e02efb4c88e086525a51c1d7f2132b83b7f9121a0",
+    "sha256": "de12f550f195b9b95588dac14f88ea517d2c1e19555bbd52308ce64ee44759dd",
+    "raw_sha256": "de12f550f195b9b95588dac14f88ea517d2c1e19555bbd52308ce64ee44759dd",
     "final_url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
-    "bytes": 13482,
-    "normalized_chars": 12808,
+    "bytes": 13479,
+    "normalized_chars": 12805,
     "read_with": "agent-browser"
   },
   "https://www.renault.pt/veiculos-eletricos/megane-e-tech-eletrico.html": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "fb6fe184234e578cebf29997aba5af7adda70fcc41d04a1e9bba7e306bd87afe",
-    "raw_sha256": "0e39f6153b87479458fd6f6aef61fb7079e9b1ff009582042e0ff9621f49b2c1",
+    "sha256": "9385d5e75bbb55b7540a894a286eab00e04fd4eef263284fcb2649e2caaf9626",
+    "raw_sha256": "923628b7989df5aae5566afde94145635866d9634b18b3d1870dd7e783bac549",
     "final_url": "https://www.renault.pt/veiculos-eletricos/megane-e-tech-eletrico.html",
-    "bytes": 940665,
-    "normalized_chars": 18594
+    "bytes": 933725,
+    "normalized_chars": 18473
   },
   "https://www.volkswagen.pt/id3/id3": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "ae0e3f3ba621dea9466d45dc94b8d0ce3b90895a9a3b2ba71869d56dfecb6457",
-    "raw_sha256": "c2c32c9d13923c8e978292759246d1f4aecb3347c6f8488a48abf4eef79681ce",
+    "raw_sha256": "22c7a9881e2086431b04619b1f9095ed72c47e5b8bb537d13de4f6fa8973520c",
     "final_url": "https://www.volkswagen.pt/id3/id3",
-    "bytes": 639916,
+    "bytes": 640028,
     "normalized_chars": 7077
   },
   "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "dd7c09674c3d65d05adaffc252c90cf41b31847e5a9c40ab1c755895c5142220",
-    "raw_sha256": "04125b16b4bd40ea9ed5ab5a9d0a84d6fad43c02af8907ea17f16c8f674dde56",
+    "sha256": "f30c324c6a83cfe849ad427560112d14c6c18ae51d004c73e6994ce5e52b0ba9",
+    "raw_sha256": "307366705c4bfadf0c7762f2883a6f32429e513f9cb159118cbd1b336c08c387",
     "final_url": "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados",
-    "bytes": 791973,
-    "normalized_chars": 28065
+    "bytes": 771946,
+    "normalized_chars": 27546
   },
   "https://leaf.nissan.pt/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "682879e82e0c6d2781d4b1e9e3ea58a920a8d9de4fa17be4097eff43ebd2b819",
-    "raw_sha256": "f0a25a49beeec2a100a1f83f42cd8a97f35daca8ec1154a3e64ec2da743c1531",
+    "sha256": "80d607d384eaa913dd6ff47a06fb27525ceabb1ae160f41d6b50ac68fcbfe89c",
+    "raw_sha256": "950299d08f73a83700b4ac8c06c2e24579d8f4240db46d9de5e0255b2987f6cc",
     "final_url": "https://campanhas.nissan.pt/leaf/",
-    "bytes": 249167,
+    "bytes": 251655,
     "normalized_chars": 6806
   },
   "https://pt.smart.com/pt/models/hashtag-one/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "726eb3dcb857d375d33790dca555b7dbbfcc9a1e72c1f94595f9fc5ed3b0a503",
-    "raw_sha256": "9d97d5d152ba0bbec261701c015e566114e39eb83981f604e6e506d324fd337f",
+    "sha256": "b9f52faec9cf904a48ade2166e8de9490bf23ba8736bedcfe4e1467a1bf2c99f",
+    "raw_sha256": "6e69b3d217293c61863d0f27c947fd99b9a407f3f67d52dbeaf96a69c2e54151",
     "final_url": "https://pt.smart.com/pt/models/hashtag-one/",
-    "bytes": 708677,
-    "normalized_chars": 1632
+    "bytes": 706404,
+    "normalized_chars": 1722
   },
   "https://pt.smart.com/pt/promotions/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "2efed9e2ac40b516bad80337ec4657f92972ee38d09b60efbde05be81e9377b0",
-    "raw_sha256": "cf6fc4381a3cdd107f315e28773cbc1b927fa4655a448c64108e516c85e43187",
+    "sha256": "cbeafe649d9490b7445ede236ee2d309f70cf5c6592acd24f50f42e058435528",
+    "raw_sha256": "1991102c8cf4d915142a3fa17613b421ab35ec42c59094d21e96baa7096509c3",
     "final_url": "https://pt.smart.com/pt/promotions/",
-    "bytes": 682134,
-    "normalized_chars": 1556
+    "bytes": 679912,
+    "normalized_chars": 1662
   },
   "https://pt.smart.com/pt/models/hashtag-three/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "45a1049416733cc8fd9c30f99b7d06085212a659e7472dc9e5458ad8887df2c9",
-    "raw_sha256": "39d45c49ce6d9900742013b06f24c957cf199c77b82361cb452ef93b90bc9622",
+    "sha256": "ea4533d4b29d7b1cb13e4f865255a3c413ea0c4859f1d6ab26108e4fc462cab7",
+    "raw_sha256": "a6ed95307190c53c4cef9d3409a516de87427fb8a1995402f984dd196b68e6a1",
     "final_url": "https://pt.smart.com/pt/models/hashtag-three/",
-    "bytes": 702985,
-    "normalized_chars": 1646
+    "bytes": 700551,
+    "normalized_chars": 1736
   },
   "https://www.jeep.pt/novo-jeep-avenger/eletrico": {
     "fingerprint_version": "browser-visible-text-v1",
@@ -318,11 +318,11 @@
   },
   "https://www.jeep.pt/promocoes-suv-4x4/oferta/avenger-100-eletrico-particular": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "fedab99c0ef6026cf6be4313b4caee7245a060337f02a255d84e11a7ec1a6b28",
-    "raw_sha256": "fedab99c0ef6026cf6be4313b4caee7245a060337f02a255d84e11a7ec1a6b28",
+    "sha256": "6c19746e18c62ce3ad1c1e0f87c3086cadca539394e8194d7d9030e0d0ab656a",
+    "raw_sha256": "6c19746e18c62ce3ad1c1e0f87c3086cadca539394e8194d7d9030e0d0ab656a",
     "final_url": "https://www.jeep.pt/promocoes-suv-4x4/oferta/avenger-100-eletrico-particular",
-    "bytes": 4303,
-    "normalized_chars": 4125,
+    "bytes": 4335,
+    "normalized_chars": 4153,
     "read_with": "agent-browser"
   },
   "https://www.alfaromeo.pt/modelos/junior-elettrica": {
@@ -345,8 +345,8 @@
   },
   "https://www.tesla.com/pt_PT/model3": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "c8d5933e782a8c8193c6490c901774587667f261699a0ea1be15ad6b7d8c128a",
-    "raw_sha256": "c8d5933e782a8c8193c6490c901774587667f261699a0ea1be15ad6b7d8c128a",
+    "sha256": "1635674f8eaf139c2f975dae59bb32e4b6f931124a8215f3432175730764466f",
+    "raw_sha256": "1635674f8eaf139c2f975dae59bb32e4b6f931124a8215f3432175730764466f",
     "final_url": "https://www.tesla.com/pt_PT/model3",
     "bytes": 205,
     "normalized_chars": 203,
@@ -363,86 +363,86 @@
   "https://www.skoda.pt/skoda-elroq/elroq": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "77ce8985010acbcf0b1c959503025e4e36d294eeb77c9aa810e59b46dbb9c58d",
-    "raw_sha256": "29db4daca626a12a4d4230ee47ed5b9d955bd257fae209e43598fe775ec97dbf",
+    "raw_sha256": "e8776f134a2356de81a89843f14aeaac1752e20e7f4fd094f4310a1f475cbbdb",
     "final_url": "https://www.skoda.pt/skoda-elroq/elroq",
-    "bytes": 1066543,
+    "bytes": 1067929,
     "normalized_chars": 14597
   },
   "https://changan-auto.pt/configurador/deepal-s05/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "ac6bdedce1bf3ee903b38135eb779ffd6adc2f25adb9d15e160f51aa21218bdd",
-    "raw_sha256": "7c0f951affe906c148a7e462394f3e19260c62bacf8726984f1e69aa1dff78d1",
+    "sha256": "49c1d0cd0192c4f156ec6159a99eeb5e1506f1776484e0b8d7f98973d37b04f1",
+    "raw_sha256": "bb06fe74b7b1a5fa85db00b510812450c77aa1dca5225007da4eb8bae8a60f42",
     "final_url": "https://changan-auto.pt/configurador/deepal-s05/",
-    "bytes": 199942,
-    "normalized_chars": 8676
+    "bytes": 166914,
+    "normalized_chars": 8767
   },
   "https://changan-auto.pt/ficha-tecnica-s05/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "0d567916744ebd1746d5a490140f9401cd832cc5406bc971c35c713fb5793792",
-    "raw_sha256": "71b005f30032b9435ad1b30fbe8fc5d24847f4c1081fcaf25d5783ab74197842",
+    "sha256": "3901a3168dc59c4812c57f431a161ffc9fc31535fb3156626f2af1f34f1121ad",
+    "raw_sha256": "7f61d5ecc4d6f2cd75f96496147b4bb4aa9d28d076c0ef6557a81ccef3ab0abc",
     "final_url": "https://changan-auto.pt/ficha-tecnica-s05/",
-    "bytes": 180126,
-    "normalized_chars": 7079
+    "bytes": 147630,
+    "normalized_chars": 7594
   },
   "https://caetano.pt/geely/carros-novos/e5/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "fedd9a2ec0b09d03952611a14f268d43876acea9f7335840f81864f5c2b4808f",
-    "raw_sha256": "2771eaae159b4d516f6cb7f77f2f705060e32835de1134f688743844049cf7b5",
+    "raw_sha256": "00add28555abe97e4a92b9efdfe65d84f8294ff88c45c75d320940004a5be238",
     "final_url": "https://caetano.pt/geely/carros-novos/e5/",
-    "bytes": 226776,
+    "bytes": 226605,
     "normalized_chars": 11972
   },
   "https://www.volvocars.com/pt/cars/ex30-electric/": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "102076d07b0ec786c02ec9092f6885450f4968e397de79098b01b68b22c8fa1d",
-    "raw_sha256": "102076d07b0ec786c02ec9092f6885450f4968e397de79098b01b68b22c8fa1d",
+    "sha256": "be2e747f2949980aa26d6f082b9889a30bfd87bcea5cd096bc8f267c8ffe611f",
+    "raw_sha256": "be2e747f2949980aa26d6f082b9889a30bfd87bcea5cd096bc8f267c8ffe611f",
     "final_url": "https://www.volvocars.com/pt/cars/ex30-electric/",
-    "bytes": 219,
-    "normalized_chars": 217,
+    "bytes": 221,
+    "normalized_chars": 219,
     "read_with": "agent-browser"
   },
   "https://www.byd-auto.pt/campanhas/byd-atto-2": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "a03eaf42a3552c437ae2072c26fbb3200bb60a119b2932825edd5a21c34f6eff",
-    "raw_sha256": "1bf71f469cc28983278e16283f471c31a5dba0937730b3ca0d7d91b2e7aaa256",
+    "sha256": "2cee5c4d000b185ce22807488d265769b8e0245b75222fe38fc7eefb1af44848",
+    "raw_sha256": "1df0806c12ae8f265023ea9aa6640c2a1ac088ba05c7c08b1a93e6797f9c927a",
     "final_url": "https://www.byd-auto.pt/campanhas/byd-atto-2",
-    "bytes": 440250,
-    "normalized_chars": 15134
+    "bytes": 434761,
+    "normalized_chars": 15056
   },
   "https://www.citroen.pt/modelos/c4.html": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "a077e80474a3a2c32c0690e15eaed80fd75564aee4998eca810410fd93723c0a",
-    "raw_sha256": "a077e80474a3a2c32c0690e15eaed80fd75564aee4998eca810410fd93723c0a",
+    "sha256": "627548eb360d49b9aa17ab81def07200c7347800a7fc927f0b899ce46c4a9943",
+    "raw_sha256": "627548eb360d49b9aa17ab81def07200c7347800a7fc927f0b899ce46c4a9943",
     "final_url": "https://www.citroen.pt/modelos/c4.html",
-    "bytes": 29432,
-    "normalized_chars": 27910,
+    "bytes": 28971,
+    "normalized_chars": 27509,
     "read_with": "agent-browser"
   },
   "https://www.citroen.pt/comprar/campanhas-particulares/citroen-ec4-vantagem-cliente.html": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "326469a9d22275d48d8c71b077e663fe51d319ffe22eb06b605fe28801311b8f",
-    "raw_sha256": "326469a9d22275d48d8c71b077e663fe51d319ffe22eb06b605fe28801311b8f",
+    "sha256": "30ff395158a285da46800e69f8a606c7feb4c42c1d5ecb92c89fda0d7adcfc27",
+    "raw_sha256": "30ff395158a285da46800e69f8a606c7feb4c42c1d5ecb92c89fda0d7adcfc27",
     "final_url": "https://www.citroen.pt/comprar/campanhas-particulares/citroen-ec4-vantagem-cliente.html",
-    "bytes": 4124,
-    "normalized_chars": 3987,
+    "bytes": 4125,
+    "normalized_chars": 3988,
     "read_with": "agent-browser"
   },
   "https://www.citroen.pt/modelos/c4-x.html": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "3b9e9dda31dce94581d4d77c96b435dcdf26e7585c4e363687382996df693fd2",
-    "raw_sha256": "3b9e9dda31dce94581d4d77c96b435dcdf26e7585c4e363687382996df693fd2",
+    "sha256": "32c6390578984d1d5aa8169431c51957a339a83e0d941ec0e341d4b80427f667",
+    "raw_sha256": "32c6390578984d1d5aa8169431c51957a339a83e0d941ec0e341d4b80427f667",
     "final_url": "https://www.citroen.pt/modelos/c4-x.html",
-    "bytes": 25875,
-    "normalized_chars": 24642,
+    "bytes": 25404,
+    "normalized_chars": 24234,
     "read_with": "agent-browser"
   },
   "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "ca1a6316e78ddae55adf3c67b4b1b8925d2454dea003a7edeb0452d397408b70",
-    "raw_sha256": "ca1a6316e78ddae55adf3c67b4b1b8925d2454dea003a7edeb0452d397408b70",
+    "sha256": "eb757e837463e86be9d45e5fb3e1d9de4d8932655c909f435fbc15a038d83158",
+    "raw_sha256": "eb757e837463e86be9d45e5fb3e1d9de4d8932655c909f435fbc15a038d83158",
     "final_url": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
-    "bytes": 16507,
-    "normalized_chars": 15773,
+    "bytes": 16504,
+    "normalized_chars": 15770,
     "read_with": "agent-browser"
   },
   "https://www.peugeot.pt/our-range/new-peugeot-2008.html": {
@@ -466,108 +466,108 @@
   },
   "https://gac-portugal.pt/aion-ut/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "eca5a7117288e62ecd96b848845f68a883c902ac80ef82a28fd6ee420ac45c91",
-    "raw_sha256": "6a12aed112c6da0fd45f368c1ac99430fd28cc73c0ec3ef90285307f21786ff5",
+    "sha256": "41d2026891e25d1d8adc6110c0cc5254fa7dd934acbc216323fb836aa7df1848",
+    "raw_sha256": "89277a3cfb70eead3c9663aab2f860e3d69b775d04ffaca7a19a7f5dc259f02b",
     "final_url": "https://gac-portugal.pt/aion-ut/",
-    "bytes": 93700,
-    "normalized_chars": 4031
+    "bytes": 101419,
+    "normalized_chars": 4096
   },
   "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "4667bf2216be1914247e9bfcee4e2ee4983a3df2c6f435e1a23e69c156397b68",
-    "raw_sha256": "2291f063379b2d870f93c5581f16fdbdd569726b419391461193e41997aebead",
+    "sha256": "1c59a4082d2c34770c43057ac4fe992e6c703897d3bb80b1b8abf2f3e7e17c63",
+    "raw_sha256": "31163cbf7ceac975ac6cf15e726f9f308c0be2c2af4afd25d68ec440315c475b",
     "final_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-    "bytes": 85186,
-    "normalized_chars": 2927
+    "bytes": 88452,
+    "normalized_chars": 3016
   },
   "https://www.alpinecars.pt/modelos-eletricos/a290.html": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "c84e23afaab9139fbdbda2ed7f19aa072af60fbf6a88866e03a68e3ba967af14",
-    "raw_sha256": "f278c3f0433688f1604d1770d8b5a75762877c7cf88ef6f765e718706999f982",
+    "raw_sha256": "f90f42aa1115fa58b5cbed41c5dfb0483c86a806300bd2878334d6dba2e86d37",
     "final_url": "https://www.alpinecars.pt/modelos-eletricos/a290.html",
-    "bytes": 557154,
+    "bytes": 556681,
     "normalized_chars": 7008
   },
   "https://www.hyundai.pt/carros/novo-kauai-ev/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "1df39b604a0cd27515fe9a5a25383869f2e057a9e629e7941b9dbbe48510476b",
-    "raw_sha256": "47c8c2b8fc3f5b26d90dec786324a1c24a4b54b6d9cd27840aa82728e4c024ff",
+    "sha256": "8fa3355fc795bec8c74f9a2174677b49f07af5718908e8400c6d2042d6b8895c",
+    "raw_sha256": "529da6ff56eee77db290a6a3ee24a334be47d6d7b22a3248b73cbccaa6133b4e",
     "final_url": "https://www.hyundai.pt/carros/novo-kauai-ev/",
-    "bytes": 89064,
-    "normalized_chars": 9975
+    "bytes": 87954,
+    "normalized_chars": 9972
   },
   "https://caetano.pt/hyundai/carros-novos/kauai/eletrico/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "39d8d16f7c852ef55bdcffc06580ea183a8f49e4ea8aef48c08fd7435f1bb1f0",
-    "raw_sha256": "2b6dd916b28e2bbc2b957b0457f87ee2bf919994f2cb296e5097b2bae3e030ee",
+    "raw_sha256": "ccfff0308b6c95952bf68caa1a98366ad3259a582d4da53bad894d2aad9929ef",
     "final_url": "https://caetano.pt/hyundai/carros-novos/kauai/eletrico/",
-    "bytes": 294255,
+    "bytes": 293979,
     "normalized_chars": 6376
   },
   "https://omodajaecoo.pt/jaecoo/jaecoo-5-ev/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "d46cbae8de855c93c7f75e4e229fd31155ab4e22fb94de77619ae527e05fb6c1",
-    "raw_sha256": "8d919a3345e8bb376a01dec1feef21b8a1f110053f26aa4a4740d87deec42e85",
+    "sha256": "b2d653b40a1f215867b1bf710a1595c3a5d40843470b29d9c0bbae2eea4796ee",
+    "raw_sha256": "725f6919ecfb4cf0912beb7b963c434e6ef0f0f79a9edf6b866adb784b825c98",
     "final_url": "https://omodajaecoo.pt/jaecoo/jaecoo-5-ev/",
-    "bytes": 209737,
-    "normalized_chars": 7055
+    "bytes": 215760,
+    "normalized_chars": 7140
   },
   "https://www.filintomota.pt/marca/leapmotor/c10/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "ef98f5367462882a28d99b9393cfec66475d201fb6fda60318214cdf72c26a7c",
-    "raw_sha256": "4db15962b17606b734db299e2f99e4e7e189949f642d5a2ae26aefe7638554a1",
-    "final_url": "https://www.filintomota.pt/marca/leapmotor/c10/?doing_wp_cron=1785947372.0100500583648681640625",
-    "bytes": 464330,
+    "raw_sha256": "7c26c3b7f68b4578d05f122873733c558906f809e79227c6bafacfdea034cb83",
+    "final_url": "https://www.filintomota.pt/marca/leapmotor/c10/",
+    "bytes": 461116,
     "normalized_chars": 12049
   },
   "https://www.opel.pt/cars/astra-models.html": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "1c08d27bc9a5606c9b19e9745b79cd2dda1201c7c4cf84685251f50c309d4fc3",
-    "raw_sha256": "1c08d27bc9a5606c9b19e9745b79cd2dda1201c7c4cf84685251f50c309d4fc3",
+    "sha256": "6c8cb1903e4de8b4ac923e3788348c09d9e12ae669f6461b6e9d2529e01ce4d6",
+    "raw_sha256": "6c8cb1903e4de8b4ac923e3788348c09d9e12ae669f6461b6e9d2529e01ce4d6",
     "final_url": "https://www.opel.pt/cars/astra-models.html",
-    "bytes": 13893,
-    "normalized_chars": 13284,
+    "bytes": 13890,
+    "normalized_chars": 13281,
     "read_with": "agent-browser"
   },
   "https://www.opel.pt/ofertas/campanhas-particulares-credito/opel-astra-5p-electric-flexiopel.html": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "211dd36e3fdc2342799bc9ee0cfcc8891b9a2c1938a0c64672bf08eccb38b5ab",
-    "raw_sha256": "211dd36e3fdc2342799bc9ee0cfcc8891b9a2c1938a0c64672bf08eccb38b5ab",
+    "sha256": "50f5be91a7b2504fbe871237b4d92bb8defa461d1cbc920979dc94f24700e581",
+    "raw_sha256": "50f5be91a7b2504fbe871237b4d92bb8defa461d1cbc920979dc94f24700e581",
     "final_url": "https://www.opel.pt/ofertas/campanhas-particulares-credito/opel-astra-5p-electric-flexiopel.html",
-    "bytes": 7961,
-    "normalized_chars": 7672,
+    "bytes": 7958,
+    "normalized_chars": 7669,
     "read_with": "agent-browser"
   },
   "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "337f82c5af3e9b03de92ab9fae24941ccadae81580c5cd52231e023f8054f9ae",
-    "raw_sha256": "a17c86394bf58c2ff69038506e88d9bc67e6db9c01cadd6b9cfc76d1e2a94313",
+    "sha256": "74c48fbfc1efb6e19e0eec199a463f4f0fd3ba848454b5b40190cd28cbdb4775",
+    "raw_sha256": "fb15dacdd66d361148e694325acb13c83c7c4942015474091109508487a6e454",
     "final_url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
-    "bytes": 965620,
-    "normalized_chars": 19425
+    "bytes": 958680,
+    "normalized_chars": 19304
   },
   "https://rede.abarth.pt/cam-porto/contacte-nos/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "dff8fd9c46931b3f986cc05ae592a9120b0ddc81588ecc76815d65eca6b993e1",
-    "raw_sha256": "879b3164e63b8c76855a234d73d0fb29f5eb69f9b456abf7e1eada370e595697",
+    "sha256": "9693dc10ca355777811fdc6956bcf3ea8e93154cb08c9b77ec64e67d402920f3",
+    "raw_sha256": "6c56d490918614ac2f7d0d559e41c99feec1b23a6985ddce977c4dc2fb7b5bde",
     "final_url": "https://rede.abarth.pt/cam-porto/contacte-nos/",
-    "bytes": 30067,
-    "normalized_chars": 901
+    "bytes": 30263,
+    "normalized_chars": 841
   },
   "https://gac-portugal.pt/rede-de-concessionarios/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "246c6f7b89e4633a473e0eaf4ec794c1bc887701b863e369b99c012b3b9979ce",
-    "raw_sha256": "656e9bd6533dc91040b8c0da7931d8790d95f88898d578dd7100cbc41cc63ba9",
+    "sha256": "b2ffaeea8dea503a4c65d0d316d97c1e22a48fc2af32ec6eaab6bc0b1c301987",
+    "raw_sha256": "bf2778355ea01cb5155cc9aeccb783c0e15c869d5dce10d7f7c0814ff254b988",
     "final_url": "https://gac-portugal.pt/rede-de-concessionarios/",
-    "bytes": 50829,
-    "normalized_chars": 2373
+    "bytes": 64484,
+    "normalized_chars": 2575
   },
   "https://www.alpinecars.pt/centros-alpine.html": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "432c964ec1b33154733e9e214860cc6baea39903e7b8f0cddb85076efa757d57",
-    "raw_sha256": "9ea96376ef83d60ba1c678f9bded83203e29c3c444dccb4d6b3f0152bcf1d480",
+    "raw_sha256": "a5892a70d204d0c3f6a9b3736a45f6e3996a4e61842c25387e95433aee7df0b5",
     "final_url": "https://www.alpinecars.pt/centros-alpine.html",
-    "bytes": 330852,
+    "bytes": 330379,
     "normalized_chars": 3917
   },
   "https://www.cam.pt/": {
@@ -580,76 +580,76 @@
   },
   "https://www.byd-auto.pt/concessionarios": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "d092a269a0d337441145ef620d3022b98c02fda8475889e269a1aafbc6c9d69a",
-    "raw_sha256": "9577646861be5ae061bb5bc979cf5112905bc6bab14aac97798855da3b9feed4",
+    "sha256": "9417d8df8f3c08f004c729aa3cf9cecfb0a73b60de6a22c17194218a8cd9f784",
+    "raw_sha256": "3c21c584a6a14b0a5175bfcee90e2c661e56c6399abb95c15e1035842dad46c6",
     "final_url": "https://www.byd-auto.pt/concessionarios",
-    "bytes": 641296,
-    "normalized_chars": 19419
+    "bytes": 640977,
+    "normalized_chars": 19411
   },
   "https://changan-auto.pt/onde-estamos/cam-porto/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "a679223b7f3d1e0e3ca8ff63de8f3b84e6c87167f064941fa128aafbfe21d3c5",
-    "raw_sha256": "cf80710af0e6f79133e2bec8ca7bfa708ab6bb28b15a2c2a3b1a9b21a5496fda",
+    "sha256": "990c4f29c4e88f6096d77fd1b09a1f8da7809611c8f791809251c6c4d5b33484",
+    "raw_sha256": "75c0f6d19f58d40d5f4970e01525790568658754b7f9cae57a16a75f06e0efb2",
     "final_url": "https://changan-auto.pt/onde-estamos/cam-porto/",
-    "bytes": 144313,
-    "normalized_chars": 2153
+    "bytes": 109943,
+    "normalized_chars": 2689
   },
   "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "d53b6d9d397c1f7b03060bc5417e3a9c772315534ad53b01693e6d2bc47707f3",
-    "raw_sha256": "a4a6d1aac98fb5b8d4f695b1f3b8d4b280a7c7b4e7c563288bacd3a42dde8720",
+    "sha256": "9f623ea0b78867b79f907675155bbb48b99ed36007a41d1972e60eb506e6b019",
+    "raw_sha256": "5d6bc2a15cc2bc8a5dfc44bdfbb631ae9a0574f2dc696643daa4ce8697da3363",
     "final_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
-    "bytes": 150356,
-    "normalized_chars": 4604
+    "bytes": 150502,
+    "normalized_chars": 4622
   },
   "https://caetano.pt/dacia/contactos-concessionarios/porto-circunvalacao/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "1c5fcbff91432d33bc17a009339dde3b956b3f01a8390bafbcca70d3f6c43f39",
-    "raw_sha256": "72f30e628fad120c5f17d6f526784dce355be9391172a3114a2a59500a9d9186",
+    "raw_sha256": "6219357c92a11e99b35b40b85e9ea70a95d49f1c7087ff57a170f94c38173b43",
     "final_url": "https://caetano.pt/dacia/contactos-concessionarios/porto-circunvalacao/",
-    "bytes": 235521,
+    "bytes": 235501,
     "normalized_chars": 6876
   },
   "https://www.filintomota.pt/marcas/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "36c7698b3a0201771c2e6ff4cc7e11900f987ff0cb48639617db97fcca533185",
-    "raw_sha256": "399d6d00364a006442ccc1c31370129891df97c69a70d1e52ba703a0f4004af0",
+    "sha256": "c6137efc53c8a91a91ecdaccfba78cbdab20754b1fef0d223afec034b888a388",
+    "raw_sha256": "e480c85b99e4d7eced9d0bdba08ce0f1828b9e9d21020c33457a889a7f375c1f",
     "final_url": "https://www.filintomota.pt/marcas/",
-    "bytes": 159411,
-    "normalized_chars": 5905
+    "bytes": 161637,
+    "normalized_chars": 6018
   },
   "https://caetano.pt/geely/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "525f65bbdd0433a032474e5fe135f01fe33bfadf2b4d07f9662492479bfaf952",
-    "raw_sha256": "f98bacf39d066973ef95a147619ac2e7314ecf0c902d0062c180411079404d40",
+    "raw_sha256": "6955d5a7a90ef0110d18bf7140e45edd9b27c37d198635e89453e127cdb2be8a",
     "final_url": "https://caetano.pt/geely/",
-    "bytes": 208418,
+    "bytes": 208453,
     "normalized_chars": 7311
   },
   "https://www.hyundai.pt/concessionarios/": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "3c22fd8e26f75bf1afadd8f4e2170f786af8df10629545ea876e7a278aaf67f1",
-    "raw_sha256": "3c22fd8e26f75bf1afadd8f4e2170f786af8df10629545ea876e7a278aaf67f1",
+    "sha256": "0e5ff615e8668485049fc6c7a1a1e787ba8d062d3d2a9e80ae0555296cecc55a",
+    "raw_sha256": "0e5ff615e8668485049fc6c7a1a1e787ba8d062d3d2a9e80ae0555296cecc55a",
     "final_url": "https://www.hyundai.pt/concessionarios/",
-    "bytes": 2324,
-    "normalized_chars": 2224,
+    "bytes": 2321,
+    "normalized_chars": 2221,
     "read_with": "agent-browser"
   },
   "https://omodajaecoo.pt/concessionarios/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "4394df45ada62b6442fabd691eaedc1b01aaf14b051b533eb1eb8715d91ff84a",
-    "raw_sha256": "4e4ddc69e295908069dc28683b655efe1ca8b716280be4bb43fdc73564db81ee",
+    "sha256": "3033fc2f3b257c5a315ace24ec5adebfce4719efd6f1121ebdecdd163a39ceed",
+    "raw_sha256": "945157e6f8c419b4ff0548073ffdf5140866ed78766f1e6015317ecbf3fbe066",
     "final_url": "https://omodajaecoo.pt/concessionarios/",
-    "bytes": 242293,
-    "normalized_chars": 5243
+    "bytes": 269383,
+    "normalized_chars": 5827
   },
   "https://www.filintomota.pt/localizacoes/filinto-mota-maia/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "d05268f6c36d0d2cb95fdbe486545d6343fcecfb1b298f8cdf820f95e56ed0be",
-    "raw_sha256": "be9dcc6759d629d529a7c5fdf8cf8fb9475b534e31b80e36e270b7c3423e0e6f",
-    "final_url": "https://www.filintomota.pt/localizacoes/filinto-mota-maia/?doing_wp_cron=1785948509.9503569602966308593750",
-    "bytes": 138774,
-    "normalized_chars": 3774
+    "sha256": "a0f19cb2df35d580ab4ebbce20770d5e78ead07e5f3c1260724b8588e64a557b",
+    "raw_sha256": "1f22638f770a6c0dc189271d7f4c8d04da77201c9265527fe2dcb9e755e80526",
+    "final_url": "https://www.filintomota.pt/localizacoes/filinto-mota-maia/",
+    "bytes": 138779,
+    "normalized_chars": 3792
   },
   "https://mg.jop.pt/": {
     "fingerprint_version": "html-visible-text-v1",
@@ -661,19 +661,19 @@
   },
   "https://caetano.pt/nissan/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "d11be0712c20c317d9eaa7f286cb3d233a0068ec15798d3b98a51468826e8cc5",
-    "raw_sha256": "f6a1d17460e22323b9caab0bd8c8eabd9b6dd85f843edf2ba271100f0558a19f",
+    "sha256": "fd8b5cdaa61f406f8ed19ae815ea078d55977d400182f5425609e72b05877a67",
+    "raw_sha256": "6999f5808251608adc230217a57f786a34fef07a975afa4605d445bb404e8726",
     "final_url": "https://caetano.pt/nissan/",
-    "bytes": 147513,
-    "normalized_chars": 4294
+    "bytes": 147504,
+    "normalized_chars": 4304
   },
   "https://caetano.pt/renault/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "9830b0cb040f9efea15464f403ebfbf7ad6c84cacffc4cc63d0489c2126bdd0f",
-    "raw_sha256": "f9cf61d1675b5ba5bd51182ec572be756288778317e3f529b7ab2ee7e5a628ea",
+    "sha256": "67c49a0e0b8afea7eaf1ad57e14169926c503c9b626426c085cac75be1521016",
+    "raw_sha256": "32d609cfd965c9a7b9cb02eac441832672308434d15b04fed23e4307d74f645d",
     "final_url": "https://caetano.pt/renault/",
-    "bytes": 224610,
-    "normalized_chars": 8691
+    "bytes": 224336,
+    "normalized_chars": 8480
   },
   "https://www.suzukiauto.pt/index.php/concesionarios": {
     "fingerprint_version": "html-visible-text-v1",
@@ -685,8 +685,8 @@
   },
   "https://www.tesla.com/pt_PT/findus/list/stores/Portugal": {
     "fingerprint_version": "browser-visible-text-v1",
-    "sha256": "f5f9b8701b93fcbe8138c2ab0e30d546f93b7ffa315d79be1825c34207edbb6c",
-    "raw_sha256": "f5f9b8701b93fcbe8138c2ab0e30d546f93b7ffa315d79be1825c34207edbb6c",
+    "sha256": "35323c6d9756dbe6358dd5c5fdaa767efe6d7c259c6e89de93d8226b0746d9fc",
+    "raw_sha256": "35323c6d9756dbe6358dd5c5fdaa767efe6d7c259c6e89de93d8226b0746d9fc",
     "final_url": "https://www.tesla.com/pt_PT/findus/list/stores/Portugal",
     "bytes": 226,
     "normalized_chars": 224,
@@ -710,11 +710,11 @@
   },
   "https://pt.smart.com/pt/retailer-list/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "2ede6174586ae7b66557c2b9b19833fee27ccf791c593ac2361cd958df776d87",
-    "raw_sha256": "1a590cc87fbfd4f8b2c0ac5555514396e655955d17fc3594babedca99ada4677",
+    "sha256": "209d82cbfcc1e9ba83cb31f13bf58519b6a57012162cf5835fbe05ca50ff2083",
+    "raw_sha256": "cf183691f5e687e84cb056da8d1625114850626a3e86be2b5f514296d1d85be4",
     "final_url": "https://pt.smart.com/pt/retailer-list/",
-    "bytes": 648062,
-    "normalized_chars": 2832
+    "bytes": 645523,
+    "normalized_chars": 2880
   },
   "https://skoda.carvap.pt/": {
     "fingerprint_version": "html-visible-text-v1",
@@ -726,59 +726,59 @@
   },
   "https://kia.pt/modelos/kia-ev2/": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "0170f48f5c743ffb0e987a176d5426bebc8e0de9229e71ab5d3472e64481afe2",
-    "raw_sha256": "968d259fcda1c7a3ec820b61f1328e33ff1025d680f15e404a759498509aa981",
+    "sha256": "01092cbc5cfe001c07310189b94a2850156ef17344695d8eb8f3acd2bc03fe62",
+    "raw_sha256": "1686e8e7d8f9f8cc8ed7c1ccf593e55b6d7fb8a92cf0d7743c90bbda20ccb214",
     "final_url": "https://kia.pt/modelos/kia-ev2/",
-    "bytes": 392793,
-    "normalized_chars": 16697
+    "bytes": 401691,
+    "normalized_chars": 16828
   },
   "https://kia.pt/modelos/kia-ev2/especificacoes/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "fc5ceaadf7783dc0ff63b8d751351f3378d2914b82455ff12b81c2f288be293d",
-    "raw_sha256": "932f78cc043949ac427e95ae855317c131343fb8390190ef419b2a2030efc937",
+    "raw_sha256": "c0eb9e500a838421c13e176b0c060c8a466b972c1c7fddb4c2a67d6afb49d518",
     "final_url": "https://kia.pt/modelos/kia-ev2/especificacoes/",
-    "bytes": 105399,
+    "bytes": 105494,
     "normalized_chars": 3972
   },
   "https://kia.pt/modelos/kia-ev3/especificacoes/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "dab87bdc12bc4c067f1b68e83e07854df93142815eb79e9ea927a9540249e744",
-    "raw_sha256": "c3c1bca7d134c2b83e5f1f310f31c144445e9c981085494d1b065dbe7f0a261d",
+    "raw_sha256": "20853dc5789a546a2196487db94a67af69dde148c1789c8e6e0580577e534d53",
     "final_url": "https://kia.pt/modelos/kia-ev3/especificacoes/",
-    "bytes": 104893,
+    "bytes": 104980,
     "normalized_chars": 3824
   },
   "https://kia.pt/modelos/kia-ev4/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "79e92dce9048f4d53a1acee81e953f4262351b7fc39eab3e7a9af685ea845519",
-    "raw_sha256": "ed51137a1908532445cfcc37e12d96bbe4a6931f46cea6fbc838b8f98d0dbac9",
+    "raw_sha256": "e7a1943c90ebf0737795eecc7c58a6d43e2b723f292c80f6057101e10a047769",
     "final_url": "https://kia.pt/modelos/kia-ev4/",
-    "bytes": 434957,
+    "bytes": 435044,
     "normalized_chars": 30342
   },
   "https://kia.pt/modelos/kia-ev4/especificacoes/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "c4c899e0da65f9bd488b90c6319a6cebccd1b87f7ca1054c2007de36d924cbc4",
-    "raw_sha256": "8557fab16d94034e5309f389275d5c0da5c1d0ca25e672d870e111e02167bcd8",
+    "raw_sha256": "54e1709a4d3644d3409f5c1bbfbccf76deeb0102e5f4b9796c340a2b6f6f3951",
     "final_url": "https://kia.pt/modelos/kia-ev4/especificacoes/",
-    "bytes": 107433,
+    "bytes": 107524,
     "normalized_chars": 3805
   },
   "https://www.renault.pt/veiculos-eletricos/twingo.html": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "92c828801f3200de939dcede1cc0d9ecf662b36b0ad036c1d691c67acf1047d2",
-    "raw_sha256": "6149d88f718b0eac9af9b55c11b9b33a87e2801c0831cbc7d9bb940b8e66bbc2",
+    "sha256": "17b5b93fe047b0fe258239f0cd0d60f5229e11bcfce2cb35b296b3bca56f5c3f",
+    "raw_sha256": "5946e1342130c270b88637a50bdf24e4c3ff19f004a59d74137a38e9f83778e9",
     "final_url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
-    "bytes": 867157,
-    "normalized_chars": 18740
+    "bytes": 860430,
+    "normalized_chars": 18620
   },
   "https://www.renault.pt/veiculos-eletricos/twingo/caracteristicas.html": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "fa1e010798b7cc2207563dfe507112910a2a84fa03151e88ffb0baef6e51b306",
-    "raw_sha256": "f86d9601ee7b21c623d6c6f894c40277abd83e05354c7f854622153d611cd605",
+    "sha256": "655eb659dd85e328de93d9ebdc29aa1f9c1359d0dfc921b6c61008182351d0f7",
+    "raw_sha256": "066c29237262ebfb8d4118798036dbc9ebba8450980587309251ff6d15894d85",
     "final_url": "https://www.renault.pt/veiculos-eletricos/twingo/caracteristicas.html",
-    "bytes": 536400,
-    "normalized_chars": 14330
+    "bytes": 529460,
+    "normalized_chars": 14209
   },
   "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html": {
     "fingerprint_version": "browser-visible-text-v1",
@@ -819,43 +819,43 @@
   "https://caetano.pt/mini/contactos/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "ea58fd981649fa31ec518432f14b15c7fd12b50dac2a108715b6a6ddb9e69334",
-    "raw_sha256": "6affb3319b148a1b779a4c7e837ac9587ae62a82d95cfdd0750a884c1892d16d",
+    "raw_sha256": "58f7a88dd806dea1fc283d6a01147b3b5d04c2f41c65f0a08b175d085d47a7cd",
     "final_url": "https://caetano.pt/mini/contactos/",
-    "bytes": 136875,
+    "bytes": 136865,
     "normalized_chars": 1169
   },
   "https://www.electrifying.com/az-reviews": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "7b26d6c9ab5a5425699424631e0ee8d88f1c839d0df553d6166dff3a0587ead4",
-    "raw_sha256": "3587515f337131f3817ce73060d6e6ee41fcfa45bd771b683abfcd917b0a88f8",
+    "sha256": "fde2feecaeaff2e250ab94538dbdfccaa5d51eb1fb7925c20b3fc54ea14bfa3c",
+    "raw_sha256": "27c1467a946dfcc073c9b58736b77ce3122b810bfeabf7896fe24166e8ad8232",
     "final_url": "https://www.electrifying.com/az-reviews",
-    "bytes": 452366,
-    "normalized_chars": 29300,
+    "bytes": 460013,
+    "normalized_chars": 29467,
     "source_type": "secondary_market_discovery"
   },
   "https://www.toyota.pt/carros/bz4x": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "1ac6a0719b6db10e61494eaf2cb7645e045780f97b21d02b9bdf8d8f549fddf6",
-    "raw_sha256": "425b311b07a3984b01417947288b7f08fe89a57044d64b076eab2db4b8f736da",
+    "sha256": "3a086cc74b65ae088cd9035a0361f1f580c13c802643b08adbd145ba90355108",
+    "raw_sha256": "126656d6a1a81664110cf9171e16713004b190c94fe0b09f49b5aad553f6659c",
     "final_url": "https://www.toyota.pt/carros/bz4x",
-    "bytes": 588574,
-    "normalized_chars": 38569
+    "bytes": 567121,
+    "normalized_chars": 38142
   },
   "https://www.toyota.pt/carros/bz4x/especificacoes": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "f859c9f544ea9f7ae9a11d8e70b4eea5542e0cb1d3d816cc96bbce30b4e99311",
-    "raw_sha256": "bb8caa8ee43ee724620f7a5f7c96de95450efe3aec781d17366a1ff18c0eb853",
+    "sha256": "7da7ec00e97bacb6842570af46d2555e4709aa13045ff1e51f661b39dca4d52a",
+    "raw_sha256": "23c07c1552739079198eb464719de47990cea92c09a7be1d64214866ceddb0d4",
     "final_url": "https://www.toyota.pt/carros/bz4x/especificacoes",
-    "bytes": 804971,
-    "normalized_chars": 287022
+    "bytes": 784795,
+    "normalized_chars": 287470
   },
   "https://www.toyota.pt/localizar-concessionario": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "5d50d968fcafc057c877bf90458fe5ed77084ca5bd3bdaa1e87393f74c277081",
-    "raw_sha256": "12f79d574161c3ad97fef12070921152931e5b595e092d0f3d9994b90f3574e4",
+    "sha256": "80c9ea0b42fda921b2c9d1eb9a19b1c852bfffe025230f710d4d73ac2553701c",
+    "raw_sha256": "34082f4673f80200dff389743ccb2334181fbf2f06c4c750744c153f97f20410",
     "final_url": "https://www.toyota.pt/localizar-concessionario",
-    "bytes": 299755,
-    "normalized_chars": 9057
+    "bytes": 294054,
+    "normalized_chars": 9326
   },
   "https://www.cupraofficial.pt/cupra-born/cupra-born": {
     "fingerprint_version": "html-visible-text-v1",
@@ -873,9 +873,9 @@
   "https://www.mazda.pt/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "0fdc81e736c480022158d1de162635ee42cbe5ff795c10629b0f4b6b3f963d05",
-    "raw_sha256": "19557417d7e0ebae31e516772d8521f4fd15377647794fd5f9c9001aef09c763",
+    "raw_sha256": "02abc7ba447369d7415118e8de4ca7ce75ff4b5d2405a4f5bc508a2913bbbbfd",
     "final_url": "https://www.mazda.pt/",
-    "bytes": 349982,
+    "bytes": 350031,
     "normalized_chars": 273
   },
   "https://www.peugeot.pt/gama/novo-suv-e-2008.html": {
@@ -907,11 +907,11 @@
   },
   "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html": {
     "fingerprint_version": "html-visible-text-v1",
-    "sha256": "f647ff55ec500e63c181f0da9ab260357441288bd0e793e03cbf5ffe5c09bf12",
-    "raw_sha256": "35555eb552dabd287f9149f96ec4da275d593af3a2ccca8a2dba23a0e1ed61db",
+    "sha256": "2a95cfdaef6db9a4f413250cdb06b7a9e461aa4912067670ca5dc02b3db817b9",
+    "raw_sha256": "da360085e343dc1cd4535e71af40b49d934cf75c68be446370331cba267641e9",
     "final_url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIESPE2",
-    "bytes": 935890,
-    "normalized_chars": 43177
+    "bytes": 912916,
+    "normalized_chars": 43112
   },
   "https://digitalassets.tesla.com/tesla-contents/image/upload/h_1800,w_2880,c_fit,f_auto,q_auto:best/Model-3-Main-Hero-Desktop-LHD": {
     "fingerprint_version": "html-visible-text-v1",
@@ -924,9 +924,9 @@
   "https://www.cupraofficial.pt/o-seu-cupra/concessionarios": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "9884678dcfdae9bf836808ef090bdf0a39fe6ba4e380d8654063090907ad0ef5",
-    "raw_sha256": "342839aae533cf4133cf1c0f43623aa3e62c1e97648d95c4beff19d709ff8aa0",
+    "raw_sha256": "e257b0c24d44ecfa72b5537fbc69327dcd5bf0949eceb1e55930a66c49449382",
     "final_url": "https://www.cupraofficial.pt/o-seu-cupra/concessionarios",
-    "bytes": 288565,
+    "bytes": 288960,
     "normalized_chars": 3341
   },
   "https://www.ford.pt/concessionarios": {
@@ -937,9 +937,142 @@
   "https://www.mazda.pt/formularios/localizar-um-concessionario/": {
     "fingerprint_version": "html-visible-text-v1",
     "sha256": "fda52e41f1f2b29e3737b4a666ba7f398dda9710a3dec5188636f54026332334",
-    "raw_sha256": "476d5120f02eb21e340636c187fce2b7df6ba757bbebcbe521417738bdd8868c",
+    "raw_sha256": "c1b6b92350560cb94227b0b19a9d2833455f4f2093e8fa61f1362e37efa6bd00",
     "final_url": "https://www.mazda.pt/formularios/localizar-um-concessionario/",
-    "bytes": 251753,
+    "bytes": 251621,
     "normalized_chars": 134
+  },
+  "https://www.byd-auto.pt/campanhas/byd-dolphin": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "405f1828c402ffac5757e353b1ae7d45b305de4367860cf0a7628d56d96cc905",
+    "raw_sha256": "38826c98e27fd02d86f69b5d31ec006071d33660957fd275a277f738075257da",
+    "final_url": "https://www.byd-auto.pt/campanhas/byd-dolphin",
+    "bytes": 373018,
+    "normalized_chars": 5770
+  },
+  "https://www.cupraofficial.pt/cupra-raval": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "f49c3724831f7cdb15702827f180830421cafddcfe9f448c43d043ee7efdbb62",
+    "raw_sha256": "86d4eae8146b4cd8a8f19660f4ef5e96f1e3da46688924580afc8fada2192c39",
+    "final_url": "https://www.cupraofficial.pt/cupra-raval",
+    "bytes": 672176,
+    "normalized_chars": 12160
+  },
+  "https://www.cupraofficial.pt/campanhas-carros-novos/novo-cupra-raval": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "cc867dbd580794ef418aa2cbcb8a176ba65181200070cef7505e4fa4ad28e8bc",
+    "raw_sha256": "11387457830f50ed1d37412a379aa587dd275cafb6333622edb15f56b791c276",
+    "final_url": "https://www.cupraofficial.pt/campanhas-carros-novos/novo-cupra-raval",
+    "bytes": 369549,
+    "normalized_chars": 4690
+  },
+  "https://www.lancia.pt/ypsilon/edizione-limitata-cassina": {
+    "fingerprint_version": "browser-visible-text-v1",
+    "sha256": "3acc217a66a1633189d0e1de7519c5a80b034c982eb96b5ed220e286db7ab891",
+    "raw_sha256": "3acc217a66a1633189d0e1de7519c5a80b034c982eb96b5ed220e286db7ab891",
+    "final_url": "https://www.lancia.pt/ypsilon/edizione-limitata-cassina",
+    "bytes": 2933,
+    "normalized_chars": 2828,
+    "read_with": "agent-browser"
+  },
+  "https://www.filintomota.pt/marca/leapmotor/b05/": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "a8e42026c825aceea512c179458f7f34a80f94cd1680be19025f9245e632e89a",
+    "raw_sha256": "4da9a96ff39ef1a92af2545a446a50eebb09787855f0865c89728878523beff3",
+    "final_url": "https://www.filintomota.pt/marca/leapmotor/b05/",
+    "bytes": 459308,
+    "normalized_chars": 14965
+  },
+  "https://www.nissan.pt/veiculos/novos-veiculos/ariya.html": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "7cedd06a676e19d7bec6b2d3ffaacd1108c1411d5a84ea517577d779640b51c5",
+    "raw_sha256": "2836c1e936080b78c4a2fed1ecf5f5943b14b5760a74b8271702a6f3caa56556",
+    "final_url": "https://www.nissan.pt/veiculos/novos-veiculos/ariya.html",
+    "bytes": 580664,
+    "normalized_chars": 14290
+  },
+  "https://www.nissan.pt/veiculos/novos-veiculos/ariya/Preco-e-caracteristicas.html": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "e65e42d53e376cc44b456007bf62f3e578498977c16dd1f4a04174e5a5f57141",
+    "raw_sha256": "9b234ae357d7311e066d591d4f89ae4d09e5bb6a88777342088ff77d5f51c49a",
+    "final_url": "https://www.nissan.pt/veiculos/novos-veiculos/ariya/Preco-e-caracteristicas.html",
+    "bytes": 581479,
+    "normalized_chars": 38592
+  },
+  "https://www.nissan.pt/veiculos/novos-veiculos/novo-nissan-leaf.html": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "9c16d93dfae8efaec89add8da8c401cd11478e1c9f11be158cfbe3c7ecdfa2c0",
+    "raw_sha256": "3ad1657ea17b69687469ffb7446ec9140e9bbfc3486ea7f761d019312ba59d63",
+    "final_url": "https://www.nissan.pt/veiculos/novos-veiculos/novo-nissan-leaf.html",
+    "bytes": 393275,
+    "normalized_chars": 17933
+  },
+  "https://www.nissan-global.com/EN/COMPANY/EVENTS/NISSAN_LEAF_2025/": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "f645a8143104564337d021ec03b86928acc739481f39ae509e57f9b67523d02a",
+    "raw_sha256": "51a7cffda5c7fa23b6e2d3e748227ab4fc5b37f54e47a147ae99af9d956b4313",
+    "final_url": "https://www.nissan-global.com/EN/COMPANY/EVENTS/NISSAN_LEAF_2025/",
+    "bytes": 74009,
+    "normalized_chars": 7697
+  },
+  "https://www.peugeot.pt/showroom/novo-peugeot-2008/eletrico.html": {
+    "fingerprint_version": "browser-visible-text-v1",
+    "sha256": "c0395962fe940f6fe53d4a711e9d19c71fb0f2bb8ac605a7ab6927b39c71a166",
+    "raw_sha256": "c0395962fe940f6fe53d4a711e9d19c71fb0f2bb8ac605a7ab6927b39c71a166",
+    "final_url": "https://www.peugeot.pt/showroom/novo-peugeot-2008/eletrico.html",
+    "bytes": 19403,
+    "normalized_chars": 18423,
+    "read_with": "agent-browser"
+  },
+  "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html": {
+    "fingerprint_version": "browser-visible-text-v1",
+    "sha256": "57543478344852ce0d57ee9b4dd34bf9e98b1d6363203c6cfbff02785fc4cb2b",
+    "raw_sha256": "57543478344852ce0d57ee9b4dd34bf9e98b1d6363203c6cfbff02785fc4cb2b",
+    "final_url": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html",
+    "bytes": 16035,
+    "normalized_chars": 15311,
+    "read_with": "agent-browser"
+  },
+  "https://www.peugeot.pt/comprar/ofertas-do-momento/passageiros/particulares/peugeot-e-208-easy-credit.html": {
+    "fingerprint_version": "browser-visible-text-v1",
+    "sha256": "ce4b4afaaaee9849670ca4c70298743ed5f785e6637c82af97c90f1f18d7fc7d",
+    "raw_sha256": "ce4b4afaaaee9849670ca4c70298743ed5f785e6637c82af97c90f1f18d7fc7d",
+    "final_url": "https://www.peugeot.pt/comprar/ofertas-do-momento/passageiros/particulares/peugeot-e-208-easy-credit.html",
+    "bytes": 8429,
+    "normalized_chars": 8041,
+    "read_with": "agent-browser"
+  },
+  "https://www.skoda.pt/epiq/epiq-move": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "fd273a6a5d095a5ac3fb6aef6aff22f014c017c95208c17b6d7ce581d3442553",
+    "raw_sha256": "d4cc8c0f22b951d4cf4190c3ee4cae78693af7203a0ed3a4c46dfe1408de1c84",
+    "final_url": "https://www.skoda.pt/epiq/epiq-move",
+    "bytes": 1260755,
+    "normalized_chars": 17697
+  },
+  "https://rede.alfaromeo.pt/cam-porto/contacte-nos/": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "d376454ab12b21022f89ffbd3ab3a0052d79f5e584fc045510625acb19f1b192",
+    "raw_sha256": "9cc39c1d443cde87d5a7ac3d3535272747c35964e06e5e82caa1977483fd5a52",
+    "final_url": "https://rede.alfaromeo.pt/cam-porto/contacte-nos/",
+    "bytes": 34595,
+    "normalized_chars": 1094
+  },
+  "https://rede.jeep.pt/cam-porto/contacte-nos/": {
+    "fingerprint_version": "html-visible-text-v1",
+    "sha256": "d6e5a5731833d6ce336717f31c9483f98d626e5b57bb88c674bf284021a8252d",
+    "raw_sha256": "2d0c3d868e8e0ab266c4dcf36a4b3ed45a2ec0b56ec6f942b4b61866379b0ce3",
+    "final_url": "https://rede.jeep.pt/cam-porto/contacte-nos/",
+    "bytes": 33286,
+    "normalized_chars": 1036
+  },
+  "https://www.lancia.pt/concessionarios": {
+    "fingerprint_version": "browser-visible-text-v1",
+    "sha256": "9126f5c3548e6ace0277d7302ecebd777eaf0c0cc0c2d1c25716e6144700729a",
+    "raw_sha256": "9126f5c3548e6ace0277d7302ecebd777eaf0c0cc0c2d1c25716e6144700729a",
+    "final_url": "https://www.lancia.pt/concessionarios",
+    "bytes": 204,
+    "normalized_chars": 202,
+    "read_with": "agent-browser"
   }
 }
