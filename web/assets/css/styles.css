@@ -847,18 +847,6 @@ input[type="range"] {
   line-height: 1.45;
 }
 
-.card-user-reviews {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.8rem;
-  margin-bottom: 0.85rem;
-  flex-wrap: wrap;
-}
-
-.card-user-reviews i {
-  font-size: 0.78rem;
-}
 
 /* Card Specs Horizontal list */
 .card-quick-specs {

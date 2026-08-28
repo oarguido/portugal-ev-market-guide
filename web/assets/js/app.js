@@ -464,34 +464,6 @@ function renderOverview(filteredList = flatCars) {
     `
       : "";
 
-    let userReviewHTML = "";
-    if (car.user_reviews && car.user_reviews.score) {
-      let starsHTML = "";
-      const roundedAvg = Math.round(car.user_reviews.score);
-      for (let i = 1; i <= 5; i++) {
-        if (i <= roundedAvg) {
-          starsHTML +=
-            "<i class='fa-solid fa-star' style='color: #fbbf24; font-size: 0.8rem; margin-right: 1px;'></i>";
-        } else {
-          starsHTML +=
-            "<i class='fa-regular fa-star' style='color: #d1d5db; font-size: 0.8rem; margin-right: 1px;'></i>";
-        }
-      }
-      userReviewHTML = `
-        <div class="card-user-reviews">
-          <span style="display: flex;">${starsHTML}</span>
-          <span style="font-weight: 700; color: #fbbf24;">${car.user_reviews.score.toFixed(1)}</span>
-          <span style="color: var(--text-muted); font-size: 0.75rem;">(${escapeHtml(car.user_reviews.total_reviews)} avaliações • ${escapeHtml(car.user_reviews.source)})</span>
-        </div>
-      `;
-    } else {
-      userReviewHTML = `
-        <div class="card-user-reviews">
-          <span style="color: var(--text-muted); font-size: 0.75rem;"><i class="fa-solid fa-star-half-stroke"></i> Sem avaliações de utilizadores</span>
-        </div>
-      `;
-    }
-
     // Micro Badges
     let badgesHTML = "";
     if (car.is_single_variant) {
@@ -573,7 +545,6 @@ function renderOverview(filteredList = flatCars) {
 
         <h3 class="car-title">${escapeHtml(car.model)}</h3>
         <p class="car-segment">${escapeHtml(car.variant)} • ${escapeHtml(car.segment || "Segmento")} • 100% elétrico</p>
-        ${userReviewHTML}
 
         <div class="card-quick-specs">
           <div class="quick-spec-item">
@@ -1052,12 +1023,6 @@ function getFilteredCars() {
       const rB = b.specifications.wltp_range_combined_km || 0;
       return rB - rA;
     });
-  } else if (sortVal === "rating-desc") {
-    filtered.sort((a, b) => {
-      const rA = a.user_reviews?.score || 0;
-      const rB = b.user_reviews?.score || 0;
-      return rB - rA;
-    });
   } else if (sortVal === "year-desc") {
     filtered.sort((a, b) => {
       const yA = a.release_year || 0;
@@ -1260,16 +1225,6 @@ function updateComparison() {
       label: "Preço confirmado c/ IVA",
       valA: priceA ? formatCurrency(priceA.amount) : "Não demonstrado",
       valB: priceB ? formatCurrency(priceB.amount) : "Não demonstrado",
-      highlight: true,
-    },
-    {
-      label: "Avaliação Utilizadores",
-      valA: carA.user_reviews?.score
-        ? `${carA.user_reviews.score.toFixed(1)} / 5 (${carA.user_reviews.total_reviews} avaliações • ${carA.user_reviews.source})`
-        : "N/D",
-      valB: carB.user_reviews?.score
-        ? `${carB.user_reviews.score.toFixed(1)} / 5 (${carB.user_reviews.total_reviews} avaliações • ${carB.user_reviews.source})`
-        : "N/D",
       highlight: true,
     },
     {
