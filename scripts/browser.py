@@ -22,14 +22,22 @@ DEFAULT_TIMEOUT = 120
 
 def run(*arguments: str, timeout: int = DEFAULT_TIMEOUT) -> subprocess.CompletedProcess[str]:
     """Executar um comando do agent-browser, sem nunca levantar exceção."""
-    return subprocess.run(
-        ["agent-browser", *arguments],
-        cwd=ROOT,
-        text=True,
-        capture_output=True,
-        timeout=timeout,
-        check=False,
-    )
+    try:
+        return subprocess.run(
+            ["agent-browser", *arguments],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            timeout=timeout,
+            check=False,
+        )
+    except (subprocess.TimeoutExpired, FileNotFoundError, OSError) as err:
+        return subprocess.CompletedProcess(
+            args=["agent-browser", *arguments],
+            returncode=1,
+            stdout="",
+            stderr=str(err),
+        )
 
 
 def open_page(url: str, *, settle_ms: int = 1800, timeout: int = DEFAULT_TIMEOUT) -> bool:

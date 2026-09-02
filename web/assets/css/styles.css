@@ -1229,7 +1229,12 @@ input[type="range"] {
   border-bottom: none;
 }
 
+.tech-table th:first-child,
 .tech-table td.cat-label {
+  position: sticky;
+  left: 0;
+  background: var(--bg-card);
+  z-index: 2;
   font-family: var(--font-display);
   font-weight: 600;
   color: var(--text-secondary);
@@ -1654,8 +1659,8 @@ input[type="range"] {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(11, 15, 23, 0.75);
   backdrop-filter: blur(10px);
@@ -1761,7 +1766,7 @@ input[type="range"] {
    ========================================================================== */
 .floating-compare-drawer {
   position: fixed;
-  bottom: 1.5rem;
+  bottom: max(1.5rem, calc(0.5rem + env(safe-area-inset-bottom)));
   left: 50%;
   transform: translateX(-50%) translateY(130%);
   background: rgba(20, 29, 44, 0.94);

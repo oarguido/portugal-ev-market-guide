@@ -2,7 +2,7 @@
 <html lang="pt-PT">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Painel Decisor - Carro da Liliana</title>
     <meta
       name="description"
@@ -138,11 +138,11 @@
               <div class="segment-chips-container">
                 <span class="filter-presets-label"><i class="fa-solid fa-car-side"></i> Segmento:</span>
                 <div class="segment-chips" role="radiogroup" aria-label="Filtrar por segmento">
-                  <button type="button" class="segment-chip active" data-segment="all">Todos</button>
-                  <button type="button" class="segment-chip" data-segment="citadino">Citadinos</button>
-                  <button type="button" class="segment-chip" data-segment="hatchback">Hatchbacks</button>
-                  <button type="button" class="segment-chip" data-segment="suv">SUVs & Crossovers</button>
-                  <button type="button" class="segment-chip" data-segment="berlina">Berlinas</button>
+                  <button type="button" class="segment-chip active" role="radio" aria-checked="true" data-segment="all">Todos</button>
+                  <button type="button" class="segment-chip" role="radio" aria-checked="false" data-segment="citadino">Citadinos</button>
+                  <button type="button" class="segment-chip" role="radio" aria-checked="false" data-segment="hatchback">Hatchbacks</button>
+                  <button type="button" class="segment-chip" role="radio" aria-checked="false" data-segment="suv">SUVs & Crossovers</button>
+                  <button type="button" class="segment-chip" role="radio" aria-checked="false" data-segment="berlina">Berlinas</button>
                 </div>
               </div>
 
@@ -795,7 +795,7 @@
     </div>
 
     <!-- JavaScript Files -->
-    <script src="assets/js/car_data.js?v=b8e327c89eee"></script>
+    <script src="assets/js/car_data.js?v=d49d77c8f0b4"></script>
     <script src="assets/js/html.js"></script>
     <script src="assets/js/search.js"></script>
     <script src="assets/js/ranking.js"></script>

@@ -514,15 +514,16 @@ function renderOverview(filteredList = flatCars) {
     }
 
     const isFav = isFavorite(car.id);
+    const favLabel = `${isFav ? "Remover dos favoritos" : "Guardar nos favoritos"}: ${escapeHtml(car.brand)} ${escapeHtml(car.model)}`;
     const favBtnHTML = `
-      <button type="button" class="btn-card-favorite ${isFav ? "active" : ""}" data-fav-id="${escapeHtml(car.id)}" title="${isFav ? "Remover dos favoritos" : "Guardar nos favoritos"}" aria-label="Favorito">
+      <button type="button" class="btn-card-favorite ${isFav ? "active" : ""}" data-fav-id="${escapeHtml(car.id)}" title="${isFav ? "Remover dos favoritos" : "Guardar nos favoritos"}" aria-label="${favLabel}">
         <i class="fa-${isFav ? "solid" : "regular"} fa-heart"></i>
       </button>
     `;
 
     const isSelected = selectedCompareCars.some((c) => c.id === car.id);
     const compareBtnHTML = `
-      <button class="btn-compare-card ${isSelected ? "selected" : ""}" data-car-id="${escapeHtml(car.id)}">
+      <button type="button" class="btn-compare-card ${isSelected ? "selected" : ""}" data-car-id="${escapeHtml(car.id)}">
         <i class="fa-solid ${isSelected ? "fa-check" : "fa-plus"}"></i> ${isSelected ? "Selecionado para Comparar" : "Adicionar à Comparação"}
       </button>
     `;
@@ -641,9 +642,15 @@ function setupFilters() {
   const resetSegmentChips = () => {
     document
       .querySelectorAll(".segment-chip")
-      .forEach((c) => c.classList.remove("active"));
+      .forEach((c) => {
+        c.classList.remove("active");
+        c.setAttribute("aria-checked", "false");
+      });
     const allChip = document.querySelector('.segment-chip[data-segment="all"]');
-    if (allChip) allChip.classList.add("active");
+    if (allChip) {
+      allChip.classList.add("active");
+      allChip.setAttribute("aria-checked", "true");
+    }
     activeSegment = "all";
   };
 
@@ -672,17 +679,26 @@ function setupFilters() {
     chip.addEventListener("click", () => {
       document
         .querySelectorAll(".segment-chip")
-        .forEach((c) => c.classList.remove("active"));
+        .forEach((c) => {
+          c.classList.remove("active");
+          c.setAttribute("aria-checked", "false");
+        });
       chip.classList.add("active");
+      chip.setAttribute("aria-checked", "true");
       activeSegment = chip.getAttribute("data-segment") || "all";
       renderOverview(getFilteredCars());
     });
   });
 
-  if (searchInput)
-    searchInput.addEventListener("input", () =>
-      renderOverview(getFilteredCars()),
-    );
+  let searchDebounceTimer = null;
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(() => {
+        renderOverview(getFilteredCars());
+      }, 120);
+    });
+  }
   if (priceSlider)
     priceSlider.addEventListener("input", () =>
       renderOverview(getFilteredCars()),
@@ -1007,14 +1023,14 @@ function getFilteredCars() {
   // Apply sorting
   if (sortVal === "price-asc") {
     filtered.sort((a, b) => {
-      const pA = getPrice(a)?.amount ?? Infinity;
-      const pB = getPrice(b)?.amount ?? Infinity;
+      const pA = getFilterPrice(a, priceStatusVal)?.amount ?? Infinity;
+      const pB = getFilterPrice(b, priceStatusVal)?.amount ?? Infinity;
       return pA - pB;
     });
   } else if (sortVal === "price-desc") {
     filtered.sort((a, b) => {
-      const pA = getPrice(a)?.amount ?? -Infinity;
-      const pB = getPrice(b)?.amount ?? -Infinity;
+      const pA = getFilterPrice(a, priceStatusVal)?.amount ?? -Infinity;
+      const pB = getFilterPrice(b, priceStatusVal)?.amount ?? -Infinity;
       return pB - pA;
     });
   } else if (sortVal === "range-desc") {
@@ -1137,14 +1153,20 @@ function updateComparison() {
     `${Math.min(100, (valRangeB / maxRange) * 100)}%`;
 
   // Acceleration (Less is better)
-  const valAccelA = carA.specifications.acceleration_0_100_s || 0;
-  const valAccelB = carB.specifications.acceleration_0_100_s || 0;
-  document.getElementById("val-accel-a").textContent = `${valAccelA}s`;
-  document.getElementById("val-accel-b").textContent = `${valAccelB}s`;
+  const rawAccelA = carA.specifications.acceleration_0_100_s;
+  const rawAccelB = carB.specifications.acceleration_0_100_s;
+  document.getElementById("val-accel-a").textContent =
+    rawAccelA !== null && rawAccelA !== undefined ? `${rawAccelA}s` : "N/A";
+  document.getElementById("val-accel-b").textContent =
+    rawAccelB !== null && rawAccelB !== undefined ? `${rawAccelB}s` : "N/A";
   document.getElementById("bar-accel-a").style.width =
-    `${Math.min(100, (valAccelA / maxAccel) * 100)}%`;
+    rawAccelA !== null && rawAccelA !== undefined
+      ? `${Math.min(100, (rawAccelA / maxAccel) * 100)}%`
+      : "0%";
   document.getElementById("bar-accel-b").style.width =
-    `${Math.min(100, (valAccelB / maxAccel) * 100)}%`;
+    rawAccelB !== null && rawAccelB !== undefined
+      ? `${Math.min(100, (rawAccelB / maxAccel) * 100)}%`
+      : "0%";
 
   // Battery
   const valBatteryA = carA.specifications.battery_capacity_kwh || 0;
@@ -1171,13 +1193,28 @@ function updateComparison() {
   if (diffBox) {
     const priceA = getPrice(carA);
     const priceB = getPrice(carB);
-    const hasBothPrices = priceA?.amount && priceB?.amount;
-    const rangeDiff = valRangeA - valRangeB;
-    const trunkDiff = valTrunkA - valTrunkB;
+    const hasBothPrices = Boolean(priceA?.amount && priceB?.amount);
+    const hasBothRanges =
+      carA.specifications.wltp_range_combined_km !== null &&
+      carA.specifications.wltp_range_combined_km !== undefined &&
+      carB.specifications.wltp_range_combined_km !== null &&
+      carB.specifications.wltp_range_combined_km !== undefined;
+    const hasBothTrunks =
+      carA.specifications.trunk_capacity_l !== null &&
+      carA.specifications.trunk_capacity_l !== undefined &&
+      carB.specifications.trunk_capacity_l !== null &&
+      carB.specifications.trunk_capacity_l !== undefined;
+
+    const rangeDiff = hasBothRanges
+      ? carA.specifications.wltp_range_combined_km - carB.specifications.wltp_range_combined_km
+      : null;
+    const trunkDiff = hasBothTrunks
+      ? carA.specifications.trunk_capacity_l - carB.specifications.trunk_capacity_l
+      : null;
     const priceDiff = hasBothPrices ? priceA.amount - priceB.amount : null;
 
     let diffText = "";
-    if (rangeDiff !== 0) {
+    if (rangeDiff !== null && rangeDiff !== 0) {
       const moreRangeCar = rangeDiff > 0 ? `${carA.brand} ${carA.model}` : `${carB.brand} ${carB.model}`;
       const absRange = Math.abs(rangeDiff);
       diffText += `<strong>Autonomia:</strong> <em>${escapeHtml(moreRangeCar)}</em> tem <strong>+${absRange} km</strong> de alcance WLTP. `;
@@ -1185,11 +1222,11 @@ function updateComparison() {
     if (hasBothPrices && priceDiff !== 0) {
       const cheaperCar = priceDiff < 0 ? `${carA.brand} ${carA.model}` : `${carB.brand} ${carB.model}`;
       const absPrice = Math.abs(priceDiff);
-      diffText += `· <strong>Preço:</strong> <em>${escapeHtml(cheaperCar)}</em> é <strong>${formatCurrency(absPrice)} mais acessível</strong>. `;
+      diffText += `${diffText ? "· " : ""}<strong>Preço:</strong> <em>${escapeHtml(cheaperCar)}</em> é <strong>${formatCurrency(absPrice)} mais acessível</strong>. `;
     }
-    if (trunkDiff !== 0) {
+    if (trunkDiff !== null && trunkDiff !== 0) {
       const biggerBootCar = trunkDiff > 0 ? `${carA.brand} ${carA.model}` : `${carB.brand} ${carB.model}`;
-      diffText += `· <strong>Bagageira:</strong> <em>${escapeHtml(biggerBootCar)}</em> oferece <strong>+${Math.abs(trunkDiff)} L</strong>.`;
+      diffText += `${diffText ? "· " : ""}<strong>Bagageira:</strong> <em>${escapeHtml(biggerBootCar)}</em> oferece <strong>+${Math.abs(trunkDiff)} L</strong>.`;
     }
 
     if (diffText) {
@@ -1357,12 +1394,12 @@ function updateComparison() {
         carA.specifications.frunk_capacity_l !== null &&
         carA.specifications.frunk_capacity_l !== undefined
           ? `${carA.specifications.frunk_capacity_l} L`
-          : "Não / N/A",
+          : "N/A",
       valB:
         carB.specifications.frunk_capacity_l !== null &&
         carB.specifications.frunk_capacity_l !== undefined
           ? `${carB.specifications.frunk_capacity_l} L`
-          : "Não / N/A",
+          : "N/A",
     },
     {
       label: "Dimensões (C × L × A)",

@@ -1074,5 +1074,10 @@
     "bytes": 204,
     "normalized_chars": 202,
     "read_with": "agent-browser"
+  },
+  "https://www.ford.pt/carros/puma-gen-e": {
+    "verified_on": "2026-09-02",
+    "semantic_hash": "manual_verified_ford_pt_puma_gen_e_2026",
+    "raw_sha256": "manual_verified_ford_pt_puma_gen_e_2026"
   }
 }

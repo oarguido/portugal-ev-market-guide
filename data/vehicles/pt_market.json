@@ -492,7 +492,6 @@
         "Bagageira de 400 L muito generosa para o segmento B-SUV"
       ],
       "cons": [
-        "Preço particular, IVA e condições finais permanecem por confirmar",
         "Espaço nos lugares traseiros condicionado pela linha de tejadilho",
         "Painel de instrumentos digital com grafismo que podia ser mais legível",
         "Visibilidade traseira ligeiramente reduzida pelos pilares C largos"
@@ -3120,14 +3119,14 @@
                 "source_type": "official_importer"
               },
               {
-                "classification": "confirmed",
+                "classification": "reference",
                 "amount_eur": 35658.0,
                 "currency": "EUR",
                 "source_url": "https://caetano.pt/geely/carros-novos/e5/",
                 "source_authority": "authorised_dealer_pt",
                 "market": "PT",
                 "variant": "Pro 60 kWh",
-                "conditions": "Versão PRO, em vigor até 31/08/2026 nos concessionários aderentes e limitado ao stock existente; valor não inclui despesas de legalização e transporte nem custos adicionais de pintura; inclui garantia de 8 anos no veículo e manutenção programada oferecida até 5 anos ou 100.000 km",
+                "conditions": "Campanha promocional com oferta de manutenção expirou a 31/08/2026. Preço de tabela oficial de 35.658 € mantém-se ativo.",
                 "vat_included": true,
                 "proof": {
                   "url": "https://caetano.pt/geely/carros-novos/e5/",
@@ -4504,7 +4503,7 @@
             "offers": [
               {
                 "kind": "list_price",
-                "classification": "confirmed",
+                "classification": "reference",
                 "amount_eur": 24500,
                 "currency": "EUR",
                 "source_url": "https://www.filintomota.pt/marca/leapmotor/b05/",
@@ -4512,7 +4511,7 @@
                 "market": "PT",
                 "variant": "Life 56,2 kWh",
                 "conditions": "Preço desde para particulares; a página não declara expressamente IVA incluído nem associa o valor a uma versão exata.",
-                "vat_included": true,
+                "vat_included": null,
                 "proof": {
                   "url": "https://www.filintomota.pt/marca/leapmotor/b05/",
                   "source_url": "https://www.filintomota.pt/marca/leapmotor/b05/",
@@ -4520,7 +4519,7 @@
                   "market": "PT",
                   "audience": "particular",
                   "variant": "Life 56,2 kWh",
-                  "vat_basis": "included",
+                  "vat_basis": "unknown",
                   "literal_excerpt": "Particulares Desde 24.500€ — Filinto Mota",
                   "status": "verified",
                   "source_type": "official_dealer_model_and_price",
@@ -4540,8 +4539,8 @@
                   "valid_until": null
                 },
                 "valid_until": null,
-                "vat": "included",
-                "vat_status": "included",
+                "vat": null,
+                "vat_status": "unknown",
                 "evidence": "Particulares Desde 24.500€ — Filinto Mota",
                 "evidence_record": {
                   "url": "https://www.filintomota.pt/marca/leapmotor/b05/",
@@ -4555,7 +4554,7 @@
               }
             ]
           },
-          "eligibility_status": "confirmed_eligible",
+          "eligibility_status": "potential_reference",
           "battery_technology": {
             "chemistry": null,
             "generation": "Cell-to-Chassis",
@@ -4563,7 +4562,7 @@
             "source_url": "https://www.filintomota.pt/marca/leapmotor/b05/",
             "verified_on": "2026-09-02"
           },
-          "eligibility_tier": "confirmed_eligible"
+          "eligibility_tier": "potential_reference"
         }
       ],
       "pros": [
@@ -4587,9 +4586,9 @@
         "boot_capacity_l": 345,
         "frunk_capacity_l": null
       },
-      "eligibility_status": "confirmed_eligible",
-      "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
-      "eligibility_tier": "confirmed_eligible"
+      "eligibility_status": "potential_reference",
+      "eligibility_reason": "Montante de referência publicado no concessionário oficial; a página não comprova IVA incluído nem associação à versão Life.",
+      "eligibility_tier": "potential_reference"
     },
     {
       "brand": "Leapmotor",
@@ -7987,7 +7986,6 @@
         "Comportamento dinâmico ágil e posição de condução desportiva"
       ],
       "cons": [
-        "Oferta de referência anterior; prazo, financiamento e stock permanecem por confirmar",
         "Óculo traseiro muito estreito que prejudica a visibilidade posterior",
         "Espaço no banco traseiro à largura justo para três adultos",
         "Sem frunk e degrau pronunciado no plano de carga da mala (440 L)"
@@ -8152,13 +8150,12 @@
         "Eleito Carro do Ano com espaço interior fabuloso e grande conforto familiar",
         "Bagageira enorme de 545 L ideal para grandes viagens de férias",
         "Sistema OpenR Link com Google integrado e planeador de rotas elétricas",
-        "Campanha referenciada; financiamento, IVA e stock permanecem por confirmar"
+        "Bateria com gestão térmica líquida e pré-condicionamento automático"
       ],
       "cons": [
-        "Preço e elegibilidade da versão com bateria maior permanecem por confirmar",
         "Carregamento DC a 130 kW bom mas aquém dos sistemas de 800V",
         "Dimensões de SUV médio exigem atenção em garagens e ruas estreitas",
-        "A posição face ao limite não está demonstrada sem oferta confirmada"
+        "Carregador de bordo AC de 22 kW não está incluído de série"
       ],
       "dimensions": {
         "length_mm": 4470,
@@ -8266,7 +8263,7 @@
                 "source_authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "variant": "Evolution 27.5 kWh",
-                "conditions": "Crédito Automóvel Novo com reserva de propriedade através da Mobilize Financial Services (RCI Banque Sucursal Portugal, BdP n.º 171). Válido até 31/08/2026 para clientes particulares. PVP com desconto 20.180,64€ inclui despesas administrativas e de transporte; sujeito a 60 prestações de 120,18€, TAN 6,20%.",
+                "conditions": "Crédito Automóvel Novo com reserva de propriedade através da Mobilize Financial Services (RCI Banque Sucursal Portugal, BdP n.º 171). Válido até 30/09/2026 para clientes particulares. PVP com desconto 20.180,64€ inclui despesas administrativas e de transporte; sujeito a 60 prestações de 120,18€, TAN 6,20%.",
                 "vat_included": true,
                 "proof": {
                   "url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
@@ -8292,9 +8289,9 @@
                 "audience": "particular",
                 "validity": {
                   "valid_from": null,
-                  "valid_until": null
+                  "valid_until": "2026-09-30"
                 },
-                "valid_until": null,
+                "valid_until": "2026-09-30",
                 "vat": "included",
                 "vat_status": "included",
                 "evidence": "PVP com desconto 20.180,64€",
@@ -10005,6 +10002,195 @@
       "eligibility_status": "confirmed_eligible",
       "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
       "eligibility_tier": "confirmed_eligible"
+    },
+    {
+      "brand": "Ford",
+      "model": "Puma Gen-E",
+      "powertrain": "BEV",
+      "segment": "SUV",
+      "release_year": 2026,
+      "availability_status": "available",
+      "eligibility_status": "confirmed_eligible",
+      "eligibility_tier": "confirmed_eligible",
+      "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
+      "official_link": "https://www.ford.pt/carros/puma-gen-e",
+      "image_path": "assets/images/vehicles/ford-puma-gen-e/official.jpg",
+      "last_verified": "2026-09-02",
+      "data_sources": [
+        {
+          "type": "official_model",
+          "url": "https://www.ford.pt/carros/puma-gen-e",
+          "verified_on": "2026-09-02"
+        }
+      ],
+      "variants": [
+        {
+          "name": "Base 43 kWh",
+          "battery_capacity_kwh": 43.0,
+          "wltp_range_combined_km": 376,
+          "power_kw": 124,
+          "power_hp": 168,
+          "wltp_consumption_combined_kwh_100km": 13.1,
+          "dc_max_kw": 100,
+          "pricing": {
+            "offers": [
+              {
+                "classification": "confirmed",
+                "kind": "list_price",
+                "amount_eur": 35842.0,
+                "currency": "EUR",
+                "market": "PT",
+                "source_url": "https://www.ford.pt/carros/puma-gen-e",
+                "source_authority": "manufacturer_or_importer_pt",
+                "source_type": "official_model",
+                "customer": "private",
+                "audience": "particular",
+                "variant": "Base 43 kWh",
+                "conditions": "PVPR de tabela para clientes particulares c/ IVA a 23%.",
+                "vat": "included",
+                "vat_status": "included",
+                "vat_included": true,
+                "validity": {
+                  "valid_from": null,
+                  "valid_until": null
+                },
+                "valid_until": null,
+                "evidence": "Ford Puma Gen-E a partir de 35.842 € com IVA",
+                "evidence_record": {
+                  "url": "https://www.ford.pt/carros/puma-gen-e",
+                  "source_url": "https://www.ford.pt/carros/puma-gen-e",
+                  "market": "PT",
+                  "recorded_on": "2026-09-02",
+                  "verified_on": "2026-09-02",
+                  "literal_excerpt": "Ford Puma Gen-E a partir de 35.842 € com IVA"
+                },
+                "proof": {
+                  "url": "https://www.ford.pt/carros/puma-gen-e",
+                  "source_url": "https://www.ford.pt/carros/puma-gen-e",
+                  "authority": "manufacturer_or_importer_pt",
+                  "market": "PT",
+                  "audience": "particular",
+                  "variant": "Base 43 kWh",
+                  "vat_basis": "included",
+                  "literal_excerpt": "Ford Puma Gen-E a partir de 35.842 € com IVA",
+                  "status": "verified",
+                  "source_type": "official_model",
+                  "recorded_on": "2026-09-02",
+                  "verified_on": "2026-09-02",
+                  "source_authority": "manufacturer_or_importer_pt",
+                  "customer": "private"
+                },
+                "derivation": null,
+                "recorded_on": "2026-09-02",
+                "verified_on": "2026-09-02",
+                "legacy_unverified": false
+              }
+            ]
+          },
+          "eligibility_status": "confirmed_eligible",
+          "eligibility_tier": "confirmed_eligible",
+          "battery_technology": {
+            "chemistry": null,
+            "generation": null,
+            "architecture": null,
+            "source_url": null,
+            "verified_on": null
+          }
+        },
+        {
+          "name": "Premium 43 kWh",
+          "battery_capacity_kwh": 43.0,
+          "wltp_range_combined_km": 364,
+          "power_kw": 124,
+          "power_hp": 168,
+          "wltp_consumption_combined_kwh_100km": 13.5,
+          "dc_max_kw": 100,
+          "pricing": {
+            "offers": [
+              {
+                "classification": "confirmed",
+                "kind": "list_price",
+                "amount_eur": 38179.0,
+                "currency": "EUR",
+                "market": "PT",
+                "source_url": "https://www.ford.pt/carros/puma-gen-e",
+                "source_authority": "manufacturer_or_importer_pt",
+                "source_type": "official_model",
+                "customer": "private",
+                "audience": "particular",
+                "variant": "Premium 43 kWh",
+                "conditions": "PVPR de tabela para clientes particulares c/ IVA a 23%.",
+                "vat": "included",
+                "vat_status": "included",
+                "vat_included": true,
+                "validity": {
+                  "valid_from": null,
+                  "valid_until": null
+                },
+                "valid_until": null,
+                "evidence": "Ford Puma Gen-E Premium a partir de 38.179 € com IVA",
+                "evidence_record": {
+                  "url": "https://www.ford.pt/carros/puma-gen-e",
+                  "source_url": "https://www.ford.pt/carros/puma-gen-e",
+                  "market": "PT",
+                  "recorded_on": "2026-09-02",
+                  "verified_on": "2026-09-02",
+                  "literal_excerpt": "Ford Puma Gen-E Premium a partir de 38.179 € com IVA"
+                },
+                "proof": {
+                  "url": "https://www.ford.pt/carros/puma-gen-e",
+                  "source_url": "https://www.ford.pt/carros/puma-gen-e",
+                  "authority": "manufacturer_or_importer_pt",
+                  "market": "PT",
+                  "audience": "particular",
+                  "variant": "Premium 43 kWh",
+                  "vat_basis": "included",
+                  "literal_excerpt": "Ford Puma Gen-E Premium a partir de 38.179 € com IVA",
+                  "status": "verified",
+                  "source_type": "official_model",
+                  "recorded_on": "2026-09-02",
+                  "verified_on": "2026-09-02",
+                  "source_authority": "manufacturer_or_importer_pt",
+                  "customer": "private"
+                },
+                "derivation": null,
+                "recorded_on": "2026-09-02",
+                "verified_on": "2026-09-02",
+                "legacy_unverified": false
+              }
+            ]
+          },
+          "eligibility_status": "confirmed_eligible",
+          "eligibility_tier": "confirmed_eligible",
+          "battery_technology": {
+            "chemistry": null,
+            "generation": null,
+            "architecture": null,
+            "source_url": null,
+            "verified_on": null
+          }
+        }
+      ],
+      "dimensions": {
+        "length_mm": 4208,
+        "width_mm": 1805,
+        "height_mm": 1537
+      },
+      "luggage_capacity": {
+        "boot_capacity_l": 531,
+        "frunk_capacity_l": 43
+      },
+      "pros": [
+        "Autonomia WLTP de até 376 km (mais de 520 km em ciclo urbano) com consumo eficiente",
+        "Espaço de carga generoso com 531 L de bagageira e compartimento frontal GigaBox de 43 L",
+        "Carregamento rápido DC até 100 kW recuperando 10% a 80% em cerca de 23 minutos",
+        "Design crossover compacto desportivo com dinâmica de condução reconhecida"
+      ],
+      "cons": [
+        "Capacidade de bateria de 43 kWh úteis inferior a concorrentes com 50-60 kWh",
+        "Tração exclusivamente dianteira sem versão bimotor",
+        "Preço aproxima-se do teto de 40.000 € na versão Premium"
+      ]
     }
   ]
 }

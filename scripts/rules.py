@@ -47,6 +47,10 @@ def iso_date(value: object) -> dt.date | None:
 def decimal(value: object) -> Decimal | None:
     if not finite_non_negative(value):
         return None
+    try:
+        return Decimal(str(value))
+    except (InvalidOperation, ValueError):
+        return None
 
 
 def evidence_contains_amount(value: object, evidence: object) -> bool:
@@ -78,10 +82,6 @@ def evidence_contains_amount(value: object, evidence: object) -> bool:
         except InvalidOperation:
             continue
     return False
-    try:
-        return Decimal(str(value))
-    except (InvalidOperation, ValueError):
-        return None
 
 
 def offer_validity(offer: dict) -> tuple[dt.date | None, dt.date | None]:
