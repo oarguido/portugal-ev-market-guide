@@ -18,6 +18,24 @@ porta estiver ocupada, escolhe automaticamente a próxima porta livre. Também
 pode abrir `web/index.html` diretamente, porque os dados e recursos usados pela
 interface são locais.
 
+## Os nossos 3 finalistas
+
+O novo separador compara Leapmotor B05 Design ProMax, Aion UT Luxury e BYD
+Dolphin Comfort MY25 em 44 características, com 10 análises/conjuntos de relatos
+e fontes ligadas. Inclui ensaios europeus, experiências de proprietários,
+manutenção, garantias e assistência; distingue modelos diferentes, pré-série,
+relatos individuais e inquéritos de fiabilidade.
+
+A pesquisa editorial revista em 2026-09-15 está em `web/assets/js/finalists.js` e funciona
+offline, exceto as ligações externas. Não altera preços, ranking ou elegibilidade
+do catálogo. Propostas mencionadas no histórico continuam como referências;
+equipamento europeu não confirmado em Portugal está identificado.
+
+Antes de decidir, confirmar propostas escritas equivalentes, versão e despesas,
+contratos de assistência europeia, manutenção e garantia aplicáveis em Portugal.
+Rever as fontes antes de atualizar a data da pesquisa. Não se trata de uma
+atualização completa do mercado.
+
 ## Atualizar os dados
 
 `data/vehicles/pt_market.json` é a fonte de verdade dos automóveis (schema 3) e

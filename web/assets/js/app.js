@@ -73,6 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setupComparator();
   setupTestDriveScores();
   loadSavedReviews();
+  VehicleFinalists.mount(document.getElementById("finalists-report"), CAR_DATA, DEALER_DATA);
+  handleHashRoute();
 
   // Refresh button
   document.getElementById("btn-refresh-data").addEventListener("click", () => {
@@ -253,38 +255,74 @@ function flattenCarData() {
 /* ==========================================================================
    Navigation Tabs Logic
    ========================================================================== */
-function setupNavigation() {
+function switchTab(tabId, updateHash = false) {
   const tabBtns = document.querySelectorAll(".tab-btn");
   const tabContents = document.querySelectorAll(".tab-content");
+  const targetBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+  const targetPanel = document.getElementById(tabId);
+
+  if (!targetBtn || !targetPanel) return false;
+
+  tabBtns.forEach((b) => {
+    b.classList.remove("active");
+    b.setAttribute("aria-selected", "false");
+    b.tabIndex = -1;
+  });
+  tabContents.forEach((c) => {
+    c.classList.remove("active");
+    c.hidden = true;
+  });
+
+  targetBtn.classList.add("active");
+  targetBtn.setAttribute("aria-selected", "true");
+  targetBtn.tabIndex = 0;
+  targetPanel.classList.add("active");
+  targetPanel.hidden = false;
+
+  if (tabId === "tab-compare") {
+    updateComparison();
+  }
+
+  if (updateHash && window.location.hash !== `#${tabId}`) {
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, "", `#${tabId}`);
+    } else {
+      window.location.hash = tabId;
+    }
+  }
+  return true;
+}
+
+function handleHashRoute() {
+  const hash = (window.location.hash || "").replace(/^#/, "").trim();
+  if (!hash) return;
+
+  const btn = document.querySelector(`.tab-btn[data-tab="${hash}"]`);
+  if (btn) {
+    switchTab(hash, false);
+    return;
+  }
+
+  const el = document.getElementById(hash);
+  if (el) {
+    const parentTab = el.closest(".tab-content");
+    if (parentTab) {
+      switchTab(parentTab.id, false);
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 0);
+    }
+  }
+}
+
+function setupNavigation() {
+  const tabBtns = document.querySelectorAll(".tab-btn");
 
   tabBtns.forEach((btn) => {
-    const activateTab = () => {
-      // Deactivate all
-      tabBtns.forEach((b) => {
-        b.classList.remove("active");
-        b.setAttribute("aria-selected", "false");
-        b.tabIndex = -1;
-      });
-      tabContents.forEach((c) => {
-        c.classList.remove("active");
-        c.hidden = true;
-      });
-
-      // Activate selected
-      btn.classList.add("active");
-      btn.setAttribute("aria-selected", "true");
-      btn.tabIndex = 0;
+    btn.addEventListener("click", () => {
       const tabId = btn.getAttribute("data-tab");
-      const panel = document.getElementById(tabId);
-      panel.classList.add("active");
-      panel.hidden = false;
-
-      // Trigger updates depending on tab
-      if (tabId === "tab-compare") {
-        updateComparison();
-      }
-    };
-    btn.addEventListener("click", activateTab);
+      switchTab(tabId, true);
+    });
     btn.addEventListener("keydown", (event) => {
       if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key))
         return;
@@ -304,6 +342,8 @@ function setupNavigation() {
       buttons[next].click();
     });
   });
+
+  window.addEventListener("hashchange", handleHashRoute);
 }
 
 /* ==========================================================================

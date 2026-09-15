@@ -187,3 +187,45 @@ test(
     }
   },
 );
+
+test(
+  "abrir o URL com âncora #finalists-source-b05 ativa o separador dos finalistas",
+  { skip: disponivel ? false : "agent-browser não instalado" },
+  async () => {
+    const { proc: servidor, porta } = await arrancarServidor();
+    try {
+      const base = `http://127.0.0.1:${porta}`;
+      assert.ok(
+        await esperarServidor(`${base}/index.html`),
+        "o servidor não arrancou",
+      );
+
+      browser(["open", `${base}/index.html#finalists-source-b05`]);
+      const bruto = browser([
+        "eval",
+        `(() => {
+          const tabFinalists = document.getElementById("tab-finalists");
+          const navFinalists = document.getElementById("nav-finalists");
+          const targetEl = document.getElementById("finalists-source-b05");
+          return JSON.stringify({
+            panelActive: tabFinalists ? tabFinalists.classList.contains("active") : false,
+            panelHidden: tabFinalists ? tabFinalists.hidden : true,
+            btnActive: navFinalists ? navFinalists.classList.contains("active") : false,
+            targetExists: !!targetEl,
+            targetText: targetEl ? targetEl.textContent : ""
+          });
+        })()`,
+      ]);
+
+      const visto = JSON.parse(JSON.parse(bruto.trim()));
+      assert.equal(visto.panelActive, true, "o painel tab-finalists tem de estar ativo");
+      assert.equal(visto.panelHidden, false, "o painel tab-finalists não pode estar oculto");
+      assert.equal(visto.btnActive, true, "o botão nav-finalists tem de estar ativo");
+      assert.equal(visto.targetExists, true, "o elemento #finalists-source-b05 tem de existir");
+      assert.match(visto.targetText, /catálogo B05/);
+    } finally {
+      servidor.kill();
+    }
+  },
+);
+

@@ -42,6 +42,9 @@
         role="tablist"
         aria-label="Secções da aplicação"
       >
+        <button class="tab-btn" data-tab="tab-finalists" id="nav-finalists" role="tab" aria-controls="tab-finalists" aria-selected="false" tabindex="-1" type="button">
+          <i class="fa-solid fa-heart" aria-hidden="true"></i> Os nossos 3 finalistas
+        </button>
         <button
           class="tab-btn active"
           data-tab="tab-overview"
@@ -78,6 +81,9 @@
 
       <!-- Main Content Area -->
       <main class="main-content">
+        <section id="tab-finalists" class="tab-content finalists" role="tabpanel" aria-labelledby="nav-finalists" hidden>
+          <div id="finalists-report"></div>
+        </section>
         <!-- TAB: Overview -->
         <section
           id="tab-overview"
@@ -801,6 +807,7 @@
     <script src="assets/js/ranking.js"></script>
     <script src="assets/js/specs.js"></script>
     <script src="assets/js/prices.js"></script>
+    <script src="assets/js/finalists.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
 </html>
