@@ -72,7 +72,7 @@ class VisibleTextParser(HTMLParser):
 
 
 def fetch(url: str, attempts: int = FETCH_ATTEMPTS) -> tuple[bytes, str]:
-    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 CarroLilianaCatalog/2.0"})
+    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 PortugalEVGuideCatalog/2.0"})
     for attempt in range(1, attempts + 1):
         try:
             with urllib.request.urlopen(request, timeout=40) as response:

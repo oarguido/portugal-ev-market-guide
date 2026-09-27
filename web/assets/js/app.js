@@ -1,7 +1,7 @@
 "use strict";
 
 /* ==========================================================================
-   Carro da Liliana - Interactive Web Application Logic
+   Portugal EV Market Guide - Interactive Web Application Logic
    ========================================================================== */
 
 // Global State
@@ -16,7 +16,7 @@ function getFavorites() {
   try {
     const saved =
       typeof localStorage !== "undefined"
-        ? localStorage.getItem("carro_liliana_favorites")
+        ? (localStorage.getItem("ev_market_guide_favorites") || localStorage.getItem("carro_liliana_favorites"))
         : null;
     return saved ? JSON.parse(saved) : [];
   } catch (e) {
@@ -37,7 +37,7 @@ function toggleFavorite(carId) {
   }
   try {
     if (typeof localStorage !== "undefined") {
-      localStorage.setItem("carro_liliana_favorites", JSON.stringify(favs));
+      localStorage.setItem("ev_market_guide_favorites", JSON.stringify(favs));
     }
   } catch (e) {}
   updateFavoriteCount();
@@ -663,7 +663,7 @@ function setupFilters() {
   const sortSelect = document.getElementById("filter-sort");
   const priceStatusSelect = document.getElementById("filter-price-status");
   const brandSelect = document.getElementById("filter-brand");
-  const btnLilianaRules = document.getElementById("btn-liliana-rules");
+  const btnRecommended = document.getElementById("btn-filter-recommended") || document.getElementById("btn-liliana-rules");
   const btnFavorites = document.getElementById("btn-filter-favorites");
   const btnClearFilters = document.getElementById("btn-clear-filters");
   const btnToggleFilters = document.getElementById("btn-toggle-filters");
@@ -768,11 +768,11 @@ function setupFilters() {
       renderOverview(getFilteredCars()),
     );
 
-  if (btnLilianaRules) {
-    btnLilianaRules.addEventListener("click", () => {
+  if (btnRecommended) {
+    btnRecommended.addEventListener("click", () => {
       resetPresetClasses();
       resetSegmentChips();
-      btnLilianaRules.classList.add("active");
+      btnRecommended.classList.add("active");
       filterOnlyFavorites = false;
       if (priceSlider) priceSlider.value = "35000";
       if (rangeSlider) rangeSlider.value = "300";
@@ -1708,7 +1708,7 @@ function saveReview() {
 
   // Save to LocalStorage
   localStorage.setItem(
-    "carro_liliana_reviews",
+    "ev_market_guide_reviews",
     JSON.stringify(testDriveReviews),
   );
 
@@ -1725,7 +1725,9 @@ function saveReview() {
 }
 
 function loadSavedReviews() {
-  const saved = localStorage.getItem("carro_liliana_reviews");
+  const saved =
+    localStorage.getItem("ev_market_guide_reviews") ||
+    localStorage.getItem("carro_liliana_reviews");
   if (saved) {
     try {
       const parsed = JSON.parse(saved);

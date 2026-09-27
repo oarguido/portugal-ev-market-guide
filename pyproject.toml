@@ -1,6 +1,10 @@
 [project]
-name = "carro-liliana"
-version = "0.1.0"
+name = "portugal-ev-market-guide"
+version = "0.2.0"
+description = "Evidence-backed data pipeline, schema validation, and offline decision dashboard for the Portuguese EV market."
+readme = "README.md"
+authors = [{ name = "André Lima" }]
+license = { text = "MIT" }
 requires-python = ">=3.13"
 dependencies = []
 

@@ -171,7 +171,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -288,7 +288,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -461,7 +461,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -578,7 +578,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -694,7 +694,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -816,7 +816,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "potential_reference",
-    "eligibility_reason": "Página oficial BYD contradiz-se: a página do modelo mostra \"PREÇO CHAVE NA MÃO 25.990€\" mas a página da campanha e a mesma página do modelo dizem \"25.990 € (+IVA)\" — preço sem IVA. Sem IVA confirmado, não pode contar para o limite de 40.000 €.",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
     "eligibility_tier": "potential_reference"
   },
   {
@@ -934,7 +934,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -1057,7 +1057,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -1252,7 +1252,7 @@ const CAR_DATA = [
       "frunk_capacity_l": 159
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -1549,7 +1549,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -1739,7 +1739,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -1912,7 +1912,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -2102,7 +2102,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -2270,7 +2270,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -2387,7 +2387,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -2510,7 +2510,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -2700,7 +2700,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -2874,7 +2874,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -2991,7 +2991,7 @@ const CAR_DATA = [
       "Ajuste dos vidros elétricos partilhado com apenas 2 botões na porta do condutor"
     ],
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -3159,7 +3159,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -3349,7 +3349,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -3546,7 +3546,7 @@ const CAR_DATA = [
       "frunk_capacity_l": 27
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -3667,7 +3667,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -3789,7 +3789,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -3960,7 +3960,7 @@ const CAR_DATA = [
       "frunk_capacity_l": 15
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -4139,7 +4139,7 @@ const CAR_DATA = [
       "frunk_capacity_l": 25
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -4310,7 +4310,7 @@ const CAR_DATA = [
       "frunk_capacity_l": 25
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -4425,7 +4425,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -4542,7 +4542,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "potential_reference",
-    "eligibility_reason": "Montante de referência publicado no concessionário oficial; a página não comprova IVA incluído nem associação à versão Life.",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
     "eligibility_tier": "potential_reference"
   },
   {
@@ -4732,7 +4732,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -4848,7 +4848,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -4965,7 +4965,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -5160,7 +5160,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -5350,7 +5350,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -5543,7 +5543,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -5736,7 +5736,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -5853,7 +5853,7 @@ const CAR_DATA = [
       "Carregamento rápido DC limitado a 50 kW"
     ],
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -5975,7 +5975,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -6107,7 +6107,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -6370,7 +6370,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -6492,7 +6492,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -6665,7 +6665,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -6833,7 +6833,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -7001,7 +7001,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -7169,7 +7169,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -7286,7 +7286,7 @@ const CAR_DATA = [
       "Consumo energético em ritmo de autoestrada reduz autonomia em viagem"
     ],
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -7408,7 +7408,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -7598,7 +7598,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -7788,7 +7788,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -7955,7 +7955,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -8122,7 +8122,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -8370,7 +8370,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -8713,7 +8713,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -8837,7 +8837,7 @@ const CAR_DATA = [
       "frunk_capacity_l": 88
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -9011,7 +9011,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "potential_reference",
-    "eligibility_reason": "Campanha com desconto direto de 6.000 € expirou a 31/08/2026. O PVPR oficial de tabela (45.640 €) excede o teto de 40.000 €.",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
     "eligibility_tier": "potential_reference"
   },
   {
@@ -9021,13 +9021,13 @@ const CAR_DATA = [
     "segment": "Hatchback",
     "release_year": 2026,
     "availability_status": "available",
-    "official_link": "https://www.volkswagen.pt/id3/id3",
+    "official_link": "https://www.volkswagen.pt/id3-neo/id3-neo",
     "image_path": "assets/images/vehicles/volkswagen-id-3/official.webp",
     "last_verified": "2026-09-02",
     "data_sources": [
       {
         "type": "official_model",
-        "url": "https://www.volkswagen.pt/id3/id3",
+        "url": "https://www.volkswagen.pt/id3-neo/id3-neo",
         "verified_on": "2026-09-02"
       },
       {
@@ -9051,15 +9051,15 @@ const CAR_DATA = [
               "classification": "confirmed",
               "amount_eur": 35079,
               "currency": "EUR",
-              "source_url": "https://www.volkswagen.pt/id3/id3",
+              "source_url": "https://www.volkswagen.pt/id3-neo/id3-neo",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Trend 50 kWh",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://www.volkswagen.pt/id3/id3",
-                "source_url": "https://www.volkswagen.pt/id3/id3",
+                "url": "https://www.volkswagen.pt/id3-neo/id3-neo",
+                "source_url": "https://www.volkswagen.pt/id3-neo/id3-neo",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
@@ -9089,8 +9089,8 @@ const CAR_DATA = [
               "vat_status": "included",
               "evidence": "Volkswagen ID.3 Neo Trend 50kWh 170cv — PVPR a partir de 35.079,00 €",
               "evidence_record": {
-                "url": "https://www.volkswagen.pt/id3/id3",
-                "source_url": "https://www.volkswagen.pt/id3/id3",
+                "url": "https://www.volkswagen.pt/id3-neo/id3-neo",
+                "source_url": "https://www.volkswagen.pt/id3-neo/id3-neo",
                 "market": "PT",
                 "recorded_on": "2026-08-24",
                 "verified_on": "2026-09-02",
@@ -9184,7 +9184,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -9301,7 +9301,7 @@ const CAR_DATA = [
       "frunk_capacity_l": 7
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -9474,7 +9474,7 @@ const CAR_DATA = [
       "frunk_capacity_l": 15
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -9720,7 +9720,7 @@ const CAR_DATA = [
       "frunk_capacity_l": 15
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -9837,7 +9837,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -9955,7 +9955,7 @@ const CAR_DATA = [
       "frunk_capacity_l": null
     },
     "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "PVP particular oficial com IVA publicado em Portugal até 40.000 €.",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
     "eligibility_tier": "confirmed_eligible"
   },
   {
@@ -10476,7 +10476,7 @@ const DEALER_DATA = {
     "locality": "Porto",
     "phone": "+351 226 158 000",
     "email": null,
-    "official_url": "https://mg.jop.pt/",
+    "official_url": "https://www.jop.pt/marcas/mg",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=JOP%20MG%20Porto%20Rua%20Delfim%20Ferreira%2084",
     "services": [
       "sales",
@@ -10654,7 +10654,7 @@ const DEALER_DATA = {
     "locality": "São Mamede de Infesta",
     "phone": "+351 229 050 570",
     "email": "vap@vap.pt",
-    "official_url": "https://vw.vap.pt/",
+    "official_url": "https://www.jop.pt/marcas/volkswagen",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Volkswagen%20VAP%20Via%20Norte%20Sao%20Mamede%20de%20Infesta",
     "services": [
       "sales",
@@ -10670,7 +10670,7 @@ const DEALER_DATA = {
     "locality": "Porto",
     "phone": "+351 226 157 400",
     "email": null,
-    "official_url": "https://volvo.jop.pt/",
+    "official_url": "https://www.jop.pt/marcas/volvo",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=JOP%20Volvo%20Porto%20Manuel%20Pinto%20de%20Azevedo%20671",
     "services": [
       "sales",
@@ -10686,7 +10686,7 @@ const DEALER_DATA = {
     "locality": "São Mamede de Infesta",
     "phone": "+351 229 050 500",
     "email": null,
-    "official_url": "https://skoda.carvap.pt/",
+    "official_url": "https://www.jop.pt/marcas/skoda",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Skoda%20Carvap%20Via%20Norte%20Sao%20Mamede%20de%20Infesta",
     "services": [
       "sales",

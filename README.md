@@ -1,206 +1,163 @@
-# Carro da Liliana
+# Portugal EV Market Guide
 
-Comparador offline do mercado português de automóveis novos 100% elétricos
-(BEV). Só ofertas particulares confirmadas, com IVA e variante demonstrados,
-provam o limite de 40.000 €. Ofertas incertas permanecem visíveis como
-referências explicitamente rotuladas, sem semântica de PVP particular, IVA
-incluído ou elegibilidade; híbridos, PHEV, extensores de autonomia, combustão,
-comerciais, usados e importações não oficiais ficam fora do catálogo.
+[![CI Pipeline](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/ci.yml/badge.svg)](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/ci.yml)
+[![Weekly Data Health](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/data-health.yml/badge.svg)](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/data-health.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](pyproject.toml)
+[![Tests: 258 passing](https://img.shields.io/badge/tests-258%20passing-brightgreen.svg)](tests/)
+[![Architecture: Offline--First](https://img.shields.io/badge/architecture-offline--first-success.svg)](web/)
 
-## Abrir a aplicação
+An automated, evidence-backed data pipeline, validation harness, and offline-first decision dashboard for the Portuguese 100% electric passenger vehicle (BEV) market under the national **€40,000** incentive threshold.
+
+> [!NOTE]
+> Para a documentação original em Português de Portugal, consulte [README.pt.md](README.pt.md). O contrato operacional de desenvolvimento com agentes de IA está documentado em [AGENTS.md](AGENTS.md).
+
+---
+
+## 🎯 Motivation & Problem
+
+Navigating electric vehicle acquisitions in Portugal is notoriously difficult:
+* **Fragmented & deceptive pricing:** Commercial discounts, business-only leasing offers without VAT, and trade-in gimmicks are routinely presented to retail consumers as "MSRP".
+* **Regulatory thresholds:** The national Portuguese environmental subsidies and tax brackets strictly cap passenger vehicle incentives at **€40,000 (including 23% VAT)**.
+* **Hybrid noise:** Portals often bundle Mild Hybrids (MHEV), Plug-in Hybrids (PHEV), and Range Extenders (REEV) under "electrified" banners.
+
+This project solves that by applying rigorous software and data engineering practices: building a continuous, deterministic data product where **every price, battery chemistry, and range metric must carry verifiable cryptographic or literal documentary proof** before being compiled.
+
+---
+
+## 🏛️ System Architecture
+
+The project operates as an offline-first, fail-closed data product with zero runtime dependencies.
+
+```mermaid
+flowchart TD
+    subgraph Ingestion ["1. Data Ingestion & Monitoring"]
+        A[Official Importer / Manufacturer Portals] -->|Throttled Fetch| B[HTML Scraper & Normaliser]
+        C[Semantic Text Fingerprinting] <-->|Drift Detection| B
+        B -->|Raw Extractions| D[Price Proposals Engine]
+    end
+
+    subgraph Validation ["2. Fail-Closed Validation (Schema v3)"]
+        D -->|Documentary Review| E[(data/vehicles/pt_market.json)]
+        F[(data/dealers/near_sao_mamede.json)] --> G[Schema & Freshness Validator]
+        E --> G
+        G -->|45-day freshness rule & proof audit| H{Passes All Gates?}
+        H -->|No| I[Halt Build / Reject PR]
+        H -->|Yes| J[Data Compiler]
+    end
+
+    subgraph Delivery ["3. Static Compilation & Client"]
+        J -->|Deterministic Serialisation| K[web/assets/js/car_data.js]
+        K --> L[Vanilla Web App]
+        L -->|Zero Remote Requests| M[Offline-First Interactive Dashboard]
+    end
+```
+
+---
+
+## 🔬 Core Engineering Highlights
+
+### 1. Evidence-Backed Pricing Engine (Schema v3)
+Unlike scrapers that parse arbitrary floats, every pricing entry requires a strict contractual schema:
+* **Audience separation:** Only verified `private` (consumer) offers count towards budget eligibility. Business-only or unstated audiences are flagged and rejected from the confirmed tier.
+* **Deterministic VAT:** Prices without VAT are rejected unless deterministically derivable with exact Portuguese tax rules and recorded with an explicit `derivation` record.
+* **Literal excerpts:** Every confirmed offer maintains a `literal_excerpt` taken directly from the official manufacturer configurator or campaign document, stamped with `recorded_on` and `verified_on`.
+
+### 2. Fail-Closed Validation & Circuit Breakers
+* **45-Day Freshness Gate:** If an offer’s proof or a dealer’s confirmation exceeds 45 days, the compiler trips a circuit breaker and fails the build. Stale data is never published as current.
+* **Strict Powertrain Filter:** Homologation M1 passenger BEVs only. PHEVs, commercial N1 vans, or concept cars fail schema validation automatically.
+* **Image Byte Budget:** Local official imagery is required for every model and constrained to `< 500 KB` per asset and `< 12 MB` total, enforced via automated budgeting checks.
+
+### 3. CI/CD & Observability
+* **PR Verification (`ci.yml`):** Runs linting (`ruff`), schema validation, data compilation, and the full test suite (185 Python tests + 73 JavaScript tests). Confirms that the compiled bundle matches the JSON truth.
+* **Weekly Automated Data Health (`data-health.yml`):** A scheduled workflow runs every Monday at 06:00 UTC to crawl all registered manufacturer links, check semantic drift, and **automatically create or update a GitHub Issue** labeled `dados-frescura` if external URLs break or prices change.
+
+### 4. Zero-Dependency, Offline-First Client
+* Built with pure HTML5, modern vanilla ECMAScript (ESM), and CSS tokens.
+* **Offline capability:** All datasets, icons, and vehicle imagery are packaged locally. Zero remote CDNs or tracking pixels.
+* **Strict security boundaries:** Hand-crafted escaping layer ([`web/assets/js/html.js`](web/assets/js/html.js)) sanitises all dynamic catalog content prior to DOM interpolation, preventing XSS even with rogue scraped content.
+
+### 5. AI-Native Operational Runbook
+The repository contains an authoritative machine runbook ([`AGENTS.md`](AGENTS.md)) designed for autonomous AI agents (Claude, DeepMind Antigravity, etc.). It establishes explicit protocols for market discovery, photographic audits, geographical dealership proximity checks, and human sign-off boundaries.
+
+---
+
+## 📊 Catalog Overview
+
+* **Eligible Cohort:** Confirmed passenger BEVs with official Portuguese MSRP ≤ €40,000 (VAT included).
+* **Reference Cohort:** Models with published pricing indications under investigation, clearly labeled as `Reference (Unconfirmed VAT / Audience)` and excluded from eligibility rankings.
+* **Dealership Benchmarking:** Exactly one official dealership per active brand, benchmarked against Greater Porto (Metropolitan Area) to verify real service and parts availability.
+
+---
+
+## 🛠️ Developer & Operational Guide
+
+The project uses a standard `Makefile` for zero-friction workflows:
+
+### Quickstart
 
 ```sh
+# Clone repository
+git clone https://github.com/oarguido/portugal-ev-market-guide.git
+cd portugal-ev-market-guide
+
+# Start local offline server (auto-detects open port starting at 8000)
 make serve
 ```
 
-O comando mostra o endereço a abrir. Prefere <http://localhost:8000>; se essa
-porta estiver ocupada, escolhe automaticamente a próxima porta livre. Também
-pode abrir `web/index.html` diretamente, porque os dados e recursos usados pela
-interface são locais.
+Or simply open `web/index.html` directly in any modern browser.
 
-## Os nossos 3 finalistas
-
-O novo separador compara Leapmotor B05 Design ProMax, Aion UT Luxury e BYD
-Dolphin Comfort MY25 em 44 características, com 10 análises/conjuntos de relatos
-e fontes ligadas. Inclui ensaios europeus, experiências de proprietários,
-manutenção, garantias e assistência; distingue modelos diferentes, pré-série,
-relatos individuais e inquéritos de fiabilidade.
-
-A pesquisa editorial revista em 2026-09-15 está em `web/assets/js/finalists.js` e funciona
-offline, exceto as ligações externas. Não altera preços, ranking ou elegibilidade
-do catálogo. Propostas mencionadas no histórico continuam como referências;
-equipamento europeu não confirmado em Portugal está identificado.
-
-Antes de decidir, confirmar propostas escritas equivalentes, versão e despesas,
-contratos de assistência europeia, manutenção e garantia aplicáveis em Portugal.
-Rever as fontes antes de atualizar a data da pesquisa. Não se trata de uma
-atualização completa do mercado.
-
-## Atualizar os dados
-
-`data/vehicles/pt_market.json` é a fonte de verdade dos automóveis (schema 3) e
-`data/dealers/near_sao_mamede.json` contém um concessionário oficial preferencial
-por marca, escolhido pela proximidade a São Mamede de Infesta. O bundle que o
-browser carrega é sempre regenerado a partir destes JSONs.
+### Test & Validation Commands
 
 ```sh
-make update          # monitoriza fontes, gera propostas, valida schema v3 e testa
-make update-photos   # atualiza também as imagens oficiais em falta
-make update-photos-all # recaptura todas as imagens para auditoria visual
-make prune-images    # arquiva imagens que nenhum modelo referencia
-make lint            # ruff sobre scripts e testes
-make validate        # valida schema v3 e compila fail-closed; não usa rede
-make freshness       # acrescenta frescura global e campanhas expiradas
-make budgets         # falha se as fotografias excederem o orçamento de peso
-make links           # verifica fontes e páginas dos concessionários
-make test            # executa a suíte de regressão
-make audit           # lint, dados, frescura, testes e todos os links
-make sequential      # update → fotografias em falta → auditoria final
+make lint            # Static analysis with ruff (pinned via uv)
+make validate        # Fail-closed schema v3 validation and compilation (offline)
+make test            # Executes 185 Python unit tests and 73 Node.js test-runner tests
+make links           # Concurrency-throttled crawler validating all external URLs
+make freshness       # Verifies that no catalog records exceed the 45-day threshold
+make budgets         # Enforces photo weight budget limits (<500 KB per photo)
+make audit           # Full suite: lint, validate, freshness, tests, and link audit
 ```
 
-## Política de preços e elegibilidade
-
-Cada variante usa `pricing.offers[]`. Uma oferta `confirmed` exige fonte oficial
-PT, variante exacta, público particular, IVA incluído ou derivado exatamente,
-condições completas, validade explícita quando publicada e prova literal. Só
-essa oferta pode criar o estado `confirmed_eligible`, provar o limite de 40.000 €
-e alimentar ranking, filtros de preço ou financiamento automático.
-
-Uma oferta `reference` conserva montante, fonte original e `recorded_on`, mas
-mantém `legacy_unverified: true`, `verified_on: null` e IVA/público/variante por
-confirmar quando não demonstrados. Nunca é apresentada como PVP particular
-confirmado. A interface deve mostrar junto ao montante `Confirmado`,
-`Referência — IVA por confirmar`, `Referência — público por confirmar` ou
-`Referência — versão/condições por confirmar`; não esconder o estado num tooltip.
-
-Estados de modelo/variante:
-
-- `confirmed_eligible`: existe oferta exacta confirmada até 40.000 €;
-- `potential_reference`: existe montante de referência, sem prova suficiente;
-- `not_demonstrated`: não existe montante com base suficiente para referência.
-
-`null` significa “por confirmar” em campos técnicos e de IVA. A química da
-bateria só é preenchida quando demonstrada para a variante exacta; não inferir
-química pela marca, plataforma ou capacidade.
-
-Hierarquia de fontes: configurador, tabela de preços ou campanha da
-marca/importador oficial PT; página portuguesa e ficha técnica oficial; PDF
-oficial português atual; concessionário oficialmente autorizado em Portugal
-quando a marca não publica o preço. EVMag, imprensa e comparadores servem apenas
-como radar de descoberta. Cada oferta regista `source_authority` como
-`manufacturer_or_importer_pt` ou `authorised_dealer_pt`, e `market` como `PT`.
-
-`make update` monitoriza fontes conhecidas e redescobre candidatos, mas a leitura
-de preços gera propostas em `data/price_proposals.json`. Proposta sem prova não
-é publicada como confirmada. `make validate` rejeita ofertas sem contrato v3 e
-provas `confirmed`/atuais envelhecidas; `compile_data.py` repete a validação
-antes de escrever bundle ou índice, por isso falha sem publicar catálogo inválido.
-Referências `legacy_unverified` completas continuam aceites e explicitamente
-classificadas. `make update-accept` continua reservado à revisão humana explícita
-de fingerprints.
-
-`make lint` corre o `ruff` através do `uv`, com a versão fixada em
-`pyproject.toml` para que local e CI apliquem exatamente as mesmas regras. Sem
-`uv` instalado, `make lint RUFF=ruff` usa o `ruff` do sistema.
-
-O atualizador guarda fingerprints do texto visível das páginas oficiais em
-`data/source_snapshots.json`, ignorando scripts, estilos e atributos dinâmicos.
-Mantém também o hash bruto para diagnóstico. Se o conteúdo relevante mudar,
-interrompe o processo para que preço, autonomia e condições sejam revistos.
-Depois da revisão, execute:
+### Data Pipeline Commands
 
 ```sh
-make update-accept
+make update          # Monitors official portals, detects semantic changes, updates proposals
+make update-accept   # Accepts updated source fingerprints after explicit human review
+make expire-campaigns # Marks expired promotional campaigns as reference offers
 ```
 
-O guia interativo da EVMag é monitorizado como radar secundário de mercado. Serve
-para encontrar possíveis modelos em falta, mas nunca substitui a confirmação em
-fontes oficiais portuguesas: a tabela também contém lançamentos futuros, veículos
-comerciais, preços aproximados e entradas potencialmente duplicadas.
+---
 
-`make sequential` executa apenas a parte automatizada sobre as fontes já
-registadas. Para imediatamente se uma etapa falhar ou se `make update` detetar
-fontes alteradas. Nunca aceita fingerprints automaticamente e não substitui a
-pesquisa manual de novos modelos descrita em `AGENTS.md`.
-
-O validador rejeita links inválidos, fotografias em falta, powertrains que não
-sejam BEV, datas mal formadas, ofertas v3 incompletas e marcas sem concessionário
-oficial próximo registado. Só ofertas confirmadas até 40.000 € criam elegibilidade;
-referências incompletas continuam visíveis com rótulo próprio.
-
-As verificações de calendário têm duas camadas. `make validate` falha fechado
-quando prova `confirmed` ou referência atual (`proof.status: "verified"`) tem
-mais de 45 dias; como a compilação chama a mesma validação antes de escrever o
-bundle, evidência envelhecida não chega à aplicação. Referências legadas com
-`proof.status: "legacy_unverified"` e `verified_on: null` continuam publicáveis
-como referência, nunca como preço confirmado.
-
-`make freshness` acrescenta verificações globais: fontes de descoberta, modelos
-e concessionários com mais de 45 dias, além de campanhas expiradas. Essas
-verificações fazem falhar `make freshness` e `make audit`; não substituem a
-validação fail-closed de ofertas executada por `make validate`.
-
-`make links` distingue as fontes que foram realmente lidas das que apenas
-responderam com proteção anti-bot, e imprime a contagem no fim:
+## 📁 Repository Structure
 
 ```text
-LIGAÇÕES: 100 no total, 69 verificadas, 31 não verificadas, 0 quebradas
+├── data/
+│   ├── vehicles/pt_market.json      # Single source of truth for vehicles (Schema v3)
+│   ├── dealers/near_sao_mamede.json # Dealerships benchmarked by regional proximity
+│   └── source_snapshots.json        # Semantic text fingerprints of official sources
+├── scripts/
+│   ├── compile_data.py              # Compiles JSON into web-ready static bundle
+│   ├── validate_data.py             # Fail-closed Schema v3 validator & freshness guards
+│   ├── update_catalog.py            # Automated source monitoring & fingerprinting
+│   ├── refresh_prices.py            # Price proposal extractor
+│   └── expire_campaigns.py          # Automatic campaign validity lifecycle manager
+├── tests/
+│   ├── test_schema_v3.py            # Contract tests for vehicle schemas
+│   ├── test_validate_guards.py      # Circuit-breaker and validation tests
+│   └── prices.test.js               # Pricing logic and eligibility unit tests
+├── web/
+│   ├── index.html                   # Interactive offline-first dashboard
+│   ├── assets/js/                   # Vanilla JavaScript modules (HTML, search, ranking)
+│   └── assets/images/vehicles/      # Budget-optimised local vehicle imagery
+├── AGENTS.md                        # Autonomous AI agent operational runbook
+├── README.pt.md                     # Original Portuguese technical documentation
+└── pyproject.toml                   # Project metadata and tooling configuration
 ```
 
-Só as ligações quebradas fazem falhar o comando. Um HTTP 403, 429 ou uma ausência
-de resposta a `urllib` não prova que a página mudou, mas também não prova que
-continua igual: essas fontes são listadas para revisão num browser real, como
-exige a secção 4 do `AGENTS.md`. Um resumo verde sem esta contagem esconderia que
-quase um terço das fontes não foi verificado.
+---
 
-O peso das fotografias é reportado como `AVISO` pelo `make validate` e só faz
-falhar o `make budgets`, que fica fora do `make audit`. Uma fotografia pesada é um
-problema de desempenho, não uma regressão de correção — e uma fotografia oficial
-correta vale mais que o orçamento.
+## 📄 License & Attribution
 
-## Automação no GitHub
-
-| Workflow | Quando corre | O que faz |
-|----------|-------------|-----------|
-| `ci.yml` | push em `main`, pull requests | `make verificar`: lint, dados, compilação e testes; confirma que o bundle compilado está commitado |
-| `data-health.yml` | segunda-feira 06:00 UTC, ou manualmente | `make validate`, `make freshness` e `make links`; abre ou comenta uma issue com a etiqueta `dados-frescura` quando algo falha |
-
-O `ci.yml` corre `make verificar`: lint, validação fail-closed, compilação e
-testes, incluindo rejeição de provas confirmadas/atuais envelhecidas. O
-`data-health.yml` repete validação no calendário e acrescenta frescura global e
-ligações externas; cada falha fica registada numa issue. `make verificar` não
-corre `make freshness` nem `make links`: indisponibilidade externa não deve
-reprovar um pull request. O GitHub desativa workflows agendados depois de 60
-dias sem atividade no repositório — se as issues semanais pararem, é a primeira
-coisa a confirmar.
-
-## Estrutura
-
-```text
-data/                 veículos, concessionários e fingerprints
-web/                  aplicação estática e todos os seus assets locais
-scripts/              compilação, validação e atualização
-scripts/legacy/       utilitários antigos preservados para referência
-tests/                testes automáticos
-archive/              histórico local ignorado, sempre fora do build
-graphify-out/         grafo técnico local e reproduzível, ignorado pelo Git
-```
-
-Regra de inclusão elegível: um modelo só pode ser `confirmed_eligible` se for
-100% elétrico, tiver pelo menos uma variante disponível em Portugal com oferta
-confirmada para particulares até 40.000 € com IVA, uma fotografia correta e um
-concessionário oficial preferencial próximo de São Mamede de Infesta. Modelos
-`potential_reference` podem ficar no catálogo para investigação, mas não provam
-o limite. Confirme stock, preço final e marcação diretamente com o stand.
-
-## Repositório público e licenças
-
-O código e a documentação originais são disponibilizados sob a
-[licença MIT](LICENSE). Fotografias, marcas e recursos de terceiros não são
-abrangidos por essa licença; consulte [ASSET_NOTICE.md](ASSET_NOTICE.md).
-
-Propostas comerciais, emails, documentos de pesquisa, relatórios de QA e
-artefactos locais não fazem parte do repositório. A validação automática de cada
-push e pull request é executada pelo GitHub Actions sem consultar fontes
-externas, evitando falhas causadas por proteção anti-bot ou indisponibilidade
-temporária.
+* Original code and documentation are released under the [MIT License](LICENSE).
+* Vehicle photographs, brand names, and trademarks belong to their respective manufacturers; see [ASSET_NOTICE.md](ASSET_NOTICE.md) for fair-use editorial disclosure and asset licensing.

@@ -16,9 +16,10 @@ const confirmed = {
 
 test("seleciona apenas preço confirmado para limite e ranking", () => {
   const vehicle = car([{ ...confirmed }, { ...confirmed, amount_eur: 22000, classification: "reference" }]);
-  assert.equal(Prices.getPrice(vehicle).amount, 31990);
-  assert.equal(Prices.hasConfirmedBudgetPrice(vehicle), true);
-  assert.equal(Prices.status(vehicle), "confirmed_eligible");
+  const today = new Date("2026-08-01");
+  assert.equal(Prices.getPrice(vehicle, { today }).amount, 31990);
+  assert.equal(Prices.hasConfirmedBudgetPrice(vehicle, today), true);
+  assert.equal(Prices.status(vehicle, today), "confirmed_eligible");
 });
 
 test("referência mostra bloqueadores e não entra como preço confirmado", () => {

@@ -45,7 +45,7 @@ def normalize(value: str) -> str:
 
 
 def fetch(url: str) -> str:
-    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 CarroLilianaDiscovery/1.0"})
+    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 PortugalEVGuideDiscovery/1.0"})
     with urllib.request.urlopen(request, timeout=40) as response:
         return response.read().decode("utf-8", errors="ignore")
 

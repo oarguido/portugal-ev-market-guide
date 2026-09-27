@@ -758,7 +758,7 @@ def validate_dealers(catalog: dict, dealer_catalog: dict) -> list[str]:
 
 
 def check_link(url: str) -> tuple[int | None, str]:
-    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 CarroLiliana/2.0"})
+    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 PortugalEVGuide/2.0"})
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
             return response.status, response.geturl()
