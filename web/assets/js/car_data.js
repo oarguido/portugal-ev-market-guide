@@ -429,7 +429,7 @@ const CAR_DATA = [
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -437,7 +437,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -460,9 +460,9 @@ const CAR_DATA = [
       "boot_capacity_l": 400,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Alpine",
@@ -6632,7 +6632,7 @@ const CAR_DATA = [
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -6640,7 +6640,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -6664,9 +6664,9 @@ const CAR_DATA = [
       "boot_capacity_l": 352,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Opel",
@@ -7923,7 +7923,7 @@ const CAR_DATA = [
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -7931,7 +7931,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -7954,9 +7954,9 @@ const CAR_DATA = [
       "boot_capacity_l": 440,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Renault",
@@ -8090,7 +8090,7 @@ const CAR_DATA = [
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -8098,7 +8098,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -8121,9 +8121,9 @@ const CAR_DATA = [
       "boot_capacity_l": 545,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Renault",
@@ -8680,7 +8680,7 @@ const CAR_DATA = [
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -8688,7 +8688,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -9117,17 +9117,17 @@ const CAR_DATA = [
                 "variant": "Trend 50 kWh",
                 "vat_basis": "excluded",
                 "literal_excerpt": "ID.3 Neo 50kWh 170cv Trend a partir de 24.600€ + IVA",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_campaign",
                 "recorded_on": "2026-08-24",
-                "verified_on": "2026-08-24",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "company"
               },
               "derivation": null,
               "recorded_on": "2026-08-24",
-              "verified_on": "2026-08-24",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "company",
               "audience": "company",
@@ -9144,7 +9144,7 @@ const CAR_DATA = [
                 "source_url": "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados",
                 "market": "PT",
                 "recorded_on": "2026-08-24",
-                "verified_on": "2026-08-24",
+                "verified_on": null,
                 "literal_excerpt": "ID.3 Neo 50kWh 170cv Trend a partir de 24.600€ + IVA"
               },
               "source_type": "official_campaign"
@@ -10151,19 +10151,19 @@ const CAR_DATA = [
 const DEALER_DATA = {
   "Abarth": {
     "brand": "Abarth",
-    "name": "C.A.M. – Porto Delfim Ferreira",
-    "address": "Rua Delfim Ferreira, 421",
-    "postal_code": "4100-201",
-    "locality": "Porto",
-    "phone": "+351 220 001 430",
-    "email": null,
-    "official_url": "https://rede.abarth.pt/cam-porto/contacte-nos/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Abarth%20CAM%20Porto%20Rua%20Delfim%20Ferreira%20421",
+    "name": "Filinto Mota Grande Porto – Circunvalação",
+    "address": "Estrada Exterior da Circunvalação, 10686",
+    "postal_code": "4460-280",
+    "locality": "Senhora da Hora, Matosinhos",
+    "phone": "+351 229 568 823",
+    "email": "stand.circunvalacao@filintomota.pt",
+    "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "AION": {
     "brand": "AION",
@@ -10179,23 +10179,23 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Alfa Romeo": {
     "brand": "Alfa Romeo",
-    "name": "C.A.M. Porto",
-    "address": "Rua Delfim Ferreira, 459",
-    "postal_code": "4100-199",
+    "name": "C.A.M. – Porto Delfim Ferreira",
+    "address": "Rua Delfim Ferreira, 421",
+    "postal_code": "4100-201",
     "locality": "Porto",
-    "phone": "+351 220 001 430",
-    "email": null,
+    "phone": "+351 220 001 431",
+    "email": "geral.porto@cam.pt",
     "official_url": "https://rede.alfaromeo.pt/cam-porto/contacte-nos/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20421",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Alpine": {
     "brand": "Alpine",
@@ -10211,7 +10211,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "BYD": {
     "brand": "BYD",
@@ -10224,10 +10224,9 @@ const DEALER_DATA = {
     "official_url": "https://www.byd-auto.pt/concessionarios",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20BYD%20Porto%20Campo%20Alegre%20724",
     "services": [
-      "sales",
-      "service"
+      "sales"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Changan": {
     "brand": "Changan",
@@ -10243,31 +10242,31 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "CUPRA": {
     "brand": "CUPRA",
-    "name": "CUPRA Garage Porto – Caetano Energy",
-    "address": "Rua do Amial, 714",
-    "postal_code": "4200-055",
+    "name": "JOP Porto",
+    "address": "Rua Delfim Ferreira, 84",
+    "postal_code": "4100-199",
     "locality": "Porto",
-    "phone": "+351 225 081 000",
+    "phone": "+351 226 194 500",
     "email": null,
-    "official_url": "https://www.cupraofficial.pt/o-seu-cupra/concessionarios",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=CUPRA%20Garage%20Porto%20Rua%20do%20Amial%20714",
+    "official_url": "https://www.jop.pt/marcas/cupra",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=CUPRA%20JOP%20Porto%20Rua%20Delfim%20Ferreira%2084",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Citroën": {
     "brand": "Citroën",
     "name": "Filinto Mota Grande Porto – Circunvalação",
     "address": "Estrada Exterior da Circunvalação, 10686",
     "postal_code": "4460-280",
-    "locality": "São Mamede de Infesta",
-    "phone": "+351 229 558 100",
+    "locality": "Senhora da Hora, Matosinhos",
+    "phone": "+351 229 568 823",
     "email": "stand.circunvalacao@filintomota.pt",
     "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
@@ -10275,47 +10274,46 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Dacia": {
     "brand": "Dacia",
-    "name": "Dacia Porto Circunvalação Caetano",
-    "address": "Estrada Interior da Circunvalação, 12679",
-    "postal_code": "4100-178",
-    "locality": "Porto",
-    "phone": "+351 226 191 500",
+    "name": "Carvalhos & M. Moura, Lda",
+    "address": "Rua Sangemil, 280",
+    "postal_code": "4425-692",
+    "locality": "Pedrouços",
+    "phone": "+351 229 711 450",
     "email": null,
-    "official_url": "https://caetano.pt/dacia/contactos-concessionarios/porto-circunvalacao/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Dacia%20Caetano%20Circunvalacao%2012679",
+    "official_url": "https://www.dacia.pt/concessionarios.html",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Carvalhos%20%26%20M.%20Moura%20Rua%20Sangemil%20280%204425-692%20Pedroucos",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Dongfeng": {
     "brand": "Dongfeng",
-    "name": "Filinto Mota Grande Porto – Circunvalação",
-    "address": "Estrada Exterior da Circunvalação, 10686",
-    "postal_code": "4460-280",
-    "locality": "São Mamede de Infesta",
-    "phone": "+351 229 558 100",
-    "email": "stand.circunvalacao@filintomota.pt",
-    "official_url": "https://www.filintomota.pt/marcas/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
+    "name": "Caetano Dongfeng - Porto",
+    "address": "Avenida Fontes Pereira de Melo, 315",
+    "postal_code": "4100-262",
+    "locality": "Porto",
+    "phone": "+351 916 880 186",
+    "email": null,
+    "official_url": "https://caetano.pt/dongfeng/contactos-concessionarios/",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Dongfeng%20Porto%20Avenida%20Fontes%20Pereira%20de%20Melo%20315",
     "services": [
-      "sales",
-      "service"
+      "sales"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Fiat": {
     "brand": "Fiat",
     "name": "Filinto Mota Grande Porto – Circunvalação",
     "address": "Estrada Exterior da Circunvalação, 10686",
     "postal_code": "4460-280",
-    "locality": "São Mamede de Infesta",
-    "phone": "+351 229 558 100",
+    "locality": "Senhora da Hora, Matosinhos",
+    "phone": "+351 229 568 823",
     "email": "stand.circunvalacao@filintomota.pt",
     "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
@@ -10323,7 +10321,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Ford": {
     "brand": "Ford",
@@ -10358,19 +10356,19 @@ const DEALER_DATA = {
   },
   "Hyundai": {
     "brand": "Hyundai",
-    "name": "Hyundai VAP Via Norte",
-    "address": "Lugar da Amieira, Via Norte",
-    "postal_code": "4465-275",
-    "locality": "São Mamede de Infesta",
-    "phone": "+351 229 050 570",
-    "email": "vap@vap.pt",
+    "name": "Caetano | Porto",
+    "address": "Estrada Interior da Circunvalação, 12679",
+    "postal_code": "4100-178",
+    "locality": "Porto",
+    "phone": "+351 220 936 120",
+    "email": "porto@hyundai.caetano.pt",
     "official_url": "https://www.hyundai.pt/concessionarios/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Hyundai%20VAP%20Via%20Norte%20Sao%20Mamede%20de%20Infesta",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Hyundai%20Caetano%20Porto%20Estrada%20Interior%20da%20Circunvalacao%2012679%204100-178%20Porto",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Jaecoo": {
     "brand": "Jaecoo",
@@ -10390,19 +10388,19 @@ const DEALER_DATA = {
   },
   "Jeep": {
     "brand": "Jeep",
-    "name": "C.A.M. Porto",
-    "address": "Rua Delfim Ferreira, 459",
-    "postal_code": "4100-199",
+    "name": "C.A.M. – Porto Delfim Ferreira",
+    "address": "Rua Delfim Ferreira, 421",
+    "postal_code": "4100-201",
     "locality": "Porto",
-    "phone": "+351 220 001 430",
-    "email": null,
+    "phone": "+351 220 001 431",
+    "email": "geral.porto@cam.pt",
     "official_url": "https://rede.jeep.pt/cam-porto/contacte-nos/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20459",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=C.A.M.%20Porto%20Rua%20Delfim%20Ferreira%20421",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Kia": {
     "brand": "Kia",
@@ -10418,7 +10416,7 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Lancia": {
     "brand": "Lancia",
@@ -10438,83 +10436,81 @@ const DEALER_DATA = {
   },
   "Leapmotor": {
     "brand": "Leapmotor",
-    "name": "Filinto Mota Grande Porto – Circunvalação",
-    "address": "Estrada Exterior da Circunvalação, 10686",
-    "postal_code": "4460-280",
-    "locality": "São Mamede de Infesta",
-    "phone": "+351 229 558 100",
-    "email": "stand.circunvalacao@filintomota.pt",
-    "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
+    "name": "Filinto Mota Porto Campanhã – Pinto Bessa",
+    "address": "Rua Pinto Bessa, 546",
+    "postal_code": "4300-428",
+    "locality": "Porto",
+    "phone": "+351 225 151 550",
+    "email": "stand.pintobessa@filintomota.pt",
+    "official_url": "https://www.leapmotor.net/pt-pt/concessionarios/filinto-mota-sucrs-s-a-porto",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Rua%20Pinto%20Bessa%20546%20Porto",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Mazda": {
     "brand": "Mazda",
-    "name": "Caetano Auto – Mazda Senhora da Hora",
-    "address": "Rua Vasco da Gama, 780",
-    "postal_code": "4460-439",
-    "locality": "Senhora da Hora",
-    "phone": "+351 229 576 000",
-    "email": null,
-    "official_url": "https://www.mazda.pt/formularios/localizar-um-concessionario/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Mazda%20Caetano%20Auto%20Senhora%20da%20Hora",
+    "name": "M. Coutinho Porto",
+    "address": "Estrada Exterior da Circunvalação, 3708",
+    "postal_code": "4435-187",
+    "locality": "Rio Tinto",
+    "phone": "+351 229 771 000",
+    "email": "mazda@mcoutinho.pt",
+    "official_url": "https://www.mazda.pt/concessionario/m-coutinho-porto-sa/overview/",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=M.%20Coutinho%20Porto%20Mazda%20Estrada%20Exterior%20da%20Circunvalacao%203708%204435-187%20Rio%20Tinto",
     "services": [
-      "sales",
-      "service"
+      "sales"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "MG": {
     "brand": "MG",
-    "name": "JOP MG Porto",
-    "address": "Rua Delfim Ferreira, 84",
-    "postal_code": "4100-100",
-    "locality": "Porto",
-    "phone": "+351 226 158 000",
-    "email": null,
-    "official_url": "https://www.jop.pt/marcas/mg",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=JOP%20MG%20Porto%20Rua%20Delfim%20Ferreira%2084",
+    "name": "JOP Oriente",
+    "address": "Estrada da Circunvalação, 6682",
+    "postal_code": "4425-650",
+    "locality": "Maia",
+    "phone": "+351 225 072 201",
+    "email": "mg.oriente@jop.pt",
+    "official_url": "https://www.mgmotor.pt/map",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=JOP%20Oriente%20MG%20Estrada%20da%20Circunvalacao%206682",
     "services": [
-      "sales",
-      "service"
+      "sales"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "MINI": {
     "brand": "MINI",
-    "name": "Caetano MINI Porto",
-    "address": "Rua Manuel Pinto de Azevedo, 462/500",
-    "postal_code": "4100-320",
+    "name": "BMcar Porto Circunvalação",
+    "address": "Estrada Interior da Circunvalação, 9543 (CEC – Centro Empresarial da Circunvalação)",
+    "postal_code": "4250-148",
     "locality": "Porto",
-    "phone": "+351 226 192 300",
-    "email": "geral@caetanoretail.pt",
-    "official_url": "https://caetano.pt/mini/contactos/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20MINI%20Porto%20Rua%20Manuel%20Pinto%20de%20Azevedo",
+    "phone": "+351 227 662 300",
+    "email": "porto@bmcar.com.pt",
+    "official_url": "https://www.bmcar.pt/contactos/bmcar-porto-circunvalacao",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=BMcar%20Porto%20Estrada%20Interior%20da%20Circunvalacao%209543",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Nissan": {
     "brand": "Nissan",
-    "name": "Caetano Power Porto",
-    "address": "Avenida Fontes Pereira de Melo, 305",
-    "postal_code": "4100-178",
+    "name": "Caetano Porto (Porto)",
+    "address": "Avenida Fontes Pereira de Melo, 173",
+    "postal_code": "4100-262",
     "locality": "Porto",
-    "phone": "+351 808 919 969",
+    "phone": "+351 226 191 500",
     "email": null,
-    "official_url": "https://caetano.pt/nissan/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Power%20Nissan%20Porto",
+    "official_url": "https://rede.nissanportugal.pt/caetano",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Porto%20Nissan%20Avenida%20Fontes%20Pereira%20de%20Melo%20173%204100-262%20Porto",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Omoda": {
     "brand": "Omoda",
@@ -10537,8 +10533,8 @@ const DEALER_DATA = {
     "name": "Filinto Mota Grande Porto – Circunvalação",
     "address": "Estrada Exterior da Circunvalação, 10686",
     "postal_code": "4460-280",
-    "locality": "São Mamede de Infesta",
-    "phone": "+351 229 558 100",
+    "locality": "Senhora da Hora, Matosinhos",
+    "phone": "+351 229 568 823",
     "email": "stand.circunvalacao@filintomota.pt",
     "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
@@ -10546,71 +10542,71 @@ const DEALER_DATA = {
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Peugeot": {
     "brand": "Peugeot",
-    "name": "Filinto Mota Grande Porto – Circunvalação",
-    "address": "Estrada Exterior da Circunvalação, 10686",
-    "postal_code": "4460-280",
-    "locality": "São Mamede de Infesta",
-    "phone": "+351 229 558 100",
-    "email": "stand.circunvalacao@filintomota.pt",
-    "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
+    "name": "Caetano Porto",
+    "address": "Rua Delfim Ferreira, 230",
+    "postal_code": "4101-803",
+    "locality": "Porto",
+    "phone": "+351 226 196 900",
+    "email": "vendasonline@caetano.pt",
+    "official_url": "https://rede.peugeot.pt/caetano-porto/",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Porto%20Peugeot%20Rua%20Delfim%20Ferreira%20230",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Renault": {
     "brand": "Renault",
-    "name": "Renault Porto Circunvalação Caetano",
-    "address": "Estrada Interior da Circunvalação, 12679",
-    "postal_code": "4100-178",
-    "locality": "Porto",
-    "phone": "+351 226 191 500",
+    "name": "Carvalhos & M. Moura, Lda",
+    "address": "Rua Sangemil, 280",
+    "postal_code": "4425-692",
+    "locality": "Pedrouços",
+    "phone": "+351 229 711 450",
     "email": null,
-    "official_url": "https://caetano.pt/renault/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Renault%20Caetano%20Circunvalacao%2012679",
+    "official_url": "https://www.renault.pt/concessionarios.html",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Carvalhos%20%26%20M.%20Moura%20Rua%20Sangemil%20280%204425-692%20Pedroucos",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "smart": {
     "brand": "smart",
-    "name": "Sociedade Comercial C. Santos – Boavista",
-    "address": "Avenida da Boavista, 3743",
-    "postal_code": "4100-139",
+    "name": "Otima",
+    "address": "Avenida de Fontes Pereira de Melo, 410",
+    "postal_code": "4100-260",
     "locality": "Porto",
-    "phone": "+351 226 102 708",
-    "email": null,
-    "official_url": "https://pt.smart.com/pt/retailer-list/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=smart%20Sociedade%20Comercial%20C%20Santos%20Boavista",
+    "phone": "+351 225 320 250",
+    "email": "otima@otima.pt",
+    "official_url": "https://pt.smart.com/pt/dealer-locator/",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=smart%20Otima%20Avenida%20Fontes%20Pereira%20de%20Melo%20410%20Porto",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Suzuki": {
     "brand": "Suzuki",
     "name": "Motorlife – Citiauto",
-    "address": "Avenida Vasco da Gama, 2695",
+    "address": "Avenida Vasco da Gama, 2695, Vilar de Andorinho",
     "postal_code": "4430-249",
     "locality": "Vila Nova de Gaia",
-    "phone": "+351 227 860 800",
+    "phone": "+351 227 877 955",
     "email": null,
     "official_url": "https://www.suzukiauto.pt/index.php/concesionarios",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Motorlife%20Citiauto%20Suzuki%20Vila%20Nova%20de%20Gaia",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Motorlife%20Citiauto%20Suzuki%20Avenida%20Vasco%20da%20Gama%202695%204430-249%20Vila%20Nova%20de%20Gaia",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Tesla": {
     "brand": "Tesla",
@@ -10644,7 +10640,7 @@ const DEALER_DATA = {
       "service"
     ],
     "distance_note": "6,5 km de São Mamede de Infesta segundo o localizador oficial da Toyota; o seguinte é Rio Tinto a 8,5 km.",
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Volkswagen": {
     "brand": "Volkswagen",
@@ -10652,15 +10648,15 @@ const DEALER_DATA = {
     "address": "Lugar da Amieira, Via Norte",
     "postal_code": "4465-275",
     "locality": "São Mamede de Infesta",
-    "phone": "+351 229 050 570",
-    "email": "vap@vap.pt",
+    "phone": "+351 220 145 037",
+    "email": null,
     "official_url": "https://www.jop.pt/marcas/volkswagen",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Volkswagen%20VAP%20Via%20Norte%20Sao%20Mamede%20de%20Infesta",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Volvo": {
     "brand": "Volvo",
@@ -10680,18 +10676,17 @@ const DEALER_DATA = {
   },
   "Škoda": {
     "brand": "Škoda",
-    "name": "Carvap Porto – Via Norte",
-    "address": "Lugar da Amieira, Via Norte",
-    "postal_code": "4465-275",
-    "locality": "São Mamede de Infesta",
-    "phone": "+351 229 050 500",
+    "name": "CARVAP Porto – Boavista",
+    "address": "Rua São João de Brito, 18/28 (Av. da Boavista)",
+    "postal_code": "4100-452",
+    "locality": "Porto",
+    "phone": "+351 222 413 078",
     "email": null,
     "official_url": "https://www.jop.pt/marcas/skoda",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Skoda%20Carvap%20Via%20Norte%20Sao%20Mamede%20de%20Infesta",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Skoda%20CARVAP%20Porto%20Rua%20Sao%20Joao%20de%20Brito%2018",
     "services": [
-      "sales",
-      "service"
+      "sales"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   }
 };
