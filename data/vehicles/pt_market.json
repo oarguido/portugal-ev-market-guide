@@ -474,7 +474,7 @@
               }
             ]
           },
-          "eligibility_status": "confirmed_eligible",
+          "eligibility_status": "potential_reference",
           "battery_technology": {
             "chemistry": null,
             "generation": null,
@@ -482,7 +482,7 @@
             "source_url": null,
             "verified_on": null
           },
-          "eligibility_tier": "confirmed_eligible"
+          "eligibility_tier": "potential_reference"
         }
       ],
       "pros": [
@@ -505,9 +505,9 @@
         "boot_capacity_l": 400,
         "frunk_capacity_l": null
       },
-      "eligibility_status": "confirmed_eligible",
-      "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-      "eligibility_tier": "confirmed_eligible"
+      "eligibility_status": "potential_reference",
+      "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+      "eligibility_tier": "potential_reference"
     },
     {
       "brand": "Alpine",
@@ -6677,7 +6677,7 @@
               }
             ]
           },
-          "eligibility_status": "confirmed_eligible",
+          "eligibility_status": "potential_reference",
           "battery_technology": {
             "chemistry": null,
             "generation": null,
@@ -6685,7 +6685,7 @@
             "source_url": null,
             "verified_on": null
           },
-          "eligibility_tier": "confirmed_eligible"
+          "eligibility_tier": "potential_reference"
         }
       ],
       "pros": [
@@ -6709,9 +6709,9 @@
         "boot_capacity_l": 352,
         "frunk_capacity_l": null
       },
-      "eligibility_status": "confirmed_eligible",
-      "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-      "eligibility_tier": "confirmed_eligible"
+      "eligibility_status": "potential_reference",
+      "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+      "eligibility_tier": "potential_reference"
     },
     {
       "brand": "Opel",
@@ -7968,7 +7968,7 @@
               }
             ]
           },
-          "eligibility_status": "confirmed_eligible",
+          "eligibility_status": "potential_reference",
           "battery_technology": {
             "chemistry": null,
             "generation": null,
@@ -7976,7 +7976,7 @@
             "source_url": null,
             "verified_on": null
           },
-          "eligibility_tier": "confirmed_eligible"
+          "eligibility_tier": "potential_reference"
         }
       ],
       "pros": [
@@ -7999,9 +7999,9 @@
         "boot_capacity_l": 440,
         "frunk_capacity_l": null
       },
-      "eligibility_status": "confirmed_eligible",
-      "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-      "eligibility_tier": "confirmed_eligible"
+      "eligibility_status": "potential_reference",
+      "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+      "eligibility_tier": "potential_reference"
     },
     {
       "brand": "Renault",
@@ -8135,7 +8135,7 @@
               }
             ]
           },
-          "eligibility_status": "confirmed_eligible",
+          "eligibility_status": "potential_reference",
           "battery_technology": {
             "chemistry": null,
             "generation": null,
@@ -8143,7 +8143,7 @@
             "source_url": null,
             "verified_on": null
           },
-          "eligibility_tier": "confirmed_eligible"
+          "eligibility_tier": "potential_reference"
         }
       ],
       "pros": [
@@ -8166,9 +8166,9 @@
         "boot_capacity_l": 545,
         "frunk_capacity_l": null
       },
-      "eligibility_status": "confirmed_eligible",
-      "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-      "eligibility_tier": "confirmed_eligible"
+      "eligibility_status": "potential_reference",
+      "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+      "eligibility_tier": "potential_reference"
     },
     {
       "brand": "Renault",
@@ -8725,7 +8725,7 @@
               }
             ]
           },
-          "eligibility_status": "confirmed_eligible",
+          "eligibility_status": "potential_reference",
           "battery_technology": {
             "chemistry": null,
             "generation": null,
@@ -8733,7 +8733,7 @@
             "source_url": null,
             "verified_on": null
           },
-          "eligibility_tier": "confirmed_eligible"
+          "eligibility_tier": "potential_reference"
         }
       ],
       "pros": [
@@ -9162,17 +9162,17 @@
                   "variant": "Trend 50 kWh",
                   "vat_basis": "excluded",
                   "literal_excerpt": "ID.3 Neo 50kWh 170cv Trend a partir de 24.600€ + IVA",
-                  "status": "verified",
+                  "status": "legacy_unverified",
                   "source_type": "official_campaign",
                   "recorded_on": "2026-08-24",
-                  "verified_on": "2026-08-24",
+                  "verified_on": null,
                   "source_authority": "manufacturer_or_importer_pt",
                   "customer": "company"
                 },
                 "derivation": null,
                 "recorded_on": "2026-08-24",
-                "verified_on": "2026-08-24",
-                "legacy_unverified": false,
+                "verified_on": null,
+                "legacy_unverified": true,
                 "kind": "campaign_price",
                 "customer": "company",
                 "audience": "company",
@@ -9189,7 +9189,7 @@
                   "source_url": "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados",
                   "market": "PT",
                   "recorded_on": "2026-08-24",
-                  "verified_on": "2026-08-24",
+                  "verified_on": null,
                   "literal_excerpt": "ID.3 Neo 50kWh 170cv Trend a partir de 24.600€ + IVA"
                 },
                 "source_type": "official_campaign"
