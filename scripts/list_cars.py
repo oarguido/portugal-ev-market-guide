@@ -1,10 +1,7 @@
 """Print a compact summary of the canonical catalogue."""
 
 from compile_data import vehicle_records
-
-
-def effective_price(pricing: dict) -> float | None:
-    return pricing.get("particular_campaign_price_vat_incl") or pricing.get("particular_list_price_vat_incl")
+from validate_data import effective_price
 
 
 def main() -> None:
@@ -15,8 +12,8 @@ def main() -> None:
             price = effective_price(variant["pricing"])
             print(
                 f"{model['brand']} {model['model']:<{33-len(model['brand'])}} "
-                f"{variant['name']:<28} {variant['wltp_range_combined_km']:>4} km "
-                f"{price:>10,.2f} €  {model['last_verified']}"
+                f"{variant['name']:<28} {variant['wltp_range_combined_km'] or '—':>4} km "
+                f"{f'{price:,.2f}' if price is not None else '—':>10} €  {model['last_verified']}"
             )
 
 

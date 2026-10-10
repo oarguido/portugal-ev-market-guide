@@ -5,7 +5,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const test = require("node:test");
 
-const { boolLabel, cellValue, v2lLabel } = require("../web/assets/js/specs.js");
+const { boolLabel, cellValue, formatPower, v2lLabel } = require("../web/assets/js/specs.js");
 
 const root = path.resolve(__dirname, "..");
 const catalog = JSON.parse(
@@ -97,4 +97,20 @@ test("app.js não repõe valores inventados para campos ausentes", () => {
     false,
     "tração não pode ser adivinhada pela marca",
   );
+});
+
+test("formatPower mostra só o que está confirmado, nunca 'null kW'", () => {
+  assert.equal(formatPower({ power_hp: 150, power_kw: 110 }), "150 cv");
+  assert.equal(formatPower({ power_hp: 150, power_kw: 110 }, true), "150 cv (110 kW)");
+  assert.equal(formatPower({ power_hp: 115, power_kw: null }, true), "115 cv");
+  assert.equal(formatPower({ power_hp: null, power_kw: 110 }), "110 kW");
+  assert.equal(formatPower({ power_hp: null, power_kw: 110 }, true), "110 kW");
+  assert.equal(formatPower({ power_hp: null, power_kw: null }, true), "N/A");
+  assert.equal(formatPower({}), "N/A");
+});
+
+test("app.js não mostra especificação por confirmar como zero na comparação", () => {
+  assert.doesNotMatch(appSource, /const valRange[AB] = .*\|\| 0;/);
+  assert.doesNotMatch(appSource, /const valBattery[AB] = .*\|\| 0;/);
+  assert.doesNotMatch(appSource, /\(\$\{car[AB]\.specifications\.power_kw\} kW\)/);
 });

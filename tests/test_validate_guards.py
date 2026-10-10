@@ -340,6 +340,26 @@ class CamposObrigatorios(unittest.TestCase):
         erros = validate_catalog(c)
         self.assertTrue(any("variante duplicada" in e for e in erros), erros)
 
+    def test_especificacao_principal_por_confirmar_pode_ser_null(self):
+        # AGENTS.md §1 e §6.9: um valor técnico não demonstrado fica null, nunca um valor antigo.
+        for campo in ("battery_capacity_kwh", "wltp_range_combined_km", "power_kw", "power_hp"):
+            c = self.base()
+            c["models"][0]["variants"][0][campo] = None
+            erros = validate_catalog(c)
+            self.assertFalse(any(f"{campo} inválido" in e for e in erros), (campo, erros))
+
+    def test_especificacao_principal_zero_negativa_texto_ou_ausente_e_recusada(self):
+        for campo in ("battery_capacity_kwh", "wltp_range_combined_km", "power_kw", "power_hp"):
+            for valor in (0, -1, "150", True, float("nan")):
+                c = self.base()
+                c["models"][0]["variants"][0][campo] = valor
+                erros = validate_catalog(c)
+                self.assertTrue(any(f"{campo} inválido" in e for e in erros), (campo, valor, erros))
+            c = self.base()
+            del c["models"][0]["variants"][0][campo]
+            erros = validate_catalog(c)
+            self.assertTrue(any("campos em falta" in e and campo in e for e in erros), (campo, erros))
+
     def test_preco_acima_do_limite_e_recusado(self):
         c = self.base()
         c["models"][0]["variants"][0]["pricing"]["offers"][0]["amount_eur"] = rules.MAX_PRICE_EUR + 1

@@ -232,7 +232,8 @@ Cada variante requer pelo menos:
 - `name`;
 - `battery_capacity_kwh`;
 - `wltp_range_combined_km`;
-- `power_kw` e `power_hp`;
+- `power_kw` e `power_hp`, os quatro como número positivo ou `null` quando
+  a fonte oficial não os demonstra (nunca converter kW em cv);
 - `battery_technology`, com `null` para cada campo técnico não demonstrado;
 - `pricing.offers`, mesmo que a lista esteja vazia.
 

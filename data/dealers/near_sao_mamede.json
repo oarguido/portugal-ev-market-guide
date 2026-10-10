@@ -22,22 +22,6 @@
       "verified_on": "2026-10-10"
     },
     {
-      "brand": "AION",
-      "name": "GAC AION Porto – Carby",
-      "address": "Estrada da Circunvalação, 10408",
-      "postal_code": "4460-383",
-      "locality": "Porto",
-      "phone": "+351 210 496 929",
-      "email": null,
-      "official_url": "https://gac-portugal.pt/rede-de-concessionarios/",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=GAC%20AION%20Carby%20Porto%20Circunvalacao%2010408",
-      "services": [
-        "sales",
-        "service"
-      ],
-      "verified_on": "2026-10-10"
-    },
-    {
       "brand": "Alfa Romeo",
       "name": "C.A.M. – Porto Delfim Ferreira",
       "address": "Rua Delfim Ferreira, 421",
@@ -181,30 +165,30 @@
     },
     {
       "brand": "Ford",
-      "name": "C.A.M. – Ford Matosinhos",
-      "address": "Rua de Sendim, 180",
-      "postal_code": "4450-264",
-      "locality": "Matosinhos",
-      "phone": "+351 229 397 000",
+      "name": "C.A.M. (PORTO)",
+      "address": "R. Delfim Ferreira, 188",
+      "postal_code": "4100-199",
+      "locality": "Porto",
+      "phone": "+351 220 001 400",
       "email": null,
       "official_url": "https://www.ford.pt/concessionarios",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ford%20CAM%20Matosinhos",
+      "maps_url": "https://maps.google.com/?saddr=S%C3%A3o%20Mamede%20de%20Infesta,%20Portugal&daddr=R.%20Delfim%20Ferreira,%20188+PORTO+4100-199&output=classic",
       "services": [
         "sales",
         "service"
       ],
-      "verified_on": "2026-08-16"
+      "verified_on": "2026-10-10"
     },
     {
       "brand": "Geely",
       "name": "Caetano Geely Porto",
-      "address": "Avenida Fontes Pereira de Melo, 305",
-      "postal_code": "4100-178",
+      "address": "Rua Eng.º Ferreira Dias, 765",
+      "postal_code": "4100-247",
       "locality": "Porto",
       "phone": "+351 226 194 470",
       "email": null,
-      "official_url": "https://caetano.pt/geely/",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Geely%20Porto",
+      "official_url": "https://www.geely-auto.pt/concessionarios",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Geely%20Porto%20Rua%20Engenheiro%20Ferreira%20Dias%20765",
       "services": [
         "sales"
       ],
@@ -307,21 +291,6 @@
       "verified_on": "2026-10-10"
     },
     {
-      "brand": "Mazda",
-      "name": "M. Coutinho Porto",
-      "address": "Estrada Exterior da Circunvalação, 3708",
-      "postal_code": "4435-187",
-      "locality": "Rio Tinto",
-      "phone": "+351 229 771 000",
-      "email": "mazda@mcoutinho.pt",
-      "official_url": "https://www.mazda.pt/concessionario/m-coutinho-porto-sa/overview/",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=M.%20Coutinho%20Porto%20Mazda%20Estrada%20Exterior%20da%20Circunvalacao%203708%204435-187%20Rio%20Tinto",
-      "services": [
-        "sales"
-      ],
-      "verified_on": "2026-10-10"
-    },
-    {
       "brand": "MG",
       "name": "JOP Oriente",
       "address": "Estrada da Circunvalação, 6682",
@@ -372,7 +341,7 @@
       "brand": "Omoda",
       "name": "Carby Omoda & Jaecoo Porto",
       "address": "Estrada da Circunvalação, 10448",
-      "postal_code": "4465-112",
+      "postal_code": "4468-383",
       "locality": "Senhora da Hora",
       "phone": "+351 800 209 001",
       "email": null,
@@ -470,16 +439,16 @@
       "address": "Avenida Fontes Pereira de Melo, 318",
       "postal_code": "4100-259",
       "locality": "Porto",
-      "phone": "+351 300 527 476",
+      "phone": "+351 221 208 735",
       "email": null,
-      "official_url": "https://www.tesla.com/pt_PT/findus/list/stores/Portugal",
+      "official_url": "https://www.tesla.com/pt_PT/findus/location/store/portoavfontespereirademelo",
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Tesla%20Center%20Porto%20Fontes%20Pereira%20de%20Melo%20318",
       "services": [
         "sales",
         "service",
         "delivery"
       ],
-      "verified_on": "2026-08-16"
+      "verified_on": "2026-10-11"
     },
     {
       "brand": "Toyota",
@@ -516,19 +485,20 @@
     },
     {
       "brand": "Volvo",
-      "name": "JOP Volvo Porto",
-      "address": "Rua Manuel Pinto de Azevedo, 671",
-      "postal_code": "4149-010",
+      "name": "JOP - Porto",
+      "address": "Rua Manuel Pinto de Azevedo, 510",
+      "postal_code": "4100-320",
       "locality": "Porto",
-      "phone": "+351 226 157 400",
+      "phone": "+351 229 050 505",
       "email": null,
-      "official_url": "https://www.jop.pt/marcas/volvo",
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=JOP%20Volvo%20Porto%20Manuel%20Pinto%20de%20Azevedo%20671",
+      "official_url": "https://www.volvocars.com/pt/dealers/concessionarios/",
+      "maps_url": "https://maps.google.com/?q=JOP%20-%20Porto,%20Rua%20Manuel%20Pinto%20de%20Azevedo,%20510%20Porto,%204100-320",
       "services": [
         "sales",
-        "service"
+        "service",
+        "delivery"
       ],
-      "verified_on": "2026-08-16"
+      "verified_on": "2026-10-10"
     },
     {
       "brand": "Škoda",

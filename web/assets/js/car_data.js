@@ -1,180 +1,6 @@
 // Gerado automaticamente por scripts/compile_data.py; não editar.
 const CAR_DATA = [
   {
-    "brand": "AION",
-    "model": "UT",
-    "powertrain": "BEV",
-    "segment": "Hatchback compacto",
-    "release_year": 2026,
-    "availability_status": "available",
-    "official_link": "https://gac-portugal.pt/aion-ut/",
-    "image_path": "assets/images/vehicles/aion-ut/official.webp",
-    "last_verified": "2026-09-02",
-    "data_sources": [
-      {
-        "type": "official_model",
-        "url": "https://gac-portugal.pt/aion-ut/",
-        "verified_on": "2026-09-02"
-      },
-      {
-        "type": "official_campaign",
-        "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-        "verified_on": "2026-09-02"
-      }
-    ],
-    "variants": [
-      {
-        "name": "Premium Green",
-        "battery_capacity_kwh": 60,
-        "wltp_range_combined_km": 430,
-        "wltp_range_urban_km": 622,
-        "wltp_consumption_combined_kwh_100km": 16.4,
-        "power_kw": 150,
-        "power_hp": 204,
-        "dc_max_kw": 87,
-        "pricing": {
-          "offers": [
-            {
-              "classification": "confirmed",
-              "amount_eur": 28190.0,
-              "currency": "EUR",
-              "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-              "source_authority": "manufacturer_or_importer_pt",
-              "market": "PT",
-              "variant": "Premium Green",
-              "conditions": null,
-              "vat_included": true,
-              "proof": {
-                "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-                "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-                "authority": "manufacturer_or_importer_pt",
-                "market": "PT",
-                "audience": "particular",
-                "variant": "Premium Green",
-                "vat_basis": "included",
-                "literal_excerpt": "AION UT Premium Green a partir de 28.190 €",
-                "status": "verified",
-                "source_type": "official_campaign",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "source_authority": "manufacturer_or_importer_pt",
-                "customer": "private"
-              },
-              "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
-              "kind": "list_price",
-              "customer": "private",
-              "audience": "particular",
-              "validity": {
-                "valid_from": null,
-                "valid_until": null
-              },
-              "valid_until": null,
-              "vat": "included",
-              "vat_status": "included",
-              "evidence": "AION UT Premium Green a partir de 28.190 €",
-              "evidence_record": {
-                "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-                "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-                "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "AION UT Premium Green a partir de 28.190 €"
-              },
-              "source_type": "official_campaign"
-            },
-            {
-              "classification": "confirmed",
-              "amount_eur": 26560.0,
-              "currency": "EUR",
-              "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-              "source_authority": "manufacturer_or_importer_pt",
-              "market": "PT",
-              "variant": "Premium Green",
-              "conditions": "Crédito Automóvel c/ reserva de propriedade para clientes particulares, Aion UT Premium Green, limitado ao stock existente nos concessionários aderentes. Inclui pintura metalizada (mono-tom); não inclui despesas de documentação e transporte. Entrada 7.968,00€ + 59 mensalidades de 270,00€, última mensalidade 6 640,00€. TAN 5,93%, TAEG 8,2%, MTIC 23.529,72€. Sujeito a aprovação Cetelem.",
-              "vat_included": true,
-              "proof": {
-                "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-                "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-                "authority": "manufacturer_or_importer_pt",
-                "market": "PT",
-                "audience": "particular",
-                "variant": "Premium Green",
-                "vat_basis": "included",
-                "literal_excerpt": "AION UT Premium Green PVP campanha de 26.560 €",
-                "status": "verified",
-                "source_type": "official_campaign",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "source_authority": "manufacturer_or_importer_pt",
-                "customer": "private"
-              },
-              "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
-              "kind": "campaign_price",
-              "customer": "private",
-              "audience": "particular",
-              "validity": {
-                "valid_from": null,
-                "valid_until": "2026-09-30"
-              },
-              "valid_until": "2026-09-30",
-              "vat": "included",
-              "vat_status": "included",
-              "evidence": "AION UT Premium Green PVP campanha de 26.560 €",
-              "evidence_record": {
-                "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-                "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-                "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "AION UT Premium Green PVP campanha de 26.560 €"
-              },
-              "source_type": "official_campaign"
-            }
-          ]
-        },
-        "eligibility_status": "confirmed_eligible",
-        "battery_technology": {
-          "chemistry": null,
-          "generation": null,
-          "architecture": null,
-          "source_url": null,
-          "verified_on": null
-        },
-        "eligibility_tier": "confirmed_eligible"
-      }
-    ],
-    "pros": [
-      "Campanha com financiamento Cetelem confirmada a 26.560 € PVP, particular, IVA incluído",
-      "Autonomia honesta de 310 km WLTP para a capacidade da bateria",
-      "Interior moderno com ecrã central generoso e bom espaço no habitáculo",
-      "Bagageira prática para o segmento compacto"
-    ],
-    "cons": [
-      "Marca nova em Portugal com rede de concessionários em consolidação",
-      "Carregamento DC modesto ajustado a ritmos urbanos",
-      "Valor residual no mercado de usados português ainda incerto",
-      "Materiais plásticos rijos em zonas inferiores do habitáculo"
-    ],
-    "dimensions": {
-      "length_mm": 4270,
-      "width_mm": 1850,
-      "height_mm": 1575
-    },
-    "luggage_capacity": {
-      "boot_capacity_l": 440,
-      "frunk_capacity_l": null
-    },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
-  },
-  {
     "brand": "Abarth",
     "model": "500e",
     "powertrain": "BEV",
@@ -183,12 +9,12 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.abarth.pt/novo-abarth-electric-500e",
     "image_path": "assets/images/vehicles/abarth-500e/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.abarth.pt/novo-abarth-electric-500e",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -196,10 +22,10 @@ const CAR_DATA = [
         "name": "500e Berlina",
         "battery_capacity_kwh": 42,
         "wltp_range_combined_km": 265,
-        "wltp_consumption_combined_kwh_100km": 18,
+        "wltp_consumption_combined_kwh_100km": 17.1,
         "power_kw": 113.7,
         "power_hp": 155,
-        "dc_max_kw": 85,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -220,17 +46,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "500e Berlina",
                 "vat_basis": "included",
-                "literal_excerpt": "Abarth 500e 500e Berlina a partir de 38.030 €",
+                "literal_excerpt": "BERLINA a partir de 38.030€ €",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -242,14 +68,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Abarth 500e 500e Berlina a partir de 38.030 €",
+              "evidence": "BERLINA a partir de 38.030€ €",
               "evidence_record": {
                 "url": "https://www.abarth.pt/novo-abarth-electric-500e",
                 "source_url": "https://www.abarth.pt/novo-abarth-electric-500e",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Abarth 500e 500e Berlina a partir de 38.030 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "BERLINA a partir de 38.030€ €"
               },
               "source_type": "official_model_and_price"
             }
@@ -300,17 +126,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.alfaromeo.pt/modelos/junior-elettrica",
     "image_path": "assets/images/vehicles/alfa-romeo-junior-elettrica/official-exterior.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.alfaromeo.pt/modelos/junior-elettrica",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.alfaromeo.pt/promocoes-automoveis/promocoes/alfa-romeo-junior-elletrica",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -318,7 +144,7 @@ const CAR_DATA = [
         "name": "Ti 54 kWh",
         "battery_capacity_kwh": 54,
         "wltp_range_combined_km": 410,
-        "wltp_consumption_combined_kwh_100km": 15.2,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 115,
         "power_hp": 156,
         "dc_max_kw": 100,
@@ -377,7 +203,7 @@ const CAR_DATA = [
             },
             {
               "classification": "confirmed",
-              "amount_eur": 39553.0,
+              "amount_eur": 38953.0,
               "currency": "EUR",
               "source_url": "https://www.alfaromeo.pt/promocoes-automoveis/promocoes/alfa-romeo-junior-elletrica",
               "source_authority": "manufacturer_or_importer_pt",
@@ -393,43 +219,43 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Ti 54 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Exemplo para Junior Elettrica Ti: PVPR de 44.553,00€, PVP campanha de 39.553,00€, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go.",
+                "literal_excerpt": "Exemplo para Junior Elettrica Ti: PVPR de 44.553,00€, PVP campanha de 38.953,00€, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go. [...] Condições válidas até 31/10/2026, para clientes particulares.",
                 "status": "verified",
                 "source_type": "official_campaign",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "recorded_on": "2026-10-10",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
               "validity": {
                 "valid_from": null,
-                "valid_until": "2026-09-30"
+                "valid_until": "2026-10-31"
               },
-              "valid_until": "2026-09-30",
+              "valid_until": "2026-10-31",
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Exemplo para Junior Elettrica Ti: PVPR de 44.553,00€, PVP campanha de 39.553,00€, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go.",
+              "evidence": "Exemplo para Junior Elettrica Ti: PVPR de 44.553,00€, PVP campanha de 38.953,00€, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go. [...] Condições válidas até 31/10/2026, para clientes particulares.",
               "evidence_record": {
                 "url": "https://www.alfaromeo.pt/promocoes-automoveis/promocoes/alfa-romeo-junior-elletrica",
                 "source_url": "https://www.alfaromeo.pt/promocoes-automoveis/promocoes/alfa-romeo-junior-elletrica",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Exemplo para Junior Elettrica Ti: PVPR de 44.553,00€, PVP campanha de 39.553,00€, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go.",
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Exemplo para Junior Elettrica Ti: PVPR de 44.553,00€, PVP campanha de 38.953,00€, inclui Despesas de Legalização e Transporte, Pintura Metalizada, Kit Fix & Go. [...] Condições válidas até 31/10/2026, para clientes particulares.",
                 "source_type": null
               },
               "source_type": "official_campaign"
             }
           ]
         },
-        "eligibility_status": "potential_reference",
+        "eligibility_status": "confirmed_eligible",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -437,7 +263,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "potential_reference"
+        "eligibility_tier": "confirmed_eligible"
       }
     ],
     "pros": [
@@ -460,9 +286,9 @@ const CAR_DATA = [
       "boot_capacity_l": 400,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "potential_reference",
-    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
-    "eligibility_tier": "potential_reference"
+    "eligibility_status": "confirmed_eligible",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
+    "eligibility_tier": "confirmed_eligible"
   },
   {
     "brand": "Alpine",
@@ -473,12 +299,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.alpinecars.pt/modelos-eletricos/a290.html",
     "image_path": "assets/images/vehicles/alpine-a290/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_configurator_and_campaign",
         "url": "https://www.alpinecars.pt/modelos-eletricos/a290.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_model_configurator_and_campaign",
+        "url": "https://www.alpinecars.pt/modelos-eletricos/a290/configurador.html",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -494,33 +325,33 @@ const CAR_DATA = [
           "offers": [
             {
               "classification": "confirmed",
-              "amount_eur": 39000,
+              "amount_eur": 39500.0,
               "currency": "EUR",
-              "source_url": "https://www.alpinecars.pt/modelos-eletricos/a290.html",
+              "source_url": "https://www.alpinecars.pt/modelos-eletricos/a290/configurador.html",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "GT 180 cv",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://www.alpinecars.pt/modelos-eletricos/a290.html",
-                "source_url": "https://www.alpinecars.pt/modelos-eletricos/a290.html",
+                "url": "https://www.alpinecars.pt/modelos-eletricos/a290/configurador.html",
+                "source_url": "https://www.alpinecars.pt/modelos-eletricos/a290/configurador.html",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "GT 180 cv",
                 "vat_basis": "included",
-                "literal_excerpt": "Alpine A290 GT 180 cv a partir de 39.000 €",
+                "literal_excerpt": "preço total 39 500 € A290 GT Preço Base32 114 € ISV sem IVA0 € Taxa IVA23% DETALHE COM IVA ... GT 39 500 €",
                 "status": "verified",
                 "source_type": "official_model_configurator_and_campaign",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "recorded_on": "2026-10-10",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -532,14 +363,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Alpine A290 GT 180 cv a partir de 39.000 €",
+              "evidence": "preço total 39 500 € A290 GT Preço Base32 114 € ISV sem IVA0 € Taxa IVA23% DETALHE COM IVA ... GT 39 500 €",
               "evidence_record": {
-                "url": "https://www.alpinecars.pt/modelos-eletricos/a290.html",
-                "source_url": "https://www.alpinecars.pt/modelos-eletricos/a290.html",
+                "url": "https://www.alpinecars.pt/modelos-eletricos/a290/configurador.html",
+                "source_url": "https://www.alpinecars.pt/modelos-eletricos/a290/configurador.html",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Alpine A290 GT 180 cv a partir de 39.000 €"
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "preço total 39 500 € A290 GT Preço Base32 114 € ISV sem IVA0 € Taxa IVA23% DETALHE COM IVA ... GT 39 500 €"
               },
               "source_type": "official_model_configurator_and_campaign"
             }
@@ -610,7 +441,7 @@ const CAR_DATA = [
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 36186.6,
               "currency": "EUR",
               "source_url": "https://www.byd-auto.pt/campanhas/byd-atto-2",
@@ -628,17 +459,17 @@ const CAR_DATA = [
                 "variant": "Active",
                 "vat_basis": "included",
                 "literal_excerpt": "BYD Atto 2 Active a partir de 36.186,60 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_campaign",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -655,14 +486,14 @@ const CAR_DATA = [
                 "source_url": "https://www.byd-auto.pt/campanhas/byd-atto-2",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "BYD Atto 2 Active a partir de 36.186,60 €"
               },
               "source_type": "official_campaign"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -670,7 +501,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -693,9 +524,9 @@ const CAR_DATA = [
       "boot_capacity_l": 400,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "BYD",
@@ -706,17 +537,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://byd-auto.pt/modelos/byd-dolphin/",
     "image_path": "assets/images/vehicles/byd-dolphin/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://byd-auto.pt/modelos/byd-dolphin/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.byd-auto.pt/campanhas/byd-dolphin",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -727,7 +558,7 @@ const CAR_DATA = [
         "wltp_consumption_combined_kwh_100km": 15.9,
         "power_kw": 150,
         "power_hp": 204,
-        "dc_max_kw": 88,
+        "dc_max_kw": 110,
         "pricing": {
           "offers": [
             {
@@ -828,19 +659,19 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://byd-auto.pt/modelos/byd-dolphin-surf/",
     "image_path": "assets/images/vehicles/byd-dolphin-surf/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://byd-auto.pt/modelos/byd-dolphin-surf/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Comfort",
         "battery_capacity_kwh": 43.2,
-        "wltp_range_combined_km": 322,
+        "wltp_range_combined_km": 310,
         "wltp_range_urban_km": 507,
         "wltp_consumption_combined_kwh_100km": 16,
         "power_kw": 115,
@@ -849,7 +680,7 @@ const CAR_DATA = [
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 24587.7,
               "currency": "EUR",
               "source_url": "https://byd-auto.pt/modelos/byd-dolphin-surf/",
@@ -867,17 +698,17 @@ const CAR_DATA = [
                 "variant": "Comfort",
                 "vat_basis": "included",
                 "literal_excerpt": "BYD Dolphin Surf Comfort a partir de 24.587,70 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -894,14 +725,14 @@ const CAR_DATA = [
                 "source_url": "https://byd-auto.pt/modelos/byd-dolphin-surf/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "BYD Dolphin Surf Comfort a partir de 24.587,70 €"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -909,7 +740,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -933,9 +764,9 @@ const CAR_DATA = [
       "boot_capacity_l": 230,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "CUPRA",
@@ -946,17 +777,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.cupraofficial.pt/cupra-raval",
     "image_path": "assets/images/vehicles/cupra-raval/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.cupraofficial.pt/cupra-raval",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.cupraofficial.pt/campanhas-carros-novos/novo-cupra-raval",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -964,8 +795,8 @@ const CAR_DATA = [
         "name": "Raval 38,5 kWh 115 cv",
         "battery_capacity_kwh": 38.5,
         "wltp_range_combined_km": 318,
-        "wltp_consumption_combined_kwh_100km": 13.6,
-        "power_kw": 85,
+        "wltp_consumption_combined_kwh_100km": null,
+        "power_kw": null,
         "power_hp": 115,
         "dc_max_kw": null,
         "range_note": "Autonomia anunciada de 318 km para a versão de campanha; a fonte indica que aguarda homologação final.",
@@ -990,17 +821,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Raval 38,5 kWh 115 cv",
                 "vat_basis": "included",
-                "literal_excerpt": "CUPRA Raval 38,5kWh 115cv — a partir de 26.990€ (preço chave na mão)",
+                "literal_excerpt": "Inteligente, com um interior imersivo e uma experiência de condução emocionante. Disponível a partir de 26.990€, preço chave na mão. Peça já a sua proposta.",
                 "status": "verified",
                 "source_type": "official_campaign",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "customer": "private",
               "audience": "particular",
@@ -1011,14 +842,14 @@ const CAR_DATA = [
               "valid_until": "2026-12-31",
               "vat": "included",
               "vat_status": "included",
-              "evidence": "CUPRA Raval 38,5kWh 115cv — a partir de 26.990€ (preço chave na mão)",
+              "evidence": "Inteligente, com um interior imersivo e uma experiência de condução emocionante. Disponível a partir de 26.990€, preço chave na mão. Peça já a sua proposta.",
               "evidence_record": {
                 "url": "https://www.cupraofficial.pt/campanhas-carros-novos/novo-cupra-raval",
                 "source_url": "https://www.cupraofficial.pt/campanhas-carros-novos/novo-cupra-raval",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "CUPRA Raval 38,5kWh 115cv — a partir de 26.990€ (preço chave na mão)"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Inteligente, com um interior imersivo e uma experiência de condução emocionante. Disponível a partir de 26.990€, preço chave na mão. Peça já a sua proposta."
               },
               "source_type": "official_campaign"
             }
@@ -1069,17 +900,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://changan-auto.pt/configurador/deepal-s05/",
     "image_path": "assets/images/vehicles/changan-deepal-s05/official.png",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_configurator",
         "url": "https://changan-auto.pt/configurador/deepal-s05/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_specification",
         "url": "https://changan-auto.pt/ficha-tecnica-s05/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -1087,10 +918,10 @@ const CAR_DATA = [
         "name": "PRO",
         "battery_capacity_kwh": 68.8,
         "wltp_range_combined_km": 485,
-        "wltp_consumption_combined_kwh_100km": 16.9,
+        "wltp_consumption_combined_kwh_100km": 16,
         "power_kw": 200,
         "power_hp": 272,
-        "dc_max_kw": 167,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -1111,17 +942,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "PRO",
                 "vat_basis": "included",
-                "literal_excerpt": "Total | 36 990€ | Valor com IVA incluído",
+                "literal_excerpt": "CHANGAN DEEPAL S05 BEV RWD PRO 36.990€",
                 "status": "verified",
                 "source_type": "official_configurator",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -1133,14 +964,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Total | 36 990€ | Valor com IVA incluído",
+              "evidence": "CHANGAN DEEPAL S05 BEV RWD PRO 36.990€",
               "evidence_record": {
                 "url": "https://changan-auto.pt/configurador/deepal-s05/",
                 "source_url": "https://changan-auto.pt/configurador/deepal-s05/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Total | 36 990€ | Valor com IVA incluído"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "CHANGAN DEEPAL S05 BEV RWD PRO 36.990€"
               },
               "source_type": "official_configurator"
             }
@@ -1160,10 +991,10 @@ const CAR_DATA = [
         "name": "MAX",
         "battery_capacity_kwh": 68.8,
         "wltp_range_combined_km": 485,
-        "wltp_consumption_combined_kwh_100km": 16.9,
+        "wltp_consumption_combined_kwh_100km": 16,
         "power_kw": 200,
         "power_hp": 272,
-        "dc_max_kw": 167,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -1184,17 +1015,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "MAX",
                 "vat_basis": "included",
-                "literal_excerpt": "Changan Deepal S05 MAX a partir de 39.990 €",
+                "literal_excerpt": "CHANGAN DEEPAL S05 BEV RWD MAX 39.990€",
                 "status": "verified",
                 "source_type": "official_configurator",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -1206,14 +1037,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Changan Deepal S05 MAX a partir de 39.990 €",
+              "evidence": "CHANGAN DEEPAL S05 BEV RWD MAX 39.990€",
               "evidence_record": {
                 "url": "https://changan-auto.pt/configurador/deepal-s05/",
                 "source_url": "https://changan-auto.pt/configurador/deepal-s05/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Changan Deepal S05 MAX a partir de 39.990 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "CHANGAN DEEPAL S05 BEV RWD MAX 39.990€"
               },
               "source_type": "official_configurator"
             }
@@ -1264,28 +1095,28 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.citroen.pt/modelos/e-c3.html",
     "image_path": "assets/images/vehicles/citro-n-c3/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.citroen.pt/modelos/e-c3.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.citroen.pt/universo-citroen/noticias/acp.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Urban Range",
         "battery_capacity_kwh": 30,
-        "wltp_range_combined_km": 214,
-        "wltp_consumption_combined_kwh_100km": 14.6,
+        "wltp_range_combined_km": 205,
+        "wltp_consumption_combined_kwh_100km": 17.2,
         "power_kw": 83,
         "power_hp": 113,
-        "dc_max_kw": 30,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -1306,17 +1137,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Urban Range",
                 "vat_basis": "included",
-                "literal_excerpt": "Citroën ë-C3 Urban Range a partir de 19.990 €",
+                "literal_excerpt": "# ë-C3 ## ELÉTRICO A partir de 19 990€",
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -1328,19 +1159,19 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Citroën ë-C3 Urban Range a partir de 19.990 €",
+              "evidence": "# ë-C3 ## ELÉTRICO A partir de 19 990€",
               "evidence_record": {
                 "url": "https://www.citroen.pt/modelos/e-c3.html",
                 "source_url": "https://www.citroen.pt/modelos/e-c3.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Citroën ë-C3 Urban Range a partir de 19.990 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "# ë-C3 ## ELÉTRICO A partir de 19 990€"
               },
               "source_type": "official_model"
             },
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 17990.0,
               "currency": "EUR",
               "source_url": "https://www.citroen.pt/modelos/e-c3.html",
@@ -1358,17 +1189,17 @@ const CAR_DATA = [
                 "variant": "Urban Range",
                 "vat_basis": "included",
                 "literal_excerpt": "A gama Citroën C3 pode ser adquirido em Portugal, com a campanha em vigor, a partir de 17.990€ na versão BEV de Autonomia Urbana, de 19.950€ na versão BEV de Autonomia Conforto...",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -1385,7 +1216,7 @@ const CAR_DATA = [
                 "source_url": "https://www.citroen.pt/modelos/e-c3.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "A gama Citroën C3 pode ser adquirido em Portugal, com a campanha em vigor, a partir de 17.990€ na versão BEV de Autonomia Urbana, de 19.950€ na versão BEV de Autonomia Conforto..."
               },
               "source_type": "official_model"
@@ -1405,15 +1236,15 @@ const CAR_DATA = [
       {
         "name": "Comfort Range",
         "battery_capacity_kwh": 44,
-        "wltp_range_combined_km": 322,
-        "wltp_consumption_combined_kwh_100km": 17.1,
+        "wltp_range_combined_km": 307,
+        "wltp_consumption_combined_kwh_100km": 17.5,
         "power_kw": 83,
         "power_hp": 113,
         "dc_max_kw": 100,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 23990,
               "currency": "EUR",
               "source_url": "https://www.citroen.pt/modelos/e-c3.html",
@@ -1431,17 +1262,17 @@ const CAR_DATA = [
                 "variant": "Comfort Range",
                 "vat_basis": "included",
                 "literal_excerpt": "Citroën ë-C3 Comfort Range a partir de 23.990 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -1458,13 +1289,13 @@ const CAR_DATA = [
                 "source_url": "https://www.citroen.pt/modelos/e-c3.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Citroën ë-C3 Comfort Range a partir de 23.990 €"
               },
               "source_type": "official_model"
             },
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 19950.0,
               "currency": "EUR",
               "source_url": "https://www.citroen.pt/modelos/e-c3.html",
@@ -1482,17 +1313,17 @@ const CAR_DATA = [
                 "variant": "Comfort Range",
                 "vat_basis": "included",
                 "literal_excerpt": "A gama Citroën C3 pode ser adquirido em Portugal, com a campanha em vigor, a partir de 17.990€ na versão BEV de Autonomia Urbana, de 19.950€ na versão BEV de Autonomia Conforto...",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -1509,14 +1340,14 @@ const CAR_DATA = [
                 "source_url": "https://www.citroen.pt/modelos/e-c3.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "A gama Citroën C3 pode ser adquirido em Portugal, com a campanha em vigor, a partir de 17.990€ na versão BEV de Autonomia Urbana, de 19.950€ na versão BEV de Autonomia Conforto..."
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -1524,7 +1355,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -1561,12 +1392,12 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.citroen.pt/modelos/e-c3-aircross.html",
     "image_path": "assets/images/vehicles/citro-n-c3-aircross/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_configurator",
         "url": "https://www.citroen.pt/modelos/e-c3-aircross.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -1574,14 +1405,14 @@ const CAR_DATA = [
         "name": "Comfort Range",
         "battery_capacity_kwh": 44,
         "wltp_range_combined_km": 302,
-        "wltp_consumption_combined_kwh_100km": 18.1,
-        "power_kw": 83,
+        "wltp_consumption_combined_kwh_100km": null,
+        "power_kw": 82,
         "power_hp": 113,
         "dc_max_kw": 100,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 26490,
               "currency": "EUR",
               "source_url": "https://www.citroen.pt/modelos/e-c3-aircross.html",
@@ -1599,17 +1430,17 @@ const CAR_DATA = [
                 "variant": "Comfort Range",
                 "vat_basis": "included",
                 "literal_excerpt": "Citroën ë-C3 Aircross Comfort Range a partir de 26.490 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model_and_configurator",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -1626,14 +1457,14 @@ const CAR_DATA = [
                 "source_url": "https://www.citroen.pt/modelos/e-c3-aircross.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Citroën ë-C3 Aircross Comfort Range a partir de 26.490 €"
               },
               "source_type": "official_model_and_configurator"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -1641,20 +1472,20 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       },
       {
         "name": "Extended Range",
         "battery_capacity_kwh": 54,
         "wltp_range_combined_km": 400,
-        "wltp_consumption_combined_kwh_100km": 17.5,
-        "power_kw": 83,
+        "wltp_consumption_combined_kwh_100km": null,
+        "power_kw": 82,
         "power_hp": 113,
         "dc_max_kw": 100,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 28490,
               "currency": "EUR",
               "source_url": "https://www.citroen.pt/modelos/e-c3-aircross.html",
@@ -1672,17 +1503,17 @@ const CAR_DATA = [
                 "variant": "Extended Range",
                 "vat_basis": "included",
                 "literal_excerpt": "Citroën ë-C3 Aircross Extended Range a partir de 28.490 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model_and_configurator",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -1699,14 +1530,14 @@ const CAR_DATA = [
                 "source_url": "https://www.citroen.pt/modelos/e-c3-aircross.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Citroën ë-C3 Aircross Extended Range a partir de 28.490 €"
               },
               "source_type": "official_model_and_configurator"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -1714,7 +1545,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -1738,9 +1569,9 @@ const CAR_DATA = [
       "boot_capacity_l": 460,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Citroën",
@@ -1751,24 +1582,29 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.citroen.pt/modelos/c4.html",
     "image_path": "assets/images/vehicles/citro-n-c4/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.citroen.pt/modelos/c4.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.citroen.pt/comprar/campanhas-particulares/citroen-ec4-vantagem-cliente.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://www.media.stellantis.com/pt-pt/citroen/press/citroen-e-c4-e-e-c4-x-ampliam-oferta-com-novo-motor-eletrico-mais-eficiente-com-uma-autonomia-ate-420-km",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "50 kWh",
         "battery_capacity_kwh": 50,
-        "wltp_range_combined_km": 357,
+        "wltp_range_combined_km": 342,
         "wltp_consumption_combined_kwh_100km": 15.5,
         "power_kw": 100,
         "power_hp": 136,
@@ -1776,7 +1612,7 @@ const CAR_DATA = [
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 39715,
               "currency": "EUR",
               "source_url": "https://www.citroen.pt/modelos/c4.html",
@@ -1794,17 +1630,17 @@ const CAR_DATA = [
                 "variant": "50 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Citroën ë-C4 50 kWh a partir de 39.715 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -1821,13 +1657,13 @@ const CAR_DATA = [
                 "source_url": "https://www.citroen.pt/modelos/c4.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Citroën ë-C4 50 kWh a partir de 39.715 €"
               },
               "source_type": "official_model"
             },
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 29875.0,
               "currency": "EUR",
               "source_url": "https://www.citroen.pt/modelos/c4.html",
@@ -1845,17 +1681,17 @@ const CAR_DATA = [
                 "variant": "50 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Desde 29.875€ com 11.500 vantagem cliente",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -1872,14 +1708,14 @@ const CAR_DATA = [
                 "source_url": "https://www.citroen.pt/modelos/c4.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Desde 29.875€ com 11.500 vantagem cliente"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -1887,7 +1723,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -1911,9 +1747,9 @@ const CAR_DATA = [
       "boot_capacity_l": 380,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Citroën",
@@ -1924,27 +1760,42 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.citroen.pt/modelos/c4-x.html",
     "image_path": "assets/images/vehicles/citro-n-c4-x/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_configurator",
         "url": "https://www.citroen.pt/modelos/c4-x.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_model_and_configurator",
+        "url": "https://www.citroen.pt/modelos/new-e-c4-x.html",
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://www.citroen.pt/modelos/futurosmodelos/novo-c4x.html",
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://www.media.stellantis.com/pt-pt/citroen/press/citroen-e-c4-e-e-c4-x-ampliam-oferta-com-novo-motor-eletrico-mais-eficiente-com-uma-autonomia-ate-420-km",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Comfort Range 50 kWh",
         "battery_capacity_kwh": 50,
-        "wltp_range_combined_km": 352,
-        "wltp_consumption_combined_kwh_100km": 15.7,
+        "wltp_range_combined_km": 360,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 100,
         "power_hp": 136,
         "dc_max_kw": 100,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 34565,
               "currency": "EUR",
               "source_url": "https://www.citroen.pt/modelos/c4-x.html",
@@ -1962,17 +1813,17 @@ const CAR_DATA = [
                 "variant": "Comfort Range 50 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Citroën ë-C4 X Comfort Range 50 kWh a partir de 34.565 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model_and_configurator",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -1989,14 +1840,14 @@ const CAR_DATA = [
                 "source_url": "https://www.citroen.pt/modelos/c4-x.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Citroën ë-C4 X Comfort Range 50 kWh a partir de 34.565 €"
               },
               "source_type": "official_model_and_configurator"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -2004,20 +1855,20 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       },
       {
         "name": "Extended Range 54 kWh",
         "battery_capacity_kwh": 54,
-        "wltp_range_combined_km": 424,
-        "wltp_consumption_combined_kwh_100km": 15,
+        "wltp_range_combined_km": 427,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 115,
         "power_hp": 156,
         "dc_max_kw": 100,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 35565,
               "currency": "EUR",
               "source_url": "https://www.citroen.pt/modelos/c4-x.html",
@@ -2035,17 +1886,17 @@ const CAR_DATA = [
                 "variant": "Extended Range 54 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Citroën ë-C4 X Extended Range 54 kWh a partir de 35.565 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model_and_configurator",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -2062,14 +1913,14 @@ const CAR_DATA = [
                 "source_url": "https://www.citroen.pt/modelos/c4-x.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Citroën ë-C4 X Extended Range 54 kWh a partir de 35.565 €"
               },
               "source_type": "official_model_and_configurator"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -2077,7 +1928,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -2101,9 +1952,9 @@ const CAR_DATA = [
       "boot_capacity_l": 510,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Dacia",
@@ -2114,27 +1965,32 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
     "image_path": "assets/images/vehicles/dacia-spring/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino/comparador-de-especificacoes.html",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Expression 70",
-        "battery_capacity_kwh": 26.8,
+        "battery_capacity_kwh": 24.3,
         "wltp_range_combined_km": 225,
-        "wltp_consumption_combined_kwh_100km": 13.2,
+        "wltp_consumption_combined_kwh_100km": 12.4,
         "power_kw": 52,
         "power_hp": 70,
-        "dc_max_kw": 30,
+        "dc_max_kw": 40,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 18007.0,
               "currency": "EUR",
               "source_url": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
@@ -2152,17 +2008,17 @@ const CAR_DATA = [
                 "variant": "Expression 70",
                 "vat_basis": "included",
                 "literal_excerpt": "PVPR 18 007,00€",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -2179,13 +2035,13 @@ const CAR_DATA = [
                 "source_url": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "PVPR 18 007,00€"
               },
               "source_type": "official_model"
             },
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 15951.25,
               "currency": "EUR",
               "source_url": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
@@ -2203,17 +2059,17 @@ const CAR_DATA = [
                 "variant": "Expression 70",
                 "vat_basis": "included",
                 "literal_excerpt": "PVP com desconto 15 951,25€",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -2230,14 +2086,14 @@ const CAR_DATA = [
                 "source_url": "https://www.dacia.pt/gama-hibrida-eletrica/spring-citadino.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "PVP com desconto 15 951,25€"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -2245,7 +2101,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -2269,9 +2125,9 @@ const CAR_DATA = [
       "boot_capacity_l": 308,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Dongfeng",
@@ -2282,12 +2138,12 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://caetano.pt/dongfeng/carros-novos/box/",
     "image_path": "assets/images/vehicles/dongfeng-box/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_importer",
         "url": "https://caetano.pt/dongfeng/carros-novos/box/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -2295,10 +2151,10 @@ const CAR_DATA = [
         "name": "42.3 kWh",
         "battery_capacity_kwh": 42.3,
         "wltp_range_combined_km": 310,
-        "wltp_consumption_combined_kwh_100km": 15.6,
-        "power_kw": 70,
+        "wltp_consumption_combined_kwh_100km": null,
+        "power_kw": null,
         "power_hp": 95,
-        "dc_max_kw": 87,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -2319,17 +2175,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "42.3 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "O preço do Dongfeng Box começa nos 26.750 €, na versão Box Pro.",
+                "literal_excerpt": "O preço do Dongfeng Box começa nos 26.750 €, na versão Box Pro. Este carro elétrico, que combina funcionalidade, elegância e a maior garantia do mercado, já está disponível na Caetano em Portugal.",
                 "status": "verified",
                 "source_type": "official_importer",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "authorised_dealer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -2341,14 +2197,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "O preço do Dongfeng Box começa nos 26.750 €, na versão Box Pro.",
+              "evidence": "O preço do Dongfeng Box começa nos 26.750 €, na versão Box Pro. Este carro elétrico, que combina funcionalidade, elegância e a maior garantia do mercado, já está disponível na Caetano em Portugal.",
               "evidence_record": {
                 "url": "https://caetano.pt/dongfeng/carros-novos/box/",
                 "source_url": "https://caetano.pt/dongfeng/carros-novos/box/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "O preço do Dongfeng Box começa nos 26.750 €, na versão Box Pro."
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "O preço do Dongfeng Box começa nos 26.750 €, na versão Box Pro. Este carro elétrico, que combina funcionalidade, elegância e a maior garantia do mercado, já está disponível na Caetano em Portugal."
               },
               "source_type": "official_importer"
             }
@@ -2399,26 +2255,26 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.fiat.pt/modelos/fiat-500-eletrico",
     "image_path": "assets/images/vehicles/fiat-500e/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.fiat.pt/modelos/fiat-500-eletrico",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.fiat.pt/promocoes-carros-particulares/novo-500-eletrico-cabrio",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "42 kWh",
         "battery_capacity_kwh": 42,
-        "wltp_range_combined_km": 320,
-        "wltp_consumption_combined_kwh_100km": 14,
-        "power_kw": 87,
+        "wltp_range_combined_km": null,
+        "wltp_consumption_combined_kwh_100km": null,
+        "power_kw": null,
         "power_hp": 118,
         "dc_max_kw": 85,
         "pricing": {
@@ -2441,17 +2297,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "42 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "PVPR de 29.853,00€",
+                "literal_excerpt": "exemplo para 500e Elétrico Berlina 118cv | Bateria 42 kWh ICON, PVPR 29.853,00€, PVP campanha com retoma 24.500€, exclui DLTP [...] Válido até 30/09/2026, para clientes particulares.",
                 "status": "verified",
                 "source_type": "official_campaign",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -2463,14 +2319,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "PVPR de 29.853,00€",
+              "evidence": "exemplo para 500e Elétrico Berlina 118cv | Bateria 42 kWh ICON, PVPR 29.853,00€, PVP campanha com retoma 24.500€, exclui DLTP [...] Válido até 30/09/2026, para clientes particulares.",
               "evidence_record": {
                 "url": "https://www.fiat.pt/promocoes-carros-particulares/novo-500-eletrico-cabrio",
                 "source_url": "https://www.fiat.pt/promocoes-carros-particulares/novo-500-eletrico-cabrio",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "PVPR de 29.853,00€",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "exemplo para 500e Elétrico Berlina 118cv | Bateria 42 kWh ICON, PVPR 29.853,00€, PVP campanha com retoma 24.500€, exclui DLTP [...] Válido até 30/09/2026, para clientes particulares.",
                 "source_type": null
               },
               "source_type": "official_campaign"
@@ -2522,12 +2378,12 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.fiat.pt/modelos/fiat-600-eletrico",
     "image_path": "assets/images/vehicles/fiat-600e/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_price_sheet",
         "url": "https://www.fiat.pt/content/dam/fiat2023/pt/trimcomparison/apr26/Comparativo-600e.pdf",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -2535,7 +2391,7 @@ const CAR_DATA = [
         "name": "Icon",
         "battery_capacity_kwh": 54,
         "wltp_range_combined_km": 406,
-        "wltp_consumption_combined_kwh_100km": 15.1,
+        "wltp_consumption_combined_kwh_100km": 15.3,
         "power_kw": 115,
         "power_hp": 156,
         "dc_max_kw": 100,
@@ -2559,17 +2415,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Icon",
                 "vat_basis": "included",
-                "literal_excerpt": "Fiat 600e Icon a partir de 34.200 €",
+                "literal_excerpt": "ICON (Preço 34.200€)",
                 "status": "verified",
                 "source_type": "official_price_sheet",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -2581,14 +2437,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Fiat 600e Icon a partir de 34.200 €",
+              "evidence": "ICON (Preço 34.200€)",
               "evidence_record": {
                 "url": "https://www.fiat.pt/content/dam/fiat2023/pt/trimcomparison/apr26/Comparativo-600e.pdf",
                 "source_url": "https://www.fiat.pt/content/dam/fiat2023/pt/trimcomparison/apr26/Comparativo-600e.pdf",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Fiat 600e Icon a partir de 34.200 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "ICON (Preço 34.200€)"
               },
               "source_type": "official_price_sheet"
             }
@@ -2608,7 +2464,7 @@ const CAR_DATA = [
         "name": "La Prima",
         "battery_capacity_kwh": 54,
         "wltp_range_combined_km": 406,
-        "wltp_consumption_combined_kwh_100km": 15.1,
+        "wltp_consumption_combined_kwh_100km": 15.3,
         "power_kw": 115,
         "power_hp": 156,
         "dc_max_kw": 100,
@@ -2632,17 +2488,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "La Prima",
                 "vat_basis": "included",
-                "literal_excerpt": "Fiat 600e La Prima a partir de 37.200 €",
+                "literal_excerpt": "LA PRIMA (Preço 37.200€)",
                 "status": "verified",
                 "source_type": "official_price_sheet",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -2654,14 +2510,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Fiat 600e La Prima a partir de 37.200 €",
+              "evidence": "LA PRIMA (Preço 37.200€)",
               "evidence_record": {
                 "url": "https://www.fiat.pt/content/dam/fiat2023/pt/trimcomparison/apr26/Comparativo-600e.pdf",
                 "source_url": "https://www.fiat.pt/content/dam/fiat2023/pt/trimcomparison/apr26/Comparativo-600e.pdf",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Fiat 600e La Prima a partir de 37.200 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "LA PRIMA (Preço 37.200€)"
               },
               "source_type": "official_price_sheet"
             }
@@ -2712,17 +2568,22 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.fiat.pt/modelos/grande-panda-electrico",
     "image_path": "assets/images/vehicles/fiat-grande-panda-el-trico/official.png",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.fiat.pt/modelos/grande-panda-electrico",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.fiat.pt/promocoes-carros-particulares/grande-panda-abertura-encomendas",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://www.media.stellantis.com/pt-pt/fiat/press/fiat-grande-panda-100-eletrico-da-a-volta-a-portugal",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -2733,7 +2594,7 @@ const CAR_DATA = [
         "wltp_consumption_combined_kwh_100km": 16.8,
         "power_kw": 83,
         "power_hp": 113,
-        "dc_max_kw": 100,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -2754,17 +2615,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "44 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "PVPR 27.953,00€",
+                "literal_excerpt": "exemplo para Grande Panda Elétrico 113cv | Bateria 45 kWh ICON, PVPR 27.953,00€, PVP campanha com retoma 23.100€, exclui DLTP [...] Válido até 30/09/2026, para clientes particulares.",
                 "status": "verified",
                 "source_type": "official_campaign",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -2776,14 +2637,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "PVPR 27.953,00€",
+              "evidence": "exemplo para Grande Panda Elétrico 113cv | Bateria 45 kWh ICON, PVPR 27.953,00€, PVP campanha com retoma 23.100€, exclui DLTP [...] Válido até 30/09/2026, para clientes particulares.",
               "evidence_record": {
                 "url": "https://www.fiat.pt/promocoes-carros-particulares/grande-panda-abertura-encomendas",
                 "source_url": "https://www.fiat.pt/promocoes-carros-particulares/grande-panda-abertura-encomendas",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "PVPR 27.953,00€",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "exemplo para Grande Panda Elétrico 113cv | Bateria 45 kWh ICON, PVPR 27.953,00€, PVP campanha com retoma 23.100€, exclui DLTP [...] Válido até 30/09/2026, para clientes particulares.",
                 "source_type": null
               },
               "source_type": "official_campaign"
@@ -2806,17 +2667,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "44 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "PVP campanha com retoma 23.100€",
+                "literal_excerpt": "exemplo para Grande Panda Elétrico 113cv | Bateria 45 kWh ICON, PVPR 27.953,00€, PVP campanha com retoma 23.100€, exclui DLTP",
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "campaign_price",
               "customer": "private",
@@ -2828,14 +2689,14 @@ const CAR_DATA = [
               "valid_until": "2026-09-30",
               "vat": "included",
               "vat_status": "included",
-              "evidence": "PVP campanha com retoma 23.100€",
+              "evidence": "exemplo para Grande Panda Elétrico 113cv | Bateria 45 kWh ICON, PVPR 27.953,00€, PVP campanha com retoma 23.100€, exclui DLTP",
               "evidence_record": {
                 "url": "https://www.fiat.pt/modelos/grande-panda-electrico",
                 "source_url": "https://www.fiat.pt/modelos/grande-panda-electrico",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "PVP campanha com retoma 23.100€"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "exemplo para Grande Panda Elétrico 113cv | Bateria 45 kWh ICON, PVPR 27.953,00€, PVP campanha com retoma 23.100€, exclui DLTP"
               },
               "source_type": "official_model"
             }
@@ -2878,123 +2739,6 @@ const CAR_DATA = [
     "eligibility_tier": "confirmed_eligible"
   },
   {
-    "brand": "Ford",
-    "model": "Explorer EV",
-    "powertrain": "BEV",
-    "segment": "C-SUV",
-    "release_year": 2024,
-    "availability_status": "available",
-    "official_link": "https://www.ford.pt/carros/ford-explorer-eletrico",
-    "image_path": "assets/images/vehicles/ford-explorer-ev/official.jpg",
-    "last_verified": "2026-09-02",
-    "data_sources": [
-      {
-        "type": "official_model",
-        "url": "https://www.ford.pt/carros/ford-explorer-eletrico",
-        "verified_on": "2026-09-02"
-      }
-    ],
-    "variants": [
-      {
-        "name": "Standard Range 52 kWh",
-        "battery_capacity_kwh": 52.0,
-        "wltp_range_combined_km": 384,
-        "wltp_consumption_combined_kwh_100km": 15.5,
-        "power_kw": 125,
-        "power_hp": 170,
-        "dc_max_kw": 115.0,
-        "pricing": {
-          "offers": [
-            {
-              "classification": "confirmed",
-              "amount_eur": 39500.0,
-              "currency": "EUR",
-              "source_url": "https://www.ford.pt/carros/ford-explorer-eletrico",
-              "source_authority": "manufacturer_or_importer_pt",
-              "market": "PT",
-              "variant": "Standard Range 52 kWh",
-              "conditions": null,
-              "vat_included": true,
-              "proof": {
-                "url": "https://www.ford.pt/carros/ford-explorer-eletrico",
-                "source_url": "https://www.ford.pt/carros/ford-explorer-eletrico",
-                "authority": "manufacturer_or_importer_pt",
-                "market": "PT",
-                "audience": "particular",
-                "variant": "Standard Range 52 kWh",
-                "vat_basis": "included",
-                "literal_excerpt": "Ford Explorer EV Standard Range 52 kWh a partir de 39.500 €",
-                "status": "verified",
-                "source_type": "official_model",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "source_authority": "manufacturer_or_importer_pt",
-                "customer": "private"
-              },
-              "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
-              "kind": "list_price",
-              "customer": "private",
-              "audience": "particular",
-              "validity": {
-                "valid_from": null,
-                "valid_until": null
-              },
-              "valid_until": null,
-              "vat": "included",
-              "vat_status": "included",
-              "evidence": "Ford Explorer EV Standard Range 52 kWh a partir de 39.500 €",
-              "evidence_record": {
-                "url": "https://www.ford.pt/carros/ford-explorer-eletrico",
-                "source_url": "https://www.ford.pt/carros/ford-explorer-eletrico",
-                "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Ford Explorer EV Standard Range 52 kWh a partir de 39.500 €"
-              },
-              "source_type": "official_model"
-            }
-          ]
-        },
-        "eligibility_status": "confirmed_eligible",
-        "battery_technology": {
-          "chemistry": null,
-          "generation": null,
-          "architecture": null,
-          "source_url": null,
-          "verified_on": null
-        },
-        "eligibility_tier": "confirmed_eligible"
-      }
-    ],
-    "dimensions": {
-      "length_mm": 4468,
-      "width_mm": 1871,
-      "height_mm": 1630
-    },
-    "luggage_capacity": {
-      "boot_capacity_l": 450,
-      "frunk_capacity_l": null
-    },
-    "pros": [
-      "Design robusto e marcante com excelente presença em estrada",
-      "Plataforma elétrica eficiente com bom aproveitamento de espaço",
-      "Ecrã Sync Move ajustável em inclinação com arrumação secreta My Private Locker",
-      "Bagageira generosa de 450 L com piso ajustável"
-    ],
-    "cons": [
-      "Versões com tração integral e bateria de 77 kWh ultrapassam os 40.000 €",
-      "Comandos tátil-deslizantes no volante exigem período de habituação",
-      "Ausência de frunk dianteiro sob o capô",
-      "Ajuste dos vidros elétricos partilhado com apenas 2 botões na porta do condutor"
-    ],
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
-  },
-  {
     "brand": "Geely",
     "model": "E5",
     "powertrain": "BEV",
@@ -3003,27 +2747,27 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://caetano.pt/geely/carros-novos/e5/",
     "image_path": "assets/images/vehicles/geely-e5/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_importer",
         "url": "https://caetano.pt/geely/carros-novos/e5/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Pro 60 kWh",
-        "battery_capacity_kwh": 60.2,
+        "battery_capacity_kwh": 60,
         "wltp_range_combined_km": 430,
-        "wltp_consumption_combined_kwh_100km": 16.5,
-        "power_kw": 160,
+        "wltp_consumption_combined_kwh_100km": 15.8,
+        "power_kw": null,
         "power_hp": 218,
-        "dc_max_kw": 100,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 35658.0,
               "currency": "EUR",
               "source_url": "https://caetano.pt/geely/carros-novos/e5/",
@@ -3041,17 +2785,17 @@ const CAR_DATA = [
                 "variant": "Pro 60 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "O Geely E5 está disponível a partir de 35.658 euros na versão PRO, com bateria de 60 kWh",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_importer",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "authorised_dealer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -3068,7 +2812,7 @@ const CAR_DATA = [
                 "source_url": "https://caetano.pt/geely/carros-novos/e5/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "O Geely E5 está disponível a partir de 35.658 euros na versão PRO, com bateria de 60 kWh"
               },
               "source_type": "official_importer"
@@ -3092,17 +2836,17 @@ const CAR_DATA = [
                 "variant": "Pro 60 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "O Geely E5 está disponível a partir de 35.658 euros na versão PRO, com bateria de 60 kWh",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_importer",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "authorised_dealer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -3119,14 +2863,14 @@ const CAR_DATA = [
                 "source_url": "https://caetano.pt/geely/carros-novos/e5/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "O Geely E5 está disponível a partir de 35.658 euros na versão PRO, com bateria de 60 kWh"
               },
               "source_type": "official_importer"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -3134,7 +2878,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -3158,9 +2902,9 @@ const CAR_DATA = [
       "boot_capacity_l": 461,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Hyundai",
@@ -3171,12 +2915,12 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.hyundai.pt/carros/novo-inster/",
     "image_path": "assets/images/vehicles/hyundai-inster/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.hyundai.pt/carros/novo-inster/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -3185,13 +2929,13 @@ const CAR_DATA = [
         "battery_capacity_kwh": 42,
         "wltp_range_combined_km": 327,
         "wltp_consumption_combined_kwh_100km": 14.3,
-        "power_kw": 71,
+        "power_kw": 71.1,
         "power_hp": 97,
         "dc_max_kw": 73,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 24900,
               "currency": "EUR",
               "source_url": "https://www.hyundai.pt/carros/novo-inster/",
@@ -3209,17 +2953,17 @@ const CAR_DATA = [
                 "variant": "42 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Hyundai Inster 42 kWh a partir de 24.900 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -3236,14 +2980,14 @@ const CAR_DATA = [
                 "source_url": "https://www.hyundai.pt/carros/novo-inster/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Hyundai Inster 42 kWh a partir de 24.900 €"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -3251,20 +2995,20 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       },
       {
         "name": "Long Range 49 kWh",
         "battery_capacity_kwh": 49,
         "wltp_range_combined_km": 360,
-        "wltp_consumption_combined_kwh_100km": 14.9,
-        "power_kw": 85,
+        "wltp_consumption_combined_kwh_100km": 15.1,
+        "power_kw": 84.5,
         "power_hp": 115,
         "dc_max_kw": 85,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 27900,
               "currency": "EUR",
               "source_url": "https://www.hyundai.pt/carros/novo-inster/",
@@ -3282,17 +3026,17 @@ const CAR_DATA = [
                 "variant": "Long Range 49 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Hyundai Inster Long Range 49 kWh a partir de 27.900 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -3309,14 +3053,14 @@ const CAR_DATA = [
                 "source_url": "https://www.hyundai.pt/carros/novo-inster/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Hyundai Inster Long Range 49 kWh a partir de 27.900 €"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -3324,7 +3068,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -3348,9 +3092,9 @@ const CAR_DATA = [
       "boot_capacity_l": 280,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Hyundai",
@@ -3361,17 +3105,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.hyundai.pt/carros/novo-kauai-ev/",
     "image_path": "assets/images/vehicles/hyundai-kauai-ev/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.hyundai.pt/carros/novo-kauai-ev/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_dealer_price",
-        "url": "https://caetano.pt/hyundai/carros-novos/kauai/eletrico/",
-        "verified_on": "2026-09-02"
+        "url": "https://www.hyundai.pt/wp-content/uploads/2026/07/24245-Hyundai-Catalogo-KAUAI-EV.pdf",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -3383,11 +3127,11 @@ const CAR_DATA = [
         "wltp_consumption_combined_kwh_100km": 14.6,
         "power_kw": 99,
         "power_hp": 135,
-        "dc_max_kw": 100,
+        "dc_max_kw": 74,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 35100.0,
               "currency": "EUR",
               "source_url": "https://www.hyundai.pt/carros/novo-kauai-ev/",
@@ -3405,17 +3149,17 @@ const CAR_DATA = [
                 "variant": "48,6 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "O preço do Hyundai KAUAI elétrico começa nos 35.100 €, no caso da versão de 48,6 kWh.",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -3432,14 +3176,14 @@ const CAR_DATA = [
                 "source_url": "https://www.hyundai.pt/carros/novo-kauai-ev/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "O preço do Hyundai KAUAI elétrico começa nos 35.100 €, no caso da versão de 48,6 kWh."
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -3447,7 +3191,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       },
       {
         "name": "64,8 kWh",
@@ -3461,7 +3205,7 @@ const CAR_DATA = [
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 39200,
               "currency": "EUR",
               "source_url": "https://www.hyundai.pt/carros/novo-kauai-ev/",
@@ -3479,17 +3223,17 @@ const CAR_DATA = [
                 "variant": "64,8 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Hyundai KAUAI EV 64,8 kWh a partir de 39.200 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -3506,14 +3250,14 @@ const CAR_DATA = [
                 "source_url": "https://www.hyundai.pt/carros/novo-kauai-ev/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Hyundai KAUAI EV 64,8 kWh a partir de 39.200 €"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -3521,7 +3265,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -3545,9 +3289,9 @@ const CAR_DATA = [
       "boot_capacity_l": 466,
       "frunk_capacity_l": 27
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Jaecoo",
@@ -3558,23 +3302,28 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://omodajaecoo.pt/jaecoo/jaecoo-5-ev/",
     "image_path": "assets/images/vehicles/jaecoo-5-ev/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://omodajaecoo.pt/jaecoo/jaecoo-5-ev/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://omodajaecoo.pt/0-juros/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://omodajaecoo.pt/wp-content/uploads/2026/07/MANUAL_JAECOO-5-EV.pdf",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Pure",
-        "battery_capacity_kwh": 61,
+        "battery_capacity_kwh": 58.9,
         "wltp_range_combined_km": 402,
         "power_kw": 155,
         "power_hp": 211,
@@ -3582,7 +3331,7 @@ const CAR_DATA = [
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 34490.0,
               "currency": "EUR",
               "source_url": "https://omodajaecoo.pt/jaecoo/jaecoo-5-ev/",
@@ -3600,17 +3349,17 @@ const CAR_DATA = [
                 "variant": "Pure",
                 "vat_basis": "included",
                 "literal_excerpt": "Crédito Automóvel c/ reserva de propriedade válido para clientes particulares até 30/09/2026 para o JAECOO 5 EV versão Pure, limitado ao stock existente nos concessionários aderentes. Não inclui pintura metalizada (mono-tom) e não inclui despesas de documentação e transporte. PVP 34.490,00€.",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -3627,14 +3376,14 @@ const CAR_DATA = [
                 "source_url": "https://omodajaecoo.pt/jaecoo/jaecoo-5-ev/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Crédito Automóvel c/ reserva de propriedade válido para clientes particulares até 30/09/2026 para o JAECOO 5 EV versão Pure, limitado ao stock existente nos concessionários aderentes. Não inclui pintura metalizada (mono-tom) e não inclui despesas de documentação e transporte. PVP 34.490,00€."
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -3642,7 +3391,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -3666,9 +3415,9 @@ const CAR_DATA = [
       "boot_capacity_l": 480,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Jeep",
@@ -3679,25 +3428,30 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.jeep.pt/novo-jeep-avenger/eletrico",
     "image_path": "assets/images/vehicles/jeep-avenger-el-trico/official-hero.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.jeep.pt/novo-jeep-avenger/eletrico",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.jeep.pt/promocoes-suv-4x4/oferta/avenger-100-eletrico-particular",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://www.media.stellantis.com/pt-pt/jeep/press/novo-jeep-avenger-revelado-em-paris-o-primeiro-suv-totalmente-eletrico-da-marca-jeep",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "54 kWh",
         "battery_capacity_kwh": 54,
-        "wltp_range_combined_km": 400,
-        "wltp_consumption_combined_kwh_100km": 15.4,
+        "wltp_range_combined_km": 395,
+        "wltp_consumption_combined_kwh_100km": 15.7,
         "power_kw": 115,
         "power_hp": 156,
         "dc_max_kw": 100,
@@ -3721,17 +3475,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "54 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Novo Jeep Avenger 100% Elétrico DESDE: 39.500€",
+                "literal_excerpt": "ALTITUDE EQUIPAMENTO DE SÉRIE DESDE: 39.500€ 156 CV 100% ELÉTRICO",
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -3743,14 +3497,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Novo Jeep Avenger 100% Elétrico DESDE: 39.500€",
+              "evidence": "ALTITUDE EQUIPAMENTO DE SÉRIE DESDE: 39.500€ 156 CV 100% ELÉTRICO",
               "evidence_record": {
                 "url": "https://www.jeep.pt/novo-jeep-avenger/eletrico",
                 "source_url": "https://www.jeep.pt/novo-jeep-avenger/eletrico",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Novo Jeep Avenger 100% Elétrico DESDE: 39.500€"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "ALTITUDE EQUIPAMENTO DE SÉRIE DESDE: 39.500€ 156 CV 100% ELÉTRICO"
               },
               "source_type": "official_model"
             }
@@ -3801,17 +3555,22 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://kia.pt/modelos/kia-ev2/",
     "image_path": "assets/images/vehicles/kia-ev2/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://kia.pt/modelos/kia-ev2/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_specification",
         "url": "https://kia.pt/modelos/kia-ev2/especificacoes/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_model_and_price",
+        "url": "https://kia.pt/configurador/?modelo=ev2",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -3825,33 +3584,33 @@ const CAR_DATA = [
           "offers": [
             {
               "classification": "confirmed",
-              "amount_eur": 29490,
+              "amount_eur": 32250.0,
               "currency": "EUR",
-              "source_url": "https://kia.pt/modelos/kia-ev2/",
+              "source_url": "https://kia.pt/configurador/?modelo=ev2",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Urban 42.2 kWh",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://kia.pt/modelos/kia-ev2/",
-                "source_url": "https://kia.pt/modelos/kia-ev2/",
+                "url": "https://kia.pt/configurador/?modelo=ev2",
+                "source_url": "https://kia.pt/configurador/?modelo=ev2",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Urban 42.2 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Kia EV2 Urban 42.2 kWh a partir de 29.490 €",
+                "literal_excerpt": "URBAN (42,2 kWh) 27.750€ ... Campanha Promocional: 4.500 € Preço Total 32.250€ 27.750€*",
                 "status": "verified",
                 "source_type": "official_model_and_price",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "recorded_on": "2026-10-10",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -3863,19 +3622,19 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Kia EV2 Urban 42.2 kWh a partir de 29.490 €",
+              "evidence": "URBAN (42,2 kWh) 27.750€ ... Campanha Promocional: 4.500 € Preço Total 32.250€ 27.750€*",
               "evidence_record": {
-                "url": "https://kia.pt/modelos/kia-ev2/",
-                "source_url": "https://kia.pt/modelos/kia-ev2/",
+                "url": "https://kia.pt/configurador/?modelo=ev2",
+                "source_url": "https://kia.pt/configurador/?modelo=ev2",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Kia EV2 Urban 42.2 kWh a partir de 29.490 €"
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "URBAN (42,2 kWh) 27.750€ ... Campanha Promocional: 4.500 € Preço Total 32.250€ 27.750€*"
               },
               "source_type": "official_model_and_price"
             },
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 27990,
               "currency": "EUR",
               "source_url": "https://kia.pt/modelos/kia-ev2/",
@@ -3893,17 +3652,17 @@ const CAR_DATA = [
                 "variant": "Urban 42.2 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Kia EV2 Urban 42.2 kWh PVP campanha de 27.990 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -3920,7 +3679,7 @@ const CAR_DATA = [
                 "source_url": "https://kia.pt/modelos/kia-ev2/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Kia EV2 Urban 42.2 kWh PVP campanha de 27.990 €"
               },
               "source_type": "official_model_and_price"
@@ -3935,7 +3694,9 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "confirmed_eligible",
+        "wltp_consumption_combined_kwh_100km": 15.2,
+        "dc_max_kw": 100
       }
     ],
     "pros": [
@@ -3972,22 +3733,22 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://kia.pt/modelos/kia-ev3/",
     "image_path": "assets/images/vehicles/kia-ev3/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://kia.pt/modelos/kia-ev3/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_specification",
         "url": "https://kia.pt/modelos/kia-ev3/especificacoes/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
-        "type": "official_dealer_price",
-        "url": "https://www.filintomota.pt/marca/kia/ev3/",
-        "verified_on": "2026-09-02"
+        "type": "official_model_and_price",
+        "url": "https://kia.pt/configurador/?modelo=ev3",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -3999,38 +3760,38 @@ const CAR_DATA = [
         "power_kw": 150,
         "power_hp": 204,
         "torque_nm": 283,
-        "dc_max_kw": 102,
+        "dc_max_kw": 101,
         "pricing": {
           "offers": [
             {
               "classification": "confirmed",
-              "amount_eur": 39500.0,
+              "amount_eur": 39900.0,
               "currency": "EUR",
-              "source_url": "https://kia.pt/modelos/kia-ev3/",
+              "source_url": "https://kia.pt/configurador/?modelo=ev3",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Drive 58.3 kWh",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://kia.pt/modelos/kia-ev3/",
-                "source_url": "https://kia.pt/modelos/kia-ev3/",
+                "url": "https://kia.pt/configurador/?modelo=ev3",
+                "source_url": "https://kia.pt/configurador/?modelo=ev3",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Drive 58.3 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Kia EV3 Drive 58.3 kWh a partir de 39.500 €",
+                "literal_excerpt": "Drive 36.199€ ... Campanha Promocional: 3.701 € Preço Total 39.900€ 36.199€*",
                 "status": "verified",
                 "source_type": "official_model_and_price",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "recorded_on": "2026-10-10",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -4042,19 +3803,19 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Kia EV3 Drive 58.3 kWh a partir de 39.500 €",
+              "evidence": "Drive 36.199€ ... Campanha Promocional: 3.701 € Preço Total 39.900€ 36.199€*",
               "evidence_record": {
-                "url": "https://kia.pt/modelos/kia-ev3/",
-                "source_url": "https://kia.pt/modelos/kia-ev3/",
+                "url": "https://kia.pt/configurador/?modelo=ev3",
+                "source_url": "https://kia.pt/configurador/?modelo=ev3",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Kia EV3 Drive 58.3 kWh a partir de 39.500 €"
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Drive 36.199€ ... Campanha Promocional: 3.701 € Preço Total 39.900€ 36.199€*"
               },
               "source_type": "official_model_and_price"
             },
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 36740,
               "currency": "EUR",
               "source_url": "https://kia.pt/modelos/kia-ev3/",
@@ -4072,17 +3833,17 @@ const CAR_DATA = [
                 "variant": "Drive 58.3 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Kia EV3 Drive 58.3 kWh PVP campanha de 36.740 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -4099,7 +3860,7 @@ const CAR_DATA = [
                 "source_url": "https://kia.pt/modelos/kia-ev3/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Kia EV3 Drive 58.3 kWh PVP campanha de 36.740 €"
               },
               "source_type": "official_model_and_price"
@@ -4151,17 +3912,22 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://kia.pt/modelos/kia-ev4/",
     "image_path": "assets/images/vehicles/kia-ev4/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://kia.pt/modelos/kia-ev4/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_specification",
         "url": "https://kia.pt/modelos/kia-ev4/especificacoes/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_model_and_price",
+        "url": "https://kia.pt/configurador/?modelo=ev4",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -4175,33 +3941,33 @@ const CAR_DATA = [
           "offers": [
             {
               "classification": "confirmed",
-              "amount_eur": 37990,
+              "amount_eur": 41500.0,
               "currency": "EUR",
-              "source_url": "https://kia.pt/modelos/kia-ev4/",
+              "source_url": "https://kia.pt/configurador/?modelo=ev4",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Drive 58.3 kWh",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://kia.pt/modelos/kia-ev4/",
-                "source_url": "https://kia.pt/modelos/kia-ev4/",
+                "url": "https://kia.pt/configurador/?modelo=ev4",
+                "source_url": "https://kia.pt/configurador/?modelo=ev4",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Drive 58.3 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Kia EV4 Drive 58.3 kWh a partir de 37.990 €",
+                "literal_excerpt": "DRIVE 36.199€ ... Campanha Promocional: 5.301 € Preço Total 41.500€ 36.199€*",
                 "status": "verified",
                 "source_type": "official_model_and_price",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "recorded_on": "2026-10-10",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -4213,65 +3979,65 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Kia EV4 Drive 58.3 kWh a partir de 37.990 €",
+              "evidence": "DRIVE 36.199€ ... Campanha Promocional: 5.301 € Preço Total 41.500€ 36.199€*",
               "evidence_record": {
-                "url": "https://kia.pt/modelos/kia-ev4/",
-                "source_url": "https://kia.pt/modelos/kia-ev4/",
+                "url": "https://kia.pt/configurador/?modelo=ev4",
+                "source_url": "https://kia.pt/configurador/?modelo=ev4",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Kia EV4 Drive 58.3 kWh a partir de 37.990 €"
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "DRIVE 36.199€ ... Campanha Promocional: 5.301 € Preço Total 41.500€ 36.199€*"
               },
               "source_type": "official_model_and_price"
             },
             {
               "classification": "confirmed",
-              "amount_eur": 36740,
+              "amount_eur": 36199.0,
               "currency": "EUR",
-              "source_url": "https://kia.pt/modelos/kia-ev4/",
+              "source_url": "https://kia.pt/configurador/?modelo=ev4",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Drive 58.3 kWh",
-              "conditions": "Campanha Kia para particulares com financiamento exclusivo Santander Consumer Bank, sujeito a aprovação; PVP sem campanha 37.990 €. Confirmar entrada, prazo e MTIC no stand.",
+              "conditions": "Campanha Promocional de 5.301 € sobre o preço total de 41.500 € no configurador oficial; a página não indica data de fim.",
               "vat_included": true,
               "proof": {
-                "url": "https://kia.pt/modelos/kia-ev4/",
-                "source_url": "https://kia.pt/modelos/kia-ev4/",
+                "url": "https://kia.pt/configurador/?modelo=ev4",
+                "source_url": "https://kia.pt/configurador/?modelo=ev4",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Drive 58.3 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Kia EV4 Drive 58.3 kWh PVP campanha de 36.740 €",
+                "literal_excerpt": "DRIVE 36.199€ ... Campanha Promocional: 5.301 € Preço Total 41.500€ 36.199€*",
                 "status": "verified",
                 "source_type": "official_model_and_price",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "recorded_on": "2026-10-10",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
               "validity": {
                 "valid_from": null,
-                "valid_until": "2026-09-30"
+                "valid_until": null
               },
-              "valid_until": "2026-09-30",
+              "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Kia EV4 Drive 58.3 kWh PVP campanha de 36.740 €",
+              "evidence": "DRIVE 36.199€ ... Campanha Promocional: 5.301 € Preço Total 41.500€ 36.199€*",
               "evidence_record": {
-                "url": "https://kia.pt/modelos/kia-ev4/",
-                "source_url": "https://kia.pt/modelos/kia-ev4/",
+                "url": "https://kia.pt/configurador/?modelo=ev4",
+                "source_url": "https://kia.pt/configurador/?modelo=ev4",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Kia EV4 Drive 58.3 kWh PVP campanha de 36.740 €"
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "DRIVE 36.199€ ... Campanha Promocional: 5.301 € Preço Total 41.500€ 36.199€*"
               },
               "source_type": "official_model_and_price"
             }
@@ -4285,7 +4051,9 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "confirmed_eligible",
+        "wltp_consumption_combined_kwh_100km": 14.7,
+        "dc_max_kw": 101
       }
     ],
     "pros": [
@@ -4342,7 +4110,7 @@ const CAR_DATA = [
           "offers": [
             {
               "kind": "list_price",
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 39500.0,
               "currency": "EUR",
               "source_url": "https://www.lancia.pt/ypsilon/edizione-limitata-cassina",
@@ -4360,17 +4128,17 @@ const CAR_DATA = [
                 "variant": "156 cv 51 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Lancia Ypsilon Elettrica 156 cv 51 kWh a partir de 39.500 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "customer": "private",
               "audience": "particular",
               "validity": {
@@ -4386,14 +4154,14 @@ const CAR_DATA = [
                 "source_url": "https://www.lancia.pt/ypsilon/edizione-limitata-cassina",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Lancia Ypsilon Elettrica 156 cv 51 kWh a partir de 39.500 €"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -4401,7 +4169,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -4424,9 +4192,9 @@ const CAR_DATA = [
       "boot_capacity_l": 309,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Leapmotor",
@@ -4437,12 +4205,12 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.filintomota.pt/marca/leapmotor/b05/",
     "image_path": "assets/images/vehicles/leapmotor-b05/official.png",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_dealer_model_and_price",
         "url": "https://www.filintomota.pt/marca/leapmotor/b05/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -4453,7 +4221,7 @@ const CAR_DATA = [
         "wltp_consumption_combined_kwh_100km": 15.8,
         "power_kw": 160,
         "power_hp": 218,
-        "dc_max_kw": null,
+        "dc_max_kw": 140,
         "pricing": {
           "offers": [
             {
@@ -4476,17 +4244,17 @@ const CAR_DATA = [
                 "variant": "Life 56,2 kWh",
                 "vat_basis": "unknown",
                 "literal_excerpt": "Particulares Desde 24.500€ — Filinto Mota",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_dealer_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "authorised_dealer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "customer": "private",
               "audience": "particular",
               "validity": {
@@ -4502,7 +4270,7 @@ const CAR_DATA = [
                 "source_url": "https://www.filintomota.pt/marca/leapmotor/b05/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Particulares Desde 24.500€ — Filinto Mota"
               },
               "source_type": "official_dealer_model_and_price"
@@ -4554,12 +4322,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.filintomota.pt/marca/leapmotor/b10/",
     "image_path": "assets/images/vehicles/leapmotor-b10/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_dealer_model_and_price",
         "url": "https://www.filintomota.pt/marca/leapmotor/b10/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_dealer_model_and_price",
+        "url": "https://www.leapmotor.net/pt-pt/modelos/b10",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -4567,14 +4340,14 @@ const CAR_DATA = [
         "name": "Pro 56.2 kWh BEV",
         "battery_capacity_kwh": 56.2,
         "wltp_range_combined_km": 361,
-        "wltp_consumption_combined_kwh_100km": 17.3,
+        "wltp_consumption_combined_kwh_100km": 17.2,
         "power_kw": 160,
         "power_hp": 218,
         "dc_max_kw": 140,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 27600.0,
               "currency": "EUR",
               "source_url": "https://www.filintomota.pt/marca/leapmotor/b10/",
@@ -4592,17 +4365,17 @@ const CAR_DATA = [
                 "variant": "Pro 56.2 kWh BEV",
                 "vat_basis": "included",
                 "literal_excerpt": "Leapmotor B10 Pro 56.2 kWh BEV a partir de 27.600 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_dealer_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -4619,14 +4392,14 @@ const CAR_DATA = [
                 "source_url": "https://www.filintomota.pt/marca/leapmotor/b10/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Leapmotor B10 Pro 56.2 kWh BEV a partir de 27.600 €"
               },
               "source_type": "official_dealer_model_and_price"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -4634,20 +4407,20 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       },
       {
         "name": "ProMax 67.1 kWh BEV",
         "battery_capacity_kwh": 67.1,
         "wltp_range_combined_km": 434,
-        "wltp_consumption_combined_kwh_100km": 17.2,
+        "wltp_consumption_combined_kwh_100km": 17.3,
         "power_kw": 160,
         "power_hp": 218,
         "dc_max_kw": 168,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 31500,
               "currency": "EUR",
               "source_url": "https://www.filintomota.pt/marca/leapmotor/b10/",
@@ -4665,17 +4438,17 @@ const CAR_DATA = [
                 "variant": "ProMax 67.1 kWh BEV",
                 "vat_basis": "included",
                 "literal_excerpt": "Leapmotor B10 ProMax 67.1 kWh BEV a partir de 31.500 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_dealer_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -4692,14 +4465,14 @@ const CAR_DATA = [
                 "source_url": "https://www.filintomota.pt/marca/leapmotor/b10/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Leapmotor B10 ProMax 67.1 kWh BEV a partir de 31.500 €"
               },
               "source_type": "official_dealer_model_and_price"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -4707,7 +4480,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -4731,9 +4504,9 @@ const CAR_DATA = [
       "boot_capacity_l": 435,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Leapmotor",
@@ -4744,12 +4517,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.filintomota.pt/marca/leapmotor/c10/",
     "image_path": "assets/images/vehicles/leapmotor-c10/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_dealer_model_and_price",
+        "url": "https://www.leapmotor.net/pt-pt/modelos/c10",
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_dealer_model_and_price",
         "url": "https://www.filintomota.pt/marca/leapmotor/c10/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -4780,17 +4558,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Design 69,9 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Leapmotor C10 Design 69,9 kWh a partir de 33.900 €",
+                "literal_excerpt": "LEAPMOTOR C10 Particulares Desde 33.900€ NOVO",
                 "status": "verified",
                 "source_type": "official_dealer_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -4802,14 +4580,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Leapmotor C10 Design 69,9 kWh a partir de 33.900 €",
+              "evidence": "LEAPMOTOR C10 Particulares Desde 33.900€ NOVO",
               "evidence_record": {
                 "url": "https://www.filintomota.pt/marca/leapmotor/c10/",
                 "source_url": "https://www.filintomota.pt/marca/leapmotor/c10/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Leapmotor C10 Design 69,9 kWh a partir de 33.900 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "LEAPMOTOR C10 Particulares Desde 33.900€ NOVO"
               },
               "source_type": "official_dealer_model_and_price"
             }
@@ -4823,7 +4601,8 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "confirmed_eligible",
+        "wltp_consumption_combined_kwh_100km": 18.8
       }
     ],
     "pros": [
@@ -4860,12 +4639,22 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.filintomota.pt/marca/leapmotor/t03/",
     "image_path": "assets/images/vehicles/leapmotor-t03/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_dealer_model_and_price",
         "url": "https://www.filintomota.pt/marca/leapmotor/t03/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_dealer_model_and_price",
+        "url": "https://www.leapmotor.net/pt-pt/modelos/t03",
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://www.leapmotor.net/docs/lpmiwebsiteptptlibraries/documentos-t03/5750-25_leapmotor_brochure_t03ptv3.pdf?sfvrsn=7eab5210_1",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -4874,13 +4663,13 @@ const CAR_DATA = [
         "battery_capacity_kwh": 37.3,
         "wltp_range_combined_km": 265,
         "wltp_consumption_combined_kwh_100km": 16.3,
-        "power_kw": 80,
-        "power_hp": 109,
-        "dc_max_kw": 48,
+        "power_kw": 70,
+        "power_hp": 94,
+        "dc_max_kw": 45,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 18500.0,
               "currency": "EUR",
               "source_url": "https://www.filintomota.pt/marca/leapmotor/t03/",
@@ -4898,17 +4687,17 @@ const CAR_DATA = [
                 "variant": "Design",
                 "vat_basis": "included",
                 "literal_excerpt": "Leapmotor T03 Design a partir de 18.500 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_dealer_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -4925,14 +4714,14 @@ const CAR_DATA = [
                 "source_url": "https://www.filintomota.pt/marca/leapmotor/t03/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Leapmotor T03 Design a partir de 18.500 €"
               },
               "source_type": "official_dealer_model_and_price"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -4940,7 +4729,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -4964,9 +4753,9 @@ const CAR_DATA = [
       "boot_capacity_l": 210,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "MG",
@@ -4977,59 +4766,64 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.mgmotor.pt/model/mg4/",
     "image_path": "assets/images/vehicles/mg-mg4/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.mgmotor.pt/model/mg4/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_price",
         "url": "https://www.mgmotor.pt/technology",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_model",
+        "url": "https://www.mgmotor.pt/model/mg4-urban",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Urban",
-        "battery_capacity_kwh": 49,
-        "wltp_range_combined_km": 350,
-        "wltp_consumption_combined_kwh_100km": 16.5,
-        "power_kw": 125,
-        "power_hp": 170,
-        "dc_max_kw": 88,
+        "battery_capacity_kwh": 42.8,
+        "wltp_range_combined_km": 325,
+        "wltp_consumption_combined_kwh_100km": 15.5,
+        "power_kw": 110,
+        "power_hp": null,
+        "dc_max_kw": 82,
         "pricing": {
           "offers": [
             {
               "classification": "confirmed",
               "amount_eur": 23900,
               "currency": "EUR",
-              "source_url": "https://www.mgmotor.pt/model/mg4/",
+              "source_url": "https://www.mgmotor.pt/model/mg4-urban",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Urban",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://www.mgmotor.pt/model/mg4/",
-                "source_url": "https://www.mgmotor.pt/model/mg4/",
+                "url": "https://www.mgmotor.pt/model/mg4-urban",
+                "source_url": "https://www.mgmotor.pt/model/mg4-urban",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Urban",
                 "vat_basis": "included",
-                "literal_excerpt": "MG MG4 Urban a partir de 23.900 €",
+                "literal_excerpt": "43kWh Comfort MG4 EV Urban Desde 23.900€",
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -5041,14 +4835,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "MG MG4 Urban a partir de 23.900 €",
+              "evidence": "43kWh Comfort MG4 EV Urban Desde 23.900€",
               "evidence_record": {
-                "url": "https://www.mgmotor.pt/model/mg4/",
-                "source_url": "https://www.mgmotor.pt/model/mg4/",
+                "url": "https://www.mgmotor.pt/model/mg4-urban",
+                "source_url": "https://www.mgmotor.pt/model/mg4-urban",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "MG MG4 Urban a partir de 23.900 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "43kWh Comfort MG4 EV Urban Desde 23.900€"
               },
               "source_type": "official_model"
             }
@@ -5068,14 +4862,14 @@ const CAR_DATA = [
         "name": "Standard",
         "battery_capacity_kwh": 64,
         "wltp_range_combined_km": 452,
-        "wltp_consumption_combined_kwh_100km": 16,
-        "power_kw": 150,
-        "power_hp": 204,
-        "dc_max_kw": 140,
+        "wltp_consumption_combined_kwh_100km": 17.6,
+        "power_kw": 140,
+        "power_hp": 190,
+        "dc_max_kw": 154,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 32367.0,
               "currency": "EUR",
               "source_url": "https://www.mgmotor.pt/model/mg4/",
@@ -5093,17 +4887,17 @@ const CAR_DATA = [
                 "variant": "Standard",
                 "vat_basis": "included",
                 "literal_excerpt": "MG MG4 Standard a partir de 32.367 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -5120,14 +4914,14 @@ const CAR_DATA = [
                 "source_url": "https://www.mgmotor.pt/model/mg4/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "MG MG4 Standard a partir de 32.367 €"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -5135,7 +4929,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -5172,12 +4966,12 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.mgmotor.pt/model/mgs5",
     "image_path": "assets/images/vehicles/mg-mgs5-ev/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.mgmotor.pt/model/mgs5",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -5187,12 +4981,12 @@ const CAR_DATA = [
         "wltp_range_combined_km": 340,
         "wltp_consumption_combined_kwh_100km": 16.6,
         "power_kw": 125,
-        "power_hp": 170,
+        "power_hp": null,
         "dc_max_kw": 120,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 27880.0,
               "currency": "EUR",
               "source_url": "https://www.mgmotor.pt/model/mgs5",
@@ -5210,17 +5004,17 @@ const CAR_DATA = [
                 "variant": "Standard Range",
                 "vat_basis": "included",
                 "literal_excerpt": "MG MGS5 EV Standard Range a partir de 27.880 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -5237,14 +5031,14 @@ const CAR_DATA = [
                 "source_url": "https://www.mgmotor.pt/model/mgs5",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "MG MGS5 EV Standard Range a partir de 27.880 €"
               },
               "source_type": "official_model_and_price"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -5252,20 +5046,20 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       },
       {
         "name": "Long Range",
         "battery_capacity_kwh": 64,
         "wltp_range_combined_km": 480,
-        "wltp_consumption_combined_kwh_100km": 16.6,
+        "wltp_consumption_combined_kwh_100km": 15.5,
         "power_kw": 170,
-        "power_hp": 231,
+        "power_hp": null,
         "dc_max_kw": 139,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 34880,
               "currency": "EUR",
               "source_url": "https://www.mgmotor.pt/model/mgs5",
@@ -5283,17 +5077,17 @@ const CAR_DATA = [
                 "variant": "Long Range",
                 "vat_basis": "included",
                 "literal_excerpt": "MG MGS5 EV Long Range a partir de 34.880 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -5310,14 +5104,14 @@ const CAR_DATA = [
                 "source_url": "https://www.mgmotor.pt/model/mgs5",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "MG MGS5 EV Long Range a partir de 34.880 €"
               },
               "source_type": "official_model_and_price"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -5325,7 +5119,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -5349,9 +5143,9 @@ const CAR_DATA = [
       "boot_capacity_l": 450,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "MINI",
@@ -5362,17 +5156,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
     "image_path": "assets/images/vehicles/mini-aceman/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_versions_and_price",
         "url": "https://www.mini.pt/pt_PT/home/gama/mini-aceman/modelos.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -5403,17 +5197,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "E Essential 38.5 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "MINI Aceman E Essential 38.5 kWh a partir de 35.900 €",
+                "literal_excerpt": "MINI ACEMAN E Versão Essential Desde 35.900 €",
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -5425,14 +5219,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "MINI Aceman E Essential 38.5 kWh a partir de 35.900 €",
+              "evidence": "MINI ACEMAN E Versão Essential Desde 35.900 €",
               "evidence_record": {
                 "url": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
                 "source_url": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "MINI Aceman E Essential 38.5 kWh a partir de 35.900 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "MINI ACEMAN E Versão Essential Desde 35.900 €"
               },
               "source_type": "official_model"
             }
@@ -5446,7 +5240,8 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "confirmed_eligible",
+        "dc_max_kw": 75
       },
       {
         "name": "SE Essential 49.2 kWh",
@@ -5475,17 +5270,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "SE Essential 49.2 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "MINI Aceman SE Essential 49.2 kWh a partir de 38.550 €",
+                "literal_excerpt": "MINI ACEMAN SE Versão Essential Desde 38.550 €",
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -5497,14 +5292,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "MINI Aceman SE Essential 49.2 kWh a partir de 38.550 €",
+              "evidence": "MINI ACEMAN SE Versão Essential Desde 38.550 €",
               "evidence_record": {
                 "url": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
                 "source_url": "https://www.mini.pt/pt_PT/home/range/all-electric-mini-aceman.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "MINI Aceman SE Essential 49.2 kWh a partir de 38.550 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "MINI ACEMAN SE Versão Essential Desde 38.550 €"
               },
               "source_type": "official_model"
             }
@@ -5518,7 +5313,8 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "confirmed_eligible",
+        "dc_max_kw": 95
       }
     ],
     "pros": [
@@ -5555,17 +5351,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
     "image_path": "assets/images/vehicles/mini-cooper-el-trico/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_versions_and_price",
         "url": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico/modelos.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -5596,17 +5392,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "E Essential 36.6 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "MINI Cooper Elétrico E Essential 36.6 kWh a partir de 33.850 €",
+                "literal_excerpt": "MINI COOPER E Versão Essential Desde 33.850 €",
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -5618,14 +5414,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "MINI Cooper Elétrico E Essential 36.6 kWh a partir de 33.850 €",
+              "evidence": "MINI COOPER E Versão Essential Desde 33.850 €",
               "evidence_record": {
                 "url": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
                 "source_url": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "MINI Cooper Elétrico E Essential 36.6 kWh a partir de 33.850 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "MINI COOPER E Versão Essential Desde 33.850 €"
               },
               "source_type": "official_model"
             }
@@ -5639,7 +5435,8 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "confirmed_eligible",
+        "dc_max_kw": 75
       },
       {
         "name": "SE Essential 49.2 kWh",
@@ -5668,17 +5465,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "SE Essential 49.2 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "MINI Cooper Elétrico SE Essential 49.2 kWh a partir de 36.800 €",
+                "literal_excerpt": "MINI COOPER SE Versão Essential Desde 36.800 €",
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -5690,14 +5487,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "MINI Cooper Elétrico SE Essential 49.2 kWh a partir de 36.800 €",
+              "evidence": "MINI COOPER SE Versão Essential Desde 36.800 €",
               "evidence_record": {
                 "url": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
                 "source_url": "https://www.mini.pt/pt_PT/home/gama/mini-cooper-eletrico.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "MINI Cooper Elétrico SE Essential 49.2 kWh a partir de 36.800 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "MINI COOPER SE Versão Essential Desde 36.800 €"
               },
               "source_type": "official_model"
             }
@@ -5711,7 +5508,8 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "confirmed_eligible",
+        "dc_max_kw": 95
       }
     ],
     "pros": [
@@ -5740,123 +5538,6 @@ const CAR_DATA = [
     "eligibility_tier": "confirmed_eligible"
   },
   {
-    "brand": "Mazda",
-    "model": "MX-30",
-    "powertrain": "BEV",
-    "segment": "C-SUV",
-    "release_year": 2024,
-    "availability_status": "available",
-    "official_link": "https://www.mazda.pt/",
-    "image_path": "assets/images/vehicles/mazda-mx-30/official.jpg",
-    "last_verified": "2026-09-02",
-    "data_sources": [
-      {
-        "type": "official_model",
-        "url": "https://www.mazda.pt/",
-        "verified_on": "2026-09-02"
-      }
-    ],
-    "variants": [
-      {
-        "name": "Prime-Line 35.5 kWh",
-        "battery_capacity_kwh": 35.5,
-        "wltp_range_combined_km": 200,
-        "wltp_consumption_combined_kwh_100km": 17.3,
-        "power_kw": 107,
-        "power_hp": 145,
-        "dc_max_kw": 50.0,
-        "pricing": {
-          "offers": [
-            {
-              "classification": "confirmed",
-              "amount_eur": 38840.0,
-              "currency": "EUR",
-              "source_url": "https://www.mazda.pt/",
-              "source_authority": "manufacturer_or_importer_pt",
-              "market": "PT",
-              "variant": "Prime-Line 35.5 kWh",
-              "conditions": null,
-              "vat_included": true,
-              "proof": {
-                "url": "https://www.mazda.pt/",
-                "source_url": "https://www.mazda.pt/",
-                "authority": "manufacturer_or_importer_pt",
-                "market": "PT",
-                "audience": "particular",
-                "variant": "Prime-Line 35.5 kWh",
-                "vat_basis": "included",
-                "literal_excerpt": "Mazda MX-30 Prime-Line 35.5 kWh a partir de 38.840 €",
-                "status": "verified",
-                "source_type": "official_model",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "source_authority": "manufacturer_or_importer_pt",
-                "customer": "private"
-              },
-              "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
-              "kind": "list_price",
-              "customer": "private",
-              "audience": "particular",
-              "validity": {
-                "valid_from": null,
-                "valid_until": null
-              },
-              "valid_until": null,
-              "vat": "included",
-              "vat_status": "included",
-              "evidence": "Mazda MX-30 Prime-Line 35.5 kWh a partir de 38.840 €",
-              "evidence_record": {
-                "url": "https://www.mazda.pt/",
-                "source_url": "https://www.mazda.pt/",
-                "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Mazda MX-30 Prime-Line 35.5 kWh a partir de 38.840 €"
-              },
-              "source_type": "official_model"
-            }
-          ]
-        },
-        "eligibility_status": "confirmed_eligible",
-        "battery_technology": {
-          "chemistry": null,
-          "generation": null,
-          "architecture": null,
-          "source_url": null,
-          "verified_on": null
-        },
-        "eligibility_tier": "confirmed_eligible"
-      }
-    ],
-    "dimensions": {
-      "length_mm": 4395,
-      "width_mm": 1795,
-      "height_mm": 1555
-    },
-    "luggage_capacity": {
-      "boot_capacity_l": 366,
-      "frunk_capacity_l": null
-    },
-    "pros": [
-      "Qualidade de construção e acabamentos interiores de nível verdadeiramente premium",
-      "Portas de abertura antagónica Freestyle e materiais sustentáveis (cortiça)",
-      "Comportamento dinâmico e sensação de condução extremamente refinados",
-      "Insonorização excelente do habitáculo"
-    ],
-    "cons": [
-      "Autonomia homologada muito curta (200 km WLTP / ~150 km real)",
-      "Portas traseiras de abertura antagónica exigem abrir primeiro a porta dianteira",
-      "Espaço e luminosidade reduzidos para os ocupantes dos bancos traseiros",
-      "Carregamento rápido DC limitado a 50 kW"
-    ],
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
-  },
-  {
     "brand": "Nissan",
     "model": "Ariya",
     "powertrain": "BEV",
@@ -5865,17 +5546,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.nissan.pt/veiculos/novos-veiculos/ariya.html",
     "image_path": "assets/images/vehicles/nissan-ariya/official.png",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.nissan.pt/veiculos/novos-veiculos/ariya.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_specification",
         "url": "https://www.nissan.pt/veiculos/novos-veiculos/ariya/Preco-e-caracteristicas.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -5908,17 +5589,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Engage 63 kWh 2WD",
                 "vat_basis": "included",
-                "literal_excerpt": "Engage | Preço recomendado desde | 37.100 €",
+                "literal_excerpt": "Engage Desde 37.100,00 €",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "customer": "private",
               "audience": "particular",
@@ -5929,14 +5610,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Engage | Preço recomendado desde | 37.100 €",
+              "evidence": "Engage Desde 37.100,00 €",
               "evidence_record": {
                 "url": "https://www.nissan.pt/veiculos/novos-veiculos/ariya.html",
                 "source_url": "https://www.nissan.pt/veiculos/novos-veiculos/ariya.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Engage | Preço recomendado desde | 37.100 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Engage Desde 37.100,00 €"
               },
               "source_type": "official_model_and_price"
             }
@@ -5987,22 +5668,22 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.nissan.pt/veiculos/novos-veiculos/novo-nissan-leaf.html",
     "image_path": "assets/images/vehicles/nissan-leaf/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.nissan.pt/veiculos/novos-veiculos/novo-nissan-leaf.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_reservation_and_price",
-        "url": "https://leaf.nissan.pt/",
-        "verified_on": "2026-09-02"
+        "url": "https://campanhas.nissan.pt/leaf/",
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_specification",
         "url": "https://www.nissan-global.com/EN/COMPANY/EVENTS/NISSAN_LEAF_2025/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -6012,69 +5693,64 @@ const CAR_DATA = [
         "wltp_range_combined_km": 419,
         "wltp_consumption_combined_kwh_100km": 13.7,
         "power_kw": 130,
-        "power_hp": 177,
+        "power_hp": null,
         "dc_max_kw": 105,
         "pricing": {
           "offers": [
             {
               "kind": "campaign_price",
-              "classification": "confirmed",
-              "amount_eur": 37638,
+              "classification": "reference",
+              "amount_eur": 29990.0,
               "currency": "EUR",
-              "source_url": "https://leaf.nissan.pt/",
+              "source_url": "https://campanhas.nissan.pt/leaf/",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Engage 52 kWh",
-              "conditions": "A reserva continua ativa, mas a página e o formulário Nissan publicam datas de validade divergentes; confirmar a campanha.",
-              "vat_included": true,
+              "conditions": "Oferta de lançamento com 3 anos de manutenção; válida para clientes particulares em Portugal até 31/10/2026; acresce IVA, despesas de legalização e transporte.",
+              "vat_included": false,
               "proof": {
-                "url": "https://leaf.nissan.pt/",
-                "source_url": "https://leaf.nissan.pt/",
+                "url": "https://campanhas.nissan.pt/leaf/",
+                "source_url": "https://campanhas.nissan.pt/leaf/",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Engage 52 kWh",
-                "vat_basis": "derived",
-                "literal_excerpt": "Nissan Leaf Engage — PVP: €30 600 IVA (23%): €7038 Total: €37 638",
+                "vat_basis": "excluded",
+                "literal_excerpt": "Oferta de lançamento do novo LEAF 100% elétrico, desde 29.990€ + IVA, com 3 anos de manutenção.",
                 "status": "verified",
                 "source_type": "official_reservation_and_price",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
-              "derivation": {
-                "method": "add_vat",
-                "source_amount_eur": 30600,
-                "vat_rate": 0.23,
-                "result_amount_eur": 37638
-              },
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "derivation": null,
+              "recorded_on": "2026-10-10",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "customer": "private",
               "audience": "particular",
               "validity": {
                 "valid_from": null,
-                "valid_until": null
+                "valid_until": "2026-10-31"
               },
-              "valid_until": null,
-              "vat": "derived",
-              "vat_status": "derived",
-              "evidence": "Nissan Leaf Engage — PVP: €30 600 IVA (23%): €7038 Total: €37 638",
+              "valid_until": "2026-10-31",
+              "vat": "excluded",
+              "vat_status": "excluded",
+              "evidence": "Oferta de lançamento do novo LEAF 100% elétrico, desde 29.990€ + IVA, com 3 anos de manutenção.",
               "evidence_record": {
-                "url": "https://leaf.nissan.pt/",
-                "source_url": "https://leaf.nissan.pt/",
+                "url": "https://campanhas.nissan.pt/leaf/",
+                "source_url": "https://campanhas.nissan.pt/leaf/",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Nissan Leaf Engage — PVP: €30 600 IVA (23%): €7038 Total: €37 638"
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Oferta de lançamento do novo LEAF 100% elétrico, desde 29.990€ + IVA, com 3 anos de manutenção."
               },
               "source_type": "official_reservation_and_price"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": "3.ª geração",
@@ -6082,7 +5758,7 @@ const CAR_DATA = [
           "source_url": "https://www.nissan-global.com/EN/COMPANY/EVENTS/NISSAN_LEAF_2025/",
           "verified_on": "2026-09-02"
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -6106,9 +5782,9 @@ const CAR_DATA = [
       "boot_capacity_l": 437,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Nissan",
@@ -6119,23 +5795,28 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
     "image_path": "assets/images/vehicles/nissan-micra/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://configurador.nissan.pt/configurador/nissan-micra",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Engage 40 kWh",
         "battery_capacity_kwh": 40,
-        "wltp_range_combined_km": 310,
+        "wltp_range_combined_km": 319,
         "wltp_consumption_combined_kwh_100km": 14.2,
         "power_kw": 90,
-        "power_hp": 122,
-        "dc_max_kw": 80,
+        "power_hp": 120,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -6156,17 +5837,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Engage 40 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Engage | Desde | 28.365,00 €",
+                "literal_excerpt": "Engage Desde 28.365,00 €",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -6178,14 +5859,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Engage | Desde | 28.365,00 €",
+              "evidence": "Engage Desde 28.365,00 €",
               "evidence_record": {
                 "url": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
                 "source_url": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Engage | Desde | 28.365,00 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Engage Desde 28.365,00 €"
               },
               "source_type": "official_model_and_price"
             }
@@ -6204,11 +5885,11 @@ const CAR_DATA = [
       {
         "name": "Advance 40 kWh",
         "battery_capacity_kwh": 40,
-        "wltp_range_combined_km": 310,
+        "wltp_range_combined_km": 319,
         "wltp_consumption_combined_kwh_100km": 14.2,
         "power_kw": 90,
-        "power_hp": 122,
-        "dc_max_kw": 80,
+        "power_hp": 120,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -6229,17 +5910,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Advance 40 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Advance | Desde | 30.365,00 €",
+                "literal_excerpt": "Advance Desde 30.365,00 €",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -6251,14 +5932,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Advance | Desde | 30.365,00 €",
+              "evidence": "Advance Desde 30.365,00 €",
               "evidence_record": {
                 "url": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
                 "source_url": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Advance | Desde | 30.365,00 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Advance Desde 30.365,00 €"
               },
               "source_type": "official_model_and_price"
             }
@@ -6277,10 +5958,10 @@ const CAR_DATA = [
       {
         "name": "Evolve 52 kWh",
         "battery_capacity_kwh": 52,
-        "wltp_range_combined_km": 409,
-        "wltp_consumption_combined_kwh_100km": 14.6,
+        "wltp_range_combined_km": 419,
+        "wltp_consumption_combined_kwh_100km": 14.7,
         "power_kw": 110,
-        "power_hp": 150,
+        "power_hp": null,
         "dc_max_kw": 100,
         "pricing": {
           "offers": [
@@ -6302,17 +5983,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Evolve 52 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Evolve | Desde | 35.865,00 €",
+                "literal_excerpt": "Evolve Desde 35.865,00 €",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -6324,14 +6005,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Evolve | Desde | 35.865,00 €",
+              "evidence": "Evolve Desde 35.865,00 €",
               "evidence_record": {
                 "url": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
                 "source_url": "https://www.nissan.pt/veiculos/novos-veiculos/new-nissan-micra.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Evolve | Desde | 35.865,00 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Evolve Desde 35.865,00 €"
               },
               "source_type": "official_model_and_price"
             }
@@ -6382,32 +6063,37 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://omodajaecoo.pt/omoda/omoda-5-ev/",
     "image_path": "assets/images/vehicles/omoda-5-ev/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://omodajaecoo.pt/omoda/omoda-5-ev/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
-        "url": "https://omodajaecoo.pt/0-juros/",
-        "verified_on": "2026-09-02"
+        "url": "https://omodajaecoo.pt/campanhas-legal-info/",
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://omodajaecoo.pt/wp-content/uploads/2026/09/Manual-Omoda-5-EV.pdf",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Comfort",
-        "battery_capacity_kwh": 61,
+        "battery_capacity_kwh": 61.0566,
         "wltp_range_combined_km": 430,
         "wltp_consumption_combined_kwh_100km": 15.5,
         "power_kw": 150,
         "power_hp": 204,
-        "dc_max_kw": 80,
+        "dc_max_kw": 130,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 34900.0,
               "currency": "EUR",
               "source_url": "https://omodajaecoo.pt/omoda/omoda-5-ev/",
@@ -6425,17 +6111,17 @@ const CAR_DATA = [
                 "variant": "Comfort",
                 "vat_basis": "included",
                 "literal_excerpt": "Omoda 5 EV Comfort a partir de 34.900 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -6452,14 +6138,14 @@ const CAR_DATA = [
                 "source_url": "https://omodajaecoo.pt/omoda/omoda-5-ev/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Omoda 5 EV Comfort a partir de 34.900 €"
               },
               "source_type": "official_model_and_price"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -6467,7 +6153,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -6491,9 +6177,9 @@ const CAR_DATA = [
       "boot_capacity_l": 360,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Opel",
@@ -6504,25 +6190,25 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.opel.pt/cars/astra-models.html",
     "image_path": "assets/images/vehicles/opel-astra-electric/official.png",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.opel.pt/cars/astra-models.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.opel.pt/ofertas/campanhas-particulares-credito/opel-astra-5p-electric-flexiopel.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Edition 58 kWh",
         "battery_capacity_kwh": 58,
-        "wltp_range_combined_km": 418,
-        "wltp_consumption_combined_kwh_100km": 14.4,
+        "wltp_range_combined_km": 432,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 115,
         "power_hp": 156,
         "dc_max_kw": 100,
@@ -6580,7 +6266,7 @@ const CAR_DATA = [
               "source_type": "official_model"
             },
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 37966.0,
               "currency": "EUR",
               "source_url": "https://www.opel.pt/cars/astra-models.html",
@@ -6598,17 +6284,17 @@ const CAR_DATA = [
                 "variant": "Edition 58 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Opel Astra Electric Edition 58 kWh PVP campanha de 37.966 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -6625,7 +6311,7 @@ const CAR_DATA = [
                 "source_url": "https://www.opel.pt/cars/astra-models.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Opel Astra Electric Edition 58 kWh PVP campanha de 37.966 €"
               },
               "source_type": "official_model"
@@ -6640,7 +6326,8 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "potential_reference"
+        "eligibility_tier": "potential_reference",
+        "range_note": "A Opel publica 432–454 km para o Astra 5 portas de 58 kWh, conforme equipamento e pneus. Registado o extremo inferior (AGENTS.md, secção 8)."
       }
     ],
     "pros": [
@@ -6677,23 +6364,28 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
     "image_path": "assets/images/vehicles/opel-corsa-electric/official.png",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_campaign",
         "url": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://store.opel.pt/selector/configurable/corsa-5-portas/edition/electric-136cv-100kw-automatica-com-redutor-eletrico?channel=b2c",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "50 kWh",
         "battery_capacity_kwh": 50,
-        "wltp_range_combined_km": 357,
-        "wltp_consumption_combined_kwh_100km": 15.6,
+        "wltp_range_combined_km": 355,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 100,
         "power_hp": 136,
-        "dc_max_kw": 100,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -6714,17 +6406,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "50 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções",
+                "literal_excerpt": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares.",
                 "status": "verified",
                 "source_type": "official_model_and_campaign",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -6736,14 +6428,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções",
+              "evidence": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares.",
               "evidence_record": {
                 "url": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
                 "source_url": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares."
               },
               "source_type": "official_model_and_campaign"
             },
@@ -6765,17 +6457,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "50 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções",
+                "literal_excerpt": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares.",
                 "status": "verified",
                 "source_type": "official_model_and_campaign",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "campaign_price",
               "customer": "private",
@@ -6787,14 +6479,14 @@ const CAR_DATA = [
               "valid_until": "2026-09-30",
               "vat": "included",
               "vat_status": "included",
-              "evidence": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções",
+              "evidence": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares.",
               "evidence_record": {
                 "url": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
                 "source_url": "https://www.opel.pt/carros/gama-corsa/novo-corsa/vista-geral.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "exemplo para Corsa Electric Edition 136cv | Bat. 50kWh , PVPR de 35.613,00€, PVP campanha de 30.863,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares."
               },
               "source_type": "official_model_and_campaign"
             }
@@ -6845,27 +6537,27 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
     "image_path": "assets/images/vehicles/opel-frontera-electric/official.png",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "44 kWh",
-        "battery_capacity_kwh": 44,
-        "wltp_range_combined_km": 305,
-        "wltp_consumption_combined_kwh_100km": 18.2,
+        "battery_capacity_kwh": 44.2,
+        "wltp_range_combined_km": 309,
+        "wltp_consumption_combined_kwh_100km": 18.0,
         "power_kw": 83,
         "power_hp": 113,
-        "dc_max_kw": 100,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 27490.0,
               "currency": "EUR",
               "source_url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
@@ -6883,17 +6575,17 @@ const CAR_DATA = [
                 "variant": "44 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Opel Frontera Electric 44 kWh a partir de 27.490 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -6910,7 +6602,7 @@ const CAR_DATA = [
                 "source_url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Opel Frontera Electric 44 kWh a partir de 27.490 €"
               },
               "source_type": "official_model"
@@ -6933,17 +6625,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "44 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Opel Frontera Electric 44 kWh PVP campanha de 26.843 €",
+                "literal_excerpt": "exemplo para Frontera Electric Edition 113cv | Bat. 44kWh, PVPR de 31.843,00€, PVP campanha de 26.843,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares.",
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "campaign_price",
               "customer": "private",
@@ -6955,20 +6647,20 @@ const CAR_DATA = [
               "valid_until": "2026-09-30",
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Opel Frontera Electric 44 kWh PVP campanha de 26.843 €",
+              "evidence": "exemplo para Frontera Electric Edition 113cv | Bat. 44kWh, PVPR de 31.843,00€, PVP campanha de 26.843,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares.",
               "evidence_record": {
                 "url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
                 "source_url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Opel Frontera Electric 44 kWh PVP campanha de 26.843 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "exemplo para Frontera Electric Edition 113cv | Bat. 44kWh, PVPR de 31.843,00€, PVP campanha de 26.843,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares."
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -6976,7 +6668,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -7000,9 +6692,9 @@ const CAR_DATA = [
       "boot_capacity_l": 460,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Opel",
@@ -7013,12 +6705,12 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
     "image_path": "assets/images/vehicles/opel-mokka-electric/official.png",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_campaign",
         "url": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -7026,10 +6718,10 @@ const CAR_DATA = [
         "name": "54 kWh",
         "battery_capacity_kwh": 54,
         "wltp_range_combined_km": 403,
-        "wltp_consumption_combined_kwh_100km": 15.4,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 115,
         "power_hp": 156,
-        "dc_max_kw": 100,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -7050,17 +6742,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "54 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Mokka Electric Edition 156cv | Bat. 54kWh, PVPR de 39.588,00€",
+                "literal_excerpt": "exemplo para Mokka Electric Edition 156cv | Bat. 54kWh, PVPR de 39.588,00€, PVP campanha de 34.588,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares.",
                 "status": "verified",
                 "source_type": "official_model_and_campaign",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -7072,14 +6764,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Mokka Electric Edition 156cv | Bat. 54kWh, PVPR de 39.588,00€",
+              "evidence": "exemplo para Mokka Electric Edition 156cv | Bat. 54kWh, PVPR de 39.588,00€, PVP campanha de 34.588,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares.",
               "evidence_record": {
                 "url": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
                 "source_url": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Mokka Electric Edition 156cv | Bat. 54kWh, PVPR de 39.588,00€"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "exemplo para Mokka Electric Edition 156cv | Bat. 54kWh, PVPR de 39.588,00€, PVP campanha de 34.588,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares."
               },
               "source_type": "official_model_and_campaign"
             },
@@ -7101,17 +6793,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "54 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "PVP campanha de 34.588,00€",
+                "literal_excerpt": "exemplo para Mokka Electric Edition 156cv | Bat. 54kWh, PVPR de 39.588,00€, PVP campanha de 34.588,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares.",
                 "status": "verified",
                 "source_type": "official_model_and_campaign",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "campaign_price",
               "customer": "private",
@@ -7123,14 +6815,14 @@ const CAR_DATA = [
               "valid_until": "2026-09-30",
               "vat": "included",
               "vat_status": "included",
-              "evidence": "PVP campanha de 34.588,00€",
+              "evidence": "exemplo para Mokka Electric Edition 156cv | Bat. 54kWh, PVPR de 39.588,00€, PVP campanha de 34.588,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares.",
               "evidence_record": {
                 "url": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
                 "source_url": "https://www.opel.pt/carros/gama-mokka/mokka/vista-geral.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "PVP campanha de 34.588,00€"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "exemplo para Mokka Electric Edition 156cv | Bat. 54kWh, PVPR de 39.588,00€, PVP campanha de 34.588,00€, inclui DLTP, sem opções [...] Condições válidas até 30/09/2026, para clientes particulares."
               },
               "source_type": "official_model_and_campaign"
             }
@@ -7201,7 +6893,7 @@ const CAR_DATA = [
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 38450.0,
               "currency": "EUR",
               "source_url": "https://www.peugeot.pt/showroom/novo-peugeot-2008/eletrico.html",
@@ -7219,17 +6911,17 @@ const CAR_DATA = [
                 "variant": "Style 136 cv 50 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Peugeot E-2008 Style 136 cv 50 kWh a partir de 38.450 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -7246,14 +6938,14 @@ const CAR_DATA = [
                 "source_url": "https://www.peugeot.pt/showroom/novo-peugeot-2008/eletrico.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Peugeot E-2008 Style 136 cv 50 kWh a partir de 38.450 €"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -7261,7 +6953,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "dimensions": {
@@ -7285,9 +6977,9 @@ const CAR_DATA = [
       "Ausência de patilhas no volante para regular a intensidade da regeneração",
       "Consumo energético em ritmo de autoestrada reduz autonomia em viagem"
     ],
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Peugeot",
@@ -7298,17 +6990,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html",
     "image_path": "assets/images/vehicles/peugeot-e-208/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.peugeot.pt/comprar/ofertas-do-momento/passageiros/particulares/peugeot-e-208-easy-credit.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -7316,14 +7008,14 @@ const CAR_DATA = [
         "name": "156 cv 51 kWh",
         "battery_capacity_kwh": 51,
         "wltp_range_combined_km": 433,
-        "wltp_consumption_combined_kwh_100km": 14.1,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 115,
         "power_hp": 156,
         "dc_max_kw": 100,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 26435.0,
               "currency": "EUR",
               "source_url": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html",
@@ -7341,17 +7033,17 @@ const CAR_DATA = [
                 "variant": "156 cv 51 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Peugeot E-208 156 cv 51 kWh a partir de 26.435 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -7368,14 +7060,14 @@ const CAR_DATA = [
                 "source_url": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Peugeot E-208 156 cv 51 kWh a partir de 26.435 €"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -7383,7 +7075,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -7407,9 +7099,9 @@ const CAR_DATA = [
       "boot_capacity_l": 309,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Renault",
@@ -7420,12 +7112,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
     "image_path": "assets/images/vehicles/renault-4-e-tech-el-trico/official.png",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_versions_and_price",
         "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_versions_and_price",
+        "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -7433,7 +7130,7 @@ const CAR_DATA = [
         "name": "Evolution 40 kWh",
         "battery_capacity_kwh": 40,
         "wltp_range_combined_km": 308,
-        "wltp_consumption_combined_kwh_100km": 15,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 90,
         "power_hp": 120,
         "dc_max_kw": 80,
@@ -7443,31 +7140,31 @@ const CAR_DATA = [
               "classification": "confirmed",
               "amount_eur": 29740.0,
               "currency": "EUR",
-              "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
+              "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Evolution 40 kWh",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
-                "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
+                "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
+                "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Evolution 40 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "preço a partir de 29 740 €",
+                "literal_excerpt": "120 cv autonomia urbana preço a partir de 29 740 €",
                 "status": "verified",
                 "source_type": "official_versions_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -7479,14 +7176,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "preço a partir de 29 740 €",
+              "evidence": "120 cv autonomia urbana preço a partir de 29 740 €",
               "evidence_record": {
-                "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
-                "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
+                "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
+                "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "preço a partir de 29 740 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "120 cv autonomia urbana preço a partir de 29 740 €"
               },
               "source_type": "official_versions_and_price"
             }
@@ -7516,31 +7213,31 @@ const CAR_DATA = [
               "classification": "confirmed",
               "amount_eur": 33240,
               "currency": "EUR",
-              "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
+              "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Comfort 52 kWh",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
-                "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
+                "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
+                "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Comfort 52 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "150 cv autonomia conforto / preço a partir de 33 240 €",
+                "literal_excerpt": "150 cv autonomia conforto preço a partir de 33 240 €",
                 "status": "verified",
                 "source_type": "official_versions_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -7552,14 +7249,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "150 cv autonomia conforto / preço a partir de 33 240 €",
+              "evidence": "150 cv autonomia conforto preço a partir de 33 240 €",
               "evidence_record": {
-                "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
-                "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html",
+                "url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
+                "source_url": "https://www.renault.pt/veiculos-eletricos/r4-e-tech-eletrico/versoes-preco.html?gradeCode=ENS_MDL2PSL1SERIELIM1",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "150 cv autonomia conforto / preço a partir de 33 240 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "150 cv autonomia conforto preço a partir de 33 240 €"
               },
               "source_type": "official_versions_and_price"
             }
@@ -7610,54 +7307,64 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
     "image_path": "assets/images/vehicles/renault-5-e-tech-el-trico/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
-        "url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
-        "verified_on": "2026-09-02"
+        "url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html",
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_model_and_price",
+        "url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSL1SERIESPE2",
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_model_and_price",
+        "url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSP1SERIELIM1",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Autonomia urbana 40 kWh",
         "battery_capacity_kwh": 40,
-        "wltp_range_combined_km": 312,
-        "wltp_consumption_combined_kwh_100km": 14.5,
+        "wltp_range_combined_km": 306,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 90,
         "power_hp": 120,
-        "dc_max_kw": 80,
+        "dc_max_kw": 100,
         "pricing": {
           "offers": [
             {
               "classification": "confirmed",
               "amount_eur": 24900.0,
               "currency": "EUR",
-              "source_url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
+              "source_url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSL1SERIESPE2",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Autonomia urbana 40 kWh",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
-                "source_url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
+                "url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSL1SERIESPE2",
+                "source_url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSL1SERIESPE2",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Autonomia urbana 40 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "preço a partir de 24 900 €",
+                "literal_excerpt": "five preço a partir de 24 900 € 5 E-TECH ELÉTRICO five 95 cv autonomia urbana",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -7669,14 +7376,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "preço a partir de 24 900 €",
+              "evidence": "five preço a partir de 24 900 € 5 E-TECH ELÉTRICO five 95 cv autonomia urbana",
               "evidence_record": {
-                "url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
-                "source_url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
+                "url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSL1SERIESPE2",
+                "source_url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSL1SERIESPE2",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "preço a partir de 24 900 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "five preço a partir de 24 900 € 5 E-TECH ELÉTRICO five 95 cv autonomia urbana"
               },
               "source_type": "official_model_and_price"
             }
@@ -7695,7 +7402,7 @@ const CAR_DATA = [
       {
         "name": "Autonomia conforto 52 kWh",
         "battery_capacity_kwh": 52,
-        "wltp_range_combined_km": 410,
+        "wltp_range_combined_km": 408,
         "wltp_consumption_combined_kwh_100km": 14.9,
         "power_kw": 110,
         "power_hp": 150,
@@ -7704,33 +7411,33 @@ const CAR_DATA = [
           "offers": [
             {
               "classification": "confirmed",
-              "amount_eur": 32900,
+              "amount_eur": 31240.0,
               "currency": "EUR",
-              "source_url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
+              "source_url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSP1SERIELIM1",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Autonomia conforto 52 kWh",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
-                "source_url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
+                "url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSP1SERIELIM1",
+                "source_url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSP1SERIELIM1",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Autonomia conforto 52 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Renault 5 E-Tech elétrico Autonomia conforto 52 kWh a partir de 32.900 €",
+                "literal_excerpt": "150 cv autonomia conforto preço a partir de 31 240 €",
                 "status": "verified",
                 "source_type": "official_model_and_price",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "recorded_on": "2026-10-10",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -7742,14 +7449,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Renault 5 E-Tech elétrico Autonomia conforto 52 kWh a partir de 32.900 €",
+              "evidence": "150 cv autonomia conforto preço a partir de 31 240 €",
               "evidence_record": {
-                "url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
-                "source_url": "https://www.renault.pt/veiculos-eletricos/r5-e-tech-eletrico/versoes-preco.html",
+                "url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSP1SERIELIM1",
+                "source_url": "https://www.renault.pt/veiculos-eletricos/renault-5/versoes-precos.html?gradeCode=ENS_MDL2PSP1SERIELIM1",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Renault 5 E-Tech elétrico Autonomia conforto 52 kWh a partir de 32.900 €"
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "150 cv autonomia conforto preço a partir de 31 240 €"
               },
               "source_type": "official_model_and_price"
             }
@@ -7871,7 +7578,7 @@ const CAR_DATA = [
               "legacy_unverified": true
             },
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 33903.71,
               "currency": "EUR",
               "source_url": "https://www.renault.pt/veiculos-eletricos/megane-e-tech-eletrico.html",
@@ -7889,16 +7596,16 @@ const CAR_DATA = [
                 "variant": "EV60 220 cv",
                 "vat_basis": "included",
                 "literal_excerpt": "PVP com desconto 33.903,71€",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": null,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -7915,11 +7622,11 @@ const CAR_DATA = [
                 "source_url": "https://www.renault.pt/veiculos-eletricos/megane-e-tech-eletrico.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "PVP com desconto 33.903,71€"
               },
               "source_type": "official_model_and_price",
-              "legacy_unverified": false
+              "legacy_unverified": true
             }
           ]
         },
@@ -7967,33 +7674,38 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
     "image_path": "assets/images/vehicles/renault-scenic-e-tech-el-trico/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_campaign",
         "url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_model",
+        "url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico/ficha-tecnica.html",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
-        "name": "Techno 170 cv autonomia conforto",
-        "battery_capacity_kwh": 60,
-        "wltp_range_combined_km": 430,
-        "wltp_consumption_combined_kwh_100km": 16.4,
-        "power_kw": 125,
-        "power_hp": 170,
-        "dc_max_kw": 130,
+        "name": "Techno 220 cv autonomia conforto",
+        "battery_capacity_kwh": 67,
+        "wltp_range_combined_km": 467,
+        "wltp_consumption_combined_kwh_100km": null,
+        "power_kw": 160,
+        "power_hp": 220,
+        "dc_max_kw": 165,
         "pricing": {
           "offers": [
             {
               "classification": "confirmed",
-              "amount_eur": 38753.71,
+              "amount_eur": 37759.91,
               "currency": "EUR",
               "source_url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
-              "variant": "Techno 170 cv autonomia conforto",
+              "variant": "Techno 220 cv autonomia conforto",
               "conditions": "Crédito com reserva de propriedade Mobilize Financial Services para particulares, financiamento mínimo de 24 meses e sujeito a aprovação; preço com desconto inclui despesas administrativas e transporte.",
               "vat_included": true,
               "proof": {
@@ -8002,95 +7714,44 @@ const CAR_DATA = [
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
-                "variant": "Techno 170 cv autonomia conforto",
+                "variant": "Techno 220 cv autonomia conforto",
                 "vat_basis": "included",
-                "literal_excerpt": "PVP com desconto 38.753,71€",
+                "literal_excerpt": "Scenic E-Tech Elétrico 220 cv autonomia conforto Techno através da Mobilize Financial Services (marca RCI Banque Sucursal Portugal, registada no BdP com o n.º 171). Válido até 31/10/2026 para Clientes Particulares. PVP com desconto 37.759,91€, inclui despesas administrativas e de transporte. PVP 43.528,61€.",
                 "status": "verified",
                 "source_type": "official_model_and_campaign",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "recorded_on": "2026-10-10",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
               "validity": {
                 "valid_from": null,
-                "valid_until": "2026-09-30"
+                "valid_until": "2026-10-31"
               },
-              "valid_until": "2026-09-30",
+              "valid_until": "2026-10-31",
               "vat": "included",
               "vat_status": "included",
-              "evidence": "PVP com desconto 38.753,71€",
+              "evidence": "Scenic E-Tech Elétrico 220 cv autonomia conforto Techno através da Mobilize Financial Services (marca RCI Banque Sucursal Portugal, registada no BdP com o n.º 171). Válido até 31/10/2026 para Clientes Particulares. PVP com desconto 37.759,91€, inclui despesas administrativas e de transporte. PVP 43.528,61€.",
               "evidence_record": {
                 "url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
                 "source_url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
                 "market": "PT",
-                "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "PVP com desconto 38.753,71€"
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Scenic E-Tech Elétrico 220 cv autonomia conforto Techno através da Mobilize Financial Services (marca RCI Banque Sucursal Portugal, registada no BdP com o n.º 171). Válido até 31/10/2026 para Clientes Particulares. PVP com desconto 37.759,91€, inclui despesas administrativas e de transporte. PVP 43.528,61€."
               },
               "source_type": "official_model_and_campaign"
-            },
-            {
-              "classification": "reference",
-              "amount_eur": 45068.61,
-              "currency": "EUR",
-              "source_url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
-              "source_authority": "manufacturer_or_importer_pt",
-              "market": "PT",
-              "variant": "Techno 170 cv autonomia conforto",
-              "conditions": null,
-              "vat_included": null,
-              "proof": {
-                "url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
-                "source_url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
-                "authority": "manufacturer_or_importer_pt",
-                "market": "PT",
-                "audience": "unknown",
-                "variant": "Techno 170 cv autonomia conforto",
-                "vat_basis": "unknown",
-                "literal_excerpt": "PVP: 45.068,61 €",
-                "status": "legacy_unverified",
-                "source_type": "official_model_and_campaign",
-                "recorded_on": "2026-08-05",
-                "verified_on": null,
-                "source_authority": "manufacturer_or_importer_pt",
-                "customer": "unknown"
-              },
-              "derivation": null,
-              "recorded_on": "2026-08-05",
-              "verified_on": null,
-              "kind": "list_price",
-              "customer": "unknown",
-              "audience": "unknown",
-              "validity": {
-                "valid_from": null,
-                "valid_until": null
-              },
-              "valid_until": null,
-              "vat": null,
-              "vat_status": "unknown",
-              "evidence": "PVP: 45.068,61 €",
-              "evidence_record": {
-                "url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
-                "source_url": "https://www.renault.pt/veiculos-eletricos/scenic-e-tech-eletrico.html",
-                "market": "PT",
-                "recorded_on": "2026-08-05",
-                "verified_on": null,
-                "literal_excerpt": "PVP: 45.068,61 €"
-              },
-              "source_type": "official_model_and_campaign",
-              "legacy_unverified": true
             }
           ]
         },
-        "eligibility_status": "potential_reference",
+        "eligibility_status": "confirmed_eligible",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -8098,7 +7759,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "potential_reference"
+        "eligibility_tier": "confirmed_eligible"
       }
     ],
     "pros": [
@@ -8121,9 +7782,9 @@ const CAR_DATA = [
       "boot_capacity_l": 545,
       "frunk_capacity_l": null
     },
-    "eligibility_status": "potential_reference",
-    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
-    "eligibility_tier": "potential_reference"
+    "eligibility_status": "confirmed_eligible",
+    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
+    "eligibility_tier": "confirmed_eligible"
   },
   {
     "brand": "Renault",
@@ -8134,17 +7795,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.renault.pt/veiculos-eletricos/twingo.html",
     "image_path": "assets/images/vehicles/renault-twingo-e-tech-el-trico/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_specification",
         "url": "https://www.renault.pt/veiculos-eletricos/twingo/caracteristicas.html",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -8177,17 +7838,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Evolution 27.5 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "PVP 20.680,64€",
+                "literal_excerpt": "Renault Twingo E-Tech elétrico 82cv autonomia urbana Evolution através da Mobilize Financial Services (marca RCI Banque Sucursal Portugal, registada no BdP com o n.º 171). Válido até 31/12/2026 para Clientes Particulares. PVP com desconto 20.180,64€, inclui despesas administrativas e de transporte. PVP 20.680,64€.",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -8198,14 +7859,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "PVP 20.680,64€",
+              "evidence": "Renault Twingo E-Tech elétrico 82cv autonomia urbana Evolution através da Mobilize Financial Services (marca RCI Banque Sucursal Portugal, registada no BdP com o n.º 171). Válido até 31/12/2026 para Clientes Particulares. PVP com desconto 20.180,64€, inclui despesas administrativas e de transporte. PVP 20.680,64€.",
               "evidence_record": {
                 "url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
                 "source_url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "PVP 20.680,64€"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Renault Twingo E-Tech elétrico 82cv autonomia urbana Evolution através da Mobilize Financial Services (marca RCI Banque Sucursal Portugal, registada no BdP com o n.º 171). Válido até 31/12/2026 para Clientes Particulares. PVP com desconto 20.180,64€, inclui despesas administrativas e de transporte. PVP 20.680,64€."
               },
               "source_type": "official_model_and_price",
               "legacy_unverified": false
@@ -8228,35 +7889,35 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Evolution 27.5 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "PVP com desconto 20.180,64€",
+                "literal_excerpt": "Renault Twingo E-Tech elétrico 82cv autonomia urbana Evolution através da Mobilize Financial Services (marca RCI Banque Sucursal Portugal, registada no BdP com o n.º 171). Válido até 31/12/2026 para Clientes Particulares. PVP com desconto 20.180,64€",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
               "validity": {
                 "valid_from": null,
-                "valid_until": "2026-09-30"
+                "valid_until": "2026-12-31"
               },
-              "valid_until": "2026-09-30",
+              "valid_until": "2026-12-31",
               "vat": "included",
               "vat_status": "included",
-              "evidence": "PVP com desconto 20.180,64€",
+              "evidence": "Renault Twingo E-Tech elétrico 82cv autonomia urbana Evolution através da Mobilize Financial Services (marca RCI Banque Sucursal Portugal, registada no BdP com o n.º 171). Válido até 31/12/2026 para Clientes Particulares. PVP com desconto 20.180,64€",
               "evidence_record": {
                 "url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
                 "source_url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "PVP com desconto 20.180,64€"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Renault Twingo E-Tech elétrico 82cv autonomia urbana Evolution através da Mobilize Financial Services (marca RCI Banque Sucursal Portugal, registada no BdP com o n.º 171). Válido até 31/12/2026 para Clientes Particulares. PVP com desconto 20.180,64€"
               },
               "source_type": "official_model_and_price",
               "legacy_unverified": false
@@ -8276,8 +7937,8 @@ const CAR_DATA = [
       {
         "name": "Techno 27.5 kWh",
         "battery_capacity_kwh": 27.5,
-        "wltp_range_combined_km": 263,
-        "wltp_consumption_combined_kwh_100km": 12.2,
+        "wltp_range_combined_km": null,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 60,
         "power_hp": 82,
         "torque_nm": 175,
@@ -8302,17 +7963,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Techno 27.5 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Renault Twingo E-Tech elétrico Techno 27.5 kWh a partir de 21.090 €",
+                "literal_excerpt": "techno preço a partir de 21 090 € TWINGO E-TECH ELÉTRICO techno 80 cv autonomia urbana",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -8324,14 +7985,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Renault Twingo E-Tech elétrico Techno 27.5 kWh a partir de 21.090 €",
+              "evidence": "techno preço a partir de 21 090 € TWINGO E-TECH ELÉTRICO techno 80 cv autonomia urbana",
               "evidence_record": {
                 "url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
                 "source_url": "https://www.renault.pt/veiculos-eletricos/twingo.html",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Renault Twingo E-Tech elétrico Techno 27.5 kWh a partir de 21.090 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "techno preço a partir de 21 090 € TWINGO E-TECH ELÉTRICO techno 80 cv autonomia urbana"
               },
               "source_type": "official_model_and_price"
             }
@@ -8382,12 +8043,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
     "image_path": "assets/images/vehicles/suzuki-e-vitara/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_prices",
         "url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_prices",
+        "url": "https://www.suzukiauto.pt/precios/evitara",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -8395,14 +8061,14 @@ const CAR_DATA = [
         "name": "S2 49 kWh",
         "battery_capacity_kwh": 49,
         "wltp_range_combined_km": 344,
-        "wltp_consumption_combined_kwh_100km": 16.7,
+        "wltp_consumption_combined_kwh_100km": 14.9,
         "power_kw": 106,
         "power_hp": 144,
-        "dc_max_kw": 70,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 36259,
               "currency": "EUR",
               "source_url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
@@ -8420,17 +8086,17 @@ const CAR_DATA = [
                 "variant": "S2 49 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Suzuki e Vitara S2 49 kWh a partir de 36.259 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_prices",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -8447,7 +8113,7 @@ const CAR_DATA = [
                 "source_url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Suzuki e Vitara S2 49 kWh a partir de 36.259 €"
               },
               "source_type": "official_prices"
@@ -8456,50 +8122,50 @@ const CAR_DATA = [
               "classification": "confirmed",
               "amount_eur": 32701,
               "currency": "EUR",
-              "source_url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
+              "source_url": "https://www.suzukiauto.pt/precios/evitara",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "S2 49 kWh",
               "conditions": "Campanha Suzuki para particulares; confirmar despesas.",
               "vat_included": true,
               "proof": {
-                "url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
-                "source_url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
+                "url": "https://www.suzukiauto.pt/precios/evitara",
+                "source_url": "https://www.suzukiauto.pt/precios/evitara",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "S2 49 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Suzuki e Vitara S2 49 kWh PVP campanha de 32.701 €",
+                "literal_excerpt": "49KW S2 32.701€ * ... *PVP recomendado válido no Continente. Inclui IVA, Imposto sobre veículos, Transporte e Campanha Comercial. Não inclui despesas administrativas, taxas e pintura metalizada. Para veículos matriculados até 31/12/2026.",
                 "status": "verified",
                 "source_type": "official_prices",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
               "validity": {
                 "valid_from": null,
-                "valid_until": "2026-09-30"
+                "valid_until": "2026-12-31"
               },
-              "valid_until": "2026-09-30",
+              "valid_until": "2026-12-31",
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Suzuki e Vitara S2 49 kWh PVP campanha de 32.701 €",
+              "evidence": "49KW S2 32.701€ * ... *PVP recomendado válido no Continente. Inclui IVA, Imposto sobre veículos, Transporte e Campanha Comercial. Não inclui despesas administrativas, taxas e pintura metalizada. Para veículos matriculados até 31/12/2026.",
               "evidence_record": {
-                "url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
-                "source_url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
+                "url": "https://www.suzukiauto.pt/precios/evitara",
+                "source_url": "https://www.suzukiauto.pt/precios/evitara",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Suzuki e Vitara S2 49 kWh PVP campanha de 32.701 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "49KW S2 32.701€ * ... *PVP recomendado válido no Continente. Inclui IVA, Imposto sobre veículos, Transporte e Campanha Comercial. Não inclui despesas administrativas, taxas e pintura metalizada. Para veículos matriculados até 31/12/2026."
               },
               "source_type": "official_prices"
             },
@@ -8570,10 +8236,10 @@ const CAR_DATA = [
         "name": "S2 61 kWh",
         "battery_capacity_kwh": 61,
         "wltp_range_combined_km": 426,
-        "wltp_consumption_combined_kwh_100km": 16.6,
+        "wltp_consumption_combined_kwh_100km": 15.1,
         "power_kw": 128,
         "power_hp": 174,
-        "dc_max_kw": 90,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -8631,56 +8297,56 @@ const CAR_DATA = [
               "classification": "confirmed",
               "amount_eur": 37275,
               "currency": "EUR",
-              "source_url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
+              "source_url": "https://www.suzukiauto.pt/precios/evitara",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "S2 61 kWh",
               "conditions": "Campanha Suzuki para particulares; confirmar despesas.",
               "vat_included": true,
               "proof": {
-                "url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
-                "source_url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
+                "url": "https://www.suzukiauto.pt/precios/evitara",
+                "source_url": "https://www.suzukiauto.pt/precios/evitara",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "S2 61 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Suzuki e Vitara S2 61 kWh PVP campanha de 37.275 €",
+                "literal_excerpt": "61KW S2 37.275€ * ... *PVP recomendado válido no Continente. Inclui IVA, Imposto sobre veículos, Transporte e Campanha Comercial. Não inclui despesas administrativas, taxas e pintura metalizada. Para veículos matriculados até 31/12/2026.",
                 "status": "verified",
                 "source_type": "official_prices",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
               "validity": {
                 "valid_from": null,
-                "valid_until": "2026-09-30"
+                "valid_until": "2026-12-31"
               },
-              "valid_until": "2026-09-30",
+              "valid_until": "2026-12-31",
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Suzuki e Vitara S2 61 kWh PVP campanha de 37.275 €",
+              "evidence": "61KW S2 37.275€ * ... *PVP recomendado válido no Continente. Inclui IVA, Imposto sobre veículos, Transporte e Campanha Comercial. Não inclui despesas administrativas, taxas e pintura metalizada. Para veículos matriculados até 31/12/2026.",
               "evidence_record": {
-                "url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
-                "source_url": "https://www.suzukiauto.pt/actualidad/evitara-launch-26",
+                "url": "https://www.suzukiauto.pt/precios/evitara",
+                "source_url": "https://www.suzukiauto.pt/precios/evitara",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Suzuki e Vitara S2 61 kWh PVP campanha de 37.275 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "61KW S2 37.275€ * ... *PVP recomendado válido no Continente. Inclui IVA, Imposto sobre veículos, Transporte e Campanha Comercial. Não inclui despesas administrativas, taxas e pintura metalizada. Para veículos matriculados até 31/12/2026."
               },
               "source_type": "official_prices"
             }
           ]
         },
-        "eligibility_status": "potential_reference",
+        "eligibility_status": "confirmed_eligible",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -8688,7 +8354,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "potential_reference"
+        "eligibility_tier": "confirmed_eligible"
       }
     ],
     "pros": [
@@ -8752,7 +8418,7 @@ const CAR_DATA = [
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 37975.17,
               "currency": "EUR",
               "source_url": "https://www.tesla.com/pt_PT/model3",
@@ -8770,17 +8436,17 @@ const CAR_DATA = [
                 "variant": "Rear-Wheel Drive",
                 "vat_basis": "included",
                 "literal_excerpt": "Tesla Model 3 Rear-Wheel Drive a partir de 37.975,17 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_configurator",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "list_price",
               "customer": "private",
               "audience": "particular",
@@ -8797,14 +8463,14 @@ const CAR_DATA = [
                 "source_url": "https://www.tesla.com/pt_PT/model3",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Tesla Model 3 Rear-Wheel Drive a partir de 37.975,17 €"
               },
               "source_type": "official_configurator"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -8812,7 +8478,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -8836,9 +8502,9 @@ const CAR_DATA = [
       "boot_capacity_l": 594,
       "frunk_capacity_l": 88
     },
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-    "eligibility_tier": "confirmed_eligible"
+    "eligibility_status": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+    "eligibility_tier": "potential_reference"
   },
   {
     "brand": "Toyota",
@@ -8849,7 +8515,7 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.toyota.pt/carros/bz4x",
     "image_path": "assets/images/vehicles/toyota-bz4x/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "pros": [
       "Excelente relação preço/autonomia 100% elétrico no mercado português",
       "Carregamento rápido DC até 150 kW com curva de carga consistente",
@@ -8866,12 +8532,17 @@ const CAR_DATA = [
       {
         "type": "official_model",
         "url": "https://www.toyota.pt/carros/bz4x",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_price_sheet",
         "url": "https://www.toyota.pt/carros/bz4x/especificacoes",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://www.toyota.pt/mundo-toyota/noticias/novo-toyota-bz4x-toda-a-informacao-revelada-do-suv-eletrico",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -8913,7 +8584,7 @@ const CAR_DATA = [
                 "source_url": "https://www.toyota.pt/carros/bz4x/especificacoes",
                 "market": "PT",
                 "recorded_on": "2026-09-02",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "Toyota bZ4X Exclusive PVPR a partir de 45.640 €"
               },
               "proof": {
@@ -8925,17 +8596,17 @@ const CAR_DATA = [
                 "variant": "Exclusive 57,7 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Toyota bZ4X Exclusive PVPR a partir de 45.640 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_price_sheet",
                 "recorded_on": "2026-09-02",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-09-02",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false
+              "verified_on": null,
+              "legacy_unverified": true
             },
             {
               "classification": "reference",
@@ -8964,7 +8635,7 @@ const CAR_DATA = [
                 "source_url": "https://www.toyota.pt/carros/bz4x",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-08-31",
+                "verified_on": null,
                 "literal_excerpt": "Exemplo para Toyota Toyota bZ4X BEV 57.7kWh Elétrico 4X2 Exclusive. PVP: 39.640,00 €."
               },
               "proof": {
@@ -8976,17 +8647,17 @@ const CAR_DATA = [
                 "variant": "Exclusive 57,7 kWh",
                 "vat_basis": "included",
                 "literal_excerpt": "Exemplo para Toyota Toyota bZ4X BEV 57.7kWh Elétrico 4X2 Exclusive. PVP: 39.640,00 €.",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-08-31",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-08-31",
-              "legacy_unverified": false
+              "verified_on": null,
+              "legacy_unverified": true
             }
           ]
         },
@@ -8998,7 +8669,8 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "potential_reference"
+        "eligibility_tier": "potential_reference",
+        "dc_max_kw": 150
       }
     ],
     "dimensions": {
@@ -9023,17 +8695,22 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.volkswagen.pt/id3-neo/id3-neo",
     "image_path": "assets/images/vehicles/volkswagen-id-3/official.webp",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://www.volkswagen.pt/id3-neo/id3-neo",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://www.volkswagen.pt/campanhas-e-financiamento/campanhas/automoveis-eletrificados",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_model",
+        "url": "https://configurador.volkswagen.pt/cc-pt/pt_PT_VW22/V/auv/E07?variant=TREND",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -9041,41 +8718,41 @@ const CAR_DATA = [
         "name": "Trend 50 kWh",
         "battery_capacity_kwh": 50,
         "wltp_range_combined_km": 417,
-        "wltp_consumption_combined_kwh_100km": 14.0,
+        "wltp_consumption_combined_kwh_100km": 13.9,
         "power_kw": 125,
         "power_hp": 170,
-        "dc_max_kw": 120,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
               "classification": "confirmed",
               "amount_eur": 35079,
               "currency": "EUR",
-              "source_url": "https://www.volkswagen.pt/id3-neo/id3-neo",
+              "source_url": "https://configurador.volkswagen.pt/cc-pt/pt_PT_VW22/V/auv/E07?variant=TREND",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
               "variant": "Trend 50 kWh",
               "conditions": null,
               "vat_included": true,
               "proof": {
-                "url": "https://www.volkswagen.pt/id3-neo/id3-neo",
-                "source_url": "https://www.volkswagen.pt/id3-neo/id3-neo",
+                "url": "https://configurador.volkswagen.pt/cc-pt/pt_PT_VW22/V/auv/E07?variant=TREND",
+                "source_url": "https://configurador.volkswagen.pt/cc-pt/pt_PT_VW22/V/auv/E07?variant=TREND",
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
                 "variant": "Trend 50 kWh",
                 "vat_basis": "included",
-                "literal_excerpt": "Volkswagen ID.3 Neo Trend 50kWh 170cv — PVPR a partir de 35.079,00 €",
+                "literal_excerpt": "ID.3 NEO TREND Preço* 35.079,00 €",
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-24",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-24",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -9087,14 +8764,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Volkswagen ID.3 Neo Trend 50kWh 170cv — PVPR a partir de 35.079,00 €",
+              "evidence": "ID.3 NEO TREND Preço* 35.079,00 €",
               "evidence_record": {
-                "url": "https://www.volkswagen.pt/id3-neo/id3-neo",
-                "source_url": "https://www.volkswagen.pt/id3-neo/id3-neo",
+                "url": "https://configurador.volkswagen.pt/cc-pt/pt_PT_VW22/V/auv/E07?variant=TREND",
+                "source_url": "https://configurador.volkswagen.pt/cc-pt/pt_PT_VW22/V/auv/E07?variant=TREND",
                 "market": "PT",
                 "recorded_on": "2026-08-24",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Volkswagen ID.3 Neo Trend 50kWh 170cv — PVPR a partir de 35.079,00 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "ID.3 NEO TREND Preço* 35.079,00 €"
               },
               "source_type": "official_model"
             },
@@ -9196,12 +8873,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.volvocars.com/pt/cars/ex30-electric/",
     "image_path": "assets/images/vehicles/volvo-ex30/photo.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.volvocars.com/pt/cars/ex30-electric/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://www.volvocars.com/pt/cars/ex30-electric/specifications/",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -9209,10 +8891,10 @@ const CAR_DATA = [
         "name": "Single Motor Standard Range",
         "battery_capacity_kwh": 51,
         "wltp_range_combined_km": 337,
-        "wltp_consumption_combined_kwh_100km": 17,
+        "wltp_consumption_combined_kwh_100km": null,
         "power_kw": 200,
         "power_hp": 272,
-        "dc_max_kw": 134,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -9233,17 +8915,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Single Motor Standard Range",
                 "vat_basis": "included",
-                "literal_excerpt": "Volvo EX30 Single Motor Standard Range a partir de 38.632 €",
+                "literal_excerpt": "EX30 Desde 38 632 € PRVP",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -9255,14 +8937,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Volvo EX30 Single Motor Standard Range a partir de 38.632 €",
+              "evidence": "EX30 Desde 38 632 € PRVP",
               "evidence_record": {
                 "url": "https://www.volvocars.com/pt/cars/ex30-electric/",
                 "source_url": "https://www.volvocars.com/pt/cars/ex30-electric/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Volvo EX30 Single Motor Standard Range a partir de 38.632 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "EX30 Desde 38 632 € PRVP"
               },
               "source_type": "official_model_and_price"
             }
@@ -9313,17 +8995,12 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://pt.smart.com/pt/models/hashtag-one/",
     "image_path": "assets/images/vehicles/smart-1/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://pt.smart.com/pt/models/hashtag-one/",
-        "verified_on": "2026-09-02"
-      },
-      {
-        "type": "official_campaign",
-        "url": "https://pt.smart.com/pt/promotions/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -9359,13 +9036,13 @@ const CAR_DATA = [
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -9383,13 +9060,13 @@ const CAR_DATA = [
                 "source_url": "https://pt.smart.com/pt/models/hashtag-one/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "literal_excerpt": "A partir de 36.450 € c/IVA (23%)¹"
               },
               "source_type": "official_model"
             },
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 31980,
               "currency": "EUR",
               "source_url": "https://pt.smart.com/pt/models/hashtag-one/",
@@ -9407,17 +9084,17 @@ const CAR_DATA = [
                 "variant": "Pure",
                 "vat_basis": "included",
                 "literal_excerpt": "smart #1 Pure PVP campanha de 31.980 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -9434,7 +9111,7 @@ const CAR_DATA = [
                 "source_url": "https://pt.smart.com/pt/models/hashtag-one/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "smart #1 Pure PVP campanha de 31.980 €"
               },
               "source_type": "official_model"
@@ -9486,17 +9163,17 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://pt.smart.com/pt/models/hashtag-three/",
     "image_path": "assets/images/vehicles/smart-3/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model",
         "url": "https://pt.smart.com/pt/models/hashtag-three/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       },
       {
         "type": "official_campaign",
         "url": "https://pt.smart.com/pt/promotions/",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
@@ -9504,7 +9181,7 @@ const CAR_DATA = [
         "name": "Pro",
         "battery_capacity_kwh": 49,
         "wltp_range_combined_km": 325,
-        "wltp_consumption_combined_kwh_100km": 17.6,
+        "wltp_consumption_combined_kwh_100km": 17.2,
         "power_kw": 200,
         "power_hp": 272,
         "dc_max_kw": 130,
@@ -9532,13 +9209,13 @@ const CAR_DATA = [
                 "status": "verified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -9556,13 +9233,13 @@ const CAR_DATA = [
                 "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "literal_excerpt": "A partir de 39.950 € c/IVA (23%)¹"
               },
               "source_type": "official_model"
             },
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 35156,
               "currency": "EUR",
               "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
@@ -9580,17 +9257,17 @@ const CAR_DATA = [
                 "variant": "Pro",
                 "vat_basis": "included",
                 "literal_excerpt": "smart #3 Pro PVP campanha de 35.156 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -9607,7 +9284,7 @@ const CAR_DATA = [
                 "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "smart #3 Pro PVP campanha de 35.156 €"
               },
               "source_type": "official_model"
@@ -9628,14 +9305,14 @@ const CAR_DATA = [
         "name": "Pro+",
         "battery_capacity_kwh": 66,
         "wltp_range_combined_km": 435,
-        "wltp_consumption_combined_kwh_100km": 17.2,
+        "wltp_consumption_combined_kwh_100km": 16.8,
         "power_kw": 200,
         "power_hp": 272,
         "dc_max_kw": 150,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
+              "classification": "reference",
               "amount_eur": 39556,
               "currency": "EUR",
               "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
@@ -9653,17 +9330,17 @@ const CAR_DATA = [
                 "variant": "Pro+",
                 "vat_basis": "included",
                 "literal_excerpt": "smart #3 Pro+ PVP campanha de 39.556 €",
-                "status": "verified",
+                "status": "legacy_unverified",
                 "source_type": "official_model",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
-              "legacy_unverified": false,
+              "verified_on": null,
+              "legacy_unverified": true,
               "kind": "campaign_price",
               "customer": "private",
               "audience": "particular",
@@ -9680,14 +9357,14 @@ const CAR_DATA = [
                 "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": null,
                 "literal_excerpt": "smart #3 Pro+ PVP campanha de 39.556 €"
               },
               "source_type": "official_model"
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -9695,7 +9372,7 @@ const CAR_DATA = [
           "source_url": null,
           "verified_on": null
         },
-        "eligibility_tier": "confirmed_eligible"
+        "eligibility_tier": "potential_reference"
       }
     ],
     "pros": [
@@ -9732,23 +9409,28 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.skoda.pt/skoda-elroq/elroq",
     "image_path": "assets/images/vehicles/koda-elroq/official-clean.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.skoda.pt/skoda-elroq/elroq",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
+      },
+      {
+        "type": "official_specification",
+        "url": "https://configurador.skoda.pt/cc-pt/pt_PT_SKODA23/C/auv/EL1?variant=Elroq",
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
-        "name": "Go 50",
-        "battery_capacity_kwh": 52,
-        "wltp_range_combined_km": 375,
-        "wltp_consumption_combined_kwh_100km": 15.7,
-        "power_kw": 125,
-        "power_hp": 170,
-        "dc_max_kw": 145,
+        "name": "Go 60",
+        "battery_capacity_kwh": 61,
+        "wltp_range_combined_km": 453,
+        "wltp_consumption_combined_kwh_100km": 15.12,
+        "power_kw": 140,
+        "power_hp": 190,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
@@ -9758,7 +9440,7 @@ const CAR_DATA = [
               "source_url": "https://www.skoda.pt/skoda-elroq/elroq",
               "source_authority": "manufacturer_or_importer_pt",
               "market": "PT",
-              "variant": "Go 50",
+              "variant": "Go 60",
               "conditions": null,
               "vat_included": true,
               "proof": {
@@ -9767,19 +9449,19 @@ const CAR_DATA = [
                 "authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "audience": "particular",
-                "variant": "Go 50",
+                "variant": "Go 60",
                 "vat_basis": "included",
-                "literal_excerpt": "Škoda Elroq Go 50 a partir de 37.266 €",
+                "literal_excerpt": "Elroq 60 A partir de 37.266,00 €",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "kind": "list_price",
               "customer": "private",
@@ -9791,14 +9473,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Škoda Elroq Go 50 a partir de 37.266 €",
+              "evidence": "Elroq 60 A partir de 37.266,00 €",
               "evidence_record": {
                 "url": "https://www.skoda.pt/skoda-elroq/elroq",
                 "source_url": "https://www.skoda.pt/skoda-elroq/elroq",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Škoda Elroq Go 50 a partir de 37.266 €"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Elroq 60 A partir de 37.266,00 €"
               },
               "source_type": "official_model_and_price"
             }
@@ -9849,23 +9531,23 @@ const CAR_DATA = [
     "availability_status": "available",
     "official_link": "https://www.skoda.pt/epiq/epiq-move",
     "image_path": "assets/images/vehicles/skoda-epiq/official.png",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-10",
     "data_sources": [
       {
         "type": "official_model_and_price",
         "url": "https://www.skoda.pt/epiq/epiq-move",
-        "verified_on": "2026-09-02"
+        "verified_on": "2026-10-10"
       }
     ],
     "variants": [
       {
         "name": "Move 55",
-        "battery_capacity_kwh": 55,
+        "battery_capacity_kwh": 56,
         "wltp_range_combined_km": 440,
-        "wltp_consumption_combined_kwh_100km": 13.87,
+        "wltp_consumption_combined_kwh_100km": 13.88,
         "power_kw": 155,
         "power_hp": 211,
-        "dc_max_kw": 125,
+        "dc_max_kw": null,
         "range_note": "A fonte oficial portuguesa publica autonomia superior a 440 km para a gama Move; regista-se 440 km por defeito.",
         "pricing": {
           "offers": [
@@ -9888,17 +9570,17 @@ const CAR_DATA = [
                 "audience": "particular",
                 "variant": "Move 55",
                 "vat_basis": "included",
-                "literal_excerpt": "Epiq Move A partir de 34.928,00 € — os preços são PVPR para Portugal Continental (incluindo impostos)",
+                "literal_excerpt": "Epiq Move A partir de 34.928,00 €",
                 "status": "verified",
                 "source_type": "official_model_and_price",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
+                "verified_on": "2026-10-10",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
               "recorded_on": "2026-08-16",
-              "verified_on": "2026-09-02",
+              "verified_on": "2026-10-10",
               "legacy_unverified": false,
               "customer": "private",
               "audience": "particular",
@@ -9909,14 +9591,14 @@ const CAR_DATA = [
               "valid_until": null,
               "vat": "included",
               "vat_status": "included",
-              "evidence": "Epiq Move A partir de 34.928,00 € — os preços são PVPR para Portugal Continental (incluindo impostos)",
+              "evidence": "Epiq Move A partir de 34.928,00 €",
               "evidence_record": {
                 "url": "https://www.skoda.pt/epiq/epiq-move",
                 "source_url": "https://www.skoda.pt/epiq/epiq-move",
                 "market": "PT",
                 "recorded_on": "2026-08-16",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Epiq Move A partir de 34.928,00 € — os preços são PVPR para Portugal Continental (incluindo impostos)"
+                "verified_on": "2026-10-10",
+                "literal_excerpt": "Epiq Move A partir de 34.928,00 €"
               },
               "source_type": "official_model_and_price"
             }
@@ -9965,85 +9647,95 @@ const CAR_DATA = [
     "segment": "SUV",
     "release_year": 2026,
     "availability_status": "available",
-    "eligibility_status": "confirmed_eligible",
-    "eligibility_tier": "confirmed_eligible",
-    "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
+    "eligibility_status": "potential_reference",
+    "eligibility_tier": "potential_reference",
+    "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
     "official_link": "https://www.ford.pt/carros/puma-gen-e",
     "image_path": "assets/images/vehicles/ford-puma-gen-e/official.jpg",
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-11",
     "data_sources": [
       {
         "type": "official_model",
-        "url": "https://www.ford.pt/carros/puma-gen-e",
-        "verified_on": "2026-09-02"
+        "url": "https://www.ford.pt/passageiros/puma-gen-e",
+        "verified_on": "2026-10-11"
+      },
+      {
+        "type": "official_configurator",
+        "url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-DK%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C13PZ7&customerType=private&planId=c",
+        "verified_on": "2026-10-11"
+      },
+      {
+        "type": "official_configurator",
+        "url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-BC%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C138WH&customerType=private&planId=c",
+        "verified_on": "2026-10-11"
       }
     ],
     "variants": [
       {
-        "name": "Base 43 kWh",
-        "battery_capacity_kwh": 43.0,
-        "wltp_range_combined_km": 376,
-        "power_kw": 124,
+        "name": "Gen-E 54 kWh",
+        "battery_capacity_kwh": 54,
+        "wltp_range_combined_km": null,
+        "power_kw": 123.5,
         "power_hp": 168,
-        "wltp_consumption_combined_kwh_100km": 13.1,
-        "dc_max_kw": 100,
+        "wltp_consumption_combined_kwh_100km": null,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
-              "kind": "list_price",
-              "amount_eur": 35842.0,
+              "classification": "reference",
+              "kind": "campaign_price",
+              "amount_eur": 32733.45,
               "currency": "EUR",
               "market": "PT",
-              "source_url": "https://www.ford.pt/carros/puma-gen-e",
+              "source_url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-DK%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C13PZ7&customerType=private&planId=c",
               "source_authority": "manufacturer_or_importer_pt",
-              "source_type": "official_model",
+              "source_type": "official_configurator",
               "customer": "private",
               "audience": "particular",
-              "variant": "Base 43 kWh",
-              "conditions": "PVPR de tabela para clientes particulares c/ IVA a 23%.",
-              "vat": "included",
-              "vat_status": "included",
-              "vat_included": true,
+              "variant": "Gen-E 54 kWh",
+              "conditions": "Preço com campanha no configurador oficial para cliente particular; a página não indica IVA nem validade.",
+              "vat": null,
+              "vat_status": "unknown",
+              "vat_included": null,
               "validity": {
                 "valid_from": null,
                 "valid_until": null
               },
               "valid_until": null,
-              "evidence": "Ford Puma Gen-E a partir de 35.842 € com IVA",
+              "evidence": "Série Gen-E Potência FWD 54kWh 168CV ... Preço com campanha* 32.733,45 €",
               "evidence_record": {
-                "url": "https://www.ford.pt/carros/puma-gen-e",
-                "source_url": "https://www.ford.pt/carros/puma-gen-e",
+                "url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-DK%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C13PZ7&customerType=private&planId=c",
+                "source_url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-DK%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C13PZ7&customerType=private&planId=c",
                 "market": "PT",
-                "recorded_on": "2026-09-02",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Ford Puma Gen-E a partir de 35.842 € com IVA"
+                "recorded_on": "2026-10-11",
+                "verified_on": "2026-10-11",
+                "literal_excerpt": "Série Gen-E Potência FWD 54kWh 168CV ... Preço com campanha* 32.733,45 €"
               },
               "proof": {
-                "url": "https://www.ford.pt/carros/puma-gen-e",
-                "source_url": "https://www.ford.pt/carros/puma-gen-e",
-                "authority": "manufacturer_or_importer_pt",
+                "url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-DK%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C13PZ7&customerType=private&planId=c",
+                "source_url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-DK%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C13PZ7&customerType=private&planId=c",
                 "market": "PT",
+                "recorded_on": "2026-10-11",
+                "verified_on": "2026-10-11",
+                "literal_excerpt": "Série Gen-E Potência FWD 54kWh 168CV ... Preço com campanha* 32.733,45 €",
+                "authority": "manufacturer_or_importer_pt",
                 "audience": "particular",
-                "variant": "Base 43 kWh",
-                "vat_basis": "included",
-                "literal_excerpt": "Ford Puma Gen-E a partir de 35.842 € com IVA",
+                "variant": "Gen-E 54 kWh",
+                "vat_basis": "unknown",
                 "status": "verified",
-                "source_type": "official_model",
-                "recorded_on": "2026-09-02",
-                "verified_on": "2026-09-02",
+                "source_type": "official_configurator",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-09-02",
-              "verified_on": "2026-09-02",
+              "recorded_on": "2026-10-11",
+              "verified_on": "2026-10-11",
               "legacy_unverified": false
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
-        "eligibility_tier": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
+        "eligibility_tier": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -10053,70 +9745,70 @@ const CAR_DATA = [
         }
       },
       {
-        "name": "Premium 43 kWh",
-        "battery_capacity_kwh": 43.0,
-        "wltp_range_combined_km": 364,
-        "power_kw": 124,
+        "name": "Premium 54 kWh",
+        "battery_capacity_kwh": 54,
+        "wltp_range_combined_km": null,
+        "power_kw": 123.5,
         "power_hp": 168,
-        "wltp_consumption_combined_kwh_100km": 13.5,
-        "dc_max_kw": 100,
+        "wltp_consumption_combined_kwh_100km": null,
+        "dc_max_kw": null,
         "pricing": {
           "offers": [
             {
-              "classification": "confirmed",
-              "kind": "list_price",
-              "amount_eur": 38179.0,
+              "classification": "reference",
+              "kind": "campaign_price",
+              "amount_eur": 34865.04,
               "currency": "EUR",
               "market": "PT",
-              "source_url": "https://www.ford.pt/carros/puma-gen-e",
+              "source_url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-BC%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C138WH&customerType=private&planId=c",
               "source_authority": "manufacturer_or_importer_pt",
-              "source_type": "official_model",
+              "source_type": "official_configurator",
               "customer": "private",
               "audience": "particular",
-              "variant": "Premium 43 kWh",
-              "conditions": "PVPR de tabela para clientes particulares c/ IVA a 23%.",
-              "vat": "included",
-              "vat_status": "included",
-              "vat_included": true,
+              "variant": "Premium 54 kWh",
+              "conditions": "Preço com campanha no configurador oficial para cliente particular; a página não indica IVA nem validade.",
+              "vat": null,
+              "vat_status": "unknown",
+              "vat_included": null,
               "validity": {
                 "valid_from": null,
                 "valid_until": null
               },
               "valid_until": null,
-              "evidence": "Ford Puma Gen-E Premium a partir de 38.179 € com IVA",
+              "evidence": "Série Premium Potência FWD 54kWh 168CV ... Preço com campanha* 34.865,04 €",
               "evidence_record": {
-                "url": "https://www.ford.pt/carros/puma-gen-e",
-                "source_url": "https://www.ford.pt/carros/puma-gen-e",
+                "url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-BC%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C138WH&customerType=private&planId=c",
+                "source_url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-BC%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C138WH&customerType=private&planId=c",
                 "market": "PT",
-                "recorded_on": "2026-09-02",
-                "verified_on": "2026-09-02",
-                "literal_excerpt": "Ford Puma Gen-E Premium a partir de 38.179 € com IVA"
+                "recorded_on": "2026-10-11",
+                "verified_on": "2026-10-11",
+                "literal_excerpt": "Série Premium Potência FWD 54kWh 168CV ... Preço com campanha* 34.865,04 €"
               },
               "proof": {
-                "url": "https://www.ford.pt/carros/puma-gen-e",
-                "source_url": "https://www.ford.pt/carros/puma-gen-e",
-                "authority": "manufacturer_or_importer_pt",
+                "url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-BC%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C138WH&customerType=private&planId=c",
+                "source_url": "https://www.ford.pt/compra/comprar-online/configure-o-seu-ford/mec?catalogId=WAEPX-CF7-2024-PumaGen-EPRT202700&config=pt_PT%2CWAEPX-CF7-2024-PumaGen-EPRT202700%2CACMAA_VS-BC%2CBS-HC%2CDGAFG_DR--A_EN-C0_TR-WA%2CPN3MA%2C138WH&customerType=private&planId=c",
                 "market": "PT",
+                "recorded_on": "2026-10-11",
+                "verified_on": "2026-10-11",
+                "literal_excerpt": "Série Premium Potência FWD 54kWh 168CV ... Preço com campanha* 34.865,04 €",
+                "authority": "manufacturer_or_importer_pt",
                 "audience": "particular",
-                "variant": "Premium 43 kWh",
-                "vat_basis": "included",
-                "literal_excerpt": "Ford Puma Gen-E Premium a partir de 38.179 € com IVA",
+                "variant": "Premium 54 kWh",
+                "vat_basis": "unknown",
                 "status": "verified",
-                "source_type": "official_model",
-                "recorded_on": "2026-09-02",
-                "verified_on": "2026-09-02",
+                "source_type": "official_configurator",
                 "source_authority": "manufacturer_or_importer_pt",
                 "customer": "private"
               },
               "derivation": null,
-              "recorded_on": "2026-09-02",
-              "verified_on": "2026-09-02",
+              "recorded_on": "2026-10-11",
+              "verified_on": "2026-10-11",
               "legacy_unverified": false
             }
           ]
         },
-        "eligibility_status": "confirmed_eligible",
-        "eligibility_tier": "confirmed_eligible",
+        "eligibility_status": "potential_reference",
+        "eligibility_tier": "potential_reference",
         "battery_technology": {
           "chemistry": null,
           "generation": null,
@@ -10159,22 +9851,6 @@ const DEALER_DATA = {
     "email": "stand.circunvalacao@filintomota.pt",
     "official_url": "https://www.filintomota.pt/localizacoes/filinto-mota-porto-circunvalacao/",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Filinto%20Mota%20Circunvalacao%2010686",
-    "services": [
-      "sales",
-      "service"
-    ],
-    "verified_on": "2026-10-10"
-  },
-  "AION": {
-    "brand": "AION",
-    "name": "GAC AION Porto – Carby",
-    "address": "Estrada da Circunvalação, 10408",
-    "postal_code": "4460-383",
-    "locality": "Porto",
-    "phone": "+351 210 496 929",
-    "email": null,
-    "official_url": "https://gac-portugal.pt/rede-de-concessionarios/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=GAC%20AION%20Carby%20Porto%20Circunvalacao%2010408",
     "services": [
       "sales",
       "service"
@@ -10325,30 +10001,30 @@ const DEALER_DATA = {
   },
   "Ford": {
     "brand": "Ford",
-    "name": "C.A.M. – Ford Matosinhos",
-    "address": "Rua de Sendim, 180",
-    "postal_code": "4450-264",
-    "locality": "Matosinhos",
-    "phone": "+351 229 397 000",
+    "name": "C.A.M. (PORTO)",
+    "address": "R. Delfim Ferreira, 188",
+    "postal_code": "4100-199",
+    "locality": "Porto",
+    "phone": "+351 220 001 400",
     "email": null,
     "official_url": "https://www.ford.pt/concessionarios",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Ford%20CAM%20Matosinhos",
+    "maps_url": "https://maps.google.com/?saddr=S%C3%A3o%20Mamede%20de%20Infesta,%20Portugal&daddr=R.%20Delfim%20Ferreira,%20188+PORTO+4100-199&output=classic",
     "services": [
       "sales",
       "service"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Geely": {
     "brand": "Geely",
     "name": "Caetano Geely Porto",
-    "address": "Avenida Fontes Pereira de Melo, 305",
-    "postal_code": "4100-178",
+    "address": "Rua Eng.º Ferreira Dias, 765",
+    "postal_code": "4100-247",
     "locality": "Porto",
     "phone": "+351 226 194 470",
     "email": null,
-    "official_url": "https://caetano.pt/geely/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Geely%20Porto",
+    "official_url": "https://www.geely-auto.pt/concessionarios",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Caetano%20Geely%20Porto%20Rua%20Engenheiro%20Ferreira%20Dias%20765",
     "services": [
       "sales"
     ],
@@ -10450,21 +10126,6 @@ const DEALER_DATA = {
     ],
     "verified_on": "2026-10-10"
   },
-  "Mazda": {
-    "brand": "Mazda",
-    "name": "M. Coutinho Porto",
-    "address": "Estrada Exterior da Circunvalação, 3708",
-    "postal_code": "4435-187",
-    "locality": "Rio Tinto",
-    "phone": "+351 229 771 000",
-    "email": "mazda@mcoutinho.pt",
-    "official_url": "https://www.mazda.pt/concessionario/m-coutinho-porto-sa/overview/",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=M.%20Coutinho%20Porto%20Mazda%20Estrada%20Exterior%20da%20Circunvalacao%203708%204435-187%20Rio%20Tinto",
-    "services": [
-      "sales"
-    ],
-    "verified_on": "2026-10-10"
-  },
   "MG": {
     "brand": "MG",
     "name": "JOP Oriente",
@@ -10516,7 +10177,7 @@ const DEALER_DATA = {
     "brand": "Omoda",
     "name": "Carby Omoda & Jaecoo Porto",
     "address": "Estrada da Circunvalação, 10448",
-    "postal_code": "4465-112",
+    "postal_code": "4468-383",
     "locality": "Senhora da Hora",
     "phone": "+351 800 209 001",
     "email": null,
@@ -10614,16 +10275,16 @@ const DEALER_DATA = {
     "address": "Avenida Fontes Pereira de Melo, 318",
     "postal_code": "4100-259",
     "locality": "Porto",
-    "phone": "+351 300 527 476",
+    "phone": "+351 221 208 735",
     "email": null,
-    "official_url": "https://www.tesla.com/pt_PT/findus/list/stores/Portugal",
+    "official_url": "https://www.tesla.com/pt_PT/findus/location/store/portoavfontespereirademelo",
     "maps_url": "https://www.google.com/maps/search/?api=1&query=Tesla%20Center%20Porto%20Fontes%20Pereira%20de%20Melo%20318",
     "services": [
       "sales",
       "service",
       "delivery"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-11"
   },
   "Toyota": {
     "brand": "Toyota",
@@ -10660,19 +10321,20 @@ const DEALER_DATA = {
   },
   "Volvo": {
     "brand": "Volvo",
-    "name": "JOP Volvo Porto",
-    "address": "Rua Manuel Pinto de Azevedo, 671",
-    "postal_code": "4149-010",
+    "name": "JOP - Porto",
+    "address": "Rua Manuel Pinto de Azevedo, 510",
+    "postal_code": "4100-320",
     "locality": "Porto",
-    "phone": "+351 226 157 400",
+    "phone": "+351 229 050 505",
     "email": null,
-    "official_url": "https://www.jop.pt/marcas/volvo",
-    "maps_url": "https://www.google.com/maps/search/?api=1&query=JOP%20Volvo%20Porto%20Manuel%20Pinto%20de%20Azevedo%20671",
+    "official_url": "https://www.volvocars.com/pt/dealers/concessionarios/",
+    "maps_url": "https://maps.google.com/?q=JOP%20-%20Porto,%20Rua%20Manuel%20Pinto%20de%20Azevedo,%20510%20Porto,%204100-320",
     "services": [
       "sales",
-      "service"
+      "service",
+      "delivery"
     ],
-    "verified_on": "2026-08-16"
+    "verified_on": "2026-10-10"
   },
   "Škoda": {
     "brand": "Škoda",

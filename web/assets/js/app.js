@@ -437,9 +437,7 @@ function renderOverview(filteredList = flatCars) {
       ? `${car.specifications.battery_capacity_kwh} kWh`
       : "N/A";
 
-    const power = car.specifications.power_hp
-      ? `${car.specifications.power_hp} cv`
-      : "N/A";
+    const power = VehicleSpecs.formatPower(car.specifications);
 
     // Dimensions & Luggage formatting
     const dim = car.dimensions;
@@ -1183,14 +1181,15 @@ function updateComparison() {
   const maxTrunk = 500;
 
   // Range Combined
-  const valRangeA = carA.specifications.wltp_range_combined_km || 0;
-  const valRangeB = carB.specifications.wltp_range_combined_km || 0;
-  document.getElementById("val-range-a").textContent = `${valRangeA} km`;
-  document.getElementById("val-range-b").textContent = `${valRangeB} km`;
+  // null significa "por confirmar": mostra N/A e barra vazia, nunca "0 km".
+  const valRangeA = carA.specifications.wltp_range_combined_km;
+  const valRangeB = carB.specifications.wltp_range_combined_km;
+  document.getElementById("val-range-a").textContent = valRangeA ? `${valRangeA} km` : "N/A";
+  document.getElementById("val-range-b").textContent = valRangeB ? `${valRangeB} km` : "N/A";
   document.getElementById("bar-range-a").style.width =
-    `${Math.min(100, (valRangeA / maxRange) * 100)}%`;
+    `${Math.min(100, ((valRangeA || 0) / maxRange) * 100)}%`;
   document.getElementById("bar-range-b").style.width =
-    `${Math.min(100, (valRangeB / maxRange) * 100)}%`;
+    `${Math.min(100, ((valRangeB || 0) / maxRange) * 100)}%`;
 
   // Acceleration (Less is better)
   const rawAccelA = carA.specifications.acceleration_0_100_s;
@@ -1209,14 +1208,14 @@ function updateComparison() {
       : "0%";
 
   // Battery
-  const valBatteryA = carA.specifications.battery_capacity_kwh || 0;
-  const valBatteryB = carB.specifications.battery_capacity_kwh || 0;
-  document.getElementById("val-battery-a").textContent = `${valBatteryA} kWh`;
-  document.getElementById("val-battery-b").textContent = `${valBatteryB} kWh`;
+  const valBatteryA = carA.specifications.battery_capacity_kwh;
+  const valBatteryB = carB.specifications.battery_capacity_kwh;
+  document.getElementById("val-battery-a").textContent = valBatteryA ? `${valBatteryA} kWh` : "N/A";
+  document.getElementById("val-battery-b").textContent = valBatteryB ? `${valBatteryB} kWh` : "N/A";
   document.getElementById("bar-battery-a").style.width =
-    `${Math.min(100, (valBatteryA / maxBattery) * 100)}%`;
+    `${Math.min(100, ((valBatteryA || 0) / maxBattery) * 100)}%`;
   document.getElementById("bar-battery-b").style.width =
-    `${Math.min(100, (valBatteryB / maxBattery) * 100)}%`;
+    `${Math.min(100, ((valBatteryB || 0) / maxBattery) * 100)}%`;
 
   // Trunk
   const valTrunkA = carA.specifications.trunk_capacity_l || 0;
@@ -1383,12 +1382,8 @@ function updateComparison() {
     },
     {
       label: "Potência Máxima",
-      valA: carA.specifications.power_hp
-        ? `${carA.specifications.power_hp} cv (${carA.specifications.power_kw} kW)`
-        : "N/A",
-      valB: carB.specifications.power_hp
-        ? `${carB.specifications.power_hp} cv (${carB.specifications.power_kw} kW)`
-        : "N/A",
+      valA: VehicleSpecs.formatPower(carA.specifications, true),
+      valB: VehicleSpecs.formatPower(carB.specifications, true),
     },
     {
       label: "Binário Motor",

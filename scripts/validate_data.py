@@ -650,8 +650,9 @@ def validate_variant(model: dict, variant: dict, vlabel: str, variant_names: set
     if variant.get("name") in variant_names:
         errors.append(f"{vlabel}: variante duplicada")
     variant_names.add(variant.get("name"))
+    # null significa "por confirmar" (AGENTS.md §1, §6.9); um valor presente tem de ser positivo.
     for numeric in ("battery_capacity_kwh", "wltp_range_combined_km", "power_kw", "power_hp"):
-        if not finite_non_negative(variant.get(numeric), strictly_positive=True):
+        if numeric in variant and variant[numeric] is not None and not finite_non_negative(variant[numeric], strictly_positive=True):
             errors.append(f"{vlabel}: {numeric} inválido")
     pricing = variant.get("pricing", {})
     allow_empty = isinstance(pricing, dict) and pricing.get("offers") == [] and variant.get("eligibility_status") == "not_demonstrated" and variant.get("eligibility_tier") == "not_demonstrated"

@@ -27,10 +27,21 @@
     return value === null || value === undefined ? "N/A" : value;
   }
 
+  // Potência: mostra apenas os valores confirmados; um deles pode ser null.
+  function formatPower(specs, withKw = false) {
+    const hp = specs && specs.power_hp;
+    const kw = specs && specs.power_kw;
+    if (hp && kw && withKw) return `${hp} cv (${kw} kW)`;
+    if (hp) return `${hp} cv`;
+    if (kw) return `${kw} kW`;
+    return "N/A";
+  }
+
   const api = {
     boolLabel,
     v2lLabel,
     cellValue,
+    formatPower,
   };
 
   root.VehicleSpecs = api;

@@ -47,6 +47,18 @@ MUTACOES = [
         'variant.get("eligibility_tier") != computed',
         "variante para remoção deixa de ser reportada",
     ),
+    (
+        "scripts/validate_data.py",
+        "if numeric in variant and variant[numeric] is not None and not finite_non_negative",
+        "if not finite_non_negative",
+        "especificação por confirmar (null) volta a ser recusada",
+    ),
+    (
+        "scripts/validate_data.py",
+        "and not finite_non_negative(variant[numeric], strictly_positive=True)",
+        "and not finite_non_negative(variant[numeric], strictly_positive=False)",
+        "especificação a zero passa a ser aceite",
+    ),
     # --- cabeçalhos de imagem ---
     ("scripts/validate_data.py", 'if header[:2] == b"\\xff\\xd8":', "if False:", "JPEG deixa de ser reconhecido"),
     ("scripts/validate_data.py", 'if header[:4] == b"RIFF" and header[8:12] == b"WEBP":', "if False:", "WebP deixa de ser reconhecido"),
