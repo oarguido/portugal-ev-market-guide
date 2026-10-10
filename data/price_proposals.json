@@ -3,232 +3,11 @@
     "offers": [
       {
         "kind": "campaign_price",
-        "amount_eur": 26560.0,
-        "vat": "included",
-        "customer": "private",
-        "variant": "Premium Green",
-        "conditions": "Só com Crédito Automóvel com reserva de propriedade (Cetelem), sujeito a aprovação. Entrada inicial de 7.968,00€ e 59 mensalidades de 270,00€. Limitado ao stock dos concessionários aderentes. Inclui pintura metalizada (mono-tom). Não inclui despesas de documentação e transporte.",
-        "validity": {
-          "valid_from": null,
-          "valid_until": "2026-09-30"
-        },
-        "evidence": "PVP com campanha: 26.560,00€.",
-        "derivation": null,
-        "classification": "reference",
-        "currency": "EUR",
-        "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-        "source_authority": "manufacturer_or_importer_pt",
-        "market": "PT",
-        "vat_included": true,
-        "audience": "particular",
-        "valid_until": "2026-09-30",
-        "vat_status": "included",
-        "source_type": "official_campaign",
-        "proof": {
-          "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-          "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-          "authority": "manufacturer_or_importer_pt",
-          "market": "PT",
-          "audience": "particular",
-          "variant": "Premium Green",
-          "vat_basis": "included",
-          "literal_excerpt": "PVP com campanha: 26.560,00€.",
-          "status": "verified",
-          "source_type": "official_campaign",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "source_authority": "manufacturer_or_importer_pt",
-          "customer": "private"
-        },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
-        "evidence_record": {
-          "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-          "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-          "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "PVP com campanha: 26.560,00€."
-        }
-      },
-      {
-        "kind": "list_price",
-        "amount_eur": 28190.0,
-        "vat": "included",
-        "customer": "private",
-        "variant": "Premium Green",
-        "conditions": "PVP sem financiamento. Inclui pintura metalizada (mono-tom). Não inclui despesas de documentação e transporte.",
-        "validity": {
-          "valid_from": null,
-          "valid_until": null
-        },
-        "evidence": "PVP sem financiamento: 28.190,00€.",
-        "derivation": null,
-        "classification": "reference",
-        "currency": "EUR",
-        "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-        "source_authority": "manufacturer_or_importer_pt",
-        "market": "PT",
-        "vat_included": true,
-        "audience": "particular",
-        "valid_until": null,
-        "vat_status": "included",
-        "source_type": "official_campaign",
-        "proof": {
-          "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-          "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-          "authority": "manufacturer_or_importer_pt",
-          "market": "PT",
-          "audience": "particular",
-          "variant": "Premium Green",
-          "vat_basis": "included",
-          "literal_excerpt": "PVP sem financiamento: 28.190,00€.",
-          "status": "verified",
-          "source_type": "official_campaign",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "source_authority": "manufacturer_or_importer_pt",
-          "customer": "private"
-        },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
-        "evidence_record": {
-          "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-          "source_url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/",
-          "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "PVP sem financiamento: 28.190,00€."
-        }
-      }
-    ],
-    "brand": "AION",
-    "model": "UT",
-    "url": "https://gac-portugal.pt/campanhas/aion-ut-financiamento-particulares/"
-  },
-  {
-    "offers": [
-      {
-        "kind": "campaign_price",
-        "amount_eur": 22790.0,
-        "vat": "excluded",
-        "customer": "unknown",
-        "variant": null,
-        "conditions": "Montante indicado com '+IVA' e asterisco sem nota de rodapé no texto; junto a 'Ver campanha'; não é preço particular elegível. O mesmo montante aparece como 'Desde 22.790€' sem indicação de IVA.",
-        "validity": {
-          "valid_from": null,
-          "valid_until": null
-        },
-        "evidence": "Autonomia e agilidade de excelência, a 22.790€ (+IVA)*.",
-        "derivation": null,
-        "classification": "reference",
-        "currency": "EUR",
-        "source_url": "https://byd-auto.pt/modelos/byd-dolphin-surf/",
-        "source_authority": "manufacturer_or_importer_pt",
-        "market": "PT",
-        "vat_included": null,
-        "audience": "unknown",
-        "valid_until": null,
-        "vat_status": "excluded",
-        "source_type": "official_model",
-        "proof": {
-          "url": "https://byd-auto.pt/modelos/byd-dolphin-surf/",
-          "source_url": "https://byd-auto.pt/modelos/byd-dolphin-surf/",
-          "authority": "manufacturer_or_importer_pt",
-          "market": "PT",
-          "audience": "unknown",
-          "variant": null,
-          "vat_basis": "excluded",
-          "literal_excerpt": "Autonomia e agilidade de excelência, a 22.790€ (+IVA)*.",
-          "status": "verified",
-          "source_type": "official_model",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "source_authority": "manufacturer_or_importer_pt",
-          "customer": "unknown"
-        },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
-        "evidence_record": {
-          "url": "https://byd-auto.pt/modelos/byd-dolphin-surf/",
-          "source_url": "https://byd-auto.pt/modelos/byd-dolphin-surf/",
-          "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "Autonomia e agilidade de excelência, a 22.790€ (+IVA)*."
-        }
-      }
-    ],
-    "brand": "BYD",
-    "model": "Dolphin Surf",
-    "url": "https://byd-auto.pt/modelos/byd-dolphin-surf/"
-  },
-  {
-    "offers": [
-      {
-        "kind": "list_price",
-        "amount_eur": 34490.0,
-        "vat": "included",
-        "customer": "private",
-        "variant": "Pure",
-        "conditions": "Preço de referência do exemplo de crédito automóvel com reserva de propriedade (TAN 0,00%, TAEG 2,6%, 48 mensalidades de 395,00€, entrada inicial 15.530,00€); limitado ao stock dos concessionários aderentes; não inclui pintura metalizada nem despesas de documentação e transporte",
-        "validity": {
-          "valid_from": null,
-          "valid_until": "2026-09-30"
-        },
-        "evidence": "PVP 34.490,00€.",
-        "derivation": null,
-        "classification": "reference",
-        "currency": "EUR",
-        "source_url": "https://omodajaecoo.pt/0-juros/",
-        "source_authority": "manufacturer_or_importer_pt",
-        "market": "PT",
-        "vat_included": true,
-        "audience": "particular",
-        "valid_until": "2026-09-30",
-        "vat_status": "included",
-        "source_type": "official_campaign",
-        "proof": {
-          "url": "https://omodajaecoo.pt/0-juros/",
-          "source_url": "https://omodajaecoo.pt/0-juros/",
-          "authority": "manufacturer_or_importer_pt",
-          "market": "PT",
-          "audience": "particular",
-          "variant": "Pure",
-          "vat_basis": "included",
-          "literal_excerpt": "PVP 34.490,00€.",
-          "status": "verified",
-          "source_type": "official_campaign",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "source_authority": "manufacturer_or_importer_pt",
-          "customer": "private"
-        },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
-        "evidence_record": {
-          "url": "https://omodajaecoo.pt/0-juros/",
-          "source_url": "https://omodajaecoo.pt/0-juros/",
-          "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "PVP 34.490,00€."
-        }
-      }
-    ],
-    "brand": "Jaecoo",
-    "model": "5 EV",
-    "url": "https://omodajaecoo.pt/0-juros/"
-  },
-  {
-    "offers": [
-      {
-        "kind": "campaign_price",
         "amount_eur": 20600.0,
         "vat": "excluded",
         "customer": "company",
         "variant": null,
-        "conditions": "Chave na mão; Exclusivo empresas; Preço sem pintura; Isenção de IUC; IVA dedutível; Isenção da Taxa de Tributação Autónoma",
+        "conditions": "Exclusivo empresas; preço sem IVA; preço sem pintura; modalidade chave na mão; sujeito a nota legal não incluída no texto",
         "validity": {
           "valid_from": null,
           "valid_until": null
@@ -256,19 +35,19 @@
           "literal_excerpt": "20.600€ +IVA*",
           "status": "verified",
           "source_type": "official_model_and_price",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
           "source_authority": "manufacturer_or_importer_pt",
           "customer": "company"
         },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
+        "recorded_on": "2026-10-10",
+        "verified_on": "2026-10-10",
         "evidence_record": {
           "url": "https://kia.pt/modelos/kia-ev2/",
           "source_url": "https://kia.pt/modelos/kia-ev2/",
           "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
           "literal_excerpt": "20.600€ +IVA*"
         }
       }
@@ -285,7 +64,7 @@
         "vat": "excluded",
         "customer": "company",
         "variant": null,
-        "conditions": "Exclusivo empresas; preço sem pintura; valor 'Desde' sem IVA",
+        "conditions": "Exclusivo empresas; preço sem pintura; valor +IVA; ver nota legal",
         "validity": {
           "valid_from": null,
           "valid_until": null
@@ -313,19 +92,19 @@
           "literal_excerpt": "Desde: 28.880€ +IVA",
           "status": "verified",
           "source_type": "official_model_and_price",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
           "source_authority": "manufacturer_or_importer_pt",
           "customer": "company"
         },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
+        "recorded_on": "2026-10-10",
+        "verified_on": "2026-10-10",
         "evidence_record": {
           "url": "https://kia.pt/modelos/kia-ev3/",
           "source_url": "https://kia.pt/modelos/kia-ev3/",
           "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
           "literal_excerpt": "Desde: 28.880€ +IVA"
         }
       }
@@ -342,7 +121,7 @@
         "vat": "excluded",
         "customer": "company",
         "variant": null,
-        "conditions": "Exclusivo empresas; preço sem IVA e sem pintura; proposta de referência, não é preço particular",
+        "conditions": "Exclusivo empresas; preço sem pintura; valor +IVA; nota legal (*) não incluída no texto",
         "validity": {
           "valid_from": null,
           "valid_until": null
@@ -370,19 +149,19 @@
           "literal_excerpt": "Desde: 29.260€ +IVA*",
           "status": "verified",
           "source_type": "official_model_and_price",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
           "source_authority": "manufacturer_or_importer_pt",
           "customer": "company"
         },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
+        "recorded_on": "2026-10-10",
+        "verified_on": "2026-10-10",
         "evidence_record": {
           "url": "https://kia.pt/modelos/kia-ev4/",
           "source_url": "https://kia.pt/modelos/kia-ev4/",
           "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
           "literal_excerpt": "Desde: 29.260€ +IVA*"
         }
       }
@@ -395,248 +174,20 @@
     "offers": [
       {
         "kind": "list_price",
-        "amount_eur": 24500.0,
-        "vat": "included",
-        "customer": "private",
-        "variant": null,
-        "conditions": "Preço 'desde' para particulares; o valor final varia consoante a versão e a bateria. A página não indica o IVA de forma explícita.",
-        "validity": {
-          "valid_from": null,
-          "valid_until": null
-        },
-        "evidence": "O Novo Leapmotor B05 está disponível a partir de 24 500 €, um preço competitivo dentro do segmento dos elétricos compactos.",
-        "derivation": null,
-        "classification": "reference",
-        "currency": "EUR",
-        "source_url": "https://www.filintomota.pt/marca/leapmotor/b05/",
-        "source_authority": "authorised_dealer_pt",
-        "market": "PT",
-        "vat_included": true,
-        "audience": "particular",
-        "valid_until": null,
-        "vat_status": "included",
-        "source_type": "official_dealer_model_and_price",
-        "proof": {
-          "url": "https://www.filintomota.pt/marca/leapmotor/b05/",
-          "source_url": "https://www.filintomota.pt/marca/leapmotor/b05/",
-          "authority": "authorised_dealer_pt",
-          "market": "PT",
-          "audience": "particular",
-          "variant": null,
-          "vat_basis": "included",
-          "literal_excerpt": "O Novo Leapmotor B05 está disponível a partir de 24 500 €, um preço competitivo dentro do segmento dos elétricos compactos.",
-          "status": "verified",
-          "source_type": "official_dealer_model_and_price",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "source_authority": "authorised_dealer_pt",
-          "customer": "private"
-        },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
-        "evidence_record": {
-          "url": "https://www.filintomota.pt/marca/leapmotor/b05/",
-          "source_url": "https://www.filintomota.pt/marca/leapmotor/b05/",
-          "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "O Novo Leapmotor B05 está disponível a partir de 24 500 €, um preço competitivo dentro do segmento dos elétricos compactos."
-        }
-      }
-    ],
-    "brand": "Leapmotor",
-    "model": "B05",
-    "url": "https://www.filintomota.pt/marca/leapmotor/b05/"
-  },
-  {
-    "offers": [
-      {
-        "kind": "list_price",
-        "amount_eur": 33900.0,
-        "vat": "included",
-        "customer": "private",
-        "variant": null,
-        "conditions": "Preço 'Desde' para particulares; a página não diz se inclui IVA nem se é PVPR",
-        "validity": {
-          "valid_from": null,
-          "valid_until": null
-        },
-        "evidence": "33.900€",
-        "derivation": null,
-        "classification": "reference",
-        "currency": "EUR",
-        "source_url": "https://www.filintomota.pt/marca/leapmotor/c10/",
-        "source_authority": "authorised_dealer_pt",
-        "market": "PT",
-        "vat_included": true,
-        "audience": "particular",
-        "valid_until": null,
-        "vat_status": "included",
-        "source_type": "official_dealer_model_and_price",
-        "proof": {
-          "url": "https://www.filintomota.pt/marca/leapmotor/c10/",
-          "source_url": "https://www.filintomota.pt/marca/leapmotor/c10/",
-          "authority": "authorised_dealer_pt",
-          "market": "PT",
-          "audience": "particular",
-          "variant": null,
-          "vat_basis": "included",
-          "literal_excerpt": "33.900€",
-          "status": "verified",
-          "source_type": "official_dealer_model_and_price",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "source_authority": "authorised_dealer_pt",
-          "customer": "private"
-        },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
-        "evidence_record": {
-          "url": "https://www.filintomota.pt/marca/leapmotor/c10/",
-          "source_url": "https://www.filintomota.pt/marca/leapmotor/c10/",
-          "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "33.900€"
-        }
-      }
-    ],
-    "brand": "Leapmotor",
-    "model": "C10",
-    "url": "https://www.filintomota.pt/marca/leapmotor/c10/"
-  },
-  {
-    "offers": [
-      {
-        "kind": "list_price",
-        "amount_eur": 32367.0,
+        "amount_eur": 36450.0,
         "vat": "included",
         "customer": "unknown",
         "variant": null,
-        "conditions": "Preço 'desde' do MG4 EV, com asterisco cuja nota legal não aparece no texto; o texto não diz se inclui IVA nem se é para particulares nem se é preço de campanha (o menu mostra 'NOVO PREÇO')",
+        "conditions": "Preço 'a partir de', sem versão identificada. Inclui transporte, taxas e impostos. Exclui custos administrativos e ecovalores (SIGVFV, SIGRBA, SIGPU, SIGOU), salvo indicação em contrário. Os preços não são vinculativos e podem mudar sem aviso prévio. Nos Açores e na Madeira o preço final pode variar.",
         "validity": {
           "valid_from": null,
           "valid_until": null
         },
-        "evidence": "Desde 32.367€*",
+        "evidence": "A partir de 36.450 € c/IVA (23%)¹",
         "derivation": null,
         "classification": "reference",
         "currency": "EUR",
-        "source_url": "https://www.mgmotor.pt/technology",
-        "source_authority": "manufacturer_or_importer_pt",
-        "market": "PT",
-        "vat_included": null,
-        "audience": "unknown",
-        "valid_until": null,
-        "vat_status": "included",
-        "source_type": "official_price",
-        "proof": {
-          "url": "https://www.mgmotor.pt/technology",
-          "source_url": "https://www.mgmotor.pt/technology",
-          "authority": "manufacturer_or_importer_pt",
-          "market": "PT",
-          "audience": "unknown",
-          "variant": null,
-          "vat_basis": "included",
-          "literal_excerpt": "Desde 32.367€*",
-          "status": "verified",
-          "source_type": "official_price",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "source_authority": "manufacturer_or_importer_pt",
-          "customer": "unknown"
-        },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
-        "evidence_record": {
-          "url": "https://www.mgmotor.pt/technology",
-          "source_url": "https://www.mgmotor.pt/technology",
-          "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "Desde 32.367€*"
-        }
-      }
-    ],
-    "brand": "MG",
-    "model": "MG4",
-    "url": "https://www.mgmotor.pt/technology"
-  },
-  {
-    "offers": [
-      {
-        "kind": "list_price",
-        "amount_eur": 34900.0,
-        "vat": "included",
-        "customer": "private",
-        "variant": "Comfort",
-        "conditions": "PVP de referência da campanha de Crédito Automóvel 0% TAN (Cetelem), válida para clientes particulares e limitada ao stock nos concessionários aderentes. Entrada inicial 15.940,00€ + 48 mensalidades de 395,00€, TAEG 2,6%. Não inclui pintura metalizada (mono-tom) nem despesas de documentação e transporte.",
-        "validity": {
-          "valid_from": null,
-          "valid_until": "2026-09-30"
-        },
-        "evidence": "PVP 34.900,00€.",
-        "derivation": null,
-        "classification": "reference",
-        "currency": "EUR",
-        "source_url": "https://omodajaecoo.pt/0-juros/",
-        "source_authority": "manufacturer_or_importer_pt",
-        "market": "PT",
-        "vat_included": true,
-        "audience": "particular",
-        "valid_until": "2026-09-30",
-        "vat_status": "included",
-        "source_type": "official_campaign",
-        "proof": {
-          "url": "https://omodajaecoo.pt/0-juros/",
-          "source_url": "https://omodajaecoo.pt/0-juros/",
-          "authority": "manufacturer_or_importer_pt",
-          "market": "PT",
-          "audience": "particular",
-          "variant": "Comfort",
-          "vat_basis": "included",
-          "literal_excerpt": "PVP 34.900,00€.",
-          "status": "verified",
-          "source_type": "official_campaign",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "source_authority": "manufacturer_or_importer_pt",
-          "customer": "private"
-        },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
-        "evidence_record": {
-          "url": "https://omodajaecoo.pt/0-juros/",
-          "source_url": "https://omodajaecoo.pt/0-juros/",
-          "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "PVP 34.900,00€."
-        }
-      }
-    ],
-    "brand": "Omoda",
-    "model": "5 EV",
-    "url": "https://omodajaecoo.pt/0-juros/"
-  },
-  {
-    "offers": [
-      {
-        "kind": "list_price",
-        "amount_eur": 37240.0,
-        "vat": "included",
-        "customer": "unknown",
-        "variant": null,
-        "conditions": "Preço 'desde' da motorização 100% Elétrico; a página não diz se é PVPR nem se inclui IVA, e não identifica a versão",
-        "validity": {
-          "valid_from": null,
-          "valid_until": null
-        },
-        "evidence": "100% Elétrico desde 37.240€",
-        "derivation": null,
-        "classification": "reference",
-        "currency": "EUR",
-        "source_url": "https://www.opel.pt/cars/astra-models.html",
+        "source_url": "https://pt.smart.com/pt/models/hashtag-one/",
         "source_authority": "manufacturer_or_importer_pt",
         "market": "PT",
         "vat_included": null,
@@ -645,55 +196,105 @@
         "vat_status": "included",
         "source_type": "official_model",
         "proof": {
-          "url": "https://www.opel.pt/cars/astra-models.html",
-          "source_url": "https://www.opel.pt/cars/astra-models.html",
+          "url": "https://pt.smart.com/pt/models/hashtag-one/",
+          "source_url": "https://pt.smart.com/pt/models/hashtag-one/",
           "authority": "manufacturer_or_importer_pt",
           "market": "PT",
           "audience": "unknown",
           "variant": null,
           "vat_basis": "included",
-          "literal_excerpt": "100% Elétrico desde 37.240€",
+          "literal_excerpt": "A partir de 36.450 € c/IVA (23%)¹",
           "status": "verified",
           "source_type": "official_model",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
           "source_authority": "manufacturer_or_importer_pt",
           "customer": "unknown"
         },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
+        "recorded_on": "2026-10-10",
+        "verified_on": "2026-10-10",
         "evidence_record": {
-          "url": "https://www.opel.pt/cars/astra-models.html",
-          "source_url": "https://www.opel.pt/cars/astra-models.html",
+          "url": "https://pt.smart.com/pt/models/hashtag-one/",
+          "source_url": "https://pt.smart.com/pt/models/hashtag-one/",
           "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "100% Elétrico desde 37.240€"
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
+          "literal_excerpt": "A partir de 36.450 € c/IVA (23%)¹"
+        }
+      },
+      {
+        "kind": "campaign_price",
+        "amount_eur": 26000.0,
+        "vat": "excluded",
+        "customer": "unknown",
+        "variant": null,
+        "conditions": "Oferta especial 'a partir de', sem versão identificada. Acresce IVA. Alternativa de 259€/mês. As condições da nota ᵀ não constam do texto. Só serve como proposta de referência, nunca como preço particular elegível.",
+        "validity": {
+          "valid_from": null,
+          "valid_until": null
+        },
+        "evidence": "Oferta especial smart – a partir de 26.000€ ou 259€/mês. Acresce IVA.ᵀ",
+        "derivation": null,
+        "classification": "reference",
+        "currency": "EUR",
+        "source_url": "https://pt.smart.com/pt/models/hashtag-one/",
+        "source_authority": "manufacturer_or_importer_pt",
+        "market": "PT",
+        "vat_included": null,
+        "audience": "unknown",
+        "valid_until": null,
+        "vat_status": "excluded",
+        "source_type": "official_model",
+        "proof": {
+          "url": "https://pt.smart.com/pt/models/hashtag-one/",
+          "source_url": "https://pt.smart.com/pt/models/hashtag-one/",
+          "authority": "manufacturer_or_importer_pt",
+          "market": "PT",
+          "audience": "unknown",
+          "variant": null,
+          "vat_basis": "excluded",
+          "literal_excerpt": "Oferta especial smart – a partir de 26.000€ ou 259€/mês. Acresce IVA.ᵀ",
+          "status": "verified",
+          "source_type": "official_model",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
+          "source_authority": "manufacturer_or_importer_pt",
+          "customer": "unknown"
+        },
+        "recorded_on": "2026-10-10",
+        "verified_on": "2026-10-10",
+        "evidence_record": {
+          "url": "https://pt.smart.com/pt/models/hashtag-one/",
+          "source_url": "https://pt.smart.com/pt/models/hashtag-one/",
+          "market": "PT",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
+          "literal_excerpt": "Oferta especial smart – a partir de 26.000€ ou 259€/mês. Acresce IVA.ᵀ"
         }
       }
     ],
-    "brand": "Opel",
-    "model": "Astra Electric",
-    "url": "https://www.opel.pt/cars/astra-models.html"
+    "brand": "smart",
+    "model": "#1",
+    "url": "https://pt.smart.com/pt/models/hashtag-one/"
   },
   {
     "offers": [
       {
         "kind": "list_price",
-        "amount_eur": 27490.0,
+        "amount_eur": 39950.0,
         "vat": "included",
         "customer": "unknown",
         "variant": null,
-        "conditions": "Preço 'desde' sem indicação de PVPR, campanha, IVA ou versão; o modelo mostra equipamento opcional",
+        "conditions": "Preço 'a partir de' sem versão indicada; nota ¹: inclui transporte, taxas e IVA, exclui custos administrativos e ecovalores (SIGVFV, SIGRBA, SIGPU, SIGOU); Açores/Madeira podem ter preço final diferente; preços não vinculativos",
         "validity": {
           "valid_from": null,
           "valid_until": null
         },
-        "evidence": "100% Elétrico desde 27.490€ | Híbrido desde 23.030€",
+        "evidence": "A partir de 39.950 € c/IVA (23%)¹",
         "derivation": null,
         "classification": "reference",
         "currency": "EUR",
-        "source_url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
+        "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
         "source_authority": "manufacturer_or_importer_pt",
         "market": "PT",
         "vat_included": null,
@@ -702,149 +303,85 @@
         "vat_status": "included",
         "source_type": "official_model",
         "proof": {
-          "url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
-          "source_url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
+          "url": "https://pt.smart.com/pt/models/hashtag-three/",
+          "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
           "authority": "manufacturer_or_importer_pt",
           "market": "PT",
           "audience": "unknown",
           "variant": null,
           "vat_basis": "included",
-          "literal_excerpt": "100% Elétrico desde 27.490€ | Híbrido desde 23.030€",
+          "literal_excerpt": "A partir de 39.950 € c/IVA (23%)¹",
           "status": "verified",
           "source_type": "official_model",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
           "source_authority": "manufacturer_or_importer_pt",
           "customer": "unknown"
         },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
+        "recorded_on": "2026-10-10",
+        "verified_on": "2026-10-10",
         "evidence_record": {
-          "url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
-          "source_url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html",
+          "url": "https://pt.smart.com/pt/models/hashtag-three/",
+          "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
           "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "100% Elétrico desde 27.490€ | Híbrido desde 23.030€"
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
+          "literal_excerpt": "A partir de 39.950 € c/IVA (23%)¹"
         }
-      }
-    ],
-    "brand": "Opel",
-    "model": "Frontera Electric",
-    "url": "https://www.opel.pt/carros/frontera/frontera/vista-geral.html"
-  },
-  {
-    "offers": [
+      },
       {
-        "kind": "list_price",
-        "amount_eur": 31855.0,
-        "vat": "included",
+        "kind": "campaign_price",
+        "amount_eur": 28583.0,
+        "vat": "excluded",
         "customer": "unknown",
         "variant": null,
-        "conditions": "Preço 'a partir de'; a página não identifica a versão nem diz se é PVPR ou PVP campanha; o IVA e o tipo de cliente não são indicados",
+        "conditions": "Oferta especial 'a partir de' sem versão indicada; acresce IVA; alternativa de 349€/mês; condições da nota ᵀ não constam do texto",
         "validity": {
           "valid_from": null,
           "valid_until": null
         },
-        "evidence": "A partir de 31.855 €",
+        "evidence": "Oferta especial smart – a partir de 28.583€ ou 349€/mês. Acresce IVA.ᵀ",
         "derivation": null,
         "classification": "reference",
         "currency": "EUR",
-        "source_url": "https://www.peugeot.pt/showroom/novo-peugeot-2008/eletrico.html",
+        "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
         "source_authority": "manufacturer_or_importer_pt",
         "market": "PT",
         "vat_included": null,
         "audience": "unknown",
         "valid_until": null,
-        "vat_status": "included",
+        "vat_status": "excluded",
         "source_type": "official_model",
         "proof": {
-          "url": "https://www.peugeot.pt/showroom/novo-peugeot-2008/eletrico.html",
-          "source_url": "https://www.peugeot.pt/showroom/novo-peugeot-2008/eletrico.html",
+          "url": "https://pt.smart.com/pt/models/hashtag-three/",
+          "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
           "authority": "manufacturer_or_importer_pt",
           "market": "PT",
           "audience": "unknown",
           "variant": null,
-          "vat_basis": "included",
-          "literal_excerpt": "A partir de 31.855 €",
+          "vat_basis": "excluded",
+          "literal_excerpt": "Oferta especial smart – a partir de 28.583€ ou 349€/mês. Acresce IVA.ᵀ",
           "status": "verified",
           "source_type": "official_model",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
           "source_authority": "manufacturer_or_importer_pt",
           "customer": "unknown"
         },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
+        "recorded_on": "2026-10-10",
+        "verified_on": "2026-10-10",
         "evidence_record": {
-          "url": "https://www.peugeot.pt/showroom/novo-peugeot-2008/eletrico.html",
-          "source_url": "https://www.peugeot.pt/showroom/novo-peugeot-2008/eletrico.html",
+          "url": "https://pt.smart.com/pt/models/hashtag-three/",
+          "source_url": "https://pt.smart.com/pt/models/hashtag-three/",
           "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "A partir de 31.855 €"
+          "recorded_on": "2026-10-10",
+          "verified_on": "2026-10-10",
+          "literal_excerpt": "Oferta especial smart – a partir de 28.583€ ou 349€/mês. Acresce IVA.ᵀ"
         }
       }
     ],
-    "brand": "Peugeot",
-    "model": "E-2008",
-    "url": "https://www.peugeot.pt/showroom/novo-peugeot-2008/eletrico.html"
-  },
-  {
-    "offers": [
-      {
-        "kind": "list_price",
-        "amount_eur": 27035.0,
-        "vat": "included",
-        "customer": "unknown",
-        "variant": null,
-        "conditions": "Preço 'a partir de' sem versão indicada; a página não o identifica como PVPR nem como PVP campanha e não diz se inclui IVA; alternativa em financiamento de 259 €/mês exclusiva com Stellantis Financial Services",
-        "validity": {
-          "valid_from": null,
-          "valid_until": null
-        },
-        "evidence": "A partir de27.035 €",
-        "derivation": null,
-        "classification": "reference",
-        "currency": "EUR",
-        "source_url": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html",
-        "source_authority": "manufacturer_or_importer_pt",
-        "market": "PT",
-        "vat_included": null,
-        "audience": "unknown",
-        "valid_until": null,
-        "vat_status": "included",
-        "source_type": "official_model",
-        "proof": {
-          "url": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html",
-          "source_url": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html",
-          "authority": "manufacturer_or_importer_pt",
-          "market": "PT",
-          "audience": "unknown",
-          "variant": null,
-          "vat_basis": "included",
-          "literal_excerpt": "A partir de27.035 €",
-          "status": "verified",
-          "source_type": "official_model",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "source_authority": "manufacturer_or_importer_pt",
-          "customer": "unknown"
-        },
-        "recorded_on": "2026-09-27",
-        "verified_on": "2026-09-27",
-        "evidence_record": {
-          "url": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html",
-          "source_url": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html",
-          "market": "PT",
-          "recorded_on": "2026-09-27",
-          "verified_on": "2026-09-27",
-          "literal_excerpt": "A partir de27.035 €"
-        }
-      }
-    ],
-    "brand": "Peugeot",
-    "model": "E-208",
-    "url": "https://www.peugeot.pt/showroom/novo-peugeot-208/208-eletrico.html"
+    "brand": "smart",
+    "model": "#3",
+    "url": "https://pt.smart.com/pt/models/hashtag-three/"
   }
 ]
