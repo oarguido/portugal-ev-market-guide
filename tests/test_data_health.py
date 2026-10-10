@@ -16,6 +16,7 @@ from unittest import mock
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import rules
 import validate_data
 from validate_data import image_budget_warnings, interleave_by_host, staleness_warnings
 
@@ -92,41 +93,102 @@ class StalenessTests(unittest.TestCase):
     def test_o_catalogo_real_fica_obsoleto_quando_o_tempo_avanca(self):
         """A deteção tem de disparar sobre os dados reais, não só sobre fixtures.
 
-        Prova o comportamento que o workflow agendado deve apanhar: à data da
-        verificação mais recente nada está obsoleto, e MAX_AGE_DAYS + 1 dias
-        depois está tudo.
+        Prova o comportamento que o workflow agendado deve apanhar, por tipo de
+        verificação (modelos, concessionários, fontes de descoberta), porque cada
+        tipo é reverificado em datas diferentes: MAX_AGE_DAYS exatos depois da
+        verificação mais antiga desse tipo nenhum item está obsoleto, e
+        MAX_AGE_DAYS + 1 dias depois da mais recente estão todos.
 
-        As duas datas são fixadas com mock e derivadas do próprio catálogo. Sem
-        isso o teste passaria a falhar por efeito do calendário e não por
-        regressão — exatamente o que a separação entre `make validate` e
-        `make freshness` existe para evitar.
+        As datas são fixadas com mock e derivadas do próprio catálogo. Sem isso o
+        teste passaria a falhar por efeito do calendário e não por regressão —
+        exatamente o que a separação entre `make validate` e `make freshness`
+        existe para evitar.
         """
         catalog = validate_data.load_catalog()
         dealers = validate_data.load_dealers()
-        newest = dt.date.fromisoformat(max(model["last_verified"] for model in catalog["models"]))
+        groups = {
+            "modelos": (
+                [model["last_verified"] for model in catalog["models"]],
+                lambda note: not note.startswith(("Concessionário ", "Fonte de descoberta ")),
+                len(catalog["models"]),
+            ),
+            "concessionários": (
+                [dealer["verified_on"] for dealer in dealers["dealers"]],
+                lambda note: note.startswith("Concessionário "),
+                len(dealers["dealers"]),
+            ),
+            "fontes de descoberta": (
+                [source["verified_on"] for source in catalog["discovery_sources"]],
+                lambda note: note.startswith("Fonte de descoberta "),
+                len(catalog["discovery_sources"]),
+            ),
+        }
 
-        def outdated_on(day: dt.date) -> list[str]:
+        def outdated_on(day: dt.date, belongs) -> list[str]:
             with mock.patch.object(validate_data, "TODAY", day):
                 # Só os avisos de verificação obsoleta: uma campanha expirada é um
                 # sinal diferente, e depende de datas que o catálogo traz de fora.
-                return [note for note in staleness_warnings(catalog, dealers) if "verificação tem mais de" in note]
+                notes = staleness_warnings(catalog, dealers)
+            return [note for note in notes if "verificação tem mais de" in note and belongs(note)]
 
-        self.assertEqual(outdated_on(newest), [], "nada devia estar obsoleto na data da verificação mais recente")
-
-        future = newest + dt.timedelta(days=validate_data.MAX_AGE_DAYS + 1)
-        outdated = outdated_on(future)
-
-        self.assertEqual(
-            len(outdated),
-            len(catalog["models"]) + len(dealers["dealers"]) + len(catalog["discovery_sources"]),
-            "todas as verificações deviam estar obsoletas nessa data",
-        )
+        for name, (dates, belongs, total) in groups.items():
+            if not dates:
+                continue
+            with self.subTest(tipo=name):
+                newest = dt.date.fromisoformat(max(dates))
+                oldest = dt.date.fromisoformat(min(dates))
+                limit = oldest + dt.timedelta(days=validate_data.MAX_AGE_DAYS)
+                self.assertEqual(
+                    outdated_on(limit, belongs), [], f"nenhum item de {name} devia estar obsoleto ao fim de MAX_AGE_DAYS exatos"
+                )
+                future = newest + dt.timedelta(days=validate_data.MAX_AGE_DAYS + 1)
+                self.assertEqual(len(outdated_on(future, belongs)), total, f"todos os itens de {name} deviam estar obsoletos")
         for model in catalog["models"]:
             label = f"{model['brand']} {model['model']}"
+            future = dt.date.fromisoformat(model["last_verified"]) + dt.timedelta(days=validate_data.MAX_AGE_DAYS + 1)
             self.assertTrue(
-                any(note.startswith(f"{label}:") for note in outdated),
+                any(note.startswith(f"{label}:") for note in outdated_on(future, groups["modelos"][1])),
                 f"{label} não foi reportado como obsoleto",
             )
+
+
+class ExpiredCampaignTests(unittest.TestCase):
+    """Uma campanha expirada só é um achado enquanto a elegibilidade gravada ainda conta com ela.
+
+    `expire_campaigns.py` mantém a oferta expirada como histórico (de propósito) e
+    recalcula a elegibilidade. Depois disso a campanha expirada já não é trabalho
+    por fazer; reportá-la para sempre tornava `make freshness` impossível de passar.
+    """
+
+    def _variant_with_expired_campaign(self):
+        catalog = validate_data.load_catalog()
+        for model in catalog["models"]:
+            for variant in model["variants"]:
+                for offer in variant.get("pricing", {}).get("offers", []):
+                    expiry = (offer.get("validity") or {}).get("valid_until")
+                    if offer.get("kind") != "campaign_price" or not expiry:
+                        continue
+                    day_after = dt.date.fromisoformat(expiry) + dt.timedelta(days=1)
+                    before = rules.variant_eligibility_tier(variant, dt.date.fromisoformat(expiry))
+                    after = rules.variant_eligibility_tier(variant, day_after)
+                    if before == "confirmed_eligible" and after != before:
+                        return model, variant, day_after, after
+        self.skipTest("o catálogo não tem nenhuma campanha cuja expiração mude a elegibilidade")
+
+    def _expired_notes(self, model, variant, day):
+        catalog = {"discovery_sources": [], "models": [{**model, "last_verified": day.isoformat(), "variants": [variant]}]}
+        with mock.patch.object(validate_data, "TODAY", day):
+            return [note for note in staleness_warnings(catalog, EMPTY_DEALERS) if "campanha expirada" in note]
+
+    def test_campanha_expirada_ja_recalculada_nao_e_reportada(self):
+        model, variant, day, recomputed = self._variant_with_expired_campaign()
+        variant = {**variant, "eligibility_tier": recomputed, "eligibility_status": recomputed}
+        self.assertEqual(self._expired_notes(model, variant, day), [])
+
+    def test_campanha_expirada_por_recalcular_continua_a_ser_reportada(self):
+        model, variant, day, _ = self._variant_with_expired_campaign()
+        variant = {**variant, "eligibility_tier": "confirmed_eligible", "eligibility_status": "confirmed_eligible"}
+        self.assertEqual(len(self._expired_notes(model, variant, day)), 1)
 
 
 class ImageBudgetTests(unittest.TestCase):
