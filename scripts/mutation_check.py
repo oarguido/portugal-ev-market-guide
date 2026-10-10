@@ -34,7 +34,13 @@ MUTACOES = [
     ("scripts/validate_data.py", "if len(nomes) > 1", "if len(nomes) > 99", "deixa passar fotografias repetidas"),
     ("scripts/validate_data.py", 'return (TODAY - dt.date.fromisoformat(value or "")).days > MAX_AGE_DAYS', "return False", "nada fica obsoleto"),
     # --- frescura ---
-    ("scripts/validate_data.py", "if dt.date.fromisoformat(expiry) < TODAY:", "if False:", "campanhas expiradas passam despercebidas"),
+    ("scripts/validate_data.py", "expired = dt.date.fromisoformat(expiry) < TODAY", "expired = False", "campanhas expiradas passam despercebidas"),
+    (
+        "scripts/validate_data.py",
+        'if expired and variant.get("eligibility_tier") != variant_eligibility_tier(variant, TODAY):',
+        "if expired:",
+        "campanha expirada já recalculada continua a ser reportada",
+    ),
     # --- cabeçalhos de imagem ---
     ("scripts/validate_data.py", 'if header[:2] == b"\\xff\\xd8":', "if False:", "JPEG deixa de ser reconhecido"),
     ("scripts/validate_data.py", 'if header[:4] == b"RIFF" and header[8:12] == b"WEBP":', "if False:", "WebP deixa de ser reconhecido"),
