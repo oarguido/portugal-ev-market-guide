@@ -6,6 +6,7 @@ testes, o workflow podia ficar verde para sempre por a deteção estar quebrada,
 ninguém notaria — é precisamente o modo de falha que ele existe para evitar.
 """
 
+import copy
 import datetime as dt
 import itertools
 import sys
@@ -132,9 +133,8 @@ class StalenessTests(unittest.TestCase):
             return [note for note in notes if "verificação tem mais de" in note and belongs(note)]
 
         for name, (dates, belongs, total) in groups.items():
-            if not dates:
-                continue
             with self.subTest(tipo=name):
+                self.assertTrue(dates, f"o catálogo real devia ter {name} com data de verificação")
                 newest = dt.date.fromisoformat(max(dates))
                 oldest = dt.date.fromisoformat(min(dates))
                 limit = oldest + dt.timedelta(days=validate_data.MAX_AGE_DAYS)
@@ -153,42 +153,68 @@ class StalenessTests(unittest.TestCase):
 
 
 class ExpiredCampaignTests(unittest.TestCase):
-    """Uma campanha expirada só é um achado enquanto a elegibilidade gravada ainda conta com ela.
+    """Uma campanha expirada só é um achado enquanto há trabalho de expire_campaigns.py por fazer.
 
-    `expire_campaigns.py` mantém a oferta expirada como histórico (de propósito) e
-    recalcula a elegibilidade. Depois disso a campanha expirada já não é trabalho
-    por fazer; reportá-la para sempre tornava `make freshness` impossível de passar.
+    O script mantém a oferta expirada como histórico e recalcula a elegibilidade; uma
+    variante que fica sem base (`not_demonstrated`) é removida. Por isso o achado
+    existe quando a elegibilidade gravada está por recalcular ou quando a variante
+    está para remoção — e não depois de recalculada, senão `make freshness` nunca
+    passaria. As variantes são construídas a partir de uma oferta confirmada real com
+    datas fixas, para o teste não depender do calendário nem do catálogo do mês.
     """
 
-    def _variant_with_expired_campaign(self):
+    def setUp(self):
         catalog = validate_data.load_catalog()
-        for model in catalog["models"]:
-            for variant in model["variants"]:
-                for offer in variant.get("pricing", {}).get("offers", []):
-                    expiry = (offer.get("validity") or {}).get("valid_until")
-                    if offer.get("kind") != "campaign_price" or not expiry:
-                        continue
-                    day_after = dt.date.fromisoformat(expiry) + dt.timedelta(days=1)
-                    before = rules.variant_eligibility_tier(variant, dt.date.fromisoformat(expiry))
-                    after = rules.variant_eligibility_tier(variant, day_after)
-                    if before == "confirmed_eligible" and after != before:
-                        return model, variant, day_after, after
-        self.skipTest("o catálogo não tem nenhuma campanha cuja expiração mude a elegibilidade")
+        confirmed = next(
+            (
+                (model, offer)
+                for model in catalog["models"]
+                for variant in model["variants"]
+                for offer in variant.get("pricing", {}).get("offers", [])
+                if offer.get("classification") == "confirmed" and offer.get("verified_on")
+            ),
+            None,
+        )
+        self.assertIsNotNone(confirmed, "o catálogo real devia ter pelo menos uma oferta confirmada")
+        self.model, self.base_offer = confirmed
+        self.expiry = dt.date.fromisoformat(self.base_offer["verified_on"])
+        self.today = self.expiry + dt.timedelta(days=1)
 
-    def _expired_notes(self, model, variant, day):
-        catalog = {"discovery_sources": [], "models": [{**model, "last_verified": day.isoformat(), "variants": [variant]}]}
-        with mock.patch.object(validate_data, "TODAY", day):
+    def _campaign(self) -> dict:
+        offer = copy.deepcopy(self.base_offer)
+        offer["kind"] = "campaign_price"
+        offer["validity"] = {"valid_from": None, "valid_until": self.expiry.isoformat()}
+        offer["valid_until"] = self.expiry.isoformat()
+        return offer
+
+    def _list_price(self) -> dict:
+        offer = copy.deepcopy(self.base_offer)
+        offer["kind"] = "list_price"
+        offer["validity"] = {"valid_from": None, "valid_until": None}
+        offer["valid_until"] = None
+        return offer
+
+    def _notes(self, offers: list[dict], stored_tier: str) -> list[str]:
+        variant = {"name": "Base", "pricing": {"offers": offers}, "eligibility_tier": stored_tier, "eligibility_status": stored_tier}
+        catalog = {"discovery_sources": [], "models": [{**self.model, "last_verified": self.today.isoformat(), "variants": [variant]}]}
+        with mock.patch.object(validate_data, "TODAY", self.today):
             return [note for note in staleness_warnings(catalog, EMPTY_DEALERS) if "campanha expirada" in note]
 
-    def test_campanha_expirada_ja_recalculada_nao_e_reportada(self):
-        model, variant, day, recomputed = self._variant_with_expired_campaign()
-        variant = {**variant, "eligibility_tier": recomputed, "eligibility_status": recomputed}
-        self.assertEqual(self._expired_notes(model, variant, day), [])
+    def test_fixture_expira_mesmo_no_dia_seguinte(self):
+        variant = {"pricing": {"offers": [self._campaign()]}}
+        self.assertEqual(rules.variant_eligibility_tier(variant, self.expiry), "confirmed_eligible")
+        self.assertEqual(rules.variant_eligibility_tier(variant, self.today), "not_demonstrated")
 
-    def test_campanha_expirada_por_recalcular_continua_a_ser_reportada(self):
-        model, variant, day, _ = self._variant_with_expired_campaign()
-        variant = {**variant, "eligibility_tier": "confirmed_eligible", "eligibility_status": "confirmed_eligible"}
-        self.assertEqual(len(self._expired_notes(model, variant, day)), 1)
+    def test_campanha_expirada_com_elegibilidade_por_recalcular_e_reportada(self):
+        self.assertTrue(self._notes([self._campaign()], "confirmed_eligible"))
+
+    def test_variante_para_remocao_continua_a_ser_reportada(self):
+        """Mesmo com o tier gravado certo, a variante sem base vai ser removida pelo script."""
+        self.assertTrue(self._notes([self._campaign()], "not_demonstrated"))
+
+    def test_campanha_expirada_ja_recalculada_nao_e_reportada(self):
+        """Com um PVP confirmado atual a variante continua elegível: nada por fazer."""
+        self.assertEqual(self._notes([self._campaign(), self._list_price()], "confirmed_eligible"), [])
 
 
 class ImageBudgetTests(unittest.TestCase):

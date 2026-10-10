@@ -37,9 +37,15 @@ MUTACOES = [
     ("scripts/validate_data.py", "expired = dt.date.fromisoformat(expiry) < TODAY", "expired = False", "campanhas expiradas passam despercebidas"),
     (
         "scripts/validate_data.py",
-        'if expired and variant.get("eligibility_tier") != variant_eligibility_tier(variant, TODAY):',
+        'if expired and (variant.get("eligibility_tier") != computed or computed == "not_demonstrated"):',
         "if expired:",
         "campanha expirada já recalculada continua a ser reportada",
+    ),
+    (
+        "scripts/validate_data.py",
+        'variant.get("eligibility_tier") != computed or computed == "not_demonstrated"',
+        'variant.get("eligibility_tier") != computed',
+        "variante para remoção deixa de ser reportada",
     ),
     # --- cabeçalhos de imagem ---
     ("scripts/validate_data.py", 'if header[:2] == b"\\xff\\xd8":', "if False:", "JPEG deixa de ser reconhecido"),

@@ -874,10 +874,12 @@ def staleness_warnings(catalog: dict, dealer_catalog: dict) -> list[str]:
                     expired = dt.date.fromisoformat(expiry) < TODAY
                 except ValueError:
                     continue
-                # Depois de expire_campaigns.py a oferta fica como histórico e a elegibilidade
-                # gravada já não conta com ela: só é achado enquanto isso estiver por recalcular.
-                if expired and variant.get("eligibility_tier") != variant_eligibility_tier(variant, TODAY):
-                    notes.append(f"{label} / {variant.get('name', '?')}: campanha expirada em {expiry}")
+                # expire_campaigns.py mantém a oferta expirada como histórico, recalcula a
+                # elegibilidade e remove a variante que fica sem base. Só há achado enquanto
+                # houver trabalho dele por fazer: tier por recalcular ou variante para remoção.
+                computed = variant_eligibility_tier(variant, TODAY)
+                if expired and (variant.get("eligibility_tier") != computed or computed == "not_demonstrated"):
+                    notes.append(f"{label} / {variant.get('name', '?')}: campanha expirada em {expiry} com elegibilidade por recalcular")
     for dealer in dealer_catalog.get("dealers", []):
         if _older_than_max_age(dealer.get("verified_on")):
             notes.append(f"Concessionário {dealer.get('brand', '?')}: verificação tem mais de {MAX_AGE_DAYS} dias")

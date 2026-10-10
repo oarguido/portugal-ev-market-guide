@@ -28,7 +28,7 @@ This project treats the catalogue as a data product: every price must carry a so
 
 - **Curated catalogue** of 62 battery-electric passenger models (59 confirmed under €40,000, 3 kept as unconfirmed references; last full verification 2026-09-02) in a single JSON source of truth, `data/vehicles/pt_market.json`.
 - **Fail-closed validation (schema v3).** Only private-buyer, VAT-inclusive prices count towards eligibility; prices without VAT are accepted only with an explicit derivation record; non-BEV powertrains are rejected.
-- **Freshness gate.** Proofs and dealer confirmations older than 45 days, or expired campaigns, fail validation, and the compiler then refuses to write the web bundle.
+- **Freshness gate.** Proofs and dealer confirmations older than 45 days, or expired campaigns whose eligibility has not been recalculated (`scripts/expire_campaigns.py --apply`), fail validation, and the compiler then refuses to write the web bundle.
 - **Source monitoring.** Official pages are fingerprinted (SHA-256 of normalised visible text, stored in `data/source_snapshots.json`). A change produces a review proposal in `data/price_proposals.json`, never a silent edit; accepting new fingerprints is an explicit human step.
 - **Offline, dependency-free web app.** Plain HTML, vanilla JavaScript modules and CSS; all data, icons and images are bundled locally, with no CDN or tracking. Dynamic content is escaped through a single helper, [`web/assets/js/html.js`](web/assets/js/html.js).
 - **Four views:** our three finalists, market overview with search and ranking, a technical comparator, and test-drive and dealer planning (one official dealer per brand, nearest to a reference location in Greater Porto).
@@ -75,11 +75,11 @@ make lint         # ruff
 make validate     # schema v3 validation, then compile the web bundle
 make test         # Python unittest + Node.js tests
 make verify       # lint, validate, compile, tests and pending report (what CI runs)
-make freshness    # global 45-day freshness and expired-campaign check
+make freshness    # global 45-day freshness and expired campaigns still to recalculate
 make budgets      # image size budgets
 ```
 
-The freshness gate depends on today's date, so `make validate` and `make verify` start failing once the catalogue goes more than 45 days without re-verification or a campaign expires. That is intended: stale data is never published as current.
+The freshness gate depends on today's date, so `make validate` and `make verify` start failing once the catalogue goes more than 45 days without re-verification, or a campaign expires and eligibility is not recalculated. That is intended: stale data is never published as current.
 
 ### Data maintenance (network)
 

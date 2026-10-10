@@ -50,7 +50,7 @@ make update-photos-all # recaptura todas as imagens para auditoria visual
 make prune-images    # arquiva imagens que nenhum modelo referencia
 make lint            # ruff sobre scripts e testes
 make validate        # valida schema v3 e compila fail-closed; não usa rede
-make freshness       # acrescenta frescura global e campanhas expiradas
+make freshness       # acrescenta frescura global e campanhas expiradas por recalcular
 make budgets         # falha se as fotografias excederem o orçamento de peso
 make links           # verifica fontes e páginas dos concessionários
 make test            # executa a suíte de regressão
@@ -136,7 +136,8 @@ bundle, evidência envelhecida não chega à aplicação. Referências legadas c
 como referência, nunca como preço confirmado.
 
 `make freshness` acrescenta verificações globais: fontes de descoberta, modelos
-e concessionários com mais de 45 dias, além de campanhas expiradas. Essas
+e concessionários com mais de 45 dias, além de campanhas expiradas cuja
+elegibilidade ainda não foi recalculada (`scripts/expire_campaigns.py --apply`). Essas
 verificações fazem falhar `make freshness` e `make audit`; não substituem a
 validação fail-closed de ofertas executada por `make validate`.
 

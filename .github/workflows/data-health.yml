@@ -3,7 +3,7 @@ name: Saúde dos dados
 # O valor deste catálogo é ser atual. `make validate` falha fechado para provas
 # confirmed/atuais envelhecidas e a compilação recusa escrever bundle inválido;
 # `make freshness` acrescenta verificações globais com mais de 45 dias e
-# campanhas expiradas. `make links` verifica fontes externas. Sem execução
+# campanhas expiradas com elegibilidade por recalcular. `make links` verifica fontes externas. Sem execução
 # agendada, a decadência dos dados é invisível até alguém abrir a aplicação.
 on:
   schedule:
