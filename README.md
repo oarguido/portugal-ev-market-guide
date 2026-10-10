@@ -1,163 +1,126 @@
 # Portugal EV Market Guide
 
-[![CI Pipeline](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/ci.yml/badge.svg)](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/ci.yml)
-[![Weekly Data Health](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/data-health.yml/badge.svg)](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/data-health.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/ci.yml/badge.svg)](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/ci.yml)
+[![Weekly data health](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/data-health.yml/badge.svg)](https://github.com/oarguido/portugal-ev-market-guide/actions/workflows/data-health.yml)
+[![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
 [![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](pyproject.toml)
-[![Tests: 258 passing](https://img.shields.io/badge/tests-258%20passing-brightgreen.svg)](tests/)
-[![Architecture: Offline--First](https://img.shields.io/badge/architecture-offline--first-success.svg)](web/)
 
-An automated, evidence-backed data pipeline, validation harness, and offline-first decision dashboard for the Portuguese 100% electric passenger vehicle (BEV) market under the national **€40,000** incentive threshold.
+**An evidence-backed data pipeline and offline dashboard for every new battery-electric car sold in Portugal for up to €40,000.**
+
+**Live site:** https://oarguido.github.io/portugal-ev-market-guide/ (interface in Portuguese)
 
 > [!NOTE]
-> Para a documentação original em Português de Portugal, consulte [README.pt.md](README.pt.md). O contrato operacional de desenvolvimento com agentes de IA está documentado em [AGENTS.md](AGENTS.md).
+> Documentação em Português de Portugal: [README.pt.md](README.pt.md). The operating contract for AI coding agents working on this repository is [AGENTS.md](AGENTS.md).
 
 ---
 
-## 🎯 Motivation & Problem
+## Why it exists
 
-Navigating electric vehicle acquisitions in Portugal is notoriously difficult:
-* **Fragmented & deceptive pricing:** Commercial discounts, business-only leasing offers without VAT, and trade-in gimmicks are routinely presented to retail consumers as "MSRP".
-* **Regulatory thresholds:** The national Portuguese environmental subsidies and tax brackets strictly cap passenger vehicle incentives at **€40,000 (including 23% VAT)**.
-* **Hybrid noise:** Portals often bundle Mild Hybrids (MHEV), Plug-in Hybrids (PHEV), and Range Extenders (REEV) under "electrified" banners.
+Buying an electric car in Portugal under the €40,000 (VAT included) incentive threshold is harder than it should be:
 
-This project solves that by applying rigorous software and data engineering practices: building a continuous, deterministic data product where **every price, battery chemistry, and range metric must carry verifiable cryptographic or literal documentary proof** before being compiled.
+- **Prices are hard to compare.** Campaign discounts, business-only offers quoted without VAT, and trade-in conditions are often presented alongside the retail list price.
+- **"Electrified" is not electric.** Market portals mix mild hybrids, plug-in hybrids and range extenders with battery-electric cars.
+- **Information goes stale.** Campaigns end and configurators change without notice.
 
----
+This project treats the catalogue as a data product: every price must carry a source URL, a literal excerpt from the official page and a verification date, and the build refuses to publish data that is invalid or older than 45 days.
 
-## 🏛️ System Architecture
+## What it does
 
-The project operates as an offline-first, fail-closed data product with zero runtime dependencies.
+- **Curated catalogue** of 62 battery-electric passenger models (59 confirmed under €40,000, 3 kept as unconfirmed references; last full verification 2026-09-02) in a single JSON source of truth, `data/vehicles/pt_market.json`.
+- **Fail-closed validation (schema v3).** Only private-buyer, VAT-inclusive prices count towards eligibility; prices without VAT are accepted only with an explicit derivation record; non-BEV powertrains are rejected.
+- **Freshness gate.** Proofs and dealer confirmations older than 45 days, or expired campaigns, fail validation, and the compiler then refuses to write the web bundle.
+- **Source monitoring.** Official pages are fingerprinted (SHA-256 of normalised visible text, stored in `data/source_snapshots.json`). A change produces a review proposal in `data/price_proposals.json`, never a silent edit; accepting new fingerprints is an explicit human step.
+- **Offline, dependency-free web app.** Plain HTML, vanilla JavaScript modules and CSS; all data, icons and images are bundled locally, with no CDN or tracking. Dynamic content is escaped through a single helper, [`web/assets/js/html.js`](web/assets/js/html.js).
+- **Four views:** our three finalists, market overview with search and ranking, a technical comparator, and test-drive and dealer planning (one official dealer per brand, nearest to a reference location in Greater Porto).
+- **Automation.** CI runs lint, validation, compilation and the test suite on every push and pull request, and checks that the committed bundle matches the JSON. A weekly scheduled job re-runs validation, freshness and link checks and opens or updates a GitHub issue when the data needs review. GitHub Pages deploys the `web/` folder.
+
+## Architecture
 
 ```mermaid
-flowchart TD
-    subgraph Ingestion ["1. Data Ingestion & Monitoring"]
-        A[Official Importer / Manufacturer Portals] -->|Throttled Fetch| B[HTML Scraper & Normaliser]
-        C[Semantic Text Fingerprinting] <-->|Drift Detection| B
-        B -->|Raw Extractions| D[Price Proposals Engine]
-    end
-
-    subgraph Validation ["2. Fail-Closed Validation (Schema v3)"]
-        D -->|Documentary Review| E[(data/vehicles/pt_market.json)]
-        F[(data/dealers/near_sao_mamede.json)] --> G[Schema & Freshness Validator]
-        E --> G
-        G -->|45-day freshness rule & proof audit| H{Passes All Gates?}
-        H -->|No| I[Halt Build / Reject PR]
-        H -->|Yes| J[Data Compiler]
-    end
-
-    subgraph Delivery ["3. Static Compilation & Client"]
-        J -->|Deterministic Serialisation| K[web/assets/js/car_data.js]
-        K --> L[Vanilla Web App]
-        L -->|Zero Remote Requests| M[Offline-First Interactive Dashboard]
-    end
+flowchart LR
+    S[Official brand and importer pages] -->|update_catalog.py<br/>refresh_prices.py| P[Fingerprints and<br/>price proposals]
+    P -->|human review| J[(pt_market.json<br/>dealers JSON)]
+    J --> V{validate_data.py<br/>schema v3 + 45-day freshness}
+    V -->|fail| X[Build refused]
+    V -->|pass| C[compile_data.py]
+    C --> B[web/assets/js/car_data.js]
+    B --> W[Static web app<br/>on GitHub Pages]
 ```
 
----
+## Tech stack
 
-## 🔬 Core Engineering Highlights
+- **Pipeline:** Python 3.13, standard library only (no runtime dependencies); `ruff` pinned as the only dev tool, managed with `uv`.
+- **Browser automation:** the external `agent-browser` CLI, used by the price, discovery and photo scripts for pages that need JavaScript.
+- **Front end:** HTML5, vanilla ES modules, CSS custom properties, vendored Font Awesome.
+- **Tests:** Python `unittest` (185 tests) and the Node.js built-in test runner (73 tests).
+- **CI/CD:** GitHub Actions (validation, weekly data health, Pages deploy) and Dependabot.
 
-### 1. Evidence-Backed Pricing Engine (Schema v3)
-Unlike scrapers that parse arbitrary floats, every pricing entry requires a strict contractual schema:
-* **Audience separation:** Only verified `private` (consumer) offers count towards budget eligibility. Business-only or unstated audiences are flagged and rejected from the confirmed tier.
-* **Deterministic VAT:** Prices without VAT are rejected unless deterministically derivable with exact Portuguese tax rules and recorded with an explicit `derivation` record.
-* **Literal excerpts:** Every confirmed offer maintains a `literal_excerpt` taken directly from the official manufacturer configurator or campaign document, stamped with `recorded_on` and `verified_on`.
+## Run it locally
 
-### 2. Fail-Closed Validation & Circuit Breakers
-* **45-Day Freshness Gate:** If an offer’s proof or a dealer’s confirmation exceeds 45 days, the compiler trips a circuit breaker and fails the build. Stale data is never published as current.
-* **Strict Powertrain Filter:** Homologation M1 passenger BEVs only. PHEVs, commercial N1 vans, or concept cars fail schema validation automatically.
-* **Image Byte Budget:** Local official imagery is required for every model and constrained to `< 500 KB` per asset and `< 12 MB` total, enforced via automated budgeting checks.
-
-### 3. CI/CD & Observability
-* **PR Verification (`ci.yml`):** Runs linting (`ruff`), schema validation, data compilation, and the full test suite (185 Python tests + 73 JavaScript tests). Confirms that the compiled bundle matches the JSON truth.
-* **Weekly Automated Data Health (`data-health.yml`):** A scheduled workflow runs every Monday at 06:00 UTC to crawl all registered manufacturer links, check semantic drift, and **automatically create or update a GitHub Issue** labeled `dados-frescura` if external URLs break or prices change.
-
-### 4. Zero-Dependency, Offline-First Client
-* Built with pure HTML5, modern vanilla ECMAScript (ESM), and CSS tokens.
-* **Offline capability:** All datasets, icons, and vehicle imagery are packaged locally. Zero remote CDNs or tracking pixels.
-* **Strict security boundaries:** Hand-crafted escaping layer ([`web/assets/js/html.js`](web/assets/js/html.js)) sanitises all dynamic catalog content prior to DOM interpolation, preventing XSS even with rogue scraped content.
-
-### 5. AI-Native Operational Runbook
-The repository contains an authoritative machine runbook ([`AGENTS.md`](AGENTS.md)) designed for autonomous AI agents (Claude, DeepMind Antigravity, etc.). It establishes explicit protocols for market discovery, photographic audits, geographical dealership proximity checks, and human sign-off boundaries.
-
----
-
-## 📊 Catalog Overview
-
-* **Eligible Cohort:** Confirmed passenger BEVs with official Portuguese MSRP ≤ €40,000 (VAT included).
-* **Reference Cohort:** Models with published pricing indications under investigation, clearly labeled as `Reference (Unconfirmed VAT / Audience)` and excluded from eligibility rankings.
-* **Dealership Benchmarking:** Exactly one official dealership per active brand, benchmarked against Greater Porto (Metropolitan Area) to verify real service and parts availability.
-
----
-
-## 🛠️ Developer & Operational Guide
-
-The project uses a standard `Makefile` for zero-friction workflows:
-
-### Quickstart
+Requirements: Python 3.13+, Node.js 22+ (tests only), `uv` (lint only).
 
 ```sh
-# Clone repository
 git clone https://github.com/oarguido/portugal-ev-market-guide.git
 cd portugal-ev-market-guide
 
-# Start local offline server (auto-detects open port starting at 8000)
-make serve
+make serve        # serves web/ on http://localhost:8000 (next free port if taken)
 ```
 
-Or simply open `web/index.html` directly in any modern browser.
+You can also open `web/index.html` directly in a browser.
 
-### Test & Validation Commands
+### Checks (offline)
 
 ```sh
-make lint            # Static analysis with ruff (pinned via uv)
-make validate        # Fail-closed schema v3 validation and compilation (offline)
-make test            # Executes 185 Python unit tests and 73 Node.js test-runner tests
-make links           # Concurrency-throttled crawler validating all external URLs
-make freshness       # Verifies that no catalog records exceed the 45-day threshold
-make budgets         # Enforces photo weight budget limits (<500 KB per photo)
-make audit           # Full suite: lint, validate, freshness, tests, and link audit
+make lint         # ruff
+make validate     # schema v3 validation, then compile the web bundle
+make test         # Python unittest + Node.js tests
+make verify       # lint, validate, compile, tests and pending report (what CI runs)
+make freshness    # global 45-day freshness and expired-campaign check
+make budgets      # image size budgets
 ```
 
-### Data Pipeline Commands
+The freshness gate depends on today's date, so `make validate` and `make verify` start failing once the catalogue goes more than 45 days without re-verification or a campaign expires. That is intended: stale data is never published as current.
+
+### Data maintenance (network)
 
 ```sh
-make update          # Monitors official portals, detects semantic changes, updates proposals
-make update-accept   # Accepts updated source fingerprints after explicit human review
-make expire-campaigns # Marks expired promotional campaigns as reference offers
+make links             # check every external URL
+make update            # full refresh: fingerprints, model discovery, prices, photos, campaigns, images, validation, tests
+make update-accept     # accept changed source fingerprints after human review
 ```
 
----
+`make update` needs `agent-browser` on the `PATH`.
 
-## 📁 Repository Structure
+## Project structure
 
 ```text
-├── data/
-│   ├── vehicles/pt_market.json      # Single source of truth for vehicles (Schema v3)
-│   ├── dealers/near_sao_mamede.json # Dealerships benchmarked by regional proximity
-│   └── source_snapshots.json        # Semantic text fingerprints of official sources
-├── scripts/
-│   ├── compile_data.py              # Compiles JSON into web-ready static bundle
-│   ├── validate_data.py             # Fail-closed Schema v3 validator & freshness guards
-│   ├── update_catalog.py            # Automated source monitoring & fingerprinting
-│   ├── refresh_prices.py            # Price proposal extractor
-│   └── expire_campaigns.py          # Automatic campaign validity lifecycle manager
-├── tests/
-│   ├── test_schema_v3.py            # Contract tests for vehicle schemas
-│   ├── test_validate_guards.py      # Circuit-breaker and validation tests
-│   └── prices.test.js               # Pricing logic and eligibility unit tests
-├── web/
-│   ├── index.html                   # Interactive offline-first dashboard
-│   ├── assets/js/                   # Vanilla JavaScript modules (HTML, search, ranking)
-│   └── assets/images/vehicles/      # Budget-optimised local vehicle imagery
-├── AGENTS.md                        # Autonomous AI agent operational runbook
-├── README.pt.md                     # Original Portuguese technical documentation
-└── pyproject.toml                   # Project metadata and tooling configuration
+data/
+  vehicles/pt_market.json       # catalogue: single source of truth (schema v3)
+  dealers/near_sao_mamede.json  # one official dealer per brand
+  source_snapshots.json         # SHA-256 fingerprints of official sources
+  price_proposals.json          # proposals awaiting human review
+scripts/
+  validate_data.py              # fail-closed validator, freshness, links, budgets
+  compile_data.py               # JSON -> web/assets/js/car_data.js
+  update_catalog.py             # source monitoring and fingerprinting
+  refresh_prices.py             # price and campaign proposals from official pages
+  discover_models.py            # market radar for new models
+  expire_campaigns.py           # campaign lifecycle
+  capture_photos.py, optimize_images.py, archive_unused_images.py
+  serve.py                      # local static server
+tests/                          # Python and Node.js test suites
+web/
+  index.html                    # the dashboard
+  assets/js/                    # app, search, ranking, prices, finalists, HTML escaping
+  assets/images/vehicles/       # local official imagery
+AGENTS.md                       # runbook for AI coding agents
+README.pt.md                    # Portuguese documentation
 ```
 
----
+## Author and licence
 
-## 📄 License & Attribution
+Built by **André Lima**, AI/Data Engineer.
 
-* Original code and documentation are released under the [MIT License](LICENSE).
-* Vehicle photographs, brand names, and trademarks belong to their respective manufacturers; see [ASSET_NOTICE.md](ASSET_NOTICE.md) for fair-use editorial disclosure and asset licensing.
+- Code and documentation: [MIT Licence](LICENSE).
+- Vehicle photographs, brand names and trademarks belong to their owners; see [ASSET_NOTICE.md](ASSET_NOTICE.md).
+- Not affiliated with any manufacturer or importer. Prices are informative; always confirm with the official dealer.
