@@ -3680,52 +3680,52 @@
               },
               {
                 "classification": "reference",
-                "amount_eur": 27990,
+                "amount_eur": 27750.0,
                 "currency": "EUR",
-                "source_url": "https://kia.pt/modelos/kia-ev2/",
+                "source_url": "https://kia.pt/configurador/?modelo=ev2",
                 "source_authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "variant": "Urban 42.2 kWh",
-                "conditions": "Campanha Kia para particulares com financiamento a 120 meses, sujeito a aprovação; PVP sem campanha 29.490 €. Confirmar entrada, prazo e MTIC no stand.",
-                "vat_included": true,
+                "conditions": "Campanha Promocional de 4.500 € sobre o preço total de 32.250 € no configurador oficial; a nota do asterisco (condições, financiamento), o IVA e a data de fim não foram vistos.",
+                "vat_included": null,
                 "proof": {
-                  "url": "https://kia.pt/modelos/kia-ev2/",
-                  "source_url": "https://kia.pt/modelos/kia-ev2/",
+                  "url": "https://kia.pt/configurador/?modelo=ev2",
+                  "source_url": "https://kia.pt/configurador/?modelo=ev2",
                   "authority": "manufacturer_or_importer_pt",
                   "market": "PT",
                   "audience": "particular",
                   "variant": "Urban 42.2 kWh",
-                  "vat_basis": "included",
-                  "literal_excerpt": "Kia EV2 Urban 42.2 kWh PVP campanha de 27.990 €",
-                  "status": "legacy_unverified",
+                  "vat_basis": "unknown",
+                  "literal_excerpt": "URBAN (42,2 kWh) 27.750€ ... Campanha Promocional: 4.500 € Preço Total 32.250€ 27.750€*",
+                  "status": "verified",
                   "source_type": "official_model_and_price",
-                  "recorded_on": "2026-08-16",
-                  "verified_on": null,
+                  "recorded_on": "2026-10-10",
+                  "verified_on": "2026-10-10",
                   "source_authority": "manufacturer_or_importer_pt",
                   "customer": "private"
                 },
                 "derivation": null,
-                "recorded_on": "2026-08-16",
-                "verified_on": null,
-                "legacy_unverified": true,
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "legacy_unverified": false,
                 "kind": "campaign_price",
                 "customer": "private",
                 "audience": "particular",
                 "validity": {
                   "valid_from": null,
-                  "valid_until": "2026-09-30"
+                  "valid_until": null
                 },
-                "valid_until": "2026-09-30",
-                "vat": "included",
-                "vat_status": "included",
-                "evidence": "Kia EV2 Urban 42.2 kWh PVP campanha de 27.990 €",
+                "valid_until": null,
+                "vat": null,
+                "vat_status": "unknown",
+                "evidence": "URBAN (42,2 kWh) 27.750€ ... Campanha Promocional: 4.500 € Preço Total 32.250€ 27.750€*",
                 "evidence_record": {
-                  "url": "https://kia.pt/modelos/kia-ev2/",
-                  "source_url": "https://kia.pt/modelos/kia-ev2/",
+                  "url": "https://kia.pt/configurador/?modelo=ev2",
+                  "source_url": "https://kia.pt/configurador/?modelo=ev2",
                   "market": "PT",
-                  "recorded_on": "2026-08-16",
-                  "verified_on": null,
-                  "literal_excerpt": "Kia EV2 Urban 42.2 kWh PVP campanha de 27.990 €"
+                  "recorded_on": "2026-10-10",
+                  "verified_on": "2026-10-10",
+                  "literal_excerpt": "URBAN (42,2 kWh) 27.750€ ... Campanha Promocional: 4.500 € Preço Total 32.250€ 27.750€*"
                 },
                 "source_type": "official_model_and_price"
               }
@@ -3861,52 +3861,52 @@
               },
               {
                 "classification": "reference",
-                "amount_eur": 36740,
+                "amount_eur": 36199.0,
                 "currency": "EUR",
-                "source_url": "https://kia.pt/modelos/kia-ev3/",
+                "source_url": "https://kia.pt/configurador/?modelo=ev3",
                 "source_authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "variant": "Drive 58.3 kWh",
-                "conditions": "Campanha Kia para particulares com financiamento exclusivo Santander Consumer Bank, sujeito a aprovação; PVP sem campanha 37.990 €. Confirmar entrada, prazo e MTIC no stand.",
-                "vat_included": true,
+                "conditions": "Campanha Promocional de 3.701 € sobre o preço total de 39.900 € no configurador oficial; a nota do asterisco (condições, financiamento), o IVA e a data de fim não foram vistos.",
+                "vat_included": null,
                 "proof": {
-                  "url": "https://kia.pt/modelos/kia-ev3/",
-                  "source_url": "https://kia.pt/modelos/kia-ev3/",
+                  "url": "https://kia.pt/configurador/?modelo=ev3",
+                  "source_url": "https://kia.pt/configurador/?modelo=ev3",
                   "authority": "manufacturer_or_importer_pt",
                   "market": "PT",
                   "audience": "particular",
                   "variant": "Drive 58.3 kWh",
-                  "vat_basis": "included",
-                  "literal_excerpt": "Kia EV3 Drive 58.3 kWh PVP campanha de 36.740 €",
-                  "status": "legacy_unverified",
+                  "vat_basis": "unknown",
+                  "literal_excerpt": "Drive 36.199€ ... Campanha Promocional: 3.701 € Preço Total 39.900€ 36.199€*",
+                  "status": "verified",
                   "source_type": "official_model_and_price",
-                  "recorded_on": "2026-08-16",
-                  "verified_on": null,
+                  "recorded_on": "2026-10-10",
+                  "verified_on": "2026-10-10",
                   "source_authority": "manufacturer_or_importer_pt",
                   "customer": "private"
                 },
                 "derivation": null,
-                "recorded_on": "2026-08-16",
-                "verified_on": null,
-                "legacy_unverified": true,
+                "recorded_on": "2026-10-10",
+                "verified_on": "2026-10-10",
+                "legacy_unverified": false,
                 "kind": "campaign_price",
                 "customer": "private",
                 "audience": "particular",
                 "validity": {
                   "valid_from": null,
-                  "valid_until": "2026-09-30"
+                  "valid_until": null
                 },
-                "valid_until": "2026-09-30",
-                "vat": "included",
-                "vat_status": "included",
-                "evidence": "Kia EV3 Drive 58.3 kWh PVP campanha de 36.740 €",
+                "valid_until": null,
+                "vat": null,
+                "vat_status": "unknown",
+                "evidence": "Drive 36.199€ ... Campanha Promocional: 3.701 € Preço Total 39.900€ 36.199€*",
                 "evidence_record": {
-                  "url": "https://kia.pt/modelos/kia-ev3/",
-                  "source_url": "https://kia.pt/modelos/kia-ev3/",
+                  "url": "https://kia.pt/configurador/?modelo=ev3",
+                  "source_url": "https://kia.pt/configurador/?modelo=ev3",
                   "market": "PT",
-                  "recorded_on": "2026-08-16",
-                  "verified_on": null,
-                  "literal_excerpt": "Kia EV3 Drive 58.3 kWh PVP campanha de 36.740 €"
+                  "recorded_on": "2026-10-10",
+                  "verified_on": "2026-10-10",
+                  "literal_excerpt": "Drive 36.199€ ... Campanha Promocional: 3.701 € Preço Total 39.900€ 36.199€*"
                 },
                 "source_type": "official_model_and_price"
               }
@@ -4036,15 +4036,15 @@
                 "source_type": "official_model_and_price"
               },
               {
-                "classification": "confirmed",
+                "classification": "reference",
                 "amount_eur": 36199.0,
                 "currency": "EUR",
                 "source_url": "https://kia.pt/configurador/?modelo=ev4",
                 "source_authority": "manufacturer_or_importer_pt",
                 "market": "PT",
                 "variant": "Drive 58.3 kWh",
-                "conditions": "Campanha Promocional de 5.301 € sobre o preço total de 41.500 € no configurador oficial; a página não indica data de fim.",
-                "vat_included": true,
+                "conditions": "Campanha Promocional de 5.301 € sobre o preço total de 41.500 € no configurador oficial; a nota do asterisco (condições, financiamento), o IVA e a data de fim não foram vistos.",
+                "vat_included": null,
                 "proof": {
                   "url": "https://kia.pt/configurador/?modelo=ev4",
                   "source_url": "https://kia.pt/configurador/?modelo=ev4",
@@ -4052,7 +4052,7 @@
                   "market": "PT",
                   "audience": "particular",
                   "variant": "Drive 58.3 kWh",
-                  "vat_basis": "included",
+                  "vat_basis": "unknown",
                   "literal_excerpt": "DRIVE 36.199€ ... Campanha Promocional: 5.301 € Preço Total 41.500€ 36.199€*",
                   "status": "verified",
                   "source_type": "official_model_and_price",
@@ -4073,8 +4073,8 @@
                   "valid_until": null
                 },
                 "valid_until": null,
-                "vat": "included",
-                "vat_status": "included",
+                "vat": null,
+                "vat_status": "unknown",
                 "evidence": "DRIVE 36.199€ ... Campanha Promocional: 5.301 € Preço Total 41.500€ 36.199€*",
                 "evidence_record": {
                   "url": "https://kia.pt/configurador/?modelo=ev4",
@@ -4088,7 +4088,7 @@
               }
             ]
           },
-          "eligibility_status": "confirmed_eligible",
+          "eligibility_status": "potential_reference",
           "battery_technology": {
             "chemistry": null,
             "generation": null,
@@ -4096,7 +4096,7 @@
             "source_url": null,
             "verified_on": null
           },
-          "eligibility_tier": "confirmed_eligible",
+          "eligibility_tier": "potential_reference",
           "wltp_consumption_combined_kwh_100km": 14.7,
           "dc_max_kw": 101
         }
@@ -4122,9 +4122,9 @@
         "boot_capacity_l": 430,
         "frunk_capacity_l": 25
       },
-      "eligibility_status": "confirmed_eligible",
-      "eligibility_reason": "Existe oferta confirmada atual dentro do limite.",
-      "eligibility_tier": "confirmed_eligible"
+      "eligibility_status": "potential_reference",
+      "eligibility_reason": "Existem apenas ofertas de referência ou ofertas confirmadas expiradas.",
+      "eligibility_tier": "potential_reference"
     },
     {
       "brand": "Lancia",
